@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="38"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.108"/>
+   <Title name="ResponseLevel" date="2012-08-02" version="1.000">Specifies whether a response is expected from the addressee of this interaction and what level of detail that response should include</Title>
+   <Class code="rootClass">
+      <SubClass subCount="0" code="C" kind="concept">
+         <Rubric id="d1e201562" kind="preferred">
+            <Label xml:lang="en-US">completion</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="D" kind="concept">
+         <Rubric id="d1e201587" kind="preferred">
+            <Label xml:lang="en-US">detail</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="E" kind="concept">
+         <Rubric id="d1e201611" kind="preferred">
+            <Label xml:lang="en-US">exception</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="F" kind="concept">
+         <Rubric id="d1e201635" kind="preferred">
+            <Label xml:lang="en-US">confirmation</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="N" kind="concept">
+         <Rubric id="d1e201659" kind="preferred">
+            <Label xml:lang="en-US">message-control</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="R" kind="concept">
+         <Rubric id="d1e201683" kind="preferred">
+            <Label xml:lang="en-US">modification</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="X" kind="concept">
+         <Rubric id="d1e201707" kind="preferred">
+            <Label xml:lang="en-US">none</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">ResponseLevel</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">Specifies whether a response is expected from the addressee of this interaction and what level of detail that response should include</Label>
+      </Rubric>
+   </Class>
+   <Class code="C" kind="concept">
+      <Meta name="internalId" value="14763"/>
+      <Rubric id="d1e201549" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Respond with exceptions and a notification of completion</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e201562" kind="short">
+         <Label xml:lang="en-US">completion</Label>
+      </Rubric>
+      <Rubric id="d1e201562" kind="preferred">
+         <Label xml:lang="en-US">completion</Label>
+      </Rubric>
+   </Class>
+   <Class code="D" kind="concept">
+      <Meta name="internalId" value="14765"/>
+      <Rubric id="d1e201574" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Respond with exceptions, completion, modifications and include more detail information (if applicable)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e201587" kind="short">
+         <Label xml:lang="en-US">detail</Label>
+      </Rubric>
+      <Rubric id="d1e201587" kind="preferred">
+         <Label xml:lang="en-US">detail</Label>
+      </Rubric>
+   </Class>
+   <Class code="E" kind="concept">
+      <Meta name="internalId" value="14762"/>
+      <Rubric id="d1e201598" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Respond with exceptions only</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e201611" kind="short">
+         <Label xml:lang="en-US">exception</Label>
+      </Rubric>
+      <Rubric id="d1e201611" kind="preferred">
+         <Label xml:lang="en-US">exception</Label>
+      </Rubric>
+   </Class>
+   <Class code="F" kind="concept">
+      <Meta name="internalId" value="14766"/>
+      <Rubric id="d1e201622" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Respond with exceptions, completion, and modification with detail (as above), and send positive confirmations even if no modifications are being made.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e201635" kind="short">
+         <Label xml:lang="en-US">confirmation</Label>
+      </Rubric>
+      <Rubric id="d1e201635" kind="preferred">
+         <Label xml:lang="en-US">confirmation</Label>
+      </Rubric>
+   </Class>
+   <Class code="N" kind="concept">
+      <Meta name="internalId" value="14767"/>
+      <Rubric id="d1e201646" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Respond only with message level acknowledgements, i.e., only notify acceptance or rejection of the message, do not include any application-level detail</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e201659" kind="short">
+         <Label xml:lang="en-US">message-control</Label>
+      </Rubric>
+      <Rubric id="d1e201659" kind="preferred">
+         <Label xml:lang="en-US">message-control</Label>
+      </Rubric>
+   </Class>
+   <Class code="R" kind="concept">
+      <Meta name="internalId" value="14764"/>
+      <Rubric id="d1e201670" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Respond with exceptions, completions and modifications or revisions done before completion</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e201683" kind="short">
+         <Label xml:lang="en-US">modification</Label>
+      </Rubric>
+      <Rubric id="d1e201683" kind="preferred">
+         <Label xml:lang="en-US">modification</Label>
+      </Rubric>
+   </Class>
+   <Class code="X" kind="concept">
+      <Meta name="internalId" value="14768"/>
+      <Rubric id="d1e201694" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Do not send any kind of response</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e201707" kind="short">
+         <Label xml:lang="en-US">none</Label>
+      </Rubric>
+      <Rubric id="d1e201707" kind="preferred">
+         <Label xml:lang="en-US">none</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

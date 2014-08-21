@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xsi:schemaLocation="urn:hl7-org:v3 ../../schemas/POCD_MT000001UK04.xsd" moodCode="EVN" classCode="DOCCLIN" xmlns:npfitlc="NPFIT:HL7:Localisation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3">
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040" />
+	<npfitlc:messageType root="2.16.840.1.113883.2.1.3.2.4.18.17" extension="POCD_MT010003UK01" />
+	<id root="7D5E5B00-AE1A-11DB-96A0-B18E1E0994CD" />
+	<code code="313121000000104" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" />
+	<title>Specialist Assessment Outcome</title>
+	<effectiveTime value="200708131430" />
+	<confidentialityCode codeSystem="2.16.840.1.113883.5.25" code="V" displayName="very restricted" />
+	<setId root="7D5E5B00-AE1A-11DB-96A1-B18E1E0994CD" />
+	<versionNumber value="1" />
+	<recordTarget contextControlCode="OP" typeCode="RCT">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145020UK03#PatientRole" />
+		<patientRole classCode="PAT">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145020UK03#PatientRole" />
+			<id root="2.16.840.1.113883.2.1.4.1" extension="9413946000" />
+		</patientRole>
+	</recordTarget>
+	<author contextControlCode="OP" typeCode="AUT">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145001UK03#AssignedAuthorSDS" />
+		<functionCode codeSystem="2.16.840.1.113883.2.1.3.2.4.17.178" code="OA" displayName="Originating Author" />
+		<time value="200708131430" />
+		<assignedAuthor classCode="ASSIGNED">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#AssignedAuthorSDS" />
+			<id root="1.2.826.0.1285.0.2.0.67" extension="102016301981" />
+			<id root="1.2.826.0.1285.0.2.0.65" extension="102016308989" />
+			<code code="J19" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Physiotherapist" />
+			<assignedPerson determinerCode="INSTANCE" classCode="PSN">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#assignedPerson" />
+				<name>
+					<family>Cotterell-Chapman</family>
+					<given>Nick</given>
+				</name>
+			</assignedPerson>
+			<representedOrganization determinerCode="INSTANCE" classCode="ORG">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#representedOrganization" />
+				<id root="2.16.840.1.113883.2.1.3.2.4.19.2" extension="RFM99" />
+				<name>Hebburn Hospital</name>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian typeCode="CST">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145018UK03#AssignedCustodian" />
+		<assignedCustodian classCode="ASSIGNED">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145018UK03#AssignedCustodian" />
+			<representedCustodianOrganization determinerCode="INSTANCE" classCode="ORG">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145018UK03#representedCustodianOrganization" />
+				<id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="RFM" />
+				<name>Hebburn NHS Trust</name>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<informationRecipient typeCode="PRCP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145017UK03#IntendedRecipient" />
+		<intendedRecipient classCode="ASSIGNED">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145017UK03#IntendedRecipient" />
+			<receivedOrganization determinerCode="INSTANCE" classCode="ORG">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145017UK03#representedOrganization" />
+				<id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="YEA" />
+				<name>NATIONAL CARE RECORDS SERVICE SPINE</name>
+			</receivedOrganization>
+		</intendedRecipient>
+	</informationRecipient>
+	<informationRecipient typeCode="PRCP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145021UK03#AssignedEntitySDS" />
+		<intendedRecipient classCode="ASSIGNED">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145021UK03#AssignedEntitySDS" />
+			<npfitlc:recipientRoleCode code="J21" codeSystemName="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Social Worker" />
+			<id root="1.2.826.0.1285.0.2.0.67" extension="102016313985" />
+			<id root="1.2.826.0.1285.0.2.0.65" extension="102016311989" />
+			<informationRecipient determinerCode="INSTANCE" classCode="PSN">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145021UK03#assignedPerson" />
+				<name>Sharon Adamson</name>
+			</informationRecipient>
+		</intendedRecipient>
+	</informationRecipient>
+	<componentOf typeCode="COMP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146060UK01#EncompassingEncounter" />
+		<encompassingEncounter moodCode="EVN" classCode="ENC">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146060UK01#EncompassingEncounter" />
+			<id root="7D5E5B00-AE1A-11DB-969C-B18E1E0994CD" />
+			<code code="xxx" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Face-to-face Consultation" />
+			<effectiveTime>
+				<center value="200708131430" />
+			</effectiveTime>
+			<dischargeDispositionCode nullFlavor="NA" />
+			<location typeCode="LOC">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146060UK01#location" />
+				<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145024UK01#HealthCareFacility" />
+				<healthCareFacility classCode="SDLOC">
+					<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145024UK01#HealthCareFacility" />
+					<id nullFlavor="NA" />
+					<code code="394780001" displayName="Ward on NHS hospital site" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" />
+					<location determinerCode="INSTANCE" classCode="PLC">
+						<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145024UK01#location" />
+						<name>Ward 5</name>
+						<addr>Hebburn NHS Trust, East View, hebburn, Tyne and Wear, NE31 2TQ</addr>
+					</location>
+				</healthCareFacility>
+			</location>
+		</encompassingEncounter>
+	</componentOf>
+	<component typeCode="COMP" contextConductionInd="true">
+		<structuredBody moodCode="EVN" classCode="DOCBODY">
+			<component typeCode="COMP" contextConductionInd="true">
+				<section moodCode="EVN" classCode="DOCSECT">
+					<id root="7D5E5B00-AE1A-11DB-96A2-B18E1E0994CD" />
+					<!--Here are the coded entries-->
+					<entry typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146065UK01#AssessmentEvent" />
+						<encounter moodCode="EVN" classCode="ENC">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146065UK01#AssessmentEvent" />
+							<id root="7D5E5B00-AE1A-11DB-96A8-B18E1E0994CD" />
+							<code code="xxx" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Face-to-face Consultation" />
+							<statusCode code="completed" />
+							<effectiveTime>
+								<center value="20070813" />
+							</effectiveTime>
+							<participant contextControlCode="OP" typeCode="LOC">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146065UK01#location1" />
+								<participantRole classCode="SDLOC">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146065UK01#careSetting" />
+									<code code="394780001" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Ward on NHS hospital site" />
+								</participantRole>
+							</participant>
+							<entryRelationship typeCode="COMP" contextConductionInd="true">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146065UK01#entryRelationship1" />
+								<seperatableInd value="false" />
+								<observation moodCode="EVN" classCode="OBS">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146065UK01#assessmentType" />
+									<code code="410158009" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="physical therapy assessment" />
+								</observation>
+							</entryRelationship>
+						</encounter>
+					</entry>
+					<!--Here are the coded entries-->
+					<entry typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146021UK04#Service" />
+						<act moodCode="EVN" classCode="PCPR">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146021UK04#Service" />
+							<id root="7D5E5B00-AE1A-11DB-96A9-B18E1E0994CD" />
+							<code code="183259003" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Loan of walking stick">
+								<originalText>
+									<reference value="#a1" />
+								</originalText>
+							</code>
+							<statusCode code="active" />
+							<effectiveTime>
+								<low value="20070813" />
+							</effectiveTime>
+						</act>
+					</entry>
+					<!--Here are the coded entries-->
+					<entry typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146024UK04#AdministrativeProcedure" />
+						<act moodCode="EVN" classCode="ACT">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146024UK04#AdministrativeProcedure" />
+							<id root="7D5E5B00-AE1A-11DB-96AA-B18E1E0994CD" />
+							<code code="306358002" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="referral to community physiotherapist">
+								<originalText>
+									<reference value="#a2" />
+								</originalText>
+							</code>
+							<statusCode code="completed" />
+							<effectiveTime>
+								<low value="20070813" />
+							</effectiveTime>
+						</act>
+					</entry>
+					<component typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146061UK02#Section1" />
+						<section moodCode="EVN" classCode="DOCSECT">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK02#Section1" />
+							<id root="7D5E5B00-AE1A-11DB-96A5-B18E1E0994CD" />
+							<code />
+							<title>Administrative Details</title>
+							<text>
+								<paragraph>
+									<content styleCode="Bold">Location: </content>Assessment caried out as part of inpatient care in Ward 5 Hebburn Hospital.</paragraph>
+								<paragraph>
+									<content styleCode="Bold">Assessment Type: </content>Physical Therapy Assessment - Mobility Assessment</paragraph>
+							</text>
+						</section>
+					</component>
+					<component typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146061UK02#Section1" />
+						<section moodCode="EVN" classCode="DOCSECT">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK02#Section1" />
+							<id root="7D5E5B00-AE1A-11DB-96A5-B18E1E0994CD" />
+							<title>Assessment Outcome Summary</title>
+							<component typeCode="COMP" contextConductionInd="true">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK02#component1" />
+								<section moodCode="EVN" classCode="DOCSECT">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK02#section2" />
+									<id root="7D5E5B00-AE1A-11DB-96A6-B18E1E0994CD" />
+									<title>General Comments:</title>
+									<text>Mr Jones generally mobilising well with stick, but lacking confidence since his fall.</text>
+								</section>
+							</component>
+							<component typeCode="COMP" contextConductionInd="true">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK02#component1" />
+								<section moodCode="EVN" classCode="DOCSECT">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK02#section2" />
+									<id root="7D5E5B00-AE1A-11DB-96A7-B18E1E0994CD" />
+									<title>Equipment Requirements:</title>
+									<text>
+										<content ID="a2">Referred to Community Physiotherapy for mobility practice, confidence building and re-assessment of mobility aids.</content>
+									</text>
+								</section>
+							</component>
+							<component typeCode="COMP" contextConductionInd="true">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK02#component1" />
+								<section moodCode="EVN" classCode="DOCSECT">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK02#section2" />
+									<id root="7D5E5B00-AE1A-11DB-96A7-B18E1E0994CD" />
+									<title>Further Actions:</title>
+									<text>
+										<content ID="a1">Provided a stick</content>
+									</text>
+								</section>
+							</component>
+						</section>
+					</component>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

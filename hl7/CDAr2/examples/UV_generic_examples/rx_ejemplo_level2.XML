@@ -1,0 +1,252 @@
+<?xml-stylesheet type="text/xsl" href="CDA.xsl"?>
+
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../Schemas/CDA.xsd">
+    
+    <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/> 
+    <templateId root="2.16.840.1.113883.3.27.1776"/>
+    
+    <!-- Identificación del documento 810160 Version 0-->
+    <id root="2.16.840.1.113883.8.10.1.4.2" extension="810160/0"/>
+    
+    <!-- Si bien no es un Reporte de RX especificamente, hay un solo codigo para todas las modalidades
+        , aun no se definio utilizar mas codigos
+        Esta en estudio en el DICOM WG20+HL7 IMAGING SIG+HL7 STRUCDOC WG-->
+    
+    <code code="18748-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="RX REPORT"/>
+    <!-- titulo del reporte -->
+    
+    <title>INFORME SDI - UDIAT C.D. </title>
+    
+    <!-- fecha en que fue generado -->
+    <effectiveTime value="200604031030"/>
+    
+    <!-- codigo de confidencialidad -->
+    <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+    
+    <!-- lenguaje: español de España -->
+    <languageCode code="es-ES"/>
+    
+    <!-- Identificación del grupo de documentos asociados -->
+    <setId root="2.16.840.1.113883.8.10.1.4.3" extension="810160"/>
+    
+    <!-- numero de versión -->
+    <versionNumber value="1"/> 
+    
+    <recordTarget>
+        <patientRole>
+            <!-- Paciente  al que se realizó el estudio -->
+            <!-- identificación -->
+            <id root="2.16.840.1.113883.8.10.1.1.1" extension="123938"/> 
+            <patient>
+                <name>
+                    <!-- apellido y nombres -->  
+                    <family>VILALTA MARZO</family>
+                    <given> JOSEP</given>
+                </name>
+                <!-- genero - sexo -->
+                <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender"> </administrativeGenderCode>
+                <!-- fecha de nacimiento -->
+                <birthTime value="19380526"/>
+            </patient>
+            
+        </patientRole>
+    </recordTarget>
+    <!--Autor del documento -->
+    <author>
+        <time value="200604031030"/> 
+        <assignedAuthor>
+            <id root="2.16.840.1.113883.8.10.1.4.4" extension="20001"/>
+            <assignedPerson>
+                <name> 
+                    <family>SOLIS</family>
+                    <family>ROJAS</family>
+                    <given>CARLOS</given>
+                    <given>MIGUEL</given>
+                </name>    
+            </assignedPerson>
+            
+            <representedOrganization>
+                <id root="2.16.840.1.113883.8.10.1.1.4" extension="UDIAT"/>
+                <name>UDIAT CENTRE DIAGNOSTIC</name>
+            </representedOrganization>
+        </assignedAuthor>
+    </author>
+    <!-- Custodio del documento -->
+    <custodian>
+        <assignedCustodian>
+            <representedCustodianOrganization>
+                <id root="2.16.840.1.113883.8.10.1.1.4" extension="UDIAT"/>
+                <name>UDIAT CENTRE DIAGNOSTIC</name>
+            </representedCustodianOrganization>
+        </assignedCustodian>
+    </custodian>
+    
+    <legalAuthenticator>
+    
+        <time value="20060403103000"/>
+        
+        <signatureCode code="S"/>
+        
+        <assignedEntity>
+            <id root="2.16.840.1.113883.8.10.1.1.2" extension="20001"/>
+            <assignedPerson>
+                <name> 
+                    <family>SOLIS ROJAS</family>
+                    <given>CARLOS MIGUEL</given>
+                </name>    
+            </assignedPerson>
+            
+            <representedOrganization>
+                <id root="2.16.840.1.113883.8.10.1.1.4" extension="UDIAT"/>
+                <name>UDIAT CENTRE DIAGNOSTIC</name>
+            </representedOrganization>
+        </assignedEntity>
+       
+    </legalAuthenticator>
+    <!-- Medico solicitante del estudio, que sera avisado del resultado, junto con su organizacion  -->
+    <participant typeCode="PRCP">
+        <associatedEntity classCode="CON">
+            <id root="2.16.840.1.113883.8.10.1.1.2" extension="4001"/>
+            <!-- Telefono de contacto de emergencia del medico -->
+            <telecom use="EC" value="tel:+543323142"/>
+            <associatedPerson>
+                <name>
+                    <family>LAMADRID RAMIREZ</family>
+                    <given>JUAN CARLOS</given>
+                 </name>
+                
+            </associatedPerson>
+            <scopingOrganization>
+                <!-- alcanza con un root sin ext para denominar a una organizacion -->
+                <id root="2.16.840.1.113883.8.10.2.1.4.1"/>
+                <name>ONCOLOGIA TRACTAMENTS</name>
+                <asOrganizationPartOf>
+                    <id root="2.16.840.1.113883.8.10.2.1.4"/>
+                    <wholeOrganization>
+                        <name>HOSPITAL DE SABADELL</name>
+                    </wholeOrganization>
+                </asOrganizationPartOf>
+            </scopingOrganization>
+            
+        </associatedEntity>
+    </participant>
+    <!-- Cobertura de salud -->
+    <participant typeCode="BEN">
+        <associatedEntity classCode="COVPTY">
+            <!-- Nro. de carnet del beneficiario -->
+            <id root="2.16.840.1.113883.8.10.1.1.5.2" extension="15202877808"/>
+            <associatedPerson>
+                <name>
+                    <family>VILALTA</family>
+                    <given> JOSEP</given>
+                </name>
+            </associatedPerson>
+            
+            <scopingOrganization>
+                
+                <id root="2.16.840.1.113883.8.10.1.1.5" extension="2"/>
+                <name>LA CAIXA MUTUA EMPRESARIAL</name>
+                
+            </scopingOrganization>
+        </associatedEntity>
+    </participant>
+    
+   <!-- Orden que deriva en este estudio -->
+    <inFulfillmentOf>
+        <order>
+            <id root="2.16.840.1.113883.8.10.1.2.3" extension="761526"/>
+        </order>
+    </inFulfillmentOf>
+    
+    <!-- Aquí empieza el reporte en sí -->
+    <component>
+        
+        <!-- Las secciones están codificadas con LOINC Clínico -->
+        
+        <!-- Todavía no salío la guía de implementación de CDA para Radiología, pero seguramente
+             quedará algo parecido a esto. -->
+        <structuredBody>
+            
+            <component>
+                <!--  Primera sección - Motivo del Estudio -->
+                <section>
+                    <code code="18785-6" codeSystem="2.16.840.1.113883.6.1" displayName="REASON FOR STUDY"> </code>
+                    <title>MOTIVO</title>
+                     <text>
+                         Neoplasia de colon con progresión pulmonar resecada en dos ocasiones.Estudio evolutivo post-cirugía.
+                     </text>
+                    
+                </section>
+            </component>
+            <component>
+                <section>
+                    <code code="24753-6" codeSystem="2.16.840.1.113883.6.1" displayName="MULTISECTION^W CONTRAST IV"> </code>
+                    <title>Exploraciones</title>
+                    <text>
+                        <list>
+                            <item>TAC TORACICO</item>
+                            <item>TAC ABDOMINAL</item>    
+                        </list>
+                        
+                        
+                    </text>   
+                </section>
+                
+            </component>
+            <component>
+                <section>
+                    <code code="24753-6" codeSystem="2.16.840.1.113883.6.1" displayName="MULTISECTION^W CONTRAST IV"> </code>
+                    <title>Informe</title>
+                    <text>
+                        Se ha efectuado estudio torácico, abdominal y pélvico con contraste endovenoso. Se compara con TC previo de diciembre del 2005.
+                    </text>   
+                </section>
+                
+            </component>
+            
+            <component>
+                <section>
+                    <code code="24628-0" codeSystem="2.16.840.1.113883.6.1" displayName="Chest CT W contr IV"> </code>
+                    <title>TC TORACICO</title>
+                    <text>
+                        <paragraph> Cambios posquirurgicos en el LSI secundarios a metastesectomia, con presencia de hidroneumotórax.</paragraph> 
+                        <paragraph>Persistencia sin cambios de los nódulos del LII descritos en el estudio previo.</paragraph>
+                        <paragraph>Fracturas del 4to, 5to y 6to arco costal posterior, probablemente posquirurgicas.</paragraph>
+                    </text>
+                </section>
+            </component>
+            
+            <component>
+                <section>
+                    <code code="36813-4" codeSystem="2.16.840.1.113883.6.1" displayName="Abd+Pelvis CT W contr IV"> </code>
+                    <title>TC ABDOMINAL</title>
+                    <text>
+                        <paragraph>Pequeños adenomas suprarrenales bilaterales sin cambios.</paragraph>
+                        <paragraph>No se ven ganglios linfáticos aumentados de tamaño que sean sospechosos de afectación metastásica ni en el retroperitoneo ni en otros territorios del abdomen o de la pelvis.</paragraph>
+                        <paragraph>Colostomia izquierda.</paragraph>
+                        <paragraph>Resto de estructuras de cavidad abdominal y pélvica sin alteraciones</paragraph>
+                    </text>
+                </section>
+            </component>
+            
+            <component>
+                <section>
+                    <code code="18747-6" codeSystem="2.16.840.1.113883.6.1"> </code>
+                    <title>CONCLUSION</title>
+                    <text>
+                        <list>
+                            <item>1- Cambios posquirurgicos en hemitórax izquierdo</item>
+                            <item>2- Sin signos de enfermedad neoplásica</item>
+                        </list>
+                    </text>
+                </section>
+            </component>
+            
+                
+            
+            
+        </structuredBody>
+        
+    </component>
+
+</ClinicalDocument>

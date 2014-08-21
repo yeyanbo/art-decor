@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="47"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1056"/>
+   <Title name="CommunicationFunctionType" date="2012-08-02" version="1.000">Describes the type of communication function that the associated entity plays in the associated transmission.</Title>
+   <Class code="rootClass">
+      <SubClass subCount="0" code="RCV" kind="concept">
+         <Rubric id="d1e91153" kind="preferred">
+            <Label xml:lang="en-US">receiver</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="RSP" kind="concept">
+         <Rubric id="d1e91178" kind="preferred">
+            <Label xml:lang="en-US">respond to</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="SND" kind="concept">
+         <Rubric id="d1e91202" kind="preferred">
+            <Label xml:lang="en-US">sender</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">CommunicationFunctionType</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">Describes the type of communication function that the associated entity plays in the associated transmission.</Label>
+      </Rubric>
+   </Class>
+   <Class code="RCV" kind="concept">
+      <Meta name="internalId" value="16033"/>
+      <Rubric id="d1e91140" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The entity is the receiver of the transmission.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e91153" kind="short">
+         <Label xml:lang="en-US">receiver</Label>
+      </Rubric>
+      <Rubric id="d1e91153" kind="preferred">
+         <Label xml:lang="en-US">receiver</Label>
+      </Rubric>
+   </Class>
+   <Class code="RSP" kind="concept">
+      <Meta name="internalId" value="16034"/>
+      <Rubric id="d1e91165" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The entity is the one to which the response or reply to the transmission should be sent.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e91178" kind="short">
+         <Label xml:lang="en-US">respond to</Label>
+      </Rubric>
+      <Rubric id="d1e91178" kind="preferred">
+         <Label xml:lang="en-US">respond to</Label>
+      </Rubric>
+   </Class>
+   <Class code="SND" kind="concept">
+      <Meta name="internalId" value="16032"/>
+      <Rubric id="d1e91189" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The entity is the sender of the transmission.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e91202" kind="short">
+         <Label xml:lang="en-US">sender</Label>
+      </Rubric>
+      <Rubric id="d1e91202" kind="preferred">
+         <Label xml:lang="en-US">sender</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

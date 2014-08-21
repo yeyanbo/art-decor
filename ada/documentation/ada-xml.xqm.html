@@ -1,0 +1,197 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xml:space="preserve"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>xqDoc -- Module</title><script language="JavaScript"><!--
+        function popUp(URL) {
+                 day = new Date();
+                 id = day.getTime();
+                 eval("page = window.open(URL, 'xqdoccode', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=600,height=400,left = 412,top = 334');")
+                 page.focus();
+        }
+      --></script><script language="JavaScript"><!--
+	    function litePopUp(str) {    
+  		  OpenWindow=window.open('', 'xqdoccode', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=600,height=400,left = 412,top = 334');
+  		  OpenWindow.document.write('<html xmlspace="preserve">');
+  		  OpenWindow.document.write('<head>');
+  		  OpenWindow.document.write('<title>xqDoc - Code Sample</title>');
+  		  OpenWindow.document.write('</head>');  		    		    		  
+  		  OpenWindow.document.write('<body xml:space="preserve">');
+  		  OpenWindow.document.write('<pre>');
+ 		  OpenWindow.document.write(str);
+ 		  OpenWindow.document.write('</pre>');
+  		  OpenWindow.document.write('</body>');
+  		  OpenWindow.document.write('</html>');
+  		  OpenWindow.document.close();
+  		  page.focus();
+        }
+      --></script><style><!--
+body		{
+		font: 80% Verdana;
+		}
+table		{
+		font-size: 100%;
+		}
+h1, h2, h3, h4, h5, h6
+		{
+		clear: both;
+		float: none;
+		}
+h1		{
+		font-size: 100%;
+		margin: 0em;
+		}
+h2		{
+		font-size: 180%;
+		margin-bottom: -1em;
+		margin-top: .3em;
+		}
+h3		{
+		font-size: 150%;
+		}	
+h4		{
+		font-size: 140%;
+		background-color: #ccf;
+		border-bottom: 1px solid #99f;
+		width: 100%;
+		}
+h5		{
+		margin: 1em 0em 0em 0em;
+		font-size: 120%;
+		}
+h6		{
+		margin: 0em 0em 0em 3em;
+		font-style: italic;
+		font: bold italic;
+		font-size: 100%;
+		}
+#variables, #methods, #methoddetail
+		{
+		padding-left: 3em;
+		margin-bottom: 1.4em;
+		clear: both;
+		float: none;
+		}
+#methods ul.method, #variables ul.method
+		{
+		margin: 1em 0em 0em;
+		}
+#methoddetail ul.method
+		{
+		margin: 0em;
+		}
+div.inexternal
+		{
+		padding-left: 2em;
+		margin-bottom: 1em;
+		}
+div.methoddetail p
+		{
+		float: none;
+		clear: both;
+		padding-left: 2em;
+		margin-bottom: 1em;
+		}
+div.methoddetail{
+		padding-bottom: 1em;
+		}
+div.methoddetail li
+		{
+		list-style-type: none;
+		font-weight: bold;
+		}
+div.methoddetail li li
+		{
+		list-style-type: circle;
+		font-weight: normal;
+		}
+div.methoddetail li ul
+		{
+		padding-bottom: 0.5em;
+		font-weight: normal;
+		}
+table.inexternal{
+		clear: both;
+		float: none;
+		width: 80%;
+		margin-left: 3em;
+		padding: 0em;
+		
+		}
+table.inexternal th
+		{
+		background-color:#dedede;
+		width: 50%;
+		}			
+td		{
+		vertical-align: top;
+		}
+div.description {
+		margin-top: .5em;
+		font-weight: normal;
+		padding-left: 1em;
+		}
+ul.method	{
+		clear: both;
+		float: none;
+		width: 90%;
+		list-style-type: none;
+		border-top: 1px solid #ccc;
+		}
+ul.method li.left
+		{
+		float: left;
+		clear: none;
+		width: 40%;
+		font-weight: bold;
+		margin-bottom: 2em;
+		}
+ul.method li.right
+		{
+		position: relative;
+            top: 0em;
+		float: left;
+            width: 55%;
+		margin-bottom: 2em;
+		padding-left: 2em;
+		}
+div.home 	{
+		width: 60%;
+		float: left;
+		margin-right: 1%;
+		border: 1px
+		}
+div.home h4	{
+		font-size: 120%;
+		background-color: #fff;
+		border-bottom: 1px solid #99f;
+		width: 100%;
+		margin-bottom: -1em;
+		}
+div.overview p {
+               width: 60%;
+               }
+     
+ --></style></head><body><h4>Module URI</h4><h1>http://art-decor.org/ns/ada-xml</h1><h4>Module Description</h4><p>Common ADA functions for processing ADA XML format. The ADA XML format is (XML not rendered well by xqdoc):<adaxml xmlns:xqdoc="http://www.xqdoc.org/1.0">  <meta status="{status}">    <step>    Zero or more steps    </step>    <data>    The actual data, conforming to a schema in ada-data/projects/{project}/schemas  </data>  Zero or more translations data, i.e. CDA, SOAP etc.</adaxml>ADA XML is processed in steps. Each step corresponds to an ADA XML step-function, i.e.step 'validate-schema' corresponds to adaxml:validateSchema(...)The output of step-functions should be a step element, made with adaxml:makeStep(...)Adding a step to an ADA XML doc with adaxml:addStep(...) inserts the step into the ADA XML document andupdates the meta/@status of the ADA XML document.</p><ul><li><strong>Author:&nbsp;</strong> Marc de Graauw</li><li><strong>Version:&nbsp;</strong> 0.1</li></ul>&nbsp; &nbsp;<h4>Function Summary</h4><div id="methods"><a name="methods"></a><ul class="method"><li class="left"><a href="#addAttributes">addAttributes</a><div class="description">Adds missing @value and @unit atributes to adaxml/data</div></li><li class="right">( $elements as element()* ,<br>&nbsp; $newXml as node()) as element()*<br><br></li></ul><ul class="method"><li class="left"><a href="#addCode">addCode</a><div class="description"> Adds code, codeSystem, displayname to coded concepts</div></li><li class="right">( $elements as element()* ,<br>&nbsp; $spec as element()*) as element()*<br><br></li></ul><ul class="method"><li class="left"><a href="#addConceptId">addConceptId</a><div class="description">Adds conceptId to all concept nodes recursively</div></li><li class="right">( $elements as element()* ,<br>&nbsp; $spec as element()*) as element()*<br><br></li></ul><ul class="method"><li class="left"><a href="#addHL7Data">addHL7Data</a><div class="description">Convert data to HL7, add HL7 to ADA XML document.</div></li><li class="right">( $docUri as xs:string ,<br>&nbsp; $stylesheetUri as xs:string) as node()<br><br></li></ul><ul class="method"><li class="left"><a href="#addLocalId">addLocalId</a><div class="description"> Adds localId when @code is provided but @value is omitted</div></li><li class="right">( $elements as element()* ,<br>&nbsp; $spec as element()*) as element()*<br><br></li></ul><ul class="method"><li class="left"><a href="#addStep">addStep</a><div class="description"> Adds a step element to adaxml/meta</div></li><li class="right">( $doc as node() ,<br>&nbsp; $step as element() ,<br>&nbsp; $trace-data as xs:boolean?)<br><br></li></ul><ul class="method"><li class="left"><a href="#applyStylesheet">applyStylesheet</a><div class="description"> Apply a stylesheet to a document.</div></li><li class="right">( $docUri as xs:string ,<br>&nbsp; $stylesheetUri as xs:string) as node()<br><br></li></ul><ul class="method"><li class="left"><a href="#getDocument">getDocument</a><div class="description"> Safe version of doc($uri), raises a 'DocNotAvailable' error when doc not available instead of  returning empty sequence.</div></li><li class="right">( $uri as xs:string) as node()<br><br></li></ul><ul class="method"><li class="left"><a href="#makeStep">makeStep</a><div class="description"> Makes a step element for adaxml/meta</div></li><li class="right">( $status as xs:string ,<br>&nbsp; $action as xs:string ,<br>&nbsp; $contents as element()?)<br><br></li></ul><ul class="method"><li class="left"><a href="#removeConceptId">removeConceptId</a><div class="description">Removes conceptId from all nodes recursively</div></li><li class="right">( $elements as element()*) as element()*<br><br></li></ul><ul class="method"><li class="left"><a href="#removeEmptyValues">removeEmptyValues</a><div class="description">Removes empty values from adaxml/data</div></li><li class="right">( $elements as element()*) as element()*<br><br></li></ul><ul class="method"><li class="left"><a href="#validateSchema">validateSchema</a><div class="description">Validate a data in an ADA XML document with a schema.</div></li><li class="right">( $docUri as xs:string ,<br>&nbsp; $schemaUri as xs:string) as node()<br><br></li></ul></div>&nbsp;<h4>Function Detail</h4><div id="methoddetail"><div id="addAttributes" class="methoddetail"><h5><a name="addAttributes"></a>addAttributes</h5><ul class="method"><li class="left"><a href="javascript:litePopUp('declare function adaxml:addAttributes($elements as element()*, $newXml as node()) as element()*{<br/&gt;    for $element in $elements<br/&gt;    let $newElement := element {name($element)} {<br/&gt;        if ($element/*) then (<br/&gt;            $element/@*,<br/&gt;            for $child in $element/* return adaxml:addAttributes($child, $newXml)<br/&gt;            )<br/&gt;        else<br/&gt;            if (not($element/@value)) then ($element/@*[not(local-name()=&amp;apos;value&amp;apos; or local-name()=&amp;apos;unit&amp;apos;)], $newXml//*[@conceptId=$element/@conceptId]/@value, $newXml//*[@conceptId=$element/@conceptId]/@unit) else ($element/@*)<br/&gt;        }<br/&gt;    return $newElement<br/&gt;};<br/&gt;')">
+         view code
+      </a></li><li class="right">( $elements as element()* ,<br>&nbsp; $newXml as node()) as element()*<br><br></li></ul><p>Adds missing @value and @unit atributes to adaxml/data</p><ul><li>Parameters:</li><ul><li>$elements - Sequence of elements to which attributes will be added (and to child nodes as well)<br></li><li>$nexXml - Elements which contains an empty XML instance with all attributes<br></li></ul><li>Return:</li><ul><li> The sequence of elements from input, with missing attributes</li></ul></ul><div class="methoddetail"><h6>External Functions that are used by this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="3">http://www.w3.org/2005/xpath-functions</td><td>local-name</td></tr><tr><td>name</td></tr><tr><td>not</td></tr></table></div><div class="methoddetail"><h6>Internal Functions used by this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="1">http://art-decor.org/ns/ada-xml</td><td><a href="#addAttributes">addAttributes</a></td></tr></table></div><div class="methoddetail"><h6>Internal Functions that invoke this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="1">http://art-decor.org/ns/ada-xml</td><td><a href="#addAttributes">addAttributes</a></td></tr></table></div></div>&nbsp;<div id="addCode" class="methoddetail"><h5><a name="addCode"></a>addCode</h5><ul class="method"><li class="left"><a href="javascript:litePopUp('declare function adaxml:addCode($elements as element()*, $spec as element()*) as element()*{<br/&gt;    for $element in $elements<br/&gt;    let $codedConcept := $spec[implementation/@shortName=local-name($element)]/valueSet/conceptList/concept[@localId=$element/@value]<br/&gt;    let $newel := <br/&gt;        element {<br/&gt;            name($element)} {$element/(@* except (@code|@codeSystem|@displayName)), <br/&gt;            if ($codedConcept) then $codedConcept/(@code|@codeSystem|@displayName) else (),<br/&gt;            for $child in $element/* return adaxml:addCode($child, $spec/*)<br/&gt;            }<br/&gt;    return $newel<br/&gt;};<br/&gt;')">
+         view code
+      </a></li><li class="right">( $elements as element()* ,<br>&nbsp; $spec as element()*) as element()*<br><br></li></ul><p> Adds code, codeSystem, displayname to coded concepts</p><ul><li>Parameters:</li><ul><li>$elements - Sequence of elements to which code etc. will be added (and to child nodes as well)<br></li><li>$spec - A single enhanced dataset for a particular transaction, usually from a specific {project}-{version}-ada-release.xml<br></li></ul><li>Return:</li><ul><li> The sequence of elements from input, with code etc.</li></ul></ul><div class="methoddetail"><h6>External Functions that are used by this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="2">http://www.w3.org/2005/xpath-functions</td><td>local-name</td></tr><tr><td>name</td></tr></table></div><div class="methoddetail"><h6>Internal Functions used by this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="1">http://art-decor.org/ns/ada-xml</td><td><a href="#addCode">addCode</a></td></tr></table></div><div class="methoddetail"><h6>Internal Functions that invoke this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="1">http://art-decor.org/ns/ada-xml</td><td><a href="#addCode">addCode</a></td></tr></table></div></div>&nbsp;<div id="addConceptId" class="methoddetail"><h5><a name="addConceptId"></a>addConceptId</h5><ul class="method"><li class="left"><a href="javascript:litePopUp('declare function adaxml:addConceptId($elements as element()*, $spec as element()*) as element()*{<br/&gt;    for $element in $elements<br/&gt;    let $conceptId := $spec[implementation/@shortName=local-name($element)]/@id<br/&gt;    let $newel := <br/&gt;        element {<br/&gt;            name($element)} {$element/(@* except @conceptId), <br/&gt;            if ($conceptId) then attribute conceptId {data($conceptId)} else (),<br/&gt;            for $child in $element/* return adaxml:addConceptId($child, $spec/*)<br/&gt;            }<br/&gt;    return $newel<br/&gt;};<br/&gt;')">
+         view code
+      </a></li><li class="right">( $elements as element()* ,<br>&nbsp; $spec as element()*) as element()*<br><br></li></ul><p>Adds conceptId to all concept nodes recursively</p><ul><li>Parameters:</li><ul><li>$elements - Sequence of elements to which conceptId will be added (and to child nodes as well)<br></li><li>$spec - A single enhanced dataset for a particular transaction, usually from a specific {project}-{version}-ada-release.xml<br></li></ul><li>Return:</li><ul><li> The sequence of elements from input, with conceptId</li></ul></ul><div class="methoddetail"><h6>External Functions that are used by this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="3">http://www.w3.org/2005/xpath-functions</td><td>data</td></tr><tr><td>local-name</td></tr><tr><td>name</td></tr></table></div><div class="methoddetail"><h6>Internal Functions used by this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="1">http://art-decor.org/ns/ada-xml</td><td><a href="#addConceptId">addConceptId</a></td></tr></table></div><div class="methoddetail"><h6>Internal Functions that invoke this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="1">http://art-decor.org/ns/ada-xml</td><td><a href="#addConceptId">addConceptId</a></td></tr></table></div></div>&nbsp;<div id="addHL7Data" class="methoddetail"><h5><a name="addHL7Data"></a>addHL7Data</h5><ul class="method"><li class="left"><a href="javascript:litePopUp('declare function adaxml:addHL7Data($docUri as xs:string, $stylesheetUri as xs:string) as node(){<br/&gt;    let $result := <br/&gt;        <br/&gt;            adaxml:applyStylesheet($docUri, $stylesheetUri)<br/&gt;        <br/&gt;        <br/&gt;    let $update := <br/&gt;        if ($result//exception) <br/&gt;        then () <br/&gt;        else (<br/&gt;            update delete doc($docUri)/adaxml/hl7data,<br/&gt;            update insert element hl7data {$result} into doc($docUri)/adaxml<br/&gt;            )<br/&gt;    let $step := <br/&gt;        if ($result//exception) <br/&gt;        then adaxml:makeStep(&amp;apos;error&amp;apos;, &amp;apos;apply-stylesheet&amp;apos;, $result)<br/&gt;        else adaxml:makeStep(&amp;apos;hl7data-added&amp;apos;, &amp;apos;apply-stylesheet&amp;apos;, ())<br/&gt;    return $step<br/&gt;};<br/&gt;')">
+         view code
+      </a></li><li class="right">( $docUri as xs:string ,<br>&nbsp; $stylesheetUri as xs:string) as node()<br><br></li></ul><p>Convert data to HL7, add HL7 to ADA XML document.</p><ul><li>Parameters:</li><ul><li>$docUri - URI string<br></li><li>$stylesheetUri - URI string<br></li></ul><li>Return:</li><ul><li> step element</li></ul></ul><div class="methoddetail"><h6>External Functions that are used by this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="1">http://www.w3.org/2005/xpath-functions</td><td>doc</td></tr></table></div><div class="methoddetail"><h6>Internal Functions used by this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="2">http://art-decor.org/ns/ada-xml</td><td><a href="#applyStylesheet">applyStylesheet</a></td></tr><tr><td><a href="#makeStep">makeStep</a></td></tr></table></div></div>&nbsp;<div id="addLocalId" class="methoddetail"><h5><a name="addLocalId"></a>addLocalId</h5><ul class="method"><li class="left"><a href="javascript:litePopUp('declare function adaxml:addLocalId($elements as element()*, $spec as element()*) as element()*{<br/&gt;    for $element in $elements<br/&gt;    let $conceptSpec := $spec[@id=$element/@conceptId]<br/&gt;    let $localId := $conceptSpec/valueSet/conceptList/concept[@code=$element/@code]/@localId<br/&gt;    let $newel := <br/&gt;        element {name($element)} <br/&gt;            {$element/@*,<br/&gt;            if ($element/@code and not($element/@value)) <br/&gt;            then <br/&gt;                if (count($localId)&amp;gt;1) then attribute error {concat(&amp;apos;More than one code found for code &amp;apos;, $element/@code, &amp;apos; ,concept &amp;apos;, $element/@conceptId)} else attribute value {$localId}<br/&gt;            else (),  <br/&gt;            for $child in $element/* return adaxml:addLocalId($child, $spec/*)<br/&gt;            }<br/&gt;    return $newel<br/&gt;};<br/&gt;')">
+         view code
+      </a></li><li class="right">( $elements as element()* ,<br>&nbsp; $spec as element()*) as element()*<br><br></li></ul><p> Adds localId when @code is provided but @value is omitted</p><ul><li>Parameters:</li><ul><li>$elements - Sequence of elements to which conceptId will be added (and to child nodes as well)<br></li><li>$spec - A single enhanced dataset for a particular transaction, usually from a specific {project}-{version}-ada-release.xml<br></li></ul><li>Return:</li><ul><li> The sequence of elements from input, with localId</li></ul></ul><div class="methoddetail"><h6>External Functions that are used by this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="4">http://www.w3.org/2005/xpath-functions</td><td>concat</td></tr><tr><td>count</td></tr><tr><td>name</td></tr><tr><td>not</td></tr></table></div><div class="methoddetail"><h6>Internal Functions used by this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="1">http://art-decor.org/ns/ada-xml</td><td><a href="#addLocalId">addLocalId</a></td></tr></table></div><div class="methoddetail"><h6>Internal Functions that invoke this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="1">http://art-decor.org/ns/ada-xml</td><td><a href="#addLocalId">addLocalId</a></td></tr></table></div></div>&nbsp;<div id="addStep" class="methoddetail"><h5><a name="addStep"></a>addStep</h5><ul class="method"><li class="left"><a href="javascript:litePopUp('declare function adaxml:addStep($doc as node(), $step as element(), $trace-data as xs:boolean?){<br/&gt;    let $step := <br/&gt;        element step {<br/&gt;            $step/@*, <br/&gt;            attribute status-before {$doc/adaxml/meta/@status}, <br/&gt;            $step/*, <br/&gt;            if ($trace-data) then element data-before {$doc/data} else ()<br/&gt;        }<br/&gt;    let $update := update insert $step into $doc/adaxml/meta<br/&gt;    let $update := update replace $doc/adaxml/meta/@status with $step/@status-after<br/&gt;    return $update<br/&gt;};<br/&gt;')">
+         view code
+      </a></li><li class="right">( $doc as node() ,<br>&nbsp; $step as element() ,<br>&nbsp; $trace-data as xs:boolean?)<br><br></li></ul><p> Adds a step element to adaxml/meta</p><ul><li>Parameters:</li><ul><li>$doc - ADA XML document<br></li><li>$step - A step element<br></li><li>$trace - Optional boolean, if true saves tracing info<br></li></ul><li>Return:</li><ul><li> true()</li></ul></ul></div>&nbsp;<div id="applyStylesheet" class="methoddetail"><h5><a name="applyStylesheet"></a>applyStylesheet</h5><ul class="method"><li class="left"><a href="javascript:litePopUp('declare function adaxml:applyStylesheet($docUri as xs:string, $stylesheetUri as xs:string) as node(){<br/&gt;    let $doc := adaxml:getDocument($docUri)<br/&gt;    let $stylesheet:= adaxml:getDocument($stylesheetUri)<br/&gt;    return transform:transform($doc, $stylesheet, ())<br/&gt;};<br/&gt;')">
+         view code
+      </a></li><li class="right">( $docUri as xs:string ,<br>&nbsp; $stylesheetUri as xs:string) as node()<br><br></li></ul><p> Apply a stylesheet to a document. Tests for existence of document and stylesheet,  will raise error.</p><ul><li>Parameters:</li><ul><li>$docUri - URI string<br></li><li>$stylesheetUri - URI string<br></li></ul><li>Return:</li><ul><li> converted data</li></ul></ul><div class="methoddetail"><h6>Internal Functions used by this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="1">http://art-decor.org/ns/ada-xml</td><td><a href="#getDocument">getDocument</a></td></tr></table></div><div class="methoddetail"><h6>Internal Functions that invoke this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="1">http://art-decor.org/ns/ada-xml</td><td><a href="#addHL7Data">addHL7Data</a></td></tr></table></div></div>&nbsp;<div id="getDocument" class="methoddetail"><h5><a name="getDocument"></a>getDocument</h5><ul class="method"><li class="left"><a href="javascript:litePopUp('declare function adaxml:getDocument($uri as xs:string) as node(){<br/&gt;    let $doc := <br/&gt;        if (doc-available($uri)) then <br/&gt;            doc($uri) <br/&gt;        else (error(QName(&amp;apos;http://art-decor.org/ns/error&amp;apos;, &amp;apos;DocNotAvailable&amp;apos;), concat(&amp;apos;Document not available: &amp;apos;, $uri))<br/&gt;    )<br/&gt;    return $doc<br/&gt;};<br/&gt;')">
+         view code
+      </a></li><li class="right">( $uri as xs:string) as node()<br><br></li></ul><p> Safe version of doc($uri), raises a 'DocNotAvailable' error when doc not available instead of  returning empty sequence. To be used when document must exist.</p><ul><li>Parameters:</li><ul><li>$uri - URI string<br></li></ul><li>Return:</li><ul><li> document node</li></ul></ul><div class="methoddetail"><h6>External Functions that are used by this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="5">http://www.w3.org/2005/xpath-functions</td><td>QName</td></tr><tr><td>concat</td></tr><tr><td>doc</td></tr><tr><td>doc-available</td></tr><tr><td>error</td></tr></table></div><div class="methoddetail"><h6>Internal Functions that invoke this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="2">http://art-decor.org/ns/ada-xml</td><td><a href="#applyStylesheet">applyStylesheet</a></td></tr><tr><td><a href="#validateSchema">validateSchema</a></td></tr></table></div></div>&nbsp;<div id="makeStep" class="methoddetail"><h5><a name="makeStep"></a>makeStep</h5><ul class="method"><li class="left"><a href="javascript:litePopUp('declare function adaxml:makeStep($status as xs:string, $action as xs:string, $contents as element()?){<br/&gt;    let $step := <br/&gt;        &amp;lt;step status-after=&#34;{$status}&#34; action=&#34;{$action}&#34; time=&#34;{fn:current-dateTime()}&#34;&amp;gt;<br/&gt;            {$contents}<br/&gt;        &amp;lt;/step&amp;gt;<br/&gt;    return $step<br/&gt;};<br/&gt;')">
+         view code
+      </a></li><li class="right">( $status as xs:string ,<br>&nbsp; $action as xs:string ,<br>&nbsp; $contents as element()?)<br><br></li></ul><p> Makes a step element for adaxml/meta</p><ul><li>Parameters:</li><ul><li>$status - New status of ADA XML document<br></li><li>$action - Text of undertaken action<br></li><li>$contents - Optional element containing content to be inserted in step element<br></li></ul><li>Return:</li><ul><li> step element </li></ul></ul><div class="methoddetail"><h6>External Functions that are used by this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="1">http://www.w3.org/2005/xpath-functions</td><td>current-dateTime</td></tr></table></div><div class="methoddetail"><h6>Internal Functions that invoke this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="2">http://art-decor.org/ns/ada-xml</td><td><a href="#addHL7Data">addHL7Data</a></td></tr><tr><td><a href="#validateSchema">validateSchema</a></td></tr></table></div></div>&nbsp;<div id="removeConceptId" class="methoddetail"><h5><a name="removeConceptId"></a>removeConceptId</h5><ul class="method"><li class="left"><a href="javascript:litePopUp('declare function adaxml:removeConceptId($elements as element()*) as element()*{<br/&gt;    for $element in $elements<br/&gt;    let $newel := <br/&gt;        element {name($element)} <br/&gt;        {$element/(@* except @conceptId), for $child in $element/* return adaxml:removeConceptId($child)}<br/&gt;    return $newel<br/&gt;};<br/&gt;')">
+         view code
+      </a></li><li class="right">( $elements as element()*) as element()*<br><br></li></ul><p>Removes conceptId from all nodes recursively</p><ul><li>Parameters:</li><ul><li>$elements - Sequence of elements to which conceptId will be added (and to child nodes as well)<br></li></ul><li>Return:</li><ul><li> The sequence of elements from input, with conceptId removed</li></ul></ul><div class="methoddetail"><h6>External Functions that are used by this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="1">http://www.w3.org/2005/xpath-functions</td><td>name</td></tr></table></div><div class="methoddetail"><h6>Internal Functions used by this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="1">http://art-decor.org/ns/ada-xml</td><td><a href="#removeConceptId">removeConceptId</a></td></tr></table></div><div class="methoddetail"><h6>Internal Functions that invoke this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="1">http://art-decor.org/ns/ada-xml</td><td><a href="#removeConceptId">removeConceptId</a></td></tr></table></div></div>&nbsp;<div id="removeEmptyValues" class="methoddetail"><h5><a name="removeEmptyValues"></a>removeEmptyValues</h5><ul class="method"><li class="left"><a href="javascript:litePopUp('declare function adaxml:removeEmptyValues($elements as element()*) as element()*{<br/&gt;    for $element in $elements<br/&gt;    let $newNode := <br/&gt;        element {name($element)} {<br/&gt;            if ($element/*) then (<br/&gt;                <br/&gt;                $element/@*,<br/&gt;                for $child in $element/*<br/&gt;                return adaxml:removeEmptyValues($child)<br/&gt;                )<br/&gt;            else <br/&gt;                <br/&gt;                if ($element/@value=&amp;apos;&amp;apos;) then ($element/@conceptId) else ($element/@*)<br/&gt;            }<br/&gt;     return $newNode<br/&gt;};<br/&gt;')">
+         view code
+      </a></li><li class="right">( $elements as element()*) as element()*<br><br></li></ul><p>Removes empty values from adaxml/data</p><ul><li>Parameters:</li><ul><li>$elements - Sequence of elements from which empty values will be removed.<br></li></ul><li>Return:</li><ul><li> The sequence of elements from input, with missing attributes</li></ul></ul><div class="methoddetail"><h6>External Functions that are used by this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="1">http://www.w3.org/2005/xpath-functions</td><td>name</td></tr></table></div><div class="methoddetail"><h6>Internal Functions used by this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="1">http://art-decor.org/ns/ada-xml</td><td><a href="#removeEmptyValues">removeEmptyValues</a></td></tr></table></div><div class="methoddetail"><h6>Internal Functions that invoke this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="1">http://art-decor.org/ns/ada-xml</td><td><a href="#removeEmptyValues">removeEmptyValues</a></td></tr></table></div></div>&nbsp;<div id="validateSchema" class="methoddetail"><h5><a name="validateSchema"></a>validateSchema</h5><ul class="method"><li class="left"><a href="javascript:litePopUp('declare function adaxml:validateSchema($docUri as xs:string, $schemaUri as xs:string) as node(){<br/&gt;    let $doc := adaxml:getDocument($docUri)<br/&gt;    let $schema := adaxml:getDocument($schemaUri)<br/&gt;    let $result := validation:jaxv-report($doc/adaxml/data/*, $schema)<br/&gt;    let $step := <br/&gt;        if ($result//exception) <br/&gt;        then adaxml:makeStep(&amp;apos;error&amp;apos;, &amp;apos;validate-schema&amp;apos;, $result)<br/&gt;        else adaxml:makeStep($result/status, &amp;apos;validate-schema&amp;apos;, $result)<br/&gt;    return $step<br/&gt;};<br/&gt;')">
+         view code
+      </a></li><li class="right">( $docUri as xs:string ,<br>&nbsp; $schemaUri as xs:string) as node()<br><br></li></ul><p>Validate a data in an ADA XML document with a schema. Tests for existence of document and schema. Sets @status to 'valid' or 'invalid'.</p><ul><li>Parameters:</li><ul><li>$docUri - URI string<br></li><li>$schemaUri - URI string<br></li></ul><li>Return:</li><ul><li> step element</li></ul></ul><div class="methoddetail"><h6>External Functions that are used by this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="1">http://exist-db.org/xquery/validation</td><td>jaxv-report</td></tr></table></div><div class="methoddetail"><h6>Internal Functions used by this Function</h6><table class="inexternal"><tr><th align="left">Module URI</th><th align="left">Function Name</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td rowspan="2">http://art-decor.org/ns/ada-xml</td><td><a href="#getDocument">getDocument</a></td></tr><tr><td><a href="#makeStep">makeStep</a></td></tr></table></div></div>&nbsp;</div>&nbsp;<div align="left"><i>Created by xqDoc-Lite version 1.0 on Tue May 13 11:58:43 CEST 2014</i></div></body></html>

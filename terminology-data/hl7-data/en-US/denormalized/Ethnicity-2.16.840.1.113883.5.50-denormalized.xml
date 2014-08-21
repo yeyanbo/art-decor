@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="39"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.50"/>
+   <Title name="Ethnicity" date="2012-08-02" version="1.000">In the United States, federal standards for classifying data on ethnicity determine the categories used by federal agencies and exert a strong influence on categorization by state and local agencies and private sector organizations. The federal standards do not conceptually define ethnicity, and they recognize the absence of an anthropological or scientific basis for ethnicity classification. Instead, the federal standards acknowledge that ethnicity is a social-political construct in which an individual's own identification with a particular ethnicity is preferred to observer identification. The standards specify two minimum ethnicity categories: Hispanic or Latino, and Not Hispanic or Latino. The standards define a Hispanic or Latino as a person of "Mexican, Puerto Rican, Cuban, South or Central America, or other Spanish culture or origin, regardless of race." The standards stipulate that ethnicity data need not be limited to the two minimum categories, but any expansion must be collapsible to those categories. In addition, the standards stipulate that an individual can be Hispanic or Latino or can be Not Hispanic or Latino, but cannot be both.</Title>
+   <Class code="rootClass">
+      <SubClass subCount="8" code="2135-2" kind="concept">
+         <Rubric id="d1e118489" kind="preferred">
+            <Label xml:lang="en-US">Hispanic or Latino</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="2186-5" kind="concept">
+         <Rubric id="d1e118514" kind="preferred">
+            <Label xml:lang="en-US">Not Hispanic or Latino</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">Ethnicity</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">In the United States, federal standards for classifying data on ethnicity determine the categories used by federal agencies and exert a strong influence on categorization by state and local agencies and private sector organizations. The federal standards do not conceptually define ethnicity, and they recognize the absence of an anthropological or scientific basis for ethnicity classification. Instead, the federal standards acknowledge that ethnicity is a social-political construct in which an individual's own identification with a particular ethnicity is preferred to observer identification. The standards specify two minimum ethnicity categories: Hispanic or Latino, and Not Hispanic or Latino. The standards define a Hispanic or Latino as a person of "Mexican, Puerto Rican, Cuban, South or Central America, or other Spanish culture or origin, regardless of race." The standards stipulate that ethnicity data need not be limited to the two minimum categories, but any expansion must be collapsible to those categories. In addition, the standards stipulate that an individual can be Hispanic or Latino or can be Not Hispanic or Latino, but cannot be both.</Label>
+      </Rubric>
+   </Class>
+   <Class code="2135-2" kind="concept">
+      <Meta name="internalId" value="15837"/>
+      <SubClass code="2137-8" subCount="9">
+         <Rubric id="d1e118528" kind="preferred">
+            <Label xml:lang="en-US">Spaniard</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2148-5" subCount="5">
+         <Rubric id="d1e118542" kind="preferred">
+            <Label xml:lang="en-US">Mexican</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2155-0" subCount="8">
+         <Rubric id="d1e118556" kind="preferred">
+            <Label xml:lang="en-US">Central American</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2165-9" subCount="11">
+         <Rubric id="d1e118570" kind="preferred">
+            <Label xml:lang="en-US">South American</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2178-2" subCount="0">
+         <Rubric id="d1e118584" kind="preferred">
+            <Label xml:lang="en-US">Latin American</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2180-8" subCount="0">
+         <Rubric id="d1e118599" kind="preferred">
+            <Label xml:lang="en-US">Puerto Rican</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2182-4" subCount="0">
+         <Rubric id="d1e118613" kind="preferred">
+            <Label xml:lang="en-US">Cuban</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2184-0" subCount="0">
+         <Rubric id="d1e118627" kind="preferred">
+            <Label xml:lang="en-US">Dominican</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e118489" kind="short">
+         <Label xml:lang="en-US">Hispanic or Latino</Label>
+      </Rubric>
+      <Rubric id="d1e118489" kind="preferred">
+         <Label xml:lang="en-US">Hispanic or Latino</Label>
+      </Rubric>
+   </Class>
+   <Class code="2186-5" kind="concept">
+      <Meta name="internalId" value="15879"/>
+      <Rubric id="d1e118501" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Note that this term remains in the table for completeness, even though within HL7, the notion of "not otherwise coded" term is deprecated.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e118514" kind="short">
+         <Label xml:lang="en-US">Not Hispanic or Latino</Label>
+      </Rubric>
+      <Rubric id="d1e118514" kind="preferred">
+         <Label xml:lang="en-US">Not Hispanic or Latino</Label>
+      </Rubric>
+   </Class>
+   <Class code="2137-8" kind="concept">
+      <Meta name="internalId" value="15838"/>
+      <SuperClass code="2135-2">
+         <Rubric id="d1e118489" kind="preferred">
+            <Label xml:lang="en-US">Hispanic or Latino</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="2138-6" subCount="0">
+         <Rubric id="d1e118641" kind="preferred">
+            <Label xml:lang="en-US">Andalusian</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2139-4" subCount="0">
+         <Rubric id="d1e118655" kind="preferred">
+            <Label xml:lang="en-US">Asturian</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2140-2" subCount="0">
+         <Rubric id="d1e118669" kind="preferred">
+            <Label xml:lang="en-US">Castillian</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2141-0" subCount="0">
+         <Rubric id="d1e118684" kind="preferred">
+            <Label xml:lang="en-US">Catalonian</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2142-8" subCount="0">
+         <Rubric id="d1e118698" kind="preferred">
+            <Label xml:lang="en-US">Belearic Islander</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2143-6" subCount="0">
+         <Rubric id="d1e118712" kind="preferred">
+            <Label xml:lang="en-US">Gallego</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2144-4" subCount="0">
+         <Rubric id="d1e118726" kind="preferred">
+            <Label xml:lang="en-US">Valencian</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2145-1" subCount="0">
+         <Rubric id="d1e118740" kind="preferred">
+            <Label xml:lang="en-US">Canarian</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2146-9" subCount="0">
+         <Rubric id="d1e118754" kind="preferred">
+            <Label xml:lang="en-US">Spanish Basque</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e118528" kind="short">
+         <Label xml:lang="en-US">Spaniard</Label>
+      </Rubric>
+      <Rubric id="d1e118528" kind="preferred">
+         <Label xml:lang="en-US">Spaniard</Label>
+      </Rubric>
+   </Class>
+   <Class code="2148-5" kind="concept">
+      <Meta name="internalId" value="15848"/>
+      <SuperClass code="2135-2">
+         <Rubric id="d1e118489" kind="preferred">
+            <Label xml:lang="en-US">Hispanic or Latino</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="2149-3" subCount="0">
+         <Rubric id="d1e118769" kind="preferred">
+            <Label xml:lang="en-US">Mexican American</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2150-1" subCount="0">
+         <Rubric id="d1e118783" kind="preferred">
+            <Label xml:lang="en-US">Mexicano</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2151-9" subCount="0">
+         <Rubric id="d1e118797" kind="preferred">
+            <Label xml:lang="en-US">Chicano</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2152-7" subCount="0">
+         <Rubric id="d1e118811" kind="preferred">
+            <Label xml:lang="en-US">La Raza</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2153-5" subCount="0">
+         <Rubric id="d1e118825" kind="preferred">
+            <Label xml:lang="en-US">Mexican American Indian</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e118542" kind="short">
+         <Label xml:lang="en-US">Mexican</Label>
+      </Rubric>
+      <Rubric id="d1e118542" kind="preferred">
+         <Label xml:lang="en-US">Mexican</Label>
+      </Rubric>
+   </Class>
+   <Class code="2155-0" kind="concept">
+      <Meta name="internalId" value="15854"/>
+      <SuperClass code="2135-2">
+         <Rubric id="d1e118489" kind="preferred">
+            <Label xml:lang="en-US">Hispanic or Latino</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="2156-8" subCount="0">
+         <Rubric id="d1e118839" kind="preferred">
+            <Label xml:lang="en-US">Costa Rican</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2157-6" subCount="0">
+         <Rubric id="d1e118854" kind="preferred">
+            <Label xml:lang="en-US">Guatemalan</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2158-4" subCount="0">
+         <Rubric id="d1e118868" kind="preferred">
+            <Label xml:lang="en-US">Honduran</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2159-2" subCount="0">
+         <Rubric id="d1e118882" kind="preferred">
+            <Label xml:lang="en-US">Nicaraguan</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2160-0" subCount="0">
+         <Rubric id="d1e118896" kind="preferred">
+            <Label xml:lang="en-US">Panamanian</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2161-8" subCount="0">
+         <Rubric id="d1e118910" kind="preferred">
+            <Label xml:lang="en-US">Salvadoran</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2162-6" subCount="0">
+         <Rubric id="d1e118924" kind="preferred">
+            <Label xml:lang="en-US">Central American Indian</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2163-4" subCount="0">
+         <Rubric id="d1e118939" kind="preferred">
+            <Label xml:lang="en-US">Canal Zone</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e118556" kind="short">
+         <Label xml:lang="en-US">Central American</Label>
+      </Rubric>
+      <Rubric id="d1e118556" kind="preferred">
+         <Label xml:lang="en-US">Central American</Label>
+      </Rubric>
+   </Class>
+   <Class code="2165-9" kind="concept">
+      <Meta name="internalId" value="15863"/>
+      <SuperClass code="2135-2">
+         <Rubric id="d1e118489" kind="preferred">
+            <Label xml:lang="en-US">Hispanic or Latino</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="2166-7" subCount="0">
+         <Rubric id="d1e118953" kind="preferred">
+            <Label xml:lang="en-US">Argentinean</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2167-5" subCount="0">
+         <Rubric id="d1e118967" kind="preferred">
+            <Label xml:lang="en-US">Bolivian</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2168-3" subCount="0">
+         <Rubric id="d1e118981" kind="preferred">
+            <Label xml:lang="en-US">Chilean</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2169-1" subCount="0">
+         <Rubric id="d1e118995" kind="preferred">
+            <Label xml:lang="en-US">Colombian</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2170-9" subCount="0">
+         <Rubric id="d1e119009" kind="preferred">
+            <Label xml:lang="en-US">Ecuadorian</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2171-7" subCount="0">
+         <Rubric id="d1e119024" kind="preferred">
+            <Label xml:lang="en-US">Paraguayan</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2172-5" subCount="0">
+         <Rubric id="d1e119038" kind="preferred">
+            <Label xml:lang="en-US">Peruvian</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2173-3" subCount="0">
+         <Rubric id="d1e119052" kind="preferred">
+            <Label xml:lang="en-US">Uruguayan</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2174-1" subCount="0">
+         <Rubric id="d1e119066" kind="preferred">
+            <Label xml:lang="en-US">Venezuelan</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2175-8" subCount="0">
+         <Rubric id="d1e119080" kind="preferred">
+            <Label xml:lang="en-US">South American Indian</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="2176-6" subCount="0">
+         <Rubric id="d1e119094" kind="preferred">
+            <Label xml:lang="en-US">Criollo</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e118570" kind="short">
+         <Label xml:lang="en-US">South American</Label>
+      </Rubric>
+      <Rubric id="d1e118570" kind="preferred">
+         <Label xml:lang="en-US">South American</Label>
+      </Rubric>
+   </Class>
+   <Class code="2178-2" kind="concept">
+      <Meta name="internalId" value="15875"/>
+      <SuperClass code="2135-2">
+         <Rubric id="d1e118489" kind="preferred">
+            <Label xml:lang="en-US">Hispanic or Latino</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118584" kind="short">
+         <Label xml:lang="en-US">Latin American</Label>
+      </Rubric>
+      <Rubric id="d1e118584" kind="preferred">
+         <Label xml:lang="en-US">Latin American</Label>
+      </Rubric>
+   </Class>
+   <Class code="2180-8" kind="concept">
+      <Meta name="internalId" value="15876"/>
+      <SuperClass code="2135-2">
+         <Rubric id="d1e118489" kind="preferred">
+            <Label xml:lang="en-US">Hispanic or Latino</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118599" kind="short">
+         <Label xml:lang="en-US">Puerto Rican</Label>
+      </Rubric>
+      <Rubric id="d1e118599" kind="preferred">
+         <Label xml:lang="en-US">Puerto Rican</Label>
+      </Rubric>
+   </Class>
+   <Class code="2182-4" kind="concept">
+      <Meta name="internalId" value="15877"/>
+      <SuperClass code="2135-2">
+         <Rubric id="d1e118489" kind="preferred">
+            <Label xml:lang="en-US">Hispanic or Latino</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118613" kind="short">
+         <Label xml:lang="en-US">Cuban</Label>
+      </Rubric>
+      <Rubric id="d1e118613" kind="preferred">
+         <Label xml:lang="en-US">Cuban</Label>
+      </Rubric>
+   </Class>
+   <Class code="2184-0" kind="concept">
+      <Meta name="internalId" value="15878"/>
+      <SuperClass code="2135-2">
+         <Rubric id="d1e118489" kind="preferred">
+            <Label xml:lang="en-US">Hispanic or Latino</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118627" kind="short">
+         <Label xml:lang="en-US">Dominican</Label>
+      </Rubric>
+      <Rubric id="d1e118627" kind="preferred">
+         <Label xml:lang="en-US">Dominican</Label>
+      </Rubric>
+   </Class>
+   <Class code="2138-6" kind="concept">
+      <Meta name="internalId" value="15839"/>
+      <SuperClass code="2137-8">
+         <Rubric id="d1e118528" kind="preferred">
+            <Label xml:lang="en-US">Spaniard</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118641" kind="short">
+         <Label xml:lang="en-US">Andalusian</Label>
+      </Rubric>
+      <Rubric id="d1e118641" kind="preferred">
+         <Label xml:lang="en-US">Andalusian</Label>
+      </Rubric>
+   </Class>
+   <Class code="2139-4" kind="concept">
+      <Meta name="internalId" value="15840"/>
+      <SuperClass code="2137-8">
+         <Rubric id="d1e118528" kind="preferred">
+            <Label xml:lang="en-US">Spaniard</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118655" kind="short">
+         <Label xml:lang="en-US">Asturian</Label>
+      </Rubric>
+      <Rubric id="d1e118655" kind="preferred">
+         <Label xml:lang="en-US">Asturian</Label>
+      </Rubric>
+   </Class>
+   <Class code="2140-2" kind="concept">
+      <Meta name="internalId" value="15841"/>
+      <SuperClass code="2137-8">
+         <Rubric id="d1e118528" kind="preferred">
+            <Label xml:lang="en-US">Spaniard</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118669" kind="short">
+         <Label xml:lang="en-US">Castillian</Label>
+      </Rubric>
+      <Rubric id="d1e118669" kind="preferred">
+         <Label xml:lang="en-US">Castillian</Label>
+      </Rubric>
+   </Class>
+   <Class code="2141-0" kind="concept">
+      <Meta name="internalId" value="15842"/>
+      <SuperClass code="2137-8">
+         <Rubric id="d1e118528" kind="preferred">
+            <Label xml:lang="en-US">Spaniard</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118684" kind="short">
+         <Label xml:lang="en-US">Catalonian</Label>
+      </Rubric>
+      <Rubric id="d1e118684" kind="preferred">
+         <Label xml:lang="en-US">Catalonian</Label>
+      </Rubric>
+   </Class>
+   <Class code="2142-8" kind="concept">
+      <Meta name="internalId" value="15843"/>
+      <SuperClass code="2137-8">
+         <Rubric id="d1e118528" kind="preferred">
+            <Label xml:lang="en-US">Spaniard</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118698" kind="short">
+         <Label xml:lang="en-US">Belearic Islander</Label>
+      </Rubric>
+      <Rubric id="d1e118698" kind="preferred">
+         <Label xml:lang="en-US">Belearic Islander</Label>
+      </Rubric>
+   </Class>
+   <Class code="2143-6" kind="concept">
+      <Meta name="internalId" value="15844"/>
+      <SuperClass code="2137-8">
+         <Rubric id="d1e118528" kind="preferred">
+            <Label xml:lang="en-US">Spaniard</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118712" kind="short">
+         <Label xml:lang="en-US">Gallego</Label>
+      </Rubric>
+      <Rubric id="d1e118712" kind="preferred">
+         <Label xml:lang="en-US">Gallego</Label>
+      </Rubric>
+   </Class>
+   <Class code="2144-4" kind="concept">
+      <Meta name="internalId" value="15845"/>
+      <SuperClass code="2137-8">
+         <Rubric id="d1e118528" kind="preferred">
+            <Label xml:lang="en-US">Spaniard</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118726" kind="short">
+         <Label xml:lang="en-US">Valencian</Label>
+      </Rubric>
+      <Rubric id="d1e118726" kind="preferred">
+         <Label xml:lang="en-US">Valencian</Label>
+      </Rubric>
+   </Class>
+   <Class code="2145-1" kind="concept">
+      <Meta name="internalId" value="15846"/>
+      <SuperClass code="2137-8">
+         <Rubric id="d1e118528" kind="preferred">
+            <Label xml:lang="en-US">Spaniard</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118740" kind="short">
+         <Label xml:lang="en-US">Canarian</Label>
+      </Rubric>
+      <Rubric id="d1e118740" kind="preferred">
+         <Label xml:lang="en-US">Canarian</Label>
+      </Rubric>
+   </Class>
+   <Class code="2146-9" kind="concept">
+      <Meta name="internalId" value="15847"/>
+      <SuperClass code="2137-8">
+         <Rubric id="d1e118528" kind="preferred">
+            <Label xml:lang="en-US">Spaniard</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118754" kind="short">
+         <Label xml:lang="en-US">Spanish Basque</Label>
+      </Rubric>
+      <Rubric id="d1e118754" kind="preferred">
+         <Label xml:lang="en-US">Spanish Basque</Label>
+      </Rubric>
+   </Class>
+   <Class code="2149-3" kind="concept">
+      <Meta name="internalId" value="15849"/>
+      <SuperClass code="2148-5">
+         <Rubric id="d1e118542" kind="preferred">
+            <Label xml:lang="en-US">Mexican</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118769" kind="short">
+         <Label xml:lang="en-US">Mexican American</Label>
+      </Rubric>
+      <Rubric id="d1e118769" kind="preferred">
+         <Label xml:lang="en-US">Mexican American</Label>
+      </Rubric>
+   </Class>
+   <Class code="2150-1" kind="concept">
+      <Meta name="internalId" value="15850"/>
+      <SuperClass code="2148-5">
+         <Rubric id="d1e118542" kind="preferred">
+            <Label xml:lang="en-US">Mexican</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118783" kind="short">
+         <Label xml:lang="en-US">Mexicano</Label>
+      </Rubric>
+      <Rubric id="d1e118783" kind="preferred">
+         <Label xml:lang="en-US">Mexicano</Label>
+      </Rubric>
+   </Class>
+   <Class code="2151-9" kind="concept">
+      <Meta name="internalId" value="15851"/>
+      <SuperClass code="2148-5">
+         <Rubric id="d1e118542" kind="preferred">
+            <Label xml:lang="en-US">Mexican</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118797" kind="short">
+         <Label xml:lang="en-US">Chicano</Label>
+      </Rubric>
+      <Rubric id="d1e118797" kind="preferred">
+         <Label xml:lang="en-US">Chicano</Label>
+      </Rubric>
+   </Class>
+   <Class code="2152-7" kind="concept">
+      <Meta name="internalId" value="15852"/>
+      <SuperClass code="2148-5">
+         <Rubric id="d1e118542" kind="preferred">
+            <Label xml:lang="en-US">Mexican</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118811" kind="short">
+         <Label xml:lang="en-US">La Raza</Label>
+      </Rubric>
+      <Rubric id="d1e118811" kind="preferred">
+         <Label xml:lang="en-US">La Raza</Label>
+      </Rubric>
+   </Class>
+   <Class code="2153-5" kind="concept">
+      <Meta name="internalId" value="15853"/>
+      <SuperClass code="2148-5">
+         <Rubric id="d1e118542" kind="preferred">
+            <Label xml:lang="en-US">Mexican</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118825" kind="short">
+         <Label xml:lang="en-US">Mexican American Indian</Label>
+      </Rubric>
+      <Rubric id="d1e118825" kind="preferred">
+         <Label xml:lang="en-US">Mexican American Indian</Label>
+      </Rubric>
+   </Class>
+   <Class code="2156-8" kind="concept">
+      <Meta name="internalId" value="15855"/>
+      <SuperClass code="2155-0">
+         <Rubric id="d1e118556" kind="preferred">
+            <Label xml:lang="en-US">Central American</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118839" kind="short">
+         <Label xml:lang="en-US">Costa Rican</Label>
+      </Rubric>
+      <Rubric id="d1e118839" kind="preferred">
+         <Label xml:lang="en-US">Costa Rican</Label>
+      </Rubric>
+   </Class>
+   <Class code="2157-6" kind="concept">
+      <Meta name="internalId" value="15856"/>
+      <SuperClass code="2155-0">
+         <Rubric id="d1e118556" kind="preferred">
+            <Label xml:lang="en-US">Central American</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118854" kind="short">
+         <Label xml:lang="en-US">Guatemalan</Label>
+      </Rubric>
+      <Rubric id="d1e118854" kind="preferred">
+         <Label xml:lang="en-US">Guatemalan</Label>
+      </Rubric>
+   </Class>
+   <Class code="2158-4" kind="concept">
+      <Meta name="internalId" value="15857"/>
+      <SuperClass code="2155-0">
+         <Rubric id="d1e118556" kind="preferred">
+            <Label xml:lang="en-US">Central American</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118868" kind="short">
+         <Label xml:lang="en-US">Honduran</Label>
+      </Rubric>
+      <Rubric id="d1e118868" kind="preferred">
+         <Label xml:lang="en-US">Honduran</Label>
+      </Rubric>
+   </Class>
+   <Class code="2159-2" kind="concept">
+      <Meta name="internalId" value="15858"/>
+      <SuperClass code="2155-0">
+         <Rubric id="d1e118556" kind="preferred">
+            <Label xml:lang="en-US">Central American</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118882" kind="short">
+         <Label xml:lang="en-US">Nicaraguan</Label>
+      </Rubric>
+      <Rubric id="d1e118882" kind="preferred">
+         <Label xml:lang="en-US">Nicaraguan</Label>
+      </Rubric>
+   </Class>
+   <Class code="2160-0" kind="concept">
+      <Meta name="internalId" value="15859"/>
+      <SuperClass code="2155-0">
+         <Rubric id="d1e118556" kind="preferred">
+            <Label xml:lang="en-US">Central American</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118896" kind="short">
+         <Label xml:lang="en-US">Panamanian</Label>
+      </Rubric>
+      <Rubric id="d1e118896" kind="preferred">
+         <Label xml:lang="en-US">Panamanian</Label>
+      </Rubric>
+   </Class>
+   <Class code="2161-8" kind="concept">
+      <Meta name="internalId" value="15860"/>
+      <SuperClass code="2155-0">
+         <Rubric id="d1e118556" kind="preferred">
+            <Label xml:lang="en-US">Central American</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118910" kind="short">
+         <Label xml:lang="en-US">Salvadoran</Label>
+      </Rubric>
+      <Rubric id="d1e118910" kind="preferred">
+         <Label xml:lang="en-US">Salvadoran</Label>
+      </Rubric>
+   </Class>
+   <Class code="2162-6" kind="concept">
+      <Meta name="internalId" value="15861"/>
+      <SuperClass code="2155-0">
+         <Rubric id="d1e118556" kind="preferred">
+            <Label xml:lang="en-US">Central American</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118924" kind="short">
+         <Label xml:lang="en-US">Central American Indian</Label>
+      </Rubric>
+      <Rubric id="d1e118924" kind="preferred">
+         <Label xml:lang="en-US">Central American Indian</Label>
+      </Rubric>
+   </Class>
+   <Class code="2163-4" kind="concept">
+      <Meta name="internalId" value="15862"/>
+      <SuperClass code="2155-0">
+         <Rubric id="d1e118556" kind="preferred">
+            <Label xml:lang="en-US">Central American</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118939" kind="short">
+         <Label xml:lang="en-US">Canal Zone</Label>
+      </Rubric>
+      <Rubric id="d1e118939" kind="preferred">
+         <Label xml:lang="en-US">Canal Zone</Label>
+      </Rubric>
+   </Class>
+   <Class code="2166-7" kind="concept">
+      <Meta name="internalId" value="15864"/>
+      <SuperClass code="2165-9">
+         <Rubric id="d1e118570" kind="preferred">
+            <Label xml:lang="en-US">South American</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118953" kind="short">
+         <Label xml:lang="en-US">Argentinean</Label>
+      </Rubric>
+      <Rubric id="d1e118953" kind="preferred">
+         <Label xml:lang="en-US">Argentinean</Label>
+      </Rubric>
+   </Class>
+   <Class code="2167-5" kind="concept">
+      <Meta name="internalId" value="15865"/>
+      <SuperClass code="2165-9">
+         <Rubric id="d1e118570" kind="preferred">
+            <Label xml:lang="en-US">South American</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118967" kind="short">
+         <Label xml:lang="en-US">Bolivian</Label>
+      </Rubric>
+      <Rubric id="d1e118967" kind="preferred">
+         <Label xml:lang="en-US">Bolivian</Label>
+      </Rubric>
+   </Class>
+   <Class code="2168-3" kind="concept">
+      <Meta name="internalId" value="15866"/>
+      <SuperClass code="2165-9">
+         <Rubric id="d1e118570" kind="preferred">
+            <Label xml:lang="en-US">South American</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118981" kind="short">
+         <Label xml:lang="en-US">Chilean</Label>
+      </Rubric>
+      <Rubric id="d1e118981" kind="preferred">
+         <Label xml:lang="en-US">Chilean</Label>
+      </Rubric>
+   </Class>
+   <Class code="2169-1" kind="concept">
+      <Meta name="internalId" value="15867"/>
+      <SuperClass code="2165-9">
+         <Rubric id="d1e118570" kind="preferred">
+            <Label xml:lang="en-US">South American</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118995" kind="short">
+         <Label xml:lang="en-US">Colombian</Label>
+      </Rubric>
+      <Rubric id="d1e118995" kind="preferred">
+         <Label xml:lang="en-US">Colombian</Label>
+      </Rubric>
+   </Class>
+   <Class code="2170-9" kind="concept">
+      <Meta name="internalId" value="15868"/>
+      <SuperClass code="2165-9">
+         <Rubric id="d1e118570" kind="preferred">
+            <Label xml:lang="en-US">South American</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e119009" kind="short">
+         <Label xml:lang="en-US">Ecuadorian</Label>
+      </Rubric>
+      <Rubric id="d1e119009" kind="preferred">
+         <Label xml:lang="en-US">Ecuadorian</Label>
+      </Rubric>
+   </Class>
+   <Class code="2171-7" kind="concept">
+      <Meta name="internalId" value="15869"/>
+      <SuperClass code="2165-9">
+         <Rubric id="d1e118570" kind="preferred">
+            <Label xml:lang="en-US">South American</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e119024" kind="short">
+         <Label xml:lang="en-US">Paraguayan</Label>
+      </Rubric>
+      <Rubric id="d1e119024" kind="preferred">
+         <Label xml:lang="en-US">Paraguayan</Label>
+      </Rubric>
+   </Class>
+   <Class code="2172-5" kind="concept">
+      <Meta name="internalId" value="15870"/>
+      <SuperClass code="2165-9">
+         <Rubric id="d1e118570" kind="preferred">
+            <Label xml:lang="en-US">South American</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e119038" kind="short">
+         <Label xml:lang="en-US">Peruvian</Label>
+      </Rubric>
+      <Rubric id="d1e119038" kind="preferred">
+         <Label xml:lang="en-US">Peruvian</Label>
+      </Rubric>
+   </Class>
+   <Class code="2173-3" kind="concept">
+      <Meta name="internalId" value="15871"/>
+      <SuperClass code="2165-9">
+         <Rubric id="d1e118570" kind="preferred">
+            <Label xml:lang="en-US">South American</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e119052" kind="short">
+         <Label xml:lang="en-US">Uruguayan</Label>
+      </Rubric>
+      <Rubric id="d1e119052" kind="preferred">
+         <Label xml:lang="en-US">Uruguayan</Label>
+      </Rubric>
+   </Class>
+   <Class code="2174-1" kind="concept">
+      <Meta name="internalId" value="15872"/>
+      <SuperClass code="2165-9">
+         <Rubric id="d1e118570" kind="preferred">
+            <Label xml:lang="en-US">South American</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e119066" kind="short">
+         <Label xml:lang="en-US">Venezuelan</Label>
+      </Rubric>
+      <Rubric id="d1e119066" kind="preferred">
+         <Label xml:lang="en-US">Venezuelan</Label>
+      </Rubric>
+   </Class>
+   <Class code="2175-8" kind="concept">
+      <Meta name="internalId" value="15873"/>
+      <SuperClass code="2165-9">
+         <Rubric id="d1e118570" kind="preferred">
+            <Label xml:lang="en-US">South American</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e119080" kind="short">
+         <Label xml:lang="en-US">South American Indian</Label>
+      </Rubric>
+      <Rubric id="d1e119080" kind="preferred">
+         <Label xml:lang="en-US">South American Indian</Label>
+      </Rubric>
+   </Class>
+   <Class code="2176-6" kind="concept">
+      <Meta name="internalId" value="15874"/>
+      <SuperClass code="2165-9">
+         <Rubric id="d1e118570" kind="preferred">
+            <Label xml:lang="en-US">South American</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e119094" kind="short">
+         <Label xml:lang="en-US">Criollo</Label>
+      </Rubric>
+      <Rubric id="d1e119094" kind="preferred">
+         <Label xml:lang="en-US">Criollo</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

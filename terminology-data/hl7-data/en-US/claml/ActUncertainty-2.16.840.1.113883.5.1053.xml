@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="69"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1053"/>
+   <Title name="ActUncertainty" date="2012-08-02" version="1.000">OpenIssue: Missing Description</Title>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="N" kind="concept">
+      <Meta name="internalId" value="16900"/>
+      <Rubric id="d1e76720" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Specifies that the act statement is made without explicit tagging of uncertainty. This is the normal statement, meaning that it is not free of errors and uncertainty may still exist.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e76733" kind="short">
+         <Label xml:lang="en-US">stated with no assertion of uncertainty</Label>
+      </Rubric>
+      <Rubric id="d1e76733" kind="preferred">
+         <Label xml:lang="en-US">stated with no assertion of uncertainty</Label>
+      </Rubric>
+   </Class>
+   <Class code="U" kind="concept">
+      <Meta name="internalId" value="16901"/>
+      <Rubric id="d1e76745" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Specifies that the originator of the Act statement does not have full confidence in the applicability (i.e., in event mood: factual truth) of the statement.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e76758" kind="short">
+         <Label xml:lang="en-US">stated with uncertainty</Label>
+      </Rubric>
+      <Rubric id="d1e76758" kind="preferred">
+         <Label xml:lang="en-US">stated with uncertainty</Label>
+      </Rubric>
+   </Class>
+</ClaML>

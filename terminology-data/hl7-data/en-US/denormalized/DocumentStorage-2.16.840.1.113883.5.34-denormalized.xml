@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="57"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.34"/>
+   <Title name="DocumentStorage" date="2012-08-02" version="1.000">Identifies the storage status of a document.</Title>
+   <Class code="rootClass">
+      <SubClass subCount="1" code="AC" kind="concept">
+         <Rubric id="d1e106634" kind="preferred">
+            <Label xml:lang="en-US">active</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="AR" kind="concept">
+         <Rubric id="d1e106659" kind="preferred">
+            <Label xml:lang="en-US">archived (not active)</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="PU" kind="concept">
+         <Rubric id="d1e106683" kind="preferred">
+            <Label xml:lang="en-US">purged</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">DocumentStorage</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">Identifies the storage status of a document.</Label>
+      </Rubric>
+   </Class>
+   <Class code="AC" kind="concept">
+      <Meta name="internalId" value="10584"/>
+      <SubClass code="AA" subCount="0">
+         <Rubric id="d1e106712" kind="preferred">
+            <Label xml:lang="en-US">active and archived</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e106621" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A storage status in which a document is available on-line.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e106634" kind="short">
+         <Label xml:lang="en-US">active</Label>
+      </Rubric>
+      <Rubric id="d1e106634" kind="preferred">
+         <Label xml:lang="en-US">active</Label>
+      </Rubric>
+   </Class>
+   <Class code="AR" kind="concept">
+      <Meta name="internalId" value="10586"/>
+      <Rubric id="d1e106646" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A storage status in which a document has been stored off-line for long-term access.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e106659" kind="short">
+         <Label xml:lang="en-US">archived (not active)</Label>
+      </Rubric>
+      <Rubric id="d1e106659" kind="preferred">
+         <Label xml:lang="en-US">archived (not active)</Label>
+      </Rubric>
+   </Class>
+   <Class code="PU" kind="concept">
+      <Meta name="internalId" value="10587"/>
+      <Rubric id="d1e106670" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A storage status in which a document is no longer available in this system.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e106683" kind="short">
+         <Label xml:lang="en-US">purged</Label>
+      </Rubric>
+      <Rubric id="d1e106683" kind="preferred">
+         <Label xml:lang="en-US">purged</Label>
+      </Rubric>
+   </Class>
+   <Class code="AA" kind="concept">
+      <Meta name="internalId" value="10585"/>
+      <SuperClass code="AC">
+         <Rubric id="d1e106634" kind="preferred">
+            <Label xml:lang="en-US">active</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e106694" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A storage status in which a document is available on-line and is also stored off-line for long-term access.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e106712" kind="short">
+         <Label xml:lang="en-US">active and archived</Label>
+      </Rubric>
+      <Rubric id="d1e106712" kind="preferred">
+         <Label xml:lang="en-US">active and archived</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

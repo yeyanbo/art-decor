@@ -1,0 +1,685 @@
+<!--This document's element #signedStructuredBody1 has been signed by:
+ CN=SerAPI Document Signer,O=University of Kuopio,OU=IT Centre,L=Kuopio,C=FI
+
+The certificate used in signing process was issued by:
+ CN=SerAPI Document Signer CA,O=University of Kuopio,OU=IT Centre,L=Kuopio,C=FI
+
+The Signature element contains the signature and the certificate used in signing without the public key.
+The signature can be verified using a service found at http://kettinki.uku.fi/CDASignature
+
+Marko Sormunen, HIS research, SerAPI project, University of Kuopio
+Apr 30, 2007
+
+-->
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDA_fi.xsd">
+	<!-- 
+********************************************************
+HL7 CDA R2 header tiedot
+********************************************************
+-->
+	<!-- 1. Asiakirjan aluekoodi pakollinen -->
+	<realmCode code="FI"></realmCode>
+	<!-- 2. Asiakirjan tyyppi pakollinen -->
+	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"></typeId>
+	<!-- 3. Asiakirjan määrittelyt  (esim. HL7 CDA R2 header ja kertomus) -->
+	<templateId extension="2007.2" root="1.2.246.777.11"></templateId>
+	<templateId extension="2007.3" root="1.2.246.777.11"></templateId>
+	<!-- 4. Asiakirjan OID-tunnus pakollinen -->
+	<id extension="2004.1234" root="1.2.246.10.1234567.11"></id>
+	<!-- 5. Asiakirjan rekisteritunnus pakollinen -->
+	<code code="1" codeSystem="1.2.246.777.5.99901.2006" codeSystemName="Rekisteri" displayName="Julkinen terveydenhuolto"></code>
+	<!-- 6. Asiakirjan otsikko -->
+	<title>Open CDA 2007 HEN 2007-01-18</title>
+	<!-- 7. Asiakirjan luontiaika pakollinen-->
+	<effectiveTime value="20070118"></effectiveTime>
+	<!-- 8. Asiakirjan luottamuksellisuus -->
+	<confidentialityCode code="5" codeSystem="1.2.246.777.5.99902.2006" codeSystemName="Luottamuksellisuus" displayName="Salassapidettävä"></confidentialityCode>
+	<!-- 9. Asiakirjan kieli pakollinen-->
+	<languageCode code="fi"></languageCode>
+	<!-- 10. Alkuperäisen asiakirjan OID-tunnus pakollinen-->
+	<setId extension="2004.1234" root="1.2.246.10.1234567.11"></setId>
+	<!-- 11. Asiakirjan versio -->
+	<versionNumber value="1"></versionNumber>
+	<!-- 12. Asiakirjan kopionti  pakollinen, jos on kopio alkuperäisestä -->
+	<copyTime value="20060607110030"></copyTime>
+	<!-- 13. Potilaan tiedot pakollinen -->
+	<recordTarget>
+		<!-- Potilaan tiedot -->
+		<patientRole>
+			<!-- Potilaan henkilötunnus -->
+			<id extension="010144-123X" root="1.2.246.21"></id>
+			<patient>
+				<!-- Potilaan nimi -->
+				<name>
+					<given qualifier="CL">Matti</given>
+					<family>Meikäläinen</family>
+				</name>
+				<!-- Potilaan sukupuoli -->
+				<administrativeGenderCode code="1" codeSystem="1.2.246.777.5.1"></administrativeGenderCode>
+				<!-- Potilaan syntymäaika -->
+				<birthTime value="19440101"></birthTime>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<!-- 14. Asiakirjan laatija -->
+	<author>
+		<!-- Hoidon aloitusaika  -->
+		<time value="20040411"></time>
+		<assignedAuthor>
+			<!--  Terveydenhuollon ammattilaisen tunniste -->
+			<id extension="SV123456" root="1.2.246.537.25.1"></id>
+			<!--  Ammattilaisen erikoisala -->
+			<code code="10" codeSystem="1.2.246.537.6.24.2003" codeSystemName="'Erikoisala" displayName="SIS">
+				<!--  Terveydenhuollon ammattinimike -->
+				<translation>
+					<qualifier>
+						<name code="1.1" codeSystem="1.2.246.537.6.12.999.2003" codeSystemName="Ydintietojen kenttäkoodisto" displayName="Ammattiluokitus"></name>
+						<value code="22212" codeSystem="1.2.246.537.6.74.2001" codeSystemName="Ammattiluokitus 2001" displayName="Erikoislääkärit ja osastonlääkärit "></value>
+					</qualifier>
+				</translation>
+			</code>
+			<!--  Terveydenhuollon ammattilaisen henkkilötiedot -->
+			<assignedPerson>
+				<name>
+					<given qualifier="CL">Petri</given>
+					<family>Puukko</family>
+					<suffix>ylilääkäri</suffix>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+				<!-- Asiakirjan tuottava toimipaikka -->
+				<id extension="102" root="1.2.246.10.1234567.10"></id>
+				<name>KYS os 12</name>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<!-- 15. dataEnterer ei käytössä Suomessa  -->
+	<!-- 16. informant ei käytössä Suomessa  -->
+	<!-- 17. custodian: Asiakirjan rekisterinpitäjä -->
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<!-- Rekisterinpitäjä/toimintayksikkö -->
+				<id extension="0" root="1.2.246.10.1234567.19"></id>
+				<name>P-S sairaanhoitopiiri</name>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<!-- 18. informationRecipient ei käytössä Suomessa -->
+	<!-- 19. legalAuthenticator  ei käytössä Suomessa  -->
+	<!-- 20. authenticator Asiakirjan  aitouden varmistaja ei käytössä Suomessa  -->
+	<!-- 21. participant Hoitoon osallistujat ei käytössä Suomessa -->
+	<!-- 22. inFufillmentOf ei käytössä Suomessa  -->
+	<!-- 23. documentationOf - Palvelut -->
+	<documentationOf>
+		<serviceEvent>
+			<code code="146" codeSystem="1.2.246.537.6.0.2003" codeSystemName="Palveluluokitus 2005" displayName="Sisätautien erissairaanhoidon osastohoito"></code>
+			<!-- Palvelun antoaika-->
+			<effectiveTime>
+				<low value="20040411"></low>
+				<high value="20040507"></high>
+			</effectiveTime>
+		</serviceEvent>
+	</documentationOf>
+	<!-- 24. relatedDocument  ei käytössä Suomessa  -->
+	<!-- 25. authorization ei käytössä Suomessa  -->
+	<!-- 26. componentOf Hoitoaika- ja hoitopaikkatiedot pakollinen -->
+	<componentOf>
+		<encompassingEncounter>
+			<effectiveTime>
+				<!-- Hoitojakson hoitoaika -->
+				<low value="20040411"></low>
+				<high value="20040507"></high>
+			</effectiveTime>
+			<encounterParticipant typeCode="CON">
+				<!-- Toimipaikan hoitoaika -->
+				<time>
+					<low value="20040411"></low>
+					<high value="20040422"></high>
+				</time>
+				<assignedEntity>
+					<id></id>
+					<representedOrganization>
+						<!-- Toimipaikan OID-tunnus -->
+						<id extension="102" root="1.2.246.10.1234567.10"></id>
+						<name>KYS, os 12</name>
+					</representedOrganization>
+				</assignedEntity>
+			</encounterParticipant>
+			<encounterParticipant typeCode="CON">
+				<time>
+					<!-- Toimipaikan hoitoaika -->
+					<low value="20040422"></low>
+					<high value="20040507"></high>
+				</time>
+				<assignedEntity>
+					<id></id>
+					<representedOrganization>
+						<!-- Toimipaikan OID-tunnus -->
+						<id extension="222" root="1.2.246.10.1234567.10"></id>
+						<name>KYS, os 25</name>
+					</representedOrganization>
+				</assignedEntity>
+			</encounterParticipant>
+		</encompassingEncounter>
+	</componentOf>
+	<!--
+********************************************************
+HL7 CDA R2 Local Header
+********************************************************
+********************************************************
+  CDA Body
+********************************************************
+-->
+	<hl7fi:localHeader xmlns:hl7fi="urn:hl7finland"><hl7fi:signature><ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+<ds:SignedInfo>
+<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></ds:CanonicalizationMethod>
+<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></ds:SignatureMethod>
+<ds:Reference URI="#signedStructuredBody1">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#WithComments"></ds:Transform>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></ds:DigestMethod>
+<ds:DigestValue>n4oxFBnYnNFGwU0cHp7McmUXDx8=</ds:DigestValue>
+</ds:Reference>
+</ds:SignedInfo>
+<ds:SignatureValue>
+E8FWVtwljPhmSV+hsJWiqfEWmmiucyJcQDR5kIKVUX1b+9sIfA3LEjcPgKRh5gb1gS6xJCI32iLY
+rBmHOQoVPg==
+</ds:SignatureValue>
+<ds:KeyInfo>
+<ds:X509Data>
+<ds:X509Certificate>
+MIID1DCCArygAwIBAgIBZTANBgkqhkiG9w0BAQUFADB1MSIwIAYDVQQDExlTZXJBUEkgRG9jdW1l
+bnQgU2lnbmVyIENBMR0wGwYDVQQKExRVbml2ZXJzaXR5IG9mIEt1b3BpbzESMBAGA1UECxMJSVQg
+Q2VudHJlMQ8wDQYDVQQHEwZLdW9waW8xCzAJBgNVBAYTAkZJMB4XDTA1MDUyNjA5MjQwOFoXDTA2
+MDUyNjA5MjQwOFowcjEfMB0GA1UEAxMWU2VyQVBJIERvY3VtZW50IFNpZ25lcjEdMBsGA1UEChMU
+VW5pdmVyc2l0eSBvZiBLdW9waW8xEjAQBgNVBAsTCUlUIENlbnRyZTEPMA0GA1UEBxMGS3VvcGlv
+MQswCQYDVQQGEwJGSTBcMA0GCSqGSIb3DQEBAQUAA0sAMEgCQQCLezjWI2RP4M5GzGxpLXeoAnjb
+fLgHVK1Yf2nfo4Hzk8p4cGqMyRY+OXtDyL9oRSUCJ2gG0CVvaZc69N9yyUQxAgMBAAGjggE4MIIB
+NDAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBSnGU2RPwoEtfw5dLvRVugfLi6BhTAfBgNVHSMEGDAW
+gBRrOJufdsK6YBpzwHYY6TBnjuPLdzAOBgNVHQ8BAf8EBAMCBsAwEwYDVR0lBAwwCgYIKwYBBQUH
+AwgwXgYDVR0gBFcwVTBTBgRVHSAAMEswSQYIKwYBBQUHAgEWPWh0dHA6Ly9rZXR0aW5raS51a3Uu
+ZmkvU2VyQVBJUEtJL2RvY3VtZW50SXNzdWVyU3RhdGVtZW50Lmh0bWwwXwYDVR0fBFgwVjBUoCmg
+J4IlaHR0cHM6Ly9rZXR0aW5raS51a3UuZmkvU2VyQVBJUEtJL0NSTIECBWCiI4IhaHR0cDovL3d3
+dy51a3UuZmkvdGlrZS9oaXMvc2VyYXBpMA0GCSqGSIb3DQEBBQUAA4IBAQCRBzJ/aGORky7Q32Ez
+tQdAVRkr5TAKe+qkVp19INiAv556zIAcUkp6eqrnKkA/qBKxsimJIe9CQDBhzVVODOHXRaRJsYgZ
+lS6uvU/a3vmfZMEpP5EfmY0LwfmkODxAcXolkYJLR1Ux145577P17DZ39MLUVVOpc1iW/9pT4DSv
+cjCJiCrJ0mehizpNP2cYrTJaRT+bLZzuTqYeYkFzm1bf9Hcbwz0OzvwB67PMFlTgqemE7hxgVP1/
+ibOLXPcvWW+XSTPhcnEeLH/voOK7pnrKJ68RtDI29pXwvlbqetCqHaOfIOuwjOvm3zq6WEP7p3fe
+jhV1jO2GECKAgiQZID0h
+</ds:X509Certificate>
+</ds:X509Data>
+</ds:KeyInfo>
+</ds:Signature></hl7fi:signature></hl7fi:localHeader><component>
+		<structuredBody ID="signedStructuredBody1">
+			<component>
+				<section ID="OID1.2.246.537.10.1234567.11.2006.1234.1">
+					<id extension="2004.1234" root="1.2.246.537.10.1234567.11"></id>
+					<code code="3" codeSystem="1.2.246.537.6.12.2002" codeSystemName="Lomake"></code>
+					<title>HEN</title>
+					<component>
+						<section ID="OID1.2.246.537.10.1234567.11.2004.1234.2">
+							<id extension="1" root="1.2.246.537.10.1234567.11.2004.1234"></id>
+							<code code="1" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Päivitystiedot"></code>
+							<title>Päivitystiedot</title>
+							<component>
+								<section>
+									<code code="2" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Henkilötietojen käyttötarkoitus"></code>
+									<title>Henkilötietojen käyttötarkoitus</title>
+									<text>terveydenhuolto</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="2" codeSystem="1.2.246.537.6.12.2006.31.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Henkilötietojen käyttötarkoitus"></code>
+											<effectiveTime value="20031121"></effectiveTime>
+											<value code="1" codeSystem="1.2.246.537.5.40051.2003" codeSystemName="Henkilötietojen käyttötarkoitus" displayName="terveydenhuolto" xsi:type="CV">
+											</value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="3" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="ht"></code>
+									<title>Henkilötiedot on päivitetty</title>
+									<text>21.11.2003</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="3" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Henkilötietojen käyttötarkoitus"></code>
+											<effectiveTime value="20031121"></effectiveTime>
+											<value value="20031121" xsi:type="TS"></value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="4" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Henkilötietojen päivittäjä"></code>
+									<title>Henkilötietojen päivittäjä</title>
+									<text>Matti Meikäläinen</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="4" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Henkilötietojen päivittäjä"></code>
+											<value xsi:type="ED">"Matti Meikäläinen"</value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+						</section>
+					</component>
+					<component>
+						<section>
+							<code code="5" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="perustiedot"></code>
+							<title>Perustiedot</title>
+							<component>
+								<section>
+									<code code="6" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Henkilötunnus"></code>
+									<title>Potilaan henkilötunnus</title>
+									<text>010144-000X</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="6" codeSystem="1.2.246.537.6.12.2006.3" codeSystemName="Lomake Hen" displayName="Henkilötunnus"></code>
+											<effectiveTime value="20031121"></effectiveTime>
+											<value code="010144-000X" codeSystem="1.2.246.537.21.1" xsi:type="CV"></value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="9" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="potilaan nimi"></code>
+									<title>Potilaan etunimet ja sukunimi</title>
+									<text>Matti Meikäläinen</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="9" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="potilaan nimi"></code>
+											<effectiveTime value="20031121"></effectiveTime>
+											<value xsi:type="PN">
+												<given>Matti</given>
+												<given>Erkinpoika</given>
+												<family>Meikäläinen</family>
+											</value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="10" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Entinen sukunimi, etunimet"></code>
+									<title>Potilaan entiset nimet</title>
+									<text>Matti Tavallinen</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="10" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Entinen sukunimi, etunimet"></code>
+											<effectiveTime value="20031121"></effectiveTime>
+											<value xsi:type="PN">
+												<given>Matti</given>
+												<family>Tavallinen</family>
+											</value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="11" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Syntymäaika"></code>
+									<title>Potilaan syntymäaika</title>
+									<text>1.1.1944</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="11" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Syntymäaika"></code>
+											<effectiveTime value="20031121"></effectiveTime>
+											<value value="19440101" xsi:type="TS"></value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="12" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="potilaan sukupuoli"></code>
+									<title>Potilaan sukupuoli</title>
+									<text>mies</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="12" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Sukupuoli"></code>
+											<effectiveTime value="20031121"></effectiveTime>
+											<value code="1" codeSystem="1.2.246.537.6.1.2003" codeSystemName="sukupuoli iso 5218" displayName="mies" xsi:type="CV"></value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="13" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Osoite"></code>
+									<title>Potilaan osoite</title>
+									<text>Kauppakatu 6, 00568 Helsinki</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="13" codeSystem="1.2.246.537.6.12.2002.3"></code>
+											<effectiveTime value="20031121"></effectiveTime>
+											<value use="HP" xsi:type="AD">
+												<!--validTime>
+													<low>20030101</low>
+													<high>20040101</high>
+												</validTime-->
+												<streetName>Kauppakatu</streetName>
+												<houseNumber>6</houseNumber>
+												<city>Helsinki</city>
+												<postalCode>00568</postalCode>
+											</value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="14" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Potilaan puhelin"></code>
+									<title>Potilaan puhelin</title>
+									<text>puh:09-12345678 mailto:matti.meikalainen@terveystieto.fi</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="14" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Potilaan puhelin"></code>
+											<effectiveTime value="20031121"></effectiveTime>
+											<value use="HP" value="tel:+358(09)123-45678" xsi:type="TEL"></value>
+										</observation>
+									</entry>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="14" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Potilaan puhelin"></code>
+											<effectiveTime value="20031121"></effectiveTime>
+											<value use="WP" value="mailto:matti.meikalainen@terveystieto.fi" xsi:type="TEL"></value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="15" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Äidinkieli"></code>
+									<title>Potilaan äidinkieli</title>
+									<text>suomi</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="15" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Äidinkieli"></code>
+											<value code="fin" codeSystem="0.0.0.0" codeSystemName="SFS-ISO-639-2 kielikoodit" displayName="suomi" xsi:type="CV"></value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="16" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="asiointikieli"></code>
+									<title>Potilaan asiointikieli</title>
+									<text>suomi</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="1" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Asiointikieli"></code>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="17" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Tulkattava kieli"></code>
+									<title>Potilaan tulkkaus</title>
+									<text>viittoma suomi</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="17" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Tulkattavakieli"></code>
+											<value code="sgn-FI" codeSystem="0.0.0.0" codeSystemName="RFC 3066/RFC1766 provisional name" displayName="viittomakieli suomi" xsi:type="CV"></value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="999" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName=" XX kenttää ei excelissä XX "></code>
+									<title>Potilaan perhesuhteet</title>
+									<text>naimisissa</text>
+								</section>
+							</component>
+						</section>
+					</component>
+					<component>
+						<section>
+							<code code="20" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="yhteystiedot"></code>
+							<title>Työnantajatiedot (täytetään vain työtapaturmissa)</title>
+							<component>
+								<section>
+									<code code="21" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Työnantajan nimi"></code>
+									<title>Työnantajan nimi</title>
+									<text>Terveystieto Oy</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="21" codeSystem="1.2.246.537.6.12.2002.3"></code>
+											<value xsi:type="ED">Terveystieto Oy</value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="22" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Työnantajan osoite"></code>
+									<title>Työnantajan osoite</title>
+									<text>Tietokatu 6, 00345 Helsinki</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="22" codeSystem="1.2.246.537.6.12.2002.3"></code>
+											<effectiveTime value="20031121"></effectiveTime>
+											<value use="WP" xsi:type="AD">
+												<streetName>Tietokatu</streetName>
+												<houseNumber>6</houseNumber>
+												<city>Helsinki</city>
+												<postalCode>00345</postalCode>
+											</value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="23" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Työnantajan puhelin"></code>
+									<title>Työnantajan puhelin</title>
+									<text>09-11223344</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="23" codeSystem="1.2.246.537.6.12.2006.3"></code>
+											<value use="HP" value="tel:+358(09)112-223344" xsi:type="TEL"></value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+						</section>
+					</component>
+					<component>
+						<section>
+							<code code="40" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="yhteystiedot"></code>
+							<title>Yhteystiedot (toistuva)</title>
+							<component>
+								<section>
+									<code code="41" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="ht"></code>
+									<title>Yhteystiedon laji</title>
+									<text>Lähiomainen</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="41" codeSystem="1.2.246.537.6.12.2002.3"></code>
+											<value code="2" codeSystem="1.2.246.537.5.40052" xsi:type="CV"></value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="42" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Yhteystiedon ensisijaisuus "></code>
+									<title>Yhteystiedon ensisijaisuus</title>
+									<text>Ensisijainen</text>
+									<!-- tähän kuuluisi entry, mutta koodisto puuttuu, HL7 kv. vocabulary on olemassa -->
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="43" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="yhteyshenkilön sukulaisuus"></code>
+									<title>Sukulaisuus</title>
+									<text>aviopuoliso</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="43" codeSystem="1.2.246.537.6.12.2002.3"></code>
+											<value code="PA" codeSystem="1.2.246.537.5.40054.2003" displayName="puoliso" xsi:type="CV"></value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="44" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="vapaa teksti"></code>
+									<title>Huomautus</title>
+									<text>voidaan tavoitella myös xxxxxxx</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="44" codeSystem="1.2.246.537.6.12.2006.3"></code>
+											<value xsi:type="ED">voidaan tavoitella myös xxxxxxx voidaan tavoitella myös xxxxxxx</value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="45" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="yhteyshenkilön suku, etunimet"></code>
+									<title>Yhteyshenkilön nimi</title>
+									<text>Maija Meikäläinen</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="45" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="yhteyshenkilön suku, etunimet"></code>
+											<value xsi:type="PN">
+												<given>Maija</given>
+												<family>Tavallinen</family>
+											</value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="46" codeSystem="1.2.246.537.6.12.2006.3" codeSystemName="Lomake HEN" displayName="yhteyshenkilön osoite (laji ja voimassaolo)"></code>
+									<title>Yhteyshenkilön osoite</title>
+									<text>Kauppakatu 6, 00568 Helsinki</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="46" codeSystem="1.2.246.537.6.12.2002.3"></code>
+											<effectiveTime value="20031121"></effectiveTime>
+											<value use="HP" xsi:type="AD">
+												<streetName>Kauppakatu</streetName>
+												<houseNumber>6</houseNumber>
+												<city>Helsinki</city>
+												<postalCode>00568</postalCode>
+											</value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="47" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="ht"></code>
+									<title>Yhteyshenkilön puhelin</title>
+									<text>040-112445</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="47" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Yhteyshenkilön puhelin"></code>
+											<value use="HP" value="tel:+358(40)112-445" xsi:type="TEL"></value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+						</section>
+					</component>
+					<component>
+						<section>
+							<code code="27" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Laskutustiedot"></code>
+							<title>Laskutustiedot</title>
+							<component>
+								<section>
+									<code code="28" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Kansalaisuus"></code>
+									<title>Potilaan kansalaisuus</title>
+									<text>suomalainen</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="28" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="Kansalaisuus"></code>
+											<effectiveTime value="20031121"></effectiveTime>
+											<value code="FIN" codeSystem="1.2.246.537.6.1.2003" codeSystemName="SFS-ISO 3166" displayName="suomalainen" xsi:type="CV"></value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="29" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="xxx"></code>
+									<title>Potilaan syntymäkansalaisuus</title>
+									<text>suomalainen</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="29" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="potilaan nimi"></code>
+											<effectiveTime value="20031121"></effectiveTime>
+											<value code="FIN" codeSystem="1.2.246.537.6.1.2003" codeSystemName="SFS-ISO 3166" displayName="suomalainen" xsi:type="CV"></value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="32" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="ammatti"></code>
+									<title>Potilaan ammatti</title>
+									<text>atk-suunnittelija</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="32" codeSystem="1.2.246.537.6.12.2006.3" codeSystemName="Lomake HEN" displayName="potilaan ammatti"></code>
+											<effectiveTime value="20031121"></effectiveTime>
+											<value xsi:type="ED">atk-suunnittelija</value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="34" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN"></code>
+									<title>Potilaan kotikunta</title>
+									<text>Helsinki</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="34" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="kotikunta"></code>
+											<effectiveTime value="20031121"></effectiveTime>
+											<value code="091" codeSystem="1.2.246.537.6.21.2003.1" codeSystemName="kunta" displayName="Helsinki" xsi:type="CV"></value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="37" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN"></code>
+									<title>Rekisteriviranomainen</title>
+									<text>Helsinki</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code code="37" codeSystem="1.2.246.537.6.12.2002.3" codeSystemName="Lomake HEN" displayName="rekisteriviranomainen"></code>
+											<effectiveTime value="20031121"></effectiveTime>
+											<value xsi:type="ED">Helsinki</value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+						</section>
+					</component>
+					<!-- 
+********************************************************
+loppu pääotsikko
+********************************************************
+-->
+				</section>
+			</component>
+			<!-- 
+********************************************************
+loppu lomake
+********************************************************
+-->
+		</structuredBody>
+	</component>
+</ClinicalDocument>

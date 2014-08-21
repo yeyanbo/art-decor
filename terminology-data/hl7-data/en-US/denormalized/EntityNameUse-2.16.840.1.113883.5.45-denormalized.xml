@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="78"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.45"/>
+   <Title name="EntityNameUse" date="2012-08-02" version="1.000"/>
+   <Class code="rootClass">
+      <SubClass subCount="3" code="_NameRepresentationUse" kind="abstract">
+         <Rubric id="d1e116590" kind="preferred">
+            <Label xml:lang="en-US">NameRepresentationUse</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="ASGN" kind="concept">
+         <Rubric id="d1e116614" kind="preferred">
+            <Label xml:lang="en-US">assigned</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="C" kind="concept">
+         <Rubric id="d1e116638" kind="preferred">
+            <Label xml:lang="en-US">License</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="I" kind="concept">
+         <Rubric id="d1e116662" kind="preferred">
+            <Label xml:lang="en-US">Indigenous/Tribal</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="1" code="L" kind="concept">
+         <Rubric id="d1e116686" kind="preferred">
+            <Label xml:lang="en-US">Legal</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="1" code="P" kind="concept">
+         <Rubric id="d1e116710" kind="preferred">
+            <Label xml:lang="en-US">pseudonym</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="R" kind="concept">
+         <Rubric id="d1e116735" kind="preferred">
+            <Label xml:lang="en-US">Religious</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="2" code="SRCH" kind="concept">
+         <Rubric id="d1e116759" kind="preferred">
+            <Label xml:lang="en-US">search</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">EntityNameUse</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl"/>
+      </Rubric>
+   </Class>
+   <Class code="_NameRepresentationUse" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21077"/>
+      <SubClass code="ABC" subCount="0">
+         <Rubric id="d1e116854" kind="preferred">
+            <Label xml:lang="en-US">Alphabetic</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="IDE" subCount="0">
+         <Rubric id="d1e116884" kind="preferred">
+            <Label xml:lang="en-US">Ideographic</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SYL" subCount="0">
+         <Rubric id="d1e116913" kind="preferred">
+            <Label xml:lang="en-US">Syllabic</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e116577" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Identifies the different representations of a name. The representation may affect how the name is used. (E.g. use of Ideographic for formal communications.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e116590" kind="short">
+         <Label xml:lang="en-US">NameRepresentationUse</Label>
+      </Rubric>
+      <Rubric id="d1e116590" kind="preferred">
+         <Label xml:lang="en-US">NameRepresentationUse</Label>
+      </Rubric>
+   </Class>
+   <Class code="ASGN" kind="concept">
+      <Meta name="internalId" value="21358"/>
+      <Rubric id="d1e116601" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A name assigned to a person. Reasons some organizations assign alternate names may include not knowing the person's name, or to maintain anonymity. Some, but not necessarily all, of the name types that people call "alias" may fit into this category.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e116614" kind="short">
+         <Label xml:lang="en-US">assigned</Label>
+      </Rubric>
+      <Rubric id="d1e116614" kind="preferred">
+         <Label xml:lang="en-US">assigned</Label>
+      </Rubric>
+   </Class>
+   <Class code="C" kind="concept">
+      <Meta name="internalId" value="10177"/>
+      <Rubric id="d1e116625" kind="definition">
+         <Label xml:lang="en-US">
+            <p>As recorded on a license, record, certificate, etc. (only if different from legal name)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e116638" kind="short">
+         <Label xml:lang="en-US">License</Label>
+      </Rubric>
+      <Rubric id="d1e116638" kind="preferred">
+         <Label xml:lang="en-US">License</Label>
+      </Rubric>
+   </Class>
+   <Class code="I" kind="concept">
+      <Meta name="internalId" value="10179"/>
+      <Rubric id="d1e116649" kind="definition">
+         <Label xml:lang="en-US">
+            <p>e.g. Chief Red Cloud</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e116662" kind="short">
+         <Label xml:lang="en-US">Indigenous/Tribal</Label>
+      </Rubric>
+      <Rubric id="d1e116662" kind="preferred">
+         <Label xml:lang="en-US">Indigenous/Tribal</Label>
+      </Rubric>
+   </Class>
+   <Class code="L" kind="concept">
+      <Meta name="internalId" value="10176"/>
+      <SubClass code="OR" subCount="0">
+         <Rubric id="d1e116945" kind="preferred">
+            <Label xml:lang="en-US">official registry</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e116673" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Known as/conventional/the one you use</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e116686" kind="short">
+         <Label xml:lang="en-US">Legal</Label>
+      </Rubric>
+      <Rubric id="d1e116686" kind="preferred">
+         <Label xml:lang="en-US">Legal</Label>
+      </Rubric>
+   </Class>
+   <Class code="P" kind="concept">
+      <Meta name="internalId" value="21321"/>
+      <SubClass code="A" subCount="0">
+         <Rubric id="d1e116974" kind="preferred">
+            <Label xml:lang="en-US">Artist/Stage</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e116697" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A self asserted name that the person is using or has used.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e116710" kind="short">
+         <Label xml:lang="en-US">pseudonym</Label>
+      </Rubric>
+      <Rubric id="d1e116710" kind="preferred">
+         <Label xml:lang="en-US">pseudonym</Label>
+      </Rubric>
+   </Class>
+   <Class code="R" kind="concept">
+      <Meta name="internalId" value="10180"/>
+      <Rubric id="d1e116722" kind="definition">
+         <Label xml:lang="en-US">
+            <p>e.g. Sister Mary Francis, Brother John</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e116735" kind="short">
+         <Label xml:lang="en-US">Religious</Label>
+      </Rubric>
+      <Rubric id="d1e116735" kind="preferred">
+         <Label xml:lang="en-US">Religious</Label>
+      </Rubric>
+   </Class>
+   <Class code="SRCH" kind="concept">
+      <Meta name="internalId" value="21363"/>
+      <SubClass code="PHON" subCount="0">
+         <Rubric id="d1e117009" kind="preferred">
+            <Label xml:lang="en-US">phonetic</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SNDX" subCount="0">
+         <Rubric id="d1e117038" kind="preferred">
+            <Label xml:lang="en-US">Soundex</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e116746" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A name intended for use in searching or matching.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e116759" kind="short">
+         <Label xml:lang="en-US">search</Label>
+      </Rubric>
+      <Rubric id="d1e116759" kind="preferred">
+         <Label xml:lang="en-US">search</Label>
+      </Rubric>
+   </Class>
+   <Class code="ABC" kind="concept">
+      <Meta name="internalId" value="15917"/>
+      <SuperClass code="_NameRepresentationUse">
+         <Rubric id="d1e116590" kind="preferred">
+            <Label xml:lang="en-US">NameRepresentationUse</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e116836" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Alphabetic transcription of name (Japanese: romaji)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e116854" kind="short">
+         <Label xml:lang="en-US">Alphabetic</Label>
+      </Rubric>
+      <Rubric id="d1e116854" kind="preferred">
+         <Label xml:lang="en-US">Alphabetic</Label>
+      </Rubric>
+   </Class>
+   <Class code="IDE" kind="concept">
+      <Meta name="internalId" value="15919"/>
+      <SuperClass code="_NameRepresentationUse">
+         <Rubric id="d1e116590" kind="preferred">
+            <Label xml:lang="en-US">NameRepresentationUse</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e116866" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Ideographic representation of name (e.g., Japanese kanji, Chinese characters)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e116884" kind="short">
+         <Label xml:lang="en-US">Ideographic</Label>
+      </Rubric>
+      <Rubric id="d1e116884" kind="preferred">
+         <Label xml:lang="en-US">Ideographic</Label>
+      </Rubric>
+   </Class>
+   <Class code="SYL" kind="concept">
+      <Meta name="internalId" value="15918"/>
+      <SuperClass code="_NameRepresentationUse">
+         <Rubric id="d1e116590" kind="preferred">
+            <Label xml:lang="en-US">NameRepresentationUse</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e116895" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Syllabic transcription of name (e.g., Japanese kana, Korean hangul)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e116913" kind="short">
+         <Label xml:lang="en-US">Syllabic</Label>
+      </Rubric>
+      <Rubric id="d1e116913" kind="preferred">
+         <Label xml:lang="en-US">Syllabic</Label>
+      </Rubric>
+   </Class>
+   <Class code="OR" kind="concept">
+      <Meta name="internalId" value="21637"/>
+      <SuperClass code="L">
+         <Rubric id="d1e116686" kind="preferred">
+            <Label xml:lang="en-US">Legal</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e116924" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The formal name as registered in an official (government) registry, but which name might not be commonly used. Particularly used in countries with a law system based on Napoleonic law.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e116945" kind="short">
+         <Label xml:lang="en-US">official registry</Label>
+      </Rubric>
+      <Rubric id="d1e116945" kind="preferred">
+         <Label xml:lang="en-US">official registry</Label>
+      </Rubric>
+   </Class>
+   <Class code="A" kind="concept">
+      <Meta name="internalId" value="10178"/>
+      <SuperClass code="P">
+         <Rubric id="d1e116710" kind="preferred">
+            <Label xml:lang="en-US">pseudonym</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e116956" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Includes writer's pseudonym, stage name, etc</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e116974" kind="short">
+         <Label xml:lang="en-US">Artist/Stage</Label>
+      </Rubric>
+      <Rubric id="d1e116974" kind="preferred">
+         <Label xml:lang="en-US">Artist/Stage</Label>
+      </Rubric>
+   </Class>
+   <Class code="PHON" kind="concept">
+      <Meta name="internalId" value="21364"/>
+      <SuperClass code="SRCH">
+         <Rubric id="d1e116759" kind="preferred">
+            <Label xml:lang="en-US">search</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e116985" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A name spelled phonetically.</p>
+            <p>There are a variety of phonetic spelling algorithms. This code value does not distinguish between these. <i>Discussion:</i>
+            </p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117009" kind="short">
+         <Label xml:lang="en-US">phonetic</Label>
+      </Rubric>
+      <Rubric id="d1e117009" kind="preferred">
+         <Label xml:lang="en-US">phonetic</Label>
+      </Rubric>
+   </Class>
+   <Class code="SNDX" kind="concept">
+      <Meta name="internalId" value="21365"/>
+      <SuperClass code="SRCH">
+         <Rubric id="d1e116759" kind="preferred">
+            <Label xml:lang="en-US">search</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e117020" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A name spelled according to the SoundEx algorithm.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117038" kind="short">
+         <Label xml:lang="en-US">Soundex</Label>
+      </Rubric>
+      <Rubric id="d1e117038" kind="preferred">
+         <Label xml:lang="en-US">Soundex</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

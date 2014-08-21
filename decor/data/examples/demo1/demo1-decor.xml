@@ -1,0 +1,696 @@
+<?xml-stylesheet type="text/xsl" href="http://art-decor.org/ADAR/rv/DECOR2schematron.xsl"?><?xml-model href="http://art-decor.org/ADAR/rv/DECOR.xsd" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<decor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ext="urn:hl7-org:v3/ext" xsi:noNamespaceSchemaLocation="http://art-decor.org/ADAR/rv/DECOR.xsd">
+    <project id="2.16.840.1.113883.3.1937.99.62.3" prefix="demo1-" defaultLanguage="nl-NL">
+        <name language="nl-NL">Demo 1: Measurements by patient</name>
+        <name language="en-US">Demo 1: Measurements by patient</name>
+        <desc language="nl-NL">Patiëntmetingen</desc>
+        <copyright years="2012" by="The ART-DECOR expert group" logo="art-decor-logo-small.jpg">
+            <addrLine>The ART-DECOR expert group</addrLine>
+            <addrLine>E info@art-decor.org</addrLine>
+            <addrLine>E contact@art-decor.org</addrLine>
+        </copyright>
+        <author id="1" username="marc">Marc de Graauw</author>
+        <author id="2" username="admin">Admin</author>
+        <author id="3" username="maarten">Maarten Ligtvoet</author>
+        <author id="4" username="gerrit">Gerrit Boers</author>
+        <author id="5" username="kai">dr Kai U. Heitmann</author>
+        <author id="6" username="alexander">Alexander Henket</author>
+        <reference url="http://decor.nictiz.nl/demo1/"/>
+        <restURI for="DS" format="HTML">http://localhost:8877/decor/services/RetrieveTransaction?id=__ID__&amp;effectiveDate=__ED__&amp;format=html</restURI>
+        <release date="2013-10-15T13:48:44" by="marc" versionLabel="1.2">
+            <note language="nl-NL"/>
+        </release>
+        <release date="2013-10-15T09:34:32" by="marc" versionLabel="1.1">
+            <note language="nl-NL"/>
+        </release>
+        <release date="2013-08-14T12:00:00" by="MdG" versionLabel="0.1">
+            <note language="nl-NL"/>
+        </release>
+    </project>
+    <datasets>
+        <dataset id="2.16.840.1.113883.3.1937.99.62.3.1.1" statusCode="draft" effectiveDate="2012-05-30T11:32:36">
+            <name language="nl-NL">Decor 1 Demo dataset</name>
+            <name language="en-US">Decor 1 Demo dataset</name>
+            <desc language="nl-NL"/>
+            <desc language="en-US"/>
+            <concept id="2.16.840.1.113883.3.1937.99.62.3.2.1" statusCode="draft" effectiveDate="2012-05-30T11:32:36" type="group">
+                <name language="nl-NL">Meetwaarden</name>
+                <name language="en-US">Measurement</name>
+                <desc language="nl-NL">Metingen die op locatie bij de patiënt, veelal door de patiënt zelf, worden uitgevoerd.</desc>
+                <desc language="en-US">Measurement of body weight on a specific date</desc>
+                <concept id="2.16.840.1.113883.3.1937.99.62.3.2.3" statusCode="draft" effectiveDate="2011-01-28T00:00:00" type="item">
+                    <name language="nl-NL">Gewicht</name>
+                    <name language="en-US">Weight</name>
+                    <desc language="nl-NL">Lichaamsgewicht</desc>
+                    <desc language="en-US">Weight measurement</desc>
+                    <valueDomain type="quantity">
+                        <property unit="kg" minInclude="25" maxInclude="240"/>
+                    </valueDomain>
+                    <history validTimeHigh="2013-09-19T15:08:05">
+                        <concept id="2.16.840.1.113883.3.1937.99.62.3.2.3" statusCode="draft" effectiveDate="2011-01-28T00:00:00" type="item">
+                            <name language="nl-NL">Gewicht</name>
+                            <name language="en-US">Weight</name>
+                            <desc language="nl-NL">Lichaamsgewicht</desc>
+                            <desc language="en-US">Weight measurement</desc>
+                            <valueDomain type="quantity">
+                                <property minInclude="25" maxInclude="240" unit="kg"/>
+                            </valueDomain>
+                        </concept>
+                    </history>
+                </concept>
+                <concept id="2.16.840.1.113883.3.1937.99.62.3.2.13" type="item" statusCode="draft" effectiveDate="2011-01-28T00:00:00">
+                    <name language="nl-NL">Gewichtstoename</name>
+                    <name language="en-US">Weight gain</name>
+                    <desc language="nl-NL">Is er sprake van gewichtstoename?</desc>
+                    <desc language="en-US">Is there a weight gain?</desc>
+                    <valueDomain type="boolean"/>
+                </concept>
+                <concept id="2.16.840.1.113883.3.1937.99.62.3.2.18" type="group" statusCode="draft" effectiveDate="2011-01-28T00:00:00">
+                    <name language="nl-NL">Gegevens gewichtstoename</name>
+                    <name language="en-US">Weight gain data</name>
+                    <desc language="nl-NL">Gegevens gewichtstoename</desc>
+                    <desc language="en-US">Weight gain data</desc>
+                    <concept id="2.16.840.1.113883.3.1937.99.62.3.2.19" type="item" statusCode="draft" effectiveDate="2011-01-28T00:00:00">
+                        <name language="nl-NL">Grootte gewichtstoename</name>
+                        <name language="en-US">Size weight gain</name>
+                        <desc language="nl-NL"/>
+                        <desc language="en-US"/>
+                        <valueDomain type="quantity">
+                            <property unit="gram"/>
+                        </valueDomain>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.62.3.2.20" type="item" statusCode="draft" effectiveDate="2011-01-28T00:00:00">
+                        <name language="nl-NL">Oorzaak gewichtstoename</name>
+                        <name language="en-US">Cause weight gain</name>
+                        <desc language="nl-NL"/>
+                        <desc language="en-US"/>
+                        <valueDomain type="string"/>
+                    </concept>
+                </concept>
+                <concept id="2.16.840.1.113883.3.1937.99.62.3.2.15" statusCode="draft" effectiveDate="2011-01-28T00:00:00" type="item">
+                    <name language="nl-NL">Lengte</name>
+                    <name language="en-US">Length</name>
+                    <desc language="nl-NL">Lichaamslengte</desc>
+                    <desc language="en-US">Body length</desc>
+                    <valueDomain type="quantity">
+                        <property unit="m" minInclude="0" maxInclude="3" fractionDigits="2"/>
+                        <property unit="cm" minInclude="0" maxInclude="300" fractionDigits="0!"/>
+                    </valueDomain>
+                    <history validTimeHigh="2013-09-19T15:21:28">
+                        <concept id="2.16.840.1.113883.3.1937.99.62.3.2.15" statusCode="draft" effectiveDate="2011-01-28T00:00:00" type="item">
+                            <name language="nl-NL">Lengte</name>
+                            <name language="en-US">Length</name>
+                            <desc language="nl-NL">Lichaamslengte</desc>
+                            <desc language="en-US">Body length</desc>
+                            <valueDomain type="quantity">
+                                <property unit="m" minInclude="0" maxInclude="3" fractionDigits="2"/>
+                                <property unit="cm" minInclude="0" maxInclude="300" fractionDigits="0!"/>
+                                <property unit="mm" minInclude="0" maxInclude="3000" fractionDigits="0!"/>
+                            </valueDomain>
+                        </concept>
+                    </history>
+                    <history validTimeHigh="2013-09-19T15:08:05">
+                        <concept id="2.16.840.1.113883.3.1937.99.62.3.2.15" statusCode="draft" effectiveDate="2011-01-28T00:00:00" type="item">
+                            <name language="nl-NL">Lengte</name>
+                            <name language="en-US">Length</name>
+                            <desc language="nl-NL">Lichaamslengte</desc>
+                            <desc language="en-US">Body length</desc>
+                            <valueDomain type="quantity">
+                                <property unit="m" minInclude="0" maxInclude="3" fractionDigits="2"/>
+                                <property unit="cm" minInclude="0" maxInclude="300" fractionDigits="0!"/>
+                            </valueDomain>
+                        </concept>
+                    </history>
+                </concept>
+                <concept id="2.16.840.1.113883.3.1937.99.62.3.2.2" type="item" statusCode="draft" effectiveDate="2011-01-28T00:00:00">
+                    <name language="en-US">Datetime</name>
+                    <name language="nl-NL">Datum en tijd meting</name>
+                    <desc language="en-US">Date of the measurement</desc>
+                    <desc language="nl-NL">Datum meting lichaamsgewicht</desc>
+                    <valueDomain type="datetime"/>
+                </concept>
+                <concept id="2.16.840.1.113883.3.1937.99.62.3.2.5" type="item" statusCode="draft" effectiveDate="2011-01-28T00:00:00">
+                    <name language="nl-NL">Meting door</name>
+                    <name language="en-US">Measured by</name>
+                    <desc language="nl-NL">Persoon die de meting verricht heeft</desc>
+                    <desc language="en-US">Person who performed the measurement</desc>
+                    <valueDomain type="code">
+                        <conceptList id="2.16.840.1.113883.3.1937.99.62.3.2.5.0">
+                            <concept id="2.16.840.1.113883.3.1937.99.62.3.2.5.1">
+                                <name language="en-US">Patient</name>
+                                <name language="nl-NL">Patiënt</name>
+                            </concept>
+                            <concept id="2.16.840.1.113883.3.1937.99.62.3.2.5.2">
+                                <name language="en-US">Home care provider</name>
+                                <name language="nl-NL">Thuiszorg</name>
+                            </concept>
+                            <concept id="2.16.840.1.113883.3.1937.99.62.3.2.5.3">
+                                <name language="en-US">GP</name>
+                                <name language="nl-NL">Huisarts</name>
+                            </concept>
+                            <concept id="2.16.840.1.113883.3.1937.99.62.3.2.5.4">
+                                <name language="en-US">Personal network</name>
+                                <name language="nl-NL">Mantelzorg</name>
+                            </concept>
+                        </conceptList>
+                    </valueDomain>
+                </concept>
+                <concept id="2.16.840.1.113883.3.1937.99.62.3.2.17" statusCode="draft" effectiveDate="2012-09-09T16:06:28" type="item">
+                    <name language="nl-NL">Opmerkingen</name>
+                    <name language="en-US">Comments</name>
+                    <desc language="nl-NL"/>
+                    <desc language="en-US"/>
+                    <valueDomain type="text"/>
+                </concept>
+            </concept>
+            <concept id="2.16.840.1.113883.3.1937.99.62.3.2.6" type="group" statusCode="draft" effectiveDate="2012-05-30T14:18:23">
+                <name language="en-US">Person</name>
+                <name language="nl-NL">Persoon</name>
+                <desc language="en-US">Person</desc>
+                <desc language="nl-NL">Persoon</desc>
+                <concept id="2.16.840.1.113883.3.1937.99.62.3.2.4" type="item" statusCode="draft" effectiveDate="2012-05-30T14:18:23">
+                    <name language="en-US">Name</name>
+                    <name language="nl-NL">Naam</name>
+                    <desc language="en-US">Name of the person</desc>
+                    <desc language="nl-NL">Naam van de persoon</desc>
+                    <valueDomain type="complex"/>
+                </concept>
+                <concept id="2.16.840.1.113883.3.1937.99.62.3.2.16" statusCode="draft" effectiveDate="2012-09-09T16:06:28" type="item">
+                    <name language="nl-NL">Adres</name>
+                    <name language="en-US">Address</name>
+                    <desc language="nl-NL">Omschrijving</desc>
+                    <desc language="en-US">Description</desc>
+                    <valueDomain type="complex">
+                        <property/>
+                    </valueDomain>
+                </concept>
+                <concept id="2.16.840.1.113883.3.1937.99.62.3.2.7" type="item" statusCode="draft" effectiveDate="2012-05-30T14:18:23">
+                    <name language="en-US">BSN</name>
+                    <name language="nl-NL">BSN</name>
+                    <desc language="en-US">Dutch Social Security Number</desc>
+                    <desc language="nl-NL">Burgerservicenummer</desc>
+                    <valueDomain type="identifier"/>
+                </concept>
+                <concept id="2.16.840.1.113883.3.1937.99.62.3.2.8" type="item" statusCode="draft" effectiveDate="2012-05-30T14:18:23">
+                    <name language="en-US">Date of birth</name>
+                    <name language="nl-NL">Geboortedatum</name>
+                    <desc language="en-US">Date of birth of the person</desc>
+                    <desc language="nl-NL">Geboortedatum van de persoon</desc>
+                    <valueDomain type="date"/>
+                </concept>
+                <concept id="2.16.840.1.113883.3.1937.99.62.3.2.14" type="item" statusCode="deprecated" effectiveDate="2012-05-30T14:18:23">
+                    <name language="en-US">Number of children</name>
+                    <name language="nl-NL">Aantal kinderen</name>
+                    <desc language="en-US">Number of children</desc>
+                    <desc language="nl-NL">Aantal kinderen</desc>
+                    <valueDomain type="count"/>
+                </concept>
+            </concept>
+        </dataset>
+    </datasets>
+    <scenarios>
+        <actors>
+            <actor id="2.16.840.1.113883.3.1937.99.62.3.7.1" type="person">
+                <name language="nl-NL">Patiënt</name>
+                <name language="en-US">Patient</name>
+            </actor>
+            <actor id="2.16.840.1.113883.3.1937.99.62.3.7.2" type="organization">
+                <name language="en-US">Weight Registry</name>
+                <name language="nl-NL">Gewicht register</name>
+            </actor>
+            <actor id="2.16.840.1.113883.3.1937.99.62.3.7.3" type="person">
+                <name language="nl-NL">Arts</name>
+                <name language="en-US">Physician</name>
+            </actor>
+        </actors>
+        <scenario id="2.16.840.1.113883.3.1937.99.62.3.3.1" effectiveDate="2012-09-05T16:59:35" statusCode="draft">
+            <name language="nl-NL">Metingen door patiënt</name>
+            <name language="en-US">Measurements by patient</name>
+            <desc language="nl-NL">Omschrijving van dit scenario</desc>
+            <desc language="en-US">Descrioption of this scenario</desc>
+            <transaction id="2.16.840.1.113883.3.1937.99.62.3.4.1" effectiveDate="2012-09-05T16:59:35" statusCode="draft" type="group">
+                <name language="en-US">Measurement</name>
+                <name language="nl-NL">Meting</name>
+                <desc language="en-US">A patient measures his or her own weight and length periodically and submits the results to a registry.</desc>
+                <desc language="nl-NL">Een patiënt voert metingen uit en verzend deze periodiek naar een register.</desc>
+                <transaction id="2.16.840.1.113883.3.1937.99.62.3.4.2" type="initial" label="m" model="POCD_MT000040NL" effectiveDate="2012-09-05T16:59:35" statusCode="draft">
+                    <name language="en-US">Measurement message</name>
+                    <name language="nl-NL">Meting bericht</name>
+                    <desc language="en-US">Measurement message test</desc>
+                    <desc language="nl-NL">Omschrijving bij het meting bericht</desc>
+                    <actors>
+                        <actor id="2.16.840.1.113883.3.1937.99.62.3.7.1" role="sender"/>
+                        <actor id="2.16.840.1.113883.3.1937.99.62.3.7.2" role="receiver"/>
+                    </actors>
+                    <representingTemplate ref="2.16.840.1.113883.3.1937.99.62.3.9.16" sourceDataset="2.16.840.1.113883.3.1937.99.62.3.1.1"><!--item 1 :: Meetwaarden-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.1" minimumMultiplicity="0" maximumMultiplicity="*"/><!--item 3 :: Gewicht-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.3" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true"/><!--item 15 :: Lengte-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.15" minimumMultiplicity="0" maximumMultiplicity="1"/><!--item 2 :: Datetime-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.2" minimumMultiplicity="0" maximumMultiplicity="1"/><!--item 13 :: Gewichtstoename-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.13" minimumMultiplicity="0" maximumMultiplicity="1"/><!--item 18 :: Gegevens gewichtstoename-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.18" conformance="C">
+                            <condition minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true">Bij gewichtstoename</condition>
+                            <condition conformance="NP"/>
+                        </concept><!--item 19 :: Grootte gewichtstoename-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.19" minimumMultiplicity="0" maximumMultiplicity="1"/><!--item 20 :: Oorzaak gewichtstoename-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.20" minimumMultiplicity="0" maximumMultiplicity="1"/><!--item 5 :: Meting door-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.5" minimumMultiplicity="0" maximumMultiplicity="1"/><!--item 17 :: Opmerkingen-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.17" minimumMultiplicity="0" maximumMultiplicity="*"/><!--item 6 :: Person-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.6" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true"/><!--item 4 :: Name-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.4" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true"/><!--item 7 :: BSN-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.7" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true"/><!--item 8 :: Date of birth-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.8" minimumMultiplicity="0" maximumMultiplicity="1"/><!--item 14 :: Number of children-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.14" minimumMultiplicity="0" maximumMultiplicity="1"/>
+                    </representingTemplate>
+                </transaction>
+                <transaction id="2.16.840.1.113883.3.1937.99.62.3.4.3" type="back" label="m-ack" effectiveDate="2012-09-05T16:59:35" statusCode="draft">
+                    <name language="nl-NL">Bevestiging</name>
+                    <name language="en-US">Ack</name>
+                    <desc language="en-US"/>
+                    <desc language="nl-NL"/>
+                    <actors>
+                        <actor id="2.16.840.1.113883.3.1937.99.62.3.7.2" role="sender"/>
+                        <actor id="2.16.840.1.113883.3.1937.99.62.3.7.1" role="receiver"/>
+                    </actors>
+                </transaction>
+            </transaction>
+            <transaction id="2.16.840.1.113883.3.1937.99.62.3.4.4" effectiveDate="2012-09-05T16:59:35" statusCode="draft" type="group">
+                <name language="en-US">Measurement with BSN</name>
+                <name language="nl-NL">Meting op BSN</name>
+                <desc language="en-US">A patient measures his or her own weight and length periodically and submits the results to a registry.</desc>
+                <desc language="nl-NL">Een patiënt voert metingen uit en verzend deze periodiek naar een register.</desc>
+                <transaction id="2.16.840.1.113883.3.1937.99.62.3.4.5" type="initial" label="m-bsn" model="POCD_MT000041NL" effectiveDate="2012-09-05T16:59:35" statusCode="draft">
+                    <name language="en-US">Measurement message op BSN</name>
+                    <name language="nl-NL">Meting op BSN</name>
+                    <desc language="en-US">Measurement message</desc>
+                    <desc language="nl-NL">Meting bericht</desc>
+                    <actors>
+                        <actor id="2.16.840.1.113883.3.1937.99.62.3.7.1" role="sender"/>
+                        <actor id="2.16.840.1.113883.3.1937.99.62.3.7.2" role="receiver"/>
+                    </actors>
+                    <representingTemplate ref="2.16.840.1.113883.3.1937.99.62.3.9.11" sourceDataset="2.16.840.1.113883.3.1937.99.62.3.1.1">
+                        <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.6" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true"/>
+                        <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.7" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true"/>
+                        <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.1" minimumMultiplicity="0" maximumMultiplicity="*"/>
+                        <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.3" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true"/>
+                        <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.15" minimumMultiplicity="0" maximumMultiplicity="1"/>
+                        <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.2" minimumMultiplicity="0" maximumMultiplicity="1"/>
+                        <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.13" minimumMultiplicity="0" maximumMultiplicity="1"/>
+                        <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.5" minimumMultiplicity="0" maximumMultiplicity="1"/>
+                    </representingTemplate>
+                </transaction>
+                <transaction id="2.16.840.1.113883.3.1937.99.62.3.4.6" type="back" label="m-bsn-ack" effectiveDate="2012-09-05T16:59:35" statusCode="draft">
+                    <name language="nl-NL">Bevestiging</name>
+                    <name language="en-US">Ack</name>
+                    <desc language="en-US"/>
+                    <desc language="nl-NL"/>
+                    <actors>
+                        <actor id="2.16.840.1.113883.3.1937.99.62.3.7.2" role="sender"/>
+                        <actor id="2.16.840.1.113883.3.1937.99.62.3.7.1" role="receiver"/>
+                    </actors>
+                </transaction>
+            </transaction>
+        </scenario>
+    </scenarios>
+    <ids>
+        <baseId id="2.16.840.1.113883.3.1937.99.62.3.1" type="DS" prefix="demo1-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.62.3.2" type="DE" prefix="demo1-dataelement-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.62.3.3" type="SC" prefix="demo1-scenario-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.62.3.4" type="TR" prefix="demo1-transactions-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.62.3.5" type="CS" prefix="demo1-codesystem-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.62.3.6" type="IS" prefix="demo1-issue-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.62.3.7" type="AC" prefix="demo1-actors-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.62.3.8" type="CL" prefix="demo1-conceptlist-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.62.3.9" type="TM" prefix="demo1-template-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.62.3.10" type="EL" prefix="demo1-element-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.62.3.11" type="VS" prefix="demo1-valueset-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.62.3.12" type="RL" prefix="demo1-regel-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.62.3.17" type="SX" prefix="demo1-example-scenario-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.62.3.18" type="TX" prefix="demo1-example-transaction-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.62.3.19" type="EX" prefix="demo1-example-instance-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.62.3.20" type="QX" prefix="demo1-qualification-test-instances-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.62.3.21" type="CM" prefix="demo1-mycommunity-"/>
+        <!-- codesystem voor demo: 2.16.840.1.113883.3.1937.99.62.50 -->
+        <!-- templates voor demo: 2.16.840.1.113883.3.1937.99.62.60 -->
+
+        <!-- base id voor instances (examples and/or tests) toegevoegd -->
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.62.3.1" type="DS"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.62.3.2" type="DE"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.62.3.3" type="SC"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.62.3.4" type="TR"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.62.3.5" type="CS"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.62.3.6" type="IS"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.62.3.7" type="AC"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.62.3.8" type="CL"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.62.3.9" type="TM"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.62.3.10" type="EL"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.62.3.11" type="VS"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.62.3.12" type="RL"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.62.3.17" type="SX"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.62.3.18" type="TX"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.62.3.19" type="EX"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.62.3.20" type="QX"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.62.3.21" type="CM"/>
+        <id root="2.16.840.1.113883.2.4.6.3">
+            <designation language="nl-NL" type="preferred" displayName="Burgerservicenummer BSN">Landelijk Nederlands Burger Service Nummer, dient ter
+                identificatie van patiënten of zorgcliënten. Formaat: 9N, met voorloopnullen indien korter dan 9 cijfers. </designation>
+        </id>
+        <id root="2.16.840.1.113883.6.1">
+            <designation language="nl-NL" type="preferred" displayName="LOINC">Logical Observation Identifiers Names and Codes</designation>
+            <designation language="en-US" type="preferred" displayName="LOINC">Logical Observation Identifiers Names and Codes</designation>
+        </id>
+        <id root="2.16.840.1.113883.3.1937.99.62.50">
+            <designation language="nl-NL" type="preferred" displayName="demo1-meting-door">Meting door</designation>
+        </id>
+        <id root="2.16.840.1.113883.3.1937.99.62.51">
+            <designation language="nl-NL" type="preferred" displayName="demo1-concepts">Decor 1 Demo concepten</designation>
+        </id>
+    </ids>
+    <terminology>
+        <!-- demo concepten waarvoor een code nodig is in de instance -->
+        <terminologyAssociation conceptId="2.16.840.1.113883.3.1937.99.62.3.2.2" code="DM" codeSystem="2.16.840.1.113883.3.1937.99.62.3.5.2" displayName="Datum meting"/>
+        <terminologyAssociation conceptId="2.16.840.1.113883.3.1937.99.62.3.2.5" code="MD" codeSystem="2.16.840.1.113883.3.1937.99.62.3.5.2" displayName="Meting door"/>
+
+        <!-- koppeling van de concept list aan de valueset -->
+        <terminologyAssociation conceptId="2.16.840.1.113883.3.1937.99.62.3.2.5.0" valueSet="demo1-meting-door"/>
+
+        <!-- koppeling van concepten uit conceptList aan codes en codeSystem uit de valueSet -->
+        <terminologyAssociation conceptId="2.16.840.1.113883.3.1937.99.62.3.2.5.1" code="P" codeSystem="2.16.840.1.113883.3.1937.99.62.3.5.1" displayName="Patiënt"/>
+        <terminologyAssociation conceptId="2.16.840.1.113883.3.1937.99.62.3.2.5.2" code="T" codeSystem="2.16.840.1.113883.3.1937.99.62.3.5.1" displayName="Thuiszorg"/>
+        <terminologyAssociation conceptId="2.16.840.1.113883.3.1937.99.62.3.2.5.3" code="H" codeSystem="2.16.840.1.113883.3.1937.99.62.3.5.1" displayName="Huisarts"/>
+        <terminologyAssociation conceptId="2.16.840.1.113883.3.1937.99.62.3.2.5.4" code="M" codeSystem="2.16.840.1.113883.3.1937.99.62.3.5.1" displayName="Mantelzorg"/>
+        <codeSystem ref="2.16.840.1.113883.3.1937.99.62.3.5.1" name="demo1-meting-door" displayName="demo1-meting-door" effectiveDate="2011-07-25T15:22:56"/>
+        <codeSystem ref="2.16.840.1.113883.6.1" name="LOINC" displayName="LOINC" effectiveDate="2012-06-30T00:00:00"/>
+        <codeSystem ref="2.16.840.1.113883.5.1008" name="NullFlavor" displayName="NullFlavor (HL7)"/>
+
+        <!-- codesystem voor demo: 2.16.840.1.113883.3.1937.99.62.50 -->
+        <!-- oude valueset -->
+        <valueSet id="2.16.840.1.113883.3.1937.99.62.3.11.5" effectiveDate="2011-07-25T15:22:56" name="demo1-meting-door" displayName="demo1-meting-door" statusCode="draft">
+            <desc language="nl-NL"/>
+            <conceptList>
+                <concept code="P" codeSystem="2.16.840.1.113883.3.1937.99.62.3.5.1" displayName="Patiënt" level="0" type="L"/>
+                <concept code="T" codeSystem="2.16.840.1.113883.3.1937.99.62.3.5.1" displayName="Thuiszorg" level="0" type="L"/>
+                <concept code="H" codeSystem="2.16.840.1.113883.3.1937.99.62.3.5.1" displayName="Huisarts" level="0" type="L"/>
+            </conceptList>
+        </valueSet>
+
+        <!-- codesystem voor demo: 2.16.840.1.113883.3.1937.99.62.50 -->
+        <valueSet id="2.16.840.1.113883.3.1937.99.62.3.11.5" effectiveDate="2012-07-25T15:22:56" name="demo1-meting-door" displayName="demo1-meting-door" statusCode="draft">
+            <desc language="nl-NL"/>
+            <conceptList>
+                <concept code="P" codeSystem="2.16.840.1.113883.3.1937.99.62.3.5.1" displayName="Patiënt" level="0" type="L"/>
+                <concept code="T" codeSystem="2.16.840.1.113883.3.1937.99.62.3.5.1" displayName="Thuiszorg" level="0" type="L"/>
+                <concept code="H" codeSystem="2.16.840.1.113883.3.1937.99.62.3.5.1" displayName="Huisarts" level="0" type="L"/>
+                <concept code="M" codeSystem="2.16.840.1.113883.3.1937.99.62.3.5.1" displayName="Mantelzorg" level="0" type="L"/>
+            </conceptList>
+        </valueSet>
+        <valueSet id="2.16.840.1.113883.3.1937.99.62.3.11.6" effectiveDate="2012-07-25T15:22:56" name="demo1-meting-type" displayName="demo1-meting-type" statusCode="draft">
+            <desc language="nl-NL"/>
+            <conceptList>
+                <concept code="DM" codeSystem="2.16.840.1.113883.3.1937.99.62.3.5.2" displayName="Datum meting" level="0" type="L"/>
+                <concept code="MD" codeSystem="2.16.840.1.113883.3.1937.99.62.3.5.2" displayName="Meting door" level="0" type="L"/>
+            </conceptList>
+        </valueSet>
+    </terminology>
+    <rules>
+        <!-- Lichaamsgewicht -->
+        <templateAssociation templateId="2.16.840.1.113883.3.1937.99.62.3.9.1" effectiveDate="2011-01-28T00:00:00">
+            <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.3" effectiveDate="2011-01-28T00:00:00" elementId="2.16.840.1.113883.3.1937.99.62.3.11.1.1"/>
+        </templateAssociation>
+        <template id="2.16.840.1.113883.3.1937.99.62.3.9.1" name="Lichaamsgewicht" displayName="Lichaamsgewicht" effectiveDate="2011-01-28T00:00:00" statusCode="draft">
+            <desc language="en-US">Body Weight</desc>
+            <desc language="nl-NL">Lichaamsgewicht</desc>
+            <context id="**"/>
+            <element name="hl7:observation">
+                <example>
+                    <observation classCode="OBS" moodCode="EVN">
+                        <templateId root="2.16.840.1.113883.3.1937.99.62.3.11.1"/>
+                        <code code="3141-9" codeSystem="2.16.840.1.113883.6.1" displayName="Body weight"/>
+                        <value xsi:type="PQ" value="81" unit="kg"/>
+                        <entryRelationship typeCode="COMP">
+                            <weightGain value="true"/>
+                        </entryRelationship>
+                    </observation>
+                </example>
+                <attribute classCode="OBS" moodCode="EVN"/>
+                <element name="hl7:templateId" minimumMultiplicity="1" maximumMultiplicity="1" datatype="II">
+                    <attribute root="2.16.840.1.113883.3.1937.99.62.3.9.1"/>
+                </element>
+                <element name="hl7:code" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CE">
+                    <vocabulary code="3141-9" codeSystem="2.16.840.1.113883.6.1"/>
+                </element>
+                <element name="hl7:value" minimumMultiplicity="1" maximumMultiplicity="1" datatype="PQ" id="2.16.840.1.113883.3.1937.99.62.3.11.1.1">
+                    <property unit="kg" minInclude="0" maxInclude="249.9"/>
+                </element>
+                <element name="hl7:entryRelationship" contains="Gewichtstoename">
+                    <attribute typeCode="COMP"/>
+                </element>
+            </element>
+        </template>
+
+        <!-- Lichaamslengte -->
+        <templateAssociation templateId="2.16.840.1.113883.3.1937.99.62.3.9.2" effectiveDate="2011-01-28T00:00:00">
+            <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.15" effectiveDate="2011-01-28T00:00:00" elementId="2.16.840.1.113883.3.1937.99.62.3.11.2.1"/>
+        </templateAssociation>
+        <template id="2.16.840.1.113883.3.1937.99.62.3.9.2" name="Lichaamslengte" displayName="Lichaamslengte" effectiveDate="2011-01-28T00:00:00" statusCode="draft">
+            <desc language="en-US">Body Height</desc>
+            <desc language="nl-NL">Lichaamslengte</desc>
+            <context id="**"/>
+            <element name="hl7:observation">
+                <example>
+                    <observation classCode="OBS" moodCode="EVN">
+                        <templateId root="2.16.840.1.113883.3.1937.99.62.3.11.2"/>
+                        <code code="3137-7" codeSystem="2.16.840.1.113883.6.1" displayName="Body height"/>
+                        <value xsi:type="PQ" value="174" unit="cm"/>
+                    </observation>
+                </example>
+                <attribute classCode="OBS" moodCode="EVN"/>
+                <element name="hl7:templateId" minimumMultiplicity="1" maximumMultiplicity="1" datatype="II">
+                    <attribute root="2.16.840.1.113883.3.1937.99.62.3.9.2"/>
+                </element>
+                <element name="hl7:code" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CE">
+                    <vocabulary code="3137-7" codeSystem="2.16.840.1.113883.6.1"/>
+                </element>
+                <element name="hl7:value" minimumMultiplicity="1" maximumMultiplicity="1" datatype="PQ" id="2.16.840.1.113883.3.1937.99.62.3.11.2.1">
+                    <property unit="cm" minInclude="0" maxInclude="270"/>
+                </element>
+            </element>
+        </template>
+
+        <!-- Datum meting -->
+        <templateAssociation templateId="2.16.840.1.113883.3.1937.99.62.3.9.4" effectiveDate="2009-10-01T00:00:00">
+            <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.2" effectiveDate="2011-01-28T00:00:00" elementId="2.16.840.1.113883.3.1937.99.62.3.11.4.1"/>
+        </templateAssociation>
+        <template id="2.16.840.1.113883.3.1937.99.62.3.9.4" name="Datummeting" displayName="Datum meting" effectiveDate="2009-10-01T00:00:00" statusCode="draft">
+            <desc language="nl-NL">Datum meting</desc>
+            <example>
+                <observation classCode="VERIF" moodCode="EVN">
+                    <templateId root="2.16.840.1.113883.3.1937.99.62.3.11.4"/>
+                    <code code="DM" codeSystem="2.16.840.1.113883.3.1937.99.62.3.5.2"/>
+                    <value xsi:type="TS" value="20100509"/>
+                </observation>
+            </example>
+            <element name="hl7:observation">
+                <attribute classCode="VERIF" moodCode="EVN"/>
+                <element name="hl7:templateId" minimumMultiplicity="1" maximumMultiplicity="1" datatype="II">
+                    <attribute root="2.16.840.1.113883.3.1937.99.62.3.11.4"/>
+                </element>
+                <element name="hl7:code" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CE">
+                    <vocabulary code="DM" codeSystem="2.16.840.1.113883.3.1937.99.62.3.5.2"/>
+                </element>
+                <element name="hl7:value" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R" datatype="TS.DATE.MIN" id="2.16.840.1.113883.3.1937.99.62.3.11.4.1"/>
+            </element>
+        </template>
+        <templateAssociation templateId="2.16.840.1.113883.3.1937.99.62.3.9.4" effectiveDate="2012-10-01T00:00:00">
+            <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.2" effectiveDate="2011-01-28T00:00:00" elementId="2.16.840.1.113883.3.1937.99.62.3.11.4.1"/>
+        </templateAssociation>
+        <template id="2.16.840.1.113883.3.1937.99.62.3.9.4" name="Datummeting" displayName="Datum meting" effectiveDate="2012-10-01T00:00:00" statusCode="draft">
+            <desc language="nl-NL">Datum meting</desc>
+            <example>
+                <effectiveTime value="20100509"/>
+            </example>
+            <element name="hl7:effectiveTime" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R" datatype="TS.DATE.MIN" id="2.16.840.1.113883.3.1937.99.62.3.11.4.1"/>
+        </template>
+
+        <!-- Gewichtstoename -->
+        <templateAssociation templateId="2.16.840.1.113883.3.1937.99.62.3.9.3" effectiveDate="2011-01-28T00:00:00">
+            <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.13" effectiveDate="2011-01-28T00:00:00" elementId="2.16.840.1.113883.3.1937.99.62.3.11.3.1"/>
+        </templateAssociation>
+        <template id="2.16.840.1.113883.3.1937.99.62.3.9.3" name="Gewichtstoename" displayName="Gewichtstoename" effectiveDate="2011-01-28T00:00:00" statusCode="draft">
+            <desc language="nl-NL">Gewichtstoename</desc>
+            <example>
+                <ext:weightGain value="false"/>
+            </example>
+            <element name="ext:weightGain" datatype="BL" id="2.16.840.1.113883.3.1937.99.62.3.11.3.1"/>
+        </template>
+
+        <!--  Meting door -->
+        <templateAssociation templateId="2.16.840.1.113883.3.1937.99.62.3.9.5" effectiveDate="2011-01-28T00:00:00">
+            <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.5" effectiveDate="2011-01-28T00:00:00" elementId="2.16.840.1.113883.3.1937.99.62.3.11.5.1"/>
+        </templateAssociation>
+        <template id="2.16.840.1.113883.3.1937.99.62.3.9.5" name="Metingdoor" displayName="Meting door" effectiveDate="2011-01-28T00:00:00" statusCode="draft">
+            <desc language="nl-NL">Meting door</desc>
+            <example>
+                <author typeCode="AUT">
+                    <code code="P" codeSystem="2.16.840.1.113883.3.1937.99.62.50"/>
+                </author>
+            </example>
+            <element name="hl7:author">
+                <attribute typeCode="AUT"/>
+                <element name="hl7:code" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CE" id="2.16.840.1.113883.3.1937.99.62.3.11.5.1">
+                    <vocabulary valueSet="demo1-meting-door"/>
+                </element>
+            </element>
+        </template>
+
+        <!-- Burgerservicenummer -->
+        <templateAssociation templateId="2.16.840.1.113883.3.1937.99.62.3.9.6" effectiveDate="2009-10-01T00:00:00">
+            <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.7" effectiveDate="2012-05-30T14:18:23" elementId="2.16.840.1.113883.3.1937.99.62.3.11.7.1"/>
+        </templateAssociation>
+        <template id="2.16.840.1.113883.3.1937.99.62.3.9.6" name="Burgerservicenummer" displayName="Burgerservicenummer" effectiveDate="2009-10-01T00:00:00" statusCode="draft">
+            <desc language="nl-NL">Template: Uniek identificatienummer voor iedereen die een meervoudige relatie met de Nederlandse overheid heeft, goed te
+                identificeren is en opgenomen is in de Gemeentelijke Basisadministratie Persoonsgegevens (GBA) of in de Registratie Niet Ingezetenen (RNI). </desc>
+            <example>
+                <!-- BSN -->
+                <id root="2.16.840.1.113883.2.4.6.3" extension="100202020"/>
+            </example>
+            <element name="hl7:id" datatype="II.NL.BSN" id="2.16.840.1.113883.3.1937.99.62.3.11.7.1">
+                <attribute root="2.16.840.1.113883.2.4.6.3"/>
+                <attribute name="extension">
+                    <desc language="nl-NL">Burgerservicenummer</desc>
+                </attribute>
+            </element>
+        </template>
+
+        <!-- Naam -->
+        <templateAssociation templateId="2.16.840.1.113883.3.1937.99.62.3.9.15" effectiveDate="2009-10-01T00:00:00">
+            <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.4" effectiveDate="2012-05-30T14:18:23" elementId="2.16.840.1.113883.3.1937.99.62.3.11.15.1"/>
+        </templateAssociation>
+        <template id="2.16.840.1.113883.3.1937.99.62.3.9.15" name="Naam" displayName="Naam" effectiveDate="2009-10-01T00:00:00" statusCode="draft">
+            <desc language="nl-NL">Naam van de persoon</desc>
+            <example>
+                <name>
+                    <given>Marc</given>
+                    <family>Meter</family>
+                </name>
+            </example>
+            <element name="hl7:name" datatype="PN" id="2.16.840.1.113883.3.1937.99.62.3.11.15.1"/>
+        </template>
+
+        <!-- Persoon -->
+        <templateAssociation templateId="2.16.840.1.113883.3.1937.99.62.3.9.13" effectiveDate="2012-03-11T00:00:00">
+            <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.6" effectiveDate="2012-05-30T14:18:23" elementId="2.16.840.1.113883.3.1937.99.62.3.11.6.1"/>
+        </templateAssociation>
+        <template id="2.16.840.1.113883.3.1937.99.62.3.9.13" name="Persoon" displayName="Persoon" effectiveDate="2012-03-11T00:00:00" statusCode="draft">
+            <desc language="nl-NL">Persoon</desc>
+            <example>
+                <!-- todo -->
+            </example>
+            <element name="hl7:person" id="2.16.840.1.113883.3.1937.99.62.3.11.6.1">
+                <attribute classCode="PSN"/>
+                <include ref="2.16.840.1.113883.3.1937.99.62.3.9.6" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R"/>
+            </element>
+        </template>
+
+        <!-- Persoon met naam -->
+        <templateAssociation templateId="2.16.840.1.113883.3.1937.99.62.3.9.14" effectiveDate="2012-03-11T00:00:00">
+            <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.6" effectiveDate="2012-05-30T14:18:23" elementId="2.16.840.1.113883.3.1937.99.62.3.11.6.1"/>
+        </templateAssociation>
+        <template id="2.16.840.1.113883.3.1937.99.62.3.9.14" name="PersoonMetNaam" displayName="Persoon met naam" effectiveDate="2012-03-11T00:00:00" statusCode="draft">
+            <desc language="nl-NL">Persoon</desc>
+            <example>
+                <!-- todo -->
+            </example>
+            <element name="hl7:person" id="2.16.840.1.113883.3.1937.99.62.3.11.6.1">
+                <include ref="2.16.840.1.113883.3.1937.99.62.3.9.6" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R"/>
+                <include ref="2.16.840.1.113883.3.1937.99.62.3.9.15" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true"/>
+            </element>
+        </template>
+
+        <!-- Meting -->
+        <templateAssociation templateId="2.16.840.1.113883.3.1937.99.62.3.9.12" effectiveDate="2012-03-11T00:00:00">
+            <concept ref="2.16.840.1.113883.3.1937.99.62.3.2.1" effectiveDate="2012-05-30T11:32:36" elementId="2.16.840.1.113883.3.1937.99.62.3.11.12.1"/>
+        </templateAssociation>
+        <template id="2.16.840.1.113883.3.1937.99.62.3.9.12" name="Meting" displayName="Meting" effectiveDate="2012-03-11T00:00:00" statusCode="draft">
+            <desc language="nl-NL">Meting</desc>
+            <example>
+                <!-- todo -->
+            </example>
+            <element name="hl7:organizer" id="2.16.840.1.113883.3.1937.99.62.3.11.12.1">
+                <include ref="Datummeting"/>
+                <element name="hl7:component" contains="Lichaamsgewicht">
+                    <attribute typeCode="COMP"/>
+                </element>
+                <element name="hl7:component" contains="Lichaamslengte">
+                    <attribute typeCode="COMP"/>
+                </element>
+                <include ref="Metingdoor"/>
+            </element>
+        </template>
+
+        <!-- master template -->
+        <template id="2.16.840.1.113883.3.1937.99.62.3.9.11" name="m-bsn" displayName="Meting met BSN" effectiveDate="2012-03-11T00:00:00" statusCode="draft">
+            <desc language="nl-NL">Meting met BSN</desc>
+            <context path="/"/>
+            <example>
+                <registrationProcess moodCode="EVN">
+                    <!-- todo -->
+                </registrationProcess>
+            </example>
+            <element name="hl7:registrationProcess">
+                <include ref="Persoon"/>
+                <include ref="Meting"/>
+            </element>
+        </template>
+
+        <!-- master template -->
+        <template id="2.16.840.1.113883.3.1937.99.62.3.9.16" name="m" displayName="Meting met naam en BSN" effectiveDate="2012-03-11T00:00:00" statusCode="draft">
+            <desc language="nl-NL">Meting met naam en BSN</desc>
+            <context path="/"/>
+            <example>
+                <registrationProcess moodCode="EVN">
+                    <!-- todo -->
+                </registrationProcess>
+            </example>
+            <element name="hl7:registrationProcess">
+                <include ref="PersoonMetNaam"/>
+                <include ref="Meting"/>
+            </element>
+        </template>
+    </rules>
+    <issues>
+        <issue id="2.16.840.1.113883.3.1937.99.62.3.6.4" priority="L" displayName="Lage prio" type="RFC">
+            <object id="2.16.840.1.113883.3.1937.99.62.3.2.6" type="DE" effectiveDate="2012-05-30T14:18:23"/>
+            <tracking effectiveDate="2012-09-09T14:03:35" statusCode="open">
+                <author id="3">Gerrit Boers</author>
+                <desc language="nl-NL">Het dataset concept is gekoppeld aan een niet-bestaand template element.</desc>
+            </tracking>
+            <assignment to="3" name="Gerrit Boers" effectiveDate="2012-09-09T15:32:27">
+                <author id="3">Gerrit Boers</author>
+                <desc language="nl-NL">Graag wijzigen</desc>
+            </assignment>
+        </issue>
+        <issue id="2.16.840.1.113883.3.1937.99.62.3.6.5" priority="N" displayName="Gebruik onduidelijk" type="CLF">
+            <object id="2.16.840.1.113883.3.1937.99.62.3.2.1" type="DE" effectiveDate="2012-05-30T11:32:36"/>
+            <tracking effectiveDate="2012-09-09T14:10:58" statusCode="open">
+                <author id="3">Gerrit Boers</author>
+                <desc language="nl-NL">Test</desc>
+            </tracking>
+            <assignment to="3" name="Gerrit Boers" effectiveDate="2012-09-09T14:51:39">
+                <author id="3">Gerrit Boers</author>
+                <desc language="nl-NL">Toegewezen</desc>
+            </assignment>
+            <tracking effectiveDate="2012-09-09T14:52:51" statusCode="inprogress">
+                <author id="3">Gerrit Boers</author>
+                <desc language="nl-NL">Aan de slag</desc>
+            </tracking>
+        </issue>
+        <issue id="2.16.840.1.113883.3.1937.99.62.3.6.6" priority="N" displayName="Lengte beperken tot één eenheid" type="RFC">
+            <object id="2.16.840.1.113883.3.1937.99.62.3.2.15" type="DE" effectiveDate="2011-01-28T00:00:00"/>
+            <tracking effectiveDate="2012-09-09T15:54:28" statusCode="open">
+                <author id="3">Gerrit Boers</author>
+                <desc language="nl-NL">Keuze leidt alleen maar tot verwarring.</desc>
+            </tracking>
+        </issue>
+    </issues>
+</decor>

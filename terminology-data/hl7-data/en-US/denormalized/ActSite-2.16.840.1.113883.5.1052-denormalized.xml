@@ -1,0 +1,1053 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="138"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1052"/>
+   <Title name="ActSite" date="2012-08-02" version="1.000">An anatomical location on an organism which can be the focus of an act.</Title>
+   <Class code="rootClass">
+      <SubClass subCount="1" code="_HumanActSite" kind="abstract">
+         <Rubric id="d1e75482" kind="preferred">
+            <Label xml:lang="en-US">HumanActSite</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">ActSite</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">An anatomical location on an organism which can be the focus of an act.</Label>
+      </Rubric>
+   </Class>
+   <Class code="_HumanActSite" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="20948"/>
+      <SubClass code="_HumanSubstanceAdministrationSite" subCount="52">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e75469" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An anatomical location on a human which can be the focus of an act.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e75482" kind="short">
+         <Label xml:lang="en-US">HumanActSite</Label>
+      </Rubric>
+      <Rubric id="d1e75482" kind="preferred">
+         <Label xml:lang="en-US">HumanActSite</Label>
+      </Rubric>
+   </Class>
+   <Class code="_HumanSubstanceAdministrationSite" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21534"/>
+      <SuperClass code="_HumanActSite">
+         <Rubric id="d1e75482" kind="preferred">
+            <Label xml:lang="en-US">HumanActSite</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="BE" subCount="0">
+         <Rubric id="d1e75583" kind="preferred">
+            <Label xml:lang="en-US">bilateral ears</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="BN" subCount="0">
+         <Rubric id="d1e75597" kind="preferred">
+            <Label xml:lang="en-US">bilateral nares</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="BU" subCount="0">
+         <Rubric id="d1e75612" kind="preferred">
+            <Label xml:lang="en-US">buttock</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LA" subCount="0">
+         <Rubric id="d1e75626" kind="preferred">
+            <Label xml:lang="en-US">left arm</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LAC" subCount="0">
+         <Rubric id="d1e75640" kind="preferred">
+            <Label xml:lang="en-US">left anterior chest</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LACF" subCount="0">
+         <Rubric id="d1e75654" kind="preferred">
+            <Label xml:lang="en-US">left antecubital fossa</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LD" subCount="0">
+         <Rubric id="d1e75668" kind="preferred">
+            <Label xml:lang="en-US">left deltoid</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LE" subCount="0">
+         <Rubric id="d1e75682" kind="preferred">
+            <Label xml:lang="en-US">left ear</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LEJ" subCount="0">
+         <Rubric id="d1e75697" kind="preferred">
+            <Label xml:lang="en-US">left external jugular</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LF" subCount="0">
+         <Rubric id="d1e75711" kind="preferred">
+            <Label xml:lang="en-US">left foot</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LG" subCount="0">
+         <Rubric id="d1e75725" kind="preferred">
+            <Label xml:lang="en-US">left gluteus medius</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LH" subCount="0">
+         <Rubric id="d1e75739" kind="preferred">
+            <Label xml:lang="en-US">left hand</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LIJ" subCount="0">
+         <Rubric id="d1e75753" kind="preferred">
+            <Label xml:lang="en-US">left internal jugular</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LLAQ" subCount="0">
+         <Rubric id="d1e75767" kind="preferred">
+            <Label xml:lang="en-US">left lower abd quadrant</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LLFA" subCount="0">
+         <Rubric id="d1e75782" kind="preferred">
+            <Label xml:lang="en-US">left lower forearm</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LMFA" subCount="0">
+         <Rubric id="d1e75796" kind="preferred">
+            <Label xml:lang="en-US">left mid forearm</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LN" subCount="0">
+         <Rubric id="d1e75810" kind="preferred">
+            <Label xml:lang="en-US">left naris</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LPC" subCount="0">
+         <Rubric id="d1e75824" kind="preferred">
+            <Label xml:lang="en-US">left posterior chest</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LSC" subCount="0">
+         <Rubric id="d1e75838" kind="preferred">
+            <Label xml:lang="en-US">left subclavian</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LT" subCount="0">
+         <Rubric id="d1e75852" kind="preferred">
+            <Label xml:lang="en-US">left thigh</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LUA" subCount="0">
+         <Rubric id="d1e75867" kind="preferred">
+            <Label xml:lang="en-US">left upper arm</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LUAQ" subCount="0">
+         <Rubric id="d1e75881" kind="preferred">
+            <Label xml:lang="en-US">left upper abd quadrant</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LUFA" subCount="0">
+         <Rubric id="d1e75895" kind="preferred">
+            <Label xml:lang="en-US">left upper forearm</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LVG" subCount="0">
+         <Rubric id="d1e75909" kind="preferred">
+            <Label xml:lang="en-US">left ventragluteal</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LVL" subCount="0">
+         <Rubric id="d1e75923" kind="preferred">
+            <Label xml:lang="en-US">left vastus lateralis</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="OD" subCount="0">
+         <Rubric id="d1e75937" kind="preferred">
+            <Label xml:lang="en-US">right eye</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="OS" subCount="0">
+         <Rubric id="d1e75952" kind="preferred">
+            <Label xml:lang="en-US">left eye</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="OU" subCount="0">
+         <Rubric id="d1e75966" kind="preferred">
+            <Label xml:lang="en-US">bilateral eyes</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PA" subCount="0">
+         <Rubric id="d1e75980" kind="preferred">
+            <Label xml:lang="en-US">perianal</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PERIN" subCount="0">
+         <Rubric id="d1e75994" kind="preferred">
+            <Label xml:lang="en-US">perineal</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RA" subCount="0">
+         <Rubric id="d1e76008" kind="preferred">
+            <Label xml:lang="en-US">right arm</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RAC" subCount="0">
+         <Rubric id="d1e76022" kind="preferred">
+            <Label xml:lang="en-US">right anterior chest</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RACF" subCount="0">
+         <Rubric id="d1e76037" kind="preferred">
+            <Label xml:lang="en-US">right antecubital fossa</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RD" subCount="0">
+         <Rubric id="d1e76051" kind="preferred">
+            <Label xml:lang="en-US">right deltoid</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RE" subCount="0">
+         <Rubric id="d1e76065" kind="preferred">
+            <Label xml:lang="en-US">right ear</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="REJ" subCount="0">
+         <Rubric id="d1e76079" kind="preferred">
+            <Label xml:lang="en-US">right external jugular</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RF" subCount="0">
+         <Rubric id="d1e76093" kind="preferred">
+            <Label xml:lang="en-US">right foot</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RG" subCount="0">
+         <Rubric id="d1e76107" kind="preferred">
+            <Label xml:lang="en-US">right gluteus medius</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RH" subCount="0">
+         <Rubric id="d1e76122" kind="preferred">
+            <Label xml:lang="en-US">right hand</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RIJ" subCount="0">
+         <Rubric id="d1e76136" kind="preferred">
+            <Label xml:lang="en-US">right internal jugular</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RLAQ" subCount="0">
+         <Rubric id="d1e76150" kind="preferred">
+            <Label xml:lang="en-US">right lower abd quadrant</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RLFA" subCount="0">
+         <Rubric id="d1e76164" kind="preferred">
+            <Label xml:lang="en-US">right lower forearm</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RMFA" subCount="0">
+         <Rubric id="d1e76178" kind="preferred">
+            <Label xml:lang="en-US">right mid forearm</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RN" subCount="0">
+         <Rubric id="d1e76192" kind="preferred">
+            <Label xml:lang="en-US">right naris</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RPC" subCount="0">
+         <Rubric id="d1e76207" kind="preferred">
+            <Label xml:lang="en-US">right posterior chest</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RSC" subCount="0">
+         <Rubric id="d1e76221" kind="preferred">
+            <Label xml:lang="en-US">right subclavian</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RT" subCount="0">
+         <Rubric id="d1e76235" kind="preferred">
+            <Label xml:lang="en-US">right thigh</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RUA" subCount="0">
+         <Rubric id="d1e76249" kind="preferred">
+            <Label xml:lang="en-US">right upper arm</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RUAQ" subCount="0">
+         <Rubric id="d1e76263" kind="preferred">
+            <Label xml:lang="en-US">right upper abd quadrant</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RUFA" subCount="0">
+         <Rubric id="d1e76277" kind="preferred">
+            <Label xml:lang="en-US">right upper forearm</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RVG" subCount="0">
+         <Rubric id="d1e76292" kind="preferred">
+            <Label xml:lang="en-US">right ventragluteal</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RVL" subCount="0">
+         <Rubric id="d1e76306" kind="preferred">
+            <Label xml:lang="en-US">right vastus lateralis</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e75519" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The set of body locations to or through which a drug product may be administered.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e75537" kind="short">
+         <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+      </Rubric>
+      <Rubric id="d1e75537" kind="preferred">
+         <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+      </Rubric>
+   </Class>
+   <Class code="BE" kind="concept">
+      <Meta name="internalId" value="21759"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75583" kind="short">
+         <Label xml:lang="en-US">bilateral ears</Label>
+      </Rubric>
+      <Rubric id="d1e75583" kind="preferred">
+         <Label xml:lang="en-US">bilateral ears</Label>
+      </Rubric>
+   </Class>
+   <Class code="BN" kind="concept">
+      <Meta name="internalId" value="21760"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75597" kind="short">
+         <Label xml:lang="en-US">bilateral nares</Label>
+      </Rubric>
+      <Rubric id="d1e75597" kind="preferred">
+         <Label xml:lang="en-US">bilateral nares</Label>
+      </Rubric>
+   </Class>
+   <Class code="BU" kind="concept">
+      <Meta name="internalId" value="21761"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75612" kind="short">
+         <Label xml:lang="en-US">buttock</Label>
+      </Rubric>
+      <Rubric id="d1e75612" kind="preferred">
+         <Label xml:lang="en-US">buttock</Label>
+      </Rubric>
+   </Class>
+   <Class code="LA" kind="concept">
+      <Meta name="internalId" value="21762"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75626" kind="short">
+         <Label xml:lang="en-US">left arm</Label>
+      </Rubric>
+      <Rubric id="d1e75626" kind="preferred">
+         <Label xml:lang="en-US">left arm</Label>
+      </Rubric>
+   </Class>
+   <Class code="LAC" kind="concept">
+      <Meta name="internalId" value="21763"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75640" kind="short">
+         <Label xml:lang="en-US">left anterior chest</Label>
+      </Rubric>
+      <Rubric id="d1e75640" kind="preferred">
+         <Label xml:lang="en-US">left anterior chest</Label>
+      </Rubric>
+   </Class>
+   <Class code="LACF" kind="concept">
+      <Meta name="internalId" value="21764"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75654" kind="short">
+         <Label xml:lang="en-US">left antecubital fossa</Label>
+      </Rubric>
+      <Rubric id="d1e75654" kind="preferred">
+         <Label xml:lang="en-US">left antecubital fossa</Label>
+      </Rubric>
+   </Class>
+   <Class code="LD" kind="concept">
+      <Meta name="internalId" value="21765"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75668" kind="short">
+         <Label xml:lang="en-US">left deltoid</Label>
+      </Rubric>
+      <Rubric id="d1e75668" kind="preferred">
+         <Label xml:lang="en-US">left deltoid</Label>
+      </Rubric>
+   </Class>
+   <Class code="LE" kind="concept">
+      <Meta name="internalId" value="21766"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75682" kind="short">
+         <Label xml:lang="en-US">left ear</Label>
+      </Rubric>
+      <Rubric id="d1e75682" kind="preferred">
+         <Label xml:lang="en-US">left ear</Label>
+      </Rubric>
+   </Class>
+   <Class code="LEJ" kind="concept">
+      <Meta name="internalId" value="21767"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75697" kind="short">
+         <Label xml:lang="en-US">left external jugular</Label>
+      </Rubric>
+      <Rubric id="d1e75697" kind="preferred">
+         <Label xml:lang="en-US">left external jugular</Label>
+      </Rubric>
+   </Class>
+   <Class code="LF" kind="concept">
+      <Meta name="internalId" value="21768"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75711" kind="short">
+         <Label xml:lang="en-US">left foot</Label>
+      </Rubric>
+      <Rubric id="d1e75711" kind="preferred">
+         <Label xml:lang="en-US">left foot</Label>
+      </Rubric>
+   </Class>
+   <Class code="LG" kind="concept">
+      <Meta name="internalId" value="21769"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75725" kind="short">
+         <Label xml:lang="en-US">left gluteus medius</Label>
+      </Rubric>
+      <Rubric id="d1e75725" kind="preferred">
+         <Label xml:lang="en-US">left gluteus medius</Label>
+      </Rubric>
+   </Class>
+   <Class code="LH" kind="concept">
+      <Meta name="internalId" value="21770"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75739" kind="short">
+         <Label xml:lang="en-US">left hand</Label>
+      </Rubric>
+      <Rubric id="d1e75739" kind="preferred">
+         <Label xml:lang="en-US">left hand</Label>
+      </Rubric>
+   </Class>
+   <Class code="LIJ" kind="concept">
+      <Meta name="internalId" value="21771"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75753" kind="short">
+         <Label xml:lang="en-US">left internal jugular</Label>
+      </Rubric>
+      <Rubric id="d1e75753" kind="preferred">
+         <Label xml:lang="en-US">left internal jugular</Label>
+      </Rubric>
+   </Class>
+   <Class code="LLAQ" kind="concept">
+      <Meta name="internalId" value="21772"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75767" kind="short">
+         <Label xml:lang="en-US">left lower abd quadrant</Label>
+      </Rubric>
+      <Rubric id="d1e75767" kind="preferred">
+         <Label xml:lang="en-US">left lower abd quadrant</Label>
+      </Rubric>
+   </Class>
+   <Class code="LLFA" kind="concept">
+      <Meta name="internalId" value="21773"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75782" kind="short">
+         <Label xml:lang="en-US">left lower forearm</Label>
+      </Rubric>
+      <Rubric id="d1e75782" kind="preferred">
+         <Label xml:lang="en-US">left lower forearm</Label>
+      </Rubric>
+   </Class>
+   <Class code="LMFA" kind="concept">
+      <Meta name="internalId" value="21774"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75796" kind="short">
+         <Label xml:lang="en-US">left mid forearm</Label>
+      </Rubric>
+      <Rubric id="d1e75796" kind="preferred">
+         <Label xml:lang="en-US">left mid forearm</Label>
+      </Rubric>
+   </Class>
+   <Class code="LN" kind="concept">
+      <Meta name="internalId" value="21775"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75810" kind="short">
+         <Label xml:lang="en-US">left naris</Label>
+      </Rubric>
+      <Rubric id="d1e75810" kind="preferred">
+         <Label xml:lang="en-US">left naris</Label>
+      </Rubric>
+   </Class>
+   <Class code="LPC" kind="concept">
+      <Meta name="internalId" value="21776"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75824" kind="short">
+         <Label xml:lang="en-US">left posterior chest</Label>
+      </Rubric>
+      <Rubric id="d1e75824" kind="preferred">
+         <Label xml:lang="en-US">left posterior chest</Label>
+      </Rubric>
+   </Class>
+   <Class code="LSC" kind="concept">
+      <Meta name="internalId" value="21777"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75838" kind="short">
+         <Label xml:lang="en-US">left subclavian</Label>
+      </Rubric>
+      <Rubric id="d1e75838" kind="preferred">
+         <Label xml:lang="en-US">left subclavian</Label>
+      </Rubric>
+   </Class>
+   <Class code="LT" kind="concept">
+      <Meta name="internalId" value="21778"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75852" kind="short">
+         <Label xml:lang="en-US">left thigh</Label>
+      </Rubric>
+      <Rubric id="d1e75852" kind="preferred">
+         <Label xml:lang="en-US">left thigh</Label>
+      </Rubric>
+   </Class>
+   <Class code="LUA" kind="concept">
+      <Meta name="internalId" value="21779"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75867" kind="short">
+         <Label xml:lang="en-US">left upper arm</Label>
+      </Rubric>
+      <Rubric id="d1e75867" kind="preferred">
+         <Label xml:lang="en-US">left upper arm</Label>
+      </Rubric>
+   </Class>
+   <Class code="LUAQ" kind="concept">
+      <Meta name="internalId" value="21780"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75881" kind="short">
+         <Label xml:lang="en-US">left upper abd quadrant</Label>
+      </Rubric>
+      <Rubric id="d1e75881" kind="preferred">
+         <Label xml:lang="en-US">left upper abd quadrant</Label>
+      </Rubric>
+   </Class>
+   <Class code="LUFA" kind="concept">
+      <Meta name="internalId" value="21781"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75895" kind="short">
+         <Label xml:lang="en-US">left upper forearm</Label>
+      </Rubric>
+      <Rubric id="d1e75895" kind="preferred">
+         <Label xml:lang="en-US">left upper forearm</Label>
+      </Rubric>
+   </Class>
+   <Class code="LVG" kind="concept">
+      <Meta name="internalId" value="21782"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75909" kind="short">
+         <Label xml:lang="en-US">left ventragluteal</Label>
+      </Rubric>
+      <Rubric id="d1e75909" kind="preferred">
+         <Label xml:lang="en-US">left ventragluteal</Label>
+      </Rubric>
+   </Class>
+   <Class code="LVL" kind="concept">
+      <Meta name="internalId" value="21783"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75923" kind="short">
+         <Label xml:lang="en-US">left vastus lateralis</Label>
+      </Rubric>
+      <Rubric id="d1e75923" kind="preferred">
+         <Label xml:lang="en-US">left vastus lateralis</Label>
+      </Rubric>
+   </Class>
+   <Class code="OD" kind="concept">
+      <Meta name="internalId" value="21784"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75937" kind="short">
+         <Label xml:lang="en-US">right eye</Label>
+      </Rubric>
+      <Rubric id="d1e75937" kind="preferred">
+         <Label xml:lang="en-US">right eye</Label>
+      </Rubric>
+   </Class>
+   <Class code="OS" kind="concept">
+      <Meta name="internalId" value="21785"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75952" kind="short">
+         <Label xml:lang="en-US">left eye</Label>
+      </Rubric>
+      <Rubric id="d1e75952" kind="preferred">
+         <Label xml:lang="en-US">left eye</Label>
+      </Rubric>
+   </Class>
+   <Class code="OU" kind="concept">
+      <Meta name="internalId" value="21786"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75966" kind="short">
+         <Label xml:lang="en-US">bilateral eyes</Label>
+      </Rubric>
+      <Rubric id="d1e75966" kind="preferred">
+         <Label xml:lang="en-US">bilateral eyes</Label>
+      </Rubric>
+   </Class>
+   <Class code="PA" kind="concept">
+      <Meta name="internalId" value="21787"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75980" kind="short">
+         <Label xml:lang="en-US">perianal</Label>
+      </Rubric>
+      <Rubric id="d1e75980" kind="preferred">
+         <Label xml:lang="en-US">perianal</Label>
+      </Rubric>
+   </Class>
+   <Class code="PERIN" kind="concept">
+      <Meta name="internalId" value="21788"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e75994" kind="short">
+         <Label xml:lang="en-US">perineal</Label>
+      </Rubric>
+      <Rubric id="d1e75994" kind="preferred">
+         <Label xml:lang="en-US">perineal</Label>
+      </Rubric>
+   </Class>
+   <Class code="RA" kind="concept">
+      <Meta name="internalId" value="21789"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76008" kind="short">
+         <Label xml:lang="en-US">right arm</Label>
+      </Rubric>
+      <Rubric id="d1e76008" kind="preferred">
+         <Label xml:lang="en-US">right arm</Label>
+      </Rubric>
+   </Class>
+   <Class code="RAC" kind="concept">
+      <Meta name="internalId" value="21790"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76022" kind="short">
+         <Label xml:lang="en-US">right anterior chest</Label>
+      </Rubric>
+      <Rubric id="d1e76022" kind="preferred">
+         <Label xml:lang="en-US">right anterior chest</Label>
+      </Rubric>
+   </Class>
+   <Class code="RACF" kind="concept">
+      <Meta name="internalId" value="21791"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76037" kind="short">
+         <Label xml:lang="en-US">right antecubital fossa</Label>
+      </Rubric>
+      <Rubric id="d1e76037" kind="preferred">
+         <Label xml:lang="en-US">right antecubital fossa</Label>
+      </Rubric>
+   </Class>
+   <Class code="RD" kind="concept">
+      <Meta name="internalId" value="21792"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76051" kind="short">
+         <Label xml:lang="en-US">right deltoid</Label>
+      </Rubric>
+      <Rubric id="d1e76051" kind="preferred">
+         <Label xml:lang="en-US">right deltoid</Label>
+      </Rubric>
+   </Class>
+   <Class code="RE" kind="concept">
+      <Meta name="internalId" value="21793"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76065" kind="short">
+         <Label xml:lang="en-US">right ear</Label>
+      </Rubric>
+      <Rubric id="d1e76065" kind="preferred">
+         <Label xml:lang="en-US">right ear</Label>
+      </Rubric>
+   </Class>
+   <Class code="REJ" kind="concept">
+      <Meta name="internalId" value="21794"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76079" kind="short">
+         <Label xml:lang="en-US">right external jugular</Label>
+      </Rubric>
+      <Rubric id="d1e76079" kind="preferred">
+         <Label xml:lang="en-US">right external jugular</Label>
+      </Rubric>
+   </Class>
+   <Class code="RF" kind="concept">
+      <Meta name="internalId" value="21795"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76093" kind="short">
+         <Label xml:lang="en-US">right foot</Label>
+      </Rubric>
+      <Rubric id="d1e76093" kind="preferred">
+         <Label xml:lang="en-US">right foot</Label>
+      </Rubric>
+   </Class>
+   <Class code="RG" kind="concept">
+      <Meta name="internalId" value="21796"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76107" kind="short">
+         <Label xml:lang="en-US">right gluteus medius</Label>
+      </Rubric>
+      <Rubric id="d1e76107" kind="preferred">
+         <Label xml:lang="en-US">right gluteus medius</Label>
+      </Rubric>
+   </Class>
+   <Class code="RH" kind="concept">
+      <Meta name="internalId" value="21797"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76122" kind="short">
+         <Label xml:lang="en-US">right hand</Label>
+      </Rubric>
+      <Rubric id="d1e76122" kind="preferred">
+         <Label xml:lang="en-US">right hand</Label>
+      </Rubric>
+   </Class>
+   <Class code="RIJ" kind="concept">
+      <Meta name="internalId" value="21798"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76136" kind="short">
+         <Label xml:lang="en-US">right internal jugular</Label>
+      </Rubric>
+      <Rubric id="d1e76136" kind="preferred">
+         <Label xml:lang="en-US">right internal jugular</Label>
+      </Rubric>
+   </Class>
+   <Class code="RLAQ" kind="concept">
+      <Meta name="internalId" value="21799"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76150" kind="short">
+         <Label xml:lang="en-US">right lower abd quadrant</Label>
+      </Rubric>
+      <Rubric id="d1e76150" kind="preferred">
+         <Label xml:lang="en-US">right lower abd quadrant</Label>
+      </Rubric>
+   </Class>
+   <Class code="RLFA" kind="concept">
+      <Meta name="internalId" value="21800"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76164" kind="short">
+         <Label xml:lang="en-US">right lower forearm</Label>
+      </Rubric>
+      <Rubric id="d1e76164" kind="preferred">
+         <Label xml:lang="en-US">right lower forearm</Label>
+      </Rubric>
+   </Class>
+   <Class code="RMFA" kind="concept">
+      <Meta name="internalId" value="21801"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76178" kind="short">
+         <Label xml:lang="en-US">right mid forearm</Label>
+      </Rubric>
+      <Rubric id="d1e76178" kind="preferred">
+         <Label xml:lang="en-US">right mid forearm</Label>
+      </Rubric>
+   </Class>
+   <Class code="RN" kind="concept">
+      <Meta name="internalId" value="23250"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76192" kind="short">
+         <Label xml:lang="en-US">right naris</Label>
+      </Rubric>
+      <Rubric id="d1e76192" kind="preferred">
+         <Label xml:lang="en-US">right naris</Label>
+      </Rubric>
+   </Class>
+   <Class code="RPC" kind="concept">
+      <Meta name="internalId" value="21802"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76207" kind="short">
+         <Label xml:lang="en-US">right posterior chest</Label>
+      </Rubric>
+      <Rubric id="d1e76207" kind="preferred">
+         <Label xml:lang="en-US">right posterior chest</Label>
+      </Rubric>
+   </Class>
+   <Class code="RSC" kind="concept">
+      <Meta name="internalId" value="21803"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76221" kind="short">
+         <Label xml:lang="en-US">right subclavian</Label>
+      </Rubric>
+      <Rubric id="d1e76221" kind="preferred">
+         <Label xml:lang="en-US">right subclavian</Label>
+      </Rubric>
+   </Class>
+   <Class code="RT" kind="concept">
+      <Meta name="internalId" value="21804"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76235" kind="short">
+         <Label xml:lang="en-US">right thigh</Label>
+      </Rubric>
+      <Rubric id="d1e76235" kind="preferred">
+         <Label xml:lang="en-US">right thigh</Label>
+      </Rubric>
+   </Class>
+   <Class code="RUA" kind="concept">
+      <Meta name="internalId" value="21805"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76249" kind="short">
+         <Label xml:lang="en-US">right upper arm</Label>
+      </Rubric>
+      <Rubric id="d1e76249" kind="preferred">
+         <Label xml:lang="en-US">right upper arm</Label>
+      </Rubric>
+   </Class>
+   <Class code="RUAQ" kind="concept">
+      <Meta name="internalId" value="21806"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76263" kind="short">
+         <Label xml:lang="en-US">right upper abd quadrant</Label>
+      </Rubric>
+      <Rubric id="d1e76263" kind="preferred">
+         <Label xml:lang="en-US">right upper abd quadrant</Label>
+      </Rubric>
+   </Class>
+   <Class code="RUFA" kind="concept">
+      <Meta name="internalId" value="21807"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76277" kind="short">
+         <Label xml:lang="en-US">right upper forearm</Label>
+      </Rubric>
+      <Rubric id="d1e76277" kind="preferred">
+         <Label xml:lang="en-US">right upper forearm</Label>
+      </Rubric>
+   </Class>
+   <Class code="RVG" kind="concept">
+      <Meta name="internalId" value="21808"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76292" kind="short">
+         <Label xml:lang="en-US">right ventragluteal</Label>
+      </Rubric>
+      <Rubric id="d1e76292" kind="preferred">
+         <Label xml:lang="en-US">right ventragluteal</Label>
+      </Rubric>
+   </Class>
+   <Class code="RVL" kind="concept">
+      <Meta name="internalId" value="21809"/>
+      <SuperClass code="_HumanSubstanceAdministrationSite">
+         <Rubric id="d1e75537" kind="preferred">
+            <Label xml:lang="en-US">HumanSubstanceAdministrationSite</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76306" kind="short">
+         <Label xml:lang="en-US">right vastus lateralis</Label>
+      </Rubric>
+      <Rubric id="d1e76306" kind="preferred">
+         <Label xml:lang="en-US">right vastus lateralis</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

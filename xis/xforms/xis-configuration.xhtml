@@ -1,0 +1,294 @@
+<!--
+    Copyright (C) 2011-2014 ART-DECOR expert group art-decor.org
+    
+    Author: Gerrit Boers, Alexander Henket
+
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+   xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:atp="urn:nictiz.atp" xmlns:hl7="urn:hl7-org:v3" xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xis="http://art-decor.org/ns/xis"
+   xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:widget="http://orbeon.org/oxf/xml/widget" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="xis"
+   xsi:schemaLocation="http://www.w3.org/1999/xhtml ../../orbeon_schemas/xhtml1-transitional-orbeon.xsd">
+    <xhtml:head>
+        <xhtml:title>
+            <xforms:output ref="$resources/xis"/>
+            <xforms:output ref="$resources/configuration"/>
+        </xhtml:title>
+        <xforms:model id="xis">
+
+         <!-- Variable with path to art-exist for use by form -->
+            <xxforms:variable name="art-exist" select="xxforms:property('art.exist.url')"/>
+         <!-- Variable with path to xis-eXist for content -->
+            <xxforms:variable name="xis-exist" select="xxforms:property('xis.exist.url')"/>
+         <!-- resources for internationalization -->
+            <xforms:instance id="resources-instance">
+                <dummy/>
+            </xforms:instance>
+         <!-- submission for loading resources -->
+            <xforms:submission id="get-resources-submission" serialization="none" method="get" resource="{$xis-exist}/resources/form-resources.xml" replace="instance" instance="resources-instance"/>
+         <!-- language -->
+            <xforms:instance id="language">
+                <language/>
+            </xforms:instance>
+         <!-- instance for edit status -->
+            <xforms:instance id="data-safe">
+                <data-safe>true</data-safe>
+            </xforms:instance>
+
+         <!-- **** HL7 XML RESOURCES -->
+
+         <!-- instance for selected xml resources -->
+            <xforms:instance id="selected-xml-resources" xxforms:exclude-result-prefixes="#all">
+                <uriString/>
+            </xforms:instance>
+         <!-- instance for xml resources -->
+            <xforms:instance id="xml-resources-list" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+         <!-- get xml resources list -->
+            <xforms:submission id="get-xml-resources-list" serialization="none" method="get" resource="{$xis-exist}/modules/get-hl7-package-list.xquery" replace="instance" instance="xml-resources-list">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+
+         <!-- **** SERVICES LIST **** -->
+         <!-- instance for webservice list -->
+            <xforms:instance xmlns="http://art-decor.org/ns/xis" id="selected-service" xxforms:exclude-result-prefixes="#all">
+                <!--
+                    service/@name == The wsdl:service/@name in the WSDL
+                    service/@location == The wsdl:service/wsdl:port/soap:address/@location URI rewritten for this server
+                    service/@locationResource == The path in service/@location, hence without the FQDN
+                -->
+                <service name="" location="" locationResource=""/>
+            </xforms:instance>
+         <!-- instance for webservice list -->
+            <xforms:instance id="service-list">
+                <xis:services/>
+            </xforms:instance>
+         <!-- get submission -->
+            <xforms:submission id="get-service-list" serialization="none" method="get" resource="{$xis-exist}/modules/get-soap-service-list.xq" replace="instance" instance="service-list">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- save submission -->
+            <xforms:submission id="save-service-list" method="post" ref="instance('service-list')" resource="{$xis-exist}/modules/save-service-list.xquery" replace="none" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- event observer for configuration changes -->
+            <xforms:action ev:observer="service-list" ev:event="xforms-insert xforms-delete xxforms-value-changed">
+                <xforms:setvalue ref="instance('data-safe')">false</xforms:setvalue>
+            </xforms:action>
+
+         <!-- instance for message tempate list -->
+            <xforms:instance id="message-template-list-instance">
+                <dummy/>
+            </xforms:instance>
+         <!-- get message tempate list submission -->
+            <xforms:submission id="get-message-template-list" serialization="none" method="get" resource="{$xis-exist}/modules/get-message-template-list.xq?xmlResources={instance('selected-xml-resources')}" replace="instance" instance="message-template-list-instance">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+            <xforms:action ev:event="xforms-model-construct-done">
+                <xxforms:variable name="session-language" select="xxforms:get-session-attribute('language')"/>
+                <xforms:setvalue ref="instance('language')" value="if (string-length($session-language)&gt;0)       then $session-language/string() else ('nl-NL')"/>
+                <xforms:insert context="." origin="xxforms:set-session-attribute('language', instance('language'))"/>
+                <xforms:send submission="get-resources-submission"/>
+                <xforms:send submission="get-xml-resources-list"/>
+                <!--<xforms:setvalue ref="instance('selected-xml-resources')" value="instance('xml-resources-list')/version[1]/@uriString"/>-->
+                <xforms:send submission="get-service-list"/>
+                <xforms:send submission="get-message-template-list"/>
+            </xforms:action>
+            <xxforms:script ev:event="xforms-ready"
+            >
+                window.onbeforeunload = function() {
+                if (ORBEON.xforms.Document.getValue('data-safe-input') != 'true')
+                return "Deze tekst kunnen we aanpassen.";
+                }
+            </xxforms:script>
+         <!-- form ready actions -->
+            <xforms:action ev:event="xforms-ready">
+                <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+            </xforms:action>
+            <xxforms:variable name="resources" select="instance('resources-instance')//resources[@xml:lang=instance('language')]"/>
+            <xxforms:variable name="editor" select="contains(xxforms:get-session-attribute('groups'),'xis')"/>
+        </xforms:model>
+    </xhtml:head>
+    <xhtml:body>
+      <!-- special output used to give warning if user leaves page -->
+        <xforms:output ref="instance('data-safe')" id="data-safe-input" style="display: none"/>
+      <!-- SOAP server info -->
+        <xhtml:table width="100%" class="detail">
+            <xhtml:tr>
+                <xhtml:td class="heading">
+                    <xhtml:div class="heading">
+                        <xforms:output ref="$resources/available-services"/>
+                    </xhtml:div>
+                    <xhtml:div class="buttons">
+                        <xforms:output ref="concat($resources/filter,':')"/>
+                        <xforms:select1 ref="instance('selected-xml-resources')" appearance="minimal" class="auto-width">
+                            <xforms:item>
+                                <xforms:label ref="concat('--',$resources/all,'--')"/>
+                                <xforms:value ref="''"/>
+                            </xforms:item>
+                            <xforms:itemset nodeset="instance('xml-resources-list')/version">
+                                <xforms:label ref="@name"/>
+                                <xforms:value ref="@uriString"/>
+                            </xforms:itemset>
+                            <xforms:action ev:event="xforms-value-changed">
+                                <xforms:send submission="get-message-template-list"/>
+                            </xforms:action>
+                        </xforms:select1>
+                    </xhtml:div>
+                </xhtml:td>
+            </xhtml:tr>
+            <xhtml:tr>
+                <xhtml:td>
+                    <xhtml:table width="100%" class="detail zebra-table">
+                        <xforms:repeat nodeset="instance('message-template-list-instance')/xis:service[not(@location=preceding-sibling::xis:service/@location)]" id="message-templates">
+                     <!--<xhtml:tr class="not-selectable">-->
+                            <!-- <service name="" location="" locationResource=""/> -->
+                            <xxforms:variable name="service" select="."/>
+                            <xxforms:variable name="serviceName" select="@name"/>
+                            <xxforms:variable name="serviceUri" select="@location"/>
+                            <xxforms:variable name="serviceResource" select="@locationResource"/>
+                            <xxforms:variable name="resourcePath" select="instance('selected-xml-resources')"/>
+                            <xhtml:tr class="not-selectable zebra-row-{if (position() mod 2 = 0) then 'even' else 'odd'}">
+                        <!-- Activate/deactivate/help -->
+                                <xhtml:td>
+                                    <xforms:group ref=".[$editor][$serviceName=instance('service-list')/xis:service/@name]">
+                                        <fr:button>
+                                            <xforms:label>
+                                                <xhtml:img src="/img/remove.gif" alt=""/>
+                                            </xforms:label>
+                                            <xforms:hint appearance="minimal">
+                                                <xforms:output ref="$resources/deactivate"/>
+                                                <xforms:output ref="if (string-length(instance('selected-xml-resources'))=0) then $resources/deactivate-note else $resources/deactivate-note-for-all-services"/>
+                                            </xforms:hint>
+                                            <!-- Note: this purposefully deactivates all services by this name, regardless of the materials they are in. -->
+                                            <xforms:delete ev:event="DOMActivate" nodeset="instance('service-list')/xis:service[@name=$serviceName]"/>
+                                        </fr:button>
+                                    </xforms:group>
+                                    <xforms:group ref=".[$editor][not($serviceName=instance('service-list')/xis:service/@name)][.//@implemented='true']">
+                                        <fr:button>
+                                            <xforms:label>
+                                                <xhtml:img src="/img/plus.png" alt=""/>
+                                            </xforms:label>
+                                            <xforms:hint appearance="minimal">
+                                                <xforms:output ref="$resources/activate"/>
+                                                <xforms:output ref="if (string-length(instance('selected-xml-resources'))=0) then $resources/activate-note else $resources/activate-note-for-all-services"/>
+                                            </xforms:hint>
+                                            <!-- Note: while it may seem we activate the service for these materials only, we also activate it in all other account that host 
+                                                this service under the same service name -->
+                                            <xforms:action ev:event="DOMActivate">
+                                                <xforms:setvalue ref="instance('selected-service')/@name" value="$serviceName"/>
+                                                <xforms:setvalue ref="instance('selected-service')/@location" value="$serviceUri"/>
+                                                <xforms:setvalue ref="instance('selected-service')/@locationResource" value="$serviceResource"/>
+                                                <xforms:insert context="instance('service-list')" origin="instance('selected-service')"/>
+                                            </xforms:action>
+                                        </fr:button>
+                                    </xforms:group>
+                                </xhtml:td>
+                        <!-- Service name -->
+                                <xhtml:td>
+                                    <xforms:group ref=".[$editor][$serviceName=instance('service-list')/xis:service/@name]">
+                                        <xhtml:strong>
+                                            <xforms:output ref="$serviceName"/>
+                                        </xhtml:strong>
+                                    </xforms:group>
+                                    <xforms:group ref=".[$editor][not($serviceName=instance('service-list')/xis:service/@name)][.//@implemented='true']">
+                                        <xforms:output ref="$serviceName"/>
+                                    </xforms:group>
+                                    <xforms:group ref=".[$editor][not($serviceName=instance('service-list')/xis:service/@name)][not(.//@implemented='true')]">
+                                        <xhtml:span style="color: lightgrey;">
+                                            <xforms:output ref="$serviceName"/>
+                                        </xhtml:span>
+                                    </xforms:group>
+                                    <xforms:group ref=".[$editor][not($serviceName=instance('service-list')/xis:service/@name)][not(.//@implemented='true')]">
+                                        <xforms:help>[Service: <xforms:output ref="$serviceName"/> Missing response template in <xforms:output ref="instance('message-template-list-instance')/@resourcePath"/>/message-templates for <xforms:output value="string-join(distinct-values(.//@requiredTemplates),' or ')"/>
+                                        </xforms:help>
+                                    </xforms:group>
+                                </xhtml:td>
+                        <!-- Service uri -->
+                                <xhtml:td>
+                                    <xforms:group ref=".[$editor][$serviceName=instance('service-list')/xis:service/@name]">
+                                        <xhtml:strong>
+                                            <xforms:output ref="$serviceUri"/>
+                                        </xhtml:strong>
+                                    </xforms:group>
+                                    <xforms:group ref=".[$editor][not($serviceName=instance('service-list')/xis:service/@name)][.//@implemented='true']">
+                                        <xforms:output ref="$serviceUri"/>
+                                    </xforms:group>
+                                    <xforms:group ref=".[$editor][not($serviceName=instance('service-list')/xis:service/@name)][not(.//@implemented='true')]">
+                                        <xhtml:span style="color: lightgrey;">
+                                            <xforms:output ref="$serviceUri"/>
+                                        </xhtml:span>
+                                    </xforms:group>
+                                </xhtml:td>
+                        <!-- Also available in these services -->
+                                <xhtml:td>
+                                    <xforms:group ref=".[string-length(instance('selected-xml-resources'))=0]">
+                                        <xforms:repeat ref="instance('message-template-list-instance')/xis:service[@location=$serviceUri]">
+                                            <xhtml:div class="not-selectable">
+                                                <xforms:group ref=".[$editor][$serviceName=instance('service-list')/xis:service/@name]">
+                                                    <xhtml:strong>
+                                                        <xforms:output ref="@hl7collectionname"/>
+                                                    </xhtml:strong>
+                                                </xforms:group>
+                                                <xforms:group ref=".[$editor][not($serviceName=instance('service-list')/xis:service/@name)][.//@implemented='true']">
+                                                    <xforms:output ref="@hl7collectionname"/>
+                                                </xforms:group>
+                                                <xforms:group ref=".[$editor][not($serviceName=instance('service-list')/xis:service/@name)][not(.//@implemented='true')]">
+                                                    <xhtml:span style="color: lightgrey;">
+                                                        <xforms:output ref="@hl7collectionname"/>
+                                                    </xhtml:span>
+                                                </xforms:group>
+                                            </xhtml:div>
+                                        </xforms:repeat>
+                                    </xforms:group>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xforms:repeat>
+                    </xhtml:table>
+                </xhtml:td>
+            </xhtml:tr>
+        </xhtml:table>
+        <xforms:group ref=".[instance('data-safe')='false']">
+            <xhtml:table width="100%">
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xhtml:div class="buttons">
+                            <fr:button>
+                                <xforms:label ref="$resources/cancel"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xforms:send submission="get-service-list"/>
+                                    <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                                </xforms:action>
+                            </fr:button>
+                            <fr:button>
+                                <xforms:label ref="$resources/save"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xforms:send submission="save-service-list"/>
+                                    <xforms:send submission="get-service-list"/>
+                                    <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                                </xforms:action>
+                            </fr:button>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xhtml:table>
+        </xforms:group>
+    </xhtml:body>
+</xhtml:html>

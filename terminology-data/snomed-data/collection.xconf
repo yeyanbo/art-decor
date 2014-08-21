@@ -1,0 +1,18 @@
+<collection xmlns="http://exist-db.org/collection-config/1.0">
+    <index xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <lucene>
+            <analyzer class="org.apache.lucene.analysis.standard.StandardAnalyzer">
+                <param name="stopwords" type="java.util.Set"/>
+            </analyzer>
+            <text qname="desc"/>
+        </lucene>
+        <create qname="@conceptId" type="xs:string"/>
+        <create qname="@sourceId" type="xs:string"/>
+        <create qname="@refsetId" type="xs:string"/>
+        <create qname="@distance" type="xs:string"/>
+        <create qname="@mapTarget" type="xs:string"/>
+        <create qname="@id" type="xs:string"/>
+         <create qname="@referencedComponentId" type="xs:string"/>
+        <create qname="id" type="xs:string"/>
+    </index>
+</collection>

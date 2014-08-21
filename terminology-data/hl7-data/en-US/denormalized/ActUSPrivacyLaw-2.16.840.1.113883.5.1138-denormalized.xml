@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="1118"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1138"/>
+   <Title name="ActUSPrivacyLaw" date="2012-08-02" version="1.000">Description: A jurisdictional mandate in the US relating to privacy.</Title>
+   <Class code="rootClass">
+      <SubClass subCount="6" code="_ActUSPrivacyLaw" kind="concept">
+         <Rubric id="d1e76836" kind="preferred">
+            <Label xml:lang="en-US">ActUSPrivacyLaw</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">ActUSPrivacyLaw</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">Description: A jurisdictional mandate in the US relating to privacy.</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActUSPrivacyLaw" kind="concept">
+      <Meta name="internalId" value="23360"/>
+      <SubClass code="42CFRPart2" subCount="0">
+         <Rubric id="d1e76878" kind="preferred">
+            <Label xml:lang="en-US">42 CFR Part2</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="CommonRule" subCount="0">
+         <Rubric id="d1e76919" kind="preferred">
+            <Label xml:lang="en-US">Common Rule</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="HIPAANOPP" subCount="0">
+         <Rubric id="d1e76960" kind="preferred">
+            <Label xml:lang="en-US">HIPAA notice of privacy practices</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="HIPAAPsyNotes" subCount="0">
+         <Rubric id="d1e77001" kind="preferred">
+            <Label xml:lang="en-US">HIPAA psychotherapy notes</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="HIPAASelfPay" subCount="0">
+         <Rubric id="d1e77042" kind="preferred">
+            <Label xml:lang="en-US">HIPAA self-pay</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="Title38Section7332" subCount="0">
+         <Rubric id="d1e77086" kind="preferred">
+            <Label xml:lang="en-US">Title 38 Section 7332</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e76814" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <i>Definition:</i>A jurisdictional mandate in the U.S. relating to privacy.</p>
+            <p>
+               <i>Usage Note:</i>ActPrivacyLaw codes may be associated with an Act or a Role to indicate the legal provision to which the assignment of an Act.confidentialityCode or Role.confidentialtyCode complies. May be used to further specify rationale for assignment of other ActPrivacyPolicy codes in the US realm, e.g., ETH and 42CFRPart2 can be differentiated from ETH and Title38Part1.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e76836" kind="short">
+         <Label xml:lang="en-US">ActUSPrivacyLaw</Label>
+      </Rubric>
+      <Rubric id="d1e76836" kind="preferred">
+         <Label xml:lang="en-US">ActUSPrivacyLaw</Label>
+      </Rubric>
+   </Class>
+   <Class code="42CFRPart2" kind="concept">
+      <Meta name="internalId" value="23361"/>
+      <SuperClass code="_ActUSPrivacyLaw">
+         <Rubric id="d1e76836" kind="preferred">
+            <Label xml:lang="en-US">ActUSPrivacyLaw</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76848" kind="definition">
+         <Label xml:lang="en-US">
+            <p>42 CFR Part 2 stipulates the right of an individual who has applied for or been given diagnosis or treatment for alcohol or drug abuse at a federally assisted program.</p>
+            <p>
+               <i>Definition:</i>Non-disclosure of health information relating to health care paid for by a federally assisted substance abuse program without patient consent.</p>
+            <p>
+               <i>Usage Note:</i>May be associated with an Act or a Role to indicate the legal provision to which the assignment of an Act.confidentialityCode or Role.confidentialityCode complies.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e76878" kind="short">
+         <Label xml:lang="en-US">42 CFR Part2</Label>
+      </Rubric>
+      <Rubric id="d1e76878" kind="preferred">
+         <Label xml:lang="en-US">42 CFR Part2</Label>
+      </Rubric>
+   </Class>
+   <Class code="CommonRule" kind="concept">
+      <Meta name="internalId" value="23362"/>
+      <SuperClass code="_ActUSPrivacyLaw">
+         <Rubric id="d1e76836" kind="preferred">
+            <Label xml:lang="en-US">ActUSPrivacyLaw</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76889" kind="definition">
+         <Label xml:lang="en-US">
+            <p>U.S. Federal regulations governing the protection of human subjects in research (codified at Subpart A of 45 CFR part 46) that has been adopted by 15 U.S. Federal departments and agencies in an effort to promote uniformity, understanding, and compliance with human subject protections. Existing regulations governing the protection of human subjects in Food and Drug Administration (FDA)-regulated research (21 CFR parts 50, 56, 312, and 812) are separate from the Common Rule but include similar requirements.</p>
+            <p>
+               <i>Definition:</i>U.S. federal laws governing research-related privacy policies.</p>
+            <p>
+               <i>Usage Note:</i>May be associated with an Act or a Role to indicate the legal provision to which the assignment of an Act.confidentialityCode or Role.confidentialtyCode complies.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e76919" kind="short">
+         <Label xml:lang="en-US">Common Rule</Label>
+      </Rubric>
+      <Rubric id="d1e76919" kind="preferred">
+         <Label xml:lang="en-US">Common Rule</Label>
+      </Rubric>
+   </Class>
+   <Class code="HIPAANOPP" kind="concept">
+      <Meta name="internalId" value="23363"/>
+      <SuperClass code="_ActUSPrivacyLaw">
+         <Rubric id="d1e76836" kind="preferred">
+            <Label xml:lang="en-US">ActUSPrivacyLaw</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76930" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The U.S. Public Law 104-191 Health Insurance Portability and Accountability Act (HIPAA) Privacy Rule (45 CFR Part 164 Subpart E) permits access, use and disclosure of certain personal health information (PHI as defined under the law) for purposes of Treatment, Payment, and Operations, and requires that the provider ask that patients acknowledge the Provider's Notice of Privacy Practices as permitted conduct under the law.</p>
+            <p>
+               <i>Definition:</i>Notification of HIPAA Privacy Practices.</p>
+            <p>
+               <i>Usage Note:</i>May be associated with an Act or a Role to indicate the legal provision to which the assignment of an Act.confidentialityCode or Role.confidentialtyCode complies.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e76960" kind="short">
+         <Label xml:lang="en-US">HIPAA notice of privacy practices</Label>
+      </Rubric>
+      <Rubric id="d1e76960" kind="preferred">
+         <Label xml:lang="en-US">HIPAA notice of privacy practices</Label>
+      </Rubric>
+   </Class>
+   <Class code="HIPAAPsyNotes" kind="concept">
+      <Meta name="internalId" value="23364"/>
+      <SuperClass code="_ActUSPrivacyLaw">
+         <Rubric id="d1e76836" kind="preferred">
+            <Label xml:lang="en-US">ActUSPrivacyLaw</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76971" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The U.S. Public Law 104-191 Health Insurance Portability and Accountability Act (HIPAA) Privacy Rule (45 CFR Part 164 Section 164.508) requires authorization for certain uses and disclosure of psychotherapy notes.</p>
+            <p>
+               <i>Definition:</i>Authorization that must be obtained for disclosure of psychotherapy notes.</p>
+            <p>
+               <i>Usage Note:</i>May be associated with an Act or a Role to indicate the legal provision to which the assignment of an Act.confidentialityCode or Role.confidentialityCode complies.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77001" kind="short">
+         <Label xml:lang="en-US">HIPAA psychotherapy notes</Label>
+      </Rubric>
+      <Rubric id="d1e77001" kind="preferred">
+         <Label xml:lang="en-US">HIPAA psychotherapy notes</Label>
+      </Rubric>
+   </Class>
+   <Class code="HIPAASelfPay" kind="concept">
+      <Meta name="internalId" value="23365"/>
+      <SuperClass code="_ActUSPrivacyLaw">
+         <Rubric id="d1e76836" kind="preferred">
+            <Label xml:lang="en-US">ActUSPrivacyLaw</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e77012" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Section 13405(a) of the Health Information Technology for Economic and Clinical Health Act (HITECH) stipulates the right of an individual to have disclosures regarding certain health care items or services for which the individual pays out of pocket in full restricted from a health plan.</p>
+            <p>
+               <i>Definition:</i>Non-disclosure of health information to a health plan relating to health care items or services for which an individual pays out of pocket in full.</p>
+            <p>
+               <i>Usage Note:</i>May be associated with an Act or a Role to indicate the legal provision to which the assignment of an Act.confidentialityCode or Role.confidentialityCode complies.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77042" kind="short">
+         <Label xml:lang="en-US">HIPAA self-pay</Label>
+      </Rubric>
+      <Rubric id="d1e77042" kind="preferred">
+         <Label xml:lang="en-US">HIPAA self-pay</Label>
+      </Rubric>
+   </Class>
+   <Class code="Title38Section7332" kind="concept">
+      <Meta name="internalId" value="23367"/>
+      <Meta name="code-retired" value="Title38Part1"/>
+      <SuperClass code="_ActUSPrivacyLaw">
+         <Rubric id="d1e76836" kind="preferred">
+            <Label xml:lang="en-US">ActUSPrivacyLaw</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e77053" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Title 38 Part 1-protected information may only be disclosed to a third party with the special written consent of the patient except where expressly authorized by 38 USC 7332. VA may disclose this information for specific purposes to: VA employees on a need to know basis - more restrictive than Privacy Act need to know; contractors who need the information in order to perform or fulfill the duties of the contract; and researchers who provide assurances that the information will not be identified in any report. This information may also be disclosed without consent where patient lacks decision-making capacity; in a medical emergency for the purpose of treating a condition which poses an immediate threat to the health of any individual and which requires immediate medical intervention; for eye, tissue, or organ donation purposes; and disclosure of HIV information for public health purposes.</p>
+            <p>
+               <i>Definition:</i>Title 38 Part 1 - Â§1.462 Confidentiality restrictions.</p>
+            <p>(a) General. The patient records to which Â§Â§1.460 through 1.499 of this part apply may be disclosed or used only as permitted by these regulations and may not otherwise be disclosed or used in any civil, criminal, administrative, or legislative proceedings conducted by any Federal, State, or local authority. Any disclosure made under these regulations must be limited to that information which is necessary to carry out the purpose of the disclosure. SUBCHAPTER III--PROTECTION OF PATIENT RIGHTS Sec. 7332. Confidentiality of certain medical records (a)(1) Records of the identity, diagnosis, prognosis, or treatment of any patient or subject which are maintained in connection with the performance of any program or activity (including education, training, treatment, rehabilitation, or research) relating to drug abuse, alcoholism or alcohol abuse, infection with the human immunodeficiency virus, or sickle cell anemia which is carried out by or for the Department under this title shall, except as provided in subsections (e) and (f), be confidential, and (section 5701 of this title to the contrary notwithstanding) such records may be disclosed only for the purposes and under the circumstances expressly authorized under subsection (b).</p>
+            <p>
+               <i>Usage Note:</i>May be associated with an Act or a Role to indicate the legal provision to which the assignment of an Act.confidentialityCode or Role.confidentialityCode complies.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77086" kind="short">
+         <Label xml:lang="en-US">Title 38 Section 7332</Label>
+      </Rubric>
+      <Rubric id="d1e77086" kind="preferred">
+         <Label xml:lang="en-US">Title 38 Section 7332</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

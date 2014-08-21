@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="134"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.7"/>
+   <Title name="ActPriority" date="2012-08-02" version="1.000">A set of codes (e.g., for routine, emergency), specifying the urgency under which the Act happened, can happen, is happening, is intended to happen, or is requested/demanded to happen.</Title>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="A" kind="concept">
+      <Meta name="internalId" value="16868"/>
+      <Rubric id="d1e61263" kind="definition">
+         <Label xml:lang="en-US">
+            <p>As soon as possible, next highest priority after stat.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61276" kind="short">
+         <Label xml:lang="en-US">ASAP</Label>
+      </Rubric>
+      <Rubric id="d1e61276" kind="preferred">
+         <Label xml:lang="en-US">ASAP</Label>
+      </Rubric>
+   </Class>
+   <Class code="CR" kind="concept">
+      <Meta name="internalId" value="16876"/>
+      <Rubric id="d1e61288" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Filler should contact the placer as soon as results are available, even for preliminary results. (Was "C" in HL7 verion 2.3's reporting priority.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61301" kind="short">
+         <Label xml:lang="en-US">callback results</Label>
+      </Rubric>
+      <Rubric id="d1e61301" kind="preferred">
+         <Label xml:lang="en-US">callback results</Label>
+      </Rubric>
+   </Class>
+   <Class code="CS" kind="concept">
+      <Meta name="internalId" value="16871"/>
+      <SubClass code="CSP"/>
+      <SubClass code="CSR"/>
+      <Rubric id="d1e61312" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Filler should contact the placer (or target) to schedule the service. (Was "C" in HL7 version 2.3's TQ-priority component.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61325" kind="short">
+         <Label xml:lang="en-US">callback for scheduling</Label>
+      </Rubric>
+      <Rubric id="d1e61325" kind="preferred">
+         <Label xml:lang="en-US">callback for scheduling</Label>
+      </Rubric>
+   </Class>
+   <Class code="EL" kind="concept">
+      <Meta name="internalId" value="12239"/>
+      <Rubric id="d1e61336" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Beneficial to the patient but not essential for survival.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61349" kind="short">
+         <Label xml:lang="en-US">elective</Label>
+      </Rubric>
+      <Rubric id="d1e61349" kind="preferred">
+         <Label xml:lang="en-US">elective</Label>
+      </Rubric>
+   </Class>
+   <Class code="EM" kind="concept">
+      <Meta name="internalId" value="12241"/>
+      <Rubric id="d1e61360" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An unforeseen combination of circumstances or the resulting state that calls for immediate action.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61373" kind="short">
+         <Label xml:lang="en-US">emergency</Label>
+      </Rubric>
+      <Rubric id="d1e61373" kind="preferred">
+         <Label xml:lang="en-US">emergency</Label>
+      </Rubric>
+   </Class>
+   <Class code="P" kind="concept">
+      <Meta name="internalId" value="16870"/>
+      <Rubric id="d1e61384" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Used to indicate that a service is to be performed prior to a scheduled surgery. When ordering a service and using the pre-op priority, a check is done to see the amount of time that must be allowed for performance of the service. When the order is placed, a message can be generated indicating the time needed for the service so that it is not ordered in conflict with a scheduled operation.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61397" kind="short">
+         <Label xml:lang="en-US">preop</Label>
+      </Rubric>
+      <Rubric id="d1e61397" kind="preferred">
+         <Label xml:lang="en-US">preop</Label>
+      </Rubric>
+   </Class>
+   <Class code="PRN" kind="concept">
+      <Meta name="internalId" value="16875"/>
+      <Rubric id="d1e61408" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An "as needed" order should be accompanied by a description of what constitutes a need. This description is represented by an observation service predicate as a precondition.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61421" kind="short">
+         <Label xml:lang="en-US">as needed</Label>
+      </Rubric>
+      <Rubric id="d1e61421" kind="preferred">
+         <Label xml:lang="en-US">as needed</Label>
+      </Rubric>
+   </Class>
+   <Class code="R" kind="concept">
+      <Meta name="internalId" value="16869"/>
+      <Rubric id="d1e61433" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Routine service, do at usual work hours.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61446" kind="short">
+         <Label xml:lang="en-US">routine</Label>
+      </Rubric>
+      <Rubric id="d1e61446" kind="preferred">
+         <Label xml:lang="en-US">routine</Label>
+      </Rubric>
+   </Class>
+   <Class code="RR" kind="concept">
+      <Meta name="internalId" value="16877"/>
+      <Rubric id="d1e61457" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A report should be prepared and sent as quickly as possible.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61470" kind="short">
+         <Label xml:lang="en-US">rush reporting</Label>
+      </Rubric>
+      <Rubric id="d1e61470" kind="preferred">
+         <Label xml:lang="en-US">rush reporting</Label>
+      </Rubric>
+   </Class>
+   <Class code="S" kind="concept">
+      <Meta name="internalId" value="16867"/>
+      <Rubric id="d1e61481" kind="definition">
+         <Label xml:lang="en-US">
+            <p>With highest priority (e.g., emergency).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61494" kind="short">
+         <Label xml:lang="en-US">stat</Label>
+      </Rubric>
+      <Rubric id="d1e61494" kind="preferred">
+         <Label xml:lang="en-US">stat</Label>
+      </Rubric>
+   </Class>
+   <Class code="T" kind="concept">
+      <Meta name="internalId" value="16874"/>
+      <Rubric id="d1e61505" kind="definition">
+         <Label xml:lang="en-US">
+            <p>It is critical to come as close as possible to the requested time (e.g., for a through antimicrobial level).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61518" kind="short">
+         <Label xml:lang="en-US">timing critical</Label>
+      </Rubric>
+      <Rubric id="d1e61518" kind="preferred">
+         <Label xml:lang="en-US">timing critical</Label>
+      </Rubric>
+   </Class>
+   <Class code="UD" kind="concept">
+      <Meta name="internalId" value="20843"/>
+      <Rubric id="d1e61529" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Drug is to be used as directed by the prescriber.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61542" kind="short">
+         <Label xml:lang="en-US">use as directed</Label>
+      </Rubric>
+      <Rubric id="d1e61542" kind="preferred">
+         <Label xml:lang="en-US">use as directed</Label>
+      </Rubric>
+   </Class>
+   <Class code="UR" kind="concept">
+      <Meta name="internalId" value="12240"/>
+      <Rubric id="d1e61553" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Calls for prompt action.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61566" kind="short">
+         <Label xml:lang="en-US">urgent</Label>
+      </Rubric>
+      <Rubric id="d1e61566" kind="preferred">
+         <Label xml:lang="en-US">urgent</Label>
+      </Rubric>
+   </Class>
+   <Class code="CSP" kind="concept">
+      <Meta name="internalId" value="16872"/>
+      <SuperClass code="CS"/>
+      <Rubric id="d1e61578" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Filler should contact the placer to schedule the service. (Was "C" in HL7 version 2.3's TQ-priority component.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61596" kind="short">
+         <Label xml:lang="en-US">callback placer for scheduling</Label>
+      </Rubric>
+      <Rubric id="d1e61596" kind="preferred">
+         <Label xml:lang="en-US">callback placer for scheduling</Label>
+      </Rubric>
+   </Class>
+   <Class code="CSR" kind="concept">
+      <Meta name="internalId" value="16873"/>
+      <SuperClass code="CS"/>
+      <Rubric id="d1e61607" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Filler should contact the service recipient (target) to schedule the service. (Was "C" in HL7 version 2.3's TQ-priority component.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61625" kind="short">
+         <Label xml:lang="en-US">contact recipient for scheduling</Label>
+      </Rubric>
+      <Rubric id="d1e61625" kind="preferred">
+         <Label xml:lang="en-US">contact recipient for scheduling</Label>
+      </Rubric>
+   </Class>
+</ClaML>

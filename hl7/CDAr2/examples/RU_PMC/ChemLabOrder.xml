@@ -1,0 +1,900 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?mso-infoPathSolution productVersion="11.0.6565" PIVersion="1.0.0.0" href="https://sgk.cch.pmc.ru/sites/assmd/DocLib1/Forms/template.xsn" language="ru" name="urn:schemas-microsoft-com:office:infopath:M-o0-bkemh--K-A:urn-hl7-org-v3" solutionVersion="1.0.0.3" ?>
+<?mso-application progid="InfoPath.Document"?>
+<ns1:SMD xmlns:pmc="http://www.pmc.ru" xmlns:mif="urn:hl7-org:v3/mif" xmlns:ns1="urn:hl7-org:v3" xmlns:sch="http://www.ascc.net/xml/schematron" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:my="http://schemas.microsoft.com/office/infopath/2003/myXSD/2006-06-15T09:40:18" xmlns:xd="http://schemas.microsoft.com/office/infopath/2003" xsi:schemaLocation="urn:hl7-org:v3 F:\Thinkpad_D\Финансирование\Миннауки\7750~1\Схемы\BCC0~1\SMDlab.xsd">
+	<ns1:id extension="8A23EBB3-31CC-475C-874F-93BEEBFA2DB5"/>
+	<ns1:setId extension="8A23EBB3-31CC-475C-874F-93BEEBFA2DB5"/>
+	<ns1:versionNumber value="1"/>
+	<ns1:CDA>
+		<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ns1:ClinicalDocument classCode="DOCCLIN" moodCode="EVN">
+			<ns1:typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+			<ns1:id extension="8A23EBB3-31CC-475C-874F-93BEEBFA2DB5"/>
+			<ns1:code code="18719-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.17">
+				<ns1:translation displayName="Биохимические исследования"/>
+			</ns1:code>
+			<ns1:effectiveTime/>
+			<ns1:confidentialityCode/>
+			<ns1:setId extension="8A23EBB3-31CC-475C-874F-93BEEBFA2DB5"/>
+			<ns1:versionNumber value="1"/>
+			<ns1:recordTarget typeCode="RCT" contextControlCode="OP">
+				<ns1:patientRole>
+					<ns1:id root="1.2.643.2.27.3.1234567890123.21" extension="21" assigningAuthorityName=" Городская больница №21" displayable="true"/>
+					<ns1:addr>121456 г.Проспект N, д.NN, кв.NNN</ns1:addr>
+					<ns1:telecom value="tel:+8(903)777-7777" use="MC"/>
+					<ns1:patient>
+						<ns1:name>Пациентка N</ns1:name>
+						<ns1:administrativeGenderCode code="Ж" codeSystem="2.16.840.1.113883.5.1">
+							<ns1:translation displayName="Жен"/>
+						</ns1:administrativeGenderCode>
+						<ns1:birthTime value="1918"/>
+					</ns1:patient>
+					<ns1:providerOrganization>
+						<ns1:id root="1.2.643.2.27.1234567890123" extension="77"/>
+						<ns1:name>Поликлиника</ns1:name>
+						<ns1:telecom value="tel:(495)555-5555" use="WP"/>
+						<ns1:telecom value="mailto:sv@mail.ru" use="WP"/>
+					</ns1:providerOrganization>
+				</ns1:patientRole>
+			</ns1:recordTarget>
+			<ns1:author typeCode="AUT" contextControlCode="OP">
+				<ns1:time/>
+				<ns1:assignedAuthor classCode="ASSIGNED">
+					<ns1:id root="1.2.643.2.27.1234567890123" extension="152"/>
+					<ns1:code code="15" codeSystem="2.16.840.1.113883.6.239.0.327" displayName="Врач"/>
+					<ns1:assignedPerson classCode="PSN" determinerCode="INSTANCE">
+						<ns1:name>Иванов Михаил Игоревич</ns1:name>
+					</ns1:assignedPerson>
+					<ns1:representedOrganization classCode="ORG" determinerCode="INSTANCE">
+						<ns1:id root="1.2.643.2.27.1234567890123" extension="1533"/>
+						<ns1:name>Общее хирургическое отд.</ns1:name>
+						<ns1:telecom value="tel:(495)555-5001" use="WP"/>
+						<ns1:asOrganizationPartOf>
+							<ns1:wholeOrganization>
+								<ns1:id root="1.2.643.2.27.1234567890123" extension="77"/>
+								<ns1:name>Больница</ns1:name>
+								<ns1:telecom value="tel:(495)555-5555" use="WP"/>
+								<ns1:telecom value="mailto:cch@mail.ru" use="WP"/>
+							</ns1:wholeOrganization>
+						</ns1:asOrganizationPartOf>
+					</ns1:representedOrganization>
+				</ns1:assignedAuthor>
+			</ns1:author>
+			<ns1:custodian typeCode="CST">
+				<ns1:assignedCustodian classCode="ASSIGNED">
+					<ns1:representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+						<ns1:id root="1.2.643.2.27.1234567890123" extension="77"/>
+						<ns1:name>Больница</ns1:name>
+						<ns1:telecom value="mailto:cch@mail.ru" use="WP"/>
+					</ns1:representedCustodianOrganization>
+				</ns1:assignedCustodian>
+			</ns1:custodian>
+			<ns1:informationRecipient typeCode="PRCP">
+				<ns1:intendedRecipient classCode="ASSIGNED">
+					<ns1:receivedOrganization>
+						<ns1:id root="1.2.643.2.27.1234567890123" extension="215"/>
+						<ns1:name>Биохимическая лаборатория</ns1:name>
+						<ns1:telecom value="tel:(495)555-6666" use="WP"/>
+						<ns1:telecom value="mailto:cch_biolab@mail.ru" use="WP"/>
+						<ns1:asOrganizationPartOf>
+							<ns1:wholeOrganization>
+								<ns1:id root="1.2.643.2.27.1234567890123" extension="77"/>
+								<ns1:name>Больница</ns1:name>
+								<ns1:telecom value="tel:(495)555-6666" use="WP"/>
+								<ns1:telecom value="mailto:cch@mail.ru" use="WP"/>
+							</ns1:wholeOrganization>
+						</ns1:asOrganizationPartOf>
+					</ns1:receivedOrganization>
+				</ns1:intendedRecipient>
+			</ns1:informationRecipient>
+			<ns1:componentOf>
+				<ns1:encompassingEncounter moodCode="EVN">
+					<ns1:id root="1.2.643.2.27.1234567890123" extension="21554-2"/>
+					<ns1:code displayName="Госпитализация"/>
+					<ns1:effectiveTime>
+						<ns1:low value="20060505"/>
+						<ns1:high nullFlavor="NA"/>
+					</ns1:effectiveTime>
+					<ns1:responsibleParty>
+						<ns1:assignedEntity>
+							<ns1:id root="1.2.643.2.27.1234567890123" extension="1533"/>
+							<ns1:representedOrganization classCode="ORG" determinerCode="INSTANCE">
+								<ns1:id root="1.2.643.2.27.1234567890123" extension="1533"/>
+								<ns1:name>Общее хирургическое отд.</ns1:name>
+								<ns1:telecom value="tel:(495)555-5001" use="WP"/>
+								<ns1:asOrganizationPartOf>
+									<ns1:wholeOrganization>
+										<ns1:id root="1.2.643.2.27.1234567890123" extension="77"/>
+										<ns1:name>Больница</ns1:name>
+										<ns1:telecom value="tel:(495)555-3312" use="WP"/>
+										<ns1:telecom value="mailto:cch@mail.ru" use="WP"/>
+									</ns1:wholeOrganization>
+								</ns1:asOrganizationPartOf>
+							</ns1:representedOrganization>
+						</ns1:assignedEntity>
+					</ns1:responsibleParty>
+					<ns1:location>
+						<ns1:healthCareFacility>
+							<ns1:location>
+								<ns1:addr>палата 377</ns1:addr>
+							</ns1:location>
+						</ns1:healthCareFacility>
+					</ns1:location>
+				</ns1:encompassingEncounter>
+			</ns1:componentOf>
+			<ns1:component typeCode="COMP" contextConductionInd="true">
+				<ns1:structuredBody classCode="DOCBODY" moodCode="EVN">
+					<ns1:component typeCode="COMP">
+						<ns1:typeId root="2.16.840.1.113883.1.3" extension="1" />
+						<ns1:section classCode="DOCSECT" moodCode="EVN">
+							<ns1:id root="1.2.643.2.27.1234567890123.1.2"/>
+							<ns1:code code="256" codeSystem="1.2.643.2.27.1234567890123.1.2.3"/>
+							<ns1:title representation="TXT" mediaType="text/plain"/>
+							<ns1:text ID="ID000001" mediaType="text/x-hl7-text+xml">								<b xmlns="http://www.w3.org/1999/xhtml">
+									<font face="Arial-BoldMT" size="2">
+										<div align="left">Биохимическое исследование<font face="Arial-BoldMT" color="#442422" size="2">№ от </font>
+											<font face="Arial-BoldMT" size="2">2006-07-14</font>
+										</div>
+									</font>
+								</b>
+								<font xmlns="http://www.w3.org/1999/xhtml" face="ArialMT" color="#442422" size="2">
+									<div align="left">Цель исследования и предварительный диагноз<font face="ArialMT" color="#442422" size="2">:</font>
+									</div>
+								</font>
+								<b xmlns="http://www.w3.org/1999/xhtml">
+									<font face="Arial-BoldMT" color="#442422">
+										<div align="left">Пациентка N</div>
+									</font>
+								</b>
+								<font xmlns="http://www.w3.org/1999/xhtml" face="ArialMT" color="#442422" size="2">
+									<div align="left">и<font face="ArialMT" color="#442422" size="2">/</font>
+										<font face="ArialMT" color="#442422" size="2">б </font>
+										<b>
+											<font face="Arial-BoldMT" color="#442422" size="2">100 </font>
+											<font face="Arial-BoldMT" color="#442422" size="2">П</font>
+											<font face="Arial-BoldMT" color="#442422" size="2">-</font>
+											<font face="Arial-BoldMT" color="#442422" size="2">Поликлиника</font>
+											<font face="Arial-BoldMT" color="#442422" size="2">1 </font>
+										</b>
+										<font face="ArialMT" color="#442422" size="2">пол </font>
+										<b>
+											<font face="Arial-BoldMT" color="#442422" size="2">Жен </font>
+										</b>
+										<font face="ArialMT" color="#442422" size="2">г</font>
+										<font face="ArialMT" color="#442422" size="2">/</font>
+										<font face="ArialMT" color="#442422" size="2">р </font>
+										<b>
+											<font face="Arial-BoldMT" color="#442422" size="2">1912</font>
+										</b>
+									</div>
+								</font>
+								<font xmlns="http://www.w3.org/1999/xhtml" face="ArialMT" color="#442422" size="2">
+									<div align="left">учр<font face="ArialMT" color="#442422" size="2">. </font>
+										<b>
+											<font face="Arial-BoldMT" color="#442422" size="2">Поликлиника</font>
+											<font face="Arial-BoldMT" color="#442422" size="2">1(</font>
+											<font face="Arial-BoldMT" color="#442422" size="2">СВ</font>
+											<font face="Arial-BoldMT" color="#442422" size="2">) </font>
+										</b>
+										<font face="ArialMT" color="#442422" size="2">отд</font>
+										<font face="ArialMT" color="#442422" size="2">.</font>
+									</div>
+								</font>
+								<b xmlns="http://www.w3.org/1999/xhtml">
+									<font face="Arial-BoldMT" color="#442422" size="2">
+										<div align="left">3-<font face="Arial-BoldMT" color="#442422" size="2">е</font>
+											<font face="ArialMT" color="#442422" size="2">врач тел</font>
+											<font face="ArialMT" color="#442422" size="2">.</font>
+										</div>
+									</font>
+									<font face="ArialMT" color="#442422" size="2">
+										<div align="left">Проба<font face="ArialMT" color="#442422" size="2">:</font>
+										</div>
+									</font>
+									<b>
+										<font face="Arial-BoldMT" color="#442422" size="2">
+											<div align="left">1 <font face="Arial-BoldMT" color="#442422" size="2">ЦЛКБ Сахар</font>
+											</div>
+										</font>
+										<font face="Arial-BoldMT" color="#442422" size="2">
+											<div align="left">3 <font face="Arial-BoldMT" color="#442422" size="2">ЦЛКБ Триглицериды</font>
+											</div>
+										</font>
+										<font face="Arial-BoldMT" color="#442422" size="2">
+											<div align="left">13 <font face="Arial-BoldMT" color="#442422" size="2">ЦЛКБ Б</font>
+												<font face="Arial-BoldMT" color="#442422" size="2">.</font>
+												<font face="Arial-BoldMT" color="#442422" size="2">фракции</font>
+												<font face="Arial-BoldMT" color="#442422" size="2">: </font>
+												<font face="Arial-BoldMT" color="#442422" size="2">альб</font>
+												<font face="Arial-BoldMT" color="#442422" size="2">., </font>
+												<font face="Arial-BoldMT" color="#442422" size="2">глоб</font>
+												<font face="Arial-BoldMT" color="#442422" size="2">.</font>
+											</div>
+											<div align="left">17 <font face="Arial-BoldMT" color="#442422" size="2">ЦЛКБ Креатинин</font>
+											</div>
+										</font>
+										<font face="Arial-BoldMT" color="#442422" size="2">
+											<div align="left">20 <font face="Arial-BoldMT" color="#442422" size="2">ЦЛКБ Натрий</font>
+											</div>
+										</font>
+										<font face="Arial-BoldMT" color="#442422" size="2">
+											<div align="left">22 <font face="Arial-BoldMT" color="#442422" size="2">ЦЛКБ Кальций ионизир</font>
+												<font face="Arial-BoldMT" color="#442422" size="2">.</font>
+											</div>
+											<div align="left">23 <font face="Arial-BoldMT" color="#442422" size="2">ЦЛКБ Хлориды</font>
+											</div>
+										</font>
+										<font face="Arial-BoldMT" color="#442422" size="2">
+											<div align="left">84 <font face="Arial-BoldMT" color="#442422" size="2">ЦЛКБ Амилаза</font>
+											</div>
+										</font>
+										<font face="Arial-BoldMT" color="#442422" size="2">
+											<div align="left">472 <font face="Arial-BoldMT" color="#442422" size="2">ЦЛКБ Канальц</font>
+												<font face="Arial-BoldMT" color="#442422" size="2">. </font>
+												<font face="Arial-BoldMT" color="#442422" size="2">реабсорбция</font>
+											</div>
+										</font>
+									</b>
+								</b>
+							</ns1:text>
+							<ns1:languageCode code="ru"/>
+						</ns1:section>
+					</ns1:component>
+				</ns1:structuredBody>
+			</ns1:component>
+		</ns1:ClinicalDocument>
+		<pmc:PMC>
+			<pmc:Order>
+				<pmc:Filler_data pmc:Filler_cdsys="OID_CKB">
+					<pmc:Placer_data pmc:Placer_cdsys="OID_PMC">
+						<pmc:Order_UID pmc:pmc_extension="" pmc:pmc_root="">8A23EBB3-31CC-475C-874F-93BEEBFA2DB5</pmc:Order_UID>
+						<pmc:Placer_order_ID pmc:Order_num="" pmc:Order_date="2006-07-14" pmc:Order_time=""/>
+						<pmc:Order_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+						<pmc:Transportation_mode/>
+						<pmc:Patient pmc:Birth_date="1912" pmc:Birth_time="" pmc:Birth_order="">
+							<pmc:Person_Name pmc:PN_Type="">Пациентка N</pmc:Person_Name>
+							<pmc:Patient_ID pmc:ID_Type="" pmc:pmc_extension="" pmc:pmc_root=""/>
+							<pmc:Mother_ID pmc:ID_Type="" pmc:pmc_extension="" pmc:pmc_root=""/>
+							<pmc:Patient_UID pmc:ID_Type="" pmc:pmc_extension="" pmc:pmc_root="">252020</pmc:Patient_UID>
+							<pmc:MRN pmc:MR_num="100" pmc:MR_code_root="" pmc:MR_facility_name="П-ка" pmc:MR_volume=""/>
+							<pmc:Sex pmc:pmc_code="" pmc:pmc_cdsys="" pmc:pmc_displayName="">Жен</pmc:Sex>
+							<pmc:Patient_tel>д/т: 1378383</pmc:Patient_tel>
+							<pmc:Patient_address/>
+							<pmc:IN>
+								<pmc:Employer pmc:pmc_code="" pmc:pmc_cdsys="" pmc:pmc_displayName=""/>
+								<pmc:Job_title pmc:pmc_code="" pmc:pmc_cdsys="" pmc:pmc_displayName=""/>
+								<pmc:Mandatory_Insurance>
+									<pmc:Insurance_company>
+										<pmc:Organization_name pmc:pmc_code="" pmc:pmc_cdsys="" pmc:pmc_displayName=""/>
+									</pmc:Insurance_company>
+									<pmc:Policy/>
+								</pmc:Mandatory_Insurance>
+								<pmc:Voluntary_Insurance>
+									<pmc:Insurance_company>
+										<pmc:Organization_name/>
+									</pmc:Insurance_company>
+									<pmc:Policy/>
+									<pmc:Health_program pmc:pmc_code="" pmc:pmc_cdsys="" pmc:pmc_displayName=""/>
+								</pmc:Voluntary_Insurance>
+							</pmc:IN>
+						</pmc:Patient>
+						<pmc:PVisit pmc:Visit_ID="" pmc:Financial_class="Бюджетный" pmc:Charge_price_indicator="">
+							<pmc:PL_temp>
+								<pmc:PL>
+									<pmc:Department>
+										<pmc:Department_name/>
+										<pmc:Organization_name/>
+									</pmc:Department>
+									<pmc:Room pmc:Room_number="" pmc:Storey="" pmc:Building_code="" pmc:Building_name=""/>
+									<pmc:PointOfCare/>
+								</pmc:PL>
+							</pmc:PL_temp>
+							<pmc:Patient_class>Основной</pmc:Patient_class>
+							<pmc:VIP_indicator/>
+							<pmc:Relevant_clinical_info>
+								<pmc:Clinical_info/>
+								<pmc:ICD_cd/>
+							</pmc:Relevant_clinical_info>
+							<pmc:Courtesy_code pmc:pmc_code="" pmc:pmc_cdsys="" pmc:pmc_displayName=""/>
+							<pmc:Adm_type pmc:pmc_code="" pmc:pmc_cdsys="" pmc:pmc_displayName=""/>
+							<pmc:DG pmc:pmc_code="" pmc:pmc_cdsys="" pmc:pmc_displayName="" pmc:originalText="">
+								<pmc:DG_priority pmc:pmc_code="" pmc:pmc_cdsys="" pmc:pmc_displayName=""/>
+								<pmc:DG_type pmc:pmc_code="" pmc:pmc_cdsys="" pmc:pmc_displayName=""/>
+							</pmc:DG>
+						</pmc:PVisit>
+						<pmc:Observation_requested>
+							<pmc:Specimen_source>
+								<pmc:Specimen_source_cd>BLDV</pmc:Specimen_source_cd>
+								<pmc:Specimen_source_name>Венозная кровь</pmc:Specimen_source_name>
+								<pmc:Obs_codes pmc:Observation_cdsys=""/>
+								<pmc:Observation_to_order>
+									<pmc:Observation>
+										<pmc:Observation_name pmc:Observation_code="1" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Сахар</pmc:Observation_name>
+										<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+										<pmc:Transportation_mode/>
+									</pmc:Observation>
+									<pmc:Ordered>false</pmc:Ordered>
+								</pmc:Observation_to_order>
+								<pmc:Observation_to_order>
+									<pmc:Observation>
+										<pmc:Observation_name pmc:Observation_code="3" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Триглицериды</pmc:Observation_name>
+										<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+										<pmc:Transportation_mode/>
+									</pmc:Observation>
+									<pmc:Ordered>false</pmc:Ordered>
+								</pmc:Observation_to_order>
+								<pmc:Observation_to_order>
+									<pmc:Observation>
+										<pmc:Observation_name pmc:Observation_code="13" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Б.фракции: альб., глоб.</pmc:Observation_name>
+										<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+										<pmc:Transportation_mode/>
+									</pmc:Observation>
+									<pmc:Ordered>false</pmc:Ordered>
+								</pmc:Observation_to_order>
+								<pmc:Observation_to_order>
+									<pmc:Observation>
+										<pmc:Observation_name pmc:Observation_code="17" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Креатинин</pmc:Observation_name>
+										<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+										<pmc:Transportation_mode/>
+									</pmc:Observation>
+									<pmc:Ordered>false</pmc:Ordered>
+								</pmc:Observation_to_order>
+								<pmc:Observation_to_order>
+									<pmc:Observation>
+										<pmc:Observation_name pmc:Observation_code="20" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Натрий</pmc:Observation_name>
+										<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+										<pmc:Transportation_mode/>
+									</pmc:Observation>
+									<pmc:Ordered>false</pmc:Ordered>
+								</pmc:Observation_to_order>
+								<pmc:Observation_to_order>
+									<pmc:Observation>
+										<pmc:Observation_name pmc:Observation_code="22" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Кальций ионизир.</pmc:Observation_name>
+										<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+										<pmc:Transportation_mode/>
+									</pmc:Observation>
+									<pmc:Ordered>false</pmc:Ordered>
+								</pmc:Observation_to_order>
+								<pmc:Observation_to_order>
+									<pmc:Observation>
+										<pmc:Observation_name pmc:Observation_code="23" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Хлориды</pmc:Observation_name>
+										<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+										<pmc:Transportation_mode/>
+									</pmc:Observation>
+									<pmc:Ordered>false</pmc:Ordered>
+								</pmc:Observation_to_order>
+								<pmc:Observation_to_order>
+									<pmc:Observation>
+										<pmc:Observation_name pmc:Observation_code="84" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Амилаза</pmc:Observation_name>
+										<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+										<pmc:Transportation_mode/>
+									</pmc:Observation>
+									<pmc:Ordered>false</pmc:Ordered>
+								</pmc:Observation_to_order>
+								<pmc:Observation_to_order>
+									<pmc:Observation>
+										<pmc:Observation_name pmc:Observation_code="472" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Канальц. реабсорбция</pmc:Observation_name>
+										<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+										<pmc:Transportation_mode/>
+									</pmc:Observation>
+									<pmc:Ordered>false</pmc:Ordered>
+								</pmc:Observation_to_order>
+							</pmc:Specimen_source>
+						</pmc:Observation_requested>
+						<pmc:Copy_to>
+							<pmc:Department>
+								<pmc:Department_name/>
+								<pmc:Organization_name/>
+							</pmc:Department>
+							<pmc:Primary_Provider/>
+							<pmc:MIS>
+								<pmc:MIS_ID/>
+							</pmc:MIS>
+						</pmc:Copy_to>
+						<pmc:Placer>
+							<pmc:Department>
+								<pmc:Department_name pmc:pmc_code="" pmc:pmc_cdsys="" pmc:pmc_displayName="">Терапевтическое</pmc:Department_name>
+								<pmc:Organization_name pmc:pmc_code="400" pmc:pmc_cdsys="OID_PMC" pmc:pmc_displayName="">Поликлиника</pmc:Organization_name>
+							</pmc:Department>
+							<pmc:Primary_Provider>
+								<pmc:Provider>
+									<pmc:Person_Name pmc:PN_Type=""/>
+									<pmc:Contact_Phone/>
+									<pmc:Contact_EMail/>
+									<pmc:Provider_UID pmc:ID_Type=""/>
+									<pmc:Role pmc:pmc_code="" pmc:pmc_cdsys="" pmc:pmc_displayName=""/>
+								</pmc:Provider>
+							</pmc:Primary_Provider>
+							<pmc:Secondary_Provider>
+								<pmc:Provider>
+									<pmc:Person_Name pmc:PN_Type=""/>
+									<pmc:Contact_Phone/>
+									<pmc:Contact_EMail/>
+									<pmc:Provider_UID pmc:ID_Type=""/>
+									<pmc:Role pmc:pmc_code="" pmc:pmc_cdsys="" pmc:pmc_displayName=""/>
+								</pmc:Provider>
+							</pmc:Secondary_Provider>
+							<pmc:MIS>
+								<pmc:MIS_ID/>
+							</pmc:MIS>
+						</pmc:Placer>
+					</pmc:Placer_data>
+					<pmc:Filler_order_ID pmc:Order_num="" pmc:Order_date="2006-07-14" pmc:Order_time="13:20"/>
+					<pmc:Observation_performed>
+						<pmc:Observation>
+							<pmc:Observation_name pmc:Observation_code="" pmc:Observation_cdsys="" pmc:LOINC_code=""/>
+							<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+							<pmc:Transportation_mode/>
+						</pmc:Observation>
+						<pmc:Observation_Result pmc:Result_number="">
+							<pmc:Observation_name pmc:Observation_code="" pmc:Observation_cdsys="" pmc:LOINC_code=""/>
+							<pmc:Result_date/>
+							<pmc:Result_data_type/>
+							<pmc:Result_value/>
+							<pmc:Reference_range/>
+							<pmc:Anomaly_flag/>
+							<pmc:ICD_cd/>
+							<pmc:ICD_O_cd pmc:ICD_O_degree=""/>
+							<pmc:Gross_description/>
+							<pmc:Microscopic_description/>
+							<pmc:Impression/>
+							<pmc:Recommendation/>
+							<pmc:Study_ID pmc:Series_qty="" pmc:Images_qty="" pmc:Modality_cd="LAB" pmc:Device_ID="" pmc:Dose=""/>
+						</pmc:Observation_Result>
+					</pmc:Observation_performed>
+					<pmc:Report>
+						<pmc:Report_name>Биохимическое исследование крови</pmc:Report_name>
+						<pmc:Report_date/>
+					</pmc:Report>
+					<pmc:Filler>
+						<pmc:Department>
+							<pmc:Department_name pmc:pmc_code="XXX" pmc:pmc_cdsys="CKB_OTD_OID" pmc:pmc_displayName="">Биохимическая лаборатория</pmc:Department_name>
+							<pmc:Organization_name pmc:pmc_code="56" pmc:pmc_cdsys="CKB_OID" pmc:pmc_displayName="">Больница</pmc:Organization_name>
+						</pmc:Department>
+						<pmc:Primary_Provider>
+							<pmc:Provider>
+								<pmc:Person_Name pmc:PN_Type=""/>
+								<pmc:Contact_Phone/>
+								<pmc:Contact_EMail/>
+								<pmc:Provider_UID pmc:ID_Type=""/>
+								<pmc:Role/>
+							</pmc:Provider>
+						</pmc:Primary_Provider>
+						<pmc:Secondary_Provider>
+							<pmc:Provider>
+								<pmc:Person_Name pmc:PN_Type=""/>
+								<pmc:Contact_Phone/>
+								<pmc:Contact_EMail/>
+								<pmc:Provider_UID pmc:ID_Type=""/>
+								<pmc:Role/>
+							</pmc:Provider>
+						</pmc:Secondary_Provider>
+					</pmc:Filler>
+				</pmc:Filler_data>
+				<pmc:FT>
+					<pmc:FT_cd pmc:FT_type="" pmc:FT_qty="" pmc:pmc_code="" pmc:pmc_cdsys="" pmc:pmc_displayName=""/>
+				</pmc:FT>
+				<pmc:Report_state>
+					<pmc:Report_state_cd/>
+					<pmc:PPT>
+						<pmc:Action_dttm/>
+					</pmc:PPT>
+					<pmc:Order>
+						<pmc:Filler_data>
+							<pmc:Placer_data>
+								<pmc:Order_UID/>
+								<pmc:Placer_order_ID pmc:Order_num="" pmc:Order_date="" pmc:Order_time=""/>
+								<pmc:Order_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+								<pmc:Transportation_mode/>
+								<pmc:Placer>
+									<pmc:Department>
+										<pmc:Department_name/>
+										<pmc:Organization_name/>
+									</pmc:Department>
+									<pmc:Primary_Provider/>
+								</pmc:Placer>
+							</pmc:Placer_data>
+							<pmc:Filler_order_ID pmc:Order_num="" pmc:Order_date="" pmc:Order_time=""/>
+						</pmc:Filler_data>
+					</pmc:Order>
+				</pmc:Report_state>
+			</pmc:Order>
+			<pmc:Order_state>
+				<pmc:Order_state_cd>Новый</pmc:Order_state_cd>
+				<pmc:PPT>
+					<pmc:Provider>
+						<pmc:Person_Name pmc:PN_Type=""/>
+						<pmc:Contact_Phone/>
+						<pmc:Contact_EMail/>
+						<pmc:Provider_UID pmc:ID_Type=""/>
+						<pmc:Role/>
+					</pmc:Provider>
+					<pmc:Action_dttm/>
+				</pmc:PPT>
+				<pmc:Order_state_reason/>
+			</pmc:Order_state>
+			<pmc:Report_state>
+				<pmc:Report_state_cd/>
+				<pmc:PPT>
+					<pmc:Provider>
+						<pmc:Person_Name pmc:PN_Type=""/>
+						<pmc:Contact_Phone/>
+						<pmc:Contact_EMail/>
+						<pmc:Provider_UID pmc:ID_Type=""/>
+						<pmc:Role/>
+					</pmc:Provider>
+					<pmc:Action_dttm/>
+				</pmc:PPT>
+			</pmc:Report_state>
+			<pmc:Action>
+				<pmc:Action_cd/>
+				<pmc:Action_val/>
+				<pmc:Action_err/>
+				<pmc:Action_dttm/>
+			</pmc:Action>
+			<pmc:Form>
+				<pmc:Column_1>
+					<pmc:Column_name/>
+					<pmc:Section_1>
+						<pmc:Section_name/>
+						<pmc:Specimen_source>
+							<pmc:Specimen_source_cd>BLDV</pmc:Specimen_source_cd>
+							<pmc:Specimen_source_name>Венозная кровь</pmc:Specimen_source_name>
+							<pmc:Obs_codes pmc:Observation_cdsys=""/>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="1" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Сахар</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>true</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="2" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Холестерин общий</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>false</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="3" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Триглицериды</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>true</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="12" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Белок общий</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>false</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="13" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Б.фракции: альб., глоб.</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>true</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="16" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Мочевина</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>false</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="17" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Креатинин</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>true</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="18" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Мочевая кислота</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>false</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="19" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Калий</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>false</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="20" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Натрий</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>true</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="21" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Кальций</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>false</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="23" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Хлориды</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>true</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="34" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Билирубин общий</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>false</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="43" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">ЛДГ общая</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>false</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="47" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Трансамин. аспар.</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>false</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="48" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Трансамин. алан.</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>false</pmc:Ordered>
+							</pmc:Observation_to_order>
+						</pmc:Specimen_source>
+					</pmc:Section_1>
+					<pmc:Section_2>
+						<pmc:Section_name/>
+					</pmc:Section_2>
+					<pmc:Section_3>
+						<pmc:Section_name/>
+					</pmc:Section_3>
+					<pmc:Section_4>
+						<pmc:Section_name/>
+					</pmc:Section_4>
+					<pmc:Section_5>
+						<pmc:Specimen_source>
+							<pmc:Specimen_source_cd/>
+							<pmc:Specimen_source_name/>
+							<pmc:Obs_codes pmc:Observation_cdsys=""/>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="" pmc:Observation_cdsys="" pmc:LOINC_code=""/>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>false</pmc:Ordered>
+							</pmc:Observation_to_order>
+						</pmc:Specimen_source>
+					</pmc:Section_5>
+				</pmc:Column_1>
+				<pmc:Column_2>
+					<pmc:Column_name/>
+					<pmc:Section_1>
+						<pmc:Section_name/>
+						<pmc:Specimen_source>
+							<pmc:Specimen_source_cd>BLDV</pmc:Specimen_source_cd>
+							<pmc:Specimen_source_name>Венозная кровь</pmc:Specimen_source_name>
+							<pmc:Obs_codes pmc:Observation_cdsys=""/>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="49" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Щел.фосфатаза</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>false</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="53" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Гамма-глютаматтранс.</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>false</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="55" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Холинэстераза</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>false</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="84" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Амилаза</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>true</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="471" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Клубочк. фильтрация</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>false</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="472" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Канальц. реабсорбция</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>true</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="4" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Альфа-холестерин</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>false</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="11" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Белк. фракции: эл. фор.</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>false</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="22" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Кальций ионизир.</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>true</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="24" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Литий</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>false</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="25" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Железо легкоотщепл.</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>false</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="26" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Фосфор неорганический</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>false</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="41" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Креатинфосфокиназа</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>false</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="45" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Изофермент ЛДГ-1</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>false</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="59" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Кислая фосфатаза общая</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>false</pmc:Ordered>
+							</pmc:Observation_to_order>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="60" pmc:Observation_cdsys="ЦЛКБ" pmc:LOINC_code="">Кислая фосфатаза пр.</pmc:Observation_name>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>false</pmc:Ordered>
+							</pmc:Observation_to_order>
+						</pmc:Specimen_source>
+					</pmc:Section_1>
+					<pmc:Section_2>
+						<pmc:Section_name/>
+					</pmc:Section_2>
+					<pmc:Section_3>
+						<pmc:Section_name/>
+					</pmc:Section_3>
+					<pmc:Section_4>
+						<pmc:Section_name/>
+					</pmc:Section_4>
+					<pmc:Section_5>
+						<pmc:Specimen_source>
+							<pmc:Specimen_source_cd/>
+							<pmc:Specimen_source_name/>
+							<pmc:Obs_codes pmc:Observation_cdsys=""/>
+							<pmc:Observation_to_order>
+								<pmc:Observation>
+									<pmc:Observation_name pmc:Observation_code="" pmc:Observation_cdsys="" pmc:LOINC_code=""/>
+									<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+									<pmc:Transportation_mode/>
+								</pmc:Observation>
+								<pmc:Ordered>false</pmc:Ordered>
+							</pmc:Observation_to_order>
+						</pmc:Specimen_source>
+					</pmc:Section_5>
+				</pmc:Column_2>
+			</pmc:Form>
+			<pmc:Speedy_input>
+				<pmc:Specimen_source>
+					<pmc:Specimen_source_cd>BLDV</pmc:Specimen_source_cd>
+					<pmc:Specimen_source_name>Венозная кровь</pmc:Specimen_source_name>
+					<pmc:Obs_codes pmc:Observation_cdsys="ЦЛКБ"/>
+					<pmc:Observation_to_order>
+						<pmc:Observation>
+							<pmc:Observation_name pmc:Observation_code="" pmc:Observation_cdsys="" pmc:LOINC_code=""/>
+							<pmc:Observation_TQ pmc:Priority="" pmc:Start_dttm="" pmc:End_dttm=""/>
+							<pmc:Transportation_mode/>
+						</pmc:Observation>
+						<pmc:Ordered>false</pmc:Ordered>
+					</pmc:Observation_to_order>
+				</pmc:Specimen_source>
+			</pmc:Speedy_input>
+			<pmc:Signatures>
+				<pmc:Placer_sign/>
+				<pmc:Filler_sign/>
+				<pmc:FT_sign/>
+				<pmc:Order_sign/>
+			</pmc:Signatures>
+			<pmc:inFulfillmentOf/>
+			<pmc:relatedDocument/>
+		</pmc:PMC>
+	</ns1:CDA>
+	<ns1:effectiveTime value="20060714"/>
+	<ns1:scheduledTime xsi:nil="true"/>
+	<ns1:fromSystem>
+		<ns1:sysURI/>
+	</ns1:fromSystem>
+	<ns1:access/>
+	<ns1:state code="Новый"/>
+	<ns1:process_state/>
+	<ns1:archive/>
+	<ns1:Signatures>
+		<ns1:signature/>
+	</ns1:Signatures>
+</ns1:SMD>

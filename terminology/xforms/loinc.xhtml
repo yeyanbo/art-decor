@@ -1,0 +1,382 @@
+<!--
+    Copyright (C) 2012 Art Decor Expert group, www.art-decor.org
+    
+    Author: Gerrit Boers
+
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:xxi="http://orbeon.org/oxf/xml/xinclude" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xi="http://www.w3.org/2001/XInclude-doc" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:widget="http://orbeon.org/oxf/xml/widget" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="loinc" xsi:schemaLocation="http://www.w3.org/1999/xhtml ../../orbeon_schemas/xhtml1-transitional-orbeon.xsd">
+    <xhtml:head>
+        <xhtml:title>
+            <xforms:output ref="$resources/loinc"/>
+        </xhtml:title>
+        <xforms:model>
+         <!-- Variable with path to art-exist for use by form -->
+            <xxforms:variable name="art-exist" select="xxforms:property('art.exist.url')"/>
+         <!-- Variable with path to terminology-eXist used to pass to client as link for services (SNOMED, LOINC) -->
+            <xxforms:variable name="terminology-exist" select="xxforms:property('terminology.exist.url')"/>
+           <!-- instance with logo -->
+            <xforms:instance id="logo">
+                <logo href="https://loinc.org">LOINC-logo40.png</logo>
+            </xforms:instance>
+         <!-- resources for internationalization -->
+            <xforms:instance id="resources-instance">
+                <dummy/>
+            </xforms:instance>
+         <!-- submission for loading resources -->
+            <xforms:submission id="get-resources-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-form-resources.xquery?packageRoot=terminology" replace="instance" instance="resources-instance" xxforms:readonly="true">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred:<xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- language -->
+            <xforms:instance id="language">
+                <language/>
+            </xforms:instance>
+         <!-- instance for help, temporary solution, must move to db -->
+            <xforms:instance id="help-instance">
+                <help-files>
+                    <search language="en-US">
+                        <div class="h3">Finding Terms</div>
+                        <p>Finding terms with the least amount of keystrokes possible, that is the goal.<br/> To achieve this goal the search field offers a combination of wildcard and exact match searches.</p>
+                        <b>General Properties</b>
+                        <ul>
+                            <li> Searches starting with lower case letters will also find terms starting with upper case letters. </li>
+                            <li> Results are ordered by wordcount and term length. </li>
+                            <li> Starting a search term with lower case will perform a wildcard search. </li>
+                            <li> Single term wildcard searches require a minimum of 4 keystrokes. </li>
+                            <li> Starting a search term with upper case will perform an exact match search. </li>
+                            <li> Single term exact match searches require a minimum of 2 keystrokes. </li>
+                        </ul>
+                        <b>Examples</b>
+                        <table width="100%">
+                            <tr>
+                                <td class="floating-label">Searching for</td>
+                                <td class="floating-label">Enter</td>
+                            </tr>
+                            <tr>
+                                <td>Salbutamol</td>
+                                <td>salb</td>
+                            </tr>
+                            <tr>
+                                <td>Pneumonia</td>
+                                <td>pneu</td>
+                            </tr>
+                            <tr>
+                                <td>Acute asthma</td>
+                                <td>acu ast</td>
+                            </tr>
+                            <tr>
+                                <td>Medication review</td>
+                                <td>med rev</td>
+                            </tr>
+                            <tr>
+                                <td>Pain lower back</td>
+                                <td>pa lo ba</td>
+                            </tr>
+                            <tr>
+                                <td>Oxazepam tablets 10mg</td>
+                                <td>ox ta 10</td>
+                            </tr>
+                            <tr>
+                                <td>Haemoglobin A</td>
+                                <td>hae A</td>
+                            </tr>
+                            <tr>
+                                <td>WCC (White blood cell count)</td>
+                                <td>WCC</td>
+                            </tr>
+                            <tr>
+                                <td>Hb (Hemoglobin)</td>
+                                <td>Hb</td>
+                            </tr>
+                            <tr>
+                                <td>FH: Asthma (Family history: Asthma)</td>
+                                <td>FH as</td>
+                            </tr>
+                        </table>
+                    </search>
+                    <search language="nl-NL">
+                        <div class="h3">Termen vinden</div>
+                        <p>Termen vinden met zo weinig mogelijk toetsaanslagen, dat is het doel.<br/> Om dit te bereiken ondersteunt het zoekveld het zoeken op exacte overeenkomst en het zogenaamde 'wildcard' zoeken.</p>
+                        <b>Algemene Eigenschappen</b>
+                        <ul>
+                            <li> Bij zoektermen met kleine letters worden ook overeenkomende termen met hoofdletters gevonden. </li>
+                            <li> Resultaten worden gesorteerd op aantal woorden en lengte van de term. </li>
+                            <li> Als een zoekterm met een kleine letter begint dan wordt gezocht naar termen beginnend met de zoekterm (wildcard). </li>
+                            <li> Wanneer de opdracht bestaat uit één enkele zoekterm beginnend met een kleine letter, dan moet deze minimaal vier letters bevatten. </li>
+                            <li> Als een zoekterm begint met een hoofdletter dan dan wordt gezocht naar termen die exact overeenkomen.. </li>
+                            <li> Wanneer de opdracht bestaat uit één enkele zoekterm beginnend met een hoofdletter, dan moet deze minimaal twee letters bevatten. </li>
+                        </ul>
+                        <b>Voorbeelden</b>
+                        <table width="100%">
+                            <tr>
+                                <td class="floating-label">U zoekt</td>
+                                <td class="floating-label">Toets</td>
+                            </tr>
+                            <tr>
+                                <td>Salbutamol</td>
+                                <td>salb</td>
+                            </tr>
+                            <tr>
+                                <td>Pneumonia</td>
+                                <td>pneu</td>
+                            </tr>
+                            <tr>
+                                <td>Acute asthma</td>
+                                <td>acu ast</td>
+                            </tr>
+                            <tr>
+                                <td>Medication review</td>
+                                <td>med rev</td>
+                            </tr>
+                            <tr>
+                                <td>Pain lower back</td>
+                                <td>pa lo ba</td>
+                            </tr>
+                            <tr>
+                                <td>Oxazepam tablets 10mg</td>
+                                <td>ox ta 10</td>
+                            </tr>
+                            <tr>
+                                <td>Haemoglobin A</td>
+                                <td>hae A</td>
+                            </tr>
+                            <tr>
+                                <td>WCC (White blood cell count)</td>
+                                <td>WCC</td>
+                            </tr>
+                            <tr>
+                                <td>Hb (Hemoglobin)</td>
+                                <td>Hb</td>
+                            </tr>
+                            <tr>
+                                <td>FH: Asthma (Family history: Asthma)</td>
+                                <td>FH as</td>
+                            </tr>
+                        </table>
+                    </search>
+                </help-files>
+            </xforms:instance>
+
+
+         <!-- instance for concept search string -->
+            <xforms:instance id="concept-search-instance">
+                <root>
+                    <search/>
+                </root>
+            </xforms:instance>
+
+         <!-- instance for description itemset -->
+            <xforms:instance id="concept-itemset-instance">
+                <result current="0" count="0"/>
+            </xforms:instance>
+
+
+         <!-- instance for version info -->
+            <xforms:instance id="version">
+                <loinc_db/>
+            </xforms:instance>
+            <xforms:submission id="get-loinc-version" ref="instance('version')" resource="{$terminology-exist}/loinc/modules/get-loinc-version-info.xquery" method="get" instance="version" replace="instance"/>
+
+         <!-- submission for searching LOINC -->
+            <xforms:submission id="update-loinc-concepts" ref="instance('concept-search-instance')" resource="{$terminology-exist}/loinc/searchLOINC/{instance('concept-search-instance')/search}" method="get" instance="concept-itemset-instance" replace="instance"/>
+            <xforms:setfocus ev:event="xforms-ready" control="search-description" xxforms:readonly="true"/>
+            <xforms:action ev:event="xforms-model-construct-done">
+                <xforms:send submission="get-resources-submission"/>
+                <xxforms:variable name="session-language" select="xxforms:get-session-attribute('language')"/>
+                <xforms:setvalue ref="instance('language')" value="if (string-length(xxforms:get-session-attribute('language'))&gt;0) then (xxforms:get-session-attribute('language')) else (instance('resources-instance')//resources[1]/@xml:lang/string())"/>
+                <xforms:insert context="." origin="xxforms:set-session-attribute('language', instance('language'))"/>
+                <xforms:setvalue ref="instance('concept-search-instance')/search" value="xxforms:get-request-parameter('conceptId')[string-length()&gt;0][1]"/>
+                <xforms:send submission="get-loinc-version"/>
+                <xforms:action if="instance('concept-search-instance')/search[string-length()&gt;0]">
+                    <xforms:send submission="update-loinc-concepts"/>
+                </xforms:action>
+            </xforms:action>
+            <xxforms:variable name="resources" select="instance('resources-instance')//resources[1]"/>
+        </xforms:model>
+    </xhtml:head>
+    <xhtml:body>
+      <!-- help dialog -->
+        <xxforms:dialog id="help-dialog" appearance="full" level="modeless" close="true" draggable="true" visible="false">
+            <xforms:label ref="$resources/help"/>
+            <xhtml:table width="100%">
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xforms:output mediatype="text/html" ref="xxforms:serialize(instance('help-instance')/search[@language=instance('language')], 'html')"/>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xhtml:div style="float:right">
+                            <fr:button>
+                                <xforms:label ref="$resources/close"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xxforms:hide ev:event="DOMActivate" dialog="help-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xhtml:table>
+        </xxforms:dialog>
+        <xhtml:table width="100%">
+         <!-- row with search and resultset -->
+            <xhtml:tr>
+                <xhtml:td width="70%">
+                    <xhtml:table width="100%">
+                        <xhtml:tr>
+                            <xhtml:td class="item-label">
+                                <xforms:output ref="$resources/searchterms"/>
+                                <xforms:trigger appearance="minimal" id="refresh">
+                                    <xforms:label class="control-label">
+                                        <xhtml:img src="/img/arrow_refresh.png" alt="" align="right"/>
+                                    </xforms:label>
+                                    <xforms:action ev:event="DOMActivate">
+                                        <xforms:delete ref="instance('concept-itemset-instance')/concept"/>
+                              <!--                              <xforms:insert context="instance('dhd-instance')" origin="instance('description-itemset-instance')/description[index('descriptions')]"/>-->
+                                        <xforms:setvalue ref="instance('concept-search-instance')/search" value="''"/>
+                                        <xforms:setfocus control="search-description"/>
+                                    </xforms:action>
+                                </xforms:trigger>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:input class="top" ref="instance('concept-search-instance')/search" id="search-description" incremental="true">
+                                    <xforms:action ev:event="xforms-value-changed">
+                                        <xxforms:variable name="search-value" select="."/>
+                                        <xxforms:variable name="make-suggestion" select="(string-length($search-value) &gt;= 4 and not(matches($search-value,'^[A-Z]|\s$|\s[a-z|0-9]$'))) or (string-length($search-value) &gt;= 2 and not(matches($search-value,'^[a-z]|\s$'))) or matches($search-value,'^[0-9]+-[0-9]')"/>
+                                        <xforms:action if="$make-suggestion">
+                                            <xforms:send submission="update-loinc-concepts"/>
+                                            <xforms:action if="xxforms:index('concepts')&gt;1">
+                                                <xforms:setindex repeat="concepts" index="1"/>
+                                            </xforms:action>
+                                        </xforms:action>
+                                    </xforms:action>
+                                </xforms:input>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xhtml:div style="float:right;">
+                                    <xforms:output ref="$resources/loinc"/>
+                                    <xforms:group ref="instance('version')">
+                                        <xforms:output ref="concat(@version,' ',@effectiveDate)"/>
+                                    </xforms:group>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                    </xhtml:table>
+                    <xhtml:p/>
+                    <xforms:group ref="instance('concept-itemset-instance')">
+                        <xhtml:div class="h2">
+                            <xforms:output ref="$resources/results"/>
+                            (
+                            <xforms:output ref="@current"/>
+                            <xforms:output ref="$resources/of"/>
+                            <xforms:output ref="@count"/>
+                            )
+                        </xhtml:div>
+                    </xforms:group>
+                    <fr:datatable width="100%" scrollable="vertical" height="300px">
+                        <xhtml:thead>
+                            <xhtml:tr>
+                                <xhtml:th fr:resizeable="true">
+                                    <xforms:output ref="$resources/loinc"/>
+                                </xhtml:th>
+                                <xhtml:th fr:resizeable="true">
+                                    <xforms:output ref="$resources/long-name"/>
+                                </xhtml:th>
+                                <xhtml:th fr:resizeable="true">
+                                    <xforms:output ref="$resources/component"/>
+                                </xhtml:th>
+                                <xhtml:th fr:resizeable="true">
+                                    <xforms:output ref="$resources/property"/>
+                                </xhtml:th>
+                                <xhtml:th fr:resizeable="true">
+                                    <xforms:output ref="$resources/timing"/>
+                                </xhtml:th>
+                                <xhtml:th fr:resizeable="true">
+                                    <xforms:output ref="$resources/system"/>
+                                </xhtml:th>
+                                <xhtml:th fr:resizeable="true">
+                                    <xforms:output ref="$resources/scale"/>
+                                </xhtml:th>
+                                <xhtml:th fr:resizeable="true">
+                                    <xforms:output ref="$resources/method"/>
+                                </xhtml:th>
+                            </xhtml:tr>
+                        </xhtml:thead>
+                        <xhtml:tbody>
+                            <xhtml:tr repeat-nodeset="instance('concept-itemset-instance')/concept" id="concepts">
+                                <xhtml:td>
+                                    <xxforms:variable name="cstatus" select="@status"/>
+                                <!-- status is ACTIVE (no bullet) or DEPRECATED DISCOURAGED TRIAL (blue bullet with tip) -->
+                                    <xforms:group ref=".[@status!='ACTIVE']">
+                                        <xforms:output ref="@loinc_num" class="{if (matches($cstatus,'(DISCOURAGED|DEPRECATED)')) then 'node-sdeprecated' else if ($cstatus='TRIAL') then 'node-sdraft' else ()}">
+                                            <xforms:hint>
+                                                <xforms:output ref="$cstatus"/>
+                                            </xforms:hint>
+                                        </xforms:output>
+                                    </xforms:group>
+                                    <xforms:group ref=".[@status='ACTIVE']">
+                                        <xforms:output ref="@loinc_num"/>
+                                    </xforms:group>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:output ref="longName"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:output ref="component"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:output ref="property"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:output ref="timing"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:output ref="system"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:output ref="scale"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:output ref="method"/>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xhtml:tbody>
+                  <!--                  <xforms:action ev:event="fr-selection-changed">
+                     <xforms:setvalue ref="instance('selected-message')/atp:message/@extension" value="event('selected')/hl7:id/@extension"/>
+                     <xforms:setvalue ref="instance('selected-message')/atp:message/@root" value="event('selected')/hl7:id/@root"/>
+                     <xforms:send submission="validation-report-submission"/>
+                  </xforms:action>-->
+                    </fr:datatable>
+
+               <!--               <xhtml:div class="navigate-seven">
+                  <xhtml:table width="100%">
+                     <xforms:repeat nodeset="instance('concept-itemset-instance')/concept" id="concepts">
+                        <xhtml:tr>
+                           <xhtml:td>
+                              <xforms:output ref="@loinc_num"/>
+                           </xhtml:td>
+                           <xhtml:td>
+                              <xforms:output ref="component"/>
+                           </xhtml:td>
+                        </xhtml:tr>
+
+                     </xforms:repeat>
+                  </xhtml:table>
+               </xhtml:div>-->
+                </xhtml:td>
+            </xhtml:tr>
+        </xhtml:table>
+
+      <!--      <fr:xforms-inspector/>-->
+    </xhtml:body>
+</xhtml:html>

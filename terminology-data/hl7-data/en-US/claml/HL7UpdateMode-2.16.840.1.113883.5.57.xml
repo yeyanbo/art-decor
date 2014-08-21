@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="29"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.57"/>
+   <Title name="HL7UpdateMode" date="2012-08-02" version="1.000">The possible modes of updating that occur when an attribute is received by a system that already contains values for that attribute.</Title>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="A" kind="concept">
+      <Meta name="internalId" value="22624"/>
+      <Rubric id="d1e138140" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The item was (or is to be) added, having not been present immediately before. (If it is already present, this may be treated as an error condition.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e138156" kind="short">
+         <Label xml:lang="en-US">Add</Label>
+      </Rubric>
+      <Rubric id="d1e138156" kind="preferred">
+         <Label xml:lang="en-US">Add</Label>
+      </Rubric>
+   </Class>
+   <Class code="AR" kind="concept">
+      <Meta name="internalId" value="22654"/>
+      <Rubric id="d1e138167" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The item was (or is to be) either added or replaced.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e138183" kind="short">
+         <Label xml:lang="en-US">Add or Replace</Label>
+      </Rubric>
+      <Rubric id="d1e138183" kind="preferred">
+         <Label xml:lang="en-US">Add or Replace</Label>
+      </Rubric>
+   </Class>
+   <Class code="D" kind="concept">
+      <Meta name="internalId" value="10020"/>
+      <Rubric id="d1e138194" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The item was (or is to be) removed (sometimes referred to as deleted). If the item is part of a collection, delete any matching items.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e138210" kind="short">
+         <Label xml:lang="en-US">Remove</Label>
+      </Rubric>
+      <Rubric id="d1e138210" kind="preferred">
+         <Label xml:lang="en-US">Remove</Label>
+      </Rubric>
+   </Class>
+   <Class code="K" kind="concept">
+      <Meta name="internalId" value="10022"/>
+      <Rubric id="d1e138221" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>This item is part of the identifying information for this object.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e138237" kind="short">
+         <Label xml:lang="en-US">Key</Label>
+      </Rubric>
+      <Rubric id="d1e138237" kind="preferred">
+         <Label xml:lang="en-US">Key</Label>
+      </Rubric>
+   </Class>
+   <Class code="N" kind="concept">
+      <Meta name="internalId" value="22655"/>
+      <Rubric id="d1e138248" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>There was (or is to be) no change to the item. This is primarily used when this element has not changed, but other attributes in the instance have changed.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e138264" kind="short">
+         <Label xml:lang="en-US">No Change</Label>
+      </Rubric>
+      <Rubric id="d1e138264" kind="preferred">
+         <Label xml:lang="en-US">No Change</Label>
+      </Rubric>
+   </Class>
+   <Class code="R" kind="concept">
+      <Meta name="internalId" value="10019"/>
+      <Rubric id="d1e138275" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The item existed previously and has (or is to be) revised. (If an item does not already exist, this may be treated as an error condition.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e138291" kind="short">
+         <Label xml:lang="en-US">Replace</Label>
+      </Rubric>
+      <Rubric id="d1e138291" kind="preferred">
+         <Label xml:lang="en-US">Replace</Label>
+      </Rubric>
+   </Class>
+   <Class code="REF" kind="concept">
+      <Meta name="internalId" value="22623"/>
+      <Rubric id="d1e138303" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>This item provides enough information to allow a processing system to locate the full applicable record by identifying the object.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e138319" kind="short">
+         <Label xml:lang="en-US">Reference</Label>
+      </Rubric>
+      <Rubric id="d1e138319" kind="preferred">
+         <Label xml:lang="en-US">Reference</Label>
+      </Rubric>
+   </Class>
+   <Class code="U" kind="concept">
+      <Meta name="internalId" value="22622"/>
+      <Rubric id="d1e138330" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Description:&lt;/b&gt;It is not specified whether or what kind of change has occurred to the item, or whether the item is present as a reference or identifying property.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e138346" kind="short">
+         <Label xml:lang="en-US">Unknown</Label>
+      </Rubric>
+      <Rubric id="d1e138346" kind="preferred">
+         <Label xml:lang="en-US">Unknown</Label>
+      </Rubric>
+   </Class>
+</ClaML>

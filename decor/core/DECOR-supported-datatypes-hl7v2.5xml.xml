@@ -1,0 +1,113 @@
+<!--
+    DECOR-supported-datatypes
+    Copyright (C) 2013-214 Dr. Kai U. Heitmann, Alexander Henket
+    
+    List of supported data types in ART-DECOR
+    
+    reflects data types as <dataType> elements with the name
+    name must be present (as of now) in coreschematrons directory as DTr1_{name}.sch
+    
+    data type elements are hierarchical representing inheritence, e.g.
+    a SC is_a ST is_a ED is_a BIN 
+    
+    Also reflects possibility of demotion
+    
+    <flavor> elements may be added as immediate child elements of a data type
+    to reflect a data type flavor (variant, data type with further constraint), 
+    additionally shall carry a realm indicator, e.g. DE, NL, AT etc. or UV
+    
+    The mapping to one of the value domain data types of concepts in data sets 
+    is also shown.
+    So far the possible mapping is shown for the following value domain data types
+      blob boolean code complex date datetime decimal duration identifier ordinal
+      quantity string text count
+-->
+<?xml-model href="DECOR-supported-datatypes.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<supportedDataTypes type="hl7v2.5xml">
+   <dataType name="AD"/>
+   <dataType name="AUI"/>
+   <dataType name="CCD"/>
+   <dataType name="CCP"/>
+   <dataType name="CE"/>
+   <dataType name="CNE"/>
+   <dataType name="CNN"/>
+   <dataType name="CP"/>
+   <dataType name="CQ"/>
+   <dataType name="CSU"/>
+   <dataType name="CWE"/>
+   <dataType name="CX"/>
+   <dataType name="DDI"/>
+   <dataType name="DIN"/>
+   <dataType name="DLD"/>
+   <dataType name="DLN"/>
+   <dataType name="DLT"/>
+   <dataType name="DR"/>
+   <dataType name="DT"/>
+   <dataType name="DTM"/>
+   <dataType name="DTN"/>
+   <dataType name="ED"/>
+   <dataType name="EI"/>
+   <dataType name="EIP"/>
+   <dataType name="ELD"/>
+   <dataType name="ERL"/>
+   <dataType name="FC"/>
+   <dataType name="FN"/>
+   <dataType name="FT"/>
+   <dataType name="GTS"/>
+   <dataType name="HD"/>
+   <dataType name="ICD"/>
+   <dataType name="ID"/>
+   <dataType name="IS"/>
+   <dataType name="JCC"/>
+   <dataType name="LA1"/>
+   <dataType name="LA2"/>
+   <dataType name="MO"/>
+   <dataType name="MOC"/>
+   <dataType name="MOP"/>
+   <dataType name="MSG"/>
+   <dataType name="NA"/>
+   <dataType name="NDL"/>
+   <dataType name="NM"/>
+   <dataType name="NR"/>
+   <dataType name="OCD"/>
+   <dataType name="OSD"/>
+   <dataType name="OSP"/>
+   <dataType name="PIP"/>
+   <dataType name="PL"/>
+   <dataType name="PLN"/>
+   <dataType name="PPN"/>
+   <dataType name="PRL"/>
+   <dataType name="PT"/>
+   <dataType name="PTA"/>
+   <dataType name="QIP"/>
+   <dataType name="QSC"/>
+   <dataType name="RCD"/>
+   <dataType name="RFR"/>
+   <dataType name="RI"/>
+   <dataType name="RMC"/>
+   <dataType name="RPT"/>
+   <dataType name="SAD"/>
+   <dataType name="SCV"/>
+   <dataType name="SI"/>
+   <dataType name="SN"/>
+   <dataType name="SPD"/>
+   <dataType name="SPS"/>
+   <dataType name="SRT"/>
+   <dataType name="ST"/>
+   <dataType name="TM"/>
+   <dataType name="TQ"/>
+   <dataType name="TS"/>
+   <dataType name="TX"/>
+   <dataType name="UVC"/>
+   <dataType name="varies"/>
+   <dataType name="VH"/>
+   <dataType name="VID"/>
+   <dataType name="VR"/>
+   <dataType name="WVI"/>
+   <dataType name="WVS"/>
+   <dataType name="XAD"/>
+   <dataType name="XCN"/>
+   <dataType name="XON"/>
+   <dataType name="XPN"/>
+   <dataType name="XTN"/>
+</supportedDataTypes>

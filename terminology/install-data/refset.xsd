@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:include schemaLocation="../../../decor/core/DECOR.xsd"/>
+    <xs:element name="refset">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="1" maxOccurs="1" ref="project">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xforms:label xml:lang="nl-NL">Projectinformatie</xforms:label>
+                            <xforms:label xml:lang="en-US">Project Information</xforms:label>
+                            <xforms:label xml:lang="de-DE">Informationen zum Projekt</xforms:label>
+                        </xs:appinfo>
+                        <xs:documentation xml:lang="nl-NL">Projectinformatie</xs:documentation>
+                        <xs:documentation xml:lang="en-US">Project Information</xs:documentation>
+                        <xs:documentation xml:lang="de-DE">Informationen zum Projekt</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="1" maxOccurs="1" name="moduleDependency">
+                    <xs:complexType>
+                        <xs:attribute name="referencedComponentId" type="BasicId"/>
+                        <xs:attribute name="referencedComponent" type="xs:string"/>
+                        <xs:attribute name="sourceEffectiveTime" type="xs:date"/>
+                        <xs:attribute name="targetEffectiveTime" type="xs:date"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="members">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element ref="member" minOccurs="1" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+
+
+            <!-- issues -->
+                <xs:element minOccurs="0" maxOccurs="1" ref="issues">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <xforms:label xml:lang="nl-NL">Issuelijst</xforms:label>
+                            <xforms:label xml:lang="en-US">Issue list</xforms:label>
+                            <xforms:label xml:lang="de-DE">Problemliste</xforms:label>
+                        </xs:appinfo>
+                        <xs:documentation xml:lang="nl-NL">Issuelijst</xs:documentation>
+                        <xs:documentation xml:lang="en-US">Issue list</xs:documentation>
+                        <xs:documentation xml:lang="de-DE">Problemliste</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" type="BasicId" use="required">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Id</xforms:label>
+                        <xforms:label xml:lang="en-US">Id</xforms:label>
+                        <xforms:label xml:lang="de-DE">Id</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">UUID of this set.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="private" type="xs:boolean" use="optional">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Set is privé</xforms:label>
+                        <xforms:label xml:lang="en-US">Set is private</xforms:label>
+                        <xforms:label xml:lang="de-DE">Set ist privat</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">Indication whether this DECOR project is private, i.e. should NOT be included in searches from external.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="statusCode" type="ShortDescriptiveName"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="member">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="originalText" minOccurs="0" type="xs:string"/>
+                <xs:element name="translation" minOccurs="0" type="BusinessNameWithLanguage"/>
+                <xs:element minOccurs="0" ref="referencedComponent"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="BasicId"/>
+            <xs:attribute name="statusCode" type="ShortDescriptiveName"/>
+            <xs:attribute name="effectiveTime" type="xs:date"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="referencedComponent">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="description" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="BasicId"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="description">
+        <xs:complexType mixed="true">
+            <xs:attribute name="count" type="xs:string"/>
+            <xs:attribute name="length" type="xs:string"/>
+            <xs:attribute name="effectiveTime" type="xs:string"/>
+            <xs:attribute name="conceptId" type="xs:string"/>
+            <xs:attribute name="caseSignificanceId" type="xs:string"/>
+            <xs:attribute name="type" type="xs:string"/>
+            <xs:attribute name="fullName" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

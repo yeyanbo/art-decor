@@ -1,0 +1,361 @@
+<!--
+    Copyright (C) 2011-2014 ART-DECOR expert group art-decor.org
+    
+    Author: Alexander Henket
+
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:widget="http://orbeon.org/oxf/xml/widget" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="art-settings" xsi:schemaLocation="http://www.w3.org/1999/xhtml https://raw.github.com/orbeon/orbeon-forms/master/src/main/resources/org/orbeon/oxf/xml/schemas/xhtml1-transitional-orbeon.xsd">
+    <xhtml:head>
+        <xhtml:title>
+            <xforms:output ref="$resources/art-settings"/>
+        </xhtml:title>
+        <xforms:model id="art-settings">
+         <!-- Variable with path to art-exist for use by form -->
+            <xxforms:variable name="art-exist" select="xxforms:property('art.exist.url')"/>
+         <!-- resources for internationalization -->
+            <xforms:instance id="resources-instance" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+         <!-- submission for loading resources -->
+            <xforms:submission id="get-resources-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-form-resources.xquery" replace="instance" instance="resources-instance"/>
+         <!-- language -->
+            <xforms:instance id="language" xxforms:exclude-result-prefixes="#all">
+                <language/>
+            </xforms:instance>
+            
+            <!-- all server-settings -->
+            <xforms:instance id="server-settings" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+            <xforms:submission id="get-server-settings" serialization="none" method="get" resource="{$art-exist}/modules/get-server-settings.xquery" replace="instance" instance="server-settings">
+                <xforms:message ev:event="xforms-submit-error" level="modal"> 
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+            <xforms:submission id="save-server-settings" ref="instance('server-settings')" resource="{$art-exist}/modules/save-server-settings.xquery" method="post" replace="none" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal"> 
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+            
+            <!-- instance that holds xsls that are vaialable at this server -->
+            <xforms:instance id="server-xsls" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+            <xforms:submission id="get-server-xsls" serialization="none" method="get" resource="{$art-exist}/modules/get-server-xsls.xquery" replace="instance" instance="server-xsls">
+                <xforms:message ev:event="xforms-submit-error" level="modal"> 
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+            
+            <!-- instance for a new buildingBlockServer e.g. http://art-decor.org/decor/services/ -->
+            <xforms:instance id="new-repository-server-instance" xxforms:exclude-result-prefixes="#all">
+                <buildingBlockServer url="http://art-decor.org/decor/services/"/>
+            </xforms:instance>
+            <!-- URI to retrieve the repository list from e.g. http://art-decor.org/decor/services/ -->
+            <xforms:instance id="repository-server-uri" xxforms:exclude-result-prefixes="#all">
+                <url/>
+            </xforms:instance>
+            <!-- instance to receive the repository list in based on the uri in repository-server-uri -->
+            <xforms:instance id="repositories-instance" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+            <!-- instance that contains the selected repository from the list -->
+            <xforms:instance id="selected-repository-instance" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+            <xforms:submission id="refresh-repositories-from-server" serialization="none" method="get" resource="{$art-exist}/modules/get-server-repositories.xquery?uri={instance('repository-server-uri')}" replace="instance" instance="repositories-instance">
+                <xforms:message ev:event="xforms-submit-error" level="modal"> 
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+            <xforms:action ev:event="xforms-model-construct-done">
+                <xforms:send submission="get-resources-submission"/>
+                <xforms:setvalue ref="instance('language')" value="if (string-length(xxforms:get-session-attribute('language'))&gt;0) then (xxforms:get-session-attribute('language')) else (instance('resources-instance')//resources[1]/@xml:lang/string())"/>
+                <xforms:send submission="get-server-settings"/>
+                <xforms:send submission="get-server-xsls"/>
+            </xforms:action>
+            <xforms:action ev:event="xforms-ready"/>
+            
+            <!-- relevant language is returned as first node, rest should be empty -->
+            <xxforms:variable name="resources" select="instance('resources-instance')//resources[1]"/>
+            <xxforms:variable name="administrator" select="contains(xxforms:get-session-attribute('groups'),'dba')"/>
+        </xforms:model>
+    </xhtml:head>
+   <!-- Start of XForm body -->
+    <xhtml:body>
+        <xforms:group ref=".[$administrator]">
+            <xxforms:dialog id="select-bbr-dialog" appearance="full" level="modeless" close="false" draggable="true" visible="false">
+                <xforms:action ev:event="xxforms-dialog-open">
+                    <xforms:send submission="refresh-repositories-from-server"/>
+                </xforms:action>
+                <xforms:label ref="$resources/select-bbr"/>
+                <xhtml:table width="100%">
+                    <xhtml:tr>
+                        <xhtml:td class="heading">
+                            <xforms:output ref="$resources/select-bbr"/>
+                        </xhtml:td>
+                    </xhtml:tr>
+                    <xhtml:tr>
+                        <xhtml:td>
+                            <xhtml:div class="navigate-small">
+                                <fr:datatable width="100%" scrollable="vertical" height="200px">
+                                    <xhtml:thead>
+                                        <xhtml:tr>
+                                            <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                                <xforms:output ref="$resources/name"/>
+                                            </xhtml:th>
+                                            <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                                <xforms:output ref="$resources/url"/>
+                                            </xhtml:th>
+                                            <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                                <xforms:output ref="$resources/prefix"/>
+                                            </xhtml:th>
+                                            <xhtml:th fr:sortable="true" fr:sortKey="@type" fr:resizeable="true">
+                                                <xforms:output ref="$resources/type"/>
+                                            </xhtml:th>
+                                        </xhtml:tr>
+                                    </xhtml:thead>
+                                    <xhtml:tbody>
+                                        <xhtml:tr repeat-nodeset="instance('repositories-instance')/buildingBlockRepository[not(concat(@url,@ident)=instance('server-settings')//buildingBlockRepository/concat(@url,@ident))]" id="bbr-table">
+                                            <xhtml:td>
+                                                <xforms:output ref="name[@language=instance('language')]"/>
+                                            </xhtml:td>
+                                            <xhtml:td>
+                                                <xforms:output ref="@url"/>
+                                            </xhtml:td>
+                                            <xhtml:td>
+                                                <xforms:output ref="@ident"/>
+                                            </xhtml:td>
+                                            <xhtml:td>
+                                                <xforms:output ref="if (@type='local') then ($resources/this-server) else ($resources/external-server)"/>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xhtml:tbody>
+                                    <xforms:action ev:event="fr-selection-changed">
+                                        <xforms:setvalue ref="instance('selected-repository-instance')" value="event('selected')/concat(@url,@ident)"/>
+                                    </xforms:action>
+                                </fr:datatable>
+                            </xhtml:div>
+                        </xhtml:td>
+                    </xhtml:tr>
+                    <xhtml:tr>
+                        <xhtml:td>
+                            <xhtml:div class="buttons">
+                                <fr:button>
+                                    <xforms:label ref="$resources/cancel"/>
+                                    <xforms:action ev:event="DOMActivate">
+                                        <xxforms:hide ev:event="DOMActivate" dialog="select-bbr-dialog"/>
+                                    </xforms:action>
+                                </fr:button>
+                                <fr:button>
+                                    <xforms:label ref="$resources/add"/>
+                                    <xforms:action ev:event="DOMActivate">
+                                        <!-- The save-decor-project.xquery will put it in the right place -->
+                                        <xforms:insert context="instance('server-settings')/externalBuildingBlockRepositories" at="last()" position="after" origin="instance('repositories-instance')/buildingBlockRepository[concat(@url,@ident)=instance('selected-repository-instance')]"/>
+                                        <xforms:setvalue ref="instance('server-settings')/@action">save-repositories</xforms:setvalue>
+                                        <xforms:send submission="save-server-settings"/>
+                                        <xxforms:hide ev:event="DOMActivate" dialog="select-bbr-dialog"/>
+                                    </xforms:action>
+                                </fr:button>
+                            </xhtml:div>
+                        </xhtml:td>
+                    </xhtml:tr>
+                </xhtml:table>
+            </xxforms:dialog>
+            <xhtml:table>
+                <xhtml:tr>
+                    <!-- Settings left part -->
+                    <xhtml:td width="50%">
+                        <xhtml:table width="100%">
+                            <xhtml:tr>
+                                <xhtml:td class="item-label" style="width: 150px;">
+                                    <xforms:output ref="$resources/default-server-language"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:select1 ref="instance('server-settings')/defaultLanguage" class="auto-width" id="language-select">
+                                        <xforms:itemset nodeset="instance('resources-instance')/resources">
+                                            <xforms:label ref="@displayName"/>
+                                            <xforms:value ref="@xml:lang"/>
+                                        </xforms:itemset>
+                                        <xforms:action ev:event="xforms-value-changed">
+                                            <xforms:setvalue ref="instance('server-settings')/@action">save-language</xforms:setvalue>
+                                            <xforms:send submission="save-server-settings"/>
+                                        </xforms:action>
+                                    </xforms:select1>
+                                </xhtml:td>
+                            </xhtml:tr>
+                            <!-- Supported actions are ''save-language'',''save-server-url'',''save-services-url'',''save-server-xsl'',''save-repository-servers'',''save-repositories''')) -->
+                            <xhtml:tr>
+                                <xhtml:td class="item-label" style="width: 150px;">
+                                    <xforms:output ref="$resources/server-deeplinkprefix"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:input ref="instance('server-settings')/url-art-decor-deeplinkprefix">
+                                        <xforms:action ev:event="xforms-value-changed">
+                                            <xforms:setvalue ref="instance('server-settings')/@action">save-server-url</xforms:setvalue>
+                                            <xforms:send submission="save-server-settings"/>
+                                        </xforms:action>
+                                    </xforms:input>
+                                </xhtml:td>
+                            </xhtml:tr>
+                            <xhtml:tr>
+                                <xhtml:td class="item-label" style="width: 150px;">
+                                    <xforms:output ref="$resources/server-servicesprefix"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:input ref="instance('server-settings')/url-art-decor-services">
+                                        <xforms:action ev:event="xforms-value-changed">
+                                            <xforms:setvalue ref="instance('server-settings')/@action">save-services-url</xforms:setvalue>
+                                            <xforms:send submission="save-server-settings"/>
+                                        </xforms:action>
+                                    </xforms:input>
+                                </xhtml:td>
+                            </xhtml:tr>
+                            <xhtml:tr>
+                                <xhtml:td class="item-label" style="width: 150px;">
+                                    <xforms:output ref="$resources/server-stylesheet"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:select1 ref="instance('server-settings')/xformStylesheet" class="auto-width" id="xsl-select">
+                                        <xforms:itemset nodeset="instance('server-xsls')/xsl">
+                                            <xforms:label ref="."/>
+                                            <xforms:value ref="."/>
+                                        </xforms:itemset>
+                                        <xforms:action ev:event="xforms-value-changed">
+                                            <xforms:setvalue ref="instance('server-settings')/@action">save-server-xsl</xforms:setvalue>
+                                            <xforms:send submission="save-server-settings"/>
+                                        </xforms:action>
+                                    </xforms:select1>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xhtml:table>
+                    </xhtml:td>
+                    <!-- Settings right part -->
+                    <xhtml:td width="50%">
+                        <xhtml:div class="heading">
+                            <xforms:output ref="$resources/server-repository-servers"/>
+                        </xhtml:div>
+                        <xhtml:div class="buttons">
+                            <fr:button>
+                                <xforms:label>
+                                    <xhtml:img src="/img/plus.png" alt=""/>
+                                </xforms:label>
+                                <xforms:hint>
+                                    <xforms:output ref="$resources/add"/>
+                                </xforms:hint>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xforms:insert context="instance('server-settings')/externalBuildingBlockRepositoryServers" at="last()" position="after" origin="instance('new-repository-server-instance')"/>
+                                    <xforms:setvalue ref="instance('server-settings')/@action">save-repository-servers</xforms:setvalue>
+                                    <xforms:send submission="save-server-settings"/>
+                                </xforms:action>
+                            </fr:button>
+                        </xhtml:div>
+                        <xhtml:table width="100%">
+                            <xforms:repeat nodeset="instance('server-settings')/externalBuildingBlockRepositoryServers/buildingBlockServer" id="repository-server-repeat">
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label" style="width: 100px;">
+                                        <xforms:output ref="$resources/url"/>
+                                        <xhtml:div class="buttons">
+                                            <xforms:trigger appearance="minimal">
+                                                <xforms:label>
+                                                    <xhtml:img src="/img/itemdelete.png" alt=""/>
+                                                </xforms:label>
+                                                <xforms:hint>
+                                                    <xforms:output ref="$resources/remove"/>
+                                                </xforms:hint>
+                                                <xforms:action ev:event="DOMActivate">
+                                                    <xforms:delete context="context()"/>
+                                                    <xforms:setvalue ref="instance('server-settings')/@action">save-repository-servers</xforms:setvalue>
+                                                    <xforms:send submission="save-server-settings"/>
+                                                </xforms:action>
+                                            </xforms:trigger>
+                                        </xhtml:div>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xhtml:div>
+                                            <xforms:input ref="@url">
+                                                <xforms:action ev:event="xforms-value-changed">
+                                                    <xforms:setvalue ref="instance('server-settings')/@action">save-repository-servers</xforms:setvalue>
+                                                    <xforms:send submission="save-server-settings"/>
+                                                </xforms:action>
+                                            </xforms:input>
+                                            <xhtml:div class="buttons">
+                                                <fr:button>
+                                                    <xforms:label ref="$resources/select"/>
+                                                    <xforms:hint>
+                                                        <xforms:output ref="$resources/select"/>
+                                                    </xforms:hint>
+                                                    <xforms:action ev:event="DOMActivate">
+                                                        <xforms:setvalue ref="instance('repository-server-uri')" value="context()/@url"/>
+                                                        <xxforms:show dialog="select-bbr-dialog"/>
+                                                    </xforms:action>
+                                                </fr:button>
+                                            </xhtml:div>
+                                        </xhtml:div>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xforms:repeat>
+                        </xhtml:table>
+                        <xhtml:div class="heading">
+                            <xforms:output ref="$resources/server-external-bbrs"/>
+                        </xhtml:div>
+                        <xhtml:table width="100%">
+                            <xforms:repeat nodeset="instance('server-settings')/externalBuildingBlockRepositories/buildingBlockRepository" id="external-bbr-repeat">
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label" style="width: 100px;">
+                                        <xforms:output ref="$resources/url"/> &amp; <xforms:output ref="$resources/prefix"/>
+                                        <xhtml:div class="buttons">
+                                            <xforms:trigger appearance="minimal">
+                                                <xforms:label>
+                                                    <xhtml:img src="/img/itemdelete.png" alt=""/>
+                                                </xforms:label>
+                                                <xforms:hint>
+                                                    <xforms:output ref="$resources/remove"/>
+                                                </xforms:hint>
+                                                <xforms:action ev:event="DOMActivate">
+                                                    <xforms:delete context="context()"/>
+                                                    <xforms:setvalue ref="instance('server-settings')/@action">save-repositories</xforms:setvalue>
+                                                    <xforms:send submission="save-server-settings"/>
+                                                </xforms:action>
+                                            </xforms:trigger>
+                                        </xhtml:div>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="@url"/> &amp; <xforms:output ref="@ident"/>
+                                        <xhtml:table width="100%">
+                                            <xforms:repeat nodeset="name" id="external-bbr-name-repeat">
+                                                <xhtml:tr>
+                                                    <xhtml:td class="item-label" style="width: 100px;">
+                                                        <xforms:output ref="concat($resources/name,' (',@language,') ')"/>
+                                                    </xhtml:td>
+                                                    <xhtml:td>
+                                                        <xforms:input ref=".">
+                                                            <xforms:action ev:event="xforms-value-changed">
+                                                                <xforms:setvalue ref="instance('server-settings')/@action">save-repositories</xforms:setvalue>
+                                                                <xforms:send submission="save-server-settings"/>
+                                                            </xforms:action>
+                                                        </xforms:input>
+                                                    </xhtml:td>
+                                                </xhtml:tr>
+                                            </xforms:repeat>
+                                        </xhtml:table>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xforms:repeat>
+                        </xhtml:table>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xhtml:table>
+        </xforms:group>
+    </xhtml:body>
+</xhtml:html>

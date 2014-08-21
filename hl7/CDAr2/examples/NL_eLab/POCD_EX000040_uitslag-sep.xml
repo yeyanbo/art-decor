@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen SCHSchema="../schematrons/elab-cdauitslag.sch"?>
+<!-- 
+    
+    Voorbeeld document uitslag
+    De "microbiologische" patiënt
+        
+    Storyboard
+    ===
+    Jan Zachtjes is met koorts naar zijn huisarts gegaan. Het vermoeden is een septisch gebeuren.
+    De patiënt wordt nog dezelfde dag geprikt.
+    Het lab vind bij de gramkleuring een positief resultaat voor zowel gram negatief en gram positief.
+    Vervolgens is er geen groei in de aërobe cultuur maar wel in de anaërobe cultuur en het wordt 
+    Escherichia coli en Staphylococcus aureus gevonden.
+    Uit het daarop volgende susceptibiliteitsonderzoek blijkt bij isolaat Escherichia coli met
+    100.000 /ml een resistentie op Amoxicilline maar een gevoeligheid voor Fosfomycine. Voor
+    Staphylococcus aureus met 200.000 /ml wordt gevonden dat een intermediaire gevoeligheid
+    voor Ampicilline bestaat maar een gevoeligheid voor Fosfomycine.
+    
+    Het lab geeft een samenvatting van de uitslagen en geeft een aanbeveling de infectie met
+    Fosfomycine te behandelen.
+    
+    22DO: uit het materiaal worden in meeredere stappen resultaten geproduceerd. Voor elk
+    van deze resultatenstappen moet er een voorbeeld komen.
+    
+-->
+
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../schemas/CDA_IHE_LAB.xsd" xmlns:lab="urn:oid:2.16.840.1.113883.2.4.6.10.35.81"
+    xmlns="urn:hl7-org:v3" classCode="DOCCLIN" moodCode="EVN">
+
+    <realmCode code="NL"/>
+    <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+
+    <!-- e-Lab template vor labuitslag documenten -->
+    <templateId root="2.16.840.1.113883.2.4.6.10.35.3"/>
+    <templateId root="2.16.840.1.113883.2.4.6.10.100001"/>
+
+    <!-- Identificatie van (deze versie van) het labuitslagdocument -->
+    <id extension="132343212" root="2.16.528.1.1007.3.2.1111.21.1"/>
+
+    <!-- type document, gecodeerd -->
+    <code code="11502-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="LABORATORY REPORT.TOTAL"/>
+
+    <!-- Titel in vrije tekst -->
+    <title>Labuitslag (definitief) dd. 06-05-2010 18:33</title>
+
+    <!-- Afrondingsdatum van het document -->
+    <effectiveTime value="20100506183422"/>
+
+    <!-- Vertrouwelijkheid van het document -->
+    <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+
+    <!-- Taal van de het document -->
+    <languageCode code="nl-NL"/>
+
+    <!-- Versionering: dit is versie 1 uit het set met onderstaande id (het eerste originele document) -->
+    <setId extension="567" root="2.16.528.1.1007.3.2.1111.20.1"/>
+    <versionNumber value="1"/>
+
+    <!-- Item: 1 - Gegevens patiënt  -->
+    <!-- Item: 10005 - (HL7: recordTarget) 1..1 M -->
+    <recordTarget typeCode="RCT" contextControlCode="OP">
+
+        <patientRole classCode="PAT">
+
+            <!-- Item: 10110 - Identificaties van de patiënt: het burgerservicenummer 1..1 M -->
+            <id root="2.16.840.1.113883.2.4.6.3" extension="280881241"/>
+
+            <!-- Item: 10170 - Adres 0..1 O -->
+            <addr use="HP">
+                <streetName>Parelhof</streetName>
+                <houseNumber>1</houseNumber>
+                <postalCode>1703 EZ</postalCode>
+                <city>Heerhugowaard</city>
+            </addr>
+
+            <!-- Item: 10150 - Telefoonnummer 0..* O -->
+            <telecom use="HP" value="tel:+31725755556"/>
+
+            <!-- Item: 10160 - Email 0..* O -->
+            <telecom use="H" value="mailto:zeb@zachtjes.nl"/>
+
+            <patient classCode="PSN">
+
+                <!-- Item: 10030 - Reguliere naam 0..1 C -->
+                <name use="L">
+                    <given>Jan</given>
+                    <family>Zachtjes</family>
+                </name>
+
+                <!-- Item: 10120 - Geslacht 1..1 M -->
+                <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+
+                <!-- Item: 10130 - Geboortedatum 1..1 M -->
+                <birthTime value="19810408"/>
+
+                <!-- Item: 10140 - Meerlingindicatie 0..1 C, extension van CDA in lab: namespace -->
+                <lab:multipleBirthInd value="false"/>
+
+            </patient>
+
+        </patientRole>
+
+    </recordTarget>
+    
+    <!-- Item: 2 - Gegevens zorgverlener  -->
+    <!-- Auteur document: deze overlapt mogelijk met legalAuthenticator. Merk op dat de auteur ook een systeem mag zijn -->
+    <author typeCode="AUT" contextControlCode="OP">
+
+        <!-- Moment van "schrijven" -->
+        <time value="201005061801"/>
+
+        <assignedAuthor classCode="ASSIGNED">
+
+            <!-- UZI-nummer -->
+            <id root="2.16.528.1.1007.3.1" extension="000012345"/>
+
+            <!-- Specialisme in de vorm van UZI-rolcode, hier 01.020 Arts klinische chemie -->
+            <code code="01.020" codeSystem="2.16.840.1.113883.2.4.15.111"/>
+
+            <!-- Naam auteur -->
+            <assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                <name>
+                    <prefix qualifier="AC">Dr.</prefix>
+                    <given qualifier="IN">H.</given>
+                    <family qualifier="BR">Kacemius</family>
+                </name>
+            </assignedPerson>
+
+            <!-- Gegevens organisatie (context van de auteur) -->
+            <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+                <!-- UZI Registerabonneenummer (URA) -->
+                <id extension="00008481" root="2.16.528.1.1007.3.3"/>
+
+                <name use="L">Allab bv Alkmaar</name>
+
+                <!-- Werkadres -->
+                <addr use="WP">
+                    <streetName>Rubenslaan</streetName>
+                    <houseNumber>2-6</houseNumber>
+                    <postalCode>1816 MB</postalCode>
+                    <city>Alkmaar</city>
+                </addr>
+
+                <lab:code code="L1" codeSystem="2.16.840.1.113883.2.4.15.1060" displayName="Laboratorium"/>
+                
+            </representedOrganization>
+        </assignedAuthor>
+    </author>
+
+    <!-- Beheerder document is altijd de organisatie in CDA -->
+    <custodian typeCode="CST">
+
+        <assignedCustodian classCode="ASSIGNED">
+
+            <representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+
+                <!-- UZI Registerabonneenummer (URA) -->
+                <id extension="00008481" root="2.16.528.1.1007.3.3"/>
+
+                <name use="L">Allab bv Alkmaar</name>
+
+                <!-- Werkadres -->
+                <addr use="WP">
+                    <streetName>Rubenslaan</streetName>
+                    <houseNumber>2-6</houseNumber>
+                    <postalCode>1816 MB</postalCode>
+                    <city>Alkmaar</city>
+                </addr>
+
+            </representedCustodianOrganization>
+
+        </assignedCustodian>
+
+    </custodian>
+
+    <!-- Item: 30300 - Aanvrager (bij uitslagen)  -->
+    <participant typeCode="REF" contextControlCode="OP">
+
+        <time value="20100502"/>
+
+        <associatedEntity classCode="ROL">
+
+            <!-- UZI-nummer -->
+            <id root="2.16.528.1.1007.3.1" extension="000003425"/>
+
+            <!-- adres -->
+            <addr use="HP">
+                <streetName>Vroedschap</streetName>
+                <houseNumber>7</houseNumber>
+                <postalCode>1722 GX</postalCode>
+                <city>Langedijk</city>
+            </addr>
+
+            <!-- Naam van de aanvragende zorgverlener -->
+            <associatedPerson classCode="PSN" determinerCode="INSTANCE">
+                <name>
+                    <prefix qualifier="AC">Dr.</prefix>
+                    <given qualifier="IN">Daniel</given>
+                    <family>Schagen</family>
+                </name>
+            </associatedPerson>
+
+            <!-- Organisatie van de aanvragende zorgverlener -->
+            <scopingOrganization classCode="ORG" determinerCode="INSTANCE">
+                <!-- UZI Registerabonneenummer (URA) -->
+                <id extension="00013667" root="2.16.528.1.1007.3.3"/>
+                <name>Huisartspraktijk Dr Schagen</name>
+            </scopingOrganization>
+
+        </associatedEntity>
+
+    </participant>
+
+    <!-- oorspronkelijke aanvraag (met placer order nummer) -->
+    <inFulfillmentOf typeCode="FLFS">
+        <order classCode="ACT" moodCode="RQO">
+            <!-- Item: 30400 - Opdrachtnummer (bij uitslagen)  -->
+            <id extension="123459" root="2.16.528.1.1007.3.2.2222.19.1"/>
+        </order>
+    </inFulfillmentOf>
+
+    <!-- Service Event, status, type en tijdstip van de activiteit -->
+    <documentationOf typeCode="DOC">
+        <serviceEvent classCode="OBS" moodCode="EVN">
+
+            <!-- dit is het filler nummer -->
+            <id extension="754873847" root="2.16.528.1.1007.3.2.1111.19"/>
+
+            <!-- het onderzoek is compleet/afgesloten, extension van CDA in lab: namespace -->
+            <lab:statusCode code="completed"/>
+
+            <!-- datum afsluiting -->
+            <effectiveTime value="20100506"/>
+
+            <!-- uitvoerder -->
+            <performer typeCode="PRF">
+
+                <assignedEntity classCode="ASSIGNED">
+
+                    <!-- UZI-nummer -->
+                    <id root="2.16.528.1.1007.3.1" extension="000012345"/>
+
+                    <!-- Specialisme in de vorm van UZI-rolcode, hier 01.020 Arts klinische chemie -->
+                    <code code="01.020" codeSystem="2.16.840.1.113883.2.4.15.111"/>
+
+                </assignedEntity>
+
+            </performer>
+
+        </serviceEvent>
+    </documentationOf>
+
+    <!--
+        CDA body: uitslag 
+        met de CDA sections
+        * opdrachtgegevens 
+        * afnamegegevens
+        * materiaalgegevens en
+        * uiteindelijk de uitslag
+        
+        in CDA Level 1/2 en in CDA Level 3
+    -->
+    <component typeCode="COMP" contextConductionInd="true">
+
+        <structuredBody classCode="DOCBODY" moodCode="EVN">
+
+            <!-- 22DO: de opdrachtgegevens ontbreken nog: Jan is op zich gezond maar heeft sinds 2 dagen koorts 39.1 C en hij voelt zich moe -->
+
+            <!-- deze component/section gaat over de afnamegegevens uit het afnameresultaatdocument -->
+            <component typeCode="COMP" contextConductionInd="true">
+
+                <section classCode="DOCSECT" moodCode="EVN">
+
+                    <code code="X-LAB-SPMCOL" codeSystem="2.16.840.1.113883.6.1" displayName="Afnamegegevens"/>
+                    <title>Afnamegegevens 04-05-2010 10:14</title>
+                    <text>
+                        <table width="50%">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <content styleCode="Bold">Toestand van de patient</content>
+                                    </td>
+                                    <td>Nuchter. Laatste maaltijd gisteren om 20 uur</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry typeCode="DRIV">
+
+                        <!-- Level 1 en 2 zijn volledig afgeleid uit Level 3 -->
+
+                        <!-- in een uitslag document is dit een uittreksel uit het afnameresultaatdocument -->
+                        <act classCode="ACT" moodCode="EVN">
+                            <code code="X-LAB-SPMCOL" codeSystem="2.16.840.1.113883.6.1" displayName="Afnamegegevens"/>
+                            <statusCode code="completed"/>
+                            <effectiveTime value="201005041014"/>
+                            <entryRelationship typeCode="COMP">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <code code="TBD_CODE" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Toestand"/>
+                                    <statusCode code="completed"/>
+                                    <value xsi:type="CE" nullFlavor="NAV">
+                                        <originalText>Nuchter. Laatste maaltijd gisteren om 20 uur</originalText>
+                                    </value>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+
+                    </entry>
+                </section>
+
+            </component>
+
+            <!-- deze component/section bevat gegevens (per monster) van het verkregen materiaal -->
+            <component typeCode="COMP" contextConductionInd="true">
+
+                <section classCode="DOCSECT" moodCode="EVN">
+
+                    <code code="X-LAB-SPMSCT" codeSystem="2.16.840.1.113883.6.1" displayName="Monstergegevens"/>
+                    <title>Materiaal gegevens (per monster)</title>
+                    <text>
+                        <table width="50%">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <content styleCode="Bold">Materiaalsoort</content>
+                                    </td>
+                                    <td>Volbloed</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <content styleCode="Bold">Containertype</content>
+                                    </td>
+                                    <td>K/Na EDTA buis</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <content styleCode="Bold">Datum/tijd van afname</content>
+                                    </td>
+                                    <td>04-05-2010 10:14</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry typeCode="DRIV" contextConductionInd="true">
+                        
+                        <templateId root="2.16.840.1.113883.2.4.6.10.35.204"/>
+                        
+                        <!-- Level 1 en 2 zijn volledig afgeleid uit Level 3 -->
+
+                        <act classCode="ACT" moodCode="EVN">
+
+                            <code code="X-LAB-SPMSCT" codeSystem="2.16.840.1.113883.6.1" displayName="Monstergegevens"/>
+
+                            <specimen typeCode="SPC">
+
+                                <specimenRole classCode="SPEC">
+
+                                    <!-- monster identificatie -->
+                                    <id extension="1573987-346273" root="2.16.528.1.1007.3.2.3333.19"/>
+
+                                    <specimenPlayingEntity classCode="ENT" determinerCode="INSTANCE">
+
+                                        <!-- monster materiaal -->
+                                        <code code="87612001" codeSystem="2.16.840.1.113883.6.96" displayName="volbloed"/>
+
+                                        <!-- containertype -->
+                                        <lab:asSpecimenInContainer classCode="CONT">
+                                            <lab:container classCode="CONT" determinerCode="INSTANCE">
+                                                <lab:code code="TUBE" codeSystem="2.16.840.1.113883.5.1060" codeSystemName="ContainerEntityType" displayName="buis"/>
+                                                <lab:asEntityInEntity classCode="CONT">
+                                                    <lab:containerAdditiveMaterial classCode="MAT" determinerCode="KIND">
+                                                        <lab:code code="69519002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="EDTA"/>
+                                                    </lab:containerAdditiveMaterial>
+                                                </lab:asEntityInEntity>
+                                            </lab:container>
+                                        </lab:asSpecimenInContainer>
+
+                                    </specimenPlayingEntity>
+
+                                    <lab:productOf typeCode="PRD">
+
+                                        <lab:specimenCollectionProcess classCode="SPECCOLLECT" moodCode="EVN">
+
+                                            <!-- Wijze van verkrijgen -->
+                                            <lab:code code="7800008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="punctie"/>
+
+                                            <!-- afnametijdstip / verzamelperiode -->
+                                            <lab:effectiveTime>
+                                                <!-- periode low/high aangeven of eindpunt en breedte van het interval-->
+                                                <lab:high value="201005041014"/>
+                                            </lab:effectiveTime>
+
+                                            <!-- locatie/oriëntatie -->
+                                            <lab:targetSiteCode code="LA" codeSystem="2.16.840.1.113883.5.1052" displayName="arm, links"/>
+
+                                        </lab:specimenCollectionProcess>
+
+                                    </lab:productOf>
+
+                                </specimenRole>
+                            </specimen>
+
+                            <!-- Locatie van vergaring -->
+                            <participant typeCode="LOC">
+                                <participantRole classCode="DSDLOC">
+                                    <code code="N6" codeSystem="2.16.840.1.113883.2.4.15.1060" displayName="huisartspraktijk"/>
+                                </participantRole>
+                            </participant>
+
+                        </act>
+                    </entry>
+                </section>
+            </component>
+
+            <!-- deze component/section gaat over de uitslag, rapportage per laboratorium -->
+            <component typeCode="COMP">
+                <section classCode="DOCSECT" moodCode="EVN">
+
+                    <code code="18725-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MICROBIOLOGY STUDIES"/>
+
+                    <title>Resultaten</title>
+                    <text>
+                        <!-- monster, verder verwerkt (isolaat, kweek enz.) -->
+                        <table width="100%">
+                            <thead>
+                                <tr>
+                                    <th align="left">Monster</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="left">EDTA bloed afgenomen 4 mei 2010 10:14</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- uitkomsten: Gram Stain -->
+                        <table width="100%">
+                            <thead>
+                                <tr>
+                                    <th align="left" colspan="3">Gramkleuring 04-05-2010</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="3">Gram-positief: POS</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">Gram-negatief: POS</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- uitkomsten: Aerobic &amp; Anaerobic Cultures -->
+                        <table width="100%">
+                            <tbody>
+                                <tr>
+                                    <th align="left" colspan="3">Aërobe cultuur 05-05-2010</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">negatief</td>
+                                </tr>
+                                <tr>
+                                    <th align="left" colspan="3">Anaërobe cultuur 05-05-2010</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">Escherichia coli: POS</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">Staphylococcus aureus: POS</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- uitkomsten: Susceptibiliteit -->
+                        <table width="100%">
+                            <tbody>
+                                <tr>
+                                    <th align="left">Isolaat 06-05-2010</th>
+                                    <th align="left" colspan="2">Escherichia coli</th>
+                                </tr>
+                                <tr>
+                                    <td>Hoeveelheid</td>
+                                    <td colspan="2">100.000 /ml</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <content styleCode="Bold">Susceptibiliteit</content>
+                                    </td>
+                                    <td>
+                                        <content styleCode="Bold">MIC</content>
+                                    </td>
+                                    <td>
+                                        <content styleCode="Bold">Susceptibiliteit</content>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Amoxicilline</td>
+                                    <td>12</td>
+                                    <td>R</td>
+                                </tr>
+                                <tr>
+                                    <td>Fosfomycine</td>
+                                    <td>1.3</td>
+                                    <td>S</td>
+                                </tr>
+                                <tr>
+                                    <th align="left">Isolaat 06-05-2010</th>
+                                    <th align="left" colspan="2">Staphylococcus aureus</th>
+                                </tr>
+                                <tr>
+                                    <td>Hoeveelheid</td>
+                                    <td colspan="2">200.000 /ml</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <content styleCode="Bold">Susceptibiliteit</content>
+                                    </td>
+                                    <td>
+                                        <content styleCode="Bold">MIC</content>
+                                    </td>
+                                    <td>
+                                        <content styleCode="Bold">Susceptibiliteit</content>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Ampicilline</td>
+                                    <td>6</td>
+                                    <td>I</td>
+                                </tr>
+                                <tr>
+                                    <td>Fosfomycine</td>
+                                    <td>2.5</td>
+                                    <td>S</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <paragraph>E. coli en S. aureus in isolaat</paragraph>
+                        <paragraph><content styleCode="Bold">Advies: </content>Behandeling met fosfomycine aanbevolen</paragraph>
+                    </text>
+                    <entry typeCode="DRIV" contextConductionInd="true">
+                        
+                        <templateId root="2.16.840.1.113883.2.4.6.10.35.205"/>
+                        
+                        <!-- Level 1 en 2 zijn volledig afgeleid uit Level 3 -->
+
+                        <act classCode="ACT" moodCode="EVN">
+
+                            <!-- type onderzoek -->
+                            <code code="18725-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MICROBIOLOGY STUDIES"/>
+
+                            <statusCode code="completed"/>
+                            
+                            <entryRelationship typeCode="COMP">
+
+                                <!-- Uitgevoerde onderzoeken: Gram Stain -->
+                                <organizer classCode="CLUSTER" moodCode="EVN">
+
+                                    <code code="62777006" codeSystem="2.16.840.1.113883.6.96" displayName="Gram stain method"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20100504"/>
+
+                                    <specimen typeCode="SPC">
+                                        <!-- ontvangen monster voor dit onderzoek -->
+                                        <specimenRole classCode="SPEC">
+                                            <!-- monster identificatie, alleen referentie -->
+                                            <id extension="1573987-346273" root="2.16.528.1.1007.3.2.3333.19"/>
+                                        </specimenRole>
+                                    </specimen>
+
+                                    <!-- componenten van uitslag gramkleuring -->
+                                    <component typeCode="COMP" contextConductionInd="true">
+
+                                        <!-- Uitgevoerd onderzoek en uitkomst: gramkleuring -->
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <code code="8745002" codeSystem="2.16.840.1.113883.6.96" displayName="Gram positive bacterium"/>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime value="20100504"/>
+                                            <value xsi:type="CD" code="POS" codeSystem="2.16.840.1.113883.5.83"/>
+                                        </observation>
+
+                                    </component>
+
+                                    <!-- componenten van uitslag gramkleuring -->
+                                    <component typeCode="COMP" contextConductionInd="true">
+
+                                        <!-- Uitgevoerd onderzoek en uitkomst: gramkleuring -->
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <code code="18383003" codeSystem="2.16.840.1.113883.6.96" displayName="Gram-negative coccus"/>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime value="20100504"/>
+                                            <value xsi:type="CD" code="POS" codeSystem="2.16.840.1.113883.5.83"/>
+                                        </observation>
+
+                                    </component>
+
+                                </organizer>
+                            </entryRelationship>
+
+                            <entryRelationship typeCode="COMP">
+
+                                <!-- Uitgevoerde onderzoeken: Aerobic &amp; Anaerobic Cultures -->
+                                <organizer classCode="CLUSTER" moodCode="EVN">
+
+                                    <code code="61594008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="LOINC" displayName="Microbial culture"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20100505"/>
+
+                                    <specimen typeCode="SPC">
+                                        <!-- ontvangen monster voor dit onderzoek -->
+                                        <specimenRole classCode="SPEC">
+                                            <!-- monster identificatie, alleen referentie -->
+                                            <id extension="1573987-346273" root="2.16.528.1.1007.3.2.3333.19"/>
+                                        </specimenRole>
+                                    </specimen>
+
+                                    <!-- componenten van uitslag Aërobe cultuur  -->
+                                    <component typeCode="COMP" contextConductionInd="true">
+
+                                        <!-- Uitgevoerd onderzoek en uitkomst: Aërobe cultuur -->
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <code code="117033003" codeSystem="2.16.840.1.113883.6.96" displayName="Aerobic microbial culture"/>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime value="20100505"/>
+                                            <value xsi:type="CD" code="NEG" codeSystem="2.16.840.1.113883.5.83"/>
+                                        </observation>
+
+                                    </component>
+
+                                    <!-- componenten van uitslag Anaërobe cultuur -->
+                                    <component typeCode="COMP" contextConductionInd="true">
+
+                                        <!-- Uitgevoerd onderzoek en uitkomst: Anaërobe cultuur -->
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <code code="117034009" codeSystem="2.16.840.1.113883.6.96" displayName="Anaerobic microbial culture"/>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime value="20100505"/>
+                                            <value xsi:type="CD" code="POS" codeSystem="2.16.840.1.113883.5.83"/>
+
+                                            <entryRelationship typeCode="COMP">
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                    <code code="112283007" codeSystem="2.16.840.1.113883.6.96" displayName="Escherichia coli"/>
+                                                    <statusCode code="completed"/>
+                                                    <effectiveTime value="20100505"/>
+                                                    <value xsi:type="CD" code="POS" codeSystem="2.16.840.1.113883.5.83"/>
+                                                </observation>
+                                            </entryRelationship>
+
+                                            <entryRelationship typeCode="COMP">
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                    <code code="3092008" codeSystem="2.16.840.1.113883.6.96" displayName="Staphylococcus aureus"/>
+                                                    <statusCode code="completed"/>
+                                                    <effectiveTime value="20100505"/>
+                                                    <value xsi:type="CD" code="POS" codeSystem="2.16.840.1.113883.5.83"/>
+                                                </observation>
+                                            </entryRelationship>
+
+                                        </observation>
+
+                                    </component>
+
+                                </organizer>
+                            </entryRelationship>
+
+                            <entryRelationship typeCode="COMP">
+
+                                <!-- Uitgevoerde onderzoeken: susceptibiliteit -->
+                                <organizer classCode="CLUSTER" moodCode="EVN">
+
+                                    <code code="18769-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MICROBIAL SUSCEPTIBILITY TESTS"/>
+                                    <statusCode code="completed"/>
+
+                                    <!-- isolate: derived specimen -->
+                                    <specimen typeCode="SPC">
+
+                                        <specimenRole classCode="ISLT">
+
+                                            <id extension="sp948320497" root="2.16.528.1.1007.3.2.1111.21.1"/>
+
+                                            <specimenPlayingEntity classCode="MIC" determinerCode="INSTANCE">
+                                                <code code="112283007" codeSystem="2.16.840.1.113883.6.1" displayName="Escherichia coli"/>
+                                            </specimenPlayingEntity>
+
+                                            <!-- Hoeveelheid (kwantitatief of semi-kwantitatief) -->
+                                            <lab:subjectOf typeCode="SBJ">
+                                                <lab:observationEvent classCode="SPCOBS" moodCode="EVN">
+                                                    <lab:code code="107651007" codeSystem="2.16.840.1.113883.6.96" displayName="Quantity finding"/>
+                                                    <lab:statusCode code="completed"/>
+                                                    <lab:value xsi:type="PQ" value="100000" unit="/ml"/>
+                                                </lab:observationEvent>
+                                            </lab:subjectOf>
+
+                                        </specimenRole>
+
+                                    </specimen>
+
+                                    <component typeCode="COMP" contextConductionInd="true">
+
+                                        <observation classCode="SPCOBS" moodCode="EVN">
+                                            <code code="14788002" codeSystem="2.16.840.1.113883.6.96" displayName="Antimicrobial susceptibility test"/>
+                                            <statusCode code="completed"/>
+                                            <value xsi:type="CE" code="POS" codeSystem="2.16.840.1.113883.5.83"/>
+                                            <methodCode code="39334004" codeSystem="2.16.840.1.113883.6.96" displayName="Broth microdilution susceptibility test (MIC)"/>
+                                            <entryRelationship typeCode="COMP">
+                                                <observation classCode="SPCOBS" moodCode="EVN">
+                                                    <code code="18861-5" codeSystem="2.16.840.1.113883.6.1" displayName="Susc Amoxicillin"/>
+                                                    <value xsi:type="PQ" value="12" unit="mm"/>
+                                                    <interpretationCode xsi:type="CE" code="R" codeSystem="2.16.840.1.113883.5.83"/>
+                                                </observation>
+                                            </entryRelationship>
+                                            <entryRelationship typeCode="COMP">
+                                                <observation classCode="SPCOBS" moodCode="EVN">
+                                                    <code code="25596-8" codeSystem="2.16.840.1.113883.6.1" displayName="Susc Fosfomycin"/>
+                                                    <value xsi:type="PQ" value="1.3" unit="mm"/>
+                                                    <interpretationCode xsi:type="CE" code="S" codeSystem="2.16.840.1.113883.5.83"/>
+                                                </observation>
+                                            </entryRelationship>
+                                        </observation>
+
+                                    </component>
+                                </organizer>
+                            </entryRelationship>
+
+                            <entryRelationship typeCode="COMP">
+
+                                <!-- Uitgevoerde onderzoeken: susceptibiliteit -->
+                                <organizer classCode="CLUSTER" moodCode="EVN">
+
+                                    <code code="18769-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MICROBIAL SUSCEPTIBILITY TESTS"/>
+                                    <statusCode code="completed"/>
+
+                                    <!-- isolate: derived specimen -->
+                                    <specimen typeCode="SPC">
+
+                                        <specimenRole classCode="ISLT">
+
+                                            <id extension="sp948320498" root="2.16.528.1.1007.3.2.1111.21.1"/>
+
+                                            <specimenPlayingEntity classCode="MIC" determinerCode="INSTANCE">
+                                                <code code="3092008" codeSystem="2.16.840.1.113883.6.1" displayName="Staphylococcus aureus"/>
+                                            </specimenPlayingEntity>
+
+                                            <lab:subjectOf typeCode="SBJ">
+                                                <lab:observationEvent classCode="SPCOBS" moodCode="EVN">
+                                                    <lab:code code="107651007" codeSystem="2.16.840.1.113883.6.96" displayName="Quantity finding"/>
+                                                    <lab:statusCode code="completed"/>
+                                                    <lab:value xsi:type="PQ" value="200000" unit="/ml"/>
+                                                </lab:observationEvent>
+                                            </lab:subjectOf>
+
+                                        </specimenRole>
+
+                                    </specimen>
+
+                                    <component typeCode="COMP" contextConductionInd="true">
+
+                                        <observation classCode="SPCOBS" moodCode="EVN">
+                                            <code code="14788002" codeSystem="2.16.840.1.113883.6.96" displayName="Antimicrobial susceptibility test"/>
+                                            <statusCode code="completed"/>
+                                            <value xsi:type="CE" code="POS" codeSystem="2.16.840.1.113883.5.83"/>
+                                            <methodCode code="39334004" codeSystem="2.16.840.1.113883.6.96" displayName="Broth microdilution susceptibility test (MIC)"/>
+                                            <entryRelationship typeCode="COMP">
+                                                <observation classCode="SPCOBS" moodCode="EVN">
+                                                    <code code="18864-9" codeSystem="2.16.840.1.113883.6.1" displayName="Susc Ampicilline"/>
+                                                    <value xsi:type="PQ" value="6" unit="mm"/>
+                                                    <interpretationCode xsi:type="CE" code="I" codeSystem="2.16.840.1.113883.5.83"/>
+                                                </observation>
+                                            </entryRelationship>
+                                            <entryRelationship typeCode="COMP">
+                                                <observation classCode="SPCOBS" moodCode="EVN">
+                                                    <code code="25596-8" codeSystem="2.16.840.1.113883.6.1" displayName="Susc Fosfomycin"/>
+                                                    <value xsi:type="PQ" value="2.5" unit="mm"/>
+                                                    <interpretationCode xsi:type="CE" code="S" codeSystem="2.16.840.1.113883.5.83"/>
+                                                </observation>
+                                            </entryRelationship>
+                                        </observation>
+
+                                    </component>
+
+                                </organizer>
+
+                            </entryRelationship>
+
+                            <!-- Interpretatie totaal per laboratorium, event mood van de lab annotation -->
+                            <entryRelationship typeCode="COMP" contextConductionInd="true">
+                                <act classCode="ACT" moodCode="EVN">
+                                    <code code="ANNLAB" codeSystem="2.16.840.1.113883.5.4"/>
+                                    <text>E. coli en S. aureus in isolaat</text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20100506"/>
+                                </act>
+                            </entryRelationship>
+
+                            <!-- Advies per laboratorium, proposal mood van de lab annotation -->
+                            <entryRelationship typeCode="COMP" contextConductionInd="true">
+                                <act classCode="ACT" moodCode="PRP">
+                                    <code code="ANNLAB" codeSystem="2.16.840.1.113883.5.4"/>
+                                    <text>Behandeling met fosfomycine aanbevolen</text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20100506"/>
+                                    <entryRelationship typeCode="COMP">
+                                        <!-- gecodeerd advies -->
+                                        <act classCode="ACT" moodCode="PRP">
+                                            <code code="281789004" codeSystem="2.16.840.1.113883.6.96" displayName="Antibiotic therapy"/>
+                                            <statusCode code="completed"/>
+                                        </act>
+                                    </entryRelationship>
+                                </act>
+                            </entryRelationship>
+
+                        </act>
+
+                    </entry>
+
+                </section>
+
+            </component>
+
+        </structuredBody>
+
+    </component>
+
+</ClinicalDocument>

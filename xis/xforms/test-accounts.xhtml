@@ -1,0 +1,943 @@
+<!--
+    Copyright (C) 2011-2014 ART-DECOR expert group art-decor.org
+    
+    Author: Gerrit Boers, Alexander Henket, Maarten Ligtvoet
+    
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+    
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+    
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:art="http://art-decor.org/ns/art" xmlns:atp="urn:nictiz.atp" xmlns:hl7="urn:hl7-org:v3" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xis="http://art-decor.org/ns/xis" xmlns:widget="http://orbeon.org/oxf/xml/widget" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="configuration" xsi:schemaLocation="http://www.w3.org/1999/xhtml https://raw.github.com/orbeon/orbeon-forms/master/src/main/resources/org/orbeon/oxf/xml/schemas/xhtml1-transitional-orbeon.xsd">
+    <xhtml:head>
+        <xhtml:style type="text/css">
+         .xforms-select-appearance-full span { display: block; clear: both } 
+         .xforms-select1.inherited-width {
+         min-width: 15em;
+         width: inherit;
+         height: inherit;
+         }
+      </xhtml:style>
+        <xhtml:title>
+            <xforms:output ref="$resources/test-accounts"/>
+        </xhtml:title>
+        <xforms:model id="configuration">
+         <!-- Variable with path to art-exist for use by form -->
+            <xxforms:variable name="art-exist" select="xxforms:property('art.exist.url')"/>
+         <!-- Variable with path to xis-eXist -->
+            <xxforms:variable name="xis-exist" select="xxforms:property('xis.exist.url')"/>
+         <!-- Variable with path to xis-external-exist used to pass to client as link for images -->
+            <xxforms:variable name="xis-external-exist" select="xxforms:property('xis.external.exist.url')"/>            
+         <!-- resources for internationalization -->
+            <xforms:instance id="resources-instance">
+                <dummy/>
+            </xforms:instance>
+         <!-- submission for loading resources -->
+            <xforms:submission id="get-resources-submission" serialization="none" method="get" resource="{$xis-exist}/resources/form-resources.xml" replace="instance" instance="resources-instance"/>
+         <!-- instance for clearing results result -->
+            <xforms:instance id="clear-result" xxforms:exclude-result-prefixes="#all">
+                <result/>
+            </xforms:instance>
+         <!-- submission for clearing results -->
+            <xforms:submission id="clear-results" serialization="none" method="get" resource="{$xis-exist}/modules/clear-test-validation-results-for-account.xquery?account={instance('accounts')/xis:testAccount[@id=instance('account-navigation')]/@name}" replace="instance" instance="clear-result" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+                <xforms:action ev:event="xforms-submit-done">
+                    <xforms:message>
+                        <xforms:output value="instance('clear-result')"/>
+                    </xforms:message>
+                </xforms:action>
+            </xforms:submission>
+         <!-- language -->
+            <xforms:instance id="language">
+                <language/>
+            </xforms:instance>
+         <!-- instance for general edit status -->
+            <xforms:instance id="data-safe">
+                <data-safe>true</data-safe>
+            </xforms:instance>
+         <!-- organization RoleCodeNL for AORTA messages -->
+            <xforms:instance id="role-code">
+                <codeSystem>
+                    <code code="V4" codeSystem="2.16.840.1.113883.2.4.15.1060">
+                        <displayName language="nl-NL">Ziekenhuis</displayName>
+                    </code>
+                    <code code="V5" codeSystem="2.16.840.1.113883.2.4.15.1060">
+                        <displayName language="nl-NL">Universitair Medisch Centrum</displayName>
+                    </code>
+                    <code code="V6" codeSystem="2.16.840.1.113883.2.4.15.1060">
+                        <displayName language="nl-NL">Algemeen ziekenhuis</displayName>
+                    </code>
+                    <code code="Z4" codeSystem="2.16.840.1.113883.2.4.15.1060">
+                        <displayName language="nl-NL">Zelfstandig behandelcentrum</displayName>
+                    </code>
+                    <code code="Z5" codeSystem="2.16.840.1.113883.2.4.15.1060">
+                        <displayName language="nl-NL">Diagnostisch centrum</displayName>
+                    </code>
+                    <code code="B1" codeSystem="2.16.840.1.113883.2.4.15.1060">
+                        <displayName language="nl-NL">Beeldvormende diagnostiek</displayName>
+                    </code>
+                    <code code="B2" codeSystem="2.16.840.1.113883.2.4.15.1060">
+                        <displayName language="nl-NL">Echocentrum</displayName>
+                    </code>
+                    <code code="X3" codeSystem="2.16.840.1.113883.2.4.15.1060">
+                        <displayName language="nl-NL">Verplegings- of verzorgingsinstelling</displayName>
+                    </code>
+                    <code code="R5" codeSystem="2.16.840.1.113883.2.4.15.1060">
+                        <displayName language="nl-NL">Verpleeghuis</displayName>
+                    </code>
+                    <code code="M1" codeSystem="2.16.840.1.113883.2.4.15.1060">
+                        <displayName language="nl-NL">Verzorgingstehuis</displayName>
+                    </code>
+                    <code code="J8" codeSystem="2.16.840.1.113883.2.4.15.1060">
+                        <displayName language="nl-NL">Openbare apotheek</displayName>
+                    </code>
+                    <code code="K9" codeSystem="2.16.840.1.113883.2.4.15.1060">
+                        <displayName language="nl-NL">Zelfstandig opererende ziekenhuisapotheek</displayName>
+                    </code>
+                    <code code="Z3" codeSystem="2.16.840.1.113883.2.4.15.1060">
+                        <displayName language="nl-NL">Huisartspraktijk (zelfstandig of groepspraktijk)</displayName>
+                    </code>
+                    <code code="K3" codeSystem="2.16.840.1.113883.2.4.15.1060">
+                        <displayName language="nl-NL">Apotheekhoudende huisartspraktijk</displayName>
+                    </code>
+                    <code code="N6" codeSystem="2.16.840.1.113883.2.4.15.1060">
+                        <displayName language="nl-NL">Huisartsenpost (t.b.v. dienstwaarneming)</displayName>
+                    </code>
+                    <code code="L1" codeSystem="2.16.840.1.113883.2.4.15.1060">
+                        <displayName language="nl-NL">Laboratorium</displayName>
+                    </code>
+                    <code code="P4" codeSystem="2.16.840.1.113883.2.4.15.1060">
+                        <displayName language="nl-NL">Polikliniek (als onderdeel van een ziekenhuis)</displayName>
+                    </code>
+                    <code code="R8" codeSystem="2.16.840.1.113883.2.4.15.1060">
+                        <displayName language="nl-NL">Revalidatiecentrum</displayName>
+                    </code>
+                    <code code="P6" codeSystem="2.16.840.1.113883.2.4.15.1060">
+                        <displayName language="nl-NL">Preventieve gezondheidszorg (waaronder Bevolkingsonderzoek)</displayName>
+                    </code>
+                    <code code="G5" codeSystem="2.16.840.1.113883.2.4.15.1060">
+                        <displayName language="nl-NL">Geestelijke Gezondheidszorg</displayName>
+                    </code>
+                    <code code="G6" codeSystem="2.16.840.1.113883.2.4.15.1060">
+                        <displayName language="nl-NL">Verstandelijk gehandicaptenzorg</displayName>
+                    </code>
+                    <code code="T2" codeSystem="2.16.840.1.113883.2.4.15.1060">
+                        <displayName language="nl-NL">Thuiszorg</displayName>
+                    </code>
+                    <code code="JGZ" codeSystem="2.16.840.1.113883.2.4.15.1060">
+                        <displayName language="nl-NL">Jeugdgezondheidszorg</displayName>
+                    </code>
+                    <code code="G3" codeSystem="2.16.840.1.113883.2.4.15.1060">
+                        <displayName language="nl-NL">Verloskundigenpraktijk</displayName>
+                    </code>
+                </codeSystem>
+            </xforms:instance>
+         <!-- instance for users -->
+            <xforms:instance id="users-instance">
+                <users/>
+            </xforms:instance>
+         <!-- submission for retrieving user info -->
+            <xforms:submission id="get-users-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-user-list.xquery" replace="instance" instance="users-instance" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}"/>
+
+         <!-- instance for navigating accounts -->
+            <xforms:instance id="account-navigation">
+                <id>1</id>
+            </xforms:instance>
+            <xforms:bind nodeset="instance('account-navigation')" readonly="instance('account-safe')='false'"/>
+         <!-- instance for accounts -->
+            <xforms:instance id="accounts">
+                <users/>
+            </xforms:instance>
+         <!-- instance for new account -->
+            <xforms:instance xmlns="http://art-decor.org/ns/xis" id="new-account" xxforms:exclude-result-prefixes="#all">
+                <testAccount id="" name="" displayName="" effectiveDate="">
+                    <new/>
+                    <application id="" name="" url="" organizationRegisterId=""/>
+                    <organization>
+                        <name/>
+                        <contact>
+                            <name/>
+                            <email/>
+                        </contact>
+                    </organization>
+                    <xis>
+                        <applicationId>1</applicationId>
+                        <name>X Information System test</name>
+                        <systemCertificateId>000000509</systemCertificateId>
+                        <organizationRegisterId>00000509</organizationRegisterId>
+                        <organizationRoleCode code="J8" displayName="Openbare apotheek"/>
+                        <organizationCity>Maastricht</organizationCity>
+                        <xmlResourcesPath>/db/hl7/AORTA_trunk</xmlResourcesPath>
+                        <xmlValidation>true</xmlValidation>
+                        <getMessageXml>true</getMessageXml>
+                    </xis>
+                    <members>
+                        <user id="admin">Administrator</user>
+                        <user id="xis-webservice">xis-webservice</user>
+                    </members>
+                </testAccount>
+            </xforms:instance>
+         <!-- instance for new application -->
+            <xforms:instance xmlns="http://art-decor.org/ns/xis" id="new-application" xxforms:exclude-result-prefixes="#all">
+                <application id="" name="" url="" organizationRegisterId=""/>
+            </xforms:instance>
+         <!-- instance for new account user -->
+            <xforms:instance xmlns="http://art-decor.org/ns/xis" id="new-user" xxforms:exclude-result-prefixes="#all">
+                <user id=""/>
+            </xforms:instance>
+         <!-- event observer for account changes -->
+            <xforms:action ev:observer="accounts" ev:event="xforms-insert xforms-delete xxforms-value-changed">
+                <xforms:setvalue ref="instance('data-safe')">false</xforms:setvalue>
+            </xforms:action>
+         <!-- submission for retrieving accounts -->
+            <xforms:submission id="get-accounts" serialization="none" method="get" resource="{$xis-exist}/modules/get-test-accounts.xquery" replace="instance" instance="accounts" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}"/>
+         <!-- submission for saving accounts -->
+            <xforms:submission id="save-accounts" method="post" ref="instance('accounts')" resource="{$xis-exist}/modules/save-accounts.xquery" replace="none" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">A submission error occurred:<xforms:output value="event('error-type')"/>
+                </xforms:message>
+            </xforms:submission>
+
+         <!-- bindings for account requirements -->
+            <xforms:bind ref="instance('accounts')/xis:testAccount[xis:new]">
+                <xforms:bind nodeset="@name" required="true()" constraint="not(.=instance('groups-instance')//group)"/>
+            <!--            <xforms:bind nodeset="@name" required="true()"/>-->
+                <xforms:bind nodeset="@displayName" required="true()"/>
+                <xforms:bind nodeset="xis:application/@id" required="true()"/>
+                <xforms:bind nodeset="xis:application/@name" required="true()"/>
+                <xforms:bind nodeset="xis:application/@url" required="true()"/>
+                <xforms:bind nodeset="xis:application/@organizationRegisterId" required="true()"/>
+            </xforms:bind>
+            <xforms:bind nodeset="instance('accounts')/xis:testAccount/xis:xis/xis:xmlValidation" type="xforms:boolean"/>
+            <xforms:bind nodeset="instance('accounts')/xis:testAccount/xis:xis/xis:getMessageXml" type="xforms:boolean"/>
+
+         <!-- instance for groups -->
+            <xforms:instance id="groups-instance">
+                <auth/>
+            </xforms:instance>
+            <xforms:submission id="get-groups-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-groups.xq" replace="instance" instance="groups-instance" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}"/>
+
+         <!-- instance for selected xml (HL7) set -->
+            <xforms:instance id="xml-set-navigation">
+                <uriString/>
+            </xforms:instance>
+         <!-- instance for xml (HL7) set list -->
+            <xforms:instance id="xml-sets-instance">
+                <dummy/>
+            </xforms:instance>
+         <!-- get xml (AORTA) set list -->
+            <xforms:submission id="get-xml-set-submission" serialization="none" method="get" resource="{$xis-exist}/modules/get-hl7-package-list.xquery" replace="instance" instance="xml-sets-instance"/>
+
+         <!-- startup actions -->
+            <xforms:action ev:event="xforms-model-construct-done">
+                <xxforms:variable name="session-language" select="xxforms:get-session-attribute('language')"/>
+                <xforms:setvalue ref="instance('language')" value="if (string-length($session-language)&gt;0)       then $session-language/string() else ('nl-NL')"/>
+                <xforms:insert context="." origin="xxforms:set-session-attribute('language', instance('language'))"/>
+                <xforms:send submission="get-resources-submission"/>
+                <xforms:send submission="get-groups-submission"/>
+                <xforms:send submission="get-users-submission"/>
+                <xforms:send submission="get-xml-set-submission"/>
+                <xforms:send submission="get-accounts"/>
+                <xforms:send submission="get-test-list"/>
+            </xforms:action>
+            <xforms:action ev:event="xforms-ready">
+                <xforms:setvalue ref="instance('testsuite-navigation')" value="instance('testsuites')//testsuite[1]/@id"/>
+                <xforms:setvalue ref="instance('account-navigation')" value="instance('accounts')/xis:testAccount[1]/@id"/>
+                <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+            </xforms:action>
+            <xxforms:script ev:event="xforms-ready">
+               window.onbeforeunload = function() {
+                   if (ORBEON.xforms.Document.getValue('data-safe-input') != 'true')
+                   return "Deze tekst kunnen we aanpassen.";
+               }
+            </xxforms:script>
+            <xxforms:variable name="resources" select="instance('resources-instance')//resources[@xml:lang=instance('language')]"/>
+            <xxforms:variable name="editor" select="contains(xxforms:get-session-attribute('groups'),'dba')"/>
+            <xforms:setfocus ev:event="xforms-ready" control="text-repeat"/>
+        </xforms:model>
+    </xhtml:head>
+   <!-- Start of XForm body -->
+    <xhtml:body>
+      <!-- special output used to give warning if user leaves page -->
+        <xforms:output ref="instance('data-safe')" id="data-safe-input" style="display: none"/>
+      <!-- dialog for selecting Art user -->
+        <xxforms:dialog id="select-user-dialog" appearance="full" level="modeless" close="false" draggable="true" visible="false">
+            <xforms:label ref="$resources/select-user"/>
+            <xhtml:table width="250">
+                <xhtml:tr>
+                    <xhtml:td class="heading">
+                        <xforms:output ref="$resources/select-user"/>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xhtml:div class="navigate-small">
+                            <xforms:select1 ref="instance('new-user')/@id" appearance="compact" id="user-select">
+                                <xforms:itemset nodeset="instance('users-instance')/user">
+                                    <xforms:label ref="displayName"/>
+                                    <xforms:value ref="@name"/>
+                                </xforms:itemset>
+                                <xforms:action ev:event="xforms-value-changed">
+                                    <xforms:setvalue ref="instance('new-user')" value="instance('users-instance')/user[@name=instance('new-user')/@id]/displayName"/>
+                                </xforms:action>
+                            </xforms:select1>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xhtml:div class="buttons">
+                            <fr:button>
+                                <xforms:label ref="$resources/cancel"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xxforms:hide ev:event="DOMActivate" dialog="select-user-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                            <fr:button>
+                                <xforms:label ref="$resources/add"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xforms:insert context="instance('accounts')/xis:testAccount[@id=instance('account-navigation')]/xis:members" nodeset="xis:user" at="index('userList')" position="after" origin="instance('new-user')"/>
+                                    <xxforms:hide ev:event="DOMActivate" dialog="select-user-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xhtml:table>
+        </xxforms:dialog>
+      <!-- test accounts -->
+        <xhtml:table width="100%">
+            <xhtml:tr>
+            <!-- account navigation -->
+                <xhtml:td width="20%">
+                    <xhtml:table width="100%">
+                  <!-- row with heading for select controls	-->
+                        <xhtml:tr>
+                            <xhtml:td class="heading">
+                                <xhtml:div class="heading">
+                                    <xforms:output ref="$resources/test-accounts"/>
+                                </xhtml:div>
+                                <xhtml:div class="buttons">
+                                    <xforms:group ref=".[$editor]">
+                                        <fr:button id="add-accounts">
+                                            <xforms:label>
+                                                <xhtml:img src="/img/plus.png" alt=""/>
+                                            </xforms:label>
+                                            <xforms:hint>
+                                                <xforms:output ref="$resources/add-account"/>
+                                            </xforms:hint>
+                                            <xforms:action ev:event="DOMActivate">
+                                                <xforms:setvalue ref="instance('new-account')/@id" value="max(instance('accounts')//xis:testAccount/@id)+1"/>
+                                                <xforms:setvalue ref="instance('new-account')/@effectiveDate" value="current-dateTime()"/>
+                                                <xforms:insert context="instance('accounts')" nodeset="xis:testAccount" at="last()" position="after" origin="instance('new-account')"/>
+                                                <xforms:setvalue ref="instance('account-navigation')" value="instance('new-account')/@id"/>
+                                                <xforms:setfocus control="account-name"/>
+                                            </xforms:action>
+                                        </fr:button>
+                                    </xforms:group>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xhtml:tr>
+                            <xhtml:td>
+                                <xhtml:div class="navigate">
+                                    <xforms:select1 ref="instance('account-navigation')" appearance="compact" id="account-select">
+                                        <xforms:itemset nodeset="xxforms:sort(instance('accounts')/xis:testAccount,lower-case(@displayName),'text','ascending')">
+                                            <xforms:label ref="@displayName"/>
+                                            <xforms:value ref="@id"/>
+                                        </xforms:itemset>
+                                    </xforms:select1>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                    </xhtml:table>
+                </xhtml:td>
+            <!-- account details -->
+                <xhtml:td>
+                    <xhtml:table class="detail" width="100%">
+                  <!-- account EDITOR -->
+                        <xforms:group ref="instance('accounts')/xis:testAccount[@id=instance('account-navigation')][$editor]">
+                            <xhtml:tr>
+                                <xhtml:td class="heading" colspan="4">
+                                    <xhtml:div class="heading">
+                                        <xforms:output ref="@displayName"/>
+                                    </xhtml:div>
+                                    <xhtml:div class="buttons">
+                                        <fr:button>
+                                            <xforms:label ref="$resources/clear-results"/>
+                                            <xforms:action ev:event="DOMActivate">
+                                                <xforms:send submission="clear-results"/>
+                                            </xforms:action>
+                                        </fr:button>
+                                    </xhtml:div>
+                                </xhtml:td>
+                            </xhtml:tr>
+                     <!-- account name and displayName -->
+                            <xhtml:tr>
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/account-name"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:group ref=".[xis:new]">
+                                        <xforms:input ref="@name" incremental="true" id="account-name">
+                                            <xforms:alert>
+                                                <xforms:output ref="if (string-length(instance('accounts')/xis:testAccount[@id=instance('account-navigation')]/@name)=0) then $resources/required-field else($resources/already-exists)"/>
+                                            </xforms:alert>
+                                        </xforms:input>
+                                    </xforms:group>
+                                    <xforms:group ref=".[not(xis:new)]">
+                                        <xforms:output ref="@name"/>
+                                    </xforms:group>
+                                </xhtml:td>
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/display-name"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:input ref="@displayName" incremental="true">
+                                        <xforms:alert>
+                                            <xforms:output ref="$resources/required-field"/>
+                                        </xforms:alert>
+                                    </xforms:input>
+                                </xhtml:td>
+                            </xhtml:tr>
+                     <!-- account organization -->
+                            <xhtml:tr>
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/organization"/>
+                                </xhtml:td>
+                                <xhtml:td colspan="3">
+                                    <xforms:input ref="xis:organization/xis:name"/>
+                                </xhtml:td>
+                            </xhtml:tr>
+                     <!-- account contact and email -->
+                            <xhtml:tr>
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/contact-person"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:input ref="xis:organization/xis:contact/xis:name"/>
+                                </xhtml:td>
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/email"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:input ref="xis:organization/xis:contact/xis:email"/>
+                                </xhtml:td>
+                            </xhtml:tr>
+                     <!-- row with applications for this account -->
+                            <xhtml:tr>
+                                <xhtml:td colspan="5">
+                                    <xhtml:table width="100%" class="detail">
+                              <!-- row with application header and buttons -->
+                                        <xhtml:tr>
+                                            <xhtml:td class="heading" colspan="4">
+                                                <xhtml:div class="heading">
+                                                    <xforms:output ref="$resources/applications"/>
+                                                </xhtml:div>
+                                    <!-- div with buttons -->
+                                                <xforms:group ref=".[$editor]">
+                                                    <xhtml:div class="buttons">
+                                                        <fr:button id="add-application">
+                                                            <xforms:label>
+                                                                <xhtml:img src="/img/plus.png" alt=""/>
+                                                            </xforms:label>
+                                                            <xforms:hint>
+                                                                <xforms:output ref="$resources/add"/>
+                                                            </xforms:hint>
+                                                            <xforms:action ev:event="DOMActivate">
+                                                                <xforms:insert context="instance('accounts')/xis:testAccount[@id=instance('account-navigation')]" nodeset="xis:application" at="index('applicationList')" position="after" origin="instance('new-application')"/>
+                                                            </xforms:action>
+                                                        </fr:button>
+                                                        <xforms:group ref=".[count(xis:application)&gt;1]">
+                                                            <fr:button id="delete-application">
+                                                                <xforms:label>
+                                                                    <xhtml:img src="/img/remove.gif" alt=""/>
+                                                                </xforms:label>
+                                                                <xforms:hint>
+                                                                    <xforms:output ref="$resources/delete"/>
+                                                                </xforms:hint>
+                                                                <xforms:action ev:event="DOMActivate">
+                                                                    <xforms:delete context="instance('accounts')/xis:testAccount[@id=instance('account-navigation')]" nodeset="xis:application" at="index('applicationList')"/>
+                                                                </xforms:action>
+                                                            </fr:button>
+                                                        </xforms:group>
+                                                    </xhtml:div>
+                                                </xforms:group>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                        <xhtml:tr>
+                                            <xhtml:td class="item-label">
+                                                <xforms:output ref="$resources/application-id"/>
+                                            </xhtml:td>
+                                            <xhtml:td class="item-label">
+                                                <xforms:output ref="$resources/name"/>
+                                            </xhtml:td>
+                                            <xhtml:td class="item-label">
+                                                <xforms:output ref="$resources/url"/>
+                                            </xhtml:td>
+                                            <xhtml:td class="item-label">
+                                                <xforms:output ref="$resources/organization-register-id"/>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                        <xforms:repeat nodeset="xis:application" id="applicationList">
+                                            <xhtml:tr>
+                                                <xhtml:td>
+                                                    <xforms:input ref="@id" incremental="true" class="short-text">
+                                                        <xforms:alert>
+                                                            <xforms:output ref="$resources/required-field"/>
+                                                        </xforms:alert>
+                                                    </xforms:input>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:input ref="@name" incremental="true">
+                                                        <xforms:alert>
+                                                            <xforms:output ref="$resources/required-field"/>
+                                                        </xforms:alert>
+                                                    </xforms:input>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:input ref="@url" incremental="true">
+                                                        <xforms:alert>
+                                                            <xforms:output ref="$resources/required-field"/>
+                                                        </xforms:alert>
+                                                    </xforms:input>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:input ref="@organizationRegisterId" incremental="true">
+                                                        <xforms:alert>
+                                                            <xforms:output ref="$resources/required-field"/>
+                                                        </xforms:alert>
+                                                    </xforms:input>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:repeat>
+                                    </xhtml:table>
+                                </xhtml:td>
+                            </xhtml:tr>
+                     <!-- XIS configuration -->
+                            <xforms:group ref="xis:xis">
+                                <xhtml:tr>
+                                    <xhtml:td class="heading" colspan="4">
+                                        <xhtml:div class="heading">
+                                            <xforms:output ref="$resources/xis-hl7-configuration"/>
+                                        </xhtml:div>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                        <!-- organization name and role code -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/name"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:input ref="xis:name"/>
+                                    </xhtml:td>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/role-code"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:select1 ref="xis:organizationRoleCode/@code" appearance="minimal" class="auto-width">
+                                            <xforms:itemset nodeset="instance('role-code')/code">
+                                                <xforms:label ref="displayName"/>
+                                                <xforms:value ref="@code"/>
+                                            </xforms:itemset>
+                                        </xforms:select1>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                        <!-- organizationId and City -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/organization-register-id"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:input ref="xis:organizationRegisterId"/>
+                                    </xhtml:td>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/city"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:input ref="xis:organizationCity"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                        <!-- application id and certificateId -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/application-id"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:input ref="xis:applicationId"/>
+                                    </xhtml:td>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/system-certificate-id"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:input ref="xis:systemCertificateId"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                        <!-- aorta version and URL -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/hl7-resources"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:select1 ref="xis:xmlResourcesPath" appearance="minimal" class="auto-width">
+                                            <xforms:itemset nodeset="xxforms:sort(instance('xml-sets-instance')/version,lower-case(@name),'text','ascending')">
+                                                <xforms:label ref="@name"/>
+                                                <xforms:value ref="@uriString"/>
+                                            </xforms:itemset>
+                                        </xforms:select1>
+                                    </xhtml:td>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/url"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="$xis-external-exist"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                        <!-- do we switch validation off? only useful for really intensive accounts -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/hl7-validation"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:input ref="xis:xmlValidation">
+                                            <xforms:hint>
+                                                <xforms:output ref="$resources/hl7-validatin-hint"/>
+                                            </xforms:hint>
+                                        </xforms:input>
+                                    </xhtml:td>
+                        <!-- do we switch XML-display off for messages? only useful for really intensive accounts -->
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/getMessageXml"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:input ref="xis:getMessageXml">
+                                            <xforms:hint>
+                                                <xforms:output ref="$resources/getMessageXml-hint"/>
+                                            </xforms:hint>
+                                        </xforms:input>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xforms:group>
+                     <!-- row with account users -->
+                            <xhtml:tr>
+                                <xhtml:td colspan="4">
+                                    <xhtml:table width="100%" class="detail">
+                              <!-- row with authors header and buttons -->
+                                        <xhtml:tr>
+                                            <xhtml:td class="heading" colspan="3">
+                                                <xhtml:div class="heading">
+                                                    <xforms:output ref="$resources/users"/>
+                                                </xhtml:div>
+                                    <!-- div with buttons -->
+                                                <xforms:group ref=".[$editor]">
+                                                    <xhtml:div class="buttons">
+                                                        <fr:button id="add-author">
+                                                            <xforms:label>
+                                                                <xhtml:img src="/img/plus.png" alt=""/>
+                                                            </xforms:label>
+                                                            <xforms:hint>
+                                                                <xforms:output ref="$resources/add-user"/>
+                                                            </xforms:hint>
+                                                            <xforms:action ev:event="DOMActivate">
+                                                                <xxforms:show dialog="select-user-dialog"/>
+                                                            </xforms:action>
+                                                        </fr:button>
+                                                        <!-- always keep admin and xis-webservice -->
+                                                        <xforms:group ref=".[count(xis:members/xis:user)&gt;1 and not(xis:members/xis:user[index('userList')][@id=('admin','xis-webservice')])]">
+                                                            <fr:button id="delete-author">
+                                                                <xforms:label>
+                                                                    <xhtml:img src="/img/remove.gif" alt=""/>
+                                                                </xforms:label>
+                                                                <xforms:hint>
+                                                                    <xforms:output ref="$resources/delete-user"/>
+                                                                </xforms:hint>
+                                                                <xforms:action ev:event="DOMActivate">
+                                                                    <xforms:delete context="instance('accounts')/xis:testAccount[@id=instance('account-navigation')]/xis:members" nodeset="xis:user" at="index('userList')"/>
+                                                                </xforms:action>
+                                                            </fr:button>
+                                                        </xforms:group>
+                                                    </xhtml:div>
+                                                </xforms:group>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                        <xhtml:tr>
+                                            <xhtml:td class="item-label">
+                                                <xforms:output ref="$resources/art-user"/>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                        <xforms:group ref="xis:members">
+                                            <xforms:repeat nodeset="xis:user" id="userList">
+                                                <xhtml:tr>
+                                                    <xhtml:td>
+                                                        <xforms:output ref="."/>
+                                                    </xhtml:td>
+                                                </xhtml:tr>
+                                            </xforms:repeat>
+                                        </xforms:group>
+                                    </xhtml:table>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xforms:group>
+                  <!-- account READONLY -->
+                        <xforms:group ref="instance('accounts')/xis:testAccount[@id=instance('account-navigation')][not($editor)]">
+                            <xhtml:tr>
+                                <xhtml:td class="heading" colspan="4">
+                                    <xhtml:div class="heading">
+                                        <xforms:output ref="@displayName"/>
+                                    </xhtml:div>
+                                </xhtml:td>
+                            </xhtml:tr>
+                     <!-- account name and displayName -->
+                            <xhtml:tr>
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/account-name"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:output ref="@name"/>
+                                </xhtml:td>
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/display-name"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:output ref="@displayName"/>
+                                </xhtml:td>
+                            </xhtml:tr>
+                     <!-- account organization -->
+                            <xhtml:tr>
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/organization"/>
+                                </xhtml:td>
+                                <xhtml:td colspan="3">
+                                    <xforms:output ref="xis:organization/xis:name"/>
+                                </xhtml:td>
+                            </xhtml:tr>
+                     <!-- account contact and email -->
+                            <xhtml:tr>
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/contact-person"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:output ref="xis:organization/xis:contact/xis:name"/>
+                                </xhtml:td>
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/email"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:output ref="xis:organization/xis:contact/xis:email"/>
+                                </xhtml:td>
+                            </xhtml:tr>
+                     <!-- row with applications for this account -->
+                            <xhtml:tr>
+                                <xhtml:td colspan="5">
+                                    <xhtml:table width="100%" class="detail">
+                              <!-- row with application header and buttons -->
+                                        <xhtml:tr>
+                                            <xhtml:td class="heading" colspan="4">
+                                                <xhtml:div class="heading">
+                                                    <xforms:output ref="$resources/applications"/>
+                                                </xhtml:div>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                        <xhtml:tr>
+                                            <xhtml:td class="item-label">
+                                                <xforms:output ref="$resources/application-id"/>
+                                            </xhtml:td>
+                                            <xhtml:td class="item-label">
+                                                <xforms:output ref="$resources/name"/>
+                                            </xhtml:td>
+                                            <xhtml:td class="item-label">
+                                                <xforms:output ref="$resources/url"/>
+                                            </xhtml:td>
+                                            <xhtml:td class="item-label">
+                                                <xforms:output ref="$resources/organization-register-id"/>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                        <xforms:repeat nodeset="xis:application">
+                                            <xhtml:tr class="not-selectable">
+                                                <xhtml:td>
+                                                    <xforms:output ref="@id"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:output ref="@name"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:output ref="@url"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:output ref="@organizationRegisterId"/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:repeat>
+                                    </xhtml:table>
+                                </xhtml:td>
+                            </xhtml:tr>
+                     <!-- XIS configuration -->
+                            <xforms:group ref="xis:xis">
+                                <xhtml:tr>
+                                    <xhtml:td class="heading" colspan="4">
+                                        <xhtml:div class="heading">
+                                            <xforms:output ref="$resources/xis-hl7-configuration"/>
+                                        </xhtml:div>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                        <!-- organization name and role code -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/name"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="xis:name"/>
+                                    </xhtml:td>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/role-code"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xxforms:variable name="roleCode" select="xis:organizationRoleCode/@code"/>
+                                        <xforms:output ref="instance('role-code')/code[@code=$roleCode]/displayName[1]"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                        <!-- organizationId and City -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/organization-register-id"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="xis:organizationRegisterId"/>
+                                    </xhtml:td>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/city"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="xis:organizationCity"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                        <!-- application id and certificateId -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/application-id"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="xis:applicationId"/>
+                                    </xhtml:td>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/system-certificate-id"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="xis:systemCertificateId"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                        <!-- aorta version and URL -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/hl7-resources"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xxforms:variable name="hl7Path" select="xis:xmlResourcesPath"/>
+                                        <xforms:output ref="instance('xml-sets-instance')/version[@uriString=$hl7Path]/@name"/>
+                                    </xhtml:td>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/url"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="$xis-exist"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                        <!-- do we switch validation off? only useful for really intensive accounts -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/hl7-validation"/>
+                                    </xhtml:td>
+                                    <xhtml:td colspan="3">
+                                        <xforms:input ref="xis:xmlValidation" appearance="minimal">
+                                            <xforms:hint>
+                                                <xforms:output ref="$resources/hl7-validatin-hint"/>
+                                            </xforms:hint>
+                                        </xforms:input>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                        <!-- do we switch XML-display off for messages? only useful for really intensive accounts -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/getMessageXml"/>
+                                    </xhtml:td>
+                                    <xhtml:td colspan="3">
+                                        <xforms:input ref="xis:getMessageXml">
+                                            <xforms:hint>
+                                                <xforms:output ref="$resources/getMessageXml-hint"/>
+                                            </xforms:hint>
+                                        </xforms:input>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xforms:group>
+                     <!-- row with account users -->
+                            <xhtml:tr>
+                                <xhtml:td colspan="4">
+                                    <xhtml:table width="100%" class="detail">
+                              <!-- row with authors header and buttons -->
+                                        <xhtml:tr>
+                                            <xhtml:td class="heading" colspan="3">
+                                                <xhtml:div class="heading">
+                                                    <xforms:output ref="$resources/users"/>
+                                                </xhtml:div>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                        <xhtml:tr>
+                                            <xhtml:td class="item-label">
+                                                <xforms:output ref="$resources/art-user"/>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                        <xforms:group ref="xis:members">
+                                            <xforms:repeat nodeset="xis:user">
+                                                <xhtml:tr class="not-selectable">
+                                                    <xhtml:td>
+                                                        <xforms:output ref="."/>
+                                                    </xhtml:td>
+                                                </xhtml:tr>
+                                            </xforms:repeat>
+                                        </xforms:group>
+                                    </xhtml:table>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xforms:group>
+                    </xhtml:table>
+               <!-- save and cancel buttons -->
+                    <xhtml:table width="100%">
+                        <xhtml:tr>
+                            <xhtml:td>
+                                <xforms:group ref=".[instance('data-safe')='false']">
+                                    <xhtml:div class="buttons">
+                                        <fr:button>
+                                            <xforms:label ref="$resources/cancel"/>
+                                            <xforms:action ev:event="DOMActivate">
+                                                <xforms:send submission="get-accounts"/>
+                                                <xforms:setvalue ref="instance('account-navigation')" value="1"/>
+                                                <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                                            </xforms:action>
+                                        </fr:button>
+                                        <fr:button>
+                                            <xforms:label ref="$resources/save"/>
+                                            <xforms:action ev:event="DOMActivate">
+                                                <xforms:action xxforms:iterate="instance('accounts')/xis:testAccount">
+                                                    <xforms:delete nodeset="context()/xis:new"/>
+                                                </xforms:action>
+                                                <xforms:send submission="save-accounts"/>
+                                                <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                                            </xforms:action>
+                                        </fr:button>
+                                    </xhtml:div>
+                                </xforms:group>
+                            </xhtml:td>
+                        </xhtml:tr>
+                    </xhtml:table>
+                </xhtml:td>
+            </xhtml:tr>
+        </xhtml:table>
+      <!--      <fr:xforms-inspector/>-->
+    </xhtml:body>
+</xhtml:html>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="143"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1067"/>
+   <Title name="QueryResponse" date="2012-08-02" version="1.000">A code classifying the general nature of the response to a given query. Includes whether or not data was found, or whether an error occurred.</Title>
+   <Class code="rootClass">
+      <SubClass subCount="0" code="AE" kind="concept">
+         <Rubric id="d1e186790" kind="preferred">
+            <Label xml:lang="en-US">ApplicationError</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="NF" kind="concept">
+         <Rubric id="d1e186815" kind="preferred">
+            <Label xml:lang="en-US">No data found</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="OK" kind="concept">
+         <Rubric id="d1e186839" kind="preferred">
+            <Label xml:lang="en-US">Data found</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="QE" kind="concept">
+         <Rubric id="d1e186863" kind="preferred">
+            <Label xml:lang="en-US">QueryParameterError</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">QueryResponse</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">A code classifying the general nature of the response to a given query. Includes whether or not data was found, or whether an error occurred.</Label>
+      </Rubric>
+   </Class>
+   <Class code="AE" kind="concept">
+      <Meta name="internalId" value="19793"/>
+      <Rubric id="d1e186777" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Query Error. Application Error.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e186790" kind="short">
+         <Label xml:lang="en-US">ApplicationError</Label>
+      </Rubric>
+      <Rubric id="d1e186790" kind="preferred">
+         <Label xml:lang="en-US">ApplicationError</Label>
+      </Rubric>
+   </Class>
+   <Class code="NF" kind="concept">
+      <Meta name="internalId" value="16013"/>
+      <Rubric id="d1e186802" kind="definition">
+         <Label xml:lang="en-US">
+            <p>No errors, but no data was found matching the query request specification.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e186815" kind="short">
+         <Label xml:lang="en-US">No data found</Label>
+      </Rubric>
+      <Rubric id="d1e186815" kind="preferred">
+         <Label xml:lang="en-US">No data found</Label>
+      </Rubric>
+   </Class>
+   <Class code="OK" kind="concept">
+      <Meta name="internalId" value="16012"/>
+      <Rubric id="d1e186826" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Query reponse data found for 1 or more result sets matching the query request specification.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e186839" kind="short">
+         <Label xml:lang="en-US">Data found</Label>
+      </Rubric>
+      <Rubric id="d1e186839" kind="preferred">
+         <Label xml:lang="en-US">Data found</Label>
+      </Rubric>
+   </Class>
+   <Class code="QE" kind="concept">
+      <Meta name="internalId" value="19794"/>
+      <Rubric id="d1e186850" kind="definition">
+         <Label xml:lang="en-US">
+            <p>QueryError. Problem with input ParmetersError</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e186863" kind="short">
+         <Label xml:lang="en-US">QueryParameterError</Label>
+      </Rubric>
+      <Rubric id="d1e186863" kind="preferred">
+         <Label xml:lang="en-US">QueryParameterError</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="311"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1096"/>
+   <Title name="QueryParameterValue" date="2012-08-02" version="1.000">The domain of coded values used as parameters within QueryByParameter queries.</Title>
+   <Class code="rootClass">
+      <SubClass subCount="3" code="_DispenseQueryFilterCode" kind="abstract">
+         <Rubric id="d1e185994" kind="preferred">
+            <Label xml:lang="en-US">dispense query filter code</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="3" code="_PrescriptionDispenseFilterCode" kind="abstract">
+         <Rubric id="d1e186019" kind="preferred">
+            <Label xml:lang="en-US">Prescription Dispense Filter Code</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="3" code="_QueryParameterValue" kind="abstract">
+         <Rubric id="d1e186046" kind="preferred">
+            <Label xml:lang="en-US">QueryParameterValue</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">QueryParameterValue</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">The domain of coded values used as parameters within QueryByParameter queries.</Label>
+      </Rubric>
+   </Class>
+   <Class code="_DispenseQueryFilterCode" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="23299"/>
+      <SubClass code="ALLDISP" subCount="0">
+         <Rubric id="d1e186078" kind="preferred">
+            <Label xml:lang="en-US">all dispenses</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LASTDISP" subCount="0">
+         <Rubric id="d1e186110" kind="preferred">
+            <Label xml:lang="en-US">last dispense</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NODISP" subCount="0">
+         <Rubric id="d1e186142" kind="preferred">
+            <Label xml:lang="en-US">no dispense</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e185978" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Filter codes used to manage volume of dispenses returned by a parameter-based queries.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e185994" kind="short">
+         <Label xml:lang="en-US">dispense query filter code</Label>
+      </Rubric>
+      <Rubric id="d1e185994" kind="preferred">
+         <Label xml:lang="en-US">dispense query filter code</Label>
+      </Rubric>
+   </Class>
+   <Class code="_PrescriptionDispenseFilterCode" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21537"/>
+      <SubClass code="C" subCount="0">
+         <Rubric id="d1e186171" kind="preferred">
+            <Label xml:lang="en-US">Completely dispensed</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="N" subCount="0">
+         <Rubric id="d1e186201" kind="preferred">
+            <Label xml:lang="en-US">Never Dispensed</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="R" subCount="0">
+         <Rubric id="d1e186230" kind="preferred">
+            <Label xml:lang="en-US">Dispensed with remaining fills</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e186006" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A "helper" vocabulary used to construct complex query filters based on how and whether a prescription has been dispensed.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e186019" kind="short">
+         <Label xml:lang="en-US">Prescription Dispense Filter Code</Label>
+      </Rubric>
+      <Rubric id="d1e186019" kind="preferred">
+         <Label xml:lang="en-US">Prescription Dispense Filter Code</Label>
+      </Rubric>
+   </Class>
+   <Class code="_QueryParameterValue" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21986"/>
+      <SubClass code="ISSFA" subCount="0">
+         <Rubric id="d1e186262" kind="preferred">
+            <Label xml:lang="en-US">all</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="ISSFI" subCount="0">
+         <Rubric id="d1e186294" kind="preferred">
+            <Label xml:lang="en-US">with issues</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="ISSFU" subCount="0">
+         <Rubric id="d1e186326" kind="preferred">
+            <Label xml:lang="en-US">with unmanaged issues</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e186030" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Indicates how result sets should be filtered based on whether they have associated issues.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e186046" kind="short">
+         <Label xml:lang="en-US">QueryParameterValue</Label>
+      </Rubric>
+      <Rubric id="d1e186046" kind="preferred">
+         <Label xml:lang="en-US">QueryParameterValue</Label>
+      </Rubric>
+   </Class>
+   <Class code="ALLDISP" kind="concept">
+      <Meta name="internalId" value="23300"/>
+      <SuperClass code="_DispenseQueryFilterCode">
+         <Rubric id="d1e185994" kind="preferred">
+            <Label xml:lang="en-US">dispense query filter code</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e186057" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Returns all dispenses to date for a prescription.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e186078" kind="short">
+         <Label xml:lang="en-US">all dispenses</Label>
+      </Rubric>
+      <Rubric id="d1e186078" kind="preferred">
+         <Label xml:lang="en-US">all dispenses</Label>
+      </Rubric>
+   </Class>
+   <Class code="LASTDISP" kind="concept">
+      <Meta name="internalId" value="23301"/>
+      <SuperClass code="_DispenseQueryFilterCode">
+         <Rubric id="d1e185994" kind="preferred">
+            <Label xml:lang="en-US">dispense query filter code</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e186089" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Returns the most recent dispense for a prescription.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e186110" kind="short">
+         <Label xml:lang="en-US">last dispense</Label>
+      </Rubric>
+      <Rubric id="d1e186110" kind="preferred">
+         <Label xml:lang="en-US">last dispense</Label>
+      </Rubric>
+   </Class>
+   <Class code="NODISP" kind="concept">
+      <Meta name="internalId" value="23302"/>
+      <SuperClass code="_DispenseQueryFilterCode">
+         <Rubric id="d1e185994" kind="preferred">
+            <Label xml:lang="en-US">dispense query filter code</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e186121" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Returns no dispense for a prescription.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e186142" kind="short">
+         <Label xml:lang="en-US">no dispense</Label>
+      </Rubric>
+      <Rubric id="d1e186142" kind="preferred">
+         <Label xml:lang="en-US">no dispense</Label>
+      </Rubric>
+   </Class>
+   <Class code="C" kind="concept">
+      <Meta name="internalId" value="21540"/>
+      <SuperClass code="_PrescriptionDispenseFilterCode">
+         <Rubric id="d1e186019" kind="preferred">
+            <Label xml:lang="en-US">Prescription Dispense Filter Code</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e186153" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Filter to only include SubstanceAdministration orders which have no remaining quantity authorized to be dispensed.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e186171" kind="short">
+         <Label xml:lang="en-US">Completely dispensed</Label>
+      </Rubric>
+      <Rubric id="d1e186171" kind="preferred">
+         <Label xml:lang="en-US">Completely dispensed</Label>
+      </Rubric>
+   </Class>
+   <Class code="N" kind="concept">
+      <Meta name="internalId" value="21538"/>
+      <SuperClass code="_PrescriptionDispenseFilterCode">
+         <Rubric id="d1e186019" kind="preferred">
+            <Label xml:lang="en-US">Prescription Dispense Filter Code</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e186183" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Filter to only include SubstanceAdministration orders which have no fulfilling supply events performed.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e186201" kind="short">
+         <Label xml:lang="en-US">Never Dispensed</Label>
+      </Rubric>
+      <Rubric id="d1e186201" kind="preferred">
+         <Label xml:lang="en-US">Never Dispensed</Label>
+      </Rubric>
+   </Class>
+   <Class code="R" kind="concept">
+      <Meta name="internalId" value="21539"/>
+      <SuperClass code="_PrescriptionDispenseFilterCode">
+         <Rubric id="d1e186019" kind="preferred">
+            <Label xml:lang="en-US">Prescription Dispense Filter Code</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e186212" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Filter to only include SubstanceAdministration orders which have had at least one fulfilling supply event, but which still have outstanding quantity remaining to be authorized.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e186230" kind="short">
+         <Label xml:lang="en-US">Dispensed with remaining fills</Label>
+      </Rubric>
+      <Rubric id="d1e186230" kind="preferred">
+         <Label xml:lang="en-US">Dispensed with remaining fills</Label>
+      </Rubric>
+   </Class>
+   <Class code="ISSFA" kind="concept">
+      <Meta name="internalId" value="21987"/>
+      <SuperClass code="_QueryParameterValue">
+         <Rubric id="d1e186046" kind="preferred">
+            <Label xml:lang="en-US">QueryParameterValue</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e186241" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Result set should not be filtered based on the presence of issues.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e186262" kind="short">
+         <Label xml:lang="en-US">all</Label>
+      </Rubric>
+      <Rubric id="d1e186262" kind="preferred">
+         <Label xml:lang="en-US">all</Label>
+      </Rubric>
+   </Class>
+   <Class code="ISSFI" kind="concept">
+      <Meta name="internalId" value="21988"/>
+      <SuperClass code="_QueryParameterValue">
+         <Rubric id="d1e186046" kind="preferred">
+            <Label xml:lang="en-US">QueryParameterValue</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e186273" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Result set should be filtered to only include records with associated issues.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e186294" kind="short">
+         <Label xml:lang="en-US">with issues</Label>
+      </Rubric>
+      <Rubric id="d1e186294" kind="preferred">
+         <Label xml:lang="en-US">with issues</Label>
+      </Rubric>
+   </Class>
+   <Class code="ISSFU" kind="concept">
+      <Meta name="internalId" value="21989"/>
+      <SuperClass code="_QueryParameterValue">
+         <Rubric id="d1e186046" kind="preferred">
+            <Label xml:lang="en-US">QueryParameterValue</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e186305" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Result set should be filtered to only include records with associated unmanaged issues.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e186326" kind="short">
+         <Label xml:lang="en-US">with unmanaged issues</Label>
+      </Rubric>
+      <Rubric id="d1e186326" kind="preferred">
+         <Label xml:lang="en-US">with unmanaged issues</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

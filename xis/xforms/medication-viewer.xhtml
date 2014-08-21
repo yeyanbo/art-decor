@@ -1,0 +1,437 @@
+<!--
+    Copyright (C) 2011-2014 ART-DECOR expert group art-decor.org
+    
+    Author: Gerrit Boers
+
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+   xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:atp="urn:nictiz.atp" xmlns:hl7="urn:hl7-org:v3" xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xis="http://art-decor.org/ns/xis"
+   xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:widget="http://orbeon.org/oxf/xml/widget" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="xis"
+   xsi:schemaLocation="http://www.w3.org/1999/xhtml ../../orbeon_schemas/xhtml1-transitional-orbeon.xsd">
+   <xhtml:head>
+      <xhtml:script type="text/javascript"
+         >
+         function getDocHeight(doc) {
+         doc = doc || document;
+         // stackoverflow.com/questions/...
+         var body = doc.body, html = doc.documentElement;
+         var height = Math.max( body.scrollHeight, body.offsetHeight, 
+         html.clientHeight, html.scrollHeight, html.offsetHeight );
+         return height;
+         }
+         function setIframeHeight(name) {
+         var ifrm = document.getElementByName(name);
+         var doc = ifrm.contentDocument? ifrm.contentDocument: 
+         ifrm.contentWindow.document;
+         ifrm.style.visibility = 'hidden';
+         ifrm.style.height = "10px"; // reset to minimal height ...
+         ifrm.style.height = getDocHeight( doc ) + "px";
+         ifrm.style.visibility = 'visible';
+         }
+      </xhtml:script>
+      <xhtml:style type="text/css"
+         >
+         table.medication-overview{
+         width:100%;
+         margin-top:1.5em;
+         border-spacing:0px;
+         background-color:white;
+         border-bottom:1px solid lavender;
+         font-family:Verdana;
+         font-size:11px;
+         }
+         td.medication-overview{
+         border-spacing:0px;
+         border-bottom:1px solid lavender;
+         }
+         th{
+         background-color:lightgrey;
+         font-size:14px;
+         font-weight:bold;
+         text-align:left;
+         }
+         
+      </xhtml:style>
+      <xhtml:title>
+         <xforms:output ref="$resources/medication-viewer"/>
+      </xhtml:title>
+      <xforms:model id="xis">
+
+         <!-- Variable with path to art-exist for use by form -->
+         <xxforms:variable name="art-exist" select="xxforms:property('art.exist.url')"/>
+         <!-- Variable with path to decor-eXist used to pass to client as link for services (Diagrams in new window) -->
+         <xxforms:variable name="decor-exist" select="xxforms:property('decor.exist.url')"/>
+         <!-- Variable with path to xis-eXist for content -->
+         <xxforms:variable name="xis-exist" select="xxforms:property('xis.exist.url')"/>
+         <!-- Variable with path to xis-external-exist used to pass to client as link for images -->
+            <xxforms:variable name="xis-external-exist" select="xxforms:property('xis.external.exist.url')"/>
+         <!-- resources for internationalization -->
+         <xforms:instance id="resources-instance">
+            <dummy/>
+         </xforms:instance>
+         <!-- submission for loading resources -->
+         <xforms:submission id="get-resources-submission" serialization="none" method="get" resource="{$xis-exist}/resources/form-resources.xml" replace="instance" instance="resources-instance"/>
+         <!-- language -->
+         <xforms:instance id="language">
+            <language/>
+         </xforms:instance>
+         <!-- instance for edit status -->
+         <xforms:instance id="data-safe">
+            <data-safe>true</data-safe>
+         </xforms:instance>
+         <!-- instance for UI settings -->
+         <xforms:instance id="ui-instance">
+            <ui>
+               <configuration>edit</configuration>
+            </ui>
+         </xforms:instance>
+
+         <!-- instance for selected xml (HL7) set -->
+         <xforms:instance id="xml-set-navigation">
+            <uriString/>
+         </xforms:instance>
+         <!-- instance for xml (AORTA) set list -->
+         <xforms:instance id="xml-sets-instance">
+            <dummy/>
+         </xforms:instance>
+         <!-- get xml (AORTA) set list -->
+         <xforms:submission id="get-xml-set-submission" serialization="none" method="get" resource="{$xis-exist}/modules/get-hl7-package-list.xquery" replace="instance" instance="xml-sets-instance"/>
+
+
+         <!-- **** PATIENT SELECTION **** -->
+         <!-- instance for patient list -->
+         <xforms:instance id="patient-list">
+            <dummy/>
+         </xforms:instance>
+         <!-- instance for selected patient -->
+         <xforms:instance id="selected-patient">
+            <id>999999011</id>
+         </xforms:instance>
+         <xforms:submission id="get-patient-list" serialization="none" method="get" resource="{$xis-exist}/modules/retrieve-patients.xquery" replace="instance" instance="patient-list"/>
+
+         <!-- instance for selected reference date -->
+         <xforms:instance id="reference-date">
+            <dummy/>
+         </xforms:instance>
+
+         <!-- instance for selected reference date -->
+         <xforms:instance id="selected-reference-date">
+            <dummy>current-date()</dummy>
+         </xforms:instance>
+
+         <!-- **** XIS ACCOUNT **** -->
+         <!-- instance for selected test account @name (= collection name)-->
+         <xforms:instance id="selected-account">
+            <account/>
+         </xforms:instance>
+         <!-- test accounts for current user -->
+         <xforms:instance id="user-accounts">
+            <dummy/>
+         </xforms:instance>
+         <!-- get user accounts -->
+         <xforms:submission id="get-user-accounts" serialization="none" method="get" resource="{$xis-exist}/modules/get-xis-accounts-for-user.xquery" replace="instance" instance="user-accounts"/>
+
+         <!-- **** SCENARIOS **** -->
+         <!-- instance for selected scenario id -->
+         <xforms:instance id="selected-scenario" xxforms:exclude-result-prefixes="#all">
+            <id/>
+         </xforms:instance>
+         <!-- instance for scenario list -->
+         <xforms:instance id="scenario-list">
+            <dummy/>
+         </xforms:instance>
+         <!-- get scenario-list submission -->
+         <xforms:submission id="get-scenario-list" serialization="none" method="get" resource="{$xis-exist}/modules/get-scenario-list.xquery?account={instance('selected-account')}" replace="instance"
+            instance="scenario-list"/>
+         <!-- instance for step response -->
+         <xforms:instance id="step-response">
+            <dummy/>
+         </xforms:instance>
+         <!-- do scenario step submission -->
+         <xforms:submission id="do-scenario-step" serialization="none" method="get"
+            resource="{$xis-exist}/modules/do-scenario-step.xquery?account={instance('selected-account')}&amp;scenarioId={instance('selected-scenario')}&amp;stepId={instance('scenario-list')//xis:scenario[@id=instance('selected-scenario')]/xis:step[@statusCode='pending'][1]/@id}"
+            replace="instance" instance="step-response" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}"/>
+         <!-- undo last scenario step submission -->
+         <xforms:submission id="undo-last-scenario-step" serialization="none" method="get"
+            resource="{$xis-exist}/modules/undo-last-scenario-step.xquery?account={instance('selected-account')}&amp;scenarioId={instance('selected-scenario')}" replace="instance"
+            instance="step-response" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}"/>
+         <!-- delete scenario files -->
+         <xforms:submission id="delete-scenario-files" serialization="none" method="get"
+            resource="{$xis-exist}/modules/delete-scenario-files.xquery?account={instance('selected-account')}&amp;scenarioId={instance('selected-scenario')}" replace="instance"
+            instance="step-response" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}"/>
+
+         <!-- main messages instance -->
+         <xforms:instance id="messages-instance">
+            <dummy/>
+         </xforms:instance>
+         <!-- get messages submission -->
+         <xforms:submission id="get-messages-submission" serialization="none" method="get" resource="{$xis-exist}/modules/get-message-list.xq?collection=messages" replace="instance"
+            instance="messages-instance"/>
+         <xforms:bind nodeset="instance('messages-instance')/message/@created" type="xforms:dateTime"/>
+         <xforms:submission id="delete-message-file" serialization="none" method="get" resource="{$xis-exist}/modules/delete-message-file.xquery?file={instance('selected-message')/message/@file}"
+            replace="none" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}"/>
+         <xforms:action ev:event="xforms-model-construct-done">
+            <xxforms:variable name="session-language" select="xxforms:get-session-attribute('language')"/>
+            <xforms:setvalue ref="instance('language')" value="if (string-length($session-language)&gt;0)       then $session-language/string() else ('nl-NL')"/>
+            <xforms:insert context="." origin="xxforms:set-session-attribute('language', instance('language'))"/>
+            <xforms:send submission="get-resources-submission"/>
+            <xforms:send submission="get-user-accounts"/>
+            <xforms:setvalue ref="instance('selected-account')" value="instance('user-accounts')/xis:testAccount[1]/@name"/>
+            <!--            <xforms:send submission="get-xml-set-submission"/>-->
+            <xforms:send submission="get-configuration-submission"/>
+            <xforms:send submission="get-scenario-list"/>
+            <xforms:send submission="get-patient-list"/>
+            <xforms:setvalue ref="instance('selected-scenario')" value="instance('scenario-list')//xis:scenario[1]/@id"/>
+            <xforms:setvalue ref="instance('reference-date')" value="xxforms:evaluate(instance('selected-reference-date'))"/>
+         </xforms:action>
+         <xxforms:script ev:event="xforms-ready"
+            >
+				window.onbeforeunload = function() {
+				if (ORBEON.xforms.Document.getValue('data-safe-input') != 'true')
+				return "Deze tekst kunnen we aanpassen.";
+				}
+			</xxforms:script>
+         <!-- form ready actions -->
+         <xforms:action ev:event="xforms-ready">
+            <xforms:setvalue ref="instance('query-selected-patient')" value="instance('query-patient-list-instance')/hl7:Patient[1]/hl7:id[@root='2.16.840.1.113883.2.4.6.3']/@extension"/>
+            <xforms:setvalue ref="instance('selected-query')" value="instance('query-parameters')/query/@id"/>
+            <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+         </xforms:action>
+         <xxforms:variable name="resources" select="instance('resources-instance')//resources[@xml:lang=instance('language')]"/>
+         <xxforms:variable name="editor" select="contains(xxforms:get-session-attribute('groups'),'xis')"/>
+      </xforms:model>
+   </xhtml:head>
+   <xhtml:body>
+      <!-- special output used to give warning if user leaves page -->
+      <xforms:output ref="instance('data-safe')" id="data-safe-input" style="display: none"/>
+      <!-- Scenario and account selection -->
+      <xhtml:table class="detail" width="100%">
+         <xhtml:tr>
+            <xhtml:td class="item-label">
+               <xforms:output ref="$resources/scenario"/>
+            </xhtml:td>
+            <xhtml:td style="vertical-align:middle;">
+               <xforms:select1 ref="instance('selected-scenario')" appearance="minimal" class="auto-width" id="scenario-select">
+                  <xforms:itemset nodeset="instance('scenario-list')/xis:scenario">
+                     <xforms:label ref="xis:name[@language=instance('language')]"/>
+                     <xforms:value ref="@id"/>
+                  </xforms:itemset>
+                  <xforms:action ev:event="xforms-value-changed">
+                     <!--<xforms:send submission="get-messages-submission"/>
+                     <xforms:send submission="get-patient-list-submission"/>
+                     <xforms:setvalue ref="instance('selected-patient')" value="instance('patient-list-instance')//patient[1]/bsn"/>-->
+                     <!--                     <xforms:load xxforms:target="medicationFrame" resource="{$xis-exist}/MedicationOverview?patientId={instance('selected-patient')}&amp;account={instance('selected-account')}" show="replace"/>-->
+                  </xforms:action>
+               </xforms:select1>
+            </xhtml:td>
+            <xhtml:td class="item-label">
+               <xforms:output ref="$resources/account"/>
+            </xhtml:td>
+            <xhtml:td style="vertical-align:middle;">
+               <xforms:select1 ref="instance('selected-account')" appearance="minimal" class="auto-width" id="account-select">
+                  <xforms:itemset nodeset="instance('user-accounts')/xis:testAccount">
+                     <xforms:label ref="@displayName"/>
+                     <xforms:value ref="@name"/>
+                  </xforms:itemset>
+                  <xforms:action ev:event="xforms-value-changed">
+                     <xforms:send submission="get-scenario-list"/>
+                     <!--                     <xforms:load xxforms:target="medicationFrame" resource="{$xis-exist}/MedicationOverview?patientId={instance('selected-patient')}&amp;account={instance('selected-account')}" show="replace"/>-->
+                  </xforms:action>
+               </xforms:select1>
+            </xhtml:td>
+         </xhtml:tr>
+         <!-- Patient selection and time shift -->
+         <xhtml:tr>
+            <xhtml:td class="item-label">
+               <xforms:output ref="$resources/patient"/>
+            </xhtml:td>
+            <xhtml:td>
+               <xforms:select1 ref="instance('selected-patient')" appearance="minimal" class="auto-width">
+                  <xforms:itemset nodeset="instance('patient-list')/hl7:Patient">
+                     <xforms:label ref="hl7:Person/hl7:name"/>
+                     <xforms:value ref="hl7:id[@root='2.16.840.1.113883.2.4.6.3']/@extension"/>
+                  </xforms:itemset>
+               </xforms:select1>
+            </xhtml:td>
+            <xhtml:td class="item-label">
+               <xforms:output ref="$resources/reference-date"/>
+            </xhtml:td>
+            <xhtml:td>
+               <xforms:select1 ref="instance('selected-reference-date')" appearance="minimal" class="auto-width">
+                  <xforms:item>
+                     <xforms:label>+3 maanden</xforms:label>
+                     <xforms:value>current-date()+xs:yearMonthDuration('P3M')</xforms:value>
+                  </xforms:item>
+                  <xforms:item>
+                     <xforms:label>+1 maand</xforms:label>
+                     <xforms:value>current-date()+xs:yearMonthDuration('P1M')</xforms:value>
+                  </xforms:item>
+                  <xforms:item>
+                     <xforms:label>Vandaag</xforms:label>
+                     <xforms:value>current-date()</xforms:value>
+                  </xforms:item>
+                  <xforms:item>
+                     <xforms:label>-1 maand</xforms:label>
+                     <xforms:value>current-date()-xs:yearMonthDuration('P1M')</xforms:value>
+                  </xforms:item>
+                  <xforms:item>
+                     <xforms:label>-3 maanden</xforms:label>
+                     <xforms:value>current-date()-xs:yearMonthDuration('P3M')</xforms:value>
+                  </xforms:item>
+                  <xforms:action ev:event="xforms-value-changed">
+                     <xforms:setvalue ref="instance('reference-date')" value="xxforms:evaluate(instance('selected-reference-date'))"/>
+                     <xforms:load xxforms:target="medicationFrame" resource="{$xis-external-exist}/modules/medication-view.xquery?patientId={instance('selected-patient')}&amp;account={instance('selected-account')}&amp;referenceDate={instance('reference-date')}" show="replace"/>
+                  </xforms:action>
+               </xforms:select1>
+               <!--               <xhtml:div class="buttons">
+                  <fr:button>
+                     <xforms:label>
+                        <xhtml:img src="/img/arrow_refresh.png" alt="" align="right"/>
+                     </xforms:label>
+                     <xforms:action ev:event="DOMActivate">
+                        <xforms:load xxforms:target="medicationFrame" resource="{$xis-exist}/MedicationOverview?patientId={instance('selected-patient')}&amp;account={instance('selected-account')}"
+                           show="replace"/>
+                     </xforms:action>
+                  </fr:button>
+               </xhtml:div>-->
+            </xhtml:td>
+         </xhtml:tr>
+         <!-- Next step button -->
+         <xforms:group ref=".[$editor]">
+            <xhtml:tr>
+               <xhtml:td class="item-label">
+                  <xforms:output ref="$resources/next-scenario-step"/>
+               </xhtml:td>
+               <xhtml:td colspan="3">
+                  <xxforms:variable name="nextStep" select="instance('scenario-list')//xis:scenario[@id=instance('selected-scenario')]/xis:step[@statusCode='pending'][1]"/>
+                  <xforms:group ref=".[$nextStep]">
+                     <fr:button>
+                        <xforms:label ref="$nextStep/xis:name[@language=instance('language')]"/>
+                        <xforms:action ev:event="DOMActivate">
+                           <xforms:send submission="do-scenario-step"/>
+                           <xforms:send submission="get-scenario-list"/>
+                           <xforms:action if="string-length(instance('scenario-list')//xis:scenario[@id=instance('selected-scenario')]/xis:step[@statusCode='completed'][last()]/@referenceDate)&gt;0">
+                              <xforms:setvalue ref="instance('reference-date')"
+                                 value="xs:date(instance('scenario-list')//xis:scenario[@id=instance('selected-scenario')]/xis:step[@statusCode='completed'][last()]/@referenceDate)"/>
+                           </xforms:action>
+                           <xforms:load xxforms:target="medicationFrame" resource="{$xis-external-exist}/modules/medication-view.xquery?patientId={instance('selected-patient')}&amp;account={instance('selected-account')}&amp;referenceDate={instance('reference-date')}" show="replace"/>
+                        </xforms:action>
+                     </fr:button>
+                  </xforms:group>
+                  <xforms:group ref=".[not($nextStep)]">
+                     <xforms:output ref="$resources/end-of-scenario"/>
+                  </xforms:group>
+                  <xhtml:div class="buttons">
+                     <xforms:group ref=".[instance('scenario-list')//xis:scenario[@id=instance('selected-scenario')]/xis:step[@statusCode='completed']]">
+                        <fr:button>
+                           <xforms:label ref="$resources/step-back"/>
+                           <xforms:action ev:event="DOMActivate">
+                              <xforms:send submission="undo-last-scenario-step"/>
+                              <xforms:send submission="get-scenario-list"/>
+                              <xforms:action
+                                 if="string-length(instance('scenario-list')//xis:scenario[@id=instance('selected-scenario')]/xis:step[@statusCode='completed'][last()]/@referenceDate)&gt;0">
+                                 <xforms:setvalue ref="instance('reference-date')"
+                                    value="xs:date(instance('scenario-list')//xis:scenario[@id=instance('selected-scenario')]/xis:step[@statusCode='completed'][last()]/@referenceDate)"/>
+                              </xforms:action>
+                              <xforms:load xxforms:target="medicationFrame" resource="{$xis-external-exist}/modules/medication-view.xquery?patientId={instance('selected-patient')}&amp;account={instance('selected-account')}&amp;referenceDate={instance('reference-date')}" show="replace"/>
+                           </xforms:action>
+                        </fr:button>
+                        <fr:button>
+                           <xforms:label ref="$resources/clear-all"/>
+                           <xforms:action ev:event="DOMActivate">
+                              <xforms:send submission="delete-scenario-files"/>
+                              <xforms:send submission="get-scenario-list"/>
+                              <xforms:load xxforms:target="medicationFrame" resource="{$xis-external-exist}/modules/medication-view.xquery?patientId={instance('selected-patient')}&amp;account={instance('selected-account')}&amp;referenceDate={instance('reference-date')}" show="replace"/>
+                           </xforms:action>
+                        </fr:button>
+                     </xforms:group>
+                  </xhtml:div>
+               </xhtml:td>
+            </xhtml:tr>
+         </xforms:group>
+      </xhtml:table>
+      <xhtml:table class="medication-overview">
+         <xhtml:tr>
+            <xhtml:th colspan="4">
+               <xforms:output ref="$resources/medication-overview"/>
+               <xforms:output ref="instance('reference-date')"
+                  xxforms:format="if (instance('language')='en-US') then format-date(instance('reference-date'),'[M01]/[D01]/[Y]') else format-date(instance('reference-date'),'[D01]-[M01]-[Y]')"/>
+            </xhtml:th>
+         </xhtml:tr>
+         <xforms:group ref="instance('patient-list')//hl7:Patient[hl7:id/@extension=instance('selected-patient')]">
+            <xhtml:tr>
+               <xhtml:td class="medication-overview">
+                  <xforms:output ref="$resources/patient"/>
+               </xhtml:td>
+               <xhtml:td class="medication-overview">
+                  <xforms:output ref="string-join(hl7:Person/hl7:name/node()/normalize-space(text()),' ')"/>
+               </xhtml:td>
+               <xhtml:td class="medication-overview">
+                  <xforms:output ref="$resources/bsn"/>
+               </xhtml:td>
+               <xhtml:td class="medication-overview">
+                  <xforms:output ref="hl7:id[@root='2.16.840.1.113883.2.4.6.3']/@extension"/>
+               </xhtml:td>
+            </xhtml:tr>
+            <xhtml:tr>
+               <xhtml:td class="medication-overview">
+                  <xforms:output ref="$resources/adres"/>
+               </xhtml:td>
+               <xhtml:td class="medication-overview">
+                  <xforms:output ref="hl7:addr/hl7:streetName"/>
+                  <xforms:output ref="hl7:addr/hl7:houseNumber"/>
+               </xhtml:td>
+               <xhtml:td class="medication-overview">
+                  <xforms:output ref="$resources/birthdate"/>
+               </xhtml:td>
+               <xhtml:td class="medication-overview">
+                  <xxforms:variable name="hl7-birthdate" select="hl7:Person/hl7:birthTime/@value"/>
+                  <xxforms:variable name="birthdate" select="xs:date(concat(substring($hl7-birthdate,1,4),'-',substring($hl7-birthdate,5,2),'-',substring($hl7-birthdate,7,2)))"/>
+                  <xforms:output ref="$birthdate" xxforms:format="if (instance('language')='en-US') then format-date($birthdate,'[M01]/[D01]/[Y]') else format-date($birthdate,'[D01]-[M01]-[Y]')"/>
+               </xhtml:td>
+            </xhtml:tr>
+            <xhtml:tr>
+               <xhtml:td class="medication-overview">
+                  <xforms:output ref="$resources/postalcode-city"/>
+               </xhtml:td>
+               <xhtml:td class="medication-overview">
+                  <xforms:output ref="hl7:addr/hl7:postalCode"/>
+                  <xforms:output ref="hl7:addr/hl7:city"/>
+               </xhtml:td>
+               <xhtml:td class="medication-overview">
+                  <xforms:output ref="$resources/gender"/>
+               </xhtml:td>
+               <xhtml:td class="medication-overview">
+                  <xforms:output ref="if (hl7:Person/hl7:administrativeGenderCode/@code='F') then 'V' else if (hl7:Person/hl7:administrativeGenderCode/@code='M') then 'M' else ('')"/>
+               </xhtml:td>
+            </xhtml:tr>
+            <xhtml:tr>
+               <xhtml:td class="medication-overview">
+                  <xforms:output ref="$resources/telephone"/>
+               </xhtml:td>
+               <xhtml:td class="medication-overview" colspan="3">
+                  <xforms:output ref="hl7:telecom[starts-with(@value,'tel:')]/@value/substring-after(.,'tel:')"/>
+               </xhtml:td>
+            </xhtml:tr>
+            <xhtml:tr>
+               <xhtml:td colspan="4" width="100%">
+                  <xhtml:iframe name="medicationFrame" frameborder="0" src="{$xis-external-exist}/modules/medication-view.xquery?patientId={instance('selected-patient')}&amp;account={instance('selected-account')}" width="100%" height="800px"/>
+               </xhtml:td>
+            </xhtml:tr>
+         </xforms:group>
+      </xhtml:table>
+
+
+
+      <!--      <fr:xforms-inspector/>-->
+   </xhtml:body>
+</xhtml:html>

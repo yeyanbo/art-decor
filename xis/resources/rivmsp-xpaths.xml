@@ -1,0 +1,279 @@
+<projectXpaths>
+    <representingTemplateXpaths ref="2.16.840.1.113883.2.4.3.36.10.10" displayName="Resultaatdocument MDL bevolkingsonderzoek darmkanker" sourceDataset="2.16.840.1.113883.2.4.3.36.77.1.1">
+ 	 	<!--Auteur gegevens / gegevensverstrekker-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100000" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.10.100.1" xpath="/hl7:ClinicalDocument[hl7:author[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.100']]]/hl7:author/hl7:assignedAuthor/hl7:representedOrganization"/>
+ 	 	<!--Identificatie zorgaanbieder-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100020" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.10.900809.1" xpath="/hl7:ClinicalDocument[hl7:author[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.100']]]/hl7:author/hl7:assignedAuthor/hl7:representedOrganization/hl7:id[@root='2.16.528.1.1007.3.3']/@extension"/>
+ 	 	<!--Adres zorgaanbieder-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100029" minimumMultiplicity="1" maximumMultiplicity="1"/>
+ 	 	<!--Naam vestiging zorgaanbieder-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100025" minimumMultiplicity="0" maximumMultiplicity="1"/>
+ 	 	<!--Naam zorgaanbieder-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100030" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.10.900809.2" xpath="/hl7:ClinicalDocument[hl7:author[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.100']]]/hl7:author/hl7:assignedAuthor/hl7:representedOrganization/hl7:name"/>
+ 	 	<!--Postadres-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100031" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.10.900809.3" xpath="/hl7:ClinicalDocument[hl7:author[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.100']]]/hl7:author/hl7:assignedAuthor/hl7:representedOrganization/hl7:addr"/>
+ 	 	<!--Postcode-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100032" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.10.900809.3" xpath="/hl7:ClinicalDocument[hl7:author[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.100']]]/hl7:author/hl7:assignedAuthor/hl7:representedOrganization/hl7:addr"/>
+ 	 	<!--Woonplaats-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100033" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.10.900809.3" xpath="/hl7:ClinicalDocument[hl7:author[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.100']]]/hl7:author/hl7:assignedAuthor/hl7:representedOrganization/hl7:addr"/>
+ 	 	<!--Uitvoerder-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100049" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.10.900815.2" xpath="/hl7:ClinicalDocument/hl7:documentationOf/hl7:serviceEvent/hl7:performer"/>
+ 	 	<!--Zorgverlener-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100048" minimumMultiplicity="1" maximumMultiplicity="1"/>
+ 	 	<!--Identificatie uitvoerder-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100050" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.10.900829.1" xpath="/hl7:ClinicalDocument/hl7:participant/hl7:associatedEntity/hl7:id[@root='2.16.528.1.1007.3.1']/@extension"/>
+ 	 	<!--Zorgverlenertype-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100060" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.10.900815.1" xpath="/hl7:ClinicalDocument/hl7:documentationOf/hl7:serviceEvent/hl7:performer/hl7:assignedEntity/hl7:code/@code"/>
+ 	 	<!--Zorginstelling-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100069" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R"/>
+ 	 	<!--Type zorgaanbieder (instelling)-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100070" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R"/>
+ 	 	<!--Burger-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.105000" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.900808.1" xpath="/hl7:ClinicalDocument/hl7:recordTarget"/>
+ 	 	<!--Burger Service Nummer-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.105010" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.900014.1" xpath="/hl7:ClinicalDocument/hl7:recordTarget/hl7:patientRole/hl7:id[@root='2.16.840.1.113883.2.4.6.3']/@extension"/>
+ 	 	<!--Verrichting-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.125000" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R"/>
+ 	 	<!--Onderzoeksronde-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.125005" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R"/>
+ 	 	<!--Aanvang verrichting-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.125030" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.900005.1" xpath="/hl7:ClinicalDocument/hl7:documentationOf/hl7:serviceEvent/hl7:effectiveTime/hl7:low/@value"/>
+ 	 	<!--Einde verrichting-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.125050" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.900035.1" xpath="/hl7:ClinicalDocument/hl7:documentationOf/hl7:serviceEvent/hl7:effectiveTime/hl7:high/@value"/>
+ 	 	<!--Sedatie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140089" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.502.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.203']]]/hl7:section/hl7:entry[hl7:organizer[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.502']]]/hl7:organizer"/>
+ 	 	<!--Sedatiemiddel-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140092" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.503.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.203']]]/hl7:section/hl7:entry[hl7:organizer[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.502']]]/hl7:organizer/hl7:component[hl7:substanceAdministration[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.503']]]/hl7:substanceAdministration"/>
+ 	 	<!--Medicatie tijdens coloscopie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140090" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.900054.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.203']]]/hl7:section/hl7:entry[hl7:organizer[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.502']]]/hl7:organizer/hl7:component[hl7:substanceAdministration[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.503']]]/hl7:substanceAdministration/hl7:consumable/hl7:manufacturedProduct/hl7:manufacturedLabeledDrug/hl7:code/@code"/>
+ 	 	<!--Dosering medicatie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140100" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.900028.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.203']]]/hl7:section/hl7:entry[hl7:organizer[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.502']]]/hl7:organizer/hl7:component[hl7:substanceAdministration[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.503']]]/hl7:substanceAdministration/hl7:doseQuantity"/>
+ 	 	<!--Mate van sedatie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140101" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.504.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.203']]]/hl7:section/hl7:entry[hl7:organizer[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.502']]]/hl7:organizer/hl7:component[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.504']]]/hl7:observation/hl7:value/@code"/>
+ 	 	<!--Antidotum-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140104" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.505.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.203']]]/hl7:section/hl7:entry[hl7:organizer[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.502']]]/hl7:organizer/hl7:component[hl7:organizer[hl7:code[(@code='67329000' and @codeSystem='2.16.840.1.113883.6.96')]]]/hl7:organizer"/>
+ 	 	<!--Naam middel-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140102" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.506.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.203']]]/hl7:section/hl7:entry[hl7:organizer[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.502']]]/hl7:organizer/hl7:component[hl7:organizer[hl7:code[(@code='67329000' and @codeSystem='2.16.840.1.113883.6.96')]]]/hl7:organizer/hl7:component[hl7:substanceAdministration[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.506']]]/hl7:substanceAdministration/hl7:consumable/hl7:manufacturedProduct/hl7:manufacturedLabeledDrug/hl7:code/@code"/>
+ 	 	<!--Incident/complicatie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.125059" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.305.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.203']]]/hl7:section/hl7:entry[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.305']]]/hl7:observation"/>
+ 	 	<!--Datum incident/complicatie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.125060" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.900024.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.203']]]/hl7:section/hl7:entry[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.305']]]/hl7:observation/hl7:effectiveTime/@value"/>
+ 	 	<!--Type incident/complicatie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.125070" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.305.2" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.203']]]/hl7:section/hl7:entry[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.305']]]/hl7:observation/hl7:value/@code"/>
+ 	 	<!--Ernst incident/complicatie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.125075" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.306.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.203']]]/hl7:section/hl7:entry[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.305']]]/hl7:observation/hl7:entryRelationship[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.306']]]/hl7:observation/hl7:value/@code"/>
+ 	 	<!--Interventie n.a.v. complicatie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140082" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.327.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.203']]]/hl7:section/hl7:entry[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.327']]]/hl7:observation/hl7:value/@code"/>
+ 	 	<!--Overige interventie (tekst)-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140084" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.327.2" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.203']]]/hl7:section/hl7:entry[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.327']]]/hl7:observation/hl7:text"/>
+ 	 	<!--Doorgiftedatum uitslag doorgegeven zorgverlener-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.125085" minimumMultiplicity="0" maximumMultiplicity="*"/>
+ 	 	<!--Coloscopie : medische observatie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140000" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R"/>
+ 	 	<!--Familiaire belasting-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140002" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.337.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.204']]]/hl7:section/hl7:entry[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.337']]]/hl7:observation/hl7:value/@value"/>
+ 	 	<!--Voorbereiding coloscopie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140004" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.307.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.204']]]/hl7:section/hl7:entry[hl7:act[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.307']]]/hl7:act"/>
+ 	 	<!--Type voorbereiding-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140005" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.900088.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.204']]]/hl7:section/hl7:entry[hl7:act[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.307']]]/hl7:act/hl7:entryRelationship[hl7:substanceAdministration[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.308']]]/hl7:substanceAdministration/hl7:consumable/hl7:manufacturedProduct/hl7:manufacturedMaterial/hl7:code/@code"/>
+ 	 	<!--Dosis voorbereiding-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140006" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.900029.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.204']]]/hl7:section/hl7:entry[hl7:act[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.307']]]/hl7:act/hl7:entryRelationship[hl7:substanceAdministration[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.308']]]/hl7:substanceAdministration/hl7:doseQuantity/@value"/>
+ 	 	<!--Voorbereiding zoals voorgeschreven gebruikt-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140007" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.309.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.204']]]/hl7:section/hl7:entry[hl7:act[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.307']]]/hl7:act/hl7:entryRelationship[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.309']]]/hl7:observation/hl7:value/@value"/>
+ 	 	<!--Boston Bowel Preparation -->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140008" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.310.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.204']]]/hl7:section/hl7:entry[hl7:act[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.307']]]/hl7:act/hl7:entryRelationship[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.310']]]/hl7:observation"/>
+ 	 	<!--Boston Bowel Preparation Scale Sum Score-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140009" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.310.2" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.204']]]/hl7:section/hl7:entry[hl7:act[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.307']]]/hl7:act/hl7:entryRelationship[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.310']]]/hl7:observation/hl7:value/@code"/>
+ 	 	<!--Boston Bowel Preparation per colon segment-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140010" minimumMultiplicity="3" maximumMultiplicity="3" conformance="R"/>
+ 	 	<!--BBPS locatie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140011" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R"/>
+ 	 	<!--BBPS Score-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140020" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.10.311.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.204']]]/hl7:section/hl7:entry[hl7:act[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.307']]]/hl7:act/hl7:entryRelationship[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.310']]]/hl7:observation/hl7:entryRelationship[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.311']]]/hl7:observation/hl7:value/@code"/>
+ 	 	<!--Intubatie tijd-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140021" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.321.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.204']]]/hl7:section/hl7:entry[hl7:act[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.320']]]/hl7:act/hl7:entryRelationship[hl7:procedure[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.321']]]/hl7:procedure/hl7:effectiveTime/hl7:width/@value"/>
+ 	 	<!--CO2 insufflatie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140022" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.322.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.204']]]/hl7:section/hl7:entry[hl7:act[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.320']]]/hl7:act/hl7:entryRelationship[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.322']]]/hl7:observation/hl7:value/@value"/>
+ 	 	<!--Caecum vastgelegd-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140030" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.324.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.204']]]/hl7:section/hl7:entry[hl7:act[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.320']]]/hl7:act/hl7:entryRelationship[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.324']]]/hl7:observation/hl7:value/@value"/>
+ 	 	<!--Appendix vastgelegd-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140032" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.325.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.204']]]/hl7:section/hl7:entry[hl7:act[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.320']]]/hl7:act/hl7:entryRelationship[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.325']]]/hl7:observation/hl7:value/@value"/>
+ 	 	<!--Caecum intubatie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140040" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.329.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.204']]]/hl7:section/hl7:entry[hl7:act[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.320']]]/hl7:act/hl7:entryRelationship[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.329']]]/hl7:observation/hl7:value/@value"/>
+ 	 	<!--Klep of terminaal ileum vastgelegd-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140050" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.326.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.204']]]/hl7:section/hl7:entry[hl7:act[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.320']]]/hl7:act/hl7:entryRelationship[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.326']]]/hl7:observation/hl7:value/@value"/>
+ 	 	<!--Lokatie bereikt-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140060" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.330.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.204']]]/hl7:section/hl7:entry[hl7:act[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.320']]]/hl7:act/hl7:entryRelationship[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.330']]]/hl7:observation/hl7:value/@code"/>
+ 	 	<!--Terugtrektijd coloscopie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140070" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.323.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.204']]]/hl7:section/hl7:entry[hl7:act[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.320']]]/hl7:act/hl7:entryRelationship[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.323']]]/hl7:observation/hl7:value/@value"/>
+ 	 	<!--Retroflexie rectum-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140105" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.331.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.204']]]/hl7:section/hl7:entry[hl7:act[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.320']]]/hl7:act/hl7:entryRelationship[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.331']]]/hl7:observation/hl7:value/@value"/>
+ 	 	<!--Patiëntcomfort (GCS)-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140110" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.328.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.204']]]/hl7:section/hl7:entry[hl7:act[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.320']]]/hl7:act/hl7:entryRelationship[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.328']]]/hl7:observation/hl7:value/@code"/>
+ 	 	<!--Reden afbreking coloscopie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140120" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.334.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.204']]]/hl7:section/hl7:entry[hl7:act[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.320']]]/hl7:act/hl7:entryRelationship[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.334']]]/hl7:observation/hl7:value/@code"/>
+ 	 	<!--Vervolgbeleid n.a.v. afbreking coloscopie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140122" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.335.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.204']]]/hl7:section/hl7:entry[hl7:act[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.320']]]/hl7:act/hl7:entryRelationship[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.335']]]/hl7:observation/hl7:value/@code"/>
+ 	 	<!--Terugkoppeling cliënt-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140130" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.370.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.207']]]/hl7:section/hl7:entry[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.370']]]/hl7:observation/hl7:value/@code"/>
+ 	 	<!--Definitief Vervolgbeleid (groep)-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140149" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.372.3" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.207']]]/hl7:section/hl7:entry[hl7:act[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.372']]]/hl7:act"/>
+ 	 	<!--Definitief Vervolgbeleid-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140150" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.372.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.207']]]/hl7:section/hl7:entry[hl7:act[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.372']]]/hl7:act/hl7:code/@code"/>
+ 	 	<!--Periode vervolg surveillance/coloscopie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140152" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.372.2" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.207']]]/hl7:section/hl7:entry[hl7:act[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.372']]]/hl7:act/hl7:effectiveTime"/>
+ 	 	<!--Verwezen naar centrum-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140153" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.372.4" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.207']]]/hl7:section/hl7:entry[hl7:act[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.372']]]/hl7:act/hl7:performer/hl7:assignedEntity/hl7:representedOrganization/hl7:name"/>
+ 	 	<!--Eindconclusie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.140160" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.380.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.208']]]/hl7:section/hl7:entry[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.380']]]/hl7:observation/hl7:value/@code"/>
+ 	 	<!--Poliep (coloscopiecentrum)-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.145000" minimumMultiplicity="0" maximumMultiplicity="*"/>
+ 	 	<!--Overige bevinding-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.145010" minimumMultiplicity="1" maximumMultiplicity="1"/>
+ 	 	<!--Diameter poliep-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.145020" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.900102.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.205']]]/hl7:section/hl7:entry[hl7:act[hl7:code[(@code='X-LAB-SPMSCT' and @codeSystem='2.16.840.1.113883.6.1')]]]/hl7:act/hl7:specimen/hl7:specimenRole/lab:subjectOf[lab:observationEvent/lab:code/@code='384627007']/lab:observationEvent/lab:value/@value"/>
+ 	 	<!--Morfologie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.145030" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.900109.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.205']]]/hl7:section/hl7:entry[hl7:act[hl7:code[(@code='X-LAB-SPMSCT' and @codeSystem='2.16.840.1.113883.6.1')]]]/hl7:act/hl7:specimen/hl7:specimenRole/lab:subjectOf[lab:observationEvent/lab:code/@code='41329004']/lab:observationEvent/lab:value/@code"/>
+ 	 	<!--Klinische diagnose-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.145040" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.900106.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.205']]]/hl7:section/hl7:entry[hl7:act[hl7:code[(@code='X-LAB-SPMSCT' and @codeSystem='2.16.840.1.113883.6.1')]]]/hl7:act/hl7:specimen/hl7:specimenRole/lab:subjectOf[lab:observationEvent/lab:code/@code='DX']/lab:observationEvent/lab:value/@code"/>
+ 	 	<!--Nummer potje poliep-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.145050" minimumMultiplicity="0" maximumMultiplicity="1"/>
+ 	 	<!--Afnametijdstip-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.145051" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.10.333.3" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.205']]]/hl7:section/hl7:entry[hl7:act[hl7:code[(@code='X-LAB-SPMSCT' and @codeSystem='2.16.840.1.113883.6.1')]]]/hl7:act/hl7:specimen/hl7:specimenRole/lab:productOf/lab:specimenCollectionProcess/lab:effectiveTime/@value"/>
+ 	 	<!--Lokalisatie laesie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.145060" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.10.333.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.205']]]/hl7:section/hl7:entry[hl7:act[hl7:code[(@code='X-LAB-SPMSCT' and @codeSystem='2.16.840.1.113883.6.1')]]]/hl7:act/hl7:specimen/hl7:specimenRole/lab:productOf/lab:specimenCollectionProcess/lab:targetSiteCode/@code"/>
+ 	 	<!--Poliep vastgelegd-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.145065" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.900066.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.205']]]/hl7:section/hl7:entry[hl7:act[hl7:code[(@code='X-LAB-SPMSCT' and @codeSystem='2.16.840.1.113883.6.1')]]]/hl7:act/hl7:specimen/hl7:specimenRole/lab:subjectOf[lab:observationEvent/lab:code/@code='C145065']/lab:observationEvent/lab:value/@value"/>
+ 	 	<!--Type afgenomen materiaal-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.145070" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R"/>
+ 	 	<!--Manier van verwijderen-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.145080" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.900110.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.205']]]/hl7:section/hl7:entry[hl7:act[hl7:code[(@code='X-LAB-SPMSCT' and @codeSystem='2.16.840.1.113883.6.1')]]]/hl7:act/hl7:specimen/hl7:specimenRole/lab:productOf/lab:specimenCollectionProcess/lab:code/@code/lab:qualifier[lab:name/@code='84203001']/lab:value/@code"/>
+ 	 	<!--Succes verwijdering-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.145091" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.900112.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.205']]]/hl7:section/hl7:entry[hl7:act[hl7:code[(@code='X-LAB-SPMSCT' and @codeSystem='2.16.840.1.113883.6.1')]]]/hl7:act/hl7:specimen/hl7:specimenRole/lab:productOf/lab:specimenCollectionProcess/lab:code/@code/lab:qualifier[lab:name/@code='385668008']/lab:value/@code"/>
+ 	 	<!--Tatoeage geplaatst-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.145092" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.900118.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.205']]]/hl7:section/hl7:entry[hl7:act[hl7:code[(@code='X-LAB-SPMSCT' and @codeSystem='2.16.840.1.113883.6.1')]]]/hl7:act/hl7:specimen/hl7:specimenRole/lab:subjectOf[lab:observationEvent/lab:code/@code='14792009']/lab:observationEvent/lab:value/@value"/>
+ 	 	<!--Uitslag pathologie (groep)-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.145099" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R"/>
+ 	 	<!--Uitslag pathologie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.145100" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.336.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.205']]]/hl7:section/hl7:entry[hl7:act[hl7:code[(@code='X-LAB-SPMSCT' and @codeSystem='2.16.840.1.113883.6.1')]]]/hl7:act/hl7:entryRelationship[hl7:observation[hl7:code[(@code='22637-3' and @codeSystem='2.16.840.1.113883.6.1')]]]/hl7:observation/hl7:value/@code"/>
+ 	 	<!--Radicaliteit-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.145101" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.336.2" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.205']]]/hl7:section/hl7:entry[hl7:act[hl7:code[(@code='X-LAB-SPMSCT' and @codeSystem='2.16.840.1.113883.6.1')]]]/hl7:act/hl7:entryRelationship[hl7:observation[hl7:code[(@code='22637-3' and @codeSystem='2.16.840.1.113883.6.1')]]]/hl7:observation/hl7:value/@code/qualifier/value/@code"/>
+ 	 	<!--Carcinoom ja/nee-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.145105" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R"/>
+ 	 	<!--Carcinoom-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.145104" conformance="C">
+            <condition minimumMultiplicity="1" maximumMultiplicity="1">Indien #145105 Carcinoom = ja</condition>
+            <condition conformance="NP"/>
+        </concept>
+ 	 	<!--Stenoseren ja/nee-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.145110" minimumMultiplicity="0" maximumMultiplicity="1"/>
+ 	 	<!--Circumferentie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.145120" minimumMultiplicity="0" maximumMultiplicity="1"/>
+ 	 	<!--Lengte carcinoom-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.145130" minimumMultiplicity="0" maximumMultiplicity="1"/>
+ 	 	<!--Te passeren ja/nee-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.145140" minimumMultiplicity="0" maximumMultiplicity="1"/>
+ 	 	<!--Markering tumor ja/nee-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.145150" minimumMultiplicity="0" maximumMultiplicity="1"/>
+    </representingTemplateXpaths>
+    <representingTemplateXpaths ref="2.16.840.1.113883.2.4.3.36.10.20" displayName="Resultaatdocument PA-lab bevolkingsonderzoek darmkanker" sourceDataset="2.16.840.1.113883.2.4.3.36.77.1.1">
+ 	 	<!--Auteur gegevens / gegevensverstrekker-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100000" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.10.100.1" xpath="/hl7:ClinicalDocument[hl7:author[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.100']]]/hl7:author/hl7:assignedAuthor/hl7:representedOrganization"/>
+ 	 	<!--Identificatie zorgaanbieder-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100020" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.10.900809.1" xpath="/hl7:ClinicalDocument[hl7:author[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.100']]]/hl7:author/hl7:assignedAuthor/hl7:representedOrganization/hl7:id[@root='2.16.528.1.1007.3.3']/@extension"/>
+ 	 	<!--Naam vestiging zorgaanbieder-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100025" minimumMultiplicity="0" maximumMultiplicity="1"/>
+ 	 	<!--Naam zorgaanbieder-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100030" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.10.900809.2" xpath="/hl7:ClinicalDocument[hl7:author[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.100']]]/hl7:author/hl7:assignedAuthor/hl7:representedOrganization/hl7:name"/>
+ 	 	<!--Postadres-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100031" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.10.900809.3" xpath="/hl7:ClinicalDocument[hl7:author[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.100']]]/hl7:author/hl7:assignedAuthor/hl7:representedOrganization/hl7:addr"/>
+ 	 	<!--Adres zorgaanbieder-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100029" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R"/>
+ 	 	<!--Postcode-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100032" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.10.900809.3" xpath="/hl7:ClinicalDocument[hl7:author[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.100']]]/hl7:author/hl7:assignedAuthor/hl7:representedOrganization/hl7:addr"/>
+ 	 	<!--Woonplaats-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100033" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.10.900809.3" xpath="/hl7:ClinicalDocument[hl7:author[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.100']]]/hl7:author/hl7:assignedAuthor/hl7:representedOrganization/hl7:addr"/>
+ 	 	<!--Uitvoerder-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100049" minimumMultiplicity="1" maximumMultiplicity="1"/>
+ 	 	<!--Zorgverlener-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100048" minimumMultiplicity="1" maximumMultiplicity="1"/>
+ 	 	<!--Identificatie uitvoerder-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100050" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.10.900829.1" xpath="/hl7:ClinicalDocument/hl7:legalAuthenticator/hl7:assignedEntity/hl7:id[@root='2.16.528.1.1007.3.1']/@extension"/>
+ 	 	<!--Zorgverlenertype-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100060" minimumMultiplicity="0" maximumMultiplicity="1" conformance="R"/>
+ 	 	<!--Zorginstelling-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100069" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R"/>
+ 	 	<!--Type zorgaanbieder (instelling)-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.100070" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R"/>
+ 	 	<!--Burger-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.105000" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.900808.1" xpath="/hl7:ClinicalDocument/hl7:recordTarget"/>
+ 	 	<!--Burger Service Nummer-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.105010" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.900014.1" xpath="/hl7:ClinicalDocument/hl7:recordTarget/hl7:patientRole/hl7:id[@root='2.16.840.1.113883.2.4.6.3']/@extension"/>
+ 	 	<!--Verrichting-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.125000" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R"/>
+ 	 	<!--Aanvang verrichting-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.125030" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.900005.1" xpath="/hl7:ClinicalDocument/hl7:documentationOf/hl7:serviceEvent/hl7:effectiveTime/hl7:low/@value"/>
+ 	 	<!--Einde verrichting-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.125050" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.900035.1" xpath="/hl7:ClinicalDocument/hl7:documentationOf/hl7:serviceEvent/hl7:effectiveTime/hl7:high/@value"/>
+ 	 	<!--Pathologie : medische observatie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.150000" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R"/>
+ 	 	<!--Revisie aangevraagd-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.150010" minimumMultiplicity="0" maximumMultiplicity="1"/>
+ 	 	<!--Datum autorisatie uitslag-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.150050" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.10.900804.1" xpath="/hl7:ClinicalDocument/hl7:effectiveTime/@value"/>
+ 	 	<!--Datum ontvangst materiaal-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.150060" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.900005.1" xpath="/hl7:ClinicalDocument/hl7:documentationOf/hl7:serviceEvent/hl7:effectiveTime/hl7:low/@value"/>
+ 	 	<!--T-nummer laboratorium-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.150080" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.10.900807.1" xpath="/hl7:ClinicalDocument/hl7:setId/@extension"/>
+ 	 	<!--Versie protocol-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.150090" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R"/>
+ 	 	<!--Pathologie protocol: colonbiopt (per poliep)-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.155000" minimumMultiplicity="1" maximumMultiplicity="*" conformance="R"/>
+ 	 	<!--Lokalisatie poliep-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.155005" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.550.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.210']]]/hl7:section/hl7:entry[hl7:act[hl7:code[(@code='X-LAB-SPMSCT' and @codeSystem='2.16.840.1.113883.6.1')]]]/hl7:act/hl7:specimen/hl7:specimenRole/lab:productOf/lab:specimenCollectionProcess/lab:targetSiteCode/@code"/>
+ 	 	<!--Nummer potje materiaal-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.155010" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R"/>
+ 	 	<!--Dysplasiegraad-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.155020" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.401.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.211']]]/hl7:section/hl7:entry[hl7:organizer[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.551']]]/hl7:organizer/hl7:component/hl7:organizer/hl7:component[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.401']]]/hl7:observation/hl7:value/@code"/>
+ 	 	<!--Type biopt-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.155030" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R"/>
+ 	 	<!--Diameter poliep-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.155040" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.402.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.211']]]/hl7:section/hl7:entry[hl7:organizer[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.551']]]/hl7:organizer/hl7:component/hl7:organizer/hl7:component[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.402']]]/hl7:observation/hl7:value/@value"/>
+ 	 	<!--Primaire afwijking-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.155050" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.403.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.211']]]/hl7:section/hl7:entry[hl7:organizer[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.551']]]/hl7:organizer/hl7:component/hl7:organizer/hl7:component[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.403']]]/hl7:observation/hl7:value/@code"/>
+ 	 	<!--Andere primaire afwijking-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.155052" minimumMultiplicity="0" maximumMultiplicity="1" conformance="R"/>
+ 	 	<!--Bevinding-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.155053" minimumMultiplicity="0" maximumMultiplicity="1" conformance="R"/>
+ 	 	<!--Specificatie overige bevinding-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.155054" minimumMultiplicity="0" maximumMultiplicity="1" conformance="R"/>
+ 	 	<!--Gegevens bij maligniteit-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.155057" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R"/>
+ 	 	<!--Vorm van de laesie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.155059" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.405.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.211']]]/hl7:section/hl7:entry[hl7:organizer[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.551']]]/hl7:organizer/hl7:component/hl7:organizer/hl7:component[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.405']]]/hl7:observation/hl7:value/@code"/>
+ 	 	<!--Differentiatie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.155060" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.406.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.211']]]/hl7:section/hl7:entry[hl7:organizer[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.551']]]/hl7:organizer/hl7:component/hl7:organizer/hl7:component[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.406']]]/hl7:observation/hl7:value/@code"/>
+ 	 	<!--Invasiediepte-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.155070" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.407.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.211']]]/hl7:section/hl7:entry[hl7:organizer[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.551']]]/hl7:organizer/hl7:component/hl7:organizer/hl7:component[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.407']]]/hl7:observation/hl7:value/@code"/>
+ 	 	<!--Haggitt level-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.155080" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.408.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.211']]]/hl7:section/hl7:entry[hl7:organizer[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.551']]]/hl7:organizer/hl7:component/hl7:organizer/hl7:component[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.408']]]/hl7:observation/hl7:value/@code"/>
+ 	 	<!--Kikuchi level-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.155090" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.409.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.211']]]/hl7:section/hl7:entry[hl7:organizer[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.551']]]/hl7:organizer/hl7:component/hl7:organizer/hl7:component[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.409']]]/hl7:observation/hl7:value/@code"/>
+ 	 	<!--(Lymf-)angioinvasie-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.155100" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.410.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.211']]]/hl7:section/hl7:entry[hl7:organizer[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.551']]]/hl7:organizer/hl7:component/hl7:organizer/hl7:component[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.410']]]/hl7:observation/hl7:value/@code"/>
+ 	 	<!--Snijvlak vrij/niet vrij-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.155110" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.411.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.211']]]/hl7:section/hl7:entry[hl7:organizer[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.551']]]/hl7:organizer/hl7:component/hl7:organizer/hl7:component[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.411']]]/hl7:observation/hl7:value/@code"/>
+ 	 	<!--Afstand tot snijvlak-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.155120" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.412.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.211']]]/hl7:section/hl7:entry[hl7:organizer[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.551']]]/hl7:organizer/hl7:component/hl7:organizer/hl7:component[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.412']]]/hl7:observation/hl7:value/@value"/>
+ 	 	<!--Type tumor-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.155150" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.413.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.211']]]/hl7:section/hl7:entry[hl7:organizer[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.551']]]/hl7:organizer/hl7:component/hl7:organizer/hl7:component[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.413']]]/hl7:observation/hl7:value/@code"/>
+ 	 	<!--Type tumor overige-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.155151" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R"/>
+ 	 	<!--Proliferatie KI-67-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.155155" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.420.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.211']]]/hl7:section/hl7:entry[hl7:organizer[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.551']]]/hl7:organizer/hl7:component/hl7:organizer/hl7:component[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.420']]]/hl7:observation/hl7:value/@code"/>
+ 	 	<!--Mitosen per 2mm2-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.155160" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.421.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.211']]]/hl7:section/hl7:entry[hl7:organizer[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.551']]]/hl7:organizer/hl7:component/hl7:organizer/hl7:component[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.421']]]/hl7:observation/hl7:value/@code"/>
+ 	 	<!--Neuroendocriene tumor bepaling T-->
+        <concept ref="2.16.840.1.113883.2.4.3.36.77.2.1.155165" effectiveDate="2012-04-10T00:00:00" elementId="2.16.840.1.113883.2.4.3.36.77.9.422.1" xpath="/hl7:ClinicalDocument/hl7:component/hl7:structuredBody/hl7:component[hl7:section[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.211']]]/hl7:section/hl7:entry[hl7:organizer[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.551']]]/hl7:organizer/hl7:component/hl7:organizer/hl7:component[hl7:observation[hl7:templateId[@root='2.16.840.1.113883.2.4.3.36.10.422']]]/hl7:observation/hl7:value/@code"/>
+    </representingTemplateXpaths>
+</projectXpaths>

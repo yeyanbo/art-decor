@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="134"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.46"/>
+   <Title name="EntityRisk" date="2012-08-02" version="1.000">Kinds of risks associated with the handling of the material..</Title>
+   <Class code="rootClass">
+      <SubClass subCount="0" code="AGG" kind="concept">
+         <Rubric id="d1e117703" kind="preferred">
+            <Label xml:lang="en-US">aggressive</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="BIO" kind="concept">
+         <Rubric id="d1e117728" kind="preferred">
+            <Label xml:lang="en-US">Biological</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="COR" kind="concept">
+         <Rubric id="d1e117752" kind="preferred">
+            <Label xml:lang="en-US">Corrosive</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="ESC" kind="concept">
+         <Rubric id="d1e117776" kind="preferred">
+            <Label xml:lang="en-US">Escape Risk</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="1" code="IFL" kind="concept">
+         <Rubric id="d1e117800" kind="preferred">
+            <Label xml:lang="en-US">inflammable</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="1" code="INF" kind="concept">
+         <Rubric id="d1e117824" kind="preferred">
+            <Label xml:lang="en-US">infectious</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="INJ" kind="concept">
+         <Rubric id="d1e117848" kind="preferred">
+            <Label xml:lang="en-US">injury hazard</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="POI" kind="concept">
+         <Rubric id="d1e117873" kind="preferred">
+            <Label xml:lang="en-US">poison</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="RAD" kind="concept">
+         <Rubric id="d1e117897" kind="preferred">
+            <Label xml:lang="en-US">radioactive</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">EntityRisk</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">Kinds of risks associated with the handling of the material..</Label>
+      </Rubric>
+   </Class>
+   <Class code="AGG" kind="concept">
+      <Meta name="internalId" value="10415"/>
+      <Rubric id="d1e117690" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A danger that can be associated with certain living subjects, including humans.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117703" kind="short">
+         <Label xml:lang="en-US">aggressive</Label>
+      </Rubric>
+      <Rubric id="d1e117703" kind="preferred">
+         <Label xml:lang="en-US">aggressive</Label>
+      </Rubric>
+   </Class>
+   <Class code="BIO" kind="concept">
+      <Meta name="internalId" value="14074"/>
+      <Rubric id="d1e117715" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The dangers associated with normal biological materials. I.e. potential risk of unknown infections. Routine biological materials from living subjects.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117728" kind="short">
+         <Label xml:lang="en-US">Biological</Label>
+      </Rubric>
+      <Rubric id="d1e117728" kind="preferred">
+         <Label xml:lang="en-US">Biological</Label>
+      </Rubric>
+   </Class>
+   <Class code="COR" kind="concept">
+      <Meta name="internalId" value="14076"/>
+      <Rubric id="d1e117739" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Material is corrosive and may cause severe injury to skin, mucous membranes and eyes. Avoid any unprotected contact.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117752" kind="short">
+         <Label xml:lang="en-US">Corrosive</Label>
+      </Rubric>
+      <Rubric id="d1e117752" kind="preferred">
+         <Label xml:lang="en-US">Corrosive</Label>
+      </Rubric>
+   </Class>
+   <Class code="ESC" kind="concept">
+      <Meta name="internalId" value="14077"/>
+      <Rubric id="d1e117763" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The entity is at risk for escaping from containment or control.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117776" kind="short">
+         <Label xml:lang="en-US">Escape Risk</Label>
+      </Rubric>
+      <Rubric id="d1e117776" kind="preferred">
+         <Label xml:lang="en-US">Escape Risk</Label>
+      </Rubric>
+   </Class>
+   <Class code="IFL" kind="concept">
+      <Meta name="internalId" value="10412"/>
+      <SubClass code="EXP" subCount="0">
+         <Rubric id="d1e117926" kind="preferred">
+            <Label xml:lang="en-US">explosive</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e117787" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Material is highly inflammable and in certain mixtures (with air) may lead to explosions. Keep away from fire, sparks and excessive heat.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117800" kind="short">
+         <Label xml:lang="en-US">inflammable</Label>
+      </Rubric>
+      <Rubric id="d1e117800" kind="preferred">
+         <Label xml:lang="en-US">inflammable</Label>
+      </Rubric>
+   </Class>
+   <Class code="INF" kind="concept">
+      <Meta name="internalId" value="10407"/>
+      <SubClass code="BHZ" subCount="0">
+         <Rubric id="d1e117955" kind="preferred">
+            <Label xml:lang="en-US">biohazard</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e117811" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Material known to be infectious with human pathogenic microorganisms. Those who handle this material must take precautions for their protection.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117824" kind="short">
+         <Label xml:lang="en-US">infectious</Label>
+      </Rubric>
+      <Rubric id="d1e117824" kind="preferred">
+         <Label xml:lang="en-US">infectious</Label>
+      </Rubric>
+   </Class>
+   <Class code="INJ" kind="concept">
+      <Meta name="internalId" value="10414"/>
+      <Rubric id="d1e117835" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Material is solid and sharp (e.g., cannulas). Dispose in hard container.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117848" kind="short">
+         <Label xml:lang="en-US">injury hazard</Label>
+      </Rubric>
+      <Rubric id="d1e117848" kind="preferred">
+         <Label xml:lang="en-US">injury hazard</Label>
+      </Rubric>
+   </Class>
+   <Class code="POI" kind="concept">
+      <Meta name="internalId" value="10410"/>
+      <Rubric id="d1e117860" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Material is poisonous to humans and/or animals. Special care must be taken to avoid incorporation, even of small amounts.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117873" kind="short">
+         <Label xml:lang="en-US">poison</Label>
+      </Rubric>
+      <Rubric id="d1e117873" kind="preferred">
+         <Label xml:lang="en-US">poison</Label>
+      </Rubric>
+   </Class>
+   <Class code="RAD" kind="concept">
+      <Meta name="internalId" value="10409"/>
+      <Rubric id="d1e117884" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Material is a source for ionizing radiation and must be handled with special care to avoid injury of those who handle it and to avoid environmental hazards.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117897" kind="short">
+         <Label xml:lang="en-US">radioactive</Label>
+      </Rubric>
+      <Rubric id="d1e117897" kind="preferred">
+         <Label xml:lang="en-US">radioactive</Label>
+      </Rubric>
+   </Class>
+   <Class code="EXP" kind="concept">
+      <Meta name="internalId" value="10413"/>
+      <SuperClass code="IFL">
+         <Rubric id="d1e117800" kind="preferred">
+            <Label xml:lang="en-US">inflammable</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e117908" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Material is an explosive mixture. Keep away from fire, sparks, and heat.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117926" kind="short">
+         <Label xml:lang="en-US">explosive</Label>
+      </Rubric>
+      <Rubric id="d1e117926" kind="preferred">
+         <Label xml:lang="en-US">explosive</Label>
+      </Rubric>
+   </Class>
+   <Class code="BHZ" kind="concept">
+      <Meta name="internalId" value="10408"/>
+      <SuperClass code="INF">
+         <Rubric id="d1e117824" kind="preferred">
+            <Label xml:lang="en-US">infectious</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e117937" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Material contains microorganisms that is an environmental hazard. Must be handled with special care.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117955" kind="short">
+         <Label xml:lang="en-US">biohazard</Label>
+      </Rubric>
+      <Rubric id="d1e117955" kind="preferred">
+         <Label xml:lang="en-US">biohazard</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

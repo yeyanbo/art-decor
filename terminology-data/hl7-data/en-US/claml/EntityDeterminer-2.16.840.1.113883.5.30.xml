@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="87"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.30"/>
+   <Title name="EntityDeterminer" date="2012-08-02" version="1.000">EntityDeterminer in natural language grammar is the class of words that comprises articles, demonstrative pronouns, and quantifiers. In the RIM, determiner is a structural code in the Entity class to distinguish whether any given Entity object stands for some, any one, or a specific thing.</Title>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="INSTANCE" kind="concept">
+      <Meta name="internalId" value="10881"/>
+      <Rubric id="d1e113277" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A determiner that specifies that the Entity object represents a particular physical thing (as opposed to a universal, kind, or class of physical thing).</p>
+            <p>
+               <b>Discussion:</b>It does not matter whether an INSTANCE still exists as a whole at the point in time (or process) when we mention it, for example, a drug product lot is an INSTANCE even though it has been portioned out for retail purpose.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113299" kind="short">
+         <Label xml:lang="en-US">specific</Label>
+      </Rubric>
+      <Rubric id="d1e113299" kind="preferred">
+         <Label xml:lang="en-US">specific</Label>
+      </Rubric>
+   </Class>
+   <Class code="KIND" kind="concept">
+      <Meta name="internalId" value="10879"/>
+      <Meta name="Name:Class" value="Kind"/>
+      <Rubric id="d1e113310" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A determiner that specifies that the Entity object represents a universal, kind or class of physical thing (as opposed to a particular thing).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113328" kind="short">
+         <Label xml:lang="en-US">described</Label>
+      </Rubric>
+      <Rubric id="d1e113328" kind="preferred">
+         <Label xml:lang="en-US">described</Label>
+      </Rubric>
+   </Class>
+</ClaML>

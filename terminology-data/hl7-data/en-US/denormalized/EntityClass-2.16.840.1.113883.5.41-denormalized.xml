@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="134"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.41"/>
+   <Title name="EntityClass" date="2012-08-02" version="1.000">Classifies the Entity class and all of its subclasses. The terminology is hierarchical. At the top is this HL7-defined domain of high-level categories (such as represented by the Entity subclasses). Each of these terms must be harmonized and is specializable. The value sets beneath are drawn from multiple, frequently external, domains that reflect much more fine-grained typing.</Title>
+   <Class code="rootClass">
+      <SubClass subCount="6" code="ENT" kind="concept">
+         <Rubric id="d1e107967" kind="preferred">
+            <Label xml:lang="en-US">entity</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">EntityClass</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">Classifies the Entity class and all of its subclasses. The terminology is hierarchical. At the top is this HL7-defined domain of high-level categories (such as represented by the Entity subclasses). Each of these terms must be harmonized and is specializable. The value sets beneath are drawn from multiple, frequently external, domains that reflect much more fine-grained typing.</Label>
+      </Rubric>
+   </Class>
+   <Class code="ENT" kind="concept">
+      <Meta name="internalId" value="13922"/>
+      <Meta name="Name:Class" value="Entity"/>
+      <SubClass code="HCE" subCount="0">
+         <Rubric id="d1e108096" kind="preferred">
+            <Label xml:lang="en-US">health chart entity</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LIV" subCount="2">
+         <Rubric id="d1e108138" kind="preferred">
+            <Label xml:lang="en-US">living subject</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="MAT" subCount="3">
+         <Rubric id="d1e108179" kind="preferred">
+            <Label xml:lang="en-US">material</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="ORG" subCount="2">
+         <Rubric id="d1e108220" kind="preferred">
+            <Label xml:lang="en-US">organization</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PLC" subCount="4">
+         <Rubric id="d1e108252" kind="preferred">
+            <Label xml:lang="en-US">place</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RGRP" subCount="0">
+         <Rubric id="d1e108287" kind="preferred">
+            <Label xml:lang="en-US">group</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e107952" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Corresponds to the Entity class</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e107967" kind="short">
+         <Label xml:lang="en-US">entity</Label>
+      </Rubric>
+      <Rubric id="d1e107967" kind="preferred">
+         <Label xml:lang="en-US">entity</Label>
+      </Rubric>
+   </Class>
+   <Class code="HOLD" kind="concept">
+      <Meta name="internalId" value="14029"/>
+      <Meta name="Name:Class" value="Holder"/>
+      <SuperClass code="CONT">
+         <Rubric id="d1e108476" kind="preferred">
+            <Label xml:lang="en-US">container</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e107978" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A type of container that can hold other containers or other holders.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e107998" kind="short">
+         <Label xml:lang="en-US">holder</Label>
+      </Rubric>
+      <Rubric id="d1e107998" kind="preferred">
+         <Label xml:lang="en-US">holder</Label>
+      </Rubric>
+   </Class>
+   <Class code="CER" kind="concept">
+      <Meta name="internalId" value="16098"/>
+      <Meta name="Name:Class" value="CertificateRepresentation"/>
+      <SuperClass code="DEV">
+         <Rubric id="d1e108514" kind="preferred">
+            <Label xml:lang="en-US">device</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e108010" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A physical artifact that stores information about the granting of authorization.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108030" kind="short">
+         <Label xml:lang="en-US">certificate representation</Label>
+      </Rubric>
+      <Rubric id="d1e108030" kind="preferred">
+         <Label xml:lang="en-US">certificate representation</Label>
+      </Rubric>
+   </Class>
+   <Class code="MODDV" kind="concept">
+      <Meta name="internalId" value="13939"/>
+      <Meta name="Name:Class" value="ModalityDevice"/>
+      <SuperClass code="DEV">
+         <Rubric id="d1e108514" kind="preferred">
+            <Label xml:lang="en-US">device</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e108042" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Class to contain unique attributes of diagnostic imaging equipment.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108062" kind="short">
+         <Label xml:lang="en-US">imaging modality</Label>
+      </Rubric>
+      <Rubric id="d1e108062" kind="preferred">
+         <Label xml:lang="en-US">imaging modality</Label>
+      </Rubric>
+      <Rubric id="d1e108065" kind="short">
+         <Label xml:lang="en-US">ImagingModalityEntity</Label>
+      </Rubric>
+   </Class>
+   <Class code="HCE" kind="concept">
+      <Meta name="internalId" value="16755"/>
+      <Meta name="Name:Class" value="HealthChart"/>
+      <SuperClass code="ENT">
+         <Rubric id="d1e107967" kind="preferred">
+            <Label xml:lang="en-US">entity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e108076" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A health chart included to serve as a document receiving entity in the management of medical records.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108096" kind="short">
+         <Label xml:lang="en-US">health chart entity</Label>
+      </Rubric>
+      <Rubric id="d1e108096" kind="preferred">
+         <Label xml:lang="en-US">health chart entity</Label>
+      </Rubric>
+   </Class>
+   <Class code="LIV" kind="concept">
+      <Meta name="internalId" value="10884"/>
+      <Meta name="Name:Class" value="LivingSubject"/>
+      <SuperClass code="ENT">
+         <Rubric id="d1e107967" kind="preferred">
+            <Label xml:lang="en-US">entity</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="NLIV" subCount="3">
+         <Rubric id="d1e108315" kind="preferred">
+            <Label xml:lang="en-US">non-person living subject</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PSN" subCount="0">
+         <Rubric id="d1e108348" kind="preferred">
+            <Label xml:lang="en-US">person</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e108109" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Anything that essentially has the property of life, independent of current state (a dead human corpse is still essentially a living subject).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108138" kind="short">
+         <Label xml:lang="en-US">living subject</Label>
+      </Rubric>
+      <Rubric id="d1e108138" kind="preferred">
+         <Label xml:lang="en-US">living subject</Label>
+      </Rubric>
+   </Class>
+   <Class code="MAT" kind="concept">
+      <Meta name="internalId" value="10883"/>
+      <Meta name="Name:Class" value="Material"/>
+      <SuperClass code="ENT">
+         <Rubric id="d1e107967" kind="preferred">
+            <Label xml:lang="en-US">entity</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="CHEM" subCount="0">
+         <Rubric id="d1e108380" kind="preferred">
+            <Label xml:lang="en-US">chemical substance</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="FOOD" subCount="0">
+         <Rubric id="d1e108412" kind="preferred">
+            <Label xml:lang="en-US">food</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="MMAT" subCount="2">
+         <Rubric id="d1e108444" kind="preferred">
+            <Label xml:lang="en-US">manufactured material</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e108150" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Any thing that has extension in space and mass, may be of living or non-living origin.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108179" kind="short">
+         <Label xml:lang="en-US">material</Label>
+      </Rubric>
+      <Rubric id="d1e108179" kind="preferred">
+         <Label xml:lang="en-US">material</Label>
+      </Rubric>
+   </Class>
+   <Class code="ORG" kind="concept">
+      <Meta name="internalId" value="10889"/>
+      <Meta name="Name:Class" value="Organization"/>
+      <SuperClass code="ENT">
+         <Rubric id="d1e107967" kind="preferred">
+            <Label xml:lang="en-US">entity</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="PUB" subCount="0">
+         <Rubric id="d1e108643" kind="preferred">
+            <Label xml:lang="en-US">public institution</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="STATE" subCount="1">
+         <Rubric id="d1e108675" kind="preferred">
+            <Label xml:lang="en-US">state</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e108191" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A social or legal structure formed by human beings.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108220" kind="short">
+         <Label xml:lang="en-US">organization</Label>
+      </Rubric>
+      <Rubric id="d1e108220" kind="preferred">
+         <Label xml:lang="en-US">organization</Label>
+      </Rubric>
+   </Class>
+   <Class code="PLC" kind="concept">
+      <Meta name="internalId" value="10892"/>
+      <Meta name="Name:Class" value="Place"/>
+      <SuperClass code="ENT">
+         <Rubric id="d1e107967" kind="preferred">
+            <Label xml:lang="en-US">entity</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="CITY" subCount="0">
+         <Rubric id="d1e108707" kind="preferred">
+            <Label xml:lang="en-US">city or town</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="COUNTRY" subCount="0">
+         <Rubric id="d1e108740" kind="preferred">
+            <Label xml:lang="en-US">country</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="COUNTY" subCount="0">
+         <Rubric id="d1e108772" kind="preferred">
+            <Label xml:lang="en-US">county or parish</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PROVINCE" subCount="0">
+         <Rubric id="d1e108804" kind="preferred">
+            <Label xml:lang="en-US">state or province</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e108232" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A physical place or site with its containing structure. May be natural or man-made. The geographic position of a place may or may not be constant.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108252" kind="short">
+         <Label xml:lang="en-US">place</Label>
+      </Rubric>
+      <Rubric id="d1e108252" kind="preferred">
+         <Label xml:lang="en-US">place</Label>
+      </Rubric>
+   </Class>
+   <Class code="RGRP" kind="concept">
+      <Meta name="internalId" value="11630"/>
+      <Meta name="appliesTo" value="Determiner = determined"/>
+      <Meta name="Name:Class" value="Group"/>
+      <SuperClass code="ENT">
+         <Rubric id="d1e107967" kind="preferred">
+            <Label xml:lang="en-US">entity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e108264" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A grouping of resources (personnel, material, or places) to be used for scheduling purposes. May be a pool of like-type resources, a team, or combination of personnel, material and places.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108287" kind="short">
+         <Label xml:lang="en-US">group</Label>
+      </Rubric>
+      <Rubric id="d1e108287" kind="preferred">
+         <Label xml:lang="en-US">group</Label>
+      </Rubric>
+   </Class>
+   <Class code="NLIV" kind="concept">
+      <Meta name="internalId" value="11621"/>
+      <Meta name="Name:Class" value="NonPersonLivingSubject"/>
+      <SuperClass code="LIV">
+         <Rubric id="d1e108138" kind="preferred">
+            <Label xml:lang="en-US">living subject</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="ANM" subCount="0">
+         <Rubric id="d1e108547" kind="preferred">
+            <Label xml:lang="en-US">animal</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="MIC" subCount="0">
+         <Rubric id="d1e108579" kind="preferred">
+            <Label xml:lang="en-US">microorganism</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PLNT" subCount="0">
+         <Rubric id="d1e108611" kind="preferred">
+            <Label xml:lang="en-US">plant</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e108298" kind="definition">
+         <Label xml:lang="en-US">A subtype of living subject that includes all living things except the species Homo Sapiens.</Label>
+      </Rubric>
+      <Rubric id="d1e108315" kind="short">
+         <Label xml:lang="en-US">non-person living subject</Label>
+      </Rubric>
+      <Rubric id="d1e108315" kind="preferred">
+         <Label xml:lang="en-US">non-person living subject</Label>
+      </Rubric>
+   </Class>
+   <Class code="PSN" kind="concept">
+      <Meta name="internalId" value="10887"/>
+      <Meta name="Name:Class" value="Person"/>
+      <SuperClass code="LIV">
+         <Rubric id="d1e108138" kind="preferred">
+            <Label xml:lang="en-US">living subject</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e108328" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A living subject of the species homo sapiens.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108348" kind="short">
+         <Label xml:lang="en-US">person</Label>
+      </Rubric>
+      <Rubric id="d1e108348" kind="preferred">
+         <Label xml:lang="en-US">person</Label>
+      </Rubric>
+   </Class>
+   <Class code="CHEM" kind="concept">
+      <Meta name="internalId" value="10888"/>
+      <Meta name="Name:Class" value="ChemicalSubstance"/>
+      <SuperClass code="MAT">
+         <Rubric id="d1e108179" kind="preferred">
+            <Label xml:lang="en-US">material</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e108360" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A substance that is fully defined by an organic or inorganic chemical formula, includes mixtures of other chemical substances. Refine using, e.g., IUPAC codes.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108380" kind="short">
+         <Label xml:lang="en-US">chemical substance</Label>
+      </Rubric>
+      <Rubric id="d1e108380" kind="preferred">
+         <Label xml:lang="en-US">chemical substance</Label>
+      </Rubric>
+   </Class>
+   <Class code="FOOD" kind="concept">
+      <Meta name="internalId" value="14027"/>
+      <Meta name="Name:Class" value="Food"/>
+      <SuperClass code="MAT">
+         <Rubric id="d1e108179" kind="preferred">
+            <Label xml:lang="en-US">material</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e108392" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Naturally occurring, processed or manufactured entities that are primarily used as food for humans and animals.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108412" kind="short">
+         <Label xml:lang="en-US">food</Label>
+      </Rubric>
+      <Rubric id="d1e108412" kind="preferred">
+         <Label xml:lang="en-US">food</Label>
+      </Rubric>
+   </Class>
+   <Class code="MMAT" kind="concept">
+      <Meta name="internalId" value="13934"/>
+      <Meta name="Name:Class" value="ManufacturedMaterial"/>
+      <SuperClass code="MAT">
+         <Rubric id="d1e108179" kind="preferred">
+            <Label xml:lang="en-US">material</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="CONT" subCount="1">
+         <Rubric id="d1e108476" kind="preferred">
+            <Label xml:lang="en-US">container</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="DEV" subCount="2">
+         <Rubric id="d1e108514" kind="preferred">
+            <Label xml:lang="en-US">device</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e108424" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Corresponds to the ManufacturedMaterial class</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108444" kind="short">
+         <Label xml:lang="en-US">manufactured material</Label>
+      </Rubric>
+      <Rubric id="d1e108444" kind="preferred">
+         <Label xml:lang="en-US">manufactured material</Label>
+      </Rubric>
+   </Class>
+   <Class code="CONT" kind="concept">
+      <Meta name="internalId" value="11622"/>
+      <Meta name="Name:Class" value="Container"/>
+      <SuperClass code="MMAT">
+         <Rubric id="d1e108444" kind="preferred">
+            <Label xml:lang="en-US">manufactured material</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="HOLD" subCount="0">
+         <Rubric id="d1e107998" kind="preferred">
+            <Label xml:lang="en-US">holder</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e108456" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A container of other entities.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108476" kind="short">
+         <Label xml:lang="en-US">container</Label>
+      </Rubric>
+      <Rubric id="d1e108476" kind="preferred">
+         <Label xml:lang="en-US">container</Label>
+      </Rubric>
+   </Class>
+   <Class code="DEV" kind="concept">
+      <Meta name="internalId" value="11623"/>
+      <Meta name="Name:Class" value="Device"/>
+      <SuperClass code="MMAT">
+         <Rubric id="d1e108444" kind="preferred">
+            <Label xml:lang="en-US">manufactured material</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="CER" subCount="0">
+         <Rubric id="d1e108030" kind="preferred">
+            <Label xml:lang="en-US">certificate representation</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="MODDV" subCount="0">
+         <Rubric id="d1e108062" kind="preferred">
+            <Label xml:lang="en-US">imaging modality</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e108488" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A subtype of ManufacturedMaterial used in an activity, without being substantially changed through that activity. The kind of device is identified by the code attribute inherited from Entity.</p>
+            <p>
+               <i>Usage:</i>This includes durable (reusable) medical equipment as well as disposable equipment.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108514" kind="short">
+         <Label xml:lang="en-US">device</Label>
+      </Rubric>
+      <Rubric id="d1e108514" kind="preferred">
+         <Label xml:lang="en-US">device</Label>
+      </Rubric>
+   </Class>
+   <Class code="ANM" kind="concept">
+      <Meta name="internalId" value="10885"/>
+      <Meta name="Name:Class" value="Animal"/>
+      <SuperClass code="NLIV">
+         <Rubric id="d1e108315" kind="preferred">
+            <Label xml:lang="en-US">non-person living subject</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e108527" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A living subject from the animal kingdom.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108547" kind="short">
+         <Label xml:lang="en-US">animal</Label>
+      </Rubric>
+      <Rubric id="d1e108547" kind="preferred">
+         <Label xml:lang="en-US">animal</Label>
+      </Rubric>
+   </Class>
+   <Class code="MIC" kind="concept">
+      <Meta name="internalId" value="14028"/>
+      <Meta name="Name:Class" value="Microorganism"/>
+      <SuperClass code="NLIV">
+         <Rubric id="d1e108315" kind="preferred">
+            <Label xml:lang="en-US">non-person living subject</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e108559" kind="definition">
+         <Label xml:lang="en-US">
+            <p>All single celled living organisms including protozoa, bacteria, yeast, viruses, etc.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108579" kind="short">
+         <Label xml:lang="en-US">microorganism</Label>
+      </Rubric>
+      <Rubric id="d1e108579" kind="preferred">
+         <Label xml:lang="en-US">microorganism</Label>
+      </Rubric>
+   </Class>
+   <Class code="PLNT" kind="concept">
+      <Meta name="internalId" value="10886"/>
+      <Meta name="Name:Class" value="Plant"/>
+      <SuperClass code="NLIV">
+         <Rubric id="d1e108315" kind="preferred">
+            <Label xml:lang="en-US">non-person living subject</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e108591" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A living subject from the order of plants.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108611" kind="short">
+         <Label xml:lang="en-US">plant</Label>
+      </Rubric>
+      <Rubric id="d1e108611" kind="preferred">
+         <Label xml:lang="en-US">plant</Label>
+      </Rubric>
+   </Class>
+   <Class code="PUB" kind="concept">
+      <Meta name="internalId" value="10891"/>
+      <Meta name="Name:Class" value="PublicInstitution"/>
+      <SuperClass code="ORG">
+         <Rubric id="d1e108220" kind="preferred">
+            <Label xml:lang="en-US">organization</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e108623" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An agency of the people of a state often assuming some authority over a certain matter. Includes government, governmental agencies, associations.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108643" kind="short">
+         <Label xml:lang="en-US">public institution</Label>
+      </Rubric>
+      <Rubric id="d1e108643" kind="preferred">
+         <Label xml:lang="en-US">public institution</Label>
+      </Rubric>
+   </Class>
+   <Class code="STATE" kind="concept">
+      <Meta name="internalId" value="10890"/>
+      <Meta name="Name:Class" value="State"/>
+      <SuperClass code="ORG">
+         <Rubric id="d1e108220" kind="preferred">
+            <Label xml:lang="en-US">organization</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="NAT" subCount="0">
+         <Rubric id="d1e108836" kind="preferred">
+            <Label xml:lang="en-US">Nation</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e108655" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A politically organized body of people bonded by territory, culture, or ethnicity, having sovereignty (to a certain extent) granted by other states (enclosing or neighboring states). This includes countries (nations), provinces (e.g., one of the United States of America or a French departement), counties or municipalities. Refine using, e.g., ISO country codes, FIPS-PUB state codes, etc.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108675" kind="short">
+         <Label xml:lang="en-US">state</Label>
+      </Rubric>
+      <Rubric id="d1e108675" kind="preferred">
+         <Label xml:lang="en-US">state</Label>
+      </Rubric>
+   </Class>
+   <Class code="CITY" kind="concept">
+      <Meta name="internalId" value="16835"/>
+      <Meta name="Name:Class" value="City"/>
+      <SuperClass code="PLC">
+         <Rubric id="d1e108252" kind="preferred">
+            <Label xml:lang="en-US">place</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e108687" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The territory of a city, town or other municipality.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108707" kind="short">
+         <Label xml:lang="en-US">city or town</Label>
+      </Rubric>
+      <Rubric id="d1e108707" kind="preferred">
+         <Label xml:lang="en-US">city or town</Label>
+      </Rubric>
+   </Class>
+   <Class code="COUNTRY" kind="concept">
+      <Meta name="internalId" value="16836"/>
+      <Meta name="Name:Class" value="Country"/>
+      <SuperClass code="PLC">
+         <Rubric id="d1e108252" kind="preferred">
+            <Label xml:lang="en-US">place</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e108720" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The territory of a sovereign nation.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108740" kind="short">
+         <Label xml:lang="en-US">country</Label>
+      </Rubric>
+      <Rubric id="d1e108740" kind="preferred">
+         <Label xml:lang="en-US">country</Label>
+      </Rubric>
+   </Class>
+   <Class code="COUNTY" kind="concept">
+      <Meta name="internalId" value="16837"/>
+      <Meta name="Name:Class" value="Parish"/>
+      <SuperClass code="PLC">
+         <Rubric id="d1e108252" kind="preferred">
+            <Label xml:lang="en-US">place</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e108752" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The territory of a county, parish or other division of a state or province.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108772" kind="short">
+         <Label xml:lang="en-US">county or parish</Label>
+      </Rubric>
+      <Rubric id="d1e108772" kind="preferred">
+         <Label xml:lang="en-US">county or parish</Label>
+      </Rubric>
+   </Class>
+   <Class code="PROVINCE" kind="concept">
+      <Meta name="internalId" value="16838"/>
+      <Meta name="Name:Class" value="Province"/>
+      <SuperClass code="PLC">
+         <Rubric id="d1e108252" kind="preferred">
+            <Label xml:lang="en-US">place</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e108784" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The territory of a state, province, department or other division of a sovereign country.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108804" kind="short">
+         <Label xml:lang="en-US">state or province</Label>
+      </Rubric>
+      <Rubric id="d1e108804" kind="preferred">
+         <Label xml:lang="en-US">state or province</Label>
+      </Rubric>
+   </Class>
+   <Class code="NAT" kind="concept">
+      <Meta name="internalId" value="20093"/>
+      <Meta name="Name:Class" value="Nation"/>
+      <SuperClass code="STATE">
+         <Rubric id="d1e108675" kind="preferred">
+            <Label xml:lang="en-US">state</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e108816" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A politically organized body of people bonded by territory and known as a nation.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108836" kind="short">
+         <Label xml:lang="en-US">Nation</Label>
+      </Rubric>
+      <Rubric id="d1e108836" kind="preferred">
+         <Label xml:lang="en-US">Nation</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

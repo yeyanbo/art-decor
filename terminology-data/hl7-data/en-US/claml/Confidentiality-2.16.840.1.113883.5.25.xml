@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="134"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.25"/>
+   <Title name="Confidentiality" date="2012-08-02" version="1.000">Definition: Privacy metadata indicating the sender's sensitivity classification, which is based on an analysis of applicable privacy policies and the risk of harm that could result from unauthorized disclosure.</Title>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="_Confidentiality" kind="concept">
+      <Meta name="internalId" value="23320"/>
+      <SubClass code="L"/>
+      <SubClass code="M"/>
+      <SubClass code="N"/>
+      <SubClass code="R"/>
+      <SubClass code="U"/>
+      <SubClass code="V"/>
+      <Rubric id="d1e92143" kind="definition">
+         <Label xml:lang="en-US">&lt;p&gt;The confidentiality code assigned by a sender based on the information's sensitivity classification, which may convey a receiver's obligation to ensure that the information is not made available or redisclosed to unauthorized individuals, entities, or processes (security principals) per applicable policies.&lt;p&gt;&lt;i&gt;Definition: &lt;/i&gt;Privacy metadata indicating the sender's sensitivity classification, which is based on an analysis of applicable privacy policies and the risk of harm that could result from unauthorized disclosure.&lt;/p&gt;&lt;p&gt;&lt;i&gt;Map: &lt;/i&gt;Definition aligns with ISO 7498-2:1989 - Confidentiality is the property that information is not made available or disclosed to unauthorized individuals, entities, or processes.&lt;/p&gt;&lt;p&gt;&lt;i&gt;Usage Note:&lt;/i&gt;Confidentiality codes are used as metadata indicating the receiver responsibilities to ensure that the information is not made available or redisclosed to unauthorized individuals, entities, or processes (security principals) per applicable policies.&lt;/p&gt;</Label>
+      </Rubric>
+      <Rubric id="d1e92153" kind="short">
+         <Label xml:lang="en-US">Confidentiality</Label>
+      </Rubric>
+      <Rubric id="d1e92153" kind="preferred">
+         <Label xml:lang="en-US">Confidentiality</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ConfidentialityByAccessKind" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21049"/>
+      <SubClass code="B"/>
+      <SubClass code="D"/>
+      <SubClass code="I"/>
+      <Rubric id="d1e92165" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>By accessing subject / role and relationship based rights (These concepts are mutually exclusive, one and only one is required for a valid confidentiality coding.)</p>
+            <p>
+               <i>Deprecation Comment:</i>Deprecated due to updated confidentiality codes under ActCode</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e92196" kind="short">
+         <Label xml:lang="en-US">ConfidentialityByAccessKind</Label>
+      </Rubric>
+      <Rubric id="d1e92196" kind="preferred">
+         <Label xml:lang="en-US">ConfidentialityByAccessKind</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ConfidentialityByInfoType" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21050"/>
+      <SubClass code="ETH"/>
+      <SubClass code="HIV"/>
+      <SubClass code="PSY"/>
+      <SubClass code="SDV"/>
+      <Rubric id="d1e92207" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>By information type, only for service catalog entries (multiples allowed). Not to be used with actual patient data!</p>
+            <p>
+               <i>Deprecation Comment:</i>Deprecated due to updated confidentiality codes under ActCode</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e92238" kind="short">
+         <Label xml:lang="en-US">ConfidentialityByInfoType</Label>
+      </Rubric>
+      <Rubric id="d1e92238" kind="preferred">
+         <Label xml:lang="en-US">ConfidentialityByInfoType</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ConfidentialityModifiers" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21051"/>
+      <SubClass code="C"/>
+      <SubClass code="S"/>
+      <SubClass code="T"/>
+      <Rubric id="d1e92249" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Modifiers of role based access rights (multiple allowed)</p>
+            <p>
+               <i>Deprecation Comment:</i>Deprecated due to updated confidentiality codes under ActCode</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e92280" kind="short">
+         <Label xml:lang="en-US">ConfidentialityModifiers</Label>
+      </Rubric>
+      <Rubric id="d1e92280" kind="preferred">
+         <Label xml:lang="en-US">ConfidentialityModifiers</Label>
+      </Rubric>
+   </Class>
+   <Class code="L" kind="concept">
+      <Meta name="internalId" value="10234"/>
+      <SuperClass code="_Confidentiality"/>
+      <Rubric id="d1e92291" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <i>Definition:</i>Privacy metadata indicating that the information has been de-identified, and there are mitigating circumstances that prevent re-identification, which minimize risk of harm from unauthorized disclosure. The information requires protection to maintain low sensitivity.</p>
+            <p>
+               <i>Examples:</i>Includes anonymized, pseudonymized, or non-personally identifiable information such as HIPAA limited data sets.</p>
+            <p>
+               <i>Map:</i>No clear map to ISO 13606-4 Sensitivity Level (1) Care Management: RECORD_COMPONENTs that might need to be accessed by a wide range of administrative staff to manage the subject of care's access to health services.</p>
+            <p>
+               <i>Usage Note:</i>This metadata indicates the receiver may have an obligation to comply with a data use agreement.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e92330" kind="short">
+         <Label xml:lang="en-US">low</Label>
+      </Rubric>
+      <Rubric id="d1e92330" kind="preferred">
+         <Label xml:lang="en-US">low</Label>
+      </Rubric>
+   </Class>
+   <Class code="M" kind="concept">
+      <Meta name="internalId" value="23322"/>
+      <SuperClass code="_Confidentiality"/>
+      <Rubric id="d1e92341" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <i>Definition:</i>Privacy metadata indicating moderately sensitive information, which presents moderate risk of harm if disclosed without authorization.</p>
+            <p>
+               <i>Examples:</i>Includes allergies of non-sensitive nature used inform food service; health information a patient authorizes to be used for marketing, released to a bank for a health credit card or savings account; or information in personal health record systems that are not governed under health privacy laws.</p>
+            <p>
+               <i>Map:</i>Partial Map to ISO 13606-4 Sensitivity Level (2) Clinical Management: Less sensitive RECORD_COMPONENTs that might need to be accessed by a wider range of personnel not all of whom are actively caring for the patient (e.g. radiology staff).</p>
+            <p>
+               <i>Usage Note:</i>This metadata indicates that the receiver may be obligated to comply with the receiver's terms of use or privacy policies.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e92380" kind="short">
+         <Label xml:lang="en-US">moderate</Label>
+      </Rubric>
+      <Rubric id="d1e92380" kind="preferred">
+         <Label xml:lang="en-US">moderate</Label>
+      </Rubric>
+   </Class>
+   <Class code="N" kind="concept">
+      <Meta name="internalId" value="10230"/>
+      <SuperClass code="_Confidentiality"/>
+      <Rubric id="d1e92391" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <i>Definition:</i>Privacy metadata indicating that the information is typical, non-stigmatizing health information, which presents typical risk of harm if disclosed without authorization.</p>
+            <p>
+               <i>Examples:</i>In the US, this includes what HIPAA identifies as the minimum necessary protected health information (PHI) given a covered purpose of use (treatment, payment, or operations). Includes typical, non-stigmatizing health information disclosed in an application for health, workers compensation, disability, or life insurance.</p>
+            <p>
+               <i>Map:</i>Partial Map to ISO 13606-4 Sensitivity Level (3) Clinical Care: Default for normal clinical care access (i.e. most clinical staff directly caring for the patient should be able to access nearly all of the EHR). Maps to normal confidentiality for treatment information but not to ancillary care, payment and operations.</p>
+            <p>
+               <i>Usage Note:</i>This metadata indicates that the receiver may be obligated to comply with applicable jurisdictional privacy law or disclosure authorization.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e92430" kind="short">
+         <Label xml:lang="en-US">normal</Label>
+      </Rubric>
+      <Rubric id="d1e92430" kind="preferred">
+         <Label xml:lang="en-US">normal</Label>
+      </Rubric>
+   </Class>
+   <Class code="R" kind="concept">
+      <Meta name="internalId" value="10232"/>
+      <SuperClass code="_Confidentiality"/>
+      <Rubric id="d1e92442" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Privacy metadata indicating highly sensitive, potentially stigmatizing information, which presents a high risk to the information subject if disclosed without authorization. May be preempted by jurisdictional law, e.g., for public health reporting or emergency treatment.</p>&gt; <p>
+               <i>Examples:</i>In the US, this includes what HIPAA identifies as the minimum necessary protected health information (PHI) given a covered purpose of use (treatment, payment, or operations). Includes typical, non-stigmatizing health information disclosed in an application for health, workers compensation, disability, or life insurance.</p>
+            <p>
+               <i>Map:</i>Partial Map to ISO 13606-4 Sensitivity Level (3) Clinical Care: Default for normal clinical care access (i.e. most clinical staff directly caring for the patient should be able to access nearly all of the EHR). Maps to normal confidentiality for treatment information but not to ancillary care, payment and operations.</p>
+            <p>
+               <i>Usage Note:</i>This metadata indicates that the receiver may be obligated to comply with applicable, prevailing (default) jurisdictional privacy law or disclosure authorization.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e92478" kind="short">
+         <Label xml:lang="en-US">restricted</Label>
+      </Rubric>
+      <Rubric id="d1e92478" kind="preferred">
+         <Label xml:lang="en-US">restricted</Label>
+      </Rubric>
+   </Class>
+   <Class code="U" kind="concept">
+      <Meta name="internalId" value="23321"/>
+      <SuperClass code="_Confidentiality"/>
+      <Rubric id="d1e92489" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <i>Definition:</i>Privacy metadata indicating that the information is not classified as sensitive.</p>
+            <p>
+               <i>Examples:</i>Includes publicly available information, e.g., business name, phone, email or physical address.</p>
+            <p>
+               <i>Usage Note:</i>This metadata indicates that the receiver has no obligation to consider additional policies when making access control decisions. Note that in some jurisdictions, personally identifiable information must be protected as confidential, so it would not be appropriate to assign a confidentiality code of "unrestricted" to that information even if it is publicly available.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e92522" kind="short">
+         <Label xml:lang="en-US">unrestricted</Label>
+      </Rubric>
+      <Rubric id="d1e92522" kind="preferred">
+         <Label xml:lang="en-US">unrestricted</Label>
+      </Rubric>
+   </Class>
+   <Class code="V" kind="concept">
+      <Meta name="internalId" value="14799"/>
+      <SuperClass code="_Confidentiality"/>
+      <Rubric id="d1e92533" kind="definition">
+         <Label xml:lang="en-US">
+            <p>. Privacy metadata indicating that the information is extremely sensitive and likely stigmatizing health information that presents a very high risk if disclosed without authorization. This information must be kept in the highest confidence.</p>
+            <p>
+               <i>Examples:</i>Includes information about a victim of abuse, patient requested information sensitivity, and taboo subjects relating to health status that must be discussed with the patient by an attending provider before sharing with the patient. May also include information held under â€œlegal lockâ€? or attorney-client privilege</p>
+            <p>
+               <i>Map:</i>This metadata indicates that the receiver may not disclose this information except as directed by the information custodian, who may be the information subject.</p>
+            <p>
+               <i>Usage Note:</i>This metadata indicates that the receiver may not disclose this information except as directed by the information custodian, who may be the information subject.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e92569" kind="short">
+         <Label xml:lang="en-US">very restricted</Label>
+      </Rubric>
+      <Rubric id="d1e92569" kind="preferred">
+         <Label xml:lang="en-US">very restricted</Label>
+      </Rubric>
+   </Class>
+   <Class code="B" kind="concept">
+      <Meta name="internalId" value="10235"/>
+      <SuperClass code="_ConfidentialityByAccessKind"/>
+      <Rubric id="d1e92580" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Since the service class can represent knowledge structures that may be considered a trade or business secret, there is sometimes (though rarely) the need to flag those items as of business level confidentiality. However, no patient related information may ever be of this confidentiality level.</p>
+            <p>
+               <i>Deprecation Comment:</i>Replced by ActCode.B</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e92616" kind="short">
+         <Label xml:lang="en-US">business</Label>
+      </Rubric>
+      <Rubric id="d1e92616" kind="preferred">
+         <Label xml:lang="en-US">business</Label>
+      </Rubric>
+   </Class>
+   <Class code="D" kind="concept">
+      <Meta name="internalId" value="10231"/>
+      <SuperClass code="_ConfidentialityByAccessKind"/>
+      <Rubric id="d1e92627" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Only clinicians may see this item, billing and administration persons can not access this item without special permission.</p>
+            <p>
+               <i>Deprecation Comment:</i>Deprecated due to updated confidentiality codes under ActCode</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e92663" kind="short">
+         <Label xml:lang="en-US">clinician</Label>
+      </Rubric>
+      <Rubric id="d1e92663" kind="preferred">
+         <Label xml:lang="en-US">clinician</Label>
+      </Rubric>
+   </Class>
+   <Class code="I" kind="concept">
+      <Meta name="internalId" value="10233"/>
+      <SuperClass code="_ConfidentialityByAccessKind"/>
+      <Rubric id="d1e92674" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Access only to individual persons who are mentioned explicitly as actors of this service and whose actor type warrants that access (cf. to actor type code).</p>
+            <p>
+               <i>Deprecation Comment:</i>Deprecated due to updated confidentiality codes under ActCode</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e92710" kind="short">
+         <Label xml:lang="en-US">individual</Label>
+      </Rubric>
+      <Rubric id="d1e92710" kind="preferred">
+         <Label xml:lang="en-US">individual</Label>
+      </Rubric>
+   </Class>
+   <Class code="ETH" kind="concept">
+      <Meta name="internalId" value="10243"/>
+      <SuperClass code="_ConfidentialityByInfoType"/>
+      <Rubric id="d1e92722" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Alcohol/drug-abuse related item</p>
+            <p>
+               <i>Deprecation Comment:</i>Replced by ActCode.ETH</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e92758" kind="short">
+         <Label xml:lang="en-US">substance abuse related</Label>
+      </Rubric>
+      <Rubric id="d1e92758" kind="preferred">
+         <Label xml:lang="en-US">substance abuse related</Label>
+      </Rubric>
+   </Class>
+   <Class code="HIV" kind="concept">
+      <Meta name="internalId" value="10241"/>
+      <SuperClass code="_ConfidentialityByInfoType"/>
+      <Rubric id="d1e92769" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>HIV and AIDS related item</p>
+            <p>
+               <i>Deprecation Comment:</i>Replced by ActCode.HIV</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e92805" kind="short">
+         <Label xml:lang="en-US">HIV related</Label>
+      </Rubric>
+      <Rubric id="d1e92805" kind="preferred">
+         <Label xml:lang="en-US">HIV related</Label>
+      </Rubric>
+   </Class>
+   <Class code="PSY" kind="concept">
+      <Meta name="internalId" value="10242"/>
+      <SuperClass code="_ConfidentialityByInfoType"/>
+      <Rubric id="d1e92816" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Psychiatry related item</p>
+            <p>
+               <i>Deprecation Comment:</i>Replced by ActCode.PSY</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e92852" kind="short">
+         <Label xml:lang="en-US">psychiatry relate</Label>
+      </Rubric>
+      <Rubric id="d1e92852" kind="preferred">
+         <Label xml:lang="en-US">psychiatry relate</Label>
+      </Rubric>
+   </Class>
+   <Class code="SDV" kind="concept">
+      <Meta name="internalId" value="10244"/>
+      <SuperClass code="_ConfidentialityByInfoType"/>
+      <Rubric id="d1e92863" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Sexual assault / domestic violence related item</p>
+            <p>
+               <i>Deprecation Comment:</i>Replced by ActCode.SDV</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e92899" kind="short">
+         <Label xml:lang="en-US">sexual and domestic violence related</Label>
+      </Rubric>
+      <Rubric id="d1e92899" kind="preferred">
+         <Label xml:lang="en-US">sexual and domestic violence related</Label>
+      </Rubric>
+   </Class>
+   <Class code="C" kind="concept">
+      <Meta name="internalId" value="10239"/>
+      <SuperClass code="_ConfidentialityModifiers"/>
+      <Rubric id="d1e92910" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Celebrities are people of public interest (VIP) including employees, whose information require special protection.</p>
+            <p>
+               <i>Deprecation Comment:</i>Replced by ActCode.CEL</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e92946" kind="short">
+         <Label xml:lang="en-US">celebrity</Label>
+      </Rubric>
+      <Rubric id="d1e92946" kind="preferred">
+         <Label xml:lang="en-US">celebrity</Label>
+      </Rubric>
+   </Class>
+   <Class code="S" kind="concept">
+      <Meta name="internalId" value="10237"/>
+      <SuperClass code="_ConfidentialityModifiers"/>
+      <Rubric id="d1e92957" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>
+            </p>Information for which the patient seeks heightened confidentiality. Sensitive information is not to be shared with family members. Information reported by the patient about family members is sensitive by default. Flag can be set or cleared on patient's request. <p>
+               <i>Deprecation Comment:</i>Deprecated due to updated confidentiality codes under ActCode</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e92993" kind="short">
+         <Label xml:lang="en-US">sensitive</Label>
+      </Rubric>
+      <Rubric id="d1e92993" kind="preferred">
+         <Label xml:lang="en-US">sensitive</Label>
+      </Rubric>
+   </Class>
+   <Class code="T" kind="concept">
+      <Meta name="internalId" value="10238"/>
+      <SuperClass code="_ConfidentialityModifiers"/>
+      <Rubric id="d1e93005" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Information not to be disclosed or discussed with patient except through physician assigned to patient in this case. This is usually a temporary constraint only, example use is a new fatal diagnosis or finding, such as malignancy or HIV.</p>
+            <p>
+               <i>Deprecation Note:</i>Replced by ActCode.TBOO</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e93041" kind="short">
+         <Label xml:lang="en-US">taboo</Label>
+      </Rubric>
+      <Rubric id="d1e93041" kind="preferred">
+         <Label xml:lang="en-US">taboo</Label>
+      </Rubric>
+   </Class>
+</ClaML>

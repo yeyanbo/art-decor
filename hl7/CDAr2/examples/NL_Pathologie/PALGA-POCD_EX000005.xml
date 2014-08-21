@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  PALGA voorbeeld Obductie (S)
+  POCD_SN970005NL
+-->
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:sciphox="urn::sciphox-org/sciphox"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+  <id extension="S0700865A" root="2.16.840.1.113883.2.4.3.23.3.20"/>
+  <code code="18743-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+  <title>Obductie (S), patient: Adriana Hansson</title>
+  <effectiveTime value="200710051724"/>
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+  <languageCode code="nl-NL"/>
+  <setId extension="S0700865" root="2.16.840.1.113883.2.4.3.23.3.20"/>
+  <versionNumber value="1"/>
+  <recordTarget>
+    <!-- patiënt gegevens -->
+    <patientRole>
+      <!-- BSN -->
+      <id extension="102010614" root="2.16.840.1.113883.2.4.6.3"/>
+      <patient>
+        <name>
+          <given>Adriana</given>
+          <family>Hansson</family>
+        </name>
+        <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1"/>
+        <birthTime value="19360107"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <!--- author -->
+    <time value="20071005"/>
+    <assignedAuthor>
+      <id extension="1298546" root="2.16.528.1.1007.3.1"/>
+      <assignedPerson>
+        <name>
+          <given>Theo</given>
+          <family>Driessen</family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <name>Academisch Medisch Centrum, Amsterdam</name>
+        <addr>
+          <streetName>Meibergdreef</streetName>
+          <houseNumber>9</houseNumber>
+          <postalCode>1100 DD</postalCode>
+          <city>Amsterdam</city>
+        </addr>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id extension="20" root="2.16.840.1.113883.2.4.3.23.3"/>
+        <name>Academisch Medisch Centrum, Amsterdam</name>
+        <addr>
+          <streetName>Meibergdreef</streetName>
+          <houseNumber>9</houseNumber>
+          <postalCode>1100 DD</postalCode>
+          <city>Amsterdam</city>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <legalAuthenticator>
+    <!--- legalAuthenticator -->
+    <time value="20071005"/>
+    <signatureCode code="S"/>
+    <assignedEntity>
+      <id extension="1298546" root="2.16.528.1.1007.3.1"/>
+      <assignedPerson>
+        <name>
+          <given>Theo</given>
+          <family>Driessen</family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id extension="20" root="2.16.840.1.113883.2.4.3.23.3"/>
+        <name>Academisch Medisch Centrum, Amsterdam</name>
+        <addr>
+          <streetName>Meibergdreef</streetName>
+          <houseNumber>9</houseNumber>
+          <postalCode>1100 DD</postalCode>
+          <city>Amsterdam</city>
+        </addr>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+  <documentationOf>
+    <serviceEvent>
+      <code code="S" codeSystem="2.16.840.1.113883.2.4.3.23.5.1" codeSystemName="PALGA service types"/>
+    </serviceEvent>
+  </documentationOf>
+  <componentOf>
+    <encompassingEncounter classCode="ENC" moodCode="EVN">
+      <code code="VR" codeSystem="2.16.840.1.113883.5.4"/>
+      <effectiveTime>
+        <low value="200710040912"/>
+        <high value="200710051724"/>
+      </effectiveTime>
+    </encompassingEncounter>
+  </componentOf>
+  <component>
+    <structuredBody>
+      <component>
+        <!-- Klinische gegevens -->
+        <section>
+          <code code="22636-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Klinische gegevens</title>
+          <text> Op 27 september mitraalklep plastiek middels annuloplastiek en aorta klep vervan-ging door bioprothese.<br/> Op
+            03 oktober terugplaatsing uit Zwolle na bovengenoemde ingreep.<br/> Op 04 oktober ritmestoornissen waarvoor digoxine.
+            Later die dag hoge koorts, tachycardie en beeld van pneumonie links waarvoor opname intensieve care en beademing.<br/>
+            Ondanks vulling en inotropica geen verbetering van de bloeddruk.<br/> Echografie hart: pericardvocht maar niet
+            voldoende voor punctie. Patiente is overleden.<br/>
+          </text>
+        </section>
+      </component>
+      <component>
+        <!-- Macroscopie -->
+        <section>
+          <code code="22634-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Macroscopie</title>
+          <text> Voornaamste pathologische diagnosen:<br/> 1. Status na recente sternotomie met aortaklepvervanging (bioklep) en
+            mitralis kleppen plastiek middels annuloplastiek. Geen loco regionale veranderingen; geen paravalvulaire lekkage; geen
+            thrombi of vegetaties.<br/> 2. Mediastinitis met puspockets direct retrosternaal. (Kweek wondvocht: stafylo-kokken
+            aureus)<br/> 3. Gegeneraliseerde stuwing met circa 2,5 liter ascitesvocht; ernstige pericentrale levercel necrose en
+            tubulus necrose passend bij multi orgaanfalen bij sepsis.<br/> 4. Ernstige circulaire linker ventrikelhypertrofie
+            (hartgewicht 740 g) met geringe rechter ventrikel hypertrofie<br/> 5. Tekenen van een oud myocardinfarct in de
+            onderachterwand bij normale coronair arterien.<br/> 6. Matig ernstige atherosclerose van de aorta abdominalis met
+            artherosclerose van de nieren; links schrompelnier.<br/> 7. Milde diabetische nefropathie( diffuse mesangiale sclerose
+            en hyalinose van de arteriolen)<br/> 8. Galstenen. Geen aanknopingspunten voor cholecystitis.<br/> 9. Obesitas.<br/>
+          </text>
+        </section>
+      </component>
+      <component>
+        <!-- Epicrise -->
+        <section>
+          <code code="33746-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Epicrise</title>
+          <text> Obductie werd verricht op een 71 jarige patiente die circa een week voor overlijden een cardiochirurgische
+            ingreep onderging met mitraalklep plastiek en aortaklepvervanging. Enkele dagen postoperatief ontstonden er
+            ritmestoornissen, koorts en het beeld van sepsis waarna patient overleed.<br/> Bij obductie werd een mediastinitis
+            aangetroffen met pus pockets gelokaliseerd retrosternaal vermoedelijk samenhangend met de recente cardiochirurgische
+            ingreep. Uit het wondvocht werd stafylokokken aureus gekweekt. Deze infectie heeft geleid tot een sepsis met
+            hypotensie en het beeld van multi-orgaan falen als uiting waarvan massale levercelnecrose is opgetreden.<br/> Een
+            ander focus voor een infectie werd niet aangetroffen. De afwijkingen verklaren het overlijden.<br/> De
+            mitralisplastiek en aortaklep bioprothese toonden verder geen afwijkingen. Met name waren er geen aanknopingspunten
+            voor paravalvulaire lekkage, thrombi en of vegetaties.<br/> Als toevalsbevinding werd een milde diabetische
+            nefropathie aangetroffen. Was patiente bekend met diabetes mellitus?<br/>
+          </text>
+          <entry typeCode="DRIV">
+            <!-- aanduiding type obductie: volwassene -->
+            <act classCode="ACT" moodCode="EVN">
+              <code code="V" codeSystem="2.16.840.1.113883.2.4.3.23.5.3"/>
+              <statusCode code="completed"/>
+            </act>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!-- Conclusie -->
+        <section>
+          <code code="22034-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Conclusie</title>
+          <text> Obductie werd verricht op een 71-jarige patiente welke overleed na een cardiochirurgische ingreep. Bij obductie
+            werd een mediastinitis aangetroffen op basis van stafylokokken aureus infectie vermoedelijk ontstaan als wond infectie
+            postoperatief. Deze heeft geleid tot sepsis en het overlijden. </text>
+        </section>
+      </component>
+      <component>
+        <!-- Diagnosen -->
+        <section>
+          <code code="22637-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Diagnosen</title>
+          <text>
+            <paragraph> Diagtekst1: lichaam*obductie*sepsis<br/> Palga-codes1: <content ID="d1-1">TYY000</content>*<content
+                ID="d1-2">P30110</content>* <content ID="d1-3">D00800</content>
+            </paragraph>
+            <paragraph> Diagtekst2: hart*obductie*status na operatie*litteken*aortastenose*myocardhypertrofie<br/> Palga-codes2:
+                <content ID="d2-1">T32000</content>*<content ID="d2-2">P30110</content>* <content ID="d2-3"
+                >F01502</content>*<content ID="d2-4">M49060</content>* <content ID="d2-5">T39000M34100</content>*<content
+                ID="d2-6">T33010M71000</content>
+            </paragraph>
+            <paragraph> Diagtekst3: mediastinum*obductie*abces*ontsteking<br/> Palga-codes3: <content ID="d3-1"
+                >TY2300</content>*<content ID="d3-2">P30110</content>* <content ID="d3-3">M41740</content>*<content ID="d3-4"
+                >M40000</content>
+            </paragraph>
+            <paragraph> Diagtekst4: lever*obductie*necrose*sepsis<br/> Palga-codes4: <content ID="d4-1">T56000</content>*<content
+                ID="d4-2">P30110</content>* <content ID="d4-3">M54000</content>*<content ID="d4-4">D00800</content>
+            </paragraph>
+            <paragraph> Diagtekst5: nier*obductie*diabetische glomerulosclerose<br/> Palga-codes5: <content ID="d5-1"
+                >T71000</content>*<content ID="d5-2">P30110</content>* <content ID="d5-3">T71200M53300D23810</content>
+            </paragraph>
+          </text>
+          <entry typeCode="DRIV">
+            <organizer classCode="CLUSTER" moodCode="EVN">
+              <statusCode code="completed"/>
+              <component typeCode="COMP">
+                <sequenceNumber value="1"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20071005"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="TYY000" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d1-1"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <sequenceNumber value="2"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20071005"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="P30110" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d1-2"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <sequenceNumber value="3"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20071005"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="D00800" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d1-3"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+            </organizer>
+          </entry>
+          <entry typeCode="DRIV">
+            <organizer classCode="CLUSTER" moodCode="EVN">
+              <statusCode code="completed"/>
+              <component typeCode="COMP">
+                <sequenceNumber value="1"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20071005"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="T32000" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d2-1"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <sequenceNumber value="2"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20071005"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="P30110" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d2-2"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <sequenceNumber value="3"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20071005"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="F01502" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d2-3"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <sequenceNumber value="4"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20071005"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="M49060" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d2-4"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <sequenceNumber value="4"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20071005"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="T39000M34100" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d2-5"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <sequenceNumber value="4"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20071005"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="T33010M71000" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d2-6"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+            </organizer>
+          </entry>
+          <entry typeCode="DRIV">
+            <organizer classCode="CLUSTER" moodCode="EVN">
+              <statusCode code="completed"/>
+              <component typeCode="COMP">
+                <sequenceNumber value="1"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20071005"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="TY2300" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d3-1"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <sequenceNumber value="2"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20071005"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="P30110" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d3-2"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <sequenceNumber value="3"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20071005"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="M41740" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d3-3"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <sequenceNumber value="4"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20071005"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="M40000" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d3-4"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+            </organizer>
+          </entry>
+          <entry typeCode="DRIV">
+            <organizer classCode="CLUSTER" moodCode="EVN">
+              <statusCode code="completed"/>
+              <component typeCode="COMP">
+                <sequenceNumber value="1"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20071005"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="T56000" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d4-1"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <sequenceNumber value="2"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20071005"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="P30110" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d4-2"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <sequenceNumber value="3"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20071005"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="M54000" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d4-3"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <sequenceNumber value="4"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20071005"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="D00800" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d4-4"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+            </organizer>
+          </entry>
+          <entry typeCode="DRIV">
+            <organizer classCode="CLUSTER" moodCode="EVN">
+              <statusCode code="completed"/>
+              <component typeCode="COMP">
+                <sequenceNumber value="1"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20071005"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="T71000" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d5-1"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <sequenceNumber value="2"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20071005"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="P30110" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d5-2"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <sequenceNumber value="3"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20071005"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="T71200M53300D23810" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d5-3"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+            </organizer>
+          </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

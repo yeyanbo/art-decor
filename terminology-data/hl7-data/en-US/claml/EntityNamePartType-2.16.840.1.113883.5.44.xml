@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="29"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.44"/>
+   <Title name="EntityNamePartType" date="2012-08-02" version="1.000"/>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="DEL" kind="concept">
+      <Meta name="internalId" value="10656"/>
+      <Rubric id="d1e116131" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A delimiter has no meaning other than being literally printed in this name representation. A delimiter has no implicit leading and trailing white space.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e116144" kind="short">
+         <Label xml:lang="en-US">delimiter</Label>
+      </Rubric>
+      <Rubric id="d1e116144" kind="preferred">
+         <Label xml:lang="en-US">delimiter</Label>
+      </Rubric>
+   </Class>
+   <Class code="FAM" kind="concept">
+      <Meta name="internalId" value="10654"/>
+      <Rubric id="d1e116156" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Family name, this is the name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e116169" kind="short">
+         <Label xml:lang="en-US">family</Label>
+      </Rubric>
+      <Rubric id="d1e116169" kind="preferred">
+         <Label xml:lang="en-US">family</Label>
+      </Rubric>
+   </Class>
+   <Class code="GIV" kind="concept">
+      <Meta name="internalId" value="10655"/>
+      <Rubric id="d1e116180" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Given name (don't call it "first name" since this given names do not always come first)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e116193" kind="short">
+         <Label xml:lang="en-US">given</Label>
+      </Rubric>
+      <Rubric id="d1e116193" kind="preferred">
+         <Label xml:lang="en-US">given</Label>
+      </Rubric>
+   </Class>
+   <Class code="PFX" kind="concept">
+      <Meta name="internalId" value="10657"/>
+      <Rubric id="d1e116204" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A prefix has a strong association to the immediately following name part. A prefix has no implicit trailing white space (it has implicit leading white space though). Note that prefixes can be inverted.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e116217" kind="short">
+         <Label xml:lang="en-US">prefix</Label>
+      </Rubric>
+      <Rubric id="d1e116217" kind="preferred">
+         <Label xml:lang="en-US">prefix</Label>
+      </Rubric>
+   </Class>
+   <Class code="SFX" kind="concept">
+      <Meta name="internalId" value="10658"/>
+      <Rubric id="d1e116228" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A suffix has a strong association to the immediately preceding name part. A suffix has no implicit leading white space (it has implicit trailing white space though). Suffices cannot be inverted.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e116244" kind="short">
+         <Label xml:lang="en-US">suffix</Label>
+      </Rubric>
+      <Rubric id="d1e116244" kind="preferred">
+         <Label xml:lang="en-US">suffix</Label>
+      </Rubric>
+   </Class>
+</ClaML>

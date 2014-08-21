@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<templateId root="2.16.840.1.113883.10" extension="CDAR2_II_BIMGRPTS_R1"/>
+	<id root="1.2.840.113619.2.62.994044785528.12" extension="20060828170821659"/>
+	<code code="18782-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="X-Ray Report"/>
+	<title>Chest X-Ray, PA and LAT View</title>
+	<!-- from TID 1210  -->
+	<effectiveTime value="20060828170821"/>
+	<!-- fictive, can be different from SR study date and SR content date, SR instance creation date -->
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+	<languageCode code="en-US"/>
+	<!--   RFC 3066;	ISO639_1-->
+	<recordTarget>
+		<patientRole>
+			<id root="1.2.840.113619.2.62.994044785528.10" extension="0000680029"/>
+			<!-- (0010,0020)   {root}.10 = patient ID list -->
+			<patient>
+				<name>
+					<given>John</given>
+					<!-- (0010,0010)   -->
+					<family>Doe</family>
+				</name>
+				<administrativeGenderCode codeSystem="2.16.840.1.113883.5.1" code="M"/>
+				<!-- (0010,0040)   -->
+				<birthTime value="19641128"/>
+				<!-- (0010,0030)   -->
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author>
+		<time value="20060823224352"/>
+		<!-- Content Date + Content Time-->
+		<assignedAuthor>
+			<id extension="121008" root="2.16.840.1.113883.19.5"/>
+			<assignedPerson>
+				<name>
+					<given>Richard</given>
+					<!-- (0040,A078) > (0040,A123)   -->
+					<family>Blitz</family>
+					<suffix>MD</suffix>
+				</name>
+			</assignedPerson>
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<!-- custodian values have been added based on organizational policy (in this case they are not mapped from the SR sample document)-->
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id root="2.16.840.1.113883.19.5"/>
+				<name>World University Hospital</name>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<!-- legal authenticator present in sample, document is VERIFIED -->
+	<legalAuthenticator>
+		<time value="20060827141500"/>
+		<!-- verification date time (0040,A030)-->
+		<signatureCode code="S"/>
+		<assignedEntity>
+			<id extension="08150000" root="1.2.840.113619.2.62.994044785528.33"/>
+			<assignedPerson>
+				<name>
+					<given>Richard</given>
+					<family>Blitz</family>
+					<suffix>MD</suffix>
+				</name>
+			</assignedPerson>
+		</assignedEntity>
+	</legalAuthenticator>
+	<!-- Mapped from Referring physicians name (0008,0090) SR sample document -->
+	<participant typeCode="REF">
+		<associatedEntity classCode="PROV">
+			<id nullFlavor="UNK"/>
+			<associatedPerson>
+				<name>
+					<given>John</given>
+					<family>Smith</family>
+					<suffix>MD</suffix>
+				</name>
+			</associatedPerson>
+		</associatedEntity>
+	</participant>
+	<inFulfillmentOf>
+		<order>
+			<id extension="10523475" root="1.2.840.113619.2.62.994044785528.27"/>
+			<!--  {root}.27 of accession number added based on organizational policy (not present in SR sample document because root is not specified by DICOM)-->
+			<id extension="123452" root="1.2.840.113619.2.62.994044785528.28"/>
+			<!--  {root}.28 of filler order number added based on organizational policy (not present in SR sample document because root is not specified by DICOM)-->
+			<id extension="123451" root="1.2.840.113619.2.62.994044785528.29"/>
+			<!--  {root}.29 of placer order number added based on organizational policy (not present in SR sample document because root is not specified by DICOM)-->
+		</order>
+	</inFulfillmentOf>
+	<documentationOf>
+		<serviceEvent classCode="ACT">
+			<id root="1.2.840.113619.2.62.994044785528.114289542805"/>
+			<!-- study instance UID -->
+			<id extension="123453" root="1.2.840.113619.2.62.994044785528.26"/>
+			<!-- {root}.26 of requested procedure ID added based on organizational policy (not present in SR sample document because root is not specified by DICOM)-->
+			<effectiveTime value="20060823222400"/>
+			<!-- (0008,0020) Study Date + (0008,0030) Study Time -->
+		</serviceEvent>
+	</documentationOf>
+	<!-- transformation of a DICOM SR -->
+	<relatedDocument typeCode="XFRM">
+		<parentDocument>
+			<id root="1.2.840.113619.2.62.994044785528.20060823.200608232232322.9"/>
+			<!-- SOP Instance UID (0008,0018) of SR sample document-->
+		</parentDocument>
+	</relatedDocument>
+	<component>
+		<structuredBody>
+			<component>
+				<!--
+**********************************************************************
+                     DICOM Object Catalog Section
+**********************************************************************
+	-->
+				<section classCode="DOCSECT" moodCode="EVN">
+					<code code="121181" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="DICOM Object Catalog"/>
+					<entry>
+						<!--	
+**********************************************************************
+                     Study
+**********************************************************************
+	-->
+						<act classCode="ACT" moodCode="EVN">
+							<id root="1.2.840.113619.2.62.994044785528.114289542805"/>
+							<code code="113014" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="Study"/>
+							<!--		 
+			*****************************************************************
+                      Series
+                    *****************************************************************
+ 	-->
+							<entryRelationship typeCode="COMP">
+								<act classCode="ACT" moodCode="EVN">
+									<id root="1.2.840.113619.2.62.994044785528.20060823223142485051"/>
+									<code code="113015" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="Series">
+										<qualifier>
+											<name code="121139" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="Modality"> </name>
+											<value code="CR" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="Computed Radiography"> </value>
+										</qualifier>
+									</code>
+									<!--														 
+					     *****************************************************************
+                                       SopInstance UID
+                                       *****************************************************************
+ 	-->
+									<!--	2 References (chest PA and LAT) -->
+									<entryRelationship typeCode="COMP">
+										<observation classCode="DGIMG" moodCode="EVN">
+											<id root="1.2.840.113619.2.62.994044785528.20060823.200608232232322.3"/>
+											<code code="1.2.840.10008.5.1.4.1.1.1" codeSystem="1.2.840.10008.2.6.1" codeSystemName="DCMUID" displayName="Computed Radiography Image Storage">
+											</code>
+											<text xsi:type="ED" mediaType="application/DICOM">
+												<reference value="http://www.example.org/wado?requestType=WADO&amp;studyUID=1.2.840.113619.2.62.994044785528.114289542805&amp;seriesUID=1.2.840.113619.2.62.994044785528.20060823223142485051&amp;objectUID=1.2.840.113619.2.62.994044785528.20060823.200608232232322.3&amp;contentType=application/DICOM"/>
+												<!--reference to image 1 (PA) -->
+											</text>
+											<effectiveTime value="20060823223232"/>
+										</observation>
+									</entryRelationship>
+									<entryRelationship typeCode="COMP">
+										<observation classCode="DGIMG" moodCode="EVN">
+											<id root="1.2.840.113619.2.62.994044785528.20060823.200608232231422.3"/>
+											<code code="1.2.840.10008.5.1.4.1.1.1" codeSystem="1.2.840.10008.2.6.1" codeSystemName="DCMUID" displayName="Computed Radiography Image Storage">
+											</code>
+											<text xsi:type="ED" mediaType="application/DICOM">
+												<reference value="http://www.example.org/wado?requestType=WADO&amp;studyUID=1.2.840.113619.2.62.994044785528.114289542805&amp;seriesUID=1.2.840.113619.2.62.994044785528.20060823223142485051&amp;objectUID=1.2.840.113619.2.62.994044785528.20060823.200608232231422.3&amp;contentType=application/DICOM"/>
+												<!--reference to image 2 (LAT) -->
+											</text>
+											<effectiveTime value="20060823223142"/>
+										</observation>
+									</entryRelationship>
+								</act>
+							</entryRelationship>
+						</act>
+					</entry>
+				</section>
+				<!--							
+**********************************************************************
+                    End of  DICOM Object Catalog Section
+**********************************************************************
+	-->
+			</component>
+			<component>
+				<!--
+**********************************************************************
+                  Reason for study Section 
+**********************************************************************
+The original DICOM SR document that is mapped does not contain a "Indications for Procedure" section. The attribute value "Reason for the Requested Procedure"  (0040,1002) within the Referenced Request Sequence (0040,A370) of the SR header has been mapped under the assumption that the header attribute value has been displayed to and included by the legal authenticator.
+	-->
+				<section>
+					<code code="121109" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="Indications for Procedure"/>
+					<title>Indications for Procedure</title>
+					<text>Suspected lung tumor</text>
+				</section>
+				<!--							
+**********************************************************************
+                    Reason for study Section
+**********************************************************************
+	-->
+			</component>
+			<component>
+				<!--
+**********************************************************************
+                   History Section 
+**********************************************************************
+	-->
+				<section>
+					<code code="121060" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="History"/>
+					<title>History</title>
+					<text>
+						<paragraph>
+							<caption>History</caption>
+							<content ID="Fndng1">Sore throat.</content>
+						</paragraph>
+					</text>
+					<entry>
+						<!-- History report element (TEXT) -->
+						<observation classCode="OBS" moodCode="EVN">
+							<code code="121060" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="History">
+								<originalText>
+									<reference value="#Fndng1"/>
+								</originalText>
+							</code>
+							<value xsi:type="ED" mediaType="text/plain">Sore throat.</value>
+						</observation>
+					</entry>
+				</section>
+				<!--							
+**********************************************************************
+                    End of History Section
+**********************************************************************
+	-->
+			</component>
+			<component>
+				<!--
+**********************************************************************
+                     Findings Section
+**********************************************************************
+	-->
+				<section>
+					<code code="121070" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="Findings"/>
+					<title>Findings</title>
+					<text>
+						<paragraph>
+							<caption>Finding</caption>
+							<content ID="Fndng2">The cardiomediastinum is within normal limits. The trachea is midline. The previously described opacity at the medial right lung base has cleared. There are no new infiltrates. There is a new round density at the left hilus, superiorly (diameter about 45mm). A CT scan is recommended for further evaluation. The pleural spaces are clear. The visualized musculoskeletal structures and the upper abdomen are stable and unremarkable.</content>
+						</paragraph>
+						<paragraph>
+							<caption>Diameter</caption>
+							<content ID="Diam2">45mm</content>
+						</paragraph>
+						<paragraph>
+							<caption>Source of Measurement</caption>
+							<content ID="SrceOfMeas2">
+								<linkHtml href="http://www.example.org/wado?requestType=WADO&amp;studyUID=1.2.840.113619.2.62.994044785528.114289542805&amp;seriesUID=1.2.840.113619.2.62.994044785528.20060823223142485051&amp;objectUID=1.2.840.113619.2.62.994044785528.20060823.200608232232322.3&amp;contentType=application/DICOM">Chest_PA
+								</linkHtml>
+							</content>
+						</paragraph>
+					</text>
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<code code="121071" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="Finding">
+								<originalText>
+									<reference value="#Fndng2"/>
+								</originalText>
+							</code>
+							<value xsi:type="ED" mediaType="text/plain">
+								The cardiomediastinum is within normal limits. The trachea is midline. The previously described opacity at the medial right lung base has cleared. There are no new infiltrates. There is a new round density at the left hilus, superiorly (diameter about 45mm). A CT scan is recommended for further evaluation. The pleural spaces are clear. The visualized musculoskeletal structures and the upper abdomen are stable and unremarkable.
+							</value>
+							<!-- inferred from measurement -->
+							<entryRelationship typeCode="SPRT">
+								<observation classCode="OBS" moodCode="EVN">
+									<code code="M-02550" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNM3" displayName="Diameter">
+										<originalText>
+											<reference value="#Diam2"/>
+										</originalText>
+									</code>
+									<!-- no DICOM attribute  <statusCode code="completed"/> -->
+									<effectiveTime value="20060823223912"/>
+									<value xsi:type="PQ" value="45" unit="mm">
+										<translation code="mm" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM" codeSystemVersion="1.5"/>
+									</value>
+									<!-- inferred from image -->
+									<entryRelationship typeCode="SUBJ">
+										<observation classCode="DGIMG" moodCode="EVN">
+											<!-- (0008,1155) Referenced SOP Instance UID-->
+											<id root="1.2.840.113619.2.62.994044785528.20060823.200608232232322.3"/>
+											<!-- (0008,1150) Referenced SOP Class UID -->
+											<code code="1.2.840.10008.5.1.4.1.1.1" codeSystem="1.2.840.10008.2.6.1" codeSystemName="DCMUID" displayName="Computed Radiography Image Storage">
+											</code>
+											<text xsi:type="ED" mediaType="application/DICOM">
+												<!--reference to CR DICOM image (PA view) -->
+												<reference value="http://www.example.org/wado?requestType=WADO&amp;studyUID=1.2.840.113619.2.62.994044785528.114289542805&amp;seriesUID=1.2.840.113619.2.62.994044785528.20060823223142485051&amp;objectUID=1.2.840.113619.2.62.994044785528.20060823.200608232232322.3&amp;contentType=application/DICOM"/>
+											</text>
+											<effectiveTime value="20060823223232"/>
+											<!-- Purpose of Reference -->
+											<entryRelationship typeCode="RSON">
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="121112" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="Source of Measurement">
+														<originalText>
+															<reference value="#SrceOfMeas2"/>
+														</originalText>
+													</code>
+												</observation>
+											</entryRelationship>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</observation>
+					</entry>
+				</section>
+				<!--							
+**********************************************************************
+                    End of Findings Section
+**********************************************************************
+	-->
+			</component>
+			<component>
+				<!--
+**********************************************************************
+                    Impressions Section 
+**********************************************************************
+	-->
+				<section>
+					<code code="121072" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="Impressions"/>
+					<title>Impressions</title>
+					<text>
+						<paragraph>
+							<caption>Impression</caption>
+							<content ID="Fndng3">No acute cardiopulmonary process. Round density in left superior hilus, further evaluation with CT is recommended as underlying malignancy is not excluded.</content>
+						</paragraph>
+					</text>
+					<entry>
+						<!-- Impression report element (TEXT) -->
+						<observation classCode="OBS" moodCode="EVN">
+							<code code="121073" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM" displayName="Impression">
+								<originalText>
+									<reference value="#Fndng3"/>
+								</originalText>
+							</code>
+							<value xsi:type="ED" mediaType="text/plain">No acute cardiopulmonary process. Round density in left superior hilus, further evaluation with CT is recommended as underlying malignancy is not excluded.
+</value>
+						</observation>
+					</entry>
+				</section>
+				<!--							
+**********************************************************************
+                    End of Impressions Section
+**********************************************************************
+	-->
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

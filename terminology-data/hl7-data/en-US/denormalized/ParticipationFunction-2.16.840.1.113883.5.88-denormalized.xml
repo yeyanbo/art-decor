@@ -1,0 +1,1080 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="134"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.88"/>
+   <Title name="ParticipationFunction" date="2012-08-02" version="1.000">This code is used to specify the exact function an actor had in a service in all necessary detail. This domain may include local extensions (CWE).</Title>
+   <Class code="rootClass">
+      <SubClass subCount="3" code="_AuthorizedParticipationFunction" kind="abstract">
+         <Rubric id="d1e179566" kind="preferred">
+            <Label xml:lang="en-US">AuthorizedParticipationFunction</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="3" code="_CoverageParticipationFunction" kind="abstract">
+         <Rubric id="d1e179594" kind="preferred">
+            <Label xml:lang="en-US">CoverageParticipationFunction</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="ADMPHYS" kind="concept">
+         <Rubric id="d1e179618" kind="preferred">
+            <Label xml:lang="en-US">admitting physician</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="ANEST" kind="concept">
+         <Rubric id="d1e179642" kind="preferred">
+            <Label xml:lang="en-US">anesthesist</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="ANRS" kind="concept">
+         <Rubric id="d1e179666" kind="preferred">
+            <Label xml:lang="en-US">anesthesia nurse</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="ATTPHYS" kind="concept">
+         <Rubric id="d1e179690" kind="preferred">
+            <Label xml:lang="en-US">attending physician</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="DISPHYS" kind="concept">
+         <Rubric id="d1e179714" kind="preferred">
+            <Label xml:lang="en-US">discharging physician</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="FASST" kind="concept">
+         <Rubric id="d1e179739" kind="preferred">
+            <Label xml:lang="en-US">first assistant surgeon</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="MDWF" kind="concept">
+         <Rubric id="d1e179763" kind="preferred">
+            <Label xml:lang="en-US">midwife</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="NASST" kind="concept">
+         <Rubric id="d1e179787" kind="preferred">
+            <Label xml:lang="en-US">nurse assistant</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="PCP" kind="concept">
+         <Rubric id="d1e179811" kind="preferred">
+            <Label xml:lang="en-US">primary care physician</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="PRISURG" kind="concept">
+         <Rubric id="d1e179835" kind="preferred">
+            <Label xml:lang="en-US">primary surgeon</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="RNDPHYS" kind="concept">
+         <Rubric id="d1e179859" kind="preferred">
+            <Label xml:lang="en-US">rounding physician</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="SASST" kind="concept">
+         <Rubric id="d1e179884" kind="preferred">
+            <Label xml:lang="en-US">second assistant surgeon</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="SNRS" kind="concept">
+         <Rubric id="d1e179908" kind="preferred">
+            <Label xml:lang="en-US">scrub nurse</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="TASST" kind="concept">
+         <Rubric id="d1e179932" kind="preferred">
+            <Label xml:lang="en-US">third assistant</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">ParticipationFunction</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">This code is used to specify the exact function an actor had in a service in all necessary detail. This domain may include local extensions (CWE).</Label>
+      </Rubric>
+   </Class>
+   <Class code="_AuthorizedParticipationFunction" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22338"/>
+      <SubClass code="_AuthorizedReceiverParticipationFunction" subCount="4">
+         <Rubric id="d1e179961" kind="preferred">
+            <Label xml:lang="en-US">AuthorizedReceiverParticipationFunction</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="_ConsenterParticipationFunction" subCount="5">
+         <Rubric id="d1e179990" kind="preferred">
+            <Label xml:lang="en-US">ConsenterParticipationFunction</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="_OverriderParticipationFunction" subCount="2">
+         <Rubric id="d1e180019" kind="preferred">
+            <Label xml:lang="en-US">OverriderParticipationFunction</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e179553" kind="definition">
+         <Label xml:lang="en-US">
+            <p>This code is used to specify the exact function an actor is authorized to have in a service in all necessary detail.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e179566" kind="short">
+         <Label xml:lang="en-US">AuthorizedParticipationFunction</Label>
+      </Rubric>
+      <Rubric id="d1e179566" kind="preferred">
+         <Label xml:lang="en-US">AuthorizedParticipationFunction</Label>
+      </Rubric>
+   </Class>
+   <Class code="_CoverageParticipationFunction" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22222"/>
+      <SubClass code="_PayorParticipationFunction" subCount="6">
+         <Rubric id="d1e180341" kind="preferred">
+            <Label xml:lang="en-US">PayorParticipationFunction</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="_SponsorParticipationFunction" subCount="2">
+         <Rubric id="d1e180373" kind="preferred">
+            <Label xml:lang="en-US">SponsorParticipationFunction</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="_UnderwriterParticipationFunction" subCount="5">
+         <Rubric id="d1e180405" kind="preferred">
+            <Label xml:lang="en-US">UnderwriterParticipationFunction</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e179578" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Set of codes indicating the manner in which sponsors, underwriters, and payers participate in a policy or program.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e179594" kind="short">
+         <Label xml:lang="en-US">CoverageParticipationFunction</Label>
+      </Rubric>
+      <Rubric id="d1e179594" kind="preferred">
+         <Label xml:lang="en-US">CoverageParticipationFunction</Label>
+      </Rubric>
+   </Class>
+   <Class code="ADMPHYS" kind="concept">
+      <Meta name="internalId" value="10278"/>
+      <Rubric id="d1e179605" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A physician who admitted a patient to a hospital or other care unit that is the context of this service.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e179618" kind="short">
+         <Label xml:lang="en-US">admitting physician</Label>
+      </Rubric>
+      <Rubric id="d1e179618" kind="preferred">
+         <Label xml:lang="en-US">admitting physician</Label>
+      </Rubric>
+   </Class>
+   <Class code="ANEST" kind="concept">
+      <Meta name="internalId" value="10274"/>
+      <Rubric id="d1e179629" kind="definition">
+         <Label xml:lang="en-US">
+            <p>In a typical anesthesia setting an anesthesiologist or anesthesia resident in charge of the anesthesia and life support, but only a witness to the surgical procedure itself. To clarify responsibilities anesthesia should always be represented as a separate service related to the surgery.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e179642" kind="short">
+         <Label xml:lang="en-US">anesthesist</Label>
+      </Rubric>
+      <Rubric id="d1e179642" kind="preferred">
+         <Label xml:lang="en-US">anesthesist</Label>
+      </Rubric>
+   </Class>
+   <Class code="ANRS" kind="concept">
+      <Meta name="internalId" value="10275"/>
+      <Rubric id="d1e179653" kind="definition">
+         <Label xml:lang="en-US">
+            <p>In a typical anesthesia setting the nurse principally assisting the anesthesiologist during the critical periods.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e179666" kind="short">
+         <Label xml:lang="en-US">anesthesia nurse</Label>
+      </Rubric>
+      <Rubric id="d1e179666" kind="preferred">
+         <Label xml:lang="en-US">anesthesia nurse</Label>
+      </Rubric>
+   </Class>
+   <Class code="ATTPHYS" kind="concept">
+      <Meta name="internalId" value="10277"/>
+      <Rubric id="d1e179677" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A physician who is primarily responsible for a patient during the hospitalization, which is the context of the service.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e179690" kind="short">
+         <Label xml:lang="en-US">attending physician</Label>
+      </Rubric>
+      <Rubric id="d1e179690" kind="preferred">
+         <Label xml:lang="en-US">attending physician</Label>
+      </Rubric>
+   </Class>
+   <Class code="DISPHYS" kind="concept">
+      <Meta name="internalId" value="10279"/>
+      <Rubric id="d1e179701" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A physician who discharged a patient from a hospital or other care unit that is the context of this service.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e179714" kind="short">
+         <Label xml:lang="en-US">discharging physician</Label>
+      </Rubric>
+      <Rubric id="d1e179714" kind="preferred">
+         <Label xml:lang="en-US">discharging physician</Label>
+      </Rubric>
+   </Class>
+   <Class code="FASST" kind="concept">
+      <Meta name="internalId" value="10269"/>
+      <Rubric id="d1e179726" kind="definition">
+         <Label xml:lang="en-US">
+            <p>In a typical surgery setting the assistant facing the primary surgeon. The first assistant performs parts of the operation and assists in others (e.g., incision, approach, electrocoutering, ligatures, sutures).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e179739" kind="short">
+         <Label xml:lang="en-US">first assistant surgeon</Label>
+      </Rubric>
+      <Rubric id="d1e179739" kind="preferred">
+         <Label xml:lang="en-US">first assistant surgeon</Label>
+      </Rubric>
+   </Class>
+   <Class code="MDWF" kind="concept">
+      <Meta name="internalId" value="10276"/>
+      <Rubric id="d1e179750" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A person (usually female) helping a woman deliver a baby. Responsibilities vary locally, ranging from a mere optional assistant to a full required participant, responsible for (normal) births and pre- and post-natal care for both mother and baby.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e179763" kind="short">
+         <Label xml:lang="en-US">midwife</Label>
+      </Rubric>
+      <Rubric id="d1e179763" kind="preferred">
+         <Label xml:lang="en-US">midwife</Label>
+      </Rubric>
+   </Class>
+   <Class code="NASST" kind="concept">
+      <Meta name="internalId" value="10273"/>
+      <Rubric id="d1e179774" kind="definition">
+         <Label xml:lang="en-US">
+            <p>In a typical surgery setting the non-sterile nurse handles material supply from the stock, forwards specimen to pathology, and helps with other non-sterile tasks (e.g., phone calls, etc.).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e179787" kind="short">
+         <Label xml:lang="en-US">nurse assistant</Label>
+      </Rubric>
+      <Rubric id="d1e179787" kind="preferred">
+         <Label xml:lang="en-US">nurse assistant</Label>
+      </Rubric>
+   </Class>
+   <Class code="PCP" kind="concept">
+      <Meta name="internalId" value="10281"/>
+      <Rubric id="d1e179798" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The healthcare provider that holds primary responsibility for the overall care of a patient.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e179811" kind="short">
+         <Label xml:lang="en-US">primary care physician</Label>
+      </Rubric>
+      <Rubric id="d1e179811" kind="preferred">
+         <Label xml:lang="en-US">primary care physician</Label>
+      </Rubric>
+   </Class>
+   <Class code="PRISURG" kind="concept">
+      <Meta name="internalId" value="10268"/>
+      <Rubric id="d1e179822" kind="definition">
+         <Label xml:lang="en-US">
+            <p>In a typical surgery setting the primary performing surgeon.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e179835" kind="short">
+         <Label xml:lang="en-US">primary surgeon</Label>
+      </Rubric>
+      <Rubric id="d1e179835" kind="preferred">
+         <Label xml:lang="en-US">primary surgeon</Label>
+      </Rubric>
+   </Class>
+   <Class code="RNDPHYS" kind="concept">
+      <Meta name="internalId" value="10280"/>
+      <Rubric id="d1e179846" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A physician who made rounds on a patient in a hospital or other care center.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e179859" kind="short">
+         <Label xml:lang="en-US">rounding physician</Label>
+      </Rubric>
+      <Rubric id="d1e179859" kind="preferred">
+         <Label xml:lang="en-US">rounding physician</Label>
+      </Rubric>
+   </Class>
+   <Class code="SASST" kind="concept">
+      <Meta name="internalId" value="10270"/>
+      <Rubric id="d1e179871" kind="definition">
+         <Label xml:lang="en-US">
+            <p>In a typical surgery setting the assistant who primarily holds the hooks.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e179884" kind="short">
+         <Label xml:lang="en-US">second assistant surgeon</Label>
+      </Rubric>
+      <Rubric id="d1e179884" kind="preferred">
+         <Label xml:lang="en-US">second assistant surgeon</Label>
+      </Rubric>
+   </Class>
+   <Class code="SNRS" kind="concept">
+      <Meta name="internalId" value="10271"/>
+      <Rubric id="d1e179895" kind="definition">
+         <Label xml:lang="en-US">
+            <p>In a typical surgery setting the nurse in charge of the instrumentation.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e179908" kind="short">
+         <Label xml:lang="en-US">scrub nurse</Label>
+      </Rubric>
+      <Rubric id="d1e179908" kind="preferred">
+         <Label xml:lang="en-US">scrub nurse</Label>
+      </Rubric>
+   </Class>
+   <Class code="TASST" kind="concept">
+      <Meta name="internalId" value="10272"/>
+      <Rubric id="d1e179919" kind="definition">
+         <Label xml:lang="en-US">
+            <p>In a typical surgery setting there is rarely a third assistant (e.g., in some Hip operations the third assistant postures the affected leg).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e179932" kind="short">
+         <Label xml:lang="en-US">third assistant</Label>
+      </Rubric>
+      <Rubric id="d1e179932" kind="preferred">
+         <Label xml:lang="en-US">third assistant</Label>
+      </Rubric>
+   </Class>
+   <Class code="_AuthorizedReceiverParticipationFunction" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22341"/>
+      <SuperClass code="_AuthorizedParticipationFunction">
+         <Rubric id="d1e179566" kind="preferred">
+            <Label xml:lang="en-US">AuthorizedParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="AUCG" subCount="0">
+         <Rubric id="d1e180052" kind="preferred">
+            <Label xml:lang="en-US">caregiver information receiver</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="AULR" subCount="0">
+         <Rubric id="d1e180084" kind="preferred">
+            <Label xml:lang="en-US">legitimate relationship information receiver</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="AUTM" subCount="0">
+         <Rubric id="d1e180116" kind="preferred">
+            <Label xml:lang="en-US">care team information receiver</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="AUWA" subCount="0">
+         <Rubric id="d1e180148" kind="preferred">
+            <Label xml:lang="en-US">work area information receiver</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e179943" kind="definition">
+         <Label xml:lang="en-US">
+            <p>This code is used to specify the exact function an actor is authorized to have as a receiver of information that is the subject of a consent directive or consent override.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e179961" kind="short">
+         <Label xml:lang="en-US">AuthorizedReceiverParticipationFunction</Label>
+      </Rubric>
+      <Rubric id="d1e179961" kind="preferred">
+         <Label xml:lang="en-US">AuthorizedReceiverParticipationFunction</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ConsenterParticipationFunction" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22339"/>
+      <SuperClass code="_AuthorizedParticipationFunction">
+         <Rubric id="d1e179566" kind="preferred">
+            <Label xml:lang="en-US">AuthorizedParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="GRDCON" subCount="0">
+         <Rubric id="d1e180180" kind="preferred">
+            <Label xml:lang="en-US">legal guardian consent author</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="POACON" subCount="0">
+         <Rubric id="d1e180212" kind="preferred">
+            <Label xml:lang="en-US">healthcare power of attorney consent author</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PRCON" subCount="0">
+         <Rubric id="d1e180245" kind="preferred">
+            <Label xml:lang="en-US">personal representative consent author</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PROMSK" subCount="0">
+         <Rubric id="d1e180277" kind="preferred">
+            <Label xml:lang="en-US">authorized provider masking author</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SUBCON" subCount="0">
+         <Rubric id="d1e180309" kind="preferred">
+            <Label xml:lang="en-US">subject of consent author</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e179972" kind="definition">
+         <Label xml:lang="en-US">
+            <p>This code is used to specify the exact function an actor is authorized to have in authoring a consent directive.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e179990" kind="short">
+         <Label xml:lang="en-US">ConsenterParticipationFunction</Label>
+      </Rubric>
+      <Rubric id="d1e179990" kind="preferred">
+         <Label xml:lang="en-US">ConsenterParticipationFunction</Label>
+      </Rubric>
+   </Class>
+   <Class code="_OverriderParticipationFunction" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22340"/>
+      <SuperClass code="_AuthorizedParticipationFunction">
+         <Rubric id="d1e179566" kind="preferred">
+            <Label xml:lang="en-US">AuthorizedParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="AUCOV" subCount="0">
+         <Rubric id="d1e180438" kind="preferred">
+            <Label xml:lang="en-US">consent overrider</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="AUEMROV" subCount="0">
+         <Rubric id="d1e180470" kind="preferred">
+            <Label xml:lang="en-US">emergency overrider</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e180001" kind="definition">
+         <Label xml:lang="en-US">
+            <p>This code is used to specify the exact function an actor is authorized to have in authoring a consent override.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180019" kind="short">
+         <Label xml:lang="en-US">OverriderParticipationFunction</Label>
+      </Rubric>
+      <Rubric id="d1e180019" kind="preferred">
+         <Label xml:lang="en-US">OverriderParticipationFunction</Label>
+      </Rubric>
+   </Class>
+   <Class code="AUCG" kind="concept">
+      <Meta name="internalId" value="22900"/>
+      <SuperClass code="_AuthorizedReceiverParticipationFunction">
+         <Rubric id="d1e179961" kind="preferred">
+            <Label xml:lang="en-US">AuthorizedReceiverParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e180031" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Caregiver authorized to receive patient health information.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180052" kind="short">
+         <Label xml:lang="en-US">caregiver information receiver</Label>
+      </Rubric>
+      <Rubric id="d1e180052" kind="preferred">
+         <Label xml:lang="en-US">caregiver information receiver</Label>
+      </Rubric>
+   </Class>
+   <Class code="AULR" kind="concept">
+      <Meta name="internalId" value="22901"/>
+      <SuperClass code="_AuthorizedReceiverParticipationFunction">
+         <Rubric id="d1e179961" kind="preferred">
+            <Label xml:lang="en-US">AuthorizedReceiverParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e180063" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Provider with legitimate relationship authorized to receive patient health information.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180084" kind="short">
+         <Label xml:lang="en-US">legitimate relationship information receiver</Label>
+      </Rubric>
+      <Rubric id="d1e180084" kind="preferred">
+         <Label xml:lang="en-US">legitimate relationship information receiver</Label>
+      </Rubric>
+   </Class>
+   <Class code="AUTM" kind="concept">
+      <Meta name="internalId" value="22902"/>
+      <SuperClass code="_AuthorizedReceiverParticipationFunction">
+         <Rubric id="d1e179961" kind="preferred">
+            <Label xml:lang="en-US">AuthorizedReceiverParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e180095" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Member of care team authorized to receive patient health information.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180116" kind="short">
+         <Label xml:lang="en-US">care team information receiver</Label>
+      </Rubric>
+      <Rubric id="d1e180116" kind="preferred">
+         <Label xml:lang="en-US">care team information receiver</Label>
+      </Rubric>
+   </Class>
+   <Class code="AUWA" kind="concept">
+      <Meta name="internalId" value="22903"/>
+      <SuperClass code="_AuthorizedReceiverParticipationFunction">
+         <Rubric id="d1e179961" kind="preferred">
+            <Label xml:lang="en-US">AuthorizedReceiverParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e180127" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Entities within specified work area authorized to receive patient health information.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180148" kind="short">
+         <Label xml:lang="en-US">work area information receiver</Label>
+      </Rubric>
+      <Rubric id="d1e180148" kind="preferred">
+         <Label xml:lang="en-US">work area information receiver</Label>
+      </Rubric>
+   </Class>
+   <Class code="GRDCON" kind="concept">
+      <Meta name="internalId" value="22894"/>
+      <SuperClass code="_ConsenterParticipationFunction">
+         <Rubric id="d1e179990" kind="preferred">
+            <Label xml:lang="en-US">ConsenterParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e180159" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Legal guardian of the subject of consent authorized to author a consent directive for the subject of consent.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180180" kind="short">
+         <Label xml:lang="en-US">legal guardian consent author</Label>
+      </Rubric>
+      <Rubric id="d1e180180" kind="preferred">
+         <Label xml:lang="en-US">legal guardian consent author</Label>
+      </Rubric>
+   </Class>
+   <Class code="POACON" kind="concept">
+      <Meta name="internalId" value="22896"/>
+      <SuperClass code="_ConsenterParticipationFunction">
+         <Rubric id="d1e179990" kind="preferred">
+            <Label xml:lang="en-US">ConsenterParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e180191" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Person authorized with healthcare power of attorney to author a consent directive for the subject of consent.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180212" kind="short">
+         <Label xml:lang="en-US">healthcare power of attorney consent author</Label>
+      </Rubric>
+      <Rubric id="d1e180212" kind="preferred">
+         <Label xml:lang="en-US">healthcare power of attorney consent author</Label>
+      </Rubric>
+   </Class>
+   <Class code="PRCON" kind="concept">
+      <Meta name="internalId" value="22895"/>
+      <SuperClass code="_ConsenterParticipationFunction">
+         <Rubric id="d1e179990" kind="preferred">
+            <Label xml:lang="en-US">ConsenterParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e180224" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Personal representative of the subject of consent authorized to author a consent directive for the subject of consent.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180245" kind="short">
+         <Label xml:lang="en-US">personal representative consent author</Label>
+      </Rubric>
+      <Rubric id="d1e180245" kind="preferred">
+         <Label xml:lang="en-US">personal representative consent author</Label>
+      </Rubric>
+   </Class>
+   <Class code="PROMSK" kind="concept">
+      <Meta name="internalId" value="22897"/>
+      <SuperClass code="_ConsenterParticipationFunction">
+         <Rubric id="d1e179990" kind="preferred">
+            <Label xml:lang="en-US">ConsenterParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e180256" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Provider authorized to mask information to protect the patient, a third party, or to ensure that the provider has consulted with the patient prior to release of this information.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180277" kind="short">
+         <Label xml:lang="en-US">authorized provider masking author</Label>
+      </Rubric>
+      <Rubric id="d1e180277" kind="preferred">
+         <Label xml:lang="en-US">authorized provider masking author</Label>
+      </Rubric>
+   </Class>
+   <Class code="SUBCON" kind="concept">
+      <Meta name="internalId" value="22893"/>
+      <SuperClass code="_ConsenterParticipationFunction">
+         <Rubric id="d1e179990" kind="preferred">
+            <Label xml:lang="en-US">ConsenterParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e180288" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Subject of consent authorized to author a consent directive.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180309" kind="short">
+         <Label xml:lang="en-US">subject of consent author</Label>
+      </Rubric>
+      <Rubric id="d1e180309" kind="preferred">
+         <Label xml:lang="en-US">subject of consent author</Label>
+      </Rubric>
+   </Class>
+   <Class code="_PayorParticipationFunction" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22223"/>
+      <SuperClass code="_CoverageParticipationFunction">
+         <Rubric id="d1e179594" kind="preferred">
+            <Label xml:lang="en-US">CoverageParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="CLMADJ" subCount="0">
+         <Rubric id="d1e180502" kind="preferred">
+            <Label xml:lang="en-US">claims adjudication</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="ENROLL" subCount="0">
+         <Rubric id="d1e180534" kind="preferred">
+            <Label xml:lang="en-US">enrollment broker</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="FFSMGT" subCount="0">
+         <Rubric id="d1e180566" kind="preferred">
+            <Label xml:lang="en-US">ffs management</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="MCMGT" subCount="0">
+         <Rubric id="d1e180598" kind="preferred">
+            <Label xml:lang="en-US">managed care management</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PROVMGT" subCount="0">
+         <Rubric id="d1e180631" kind="preferred">
+            <Label xml:lang="en-US">provider management</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="UMGT" subCount="0">
+         <Rubric id="d1e180663" kind="preferred">
+            <Label xml:lang="en-US">utilization management</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e180320" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Set of codes indicating the manner in which payors participate in a policy or program.&lt;/</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180341" kind="short">
+         <Label xml:lang="en-US">PayorParticipationFunction</Label>
+      </Rubric>
+      <Rubric id="d1e180341" kind="preferred">
+         <Label xml:lang="en-US">PayorParticipationFunction</Label>
+      </Rubric>
+   </Class>
+   <Class code="_SponsorParticipationFunction" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22224"/>
+      <SuperClass code="_CoverageParticipationFunction">
+         <Rubric id="d1e179594" kind="preferred">
+            <Label xml:lang="en-US">CoverageParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="FULINRD" subCount="0">
+         <Rubric id="d1e180695" kind="preferred">
+            <Label xml:lang="en-US">fully insured</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SELFINRD" subCount="0">
+         <Rubric id="d1e180727" kind="preferred">
+            <Label xml:lang="en-US">self insured</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e180352" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Set of codes indicating the manner in which sponsors participate in a policy or program. NOTE: use only when the Sponsor is not further specified with a SponsorRoleType as being either a fully insured sponsor or a self insured sponsor.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180373" kind="short">
+         <Label xml:lang="en-US">SponsorParticipationFunction</Label>
+      </Rubric>
+      <Rubric id="d1e180373" kind="preferred">
+         <Label xml:lang="en-US">SponsorParticipationFunction</Label>
+      </Rubric>
+   </Class>
+   <Class code="_UnderwriterParticipationFunction" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22225"/>
+      <SuperClass code="_CoverageParticipationFunction">
+         <Rubric id="d1e179594" kind="preferred">
+            <Label xml:lang="en-US">CoverageParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="PAYORCNTR" subCount="0">
+         <Rubric id="d1e180759" kind="preferred">
+            <Label xml:lang="en-US">payor contracting</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="REINS" subCount="0">
+         <Rubric id="d1e180791" kind="preferred">
+            <Label xml:lang="en-US">reinsures</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RETROCES" subCount="0">
+         <Rubric id="d1e180824" kind="preferred">
+            <Label xml:lang="en-US">retrocessionaires</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SUBCTRT" subCount="0">
+         <Rubric id="d1e180856" kind="preferred">
+            <Label xml:lang="en-US">subcontracting risk</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="UNDERWRTNG" subCount="0">
+         <Rubric id="d1e180888" kind="preferred">
+            <Label xml:lang="en-US">underwriting</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e180384" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Set of codes indicating the manner in which underwriters participate in a policy or program.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180405" kind="short">
+         <Label xml:lang="en-US">UnderwriterParticipationFunction</Label>
+      </Rubric>
+      <Rubric id="d1e180405" kind="preferred">
+         <Label xml:lang="en-US">UnderwriterParticipationFunction</Label>
+      </Rubric>
+   </Class>
+   <Class code="AUCOV" kind="concept">
+      <Meta name="internalId" value="22898"/>
+      <SuperClass code="_OverriderParticipationFunction">
+         <Rubric id="d1e180019" kind="preferred">
+            <Label xml:lang="en-US">OverriderParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e180417" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Entity authorized to override a consent directive.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180438" kind="short">
+         <Label xml:lang="en-US">consent overrider</Label>
+      </Rubric>
+      <Rubric id="d1e180438" kind="preferred">
+         <Label xml:lang="en-US">consent overrider</Label>
+      </Rubric>
+   </Class>
+   <Class code="AUEMROV" kind="concept">
+      <Meta name="internalId" value="22899"/>
+      <SuperClass code="_OverriderParticipationFunction">
+         <Rubric id="d1e180019" kind="preferred">
+            <Label xml:lang="en-US">OverriderParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e180449" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Entity authorized to override a consent directive or privacy policy in an emergency.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180470" kind="short">
+         <Label xml:lang="en-US">emergency overrider</Label>
+      </Rubric>
+      <Rubric id="d1e180470" kind="preferred">
+         <Label xml:lang="en-US">emergency overrider</Label>
+      </Rubric>
+   </Class>
+   <Class code="CLMADJ" kind="concept">
+      <Meta name="internalId" value="22226"/>
+      <SuperClass code="_PayorParticipationFunction">
+         <Rubric id="d1e180341" kind="preferred">
+            <Label xml:lang="en-US">PayorParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e180481" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Manages all operations required to adjudicate fee for service claims or managed care encounter reports.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180502" kind="short">
+         <Label xml:lang="en-US">claims adjudication</Label>
+      </Rubric>
+      <Rubric id="d1e180502" kind="preferred">
+         <Label xml:lang="en-US">claims adjudication</Label>
+      </Rubric>
+   </Class>
+   <Class code="ENROLL" kind="concept">
+      <Meta name="internalId" value="22229"/>
+      <SuperClass code="_PayorParticipationFunction">
+         <Rubric id="d1e180341" kind="preferred">
+            <Label xml:lang="en-US">PayorParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e180513" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Managing the enrollment of covered parties.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180534" kind="short">
+         <Label xml:lang="en-US">enrollment broker</Label>
+      </Rubric>
+      <Rubric id="d1e180534" kind="preferred">
+         <Label xml:lang="en-US">enrollment broker</Label>
+      </Rubric>
+   </Class>
+   <Class code="FFSMGT" kind="concept">
+      <Meta name="internalId" value="22228"/>
+      <SuperClass code="_PayorParticipationFunction">
+         <Rubric id="d1e180341" kind="preferred">
+            <Label xml:lang="en-US">PayorParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e180545" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Managing all operations required to administer a fee for service or indemnity health plan including enrolling covered parties and providing customer service, provider contracting, claims payment, care management and utilization review.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180566" kind="short">
+         <Label xml:lang="en-US">ffs management</Label>
+      </Rubric>
+      <Rubric id="d1e180566" kind="preferred">
+         <Label xml:lang="en-US">ffs management</Label>
+      </Rubric>
+   </Class>
+   <Class code="MCMGT" kind="concept">
+      <Meta name="internalId" value="22227"/>
+      <SuperClass code="_PayorParticipationFunction">
+         <Rubric id="d1e180341" kind="preferred">
+            <Label xml:lang="en-US">PayorParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e180577" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Managing all operations required to administer a managed care plan including enrolling covered parties and providing customer service,, provider contracting, claims payment, care management and utilization review.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180598" kind="short">
+         <Label xml:lang="en-US">managed care management</Label>
+      </Rubric>
+      <Rubric id="d1e180598" kind="preferred">
+         <Label xml:lang="en-US">managed care management</Label>
+      </Rubric>
+   </Class>
+   <Class code="PROVMGT" kind="concept">
+      <Meta name="internalId" value="22230"/>
+      <SuperClass code="_PayorParticipationFunction">
+         <Rubric id="d1e180341" kind="preferred">
+            <Label xml:lang="en-US">PayorParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e180610" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Managing provider contracting, provider services, credentialing, profiling, performance measures, and ensuring network adequacy.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180631" kind="short">
+         <Label xml:lang="en-US">provider management</Label>
+      </Rubric>
+      <Rubric id="d1e180631" kind="preferred">
+         <Label xml:lang="en-US">provider management</Label>
+      </Rubric>
+   </Class>
+   <Class code="UMGT" kind="concept">
+      <Meta name="internalId" value="22231"/>
+      <SuperClass code="_PayorParticipationFunction">
+         <Rubric id="d1e180341" kind="preferred">
+            <Label xml:lang="en-US">PayorParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e180642" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Managing utilization of services by ensuring that providers adhere to, e.g., payeraTMs clinical protocols for medical appropriateness and standards of medical necessity. May include management of authorizations for services and referrals.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180663" kind="short">
+         <Label xml:lang="en-US">utilization management</Label>
+      </Rubric>
+      <Rubric id="d1e180663" kind="preferred">
+         <Label xml:lang="en-US">utilization management</Label>
+      </Rubric>
+   </Class>
+   <Class code="FULINRD" kind="concept">
+      <Meta name="internalId" value="22232"/>
+      <SuperClass code="_SponsorParticipationFunction">
+         <Rubric id="d1e180373" kind="preferred">
+            <Label xml:lang="en-US">SponsorParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e180674" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Responsibility taken by a sponsor to contract with one or more underwriters for the assumption of full responsibility for the risk and administration of a policy or program.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180695" kind="short">
+         <Label xml:lang="en-US">fully insured</Label>
+      </Rubric>
+      <Rubric id="d1e180695" kind="preferred">
+         <Label xml:lang="en-US">fully insured</Label>
+      </Rubric>
+   </Class>
+   <Class code="SELFINRD" kind="concept">
+      <Meta name="internalId" value="22233"/>
+      <SuperClass code="_SponsorParticipationFunction">
+         <Rubric id="d1e180373" kind="preferred">
+            <Label xml:lang="en-US">SponsorParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e180706" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Responsibility taken by a sponsor to organize the underwriting of risk and administration of a policy or program.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180727" kind="short">
+         <Label xml:lang="en-US">self insured</Label>
+      </Rubric>
+      <Rubric id="d1e180727" kind="preferred">
+         <Label xml:lang="en-US">self insured</Label>
+      </Rubric>
+   </Class>
+   <Class code="PAYORCNTR" kind="concept">
+      <Meta name="internalId" value="22234"/>
+      <SuperClass code="_UnderwriterParticipationFunction">
+         <Rubric id="d1e180405" kind="preferred">
+            <Label xml:lang="en-US">UnderwriterParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e180738" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Contracting for the provision and administration of health services to payors while retaining the risk for coverage. Contracting may be for all provision and administration; or for provision of certain types of services; for provision of services by region; and by types of administration, e.g., claims adjudication, enrollment, provider management, and utilization management. Typically done by underwriters for sponsors who need coverage provided to covered parties in multiple regions. The underwriter may act as the payor in some, but not all of the regions in which coverage is provided.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180759" kind="short">
+         <Label xml:lang="en-US">payor contracting</Label>
+      </Rubric>
+      <Rubric id="d1e180759" kind="preferred">
+         <Label xml:lang="en-US">payor contracting</Label>
+      </Rubric>
+   </Class>
+   <Class code="REINS" kind="concept">
+      <Meta name="internalId" value="22235"/>
+      <SuperClass code="_UnderwriterParticipationFunction">
+         <Rubric id="d1e180405" kind="preferred">
+            <Label xml:lang="en-US">UnderwriterParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e180770" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Underwriting reinsurance for another underwriter for the policy or program.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180791" kind="short">
+         <Label xml:lang="en-US">reinsures</Label>
+      </Rubric>
+      <Rubric id="d1e180791" kind="preferred">
+         <Label xml:lang="en-US">reinsures</Label>
+      </Rubric>
+   </Class>
+   <Class code="RETROCES" kind="concept">
+      <Meta name="internalId" value="22236"/>
+      <SuperClass code="_UnderwriterParticipationFunction">
+         <Rubric id="d1e180405" kind="preferred">
+            <Label xml:lang="en-US">UnderwriterParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e180803" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Underwriting reinsurance for another reinsurer.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180824" kind="short">
+         <Label xml:lang="en-US">retrocessionaires</Label>
+      </Rubric>
+      <Rubric id="d1e180824" kind="preferred">
+         <Label xml:lang="en-US">retrocessionaires</Label>
+      </Rubric>
+   </Class>
+   <Class code="SUBCTRT" kind="concept">
+      <Meta name="internalId" value="22237"/>
+      <SuperClass code="_UnderwriterParticipationFunction">
+         <Rubric id="d1e180405" kind="preferred">
+            <Label xml:lang="en-US">UnderwriterParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e180835" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Delegating risk for a policy or program to one or more subcontracting underwriters, e.g., a major health insurer may delegate risk for provision of coverage under a national health plan to other underwriters by region .</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180856" kind="short">
+         <Label xml:lang="en-US">subcontracting risk</Label>
+      </Rubric>
+      <Rubric id="d1e180856" kind="preferred">
+         <Label xml:lang="en-US">subcontracting risk</Label>
+      </Rubric>
+   </Class>
+   <Class code="UNDERWRTNG" kind="concept">
+      <Meta name="internalId" value="22238"/>
+      <SuperClass code="_UnderwriterParticipationFunction">
+         <Rubric id="d1e180405" kind="preferred">
+            <Label xml:lang="en-US">UnderwriterParticipationFunction</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e180867" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Provision of underwriting analysis for another underwriter without assumption of risk.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180888" kind="short">
+         <Label xml:lang="en-US">underwriting</Label>
+      </Rubric>
+      <Rubric id="d1e180888" kind="preferred">
+         <Label xml:lang="en-US">underwriting</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

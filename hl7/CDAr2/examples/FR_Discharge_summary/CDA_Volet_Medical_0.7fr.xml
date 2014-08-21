@@ -1,0 +1,1209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- For this example set, the teleCom sue code of DIR has been changed to WP 
+	(DIR doesnt extist as a specialization of WP in older versions of the datatype spec) -->
+<!--
+**********************************************************************************************************
+Date de création 12/05/2005
+Dernière modification : 3 Novembre 2005, conforme ANSI/HL7 CDA, R2-2005 4/21/2005
+Auteur : Yannick KEREUN
+Objectif : Exemple de document CDA : Entête &amp; Volet Médical, spécifications Françaises
+***************************************************************************************************************
+-->
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument
+	xmlns="urn:hl7-org:v3"
+	xmlns:voc="urn:hl7-org:v3/voc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../schemas/CDA.xsd">
+	<!-- 
+	********************************************************
+	  HEADER
+	********************************************************
+	-->
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040" />
+	<templateId root="2.16.840.1.113883.3.27.1776" />
+	
+	<id root="1.1.1.1.1" extension="3120456789/457"  />
+	<code	code="34133-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+				displayName="SUMMARIZATION OF EPISODE NOTE" />
+	<title>Document CDA - Exemple Entête et Volet Médical</title>
+	<effectiveTime value="200509121930+0200"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" />
+	<languageCode code="fr-FR" />
+	<setId extension="3120456789/23" root="1.1.1.1.1" />
+	<versionNumber value="2" />
+	
+	<!-- 
+	********************************************************
+	  REFERENCES DOSSIER PATIENT
+	********************************************************
+	-->
+	<recordTarget>
+		<patientRole>
+			<id extension="800001" root="1.2.250.1.143.1" />
+			<addr use="HP">
+				<streetAddressLine>28C rue des cigales</streetAddressLine>
+				<postalCode>13720</postalCode>
+				<city>Aix en Provence</city>
+				<country>FRANCE</country>
+			</addr>
+			<telecom nullFlavor="ASKU" />
+			<patient>
+				<name>
+					<given qualifier="AC">Jeanne</given>
+					<family qualifier="BR">PETIT</family>
+				</name>
+				<administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1" />
+				<birthTime value="19480105" />
+			</patient>
+			<providerOrganization>
+				<id extension="1120456789" root="1.1.1.1.1" />
+				<name nullFlavor="NAV" />
+				<telecom nullFlavor="UNK" />
+				<addr nullFlavor="UNK" />
+			</providerOrganization>
+		</patientRole>
+	</recordTarget>
+	<!-- 
+	********************************************************
+	  AUTEUR(S)
+	********************************************************
+	-->
+	<author>
+		<time value="200509121930+0200" />
+		<assignedAuthor>
+			<id extension="0751012312" root="1.1.1.1.1" />
+			<addr>
+				<streetAddressLine>1 Rue Raffet</streetAddressLine>
+				<city>Paris</city>
+				<postalCode>75016</postalCode>
+			</addr>
+			<telecom value="tel:0147150000" use="WP"/>
+			<assignedPerson>
+				<name>
+					<prefix qualifier="AC">Docteur</prefix>
+					<given>Daniel</given>
+					<family>PIQUENBAS</family>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id extension="1120456789" root="1.1.1.1.1" />
+				<name nullFlavor="NAV" />
+				<telecom nullFlavor="UNK" />
+				<addr nullFlavor="UNK" />
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<!-- 
+	********************************************************
+	  REDACTEUR
+	********************************************************
+	-->
+	<dataEnterer>
+	<time value="200509121930+0200"/>
+	<assignedEntity>
+		<id extension="3120456789/344" root="1.1.1.1.1" assigningAuthorityName="Autorité"/>
+		<addr nullFlavor="UNK" />
+		<telecom nullFlavor="UNK" />
+		<assignedPerson>
+			<name>
+				<prefix>Mademoiselle</prefix>
+				<given>Isabelle</given>
+				<family>DEMON</family>
+			</name>
+		</assignedPerson>
+	</assignedEntity>
+	</dataEnterer>
+	<!-- 
+	********************************************************
+	  STRUCTURE PRODUCTRICE
+	********************************************************
+	-->
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id extension="1120456789" root="1.1.1.1.1"  assigningAuthorityName="Autorité"/>
+				<name>Centre Hospitalier</name>
+				<telecom nullFlavor="UNK" />
+				<addr nullFlavor="UNK" />
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<!-- 
+	********************************************************
+	  SIGNATAIRE(S)
+	********************************************************
+	-->
+	<legalAuthenticator>
+		<time value="200509131022+0200" />
+		<signatureCode code="S" />
+		<assignedEntity>
+			<id extension="0751012344" root="1.1.1.1.1" assigningAuthorityName="Autorité"/>
+			<addr nullFlavor="UNK" />
+			<telecom value="tel:0147150000" use="WP" />
+			<assignedPerson>
+				<name>
+					<prefix qualifier="AC">Docteur</prefix>
+					<given qualifier="">Christophe</given>
+					<family>CHARI</family>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id extension="1120456789" root="1.1.1.1.1" assigningAuthorityName="Autorité"/>
+				<name nullFlavor="NAV" />
+				<telecom nullFlavor="UNK" />
+				<addr nullFlavor="UNK" />
+			</representedOrganization>
+		</assignedEntity>
+	</legalAuthenticator>
+	<!-- 
+	********************************************************
+	  APPROBATEUR(S)
+	********************************************************
+	-->
+	<authenticator>
+		<time value="200509121930+0200"/>
+		<signatureCode code="S"/>
+		<assignedEntity>
+			<id extension="0751012355" root="1.1.1.1.1" assigningAuthorityName="Autorité"/>
+			<addr nullFlavor="UNK" />
+			<telecom value="tel:0147150000" use="WP" />
+			<assignedPerson>
+				<name>
+					<prefix qualifier="AC">Docteur</prefix>
+					<given>Hélène</given>
+					<family>HAQUAIR</family>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id extension="1120456789" root="1.1.1.1.1" assigningAuthorityName="Autorité"/>
+				<name nullFlavor="NAV" />
+				<telecom nullFlavor="UNK" />
+				<addr nullFlavor="UNK" />
+			</representedOrganization>
+		</assignedEntity>
+	</authenticator>
+	<!--
+	********************************************************
+	  DOCUMENT(S) LIE(S) : Versionning
+	********************************************************
+	-->
+	<relatedDocument typeCode="RPLC">
+		<parentDocument>
+			<id extension="3120456789/456" root="1.1.1.1.1"  assigningAuthorityName="Autorité"/>
+			<setId extension="3120456789/23" root="1.1.1.1.1"  assigningAuthorityName="Autorité"/>
+			<versionNumber value="1" />
+		</parentDocument>
+	</relatedDocument>
+	
+	<!-- 
+	********************************************************
+	BODY (les sections du VOLET MEDICAL)
+	********************************************************
+	-->
+	<component>
+		<structuredBody>
+			<!--
+			  ********************************************************
+				SECTION ANTECEDENTS PERSONNELS
+			  ********************************************************		
+			-->
+			<component>
+				<section>
+					<!-- cette section utile seulement visuellement ne semble pas mériter de codage -->
+					<title>Antécédents personnels</title>
+					<!--
+					  ********************************************************
+						SECTION ANTECEDENTS MEDICAUX
+					  ********************************************************		
+					-->
+					<component>
+						<section>
+							<code code="11348-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF PAST ILLNESS"/>
+							<title>Antécédents médicaux</title>
+							<text>
+								<table border="1">
+									<tbody>
+										<tr>
+											<th>Pathologie</th>
+											<th>Date de survenue</th>
+											<th>Commentaire</th>
+										</tr>
+										<tr>
+											<td ID="antmed-1">Méningite bact.</td>
+											<td>1979</td>
+											<td>Pas de séquelles.</td>
+										</tr>
+										<tr>
+											<td ID="antmed2">Asthme lors de l'enfance</td>
+											<td>1950-1955</td>
+											<td>Fortes crises.</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<entry typeCode="DRIV">
+								<observation classCode="OBS" moodCode="EVN">
+									<id root="1.2.3.4.1"/>
+									<code code="HNN.8" codeSystem="2.16.840.1.113883.1.1" codeSystemName="CISP" displayName="Méningite bactérienne">
+										<originalText mediaType="text/xml"><reference value="antmed-1"/></originalText>
+										<translation code="G00.9" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10"/>										
+									</code>
+									<!--ALIAS du libelle (utilisation d’un synonyme)-->									
+									<text>Méningite bact.</text>
+									<effectiveTime value="1979"/>
+									<!-- L'insertion du commentaire dans ce tag "value" permet d'exprimer en mode libre ce qui ne peut être codé tout en
+												standardisant l'expression d'un antécédent -->
+									<value xsi:type="ST">Pas de séquelles.</value>
+								</observation>
+							</entry>
+							<entry typeCode="DRIV">
+								<observation classCode="OBS" moodCode="EVN">
+									<id root="1.2.3.4.2"/>
+									<!-- Exemple d'un antécédent codé avec un dictionnaire personnel du professionnel de santé. Il n'existe pas de
+											codification associée d'où l'utilisation du nullFlavor. 
+									     Le tag Text permet dans ce cas de préciser le libellé de l'antécédent -->
+									<code nullFlavor="NA"/>
+									<text mediaType="text/xml">Asthme lors de l'enfance<reference value="antmed-2"/></text>
+									<effectiveTime>
+										<low value="1950"/>
+										<high value="1955"/>
+									</effectiveTime>
+									<value xsi:type="ST">Fortes crises.</value>
+								</observation>
+							</entry>
+						</section>
+					</component>
+					<!--
+					  ********************************************************
+						SECTION ANTECEDENTS CHIRURGICAUX
+					  ********************************************************		
+					-->
+					<component>
+						<section>
+							<code code="10167-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF SURGICAL PROCEDURES"/>
+							<title>Antécédents chirurgicaux</title>
+							<text>
+								<table border="1">
+									<tbody>
+										<tr>
+											<th>Procédure</th>
+											<th>Date</th>
+											<th>Commentaire</th>
+										</tr>
+										<tr>
+											<td ID="antchir-1">Amygdalectomie par dissection</td>
+											<td>1973</td>
+											<td>Pas de séquelles.</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<entry typeCode="DRIV">
+								<observation classCode="OBS" moodCode="EVN">
+									<id root="1.2.3.4.3"/>
+									<!-- Code CCAM ou CDAM de l'acte -->
+									<code code="FAFA014" codeSystem="XX" codeSystemName="CCAM" displayName="Amygdalectomie par dissection">
+										<originalText mediaType="text/xml"><reference value="#antchir-1"/></originalText>
+									</code>
+									<effectiveTime value="1973"/>
+									<!-- L'insertion du commentaire dans ce tag "value" permet d'exprimer en mode libre ce qui ne peut être codé -->
+									<value xsi:type="ST">Pas de séquelles.</value>
+								</observation>
+							</entry>
+						</section>
+					</component>
+					<!--
+					  ***************************************************************
+						SECTION ANTECEDENTS GYNECO-OBSTETRIQUES
+					  ***************************************************************		
+					-->
+					<component>
+						<section>
+							<code code="11449-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PREGNANCY STATUS"/>
+							<title>Antécédents obstétriques</title>
+							<text>
+								<table border="1">
+									<tbody>
+										<tr>
+											<th>Evènement</th>
+											<th>Date</th>
+											<th>Commentaire</th>
+										</tr>
+										<tr>
+											<td ID="antgyn-1">Accouchement par césarienne programmée, par laparotomie</td>
+											<td>1982</td>
+											<td>2 jumeaux</td>
+										</tr>
+										<tr>
+											<td ID="antgyn-2">Accouchement unique par le siège par voie naturelle, chez une multipare</td>
+											<td>1988</td>
+											<td>1 fille</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<entry typeCode="DRIV">
+								<observation classCode="OBS" moodCode="EVN">
+									<id root="1.2.3.4.4"/>
+									<!-- A priori codage CCAM -->
+									<code code="JQGA002" codeSystem="XX" codeSystemName="CCAM" displayName="Accouchement par césarienne programmée, par laparotomie">
+										<originalText mediaType="text/xml"><reference value="#antgyn-1"/></originalText>
+									</code>
+									<effectiveTime value="1982"/>
+									<value xsi:type="ST">2 jumeaux</value>
+								</observation>
+							</entry>
+							<entry typeCode="DRIV">
+								<observation classCode="OBS" moodCode="EVN">
+									<id root="1.2.3.4.5"/>
+									<!-- A priori codage CCAM -->
+									<code code="JQGD001" codeSystem="XX" codeSystemName="CCAM"
+													displayName="Accouchement unique par le siège par voie naturelle, chez une multipare">
+										<originalText mediaType="text/xml"><reference value="#antgyn-2"/></originalText>
+									</code>									
+									<effectiveTime value="1988"/>
+									<value xsi:type="ST">1 fille</value>
+								</observation>
+							</entry>
+						</section>
+					</component>
+					<!--
+					  ******************************************************
+						SECTION ANTECEDENTS PSYCHIATRIQUES
+					  ******************************************************
+					-->
+					<component>
+						<section>
+							<code code="10149-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF PSYCHIATRIC SYMPTOMS &amp; DISEASES"/>
+							<title>Antécédents psychiatriques</title>
+							<text>
+								<table border="1">
+									<tbody>
+										<tr>
+											<th>Problème</th>
+											<th>Date</th>
+											<th>Commentaire</th>
+										</tr>
+										<tr>
+											<td ID="antpsy-1">Personnalité paranoïaque</td>
+											<td>1970</td>
+											<td>Légers troubles</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<entry typeCode="DRIV">
+								<observation classCode="OBS" moodCode="EVN">
+									<id root="1.2.3.4.6"/>
+									<!-- Codage DSM IV -->
+									<code code="301.0" codeSystem="XX" codeSystemName="DSM IV" displayName="PERSONNALITE PARANOIAQUE">
+										<originalText mediaType="text/xml"><reference value="#antpsy-1"/></originalText>
+									</code>									
+									<text>Personnalité paranoïaque</text>
+									<effectiveTime value="1970"/>
+									<value xsi:type="ST">Légers troubles</value>
+								</observation>
+							</entry>
+						</section>
+					</component>
+					<!--
+					  ********************************************************
+						SECTION AUTRES ANTECEDENTS
+					  ********************************************************		
+					-->
+					<component>
+						<section>
+							<code code="11329-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY GENERAL"/>
+							<title>Autres Antécédents</title>
+							<text>
+								<table border="1">
+									<tbody>
+										<tr>
+											<th>Evenement</th>
+											<th>Date</th>
+											<th>Commentaire</th>
+										</tr>
+										<tr>
+											<td ID="ant-1">Accident de la circulation</td>
+											<td>1995</td>
+											<td>Traumatisme cranien</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<entry typeCode="DRIV">
+								<observation classCode="OBS" moodCode="EVN">
+									<id root="1.2.3.4.7"/>
+									<code nullFlavor="NA"/>
+									<text mediaType="text/xml">Accident de la circulation<reference value="#ant-1"/></text>
+									<effectiveTime value="1995"/>
+									<value xsi:type="ST">Traumatisme cranien.</value>
+								</observation>
+							</entry>
+						</section>
+					</component>
+				</section>
+			</component>
+			<!--
+			  ********************************************************
+				SECTION ANTECEDENTS FAMILIAUX
+			  ********************************************************		
+			-->
+			<component>
+				<section>
+					<code code="10157-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF FAMILY MEMBER DISEASES"/>
+					<title>Antécédents familiaux</title>
+					<text>
+						<table border="1">
+							<tbody>
+								<tr>
+									<th>Problème</th>
+									<th>Date</th>
+									<th>Lien de parenté</th>
+									<th>Commentaire</th>
+								</tr>
+								<tr>
+									<td ID="antfam-1">Alcoolisme</td>
+									<td>1940-1960</td>
+									<td>Père</td>
+									<td>Forte consommation</td>
+								</tr>
+								<tr>
+									<td ID="antfam-2">Maladie alcoolique du foie</td>
+									<td>1955</td>
+									<td>Père</td>
+									<td/>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry typeCode="DRIV">
+						<observation classCode="OBS" moodCode="EVN">
+							<id root="1.2.3.4.8"/>
+							<!-- Exemple d'un antécédent codé avec un dictionnaire personnel du professionnel de santé. Il n'existe pas de
+											codification associée d'où l'utilisation du nullFlavor.  -->
+							<code nullFlavor="NA"/>
+							<text mediaType="text/xml">Alcoolisme<reference value="#antfam-1"/></text>
+							<effectiveTime>
+								<low value="1940"/>
+								<high value="1960"/>
+							</effectiveTime>
+							<value xsi:type="ST">Forte consommation</value>
+							<!-- Lien familial -->
+							<subject>
+								<!-- PRS correspond au type "PersonalRelationship " tableau disponible en HL7 V3 -->
+								<relatedSubject classCode="PRS">
+									<code code="FTH"/>
+								</relatedSubject>
+							</subject>
+						</observation>
+					</entry>
+					<entry typeCode="DRIV">
+						<observation classCode="OBS" moodCode="EVN">
+							<id root="1.2.3.4.9"/>
+							<!--  -->
+							<code code="K70" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10" displayName="Maladie alcoolique du foie">
+								<originalText mediaType="text/xml"><reference value="#antfam-2"/></originalText>
+							</code>							
+							<effectiveTime value="1955"/>
+							<!-- Lien familial -->
+							<subject>
+								<!-- PRS correspond ay type "PersonalRelationship " tableau disponible en HL7 V3 -->
+								<relatedSubject classCode="PRS">
+									<code code="FTH"/>
+								</relatedSubject>
+							</subject>
+						</observation>
+					</entry>
+				</section>
+			</component>
+			<!--
+			  ********************************************************
+				SECTION ALLERGIES ET INTOLERANCES
+			  ********************************************************		
+			-->
+			<component>
+				<section>
+					<code code="10155-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF ALLERGIES"/>
+					<title>Allergies et intolérances</title>
+					<text>
+						<table border="1">
+							<tbody>
+								<tr>
+									<th>Description</th>
+									<th>Date de survenue</th>
+									<th>Type</th>
+									<th>Sévérité</th>
+									<th>Commentaire</th>
+								</tr>
+								<tr>
+									<td ID="allergy-1">Paracetamol</td>
+									<td>1979</td>
+									<td>Allergie médicamenteuse</td>
+									<td>Modérée</td>
+									<td>Survenue de nausées</td>
+								</tr>
+								<tr>
+									<td ID="allergy-2">Cacahuète</td>
+									<td>1960</td>
+									<td>Allergie alimentaire</td>
+									<td>Sévère</td>
+									<td/>
+								</tr>
+								<tr>
+									<td ID="allergy-3">Piqûres d'insectes</td>
+									<td>1982</td>
+									<td>Autre allergie </td>
+									<td/>
+									<td>Oedème important</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry typeCode="DRIV">
+						<observation classCode="OBS" moodCode="EVN">
+							<id root="1.2.3.4.10"/>
+							<!-- Code ATC de la substance -->
+							<code code="N02BE01" codeSystem="ATC" codeSystemName="ATC" displayName="Paracetamol">
+								<originalText mediaType="text/xml"><reference value="#allergy-1"/></originalText>
+							</code>							
+							<effectiveTime value="1979"/>
+							<value xsi:type="ST">Survenue de nausées</value>
+							<entryRelationship typeCode="COMP">
+								<observation moodCode="EVN" classCode="OBS">
+									<code code="MO" codeSystem="2.16.840.1.113883.12.128" codeSystemName="AllergySeverity" displayName="Moderate"/>
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="COMP">
+								<observation moodCode="EVN" classCode="OBS">
+									<code code="DA" codeSystem="2A9DDF65-2465-4cf7-903C-832A33B22F5D" codeSystemName="AllergyType" displayName="Drug Allergy"/>
+								</observation>
+							</entryRelationship>
+						</observation>
+					</entry>
+					<entry typeCode="DRIV">
+						<observation classCode="OBS" moodCode="EVN">
+							<id root="1.2.3.4.11"/>
+							<!--Codage inconnu -->
+							<code nullFlavor="NA"/>
+							<text mediaType="text/xml">Cacahuète<reference value="#allergy-2"/></text>							
+							<effectiveTime value="1960"/>
+							<entryRelationship typeCode="COMP">
+								<observation moodCode="EVN" classCode="OBS">
+									<code code="FA" codeSystem="2A9DDF65-2465-4cf7-903C-832A33B22F5D" codeSystemName="AllergyType" displayName="Food Allergy"/>
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="COMP">
+								<observation moodCode="EVN" classCode="OBS">
+									<code code="SE" codeSystem="2.16.840.1.113883.12.128" codeSystemName="AllergySeverity" displayName="Severe"/>
+								</observation>
+							</entryRelationship>							
+						</observation>
+					</entry>
+					<entry typeCode="DRIV">
+						<observation classCode="OBS" moodCode="EVN">
+							<id root="1.2.3.4.12"/>
+							<!--Codage inconnu -->
+							<code nullFlavor="NA"/>
+							<text mediaType="text/xml">Piqûres d'insectes<reference value="#allergy-3"/></text>							
+							<effectiveTime value="1982"/>
+							<value xsi:type="ST">Oedème important</value>
+							<entryRelationship typeCode="COMP">
+								<observation moodCode="EVN" classCode="OBS">
+									<code code="MA" codeSystem="2A9DDF65-2465-4cf7-903C-832A33B22F5D" codeSystemName="AllergyType" displayName="Miscellaneous Allergy"/>
+								</observation>
+							</entryRelationship>
+						</observation>
+					</entry>
+				</section>
+			</component>
+			<!--
+			 ********************************
+			  LISTE DES PROBLEMES
+			 ********************************
+			-->
+			<component>
+				<section>
+					<code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PROBLEM LIST"/>
+					<title>Liste des problèmes</title>
+					<text>
+						<table border="1">
+							<tbody>
+								<tr>
+									<th>Pathologie</th>
+									<th>Date de survenue</th>
+									<th>Commentaire</th>
+									<th>ALD</th>
+								</tr>
+								<tr>
+									<td ID="prob-1">Cholécystite aiguë</td>
+									<td>2004</td>
+									<td>Fortes crises</td>
+									<td>Non</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry typeCode="DRIV">
+						<observation classCode="OBS" moodCode="EVN">
+							<id root="1.2.3.4.14"/>
+							<!-- Ex. codage natif en CIM10 -->
+							<code code="K81.0" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10" displayName="Cholécystite aiguë">
+								<originalText mediaType="text/xml"><reference value="#prob-1"/></originalText>
+							</code>							
+							<effectiveTime value="2004"/>
+							<!-- L'insertion du commentaire dans ce tag "value" permet d'exprimer en mode libre ce qui ne peut être codé  -->
+							<value xsi:type="ST">Fortes crises</value>
+							<entryRelationship typeCode="COMP">
+								<observation moodCode="EVN" classCode="OBS">
+									<code code="NALD" codeSystem="XX" codeSystemName="ALD" displayName="Non"/>
+								</observation>
+							</entryRelationship>
+						</observation>
+					</entry>
+				</section>
+			</component>
+			<!--
+			 *****************************************************
+			  SECTION TRAITEMENTS MEDICAMENTEUX 
+			 *****************************************************
+			-->
+			<component>
+				<section>
+					<code code="19009-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MEDICATION.CURRENT"/>
+					<title>Traitements médicamenteux</title>
+					<text>
+						<table border="1">
+							<tbody>
+								<tr>
+									<th>Médicament</th>
+									<th>Posologie</th>
+									<th>Prescrit le</th>
+									<th>Trait. de fond</th>
+									<th>ALD</th>
+								</tr>
+								<tr>
+									<td ID="med-1">PIPRAM FORT 400 mg cp enrobé</td>
+									<td>2 cp 2 fois par jour pendant 10 jours</td>
+									<td>20/04/2005</td>
+									<td></td>
+									<td>Non</td>
+								</tr>
+								<tr>
+									<td ID="med-2">ASPEGIC 1000 BUV PDR SACH 20</td>
+									<td>1 sachet 3 fois par jour pendant 5 jours</td>
+									<td>10/05/2005</td>
+									<td>Oui</td>
+									<td>Non</td>
+								</tr>								
+							</tbody>
+						</table>
+					</text>
+					<!-- Définition du traitement par PIPRAM -->
+					<entry typeCode="DRIV">
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<id root="1.2.3.4.15"/>
+							<text>2 comprimés 2 fois par jour pendant 10 jours</text>
+							<!-- Prescrit le 20/04/2005, durée du traitement : 10 jours -->
+							<effectiveTime xsi:type="IVL_TS">
+								<low value="20050420"/>
+								<width value="10" unit="d"/>
+							</effectiveTime>							
+							<effectiveTime xsi:type="PIVL_TS" institutionSpecified="true">
+								<period value="12" unit="h"/>
+							</effectiveTime>
+							<doseQuantity>
+								<center value="2"/>
+								<!-- cp n'est pas dans UCUM : tablet
+										dans le cas d'un médicament où la présentation est spécifiée (c'est le cas ici)
+										seule la quantité doit être présentée.
+										Il s'agit ici de 2 comprimés
+								 -->
+								<!-- <width unit="[10d]H/12"/>
+								Soit pendant 10 jours, 2 fois par jour -->
+								<!-- voir GTS : Generic Timing Specification -->
+							</doseQuantity>
+							<consumable>
+								<manufacturedProduct>
+									<manufacturedLabeledDrug>
+										<!--Codage natif en UCD -->
+										<code 	code="9072248" codeSystem="XX" 
+													codeSystemName="UCD" 
+													displayName="PIPRAM FORT 400 mg cp enrobé">
+											<originalText mediaType="text/xml"><reference value="#med-1"/></originalText>													
+											<translation 	code="3266069"
+																	codeSystem="XX"
+																	codeSystemName="CIP"/>
+										</code>									
+									</manufacturedLabeledDrug>
+								</manufacturedProduct>
+							</consumable>							
+							<!-- Lien vers une ALD -->
+							<entryRelationship typeCode="COMP">
+								<observation moodCode="EVN" classCode="OBS">
+									<code code="NALD" codeSystem="XX" codeSystemName="ALD" displayName="Non"/>
+								</observation>
+							</entryRelationship>							
+							<!-- Création d'une relation causale vers le problème associé -->
+							<!-- Cas d'un problème présent dans le CDA même utilisation que CSAB_RM-NPfITUK01.SourceOf1 -->
+							<entryRelationship typeCode="RSON">
+							<templateId root="1.1.1.1"/>
+								<observation classCode="COND" moodCode="EVN">
+									<id root="1.2.3.4.14"/>
+									<code/>
+								</observation>
+							</entryRelationship>
+							<!-- Pour un problème qui serait hors le CDA, la relation se fait par référence
+									<reference typeCode="ELNK">
+										<referredToExternalObservation classCode="COND">
+											<id root="1.2.3.4.5"/>
+										</referredToExternalObservation>
+									</reference>-->									
+						</substanceAdministration>
+					</entry>
+					<!-- Définition du traitement parASPEGIC -->
+					<entry typeCode="DRIV">
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<id root="1.2.3.4.16"/>						
+							<text>1 sachet matin et soir pendant 10 jours</text>
+							<!-- Prescrit le 10/05/2005, durée du traitement : 5 jours -->
+							<effectiveTime xsi:type="IVL_TS">
+								<low value="20050510"/>
+								<width value="5" unit="d"/>
+							</effectiveTime>	
+							<!-- Fréquence : 	3 fois par jour -->
+							<effectiveTime xsi:type="PIVL_TS" institutionSpecified="true">
+								<period value="8" unit="h"/>
+							</effectiveTime>
+							<doseQuantity>
+								<center value="1"/>
+							</doseQuantity>
+							<consumable>
+								<manufacturedProduct>
+									<manufacturedLabeledDrug>
+										<!-- Codage natif en CIP
+										<code code="3189819" codeSystem="XX" codeSystemName="CIP" displayName="ASPEGIC 1000 BUV PDR SACH 20"/> -->
+										<!-- Cas d'un dico personnel -->
+										<code nullFlavor="NA">
+											<originalText mediaType="text/xml"><reference value="#med-2"/></originalText>
+										</code>
+										<name>ASPEGIC 1000 BUV PDR SACH 20</name>
+									</manufacturedLabeledDrug>
+								</manufacturedProduct>
+							</consumable>
+							<!-- Chronicité du traitement -->
+							<entryRelationship typeCode="COMP">
+								<observation moodCode="EVN" classCode="OBS">
+									<code code="FOND" codeSystem="XX" codeSystemName="TRT_FOND" displayName="Oui"/>
+								</observation>
+							</entryRelationship>								
+							<!-- Lien vers une ALD -->
+							<entryRelationship typeCode="COMP">
+								<observation moodCode="EVN" classCode="OBS">
+									<code code="NALD" codeSystem="XX" codeSystemName="ALD" displayName="Non"/>
+								</observation>
+							</entryRelationship>								
+						</substanceAdministration>
+					</entry>					
+				</section>
+			</component>
+			<!--
+			 ******************************************
+			  SECTION AUTRES TRAITEMENTS 
+			 ******************************************	
+			-->
+			<component>
+				<section>
+					<code code="29554-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PROCEDURE"/>					
+					<title>Autres traitements</title>
+					<text>
+						<table border="1">
+							<tbody>
+								<tr>
+									<th>Traitement</th>
+									<th>Date</th>
+									<th>Description</th>
+									<th>Trait. de fond</th>
+									<th>Affection de longue durée</th>
+								</tr>
+								<tr>
+									<td ID="trt-1">Séance de compression [pressothérapie] pneumatique unilatérale ou bilatérale d'un membre</td>
+									<td>Début le 07/07/2005, pendant 3 mois</td>
+									<td>Pressothérapie pour varices de la jambe gauche</td>
+									<td>Oui</td>
+									<td>Non</td>
+								</tr>								
+							</tbody>
+						</table>
+					</text>
+					<!-- Définition du traitement par pressothérapie -->
+					<entry typeCode="DRIV">
+						<observation classCode="OBS" moodCode="EVN">
+							<id root="1.2.3.4.17"/>
+							<!-- Exemple d'un antécédent codé avec un dictionnaire personnel du professionnel de santé. Il n'existe pas de
+											codification associée d'où l'utilisation du nullFlavor.  -->
+							<code code="FCBP002" codeSystem="XX" codeSystemName="CCAM" 
+										displayName="Séance de compression [pressothérapie] pneumatique unilatérale ou bilatérale d'un membre">										
+								<originalText mediaType="text/xml"><reference value="#med-1"/></originalText>	
+							</code>
+							<effectiveTime>
+								<low value="20050707"/> <!-- Date de début -->
+								<width value="3" unit="mo"/> <!-- Durée du traitement -->
+							</effectiveTime>
+							<value xsi:type="ST">Pressothérapie pour varices de la jambe gauche</value>
+							<!-- Chronicité du traitement -->
+							<entryRelationship typeCode="COMP">
+								<observation moodCode="EVN" classCode="OBS">
+									<code code="FOND" codeSystem="XX" codeSystemName="TRT_FOND" displayName="Oui"/>
+								</observation>
+							</entryRelationship>								
+							<!-- Lien vers une ALD -->
+							<entryRelationship typeCode="COMP">
+								<observation moodCode="EVN" classCode="OBS">
+									<code code="NALD" codeSystem="XX" codeSystemName="ALD" displayName="Non"/>
+								</observation>
+							</entryRelationship>								
+							<!-- Pour associer des données de services 
+								L'attribut templateId permettrait de distinguer ce type particulier de référence
+							<reference typeCode="REFR" templateId="1.2.2.2.2">
+								<referredToExternalDocument classCode="REFR" moodCode="EVN">
+									<text xsi:type="ED" mediaType="text/xml"><reference value="donneesService.xml"/></text>
+								</referredToExternalDocument>
+							</reference>							
+							-->		
+						</observation>						
+					</entry>					
+				</section>
+			</component>			
+			<!--
+			  ********************************************************
+				SECTION AUTRES FACTEURS MEDICAUX
+			  ********************************************************		
+			-->
+			<component>
+				<section>
+					<code code="X-INFO" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="OTHER MEDICAL INFORMATION"/>									
+					<title>Autres facteurs médicaux</title>
+					<!--
+					  ********************************************************
+						SECTION DONNEES BIOMETRIQUES
+					  ********************************************************		
+					-->
+					<component>
+						<section>
+							<code code="8716-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PHYSICAL FINDINGS"/>
+							<!-- ou LOINC 29274-8 -->
+							<title>Données biométriques</title>
+							<text>
+								<table border="1">
+									<tbody>
+										<tr>
+											<th/>
+											<th>Valeur</th>
+											<th>Date de saisie</th>
+										</tr>
+										<tr>
+											<th ID="bio-1">Taille</th>
+											<td>1,77 m</td>
+											<td>12/04/2005</td>
+										</tr>
+										<tr>
+											<th ID="bio-2">Poids</th>
+											<td>52 kg</td>
+											<td>07/04/2005</td>
+										</tr>
+										<tr>
+											<th ID="bio-3">TAS</th>
+											<td>132 mmHg</td>
+											<td>07/04/2005</td>
+										</tr>
+										<tr>
+											<th ID="bio-4">TAD</th>
+											<td>86 mmHg</td>
+											<td>07/04/2005</td>
+										</tr>
+										<tr>
+											<th ID="bio-5">Groupe Sanguin</th>
+											<td>O+</td>
+											<td>20/04/2005</td>
+										</tr>										
+									</tbody>
+								</table>
+							</text>
+							<entry typeCode="DRIV">
+								<observation classCode="OBS" moodCode="EVN">
+									<id root="1.2.3.4.18"/>
+									<code code="8302-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="BODY HEIGHT">
+										<originalText mediaType="text/xml"><reference value="#bio-1"/></originalText>	
+									</code>									
+									<effectiveTime value="20050412"/>
+									<value xsi:type="PQ" value="1.77" unit="m">
+										<!-- POssibilité de fournir une valeur dans une autre unité 
+										<translation value="69.7" code="[in_I]" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM"/>-->
+									</value>
+								</observation>
+							</entry>
+							<entry typeCode="DRIV">
+								<observation classCode="OBS" moodCode="EVN">
+									<id root="1.2.3.4.19"/>								
+									<code code="3141-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="BODY WEIGHT">
+										<originalText mediaType="text/xml"><reference value="#bio-2"/></originalText>	
+									</code>									
+									<effectiveTime value="20050407"/>
+									<value xsi:type="PQ" value="52" unit="kg"/>
+								</observation>
+							</entry>
+							<entry typeCode="DRIV">
+								<observation classCode="OBS" moodCode="EVN">
+									<id root="1.2.3.4.20"/>								
+									<code code="18684-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="BLOOD PRESSURE"/>
+									<effectiveTime value="20050407"/>
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBS" moodCode="EVN">
+											<code code="8480-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="INTRAVASCULAR SYSTOLIC">
+												<originalText mediaType="text/xml"><reference value="#bio-3"/></originalText>	
+											</code>											
+											<effectiveTime value="20050407"/>
+											<value xsi:type="PQ" value="132" unit="mm[Hg]"/>
+										</observation>
+									</entryRelationship>
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBS" moodCode="EVN">
+											<code code="8462-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="INTRAVASCULAR DIASTOLIC">
+												<originalText mediaType="text/xml"><reference value="#bio-4"/></originalText>	
+											</code>											
+											<effectiveTime value="20050407"/>
+											<value xsi:type="PQ" value="86" unit="mm[Hg]"/>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entry>
+							<entry typeCode="DRIV">
+								<observation classCode="OBS" moodCode="EVN">
+									<id root="1.2.3.4.21"/>								
+									<code code="882-1" codeSystem="2.16.840.1.113883.6.1"  codeSystemName="LOINC" displayName="ABO+RH GROUP">
+										<originalText mediaType="text/xml"><reference value="#bio-5"/></originalText>	
+									</code>									
+									<effectiveTime value="20050420"/>
+									<!-- Structuration du groupe sanguin -->
+									<value xsi:type="CD" code="O" codeSystem="SMI" codeSystemName="2.16.840.1.113883.6.5" displayName="Blood group O">
+										<qualifier code="G-A200" codeSystem="SMI" codeSystemName="2.16.840.1.113883.6.5" displayName="Positive"/>
+									</value>
+									<!-- Description non structurée 								
+									<value xsi:type="ST">O+</value>-->
+								</observation>
+							</entry>							
+						</section>
+					</component>
+					<!--
+					  ********************************************************
+						SECTION VACCINATIONS
+					  ********************************************************		
+					-->
+					<component>
+						<section>
+							<code code="11369-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF IMMUNIZATION"/>
+							<title>Vaccinations</title>
+							<text>
+								<table border="1">
+									<tbody>
+										<tr>
+											<th>Vaccin</th>
+											<th>date</th>
+											<th>Valences</th>
+										</tr>
+										<tr>
+											<td ID="vacc-1">REVAXIS susp inj SC IM</td>
+											<td>2000</td>
+											<td>Diphtérie, Tétanos, Poliomyélite</td>
+										</tr>
+										<tr>
+											<td ID="vacc-2">Vaccin Hépatite B</td>
+											<td>1980</td>
+											<td/>
+										</tr>										
+										<tr>
+											<td ID="vacc-3">VACCIN BCG SSI Pdr &amp; solv susp inj</td>
+											<td>1964</td>
+											<td/>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<entry typeCode="DRIV">
+								<observation classCode="OBS" moodCode="EVN">
+									<id root="1.2.3.4.22"/>
+									<!-- Exemple codage natif en CIP -->
+									<code code="352599-6" codeSystem="XX" codeSystemName="CIP" displayName="REVAXIS susp inj SC IM">
+										<originalText mediaType="text/xml"><reference value="#vacc-1"/></originalText>	
+									</code>											
+									<effectiveTime value="2000"/>
+									<!-- Expression des valences -->
+									<entryRelationship typeCode="RSON">
+										<observation classCode="COND" moodCode="EVN">
+											<code code="??" codeSystem="XX" codeSystemName="??" displayName="Diphtérie"/>
+										</observation>
+									</entryRelationship>
+									<entryRelationship typeCode="RSON">
+										<observation classCode="COND" moodCode="EVN">
+											<code code="??" codeSystem="XX" codeSystemName="??" displayName="Tétanos"/>
+										</observation>
+									</entryRelationship>
+									<entryRelationship typeCode="RSON">
+										<observation classCode="COND" moodCode="EVN">
+											<code code="??" codeSystem="XX" codeSystemName="??" displayName="Poliomyélite"/>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entry>
+							<entry typeCode="DRIV">
+								<observation classCode="OBS" moodCode="EVN">
+									<id root="1.2.3.4.23"/>
+									<!-- Exemple dico personnel-->
+									<code nullFlavor="NA"/>
+									<text mediaType="text/xml">Vaccin Hépatite B<reference value="#vacc-2"/></text>											
+									<effectiveTime value="1980"/>
+								</observation>
+							</entry>							
+							<entry typeCode="DRIV">
+								<observation classCode="OBS" moodCode="EVN">
+									<id root="1.2.3.4.24"/>
+									<!-- Exemple codage natif en CIP -->
+									<code code="364664-2" codeSystem="XX" codeSystemName="CIP" displayName="VACCIN BCG SSI Pdr &amp; solv susp inj">
+										<originalText mediaType="text/xml"><reference value="#vacc-3"/></originalText>	
+									</code>									
+									<effectiveTime value="1964"/>
+								</observation>
+							</entry>
+						</section>
+					</component>
+					<!--
+					  ********************************************************
+						SECTION HABITUS
+					  ********************************************************		
+					-->
+					<component>
+						<section>
+							<code code="29762-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="SOCIAL HISTORY"/>
+							<title>Habitus</title>
+							<text>
+								<table border="0">
+									<tbody>								
+										<tr>
+											<th  ID="habi-1" align="left">Tabagisme :</th>
+											<td>10 cigarettes / j </td>
+										</tr>
+										<tr>
+											<th ID="habi-2" align="left">Consommation d'alcool :</th>
+											<td>consommation modérée</td>
+										</tr>				
+										<tr>
+											<th ID="habi-3" align="left">Terrain stressé :</th>
+											<td>angoisses fréquentes</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<entry typeCode="DRIV">
+								<observation classCode="OBS" moodCode="EVN">
+									<id root="1.2.3.4.25"/>
+									<!-- Codage CIM10 -->
+									<code 	code="F17.2" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10" 
+												displayName="Syndrome de dépendance au tabac">
+										<originalText mediaType="text/xml"><reference value="#habi-1"/></originalText>	
+									</code>												
+									<value xsi:type="ST">10 cigarettes / j</value>
+									<!-- Ce contenu pourrait être structuré -->
+								</observation>
+							</entry>
+							<entry typeCode="DRIV">
+								<observation classCode="OBS" moodCode="EVN">
+									<id root="1.2.3.4.26"/>
+									<!-- Codage CIM10 -->
+									<code 	code="F10.2" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10" 
+												displayName="Syndrome de dépendance à l'alcool">
+										<originalText mediaType="text/xml"><reference value="#habi-2"/></originalText>	
+									</code>													
+									<value xsi:type="ST">consommation modérée</value>
+								</observation>
+							</entry>
+							<entry typeCode="DRIV">
+								<observation classCode="OBS" moodCode="EVN">
+									<id root="1.2.3.4.27"/>
+									<!-- Autres habitus -->
+									<code 	nullFlavor="NA"/> 
+									<text mediaType="text/xml">Terrain  stressé<reference value="#habi-2"/></text>
+									<value xsi:type="ST">angoisses fréquentes</value>
+								</observation>
+							</entry>							
+						</section>
+					</component>
+					<!--
+					  ********************************************************
+						SECTION DECES
+					  ********************************************************		
+					-->
+					<component>
+						<section>
+							<code 	code="31211-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="DATE OF DEATH"/>
+							<title>Décès</title>
+							<text>
+								<table border="1">
+									<tbody>
+										<tr>
+											<th ID="deces-1">Date</th>
+											<td>12/05/2005</td>
+										</tr>
+										<tr>
+											<th ID="deces-2">Cause</th>
+											<td>Mort subite</td>
+										</tr>
+										<tr>
+											<th ID="deces-3">Lieu</th>
+											<td>Bordeaux</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<entry>
+								<observation classCode="OBS" moodCode="EVN">
+									<id root="1.2.3.4.28"/>
+									<code code="31211-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="DATE OF DEATH">
+										<originalText mediaType="text/xml"><reference value="#deces-1"/></originalText>	
+									</code>										
+									<effectiveTime value="20050512"/>
+									<entryRelationship typeCode="RSON">
+										<observation classCode="COND" moodCode="EVN">
+											<!-- Cas d'un dico personnel -->
+											<code nullFlavor="NA">
+												<originalText mediaType="text/xml">Mort subite<reference value="#deces-2"/></originalText>
+											</code>	
+											<value xsi:type="ST">Bordeaux</value>
+										</observation>
+									</entryRelationship>							
+									<!-- Exemple de lien vers une pathologie de la liste des problèmes 
+									<entryRelationship typeCode="RSON">
+										<observation classCode="COND" moodCode="EVN">
+											<id root="1.2.3.4.14"/>
+											<code/>
+										</observation>
+									</entryRelationship> -->											
+								</observation>
+							</entry>								
+							<entry>								
+								<observation classCode="OBS" moodCode="EVN">
+									<id root="1.2.3.4.29"/>
+									<code code="21987-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="GEOGRAPHIC PLACE OF DEATH">
+										<originalText mediaType="text/xml"><reference value="#deces-3"/></originalText>	
+									</code>									
+									<value xsi:type="ST">Bordeaux</value>
+								</observation>								
+							</entry>
+						</section>
+					</component>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

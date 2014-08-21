@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../Schemas/CDA.xsd">
+	<!-- 
+********************************************************
+e-MS CDA Header
+********************************************************
+-->
+	<id extension="C7F36C19-64F0-4a8d-859B-2404F07A2434" root="2.16.840.1.113883.3.933"/>
+	<code code="34140-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+		displayName="Referral"/>
+	<title>Level 7 Healthcare, Inc Referral Letter</title>
+	<effectiveTime value="20040809142222"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+	<!-- 
+********************************************************
+Information Recipient
+********************************************************
+-->
+	<informationRecipient typeCode="PRCP">
+		<intendedRecipient classCode="ASSIGNED">
+			<id extension="ppump" root="DCCD2C68-389B-44c4-AD99-B8FB2DAD1493"/>
+			<informationRecipient>
+				<name>
+					<prefix>Dr.</prefix>
+					<given>Patrick</given>
+					<given>P.</given>
+					<family>Pump</family>
+					<suffix>Sr.</suffix>
+				</name>
+			</informationRecipient>
+		</intendedRecipient>
+	</informationRecipient>
+	<!-- 
+********************************************************
+Author
+********************************************************
+-->
+	<author>
+		<time value="20040812120000"/>
+		<assignedAuthor>
+			<id extension="hhippocrates" root="DCCD2C68-389B-44c4-AD99-B8FB2DAD1493"/>
+		</assignedAuthor>
+	</author>
+	<author>
+		<time value="20040812120000"/>
+		<assignedAuthor>
+			<id extension="hhippocrates" root="DCCD2C68-389B-44c4-AD99-B8FB2DAD1493"/>
+			<assignedAuthoringDevice>
+				<softwareName>e-MS Web</softwareName>
+			</assignedAuthoringDevice>
+		</assignedAuthor>
+	</author>
+	<!-- 
+********************************************************
+Custodian
+********************************************************
+-->
+	<custodian typeCode="CST">
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id extension="123" root="7EEF0BCC-F03E-4742-A736-8BAC57180C5F"/>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<!-- 
+********************************************************
+Record Target
+********************************************************
+-->
+	<recordTarget typeCode="RCT" contextControlCode="OP">
+		<patient classCode="PAT">
+			<id extension="9999999999" root="2BFBA1E9-79C2-4bbb-B589-41B949BD6A3B"
+				assigningAuthorityName="PHN"/>
+			<patientPatient>
+				<name>
+					<prefix>Mrs.</prefix>
+					<given>Eve</given>
+					<given>E.</given>
+					<family>Everywoman</family>
+					<suffix>Jr.</suffix>
+				</name>
+				<administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1"
+					codeSystemName="HL7 - Administrative Gender" displayName="Female"/>
+				<birthTime value="19650516"/>
+			</patientPatient>
+		</patient>
+	</recordTarget>
+	<!-- 
+********************************************************
+e-MS CDA Structured Body
+********************************************************
+-->
+	<component>
+		<structuredBody>
+			<!-- 
+********************************************************
+Purpose
+********************************************************
+-->
+			<component>
+				<section>
+					<code code="001" codeSystem="7BA9BFFD-D25F-44e8-A7B0-0DF214D6845B"
+						codeSystemName="e-MS Document Section Codes" displayName="Purpose"/>
+					<title>Purpose Section</title>
+					<text>
+						<paragraph> Occasional occurrences of arrhythmia at rest accompanied with
+							mild shortness of breath. Mild exercise leads to faintness and mild
+							chest pain. </paragraph>
+						<paragraph> Urgency: <content styleCode="bold">expedite</content>
+						</paragraph>
+						<table border="1">
+							<tbody>
+								<tr>
+									<th>Other Provider</th>
+									<th>Reason</th>
+								</tr>
+								<tr>
+									<td>Dr. Vera V. Valve at Level 7 Healthcare, Inc </td>
+									<td>High blood pressure in the past</td>
+								</tr>
+								<tr>
+									<td>Dr. Sara S. Specialize at Good Health Hospital</td>
+									<td>24 Hour ECG recording</td>
+								</tr>
+							</tbody>
+						</table>
+						<paragraph> The patient expressed that this problem has gradually been
+							getting worse over the course of the past year and a half. </paragraph>
+					</text>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

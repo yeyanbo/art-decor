@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="128"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1074"/>
+   <Title name="CodingRationale" date="2012-08-02" version="1.000">Identifies how to interpret the instance of the code, codeSystem value in a set of translations. Since HL7 (or a government body) may mandate that codes from certain code systems be sent in conformant messages, other synonyms that are sent in the translation set need to be distinguished among the originally captured source, the HL7 specified code, or some future role. When this code is NULL, it indicates that the translation is an undefined type. When valued, this property must contain one of the following values: SRC - Source (or original) code HL7 - HL7 Specified or Mandated SH - both HL7 mandated and the original code (precoordination) There may be additional values added to this value set as we work through the use of codes in messages and determine other Use Cases requiring special interpretation of the translations.</Title>
+   <Authors>
+      <Author name="Responsible"/>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="O" kind="concept">
+      <Meta name="internalId" value="22615"/>
+      <Rubric id="d1e90920" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Originally produced code.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e90936" kind="short">
+         <Label xml:lang="en-US">originally produced code</Label>
+      </Rubric>
+      <Rubric id="d1e90936" kind="preferred">
+         <Label xml:lang="en-US">originally produced code</Label>
+      </Rubric>
+   </Class>
+   <Class code="P" kind="concept">
+      <Meta name="internalId" value="22617"/>
+      <Rubric id="d1e90947" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Post-coded from free text source&lt;/description&gt;</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e90963" kind="short">
+         <Label xml:lang="en-US">post-coded</Label>
+      </Rubric>
+      <Rubric id="d1e90963" kind="preferred">
+         <Label xml:lang="en-US">post-coded</Label>
+      </Rubric>
+   </Class>
+   <Class code="R" kind="concept">
+      <Meta name="internalId" value="22616"/>
+      <Rubric id="d1e90974" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Required standard code for HL7.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e90990" kind="short">
+         <Label xml:lang="en-US">required</Label>
+      </Rubric>
+      <Rubric id="d1e90990" kind="preferred">
+         <Label xml:lang="en-US">required</Label>
+      </Rubric>
+   </Class>
+</ClaML>

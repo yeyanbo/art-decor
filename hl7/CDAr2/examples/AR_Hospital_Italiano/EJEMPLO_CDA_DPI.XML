@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:hl7-org:v3 ../schemas/CDA.xsd"
+ xmlns="urn:hl7-org:v3">
+   <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+   <templateId root="2.16.840.1.113883.2.10.1.1.9" extension="DPI"/>
+   <id extension="15078" root="2.16.840.1.113883.2.10.1.2.1"/>
+   <code code="18748-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Reporte de Mamografía"/>
+   <title>Hospital Italiano de Bs. As. - Servicio de Diagnóstico por Imágenes</title>
+   <effectiveTime value="200609221023"/>
+   <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+   <languageCode code="es-AR"/>
+   <setId extension="15078" root="2.16.840.1.113883.2.10.1.2.1"/>
+   <versionNumber value="1"/>
+   <recordTarget>
+      <patientRole>
+         <id extension="14091" root="2.16.840.1.113883.2.10.1.1.1"/>
+         <patient>
+            <name>
+               <given>JULIA  </given>
+               <family>TEST</family>
+            </name>
+            <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1"/>
+            <birthTime value="19331018"/>
+         </patient>
+         <providerOrganization>
+            <id extension="2" root="2.16.840.1.113883.2.10.1.1.5"/>
+            <name>PLAN DE SALUD HIBA</name>
+         </providerOrganization>
+      </patientRole>
+   </recordTarget>
+   <author>
+      <time value="20060922"/>
+      <assignedAuthor>
+         <id extension="69" root="2.16.840.1.113883.2.10.1.1.2"/>
+         <assignedPerson>
+            <name>
+               <given>Gabriel   </given>
+               <family>Ducrey</family>
+               <prefix>Dr.</prefix>
+            </name>
+         </assignedPerson>
+         <representedOrganization>
+            <id root="2.16.840.1.113883.2.10.1"/>
+         </representedOrganization>
+      </assignedAuthor>
+   </author>
+   <custodian>
+      <assignedCustodian>
+         <representedCustodianOrganization>
+            <id extension="347" root="2.16.840.1.113883.2.10.1.1.4"/>
+            <name>Seccion De Mamografia - Servicio De Diagnostico Por Imagenes</name>
+         </representedCustodianOrganization>
+      </assignedCustodian>
+   </custodian>
+   <legalAuthenticator>
+      <time value="20060922"/>
+      <signatureCode code="S"/>
+      <assignedEntity>
+         <id extension="69" root="2.16.840.1.113883.2.10.1.1.2"/>
+         <assignedPerson>
+            <name>
+               <given>Gabriel   </given>
+               <family>Ducrey</family>
+               <prefix>Dr.</prefix>
+            </name>
+         </assignedPerson>
+         <representedOrganization>
+            <id root="2.16.840.1.113883.2.10.1"/>
+         </representedOrganization>
+      </assignedEntity>
+   </legalAuthenticator>
+   <authenticator>
+      <time value="20060922"/>
+      <signatureCode code="S"/>
+      <assignedEntity>
+         <id extension="69" root="2.16.840.1.113883.2.10.1.1.2"/>
+         <assignedPerson>
+            <name>
+               <given>Gabriel   </given>
+               <family>Ducrey</family>
+               <prefix>Dr.</prefix>
+            </name>
+         </assignedPerson>
+         <representedOrganization>
+            <id root="2.16.840.1.113883.2.10.1"/>
+         </representedOrganization>
+      </assignedEntity>
+   </authenticator>
+   <component>
+      <structuredBody>
+         <component>
+            <section>
+               <code code="2640" codeSystem="2.16.840.1.113883.10.1.1.3"/>
+               <title>MAMOGRAFIA BILATERAL</title>
+               <text>
+                  <paragraph>Parénquima heterogéneo fibronodulillar de distribución simétrica.</paragraph>
+                  <paragraph>Macrocalcificaciones benignas bilaterales.</paragraph>
+                  <paragraph>No se observan microcalcificaciones anárquicas.</paragraph>
+                  <paragraph>Axilas libres.</paragraph>
+                  <paragraph/>
+               </text>
+            </section>
+         </component>
+      </structuredBody>
+   </component>
+</ClinicalDocument>

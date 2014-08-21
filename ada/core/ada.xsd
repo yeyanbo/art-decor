@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Copyright (C) 2013-2014  Marc de Graauw
+
+This program is free software; you can redistribute it and/or modify it under the terms 
+of the GNU General Public License as published by the Free Software Foundation; 
+either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+See the GNU General Public License for more details.
+
+See http://www.gnu.org/licenses/gpl.html
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="ada">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="project"/>
+        <xs:element ref="applications"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="project">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="release" minOccurs="1">
+          <xs:complexType>
+            <xs:attribute name="baseUri" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="language" use="required" type="xs:NCName"/>
+      <xs:attribute name="prefix" use="required" type="xs:NCName"/>
+      <!-- versionDate is xs:string because this allows 'development' -->
+      <xs:attribute name="versionDate" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="applications">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="application" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="application">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="model" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="views" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="version"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="model">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="concepts"/>
+      </xs:sequence>
+      <xs:attribute name="datasetId" use="required"/>
+      <xs:attribute name="datasetEffectiveDate" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="views">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="view" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="view">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="indexOf" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:attribute name="ref">
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element ref="concepts"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="optional"/>
+      <xs:attribute name="transactionId" use="required"/>
+      <xs:attribute name="transactionEffectiveDate"/>
+      <xs:attribute name="type" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="crud"/>
+            <xs:enumeration value="index"/>
+            <xs:enumeration value="list"/>
+            <xs:enumeration value="search"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="target" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="xforms"/>
+            <xs:enumeration value="xquery"/>
+            <xs:enumeration value="html"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="name" type="xs:string"/>
+  <xs:element name="concepts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="concept" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="include" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="all"/>
+            <xs:enumeration value="only"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="concept">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="condition" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="ref" use="required"/>
+      <xs:attribute name="notPresentWhen"/>
+      <xs:attribute name="widget" type="widgetEnum"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="widgetEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="tab"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="condition">
+    <xs:complexType mixed="true">
+      <xs:attribute name="conformance" type="xs:NCName"/>
+      <xs:attribute name="isMandatory" type="xs:boolean"/>
+      <xs:attribute name="maximumMultiplicity" type="xs:integer"/>
+      <xs:attribute name="minimumMultiplicity" type="xs:integer"/>
+      <xs:attribute name="xpath" type="xs:anyURI"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

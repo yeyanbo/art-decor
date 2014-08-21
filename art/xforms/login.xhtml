@@ -1,0 +1,112 @@
+<!--
+    Copyright (C) 2011-2014 ART-DECOR expert group art-decor.org
+    
+    Author: Gerrit Boers, Alexander Henket
+    Based on work by Orbeon, Inc.
+    
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+    
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+    
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:widget="http://orbeon.org/oxf/xml/widget" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="login" xsi:schemaLocation="http://www.w3.org/1999/xhtml ../../orbeon_schemas/xhtml1-transitional-orbeon.xsd">
+    <xhtml:head>
+        <xhtml:title>
+            <xforms:output ref="$resources/login"/>
+        </xhtml:title>
+        <xforms:model>
+            <!-- Variable with path to eXist-db -->
+            <xxforms:variable name="art-exist" select="xxforms:property('art.exist.url')"/>
+            <!-- resources for internationalization -->
+            <xforms:instance id="resources-instance">
+                <dummy/>
+            </xforms:instance>
+            <!-- submission for loading resources -->
+            <xforms:submission id="get-resources-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-form-resources.xquery" replace="instance" instance="resources-instance"/>
+            <!-- language -->
+            <xforms:instance id="language">
+                <language/>
+            </xforms:instance>
+
+            <!-- return-to-url -->
+            <xforms:instance id="return-to-url">
+                <url/>
+            </xforms:instance>
+            <xforms:instance id="user-instance" xxforms:exclude-result-prefixes="#all">
+                <user>
+                    <username/>
+                    <displayName/>
+                    <groups/>
+                    <password/>
+                </user>
+            </xforms:instance>
+            <xforms:submission id="login-submission" ref="instance('user-instance')" method="post" resource="{$art-exist}/modules/login.xq" replace="instance" instance="user-instance">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+            <xforms:action ev:event="xforms-model-construct-done">
+                <xforms:send submission="get-resources-submission"/>
+                <xforms:setvalue ref="instance('language')" value="if (string-length(xxforms:get-session-attribute('language'))&gt;0) then (xxforms:get-session-attribute('language')) else (instance('resources-instance')//resources[1]/@xml:lang/string())"/>
+                <xforms:setvalue ref="instance('return-to-url')" value="if (string-length(xxforms:get-request-parameter('returnToUrl'))&gt;0) then xxforms:get-request-parameter('returnToUrl') else ('home')"/>
+                <!-- set this variable to 'login' to signal subsequently called resources that we just passed a login -->
+                <xforms:insert context="." origin="xxforms:set-session-attribute('comefrom', 'login')"/>
+            </xforms:action>
+            <!-- relevant language is returned as first node, rest should be empty -->
+            <xxforms:variable name="resources" select="instance('resources-instance')//resources[1]"/>
+            <xforms:setfocus ev:event="xforms-ready" control="username"/>
+        </xforms:model>
+    </xhtml:head>
+    <xhtml:body>
+       <xforms:action ev:observer="login-group" ev:event="DOMActivate">
+          <xforms:send submission="login-submission"/>
+          <xforms:action if="instance('user-instance')/logged-in='true'">
+             <xforms:insert context="." origin="xxforms:set-session-attribute('username', instance('user-instance')/username)"/>
+             <xforms:insert context="." origin="xxforms:set-session-attribute('language', instance('user-instance')/defaultLanguage)"/>
+             <xforms:insert context="." origin="xxforms:set-session-attribute('displayName', instance('user-instance')/displayName)"/>
+             <xforms:insert context="." origin="xxforms:set-session-attribute('groups', instance('user-instance')/groups)"/>
+             <xforms:insert context="." origin="xxforms:set-session-attribute('password', instance('user-instance')/password)"/>
+             <xforms:load resource="{instance('return-to-url')}"/>
+          </xforms:action>
+          <xforms:action if="instance('user-instance')/logged-in='false'">
+             <xforms:setfocus control="username"/>
+          </xforms:action>
+       </xforms:action>
+        <xhtml:table width="100%">
+           <xforms:group ref="instance('user-instance')" id="login-group">
+                <xhtml:tr>
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/username"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:input id="username" ref="username" class="short-text"/>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/password"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:secret id="password" ref="password" class="short-text"/>
+                        <xforms:group ref=".[instance('user-instance')/logged-in='false']">
+                            <xforms:output ref="$resources/login-failure"/>
+                        </xforms:group>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td colspan="2">
+                        <fr:button id="login-button">
+                            <xforms:label ref="$resources/login"/>
+                        </fr:button>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xforms:group>
+        </xhtml:table>
+        <!--		        <fr:xforms-inspector/>-->
+    </xhtml:body>
+</xhtml:html>

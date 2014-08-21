@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="391"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1110"/>
+   <Title name="ContentProcessingMode" date="2012-08-02" version="1.000">Description:Identifies the order in which content should be processed.</Title>
+   <Class code="rootClass">
+      <SubClass subCount="0" code="SEQL" kind="concept">
+         <Rubric id="d1e93464" kind="preferred">
+            <Label xml:lang="en-US">Sequential</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="UNOR" kind="concept">
+         <Rubric id="d1e93492" kind="preferred">
+            <Label xml:lang="en-US">Unordered</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">ContentProcessingMode</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">Description:Identifies the order in which content should be processed.</Label>
+      </Rubric>
+   </Class>
+   <Class code="SEQL" kind="concept">
+      <Meta name="internalId" value="21995"/>
+      <Rubric id="d1e93448" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The content should be processed in a sequential fashion.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e93464" kind="short">
+         <Label xml:lang="en-US">Sequential</Label>
+      </Rubric>
+      <Rubric id="d1e93464" kind="preferred">
+         <Label xml:lang="en-US">Sequential</Label>
+      </Rubric>
+   </Class>
+   <Class code="UNOR" kind="concept">
+      <Meta name="internalId" value="21996"/>
+      <Rubric id="d1e93476" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The content may be processed in any order.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e93492" kind="short">
+         <Label xml:lang="en-US">Unordered</Label>
+      </Rubric>
+      <Rubric id="d1e93492" kind="preferred">
+         <Label xml:lang="en-US">Unordered</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

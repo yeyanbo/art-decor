@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:hl7-org:v3 schemas/CDA.xsd"
+ xmlns="urn:hl7-org:v3"
+ classCode="DOCCLIN"
+ moodCode="EVN">
+    <realmCode code="NL"/>
+    <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+    <templateId root="2.16.840.1.113883.2.4.3.11.16"/> <!-- Implementatiehandlijding E-Paramedici, Nictiz -->
+    <id extension="c266" root="2.16.840.1.113883.19.4"/>
+    <code code="11515-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Physical therapy Records total Encounter"/>
+    <title>Eindverslag e-Paramedici</title>
+    <effectiveTime value="20110321125632+0200"/>
+    <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+    <languageCode code="nl-NL"/>
+    <recordTarget>
+        <patientRole>
+            <id extension="950034253" root="2.16.840.1.113883.2.4.6.3" />
+            <addr>
+                <streetName>Huisadres</streetName>
+                <houseNumber>1</houseNumber>
+                <postalCode>1000AA</postalCode>
+                <city>Stad</city>
+            </addr>
+            <telecom use="HP" value="tel:+3110-23423423"/>
+            <patient>
+                <name>
+                    <given>Frank</given>
+                    <family>Levin</family>
+                </name>
+                <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+                <birthTime value="19720924"/>
+            </patient>
+            <providerOrganization> <!-- gegevens verzekeraar ???-->
+                <id root="2.16.840.1.113883.2.4.6.4.10.4472"/>
+                <name>Organisatienaam<suffix>B.V.</suffix></name>
+            </providerOrganization>
+        </patientRole>
+    </recordTarget>
+    <author typeCode="AUT">
+        <time value="20011032110"/>
+        <assignedAuthor>
+            <id root="2.16.528.1.1007.3.1" extension="052712341"/> <!-- UZI -->
+            <assignedPerson>
+                <name>
+                    <given>Peter</given>
+                    <family>Keizer</family>
+                </name>
+            </assignedPerson>
+            <representedOrganization>
+                <id root="2.16.840.1.113883.19.5"/>
+            </representedOrganization>
+        </assignedAuthor>
+    </author>
+    <!-- dataEnterer - invoerder van de gegevens-->
+    <dataEnterer typeCode="ENT" contextControlCode="OP">
+        <assignedEntity classCode="ASSIGNED">
+            <id nullFlavor="NA"/>
+            <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+                <id root="2.16.840.1.113883.19.5"/>
+                <name/>
+                <telecom use="WP" value="fax:0221247878"/>
+                <addr>
+                    <streetName>Ziekenhuisweg</streetName>
+                    <houseNumber>23</houseNumber>
+                    <postalCode>7364 RX</postalCode>
+                    <city>Amsterdam</city>
+                </addr>
+            </representedOrganization>
+        </assignedEntity>
+    </dataEnterer>
+    <custodian typeCode="CST"> <!-- organisatie die verantwoordelijk is voor het beheer (inclusief: opslag) van de documenten de organisatie van de auteur van het document. -->
+        <assignedCustodian>
+            <representedCustodianOrganization>
+                <id root="2.16.840.1.113883.19.5" extension="2987864"/>
+                <name>Fysiotherapie Vitaal</name>
+            </representedCustodianOrganization>
+        </assignedCustodian>
+    </custodian>
+    
+    <informationRecipient typeCode="PRCP"> <!-- primaire ontvanger -->
+        <intendedRecipient classCode="ASSIGNED">
+            <id root="2.16.528.1.1007.3.1" extension="000002222"/>
+            <!-- UZI -->
+            <informationRecipient classCode="PSN" determinerCode="INSTANCE">
+                <name>
+                    <prefix>Dr.</prefix>
+                    <given>Jan</given>
+                    <family>Janssen</family>
+                </name>
+            </informationRecipient>
+            <receivedOrganization>
+                <telecom use="WP" value="fax:0221247878"/>
+                <addr>
+                    <streetName>Ziekenhuisweg</streetName>
+                    <houseNumber>23</houseNumber>
+                    <postalCode>6734 WR</postalCode>
+                    <city>Amsterdam</city>
+                </addr>
+            </receivedOrganization>
+        </intendedRecipient>
+    </informationRecipient>
+    <informationRecipient typeCode="TRC"> <!-- kopie ontvanger -->
+        <intendedRecipient classCode="ASSIGNED">
+            <id root="2.16.528.1.1007.3.1" extension="100066543"/>
+            <!-- UZI -->
+            <informationRecipient classCode="PSN" determinerCode="INSTANCE">
+                <name>
+                    <given>Willem</given>
+                    <family>Podotherapeutdekoning</family>
+                </name>
+            </informationRecipient>
+            <receivedOrganization>
+                <name>FitFood Voedingsadvies</name>
+                <telecom use="WP" value="fax:0231247878"/>
+                <addr>
+                    <streetName>Heereweg</streetName>
+                    <houseNumber>12</houseNumber>
+                    <postalCode>3764 KP</postalCode>
+                    <city>Haarlem</city>
+                </addr>
+            </receivedOrganization>
+        </intendedRecipient>
+    </informationRecipient>
+    <!-- participant - verzekeringsgegevens patient -->
+    <participant typeCode="HLD" contextControlCode="OP">
+            <associatedEntity classCode="POLHOLD"> <!-- "POLHOLD" - waarde voor de houder van de verzekeringspolis - -->
+                <id root="2.16.840.1.113883.2.4.6.4.9665" extension="12345444467" assigningAuthorityName="Univé"/> <!-- 1234567 - verzekeringspolisnummer, 2.16.840.1.113883.2.4.6.4 - UZOVI -->
+            </associatedEntity>
+    </participant>
+
+    <component typeCode="COMP" contextConductionInd="true">
+        <structuredBody>
+            <!-- KERN -->
+            <component>
+                <section>
+                    <templateId root="2.16.840.1.113883.2.4.6.10.60.2.001"/>
+                    <title>Kern eindverslag fysiotherapeut</title>
+                    <component>
+                        <!-- reden contact -->
+                        <section>
+                            <templateId root="2.16.840.1.113883.2.4.6.10.60.2.001.1"/>
+                            <code code="22222-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Primary diagnosis Identifier"/> <!-- TO DO -->
+                            <title>reden contact</title>
+                            <text>
+                                <table>
+                                    <tbody>
+                                        <!-- Belangrijkste klacht -->
+                                        <tr>
+                                            <td>Lage-rugpijn met uitstraling naar bovenbeen. Blokkade SI-gewricht rechts? (tekst m.b.t. "Belangrijkste klacht" - overgenomen uit de in FIS geregistrerde "verwijzing/consultvraag" en aangevuld door fysiotherapeut)</td>
+                                        </tr>
+                                  
+                                    </tbody>
+                                </table>
+                            </text>
+                            <entry typeCode="DRIV">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <code code="L86.00" codeSystem="2.16.840.1.113883.2.4.4.31.1"
+                                        displayName="Lage-rugpijn met uitstraling"
+                                        codeSystemName="ICPC-1-2000NL"/>
+                                </observation>
+                            </entry>
+                            <entry typeCode="DRIV">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <code code="E" codeSystem="2.16.840.1.113883.2.4.4.32.2"
+                                        displayName="Evaluatie"/>
+                                    <effectiveTime value="20110307"/>
+                                    <value xsi:type="ST">Lage-rugpijn met uitstraling naar
+                                        bovenbeen. Blokkade SI-gewricht rechts?</value>
+                                </observation>
+                            </entry>
+                            <entry typeCode="DRIV">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <code code="P" codeSystem="2.16.840.1.113883.2.4.4.32.2"
+                                        displayName="Plan"/>
+                                    <effectiveTime value="20110307"/>
+                                    <value xsi:type="ST">afwachten, 's avons paracetamol</value>
+                                </observation>
+                            </entry>
+                        </section>
+                      </component>
+                </section>                
+                <!-- /reden contact -->   
+                </component>
+            <!-- conclusie (of: fysiotherapeutische diagnose) -->
+            <component>
+                <section>
+                    <templateId root="2.16.840.1.113883.2.4.6.10.60.23" />
+                    <!-- conclusie (of: fysiotherapeutische diagnose) template -->
+                    <code code="27654-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Primary diagnosis Identifier"/>
+                    <title>fysiotherapeutische diagnose</title>
+                    <text>
+                        <list>
+                            <item> <content ID="diagnose">activiteiten voet/been - indien aanwezig: displayName overgenomen uit de ICF codering</content>, <content ID="graad">ERNSTIGE - indien aanwezig: "ernst" overgenomen uit de ICF codering</content></item>
+                            <item>(tekst m.b.t. "conclusie, basisgegevens analyse" - ingevoerd door fysiotherapeut) </item>
+                        </list>
+                    </text>
+                    <entry typeCode="DRIV">
+                        <observation classCode="OBS" moodCode="EVN">
+                            <code code="d435" codeSystem="2.16.840.1.113883.6.254" 
+                                displayName="activiteiten voet/been" codeSystemName="ICF">
+                                <originalText><reference value="#diagnose"/></originalText>
+                            </code>
+                            <effectiveTime value="20110320"/>
+                            <value xsi:type="CV" code="ERNSTIGE" codeSystem="2.16.840.1.113883.6.254"
+                                ><originalText><reference value="#graad"
+                                /></originalText></value>
+                        </observation>
+                    </entry>
+                </section>
+            </component>
+            <!-- /conclusie (of: fysiotherapeutische diagnose) -->
+            <!-- behandelverloop/resultaat -->
+            <component>
+                <section>
+                    <templateId root="2.16.840.1.113883.2.4.6.10.60.24" />
+                    <!-- behandelverloop/resultaat -->
+                    <code code="27690-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Justification" />
+                    <title>behandelverloop/resultaat</title>
+                    <text>
+                        <list>
+                            <item>(tekst m.b.t. "behandelverloop/resultaat" - ingevoerd door fysiotherapeut)</item>
+                        </list>
+                    </text>
+                </section>
+            </component>
+            <!-- /behandelverloop/ resultaat -->
+            <!-- aanbeveling vervolg huisarts -->
+            <component>
+                <section>
+                    <templateId root="2.16.840.1.113883.2.4.6.10.60.25" />
+                    <!-- aanbeveling vervolg huisarts template -->
+                    <code code="29762-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="aanbeveling vervolg huisarts" /> <!-- CONTROLEREN   -->
+                    <title>aanbeveling vervolg huisarts</title>
+                    <text>
+                    <list>
+                        <item>(tekst m.b.t. "aanbeveling vervolg huisarts" - ingevoerd door fysiotherapeut)</item>
+                    </list>
+                    </text>
+                </section>
+            </component>
+            <!-- /aanbeveling vervolg huisarts -->          
+            <!-- advies gegeven aan patient-->
+            <component>
+                <section>
+                    <templateId root="2.16.840.1.113883.2.4.6.10.60.26" />
+                    <!-- advies gegeven aan patient -->
+                    <title>advies gegeven aan patient</title>
+                    <text>
+                        <list>
+                            <item>(tekst m.b.t. "advies gegeven aan patient" - ingevoerd door fysiotherapeut)</item>
+                        </list>
+                    </text>
+                </section>
+            </component>
+                <!-- /advies gegeven aan patient -->
+          <!-- BIJLAGE is optioneel-->
+        </structuredBody>       
+    </component>
+</ClinicalDocument>

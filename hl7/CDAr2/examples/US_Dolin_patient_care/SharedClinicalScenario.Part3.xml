@@ -1,0 +1,367 @@
+<?xml version="1.0"?>
+<!--
+	Header is boilerplate, body is the interesting part of the example
+Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" implementation guide, currently in a draft state. The guide, co-developed by HL7 and the College of American Pathologists, will be balloted by HL7 as an Informative Document. Recommendations in the final published guide should usurp patterns of SNOMED CT usage found in this sample instance.
+-->
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3"
+	xmlns:voc="urn:hl7-org:v3/voc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../schemas/CDA.xsd">
+	<!-- 
+********************************************************
+  CDA Header
+********************************************************
+-->
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<templateId root="2.16.840.1.113883.3.27.1776"/>
+	<id root="2.16.840.1.113883.19.4" extension="4ab11040-e8df-11da-8ad9-0800200c9a66"/>
+	<code code="34108-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Outpatient Evaluation and Management"/>
+	<title>Good Health Clinic Same Day Visit Note</title>
+	<effectiveTime value="20000407"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+	<languageCode code="en-US"/>
+	<setId extension="BB35" root="2.16.840.1.113883.19.7"/>
+	<versionNumber value="2"/>
+	<recordTarget>
+		<patientRole>
+			<id extension="12345" root="2.16.840.1.113883.19.5"/>
+			<patient>
+				<name>
+					<given>Henry</given>
+					<family>Levin</family>
+					<suffix>the 7th</suffix>
+				</name>
+				<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+				<birthTime value="19320924"/>
+			</patient>
+			<providerOrganization>
+				<id root="2.16.840.1.113883.19.5"/>
+			</providerOrganization>
+		</patientRole>
+	</recordTarget>
+	<author>
+		<time value="2000040714"/>
+		<assignedAuthor>
+			<id extension="KP00017" root="2.16.840.1.113883.19.5"/>
+			<assignedPerson>
+				<name>
+					<given>Robert</given>
+					<family>Dolin</family>
+					<suffix>MD</suffix>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id root="2.16.840.1.113883.19.5"/>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id root="2.16.840.1.113883.19.5"/>
+				<name>Good Health Clinic</name>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<legalAuthenticator>
+		<time value="20000408"/>
+		<signatureCode code="S"/>
+		<assignedEntity>
+			<id extension="KP00017" root="2.16.840.1.113883.19.5"/>
+			<assignedPerson>
+				<name>
+					<given>Robert</given>
+					<family>Dolin</family>
+					<suffix>MD</suffix>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id root="2.16.840.1.113883.19.5"/>
+			</representedOrganization>
+		</assignedEntity>
+	</legalAuthenticator>
+	<relatedDocument typeCode="RPLC">
+		<parentDocument>
+			<id extension="a123" root="2.16.840.1.113883.19.4"/>
+			<setId extension="BB35" root="2.16.840.1.113883.19.7"/>
+			<versionNumber value="1"/>
+		</parentDocument>
+	</relatedDocument>
+	<componentOf>
+		<encompassingEncounter>
+			<id extension="KPENC1332" root="2.16.840.1.113883.19.6"/>
+			<effectiveTime value="20000407"/>
+			<encounterParticipant typeCode="CON">
+				<time value="20000407"/>
+				<assignedEntity>
+					<id extension="KP00017" root="2.16.840.1.113883.19.5"/>
+					<assignedPerson>
+						<name>
+							<given>Robert</given>
+							<family>Dolin</family>
+							<suffix>MD</suffix>
+						</name>
+					</assignedPerson>
+					<representedOrganization>
+						<id root="2.16.840.1.113883.19.5"/>
+					</representedOrganization>
+				</assignedEntity>
+			</encounterParticipant>
+			<location>
+				<healthCareFacility classCode="DSDLOC">
+					<code code="GIM" codeSystem="2.16.840.1.113883.5.10588" displayName="General internal medicine clinic"/>
+				</healthCareFacility>
+			</location>
+		</encompassingEncounter>
+	</componentOf>
+	<!-- 
+********************************************************
+  CDA Body
+********************************************************
+-->
+	<component>
+		<structuredBody>
+			<!-- 
+********************************************************
+  Reason For Visit section
+********************************************************
+-->
+			<component>
+				<section>
+					<code code="29299-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Reason for Visit</title>
+					<text>Rash</text>
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<id root="2.16.840.1.113883.19.2" extension="8cfebf20-e8de-11da-8ad9-0800200c9a66"/>
+							<code code="271807003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Rash"/>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low value="20000406"/>
+							</effectiveTime>
+						</observation>
+					</entry>
+				</section>
+			</component>
+			<!-- 
+********************************************************
+  History of Present Illness section
+********************************************************
+-->
+			<component>
+				<section>
+					<code code="10164-2" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>History of Present Illness</title>
+					<text>Henry Levin, the 7<sup>th</sup> is a 67 year old male who comes in complaining of a rash, which begain yesterday, is very itchy, and is localized to the right index finger.</text>
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<id root="2.16.840.1.113883.19.2" extension="573ea3ba-6cea-42fd-b42d-01d57e2de5d3"/>
+							<code code="271807003" codeSystem="2.16.840.1.113883.6.96" displayName="Rash">
+								<qualifier>
+									<name code="363698007" displayName="Finding site"/>
+									<value code="83738005" displayName="Index finger">
+										<qualifier>
+											<name code="272741003" displayName="Laterality"/>
+											<value code="24028007" displayName="Right"/>
+										</qualifier>
+									</value>
+								</qualifier>
+								<qualifier>
+									<name code="363705008" displayName="Has definitional manifestation"/>
+									<value code="418363000" displayName="Itching of skin"/>
+								</qualifier>
+							</code>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low value="20000406"/>
+							</effectiveTime>
+						</observation>
+					</entry>
+				</section>
+			</component>
+			
+<!-- COMMENTS
+o I patterned the post-coordinated representation of itchiness after the pre-coordinated representation of 64144002 Pruritic Rash.
+o The object identifier for Rash in this section is not the same as the one used in the Reason for Visit section.
+-->			
+			<!-- 
+********************************************************
+  Past Medical History section
+********************************************************
+-->
+			<component>
+				<section>
+					<code code="10153-2" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Past Medical History</title>
+					<text>No prior history of a similar rash</text>
+					<entry>
+						<observation classCode="OBS" moodCode="EVN" negationInd="true">
+							<id root="2.16.840.1.113883.19.2" extension="66200523-4494-4b0d-8554-d55f07d5e707"/>
+							<code code="271807003" codeSystem="2.16.840.1.113883.6.96" displayName="Rash"/>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<high value="20000405"/>
+							</effectiveTime>
+						</observation>
+					</entry>
+				</section>
+			</component>
+			<!-- 
+********************************************************
+  Family History section
+********************************************************
+-->
+			<component>
+				<section>
+					<code code="10157-2" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Family history</title>
+					<text>No family history of chronic rash or skin disease</text>
+					<entry>
+						<observation classCode="OBS" moodCode="EVN" negationInd="true">
+							<id root="2.16.840.1.113883.19.2" extension="752270bb-d1be-4c00-b2b9-3baadbb75666"/>
+							<code code="128236002" codeSystem="2.16.840.1.113883.6.96" displayName="Chronic disease of skin"/>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<high value="20000407"/>
+							</effectiveTime>
+							<subject>
+								<relatedSubject classCode="PRS">
+									<code code="125677006" codeSystem="2.16.840.1.113883.6.96" displayName="Relative"/>
+								</relatedSubject>
+							</subject>
+						</observation>
+					</entry>
+				</section>
+			</component>
+			<!-- 
+********************************************************
+  Past Surgical History section
+********************************************************
+-->
+			<component>
+				<section>
+					<code code="10167-5" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Past surgical History</title>
+					<text>Appendectomy in his 20s</text>
+					<entry>
+						<procedure classCode="PROC" moodCode="EVN">
+							<id root="2.16.840.1.113883.19.1" extension="4612c7d5-3ba6-4f4d-b5a1-8fa54d3a5331"/>
+							<code code="80146002" codeSystem="2.16.840.1.113883.6.96" displayName="Appendectomy"/>
+							<statusCode code="completed"/>
+							<effectiveTime value="1955"/>
+						</procedure>
+					</entry>
+				</section>
+			</component>
+			<!-- 
+********************************************************
+  Medications section
+********************************************************
+-->
+			<component>
+				<section>
+					<code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Medications</title>
+					<text>Aspirin 325mg / day</text>
+					<entry>
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<id root="2.16.840.1.113883.19.3" extension="6e5509c7-6090-41fe-9776-da4c47b39fa1"/>
+							<code code="225426007" codeSystem="2.16.840.1.113883.6.96" displayName="Administration of therapeutic substance"> 
+								<qualifier>
+									<name code="410675002" displayName="Route of administration"/>
+									<value code="26643006" displayName="Oral route"/>
+								</qualifier>
+							</code>
+							<effectiveTime xsi:type="PIVL_TS">
+								<period value="24" unit="h"/>
+							</effectiveTime>
+							<doseQuantity value="1"/>
+							<consumable>
+								<manufacturedProduct>
+									<manufacturedLabeledDrug>
+										<code code="370166004" codeSystem="2.16.840.1.113883.6.96" displayName="Aspirin 325mg tablet"/>
+									</manufacturedLabeledDrug>
+								</manufacturedProduct>
+							</consumable>
+						</substanceAdministration>
+					</entry>
+				</section>
+			</component>
+			<!-- 
+********************************************************
+  Physical Exam section
+********************************************************
+-->
+			<component>
+				<section>
+					<code code="11384-5" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Physical Examination</title>
+					<text>Erythematous papular eruption over the dorsal surface of the right index finger.</text>
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<id root="2.16.840.1.113883.19.2" extension="cb5b6aa8-0a30-4222-970e-0f93b597a554"/>
+							<code code="271757001" codeSystem="2.16.840.1.113883.6.96" displayName="Papular rash">
+								<qualifier>
+									<name code="363698007" displayName="Finding site"/>
+									<value code="83738005" displayName="Index finger">
+										<qualifier>
+											<name code="272741003" displayName="Laterality"/>
+											<value code="24028007" displayName="Right"/>
+										</qualifier>
+									</value>
+								</qualifier>
+								<qualifier>
+									<name code="370129005" displayName="Measurement method"/>
+									<value code="5880005" displayName="Physical exam"/>
+								</qualifier>
+							</code>
+							<statusCode code="completed"/>
+						</observation>
+					</entry>
+				</section>
+			</component>
+			
+<!-- COMMENTS
+o The object identifier for Rash in this section is not the same as the one used in the Reason for Visit section or the History of Present Illness Section.
+-->			
+			
+			
+			
+			<!-- 
+********************************************************
+  Assessment section
+********************************************************
+-->
+			<component>
+				<section>
+					<code code="11496-7" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Assessment</title>
+					<text>Rash, etiology unknown</text>
+					<entry>
+						<observation classCode="COND" moodCode="EVN">
+							<id root="2.16.840.1.113883.19.2" extension="73f528a2-47d1-42ca-b63d-530203095331"/>
+							<code code="271807003" codeSystem="2.16.840.1.113883.6.96" displayName="Rash">		
+								<qualifier>
+									<name code="418775008" displayName="Finding method"/>
+									<value code="39154008" displayName="Clinical diagnosis"/>
+								</qualifier>
+							</code>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low value="20000406"/>
+							</effectiveTime>
+						</observation>
+					</entry>
+				</section>
+			</component>
+			
+<!-- COMMENTS
+o The object identifier for Rash in this section is not the same as the ones used in prior sections.
+o If classCode is "COND", how did ClinicianOne indicate this, or was it due to default application behavior, to flag all encounter assessments as conditions?
+o Note that statusCode is "completed" rather than "active", even though the rash will continue to be observed in subsequent visits. 
+-->			
+		</structuredBody>
+	</component>
+</ClinicalDocument>
+

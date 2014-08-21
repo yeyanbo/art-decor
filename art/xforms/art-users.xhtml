@@ -1,0 +1,437 @@
+<!--
+    Copyright (C) 2011-2014 ART-DECOR expert group art-decor.org
+    
+    Author: Gerrit Boers, Kai U. Heitmann, Alexander Henket
+
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:hl7="urn:hl7-org:v3" xmlns:atp="urn:nictiz.atp" xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:widget="http://orbeon.org/oxf/xml/widget" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="configuration" xsi:schemaLocation="http://www.w3.org/1999/xhtml ../../orbeon_schemas/xhtml1-transitional-orbeon.xsd">
+    <xhtml:head>
+        <xhtml:style type="text/css">
+         .xforms-select-appearance-full span { display: block; clear: both } 
+      </xhtml:style>
+        <xhtml:title>
+            <xforms:output ref="$resources/users"/>
+        </xhtml:title>
+        <xforms:model id="configuration">
+         <!-- Variable with path to art-exist for use by form -->
+            <xxforms:variable name="art-exist" select="xxforms:property('art.exist.url')"/>
+         <!-- Variable with path to decor-eXist used to pass to client as link for services (Diagrams in new window) -->
+            <xxforms:variable name="decor-exist" select="xxforms:property('decor.exist.url')"/>
+         <!-- Variable with path to xis-eXist for content -->
+            <xxforms:variable name="xis-exist" select="xxforms:property('xis.exist.url')"/>
+         <!-- resources for internationalization -->
+            <xforms:instance id="resources-instance" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+         <!-- submission for loading resources -->
+            <xforms:submission id="get-resources-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-form-resources.xquery" replace="instance" instance="resources-instance"/>
+         <!-- language -->
+            <xforms:instance id="language" xxforms:exclude-result-prefixes="#all">
+                <language/>
+            </xforms:instance>
+            
+         <!-- instance for navigating users -->
+            <xforms:instance id="user-navigation" xxforms:exclude-result-prefixes="#all">
+                <user/>
+            </xforms:instance>
+         <!-- instance edit status user -->
+            <xforms:instance id="user-safe" xxforms:exclude-result-prefixes="#all">
+                <data-safe>true</data-safe>
+            </xforms:instance>
+         <!-- instance for userlist -->
+            <xforms:instance id="users-list" xxforms:exclude-result-prefixes="#all">
+                <users/>
+            </xforms:instance>
+         <!-- instance for new user in the users-list -->
+            <xforms:instance id="new-list-user" xxforms:exclude-result-prefixes="#all">
+                <user name="">
+                    <displayName/>
+                </user>
+            </xforms:instance>
+         <!-- instance for new user -->
+            <xforms:instance id="new-user" xxforms:exclude-result-prefixes="#all">
+                <user name="" active="true" newpwd="" newpwd-confirm="" new="true">
+                    <!-- account-info -->
+                    <groups>guest</groups>
+                    <primarygroup>guest</primarygroup>
+                    <description/>
+                    
+                    <!-- user-info -->
+                    <defaultLanguage/>
+                    <displayName/>
+                    <email/>
+                    <organization/>
+                </user>
+            </xforms:instance>
+        <!-- instance for user details -->
+            <xforms:instance id="user-details" xxforms:exclude-result-prefixes="#all">
+                <user/>
+            </xforms:instance>
+            <xforms:submission id="get-user-details-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-user.xquery?user={instance('user-navigation')}" replace="instance" instance="user-details" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}"/>
+            <xforms:submission id="get-users-list-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-user-list.xquery" replace="instance" instance="users-list" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}"/>
+         <!-- save user -->
+            <xforms:submission id="save-user-details-submission" ref="instance('user-details')" action="{$art-exist}/modules/save-user.xquery" method="post" replace="instance" instance="user-safe" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- event observer for user changes -->
+            <!--<xforms:action ev:observer="users-list" ev:event="xforms-insert xforms-delete xxforms-value-changed">
+                <xforms:setvalue ref="instance('user-safe')">false</xforms:setvalue>
+            </xforms:action>-->
+            <xforms:action ev:observer="user-details" ev:event="xxforms-value-changed">
+                <xforms:setvalue ref="instance('user-safe')">false</xforms:setvalue>
+                <xforms:action if="instance('user-details')[@new='true'][string-length(@name)&gt;0]">
+                    <xforms:setvalue ref="instance('users-list')/user[last()]/@name" value="instance('user-details')/@name"/>
+                </xforms:action>
+                <xforms:action if="instance('user-details')[string-length(@name)&gt;0][string-length(displayName)&gt;0]">
+                    <xforms:setvalue ref="instance('users-list')/user[@name=instance('user-details')/@name]/displayName" value="instance('user-details')/displayName"/>
+                </xforms:action>
+            </xforms:action>
+
+         <!-- instance for groups -->
+            <xforms:instance id="groups-instance" xxforms:exclude-result-prefixes="#all">
+                <auth/>
+            </xforms:instance>
+            <xforms:submission id="get-groups-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-groups.xq" replace="instance" instance="groups-instance" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}"/>
+
+         <!-- instance for test accounts -->
+            <xforms:instance id="test-accounts" xxforms:exclude-result-prefixes="#all">
+                <auth/>
+            </xforms:instance>
+            <xforms:submission id="get-test-accounts-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-test-account-groups.xquery" replace="instance" instance="test-accounts" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}"/>
+            <xforms:submission id="save-test-accounts-submission" serialization="none" method="get" resource="{$art-exist}/modules/save-test-account-groups.xquery" replace="none" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+            <xforms:action ev:event="xforms-model-construct-done">
+                <xforms:send submission="get-resources-submission"/>
+                <xforms:setvalue ref="instance('language')" value="if (string-length(xxforms:get-session-attribute('language'))&gt;0) then (xxforms:get-session-attribute('language')) else (instance('resources-instance')//resources[1]/@xml:lang/string())"/>
+                <xforms:send submission="get-groups-submission"/>
+                <xforms:send submission="get-test-accounts-submission"/>
+                <xforms:send submission="get-users-list-submission"/>
+            </xforms:action>
+            <xforms:action ev:event="xforms-ready">
+                <xforms:setvalue ref="instance('user-navigation')" value="instance('users-list')/user[1]/@name"/>
+                <xforms:send submission="get-user-details-submission"/>
+                <xforms:setvalue ref="instance('user-safe')">true</xforms:setvalue>
+            </xforms:action>
+            <!-- relevant language is returned as first node, rest should be empty -->
+            <xxforms:variable name="resources" select="instance('resources-instance')//resources[1]"/>
+            <xxforms:variable name="administrator" select="contains(xxforms:get-session-attribute('groups'),'dba')"/>
+            <xforms:bind nodeset="instance('user-navigation')" readonly="instance('user-safe')='false'"/>
+            <xforms:bind nodeset="instance('user-details')">
+                <xforms:bind ref=".//ancestor-or-self::user[@name=('admin')]" readonly="true()"/>
+                <xforms:bind ref=".//ancestor-or-self::user[@name=('guest')]">
+                    <xforms:bind ref="@*" readonly="true()"/>
+                    <xforms:bind ref="*[not(name()=('defaultLanguage'))]" readonly="true()"/>
+                </xforms:bind>
+                <xforms:bind ref="@name" type="xs:string" required="true()" constraint="for $current-name in . return count(instance('users-list')/user[@name = $current-name]) &lt;= 1"/>
+                <xforms:bind ref="@newpwd" constraint="not(@new='true') or string-length(@newpwd)&gt;0"/>
+                <xforms:bind ref="@newpwd-confirm" constraint="string-length(@newpwd)=0 or .=@newpwd"/>
+            </xforms:bind>
+        </xforms:model>
+    </xhtml:head>
+   <!-- Start of XForm body -->
+    <xhtml:body>
+        <xforms:group ref=".[$administrator]">
+            <xhtml:table width="100%">
+                <xhtml:tr>
+                    <!-- user navigation -->
+                    <xhtml:td width="20%">
+                        <xhtml:table width="100%">
+                            <!-- row with heading for select controls	-->
+                            <xhtml:tr>
+                                <xhtml:td class="heading">
+                                    <xhtml:div class="heading">
+                                        <xforms:output ref="$resources/user"/>
+                                    </xhtml:div>
+                                    <xforms:group ref=".[instance('user-safe')='true']">
+                                        <xhtml:div class="buttons">
+                                            <fr:button id="add-user">
+                                                <xforms:label>
+                                                    <xhtml:img src="/img/plus.png" alt=""/>
+                                                </xforms:label>
+                                                <xforms:hint>
+                                                    <xforms:output ref="$resources/add-user"/>
+                                                </xforms:hint>
+                                                <xforms:action ev:event="DOMActivate">
+                                                    <xforms:insert context="instance('users-list')" nodeset="user" at="last()" position="after" origin="instance('new-list-user')"/>
+                                                    <xforms:insert nodeset="instance('user-details')" origin="instance('new-user')"/>
+                                                    <xforms:setvalue ref="instance('user-navigation')" value="''"/>
+                                                    <xforms:setfocus control="username"/>
+                                                    <xforms:setvalue ref="instance('user-safe')">false</xforms:setvalue>
+                                                </xforms:action>
+                                            </fr:button>
+                                        </xhtml:div>
+                                    </xforms:group>
+                                </xhtml:td>
+                            </xhtml:tr>
+                            <xhtml:tr>
+                                <xhtml:td>
+                                    <xhtml:div class="navigate-small">
+                                        <xforms:select1 ref="instance('user-navigation')" appearance="compact" id="user-select">
+                                            <xforms:itemset nodeset="instance('users-list')/user">
+                                                <xforms:label ref="if (displayName[string-length()&gt;0]) then displayName else (@name)"/>
+                                                <xforms:value ref="@name"/>
+                                            </xforms:itemset>
+                                            <xforms:action ev:event="xforms-value-changed">
+                                                <xforms:send submission="get-user-details-submission"/>
+                                                <xforms:setfocus control="displayName"/>
+                                            </xforms:action>
+                                        </xforms:select1>
+                                    </xhtml:div>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xhtml:table>
+                    </xhtml:td>
+                    <!-- user details -->
+                    <xhtml:td>
+                        <xhtml:table class="detail" width="100%">
+                            <xforms:group ref="instance('user-details')">
+                                <xhtml:tr>
+                                    <xhtml:td class="heading" colspan="3">
+                                        <xhtml:div class="heading">
+                                            <xforms:output ref="if (displayName[string-length()&gt;0]) then displayName else (@name)"/>&#160; </xhtml:div>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                                <!-- creation date / lastlogin / lastissuenotify -->
+                                <xforms:group ref=".[string-length(string-join((creationdate|lastlogin|lastissuenotify),''))&gt;0]">
+                                    <xhtml:tr>
+                                        <xhtml:td class="item-label" style="border-top: 1px solid black;border-left: 1px solid black;">
+                                            <xforms:output ref="$resources/created"/>
+                                        </xhtml:td>
+                                        <xhtml:td class="item-label" style="border-top: 1px solid black;">
+                                            <xforms:output ref="$resources/last-login"/>
+                                        </xhtml:td>
+                                        <xhtml:td class="item-label" style="border-top: 1px solid black;border-right: 1px solid black;">
+                                            <xforms:output ref="$resources/last-issue-email"/>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                    <xhtml:tr>
+                                        <xhtml:td style="border-bottom: 1px solid black;border-left: 1px solid black">
+                                            <xforms:output ref="creationdate"/>&#160;</xhtml:td>
+                                        <xhtml:td style="border-bottom: 1px solid black;">
+                                            <xforms:output ref="lastlogin"/>&#160;</xhtml:td>
+                                        <xhtml:td style="border-bottom: 1px solid black;border-right: 1px solid black;">
+                                            <xforms:output ref="lastissuenotify"/>&#160;</xhtml:td>
+                                    </xhtml:tr>
+                                </xforms:group>
+                                <!-- account active -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/account-active"/>
+                                    </xhtml:td>
+                                    <xhtml:td colspan="2">
+                                        <xforms:select1 ref="@active" appearance="full">
+                                            <xforms:item>
+                                                <xforms:label>
+                                                    <xforms:output ref="$resources/yes"/>
+                                                </xforms:label>
+                                                <xforms:value>true</xforms:value>
+                                            </xforms:item>
+                                            <xforms:item>
+                                                <xforms:label>
+                                                    <xforms:output ref="$resources/no"/>
+                                                </xforms:label>
+                                                <xforms:value>false</xforms:value>
+                                            </xforms:item>
+                                        </xforms:select1>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                                <!-- username -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/username"/>
+                                    </xhtml:td>
+                                    <xhtml:td colspan="2">
+                                        <xforms:group ref=".[not(@new='true')]">
+                                            <xforms:output ref="@name"/>
+                                        </xforms:group>
+                                        <xforms:group ref=".[@new='true']">
+                                            <xforms:input ref="@name" incremental="true" id="username">
+                                                <xforms:alert>
+                                                    <xforms:output ref="$resources/required-field"/>
+                                                </xforms:alert>
+                                            </xforms:input>
+                                        </xforms:group>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                                <!-- displayname -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/name"/>
+                                    </xhtml:td>
+                                    <xhtml:td colspan="2">
+                                        <xforms:input ref="displayName" id="displayName"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                                <!-- language -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/default-user-language"/>
+                                    </xhtml:td>
+                                    <xhtml:td colspan="2">
+                                        <xforms:select1 ref="defaultLanguage" class="auto-width" id="language-select">
+                                            <xforms:item>
+                                                <xforms:label ref="$resources/not-set"/>
+                                                <xforms:value/>
+                                            </xforms:item>
+                                            <xforms:itemset nodeset="instance('resources-instance')/resources">
+                                                <xforms:label ref="@displayName"/>
+                                                <xforms:value ref="@xml:lang"/>
+                                            </xforms:itemset>
+                                        </xforms:select1>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                                <!-- description -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/description"/>
+                                    </xhtml:td>
+                                    <xhtml:td colspan="2">
+                                        <xforms:textarea ref="description"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                                <!-- organization -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/organization"/>
+                                    </xhtml:td>
+                                    <xhtml:td colspan="2">
+                                        <xforms:input ref="organization"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                                <!-- email -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/email"/>
+                                    </xhtml:td>
+                                    <xhtml:td colspan="2">
+                                        <xforms:input ref="email"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                                <!-- password -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/password"/>
+                                    </xhtml:td>
+                                    <xhtml:td colspan="2">
+                                        <xforms:secret ref="@newpwd">
+                                            <xforms:alert>
+                                                <xforms:output ref="$resources/required-field"/>
+                                            </xforms:alert>
+                                        </xforms:secret>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                                <!-- password confirmation -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/confirm-password"/>
+                                    </xhtml:td>
+                                    <xhtml:td colspan="2">
+                                        <xforms:secret ref="@newpwd-confirm" incremental="true">
+                                            <xforms:alert>
+                                                <xforms:output ref="$resources/does-not-match"/>
+                                            </xforms:alert>
+                                        </xforms:secret>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                                <!-- primary group -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/primarygroup"/>
+                                    </xhtml:td>
+                                    <xhtml:td colspan="2">
+                                        <xforms:select1 ref="primarygroup" class="auto-width" appearance="minimal" id="primarygroup-select">
+                                            <xforms:itemset nodeset="instance('groups-instance')/group[.=tokenize(instance('user-details')/groups,'\s+')][not(.=instance('test-accounts')/group)]">
+                                                <xforms:label ref="."/>
+                                                <xforms:value ref="."/>
+                                            </xforms:itemset>
+                                        </xforms:select1>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                                <!-- groups -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/groups"/>
+                                    </xhtml:td>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/test-accounts"/>
+                                    </xhtml:td>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/projects"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                                <xhtml:tr>
+                                    <xhtml:td>
+                                        <xforms:select ref="groups" appearance="full">
+                                            <xforms:itemset nodeset="instance('groups-instance')/group[not(.=instance('test-accounts')/group)][not(.=instance('users-list')/user/@name)]">
+                                                <xforms:label ref="."/>
+                                                <xforms:value ref="."/>
+                                            </xforms:itemset>
+                                        </xforms:select>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:select ref="groups" appearance="full">
+                                            <xforms:itemset nodeset="instance('groups-instance')/group[.=instance('test-accounts')/group]">
+                                                <xforms:label ref="."/>
+                                                <xforms:value ref="."/>
+                                            </xforms:itemset>
+                                        </xforms:select>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <!-- Go readonly as they would need to be synched with projects, once we do that we could read/write. -->
+                                        <xhtml:ul>
+                                            <xforms:repeat ref="projects/project">
+                                                <xhtml:li class="not-selectable">
+                                                    <xforms:output ref="@name"/> (<xforms:output ref="@prefix"/>) </xhtml:li>
+                                            </xforms:repeat>
+                                        </xhtml:ul>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                                <!-- cancel / save -->
+                                <xhtml:tr>
+                                    <xhtml:td colspan="3" align="right">
+                                        <xforms:group ref=".[instance('user-safe')='false']">
+                                            <fr:button>
+                                                <xforms:label ref="$resources/cancel"/>
+                                                <xforms:action ev:event="DOMActivate">
+                                                    <xforms:send submission="get-users-list-submission"/>
+                                                    <xforms:action if="not(instance('users-list')/user[@name=instance('user-navigation')])">
+                                                        <xforms:setvalue ref="instance('user-navigation')" value="instance('users-list')/user[1]/@name"/>
+                                                    </xforms:action>
+                                                    <xforms:send submission="get-user-details-submission"/>
+                                                    <xforms:setvalue ref="instance('user-safe')">true</xforms:setvalue>
+                                                </xforms:action>
+                                            </fr:button>
+                                            <fr:button>
+                                                <xforms:label ref="$resources/save"/>
+                                                <xforms:action ev:event="DOMActivate">
+                                                    <xforms:send submission="save-user-details-submission"/>
+                                                    <xforms:action if="exists(instance('test-accounts')/group)">
+                                                        <xforms:send submission="save-test-accounts-submission"/>
+                                                    </xforms:action>
+                                                </xforms:action>
+                                            </fr:button>
+                                        </xforms:group>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xforms:group>
+                        </xhtml:table>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xhtml:table>
+        </xforms:group>
+    </xhtml:body>
+</xhtml:html>

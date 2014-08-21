@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="80"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.107"/>
+   <Title name="RoleLinkType" date="2012-08-02" version="1.000"/>
+   <Class code="rootClass">
+      <SubClass subCount="7" code="REL" kind="concept">
+         <Rubric id="d1e217482" kind="preferred">
+            <Label xml:lang="en-US">related</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">RoleLinkType</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl"/>
+      </Rubric>
+   </Class>
+   <Class code="REL" kind="concept">
+      <Meta name="internalId" value="21429"/>
+      <Meta name="Name:Role:outboundLink:RoleLink" value="relatedTo"/>
+      <Meta name="Sort:Role:outboundLink:RoleLink" value="A________"/>
+      <Meta name="Name:Role:inboundLink:RoleLink" value="related"/>
+      <Meta name="Sort:Role:inboundLink:RoleLink" value="A________"/>
+      <SubClass code="BACKUP" subCount="0">
+         <Rubric id="d1e217530" kind="preferred">
+            <Label xml:lang="en-US">is backup for</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="CONT" subCount="0">
+         <Rubric id="d1e217565" kind="preferred">
+            <Label xml:lang="en-US">has contact</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="DIRAUTH" subCount="0">
+         <Rubric id="d1e217603" kind="preferred">
+            <Label xml:lang="en-US">has direct authority over</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="IDENT" subCount="0">
+         <Rubric id="d1e217635" kind="preferred">
+            <Label xml:lang="en-US">Identification</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="INDAUTH" subCount="0">
+         <Rubric id="d1e217673" kind="preferred">
+            <Label xml:lang="en-US">has indirect authority over</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PART" subCount="0">
+         <Rubric id="d1e217711" kind="preferred">
+            <Label xml:lang="en-US">has part</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="REPL" subCount="0">
+         <Rubric id="d1e217750" kind="preferred">
+            <Label xml:lang="en-US">replaces</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e217454" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An action taken with respect to a subject Entity by a regulatory or authoritative body with supervisory capacity over that entity. The action is taken in response to behavior by the subject Entity that body finds to be undesirable.</p>
+            <p>Suspension, license restrictions, monetary fine, letter of reprimand, mandated training, mandated supervision, etc. <i>Examples:</i>
+            </p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e217482" kind="short">
+         <Label xml:lang="en-US">related</Label>
+      </Rubric>
+      <Rubric id="d1e217482" kind="preferred">
+         <Label xml:lang="en-US">related</Label>
+      </Rubric>
+   </Class>
+   <Class code="BACKUP" kind="concept">
+      <Meta name="internalId" value="21302"/>
+      <Meta name="Name:Role:outboundLink:RoleLink" value="backupFor"/>
+      <Meta name="Sort:Role:outboundLink:RoleLink" value="AE_______"/>
+      <Meta name="Name:Role:inboundLink:RoleLink" value="backup"/>
+      <Meta name="Sort:Role:inboundLink:RoleLink" value="AE_______"/>
+      <SuperClass code="REL">
+         <Rubric id="d1e217482" kind="preferred">
+            <Label xml:lang="en-US">related</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e217494" kind="definition">
+         <Label xml:lang="en-US">
+            <p>This relationship indicates the source Role is available to the target Role as a backup. An entity in a backup role will be available as a substitute or replacement in the event that the entity assigned the role is unavailable. In medical roles where it is critical that the function be performed and there is a possibility that the individual assigned may be ill or otherwise indisposed, another individual is assigned to cover for the individual originally assigned the role. A backup may be required to be identified, but unless the backup is actually used, he/she would not assume the assigned entity role.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e217530" kind="short">
+         <Label xml:lang="en-US">is backup for</Label>
+      </Rubric>
+      <Rubric id="d1e217530" kind="preferred">
+         <Label xml:lang="en-US">is backup for</Label>
+      </Rubric>
+   </Class>
+   <Class code="CONT" kind="concept">
+      <Meta name="internalId" value="23100"/>
+      <Meta name="Name:Role:inboundLink:RoleLink" value="contactFor"/>
+      <Meta name="Name:Role:outboundLink:RoleLink" value="contact"/>
+      <Meta name="Sort:Role:inboundLink:RoleLink" value="AF_______"/>
+      <Meta name="Sort:Role:outboundLink:RoleLink" value="AF_______"/>
+      <SuperClass code="REL">
+         <Rubric id="d1e217482" kind="preferred">
+            <Label xml:lang="en-US">related</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e217541" kind="definition">
+         <Label xml:lang="en-US">This relationship indicates the target Role provides or receives information regarding the target role. For example, AssignedEntity is a contact for a ServiceDeliveryLocation.</Label>
+      </Rubric>
+      <Rubric id="d1e217565" kind="short">
+         <Label xml:lang="en-US">has contact</Label>
+      </Rubric>
+      <Rubric id="d1e217565" kind="preferred">
+         <Label xml:lang="en-US">has contact</Label>
+      </Rubric>
+   </Class>
+   <Class code="DIRAUTH" kind="concept">
+      <Meta name="internalId" value="11605"/>
+      <Meta name="Name:Role:outboundLink:RoleLink" value="directAuthorityOver"/>
+      <Meta name="Sort:Role:outboundLink:RoleLink" value="AA_______"/>
+      <Meta name="Name:Role:inboundLink:RoleLink" value="directAuthority"/>
+      <Meta name="Sort:Role:inboundLink:RoleLink" value="AA_______"/>
+      <SuperClass code="REL">
+         <Rubric id="d1e217482" kind="preferred">
+            <Label xml:lang="en-US">related</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e217576" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The source Role has direct authority over the target role in a chain of authority.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e217603" kind="short">
+         <Label xml:lang="en-US">has direct authority over</Label>
+      </Rubric>
+      <Rubric id="d1e217603" kind="preferred">
+         <Label xml:lang="en-US">has direct authority over</Label>
+      </Rubric>
+   </Class>
+   <Class code="IDENT" kind="concept">
+      <Meta name="internalId" value="22184"/>
+      <SuperClass code="REL">
+         <Rubric id="d1e217482" kind="preferred">
+            <Label xml:lang="en-US">related</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e217614" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The source role provides identification for the target role. The source role must be IDENT. The player entity of the source role is constrained to be the same as (i.e. the equivalent of, or equal to) the player of the target role if present. If the player is absent from the source role, then it is assumed to be the same as the player of the target role.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e217635" kind="short">
+         <Label xml:lang="en-US">Identification</Label>
+      </Rubric>
+      <Rubric id="d1e217635" kind="preferred">
+         <Label xml:lang="en-US">Identification</Label>
+      </Rubric>
+   </Class>
+   <Class code="INDAUTH" kind="concept">
+      <Meta name="internalId" value="11606"/>
+      <Meta name="Name:Role:outboundLink:RoleLink" value="indirectAuthorithyOver"/>
+      <Meta name="Sort:Role:outboundLink:RoleLink" value="AB_______"/>
+      <Meta name="Name:Role:inboundLink:RoleLink" value="indirectAuthority"/>
+      <Meta name="Sort:Role:inboundLink:RoleLink" value="AB_______"/>
+      <SuperClass code="REL">
+         <Rubric id="d1e217482" kind="preferred">
+            <Label xml:lang="en-US">related</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e217646" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The source Role has indirect authority over the target role in a chain of authority.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e217673" kind="short">
+         <Label xml:lang="en-US">has indirect authority over</Label>
+      </Rubric>
+      <Rubric id="d1e217673" kind="preferred">
+         <Label xml:lang="en-US">has indirect authority over</Label>
+      </Rubric>
+   </Class>
+   <Class code="PART" kind="concept">
+      <Meta name="internalId" value="11604"/>
+      <Meta name="Name:Role:outboundLink:RoleLink" value="part"/>
+      <Meta name="Sort:Role:outboundLink:RoleLink" value="AC_______"/>
+      <Meta name="Name:Role:inboundLink:RoleLink" value="partOf"/>
+      <Meta name="Sort:Role:inboundLink:RoleLink" value="AC_______"/>
+      <SuperClass code="REL">
+         <Rubric id="d1e217482" kind="preferred">
+            <Label xml:lang="en-US">related</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e217684" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The target Role is part of the Source Role.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e217711" kind="short">
+         <Label xml:lang="en-US">has part</Label>
+      </Rubric>
+      <Rubric id="d1e217711" kind="preferred">
+         <Label xml:lang="en-US">has part</Label>
+      </Rubric>
+   </Class>
+   <Class code="REPL" kind="concept">
+      <Meta name="internalId" value="15952"/>
+      <Meta name="Name:Role:outboundLink:RoleLink" value="replacementOf"/>
+      <Meta name="Sort:Role:outboundLink:RoleLink" value="AD_______"/>
+      <Meta name="Name:Role:inboundLink:RoleLink" value="replacedBy"/>
+      <Meta name="Sort:Role:inboundLink:RoleLink" value="AD_______"/>
+      <SuperClass code="REL">
+         <Rubric id="d1e217482" kind="preferred">
+            <Label xml:lang="en-US">related</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e217723" kind="definition">
+         <Label xml:lang="en-US">
+            <p>This relationship indicates that the source Role replaces (or subsumes) the target Role. Allows for new identifiers and/or new effective time for a registry entry or a certification, etc.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e217750" kind="short">
+         <Label xml:lang="en-US">replaces</Label>
+      </Rubric>
+      <Rubric id="d1e217750" kind="preferred">
+         <Label xml:lang="en-US">replaces</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet href="vhitg-cda-v3.xsl" type="text/xsl"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:sciphox="urn::sciphox-org/sciphox"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../schemas/CDA.xsd">
+    <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+    <id extension="MED/0000000000000010000059795/000/00" root="1.2.276.0.76.3.1.19.1.99999.1.18"/>
+    <code code="34106-5" codeSystem="2.16.840.1.113883.6.1" displayName="Zusammenfassung bei
+        stationärer Entlassung"/>
+    <effectiveTime value="20060420111006"/>
+    <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+    <languageCode code="de-DE"/>
+    <setId extension="MED/0000000000000010000059795/000" root="1.2.276.0.76.3.1.19.1.99999.1.30001"/>
+    <versionNumber value="1"/>
+    <recordTarget>
+        <patientRole>
+            <id extension="890098" root="1.2.276.0.76.3.1.13.99"/>
+            <id extension=" 0050002076" root="1.2.276.0.76.3.1.19.1.99999.1.9"/>
+            <addr use="HP">
+                <streetAddressLine>Oberstr. 1</streetAddressLine>
+                <postalCode>52351</postalCode>
+                <city>Düren</city>
+            </addr>
+            <telecom use="HP" value="tel:024218230012"/>
+            <patient>
+                <name>
+                    <given>Bruno</given>
+                    <family>Bockig</family>
+                </name>
+                <administrativeGenderCode codeSystem="2.16.840.1.113883.5.1" code="M"/>
+                <birthTime value="19300301"/>
+            </patient>
+            <providerOrganization>
+                <id extension="8236623" root="1.2.276.0.76.3.1.13.79"/>
+                <name>Am Gesundheitsbrunnen</name>
+                <telecom use="WP" value="tel:02421.43628.0"/>
+                <addr use="WP">
+                    <streetAddressLine>Hohenzollernstr. 66</streetAddressLine>
+                    <postalCode>52351</postalCode>
+                    <city>Düren</city>
+                </addr>
+            </providerOrganization>
+        </patientRole>
+    </recordTarget>
+    <author>
+        <time value="20060420111006"/>
+        <assignedAuthor>
+            <id root="1.2.276.0.76.3.1.13.89" extension="2342323"/>
+            <addr use="WP">
+                <streetAddressLine>Hohenzollernstr. 66</streetAddressLine>
+                <postalCode>52351</postalCode>
+                <city>Düren</city>
+            </addr>
+            <assignedPerson>
+                <name>
+                    <prefix>Dr.</prefix>
+                    <given>Gustav</given>
+                    <family>Gesund</family>
+                </name>
+            </assignedPerson>
+            <representedOrganization>
+                <id extension="8236623" root="1.2.276.0.76.3.1.13.79"/>
+                <name>Am Gesundheitsbrunnen</name>
+                <telecom use="WP" value="tel:02421.43628.0"/>
+                <addr use="WP">
+                    <streetAddressLine>Hohenzollernstr. 66</streetAddressLine>
+                    <postalCode>52351</postalCode>
+                    <city>Düren</city>
+                </addr>
+            </representedOrganization>
+        </assignedAuthor>
+    </author>
+    <custodian>
+        <assignedCustodian>
+            <representedCustodianOrganization>
+                <id extension="8236623" root="1.2.276.0.76.3.1.13.79"/>
+                <name>Am Gesundheitsbrunnen</name>
+                <telecom use="WP" value="tel:02421.43628.0"/>
+                <addr use="WP">
+                    <streetAddressLine>Hohenzollernstr. 66</streetAddressLine>
+                    <postalCode>52351</postalCode>
+                    <city>Düren</city>
+                </addr>
+            </representedCustodianOrganization>
+        </assignedCustodian>
+    </custodian>
+    <informationRecipient typeCode="PRCP">
+        <intendedRecipient>
+            <id extension="2342323" root="1.2.276.0.76.3.1.13.89"/>
+            <informationRecipient>
+                <name>
+                    <given>Gustav</given>
+                    <family>Gesund</family>
+                </name>
+            </informationRecipient>
+            <receivedOrganization>
+                <id extension="GESUND" root="1.2.276.0.76.3.1.13.79"/>
+                <name>Gesund, Gustav</name>
+                <addr>
+                    <streetAddressLine> </streetAddressLine>
+                    <postalCode/>
+                    <city/>
+                </addr>
+            </receivedOrganization>
+        </intendedRecipient>
+    </informationRecipient>
+    <legalAuthenticator>
+        <time value="20060420111006"/>
+        <signatureCode code="S"/>
+        <assignedEntity>
+            <id root="1.2.276.0.76.3.1.13.89" extension="2342323"/>
+            <addr use="WP">
+                <streetAddressLine>Hohenzollernstr. 66</streetAddressLine>
+                <postalCode>52351</postalCode>
+                <city>Düren</city>
+            </addr>
+            <telecom use="WP" nullFlavor="UNK"/>
+            <assignedPerson>
+                <name>
+                    <prefix>Dr.</prefix>
+                    <given>Gustav</given>
+                    <family>Gesund</family>
+                </name>
+            </assignedPerson>
+            <representedOrganization>
+                <id extension="8236623" root="1.2.276.0.76.3.1.13.79"/>
+                <name>Am Gesundheitsbrunnen</name>
+                <telecom use="WP" value="tel:02421.43628.0"/>
+                <addr use="WP">
+                    <streetAddressLine>Hohenzollernstr. 66</streetAddressLine>
+                    <postalCode>52351</postalCode>
+                    <city>Düren</city>
+                </addr>
+            </representedOrganization>
+        </assignedEntity>
+    </legalAuthenticator>
+    <componentOf>
+        <encompassingEncounter>
+            <id root="1.2.276.0.76.3.1.19.1.99999.1.10" extension="0000103739"/>
+            <code code="IMP" codeSystem="2.16.840.1.113883.5.4"/>
+            <effectiveTime>
+                <low nullFlavor="UNK"/>
+            </effectiveTime>
+            <location>
+                <healthCareFacility>
+                    <serviceProviderOrganization>
+                        <id extension="8236623" root="1.2.276.0.76.3.1.13.79"/>
+                        <name>Am Gesundheitsbrunnen</name>
+                        <telecom use="WP" value="tel:02421.43628.0"/>
+                        <addr use="WP">
+                            <streetAddressLine>Hohenzollernstr. 66</streetAddressLine>
+                            <postalCode>52351</postalCode>
+                            <city>Düren</city>
+                        </addr>
+                    </serviceProviderOrganization>
+                </healthCareFacility>
+            </location>
+        </encompassingEncounter>
+    </componentOf>
+    <component>
+        <structuredBody>
+            <component>
+                <section>
+                    <code code="X-SALUT" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                    <text>
+                        <paragraph> Sehr geehrte Frau Kollegin, sehr geehrter Herr Kollege,</paragraph>
+                        <paragraph/>
+                        <paragraph>Wir berichten über den Patienten Bockig,</paragraph>
+                        <paragraph>Bruno geb. *01.03.1930.</paragraph>
+                    </text>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <code code="10164-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                    <text>
+                        <paragraph>Laut Aussage des Patienten bei Aufnahme sei er am 19.01.2006 von
+                            seinem</paragraph>
+                        <paragraph>eigenen Trecker auf Beckenhöhe überrollt worden. Herr Bockig
+                            arbeitete</paragraph>
+                        <paragraph>zunächst wie gewohnt weiter und stellte sich erst heute wegen</paragraph>
+                        <paragraph>persistierender Schmerzen und Schwellung beider Beine bei seinem</paragraph>
+                        <paragraph>Hausarzt Herrn Dr. Merz vor. Dieser überwies Herrn Mankell in die</paragraph>
+                        <paragraph>Notfallambulanz des Kreiskrankenhauses Düren. Nach
+                            intensivmedizinischer</paragraph>
+                        <paragraph>Überwachung in der Nacht wurde der Patient unfallchirurgisch
+                            versorgt.</paragraph>
+                    </text>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <code code="12223-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                    <title>Befunddaten</title>
+                    <component>
+                        <section>
+                            <text>
+                                <paragraph/>
+                            </text>
+                        </section>
+                    </component>
+                    <component>
+                        <section>
+                            <text>
+                                <paragraph>Bei der Aufnahme fand sich ein ca. 20 x 20 cm großes
+                                    Hämatom am linken</paragraph>
+                                <paragraph>Unterbauch und in der Nähe des Beckenkamms. Es fiel eine
+                                    deutlich</paragraph>
+                                <paragraph>ödematöse Schwellung beider Beine li &gt; re auf.
+                                    Außerdem konnte ein</paragraph>
+                                <paragraph>Beckenkompressionsschmerz bei instabilem Becken ausgelöst
+                                    werden. Die</paragraph>
+                                <paragraph>periphere Durchblutung, Motorik und Sensibilität waren
+                                    intakt.</paragraph>
+                                <renderMultiMedia referencedObject="Z_CDA_PICT"/>
+                            </text>
+                            <entry>
+                                <observationMedia ID="Z_CDA_PICT" classCode="OBS" moodCode="EVN">
+                                    <id extension="Z_CDA_PICT"
+                                        root="1.2.276.0.76.3.1.19.1.99999.1.30002"/>
+                                    <value xsi:type="ED" mediaType="image/jpeg">
+                                        <reference value="00000000000000014951.jpg"/>
+                                    </value>
+                                </observationMedia>
+                            </entry>
+                        </section>
+                    </component>
+                    <component>
+                        <section>
+                            <code code="34079-4" codeSystem="2.16.840.1.113883.6.1"
+                                codeSystemName="LOINC"/>
+                            <title>Befunddaten</title>
+                            <text/>
+                        </section>
+                    </component>
+                    <component>
+                        <section>
+                            <text>
+                                <paragraph>Aufgrund steigender Kreatinin-Werte wurde zunächst ein
+                                    Abdomen CT mit</paragraph>
+                                <paragraph>Kontrastmittel veranlasst. Hier zeigte sich eine
+                                    ausbleibende</paragraph>
+                                <paragraph>Anreicherung der linken Niere. Die Kollegen der
+                                    urologischen Klinik</paragraph>
+                                <paragraph>legten daraufhin am 25.01.2006 einen Double-J-Katheter
+                                    und empfahlen</paragraph>
+                                <paragraph>einen Farbduplex der Nierenarterie sowie eine retrograde
+                                    Darstellung der</paragraph>
+                                <paragraph>ableitenden Harnwege im Verlauf des stationären
+                                    Aufenthaltes.</paragraph>
+                            </text>
+                        </section>
+                    </component>
+                    <component>
+                        <section>
+                            <text>
+                                <paragraph/>
+                            </text>
+                        </section>
+                    </component>
+                    <component>
+                        <section>
+                            <text>
+                                <paragraph>Am 18-02-2006 kann Herr Bockig bei allgemeinem
+                                    Wohlbefinden in die</paragraph>
+                                <paragraph>stationäre Rehabilitationseinrichtung nach Nümbrecht
+                                    verlegt werden. Zu</paragraph>
+                                <paragraph>diesem Zeitpunkt sind die Wundverhältnisse reizlos und
+                                    die</paragraph>
+                                <paragraph>Entzündungslaborparameter liegen im
+                                Normbereich.</paragraph>
+                            </text>
+                        </section>
+                    </component>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <code code="11535-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                    <title/>
+                    <text>
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>Freitext zur Diagnose</th>
+                                    <th>Schlüssel</th>
+                                    <th>Katalogtext</th>
+                                    <th>Diagnosedatum</th>
+                                    <th>Diagnosezeit</th>
+                                    <th>Diagnostische Gewissheit</th>
+                                    <th>Bemerkung</th>
+                                    <th>Lokalisation</th>
+                                    <th>Diagnosenart</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td/>
+                                    <td>S32.83</td>
+                                    <td>
+                                        <content ID="diag-1">Frakt.: Becken, Teil nicht
+                                        näh.bez.</content>
+                                    </td>
+                                    <td>19.04.2006</td>
+                                    <td>14:03:44</td>
+                                    <td/>
+                                    <td/>
+                                    <td/>
+                                    <td>Einweisungsdiagnose</td>
+                                </tr>
+                                <tr>
+                                    <td/>
+                                    <td>S32.89</td>
+                                    <td>
+                                        <content ID="diag-2">Frakt.:
+                                        sonst.u.multip.Teil.d.Beckens</content>
+                                    </td>
+                                    <td>19.04.2006</td>
+                                    <td>14:03:44</td>
+                                    <td/>
+                                    <td/>
+                                    <td/>
+                                    <td/>
+                                </tr>
+                                <tr>
+                                    <td/>
+                                    <td>S33.4</td>
+                                    <td>
+                                        <content ID="diag-3">Traumat.Symphysensprengung</content>
+                                    </td>
+                                    <td>19.04.2006</td>
+                                    <td>14:03:44</td>
+                                    <td/>
+                                    <td/>
+                                    <td/>
+                                    <td/>
+                                </tr>
+                                <tr>
+                                    <td/>
+                                    <td>S32.1</td>
+                                    <td>
+                                        <content ID="diag-4">Frakt.d.Os sacrum</content>
+                                    </td>
+                                    <td>19.04.2006</td>
+                                    <td>14:03:44</td>
+                                    <td/>
+                                    <td/>
+                                    <td/>
+                                    <td/>
+                                </tr>
+                                <tr>
+                                    <td/>
+                                    <td>N19</td>
+                                    <td>
+                                        <content ID="diag-5">nicht näh.bez.Niereninsuff.</content>
+                                    </td>
+                                    <td>19.04.2006</td>
+                                    <td>14:03:44</td>
+                                    <td/>
+                                    <td/>
+                                    <td/>
+                                    <td>Entlassungsdiagnose</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry typeCode="DRIV">
+                        <observation classCode="OBS" moodCode="EVN">
+                            <code codeSystem="2.16.840.1.113883.3.7.1.16" codeSystemName="Sciphox"
+                                code="ORDDX"/>
+                            <statusCode code="completed"/>
+                            <effectiveTime>
+                                <low value="20060419140344"/>
+                            </effectiveTime>
+                            <value xsi:type="CD" code="S32.83" codeSystem="1.2.276.0.76.5.311"
+                                codeSystemName="ICD10gm2006" displayName="Frakt.: Becken, Teil nicht
+                                näh.bez.">
+                                <originalText>
+                                    <reference value="#diag-1"/>
+                                </originalText>
+                                <qualifier codeSystem="2.16.840.1.113883.3.7.1.8" code="G"/>
+                                <qualifier codeSystem="2.16.840.1.113883.3.7.1.7" code="U"/>
+                            </value>
+                        </observation>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <observation classCode="OBS" moodCode="EVN">
+                            <code codeSystem="2.16.840.1.113883.3.7.1.16" codeSystemName="Sciphox"
+                                code="INTDX"/>
+                            <statusCode code="completed"/>
+                            <effectiveTime>
+                                <low value="20060419140344"/>
+                            </effectiveTime>
+                            <value xsi:type="CD" code="S32.89" codeSystem="1.2.276.0.76.5.311"
+                                codeSystemName="ICD10gm2006" displayName="Frakt.:
+                                sonst.u.multip.Teil.d.Beckens">
+                                <originalText>
+                                    <reference value="#diag-2"/>
+                                </originalText>
+                                <qualifier codeSystem="2.16.840.1.113883.3.7.1.8" code="G"/>
+                                <qualifier codeSystem="2.16.840.1.113883.3.7.1.7" code="U"/>
+                            </value>
+                        </observation>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <observation classCode="OBS" moodCode="EVN">
+                            <code codeSystem="2.16.840.1.113883.3.7.1.16" codeSystemName="Sciphox"
+                                code="INTDX"/>
+                            <statusCode code="completed"/>
+                            <effectiveTime>
+                                <low value="20060419140344"/>
+                            </effectiveTime>
+                            <value xsi:type="CD" code="S33.4" codeSystem="1.2.276.0.76.5.311"
+                                codeSystemName="ICD10gm2006"
+                                displayName="Traumat.Symphysensprengung">
+                                <originalText>
+                                    <reference value="#diag-3"/>
+                                </originalText>
+                                <qualifier codeSystem="2.16.840.1.113883.3.7.1.8" code="G"/>
+                                <qualifier codeSystem="2.16.840.1.113883.3.7.1.7" code="U"/>
+                            </value>
+                        </observation>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <observation classCode="OBS" moodCode="EVN">
+                            <code codeSystem="2.16.840.1.113883.3.7.1.16" codeSystemName="Sciphox"
+                                code="INTDX"/>
+                            <statusCode code="completed"/>
+                            <effectiveTime>
+                                <low value="20060419140344"/>
+                            </effectiveTime>
+                            <value xsi:type="CD" code="S32.1" codeSystem="1.2.276.0.76.5.311"
+                                codeSystemName="ICD10gm2006" displayName="Frakt.d.Os sacrum">
+                                <originalText>
+                                    <reference value="#diag-4"/>
+                                </originalText>
+                                <qualifier codeSystem="2.16.840.1.113883.3.7.1.8" code="G"/>
+                                <qualifier codeSystem="2.16.840.1.113883.3.7.1.7" code="U"/>
+                            </value>
+                        </observation>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <observation classCode="OBS" moodCode="EVN">
+                            <code codeSystem="2.16.840.1.113883.3.7.1.16" codeSystemName="Sciphox"
+                                code="DISDX"/>
+                            <statusCode code="completed"/>
+                            <effectiveTime>
+                                <low value="20060419140344"/>
+                            </effectiveTime>
+                            <value xsi:type="CD" code="N19" codeSystem="1.2.276.0.76.5.311"
+                                codeSystemName="ICD10gm2006" displayName="nicht
+                                näh.bez.Niereninsuff.">
+                                <originalText>
+                                    <reference value="#diag-5"/>
+                                </originalText>
+                                <qualifier codeSystem="2.16.840.1.113883.3.7.1.8" code="G"/>
+                                <qualifier codeSystem="2.16.840.1.113883.3.7.1.7" code="U"/>
+                            </value>
+                        </observation>
+                    </entry>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <code code="19009-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                    <text>
+                        <paragraph>Am 30.01.2006 wurde die offene Reposition der Beckenrand- und</paragraph>
+                        <paragraph>Beckenringfraktur mit Platte vorderer Beckenring durchgeführt.
+                            Die</paragraph>
+                        <paragraph>Drainagen konnten zeitgerecht entfernt werden. Die Wundheilung
+                            erfolgte</paragraph>
+                        <paragraph>primär. Die FKDS und IVP zeigten eine wieder regelrechte
+                            Perfusion und</paragraph>
+                        <paragraph>Ausscheidung der linken Niere.</paragraph>
+                    </text>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <text>
+                        <paragraph>Die Mobilisation erfolgte über das linke Bein, verzögerte sich
+                            jedoch</paragraph>
+                        <paragraph>aufgrund orthostatischer Dysregulation und mangelnder Compliance
+                            des</paragraph>
+                        <paragraph>Patienten. Intermittierend berichtete Herr Bockig über
+                            pseudoradikuläre</paragraph>
+                        <paragraph>Parästhesien des rechten Beines. Unter Neurotin-Medikation
+                            bildeten sich</paragraph>
+                        <paragraph>diese jedoch vollständig zurück.</paragraph>
+                        <paragraph>Augrund des wiederholten Bakteriennachweises im Urin wird eine</paragraph>
+                        <paragraph>Antibiotikatherapie mit Tavanic 500 veranlasst.</paragraph>
+                    </text>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <title>Epikrise</title>
+                    <component>
+                        <section>
+                            <text>
+                                <paragraph>Wir bitten um regelmäßige Wund- und Befundkontrollen
+                                    sowie die</paragraph>
+                                <paragraph>Fortführung der Thromboseprophylaxe bis zur Vollbelastung
+                                    unter</paragraph>
+                                <paragraph>entsprechender Laborkontrolle. Des Weiteren empfehlen wir
+                                    eine</paragraph>
+                                <paragraph>Röntgenkontrolle der osteosynthetisch versorgten vorderen</paragraph>
+                                <paragraph>Beckenringfraktur zur Stellungs- und
+                                    Durchbauungskontrolle nach</paragraph>
+                                <paragraph>Beendigung der stationären Reha. Zusätzlich sollte
+                                    antibiotische</paragraph>
+                                <paragraph>Therapie für insgesamt 5 Tage fortgeführt werden.Bei</paragraph>
+                                <paragraph>Beschwerdepersistenz sollte die Wiedervorstellung in der
+                                    Urologie bei</paragraph>
+                                <paragraph>liegendem Double-J erfolgen. Der Double-J-Katheter soll
+                                    auf Anraten der</paragraph>
+                                <paragraph>Urologen 3 Wochen nach Entlassung entfernt
+                                werden.</paragraph>
+                            </text>
+                        </section>
+                    </component>
+                    <component>
+                        <section>
+                            <text>
+                                <paragraph>letzte Medikation:</paragraph>
+                                <paragraph>Präparat Generikum Dosis</paragraph>
+                                <paragraph>Pantozol 20 mg Tabletten Pantoprazol 1-0-0</paragraph>
+                                <paragraph>Voltaren Resinat Kps. Diclofenac 1-0-1</paragraph>
+                                <paragraph>Bifiteral sirup 500 ml Fla. Lactulose 1-0-0</paragraph>
+                                <paragraph>Tavanic 500 mg Tbl. Levofloxacin 1-0-0 für 5 Tage</paragraph>
+                                <paragraph>Clexane-40 0.4 ml Fertigspritze Enoxaprin </paragraph>
+                            </text>
+                        </section>
+                    </component>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <text>
+                        <paragraph>Mit freundlichen kollegialen Grüßen</paragraph>
+                    </text>
+                </section>
+            </component>
+        </structuredBody>
+    </component>
+</ClinicalDocument>

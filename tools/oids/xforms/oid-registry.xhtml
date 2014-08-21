@@ -1,0 +1,1667 @@
+<!--
+    Copyright (C) 2011-2014 ART-DECOR expert group art-decor.org
+    
+    Author: Alexander Henket
+    Author: Kai Heitmann
+    
+    The ART-DECOR expert group
+
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+--><!--
+    Work in progress 
+-->
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:widget="http://orbeon.org/oxf/xml/widget" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="oid-registry" xsi:schemaLocation="http://www.w3.org/1999/xhtml orbeon_schemas/xhtml1-transitional-orbeon.xsd">
+    <xhtml:head>
+        <xhtml:title>
+            <xforms:output ref="if (string-length(instance('oidregistry')) = 0) then 'Choose OID Registry' else instance('oid-registry-instance')/name/@value"/>
+        </xhtml:title>
+        <xhtml:style type="text/css">
+            td.heading { width:10px; background-color:#f0ebe4; color:#7a6e62; font-weight:bold; padding-left:0.5em; padding-right:0em; padding-top:0.25em;
+            padding-bottom:0.25em; text-align:left; vertical-align:top; }
+            .xforms-repeat-selected-item-1 { margin: 0;}
+            <!-- Have the text of the alert displayed -->
+            .xforms-alert-active {  color: red; font-size: inherit;/* override xforms.css */ font-weight:normal; width: auto;/*width: 100%;*/ }
+            .xforms-label { padding-right: 1em; }
+        </xhtml:style>
+        <xforms:model id="default">
+            <!-- Variable with path to eXist-db -->
+            <xxforms:variable name="exist-db" select="xxforms:property('tools.exist.url')"/>
+            
+            <!-- Variable with path to art-exist for use by form -->
+            <xxforms:variable name="art-exist" select="xxforms:property('art.exist.url')"/>
+            
+            <!-- resources for internationalization -->
+            <xforms:instance id="oidregistry" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+            
+            <!-- resources for internationalization -->
+            <xforms:instance id="resources-instance" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+            
+            <!-- submission for loading resources -->
+            <xforms:submission id="get-resources-submission" serialization="none" method="get" resource="{$exist-db}/oids/resources/form-resources.xml" replace="instance" instance="resources-instance"/>
+            <xxforms:variable name="resources" select="instance('resources-instance')//resources[@xml:lang=instance('language')]"/>
+            
+            <!-- language -->
+            <xforms:instance id="language" xxforms:exclude-result-prefixes="#all">
+                <language/>
+            </xforms:instance>
+            
+            <!-- instance for selected oids -->
+            <xforms:instance id="selected-oid-instance" xxforms:exclude-result-prefixes="#all">
+                <selected>
+                    <selected-request-oid/>
+                    <selected-oid/>
+                </selected>
+            </xforms:instance>
+            <!-- instance for oid search string -->
+            <xforms:instance id="oid-search-instance" xxforms:exclude-result-prefixes="#all">
+                <search/>
+            </xforms:instance>
+            <!-- instance for search results for the search button on the OID registry tab -->
+            <xforms:instance id="oid-searchresults-instance" xxforms:exclude-result-prefixes="#all">
+                <result>
+                    <oid id="1.0.3166.1.2.2">
+                        <name>ISO 3166 2 alpha landcodes</name>
+                    </oid>
+                    <oid id="1.0.639.1">
+                        <name>ISO 639 2 alpha taalcodes</name>
+                    </oid>
+                    <oid id="1.3.160">
+                        <name>EAN artikelcodes</name>
+                    </oid>
+                </result>
+            </xforms:instance>
+            <!-- instance for search results for the search button on the OID registry tab -->
+            <xforms:instance id="oid-request-searchresults-instance" xxforms:exclude-result-prefixes="#all">
+                <result>
+                    <oid/>
+                </result>
+            </xforms:instance>
+            
+            <!-- instances for navigation -->
+            <xforms:instance id="oid-navigation" xxforms:exclude-result-prefixes="#all">
+                <id/>
+            </xforms:instance>
+            
+            <!-- these do not work because of permissions -->
+            <xforms:submission id="update-searchresults-instance" ref="instance('oid-search-instance')" action="{$exist-db}/xquery/search-oid.xq?searchString={instance('oid-search-instance')}" method="get" instance="oid-searchresults-instance" replace="instance" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}"/>
+            <xforms:submission id="update-request-searchresults-instance" ref="instance('oid-search-instance')" action="{$exist-db}/xquery/search-oid.xq?searchString={instance('oid-search-instance')}" method="get" instance="oid-request-searchresults-instance" replace="instance" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}"/>
+            
+            <!-- instance for oids schema -->
+            <xforms:instance id="oids-types" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+            <!-- get oid request schema submission -->
+            <!--xforms:submission id="get-oids-schema-submission" serialization="none" method="get" resource="{$exist-db}/tools/oids/core/iso-13582-sor.xsd" replace="instance" instance="oids-types"/-->
+            <xforms:submission id="get-oids-schema-submission" serialization="none" method="get" resource="{$exist-db}/oids/modules/get-oids-schema-enumerations.xq" replace="instance" instance="oids-types" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}"/>
+            <!-- instance for OID Request Registry project -->
+            <xforms:instance id="oid-request-registry-instance" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+            <!-- get oid request registry submission -->
+            <xforms:submission id="get-oids-request-registry-submission" serialization="none" method="get" resource="{$exist-db}/oids/modules/get-oids-request-registry.xq" replace="instance" instance="oid-request-registry-instance" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    An error occurred during retrieval of open OID requests: <xforms:output value="event('error-type')"/>
+                    <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+            <!-- instance for OID Registry project -->
+            <xforms:instance id="oid-registry-instance" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+            <!-- get oid registry submission -->
+            <xforms:submission id="get-oids-registry-submission" serialization="none" method="get" resource="{$exist-db}/oids/modules/get-oids-registry.xq?registry={instance('oidregistry')}" replace="instance" instance="oid-registry-instance" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}"/>
+
+            <!-- instance to hold -->
+            <xforms:instance id="all-oid-registries-instance" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+            <!-- get oid registries submission -->
+            <xforms:submission id="get-all-oid-registries-submission" serialization="none" method="get" resource="{$exist-db}/oids/modules/get-oid-registries-list.xq?registry={instance('oidregistry')}" replace="instance" instance="all-oid-registries-instance" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}"/>
+            
+
+            <!-- instances for creating a new oid request -->
+            <xforms:instance id="oid-request-instance" xxforms:exclude-result-prefixes="#all">
+                <oid>
+                    <dotNotation value="1.2.3"/>
+                    <symbolicName value="symName"/>
+                    <category code="N"/>
+                    <status code="pending"/>
+                    <realm code="NL"/>
+                    <description language="en-US" mediaType="text/plain" value="Description Text Here">
+                        <thumbnail value=""/>
+                    </description>
+                    <description language="nl-NL" mediaType="text/plain" value="Omschrijving hier">
+                        <thumbnail value=""/>
+                    </description>
+                    <registrationAuthority>
+                        <code code="PRI"/>
+                        <scopingOrganization>
+                            <id value="2.16.840.1.113883.2.4.3.11"/>
+                            <name>
+                                <part value=""/>
+                            </name>
+                            <addr>
+                                <part value=""/>
+                            </addr>
+                            <telecom value=""/>
+                        </scopingOrganization>
+                    </registrationAuthority>
+                    <responsibleAuthority>
+                        <code code="PRI"/>
+                        <statusCode code="active"/>
+                        <validTime>
+                            <low value=""/>
+                            <high value=""/>
+                        </validTime>
+                        <scopingOrganization>
+                            <id value=""/>
+                            <name>
+                                <part value=""/>
+                            </name>
+                            <addr>
+                                <part value=""/>
+                            </addr>
+                            <telecom value=""/>
+                        </scopingOrganization>
+                    </responsibleAuthority>
+                </oid>
+            </xforms:instance>
+            <xforms:instance id="oid-description" xxforms:exclude-result-prefixes="#all">
+                <description language="" mediaType="text/plain" value="">
+                    <thumbnail value=""/>
+                </description>
+            </xforms:instance>
+            <xforms:instance id="oid-request-responsibleAuthority-instance" xxforms:exclude-result-prefixes="#all">
+                <responsibleAuthority>
+                    <code code="PRI"/>
+                    <statusCode code="active"/>
+                    <validTime>
+                        <low value=""/>
+                        <high value=""/>
+                    </validTime>
+                    <scopingOrganization>
+                        <id value=""/>
+                        <name>
+                            <part value=""/>
+                        </name>
+                        <addr>
+                            <part value=""/>
+                        </addr>
+                        <telecom value=""/>
+                    </scopingOrganization>
+                </responsibleAuthority>
+            </xforms:instance>
+            <xforms:instance id="oid-request-submittingAuthority-instance" xxforms:exclude-result-prefixes="#all">
+                <submittingAuthority>
+                    <code code=""/>
+                    <applicationDate value=""/>
+                    <scopingOrganization>
+                        <id value=""/>
+                        <name>
+                            <part value=""/>
+                        </name>
+                        <addr>
+                            <part value=""/>
+                        </addr>
+                        <telecom value=""/>
+                    </scopingOrganization>
+                </submittingAuthority>
+            </xforms:instance>
+            <xforms:instance id="oid-request-validTime-high-instance" xxforms:exclude-result-prefixes="#all">
+                <high value=""/>
+            </xforms:instance>
+            <xforms:instance id="oid-request-person-instance" xxforms:exclude-result-prefixes="#all">
+                <person>
+                    <name>
+                        <part value=""/>
+                    </name>
+                    <addr>
+                        <part value=""/>
+                    </addr>
+                    <telecom value=""/>
+                </person>
+            </xforms:instance>
+            <xforms:instance id="oid-request-organization-instance" xxforms:exclude-result-prefixes="#all">
+                <scopingOrganization>
+                    <id value=""/>
+                    <name>
+                        <part value=""/>
+                    </name>
+                    <addr>
+                        <part value=""/>
+                    </addr>
+                    <telecom value=""/>
+                </scopingOrganization>
+            </xforms:instance>
+            <xforms:instance id="oid-request-additionalProperty-instance" xxforms:exclude-result-prefixes="#all">
+                <additionalProperty>
+                    <attribute value=""/>
+                    <value value=""/>
+                </additionalProperty>
+            </xforms:instance>
+            <xforms:instance id="oid-request-historyAnnotation-instance" xxforms:exclude-result-prefixes="#all">
+                <historyAnnotation>
+                    <annotationDate value=""/>
+                    <text language="en-US" mediaType="text/plain" value=""/>
+                </historyAnnotation>
+            </xforms:instance>
+            <xforms:instance id="oid-request-reference-instance" xxforms:exclude-result-prefixes="#all">
+                <reference>
+                    <ref value=""/>
+                    <type code="LINK"/>
+                    <lastVisitedDate value=""/>
+                </reference>
+            </xforms:instance>
+            <!-- end: instances for creating a new oid request -->
+
+            <!-- new oid request submission -->
+            <xforms:submission id="new-oid-request-submission" ref="instance('oid-request-instance')" action="{$art-exist}/modules/insert-oid-request.xq?registry={instance('oidregistry')}&amp;language={instance('language')}" method="post" replace="none" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    <xforms:output ref="$resources/submission-insert-error-label"/>: <xforms:output value="event('error-type')"/>
+                    <xforms:output value="event('response-body')"/>
+                </xforms:message>
+                <xforms:message ev:event="xforms-submit-done" level="modal">
+                    <xforms:output ref="$resources/submission-insert-success-label"/>
+                </xforms:message>
+            </xforms:submission>
+            <!-- update oid request submission -->
+            <xforms:submission id="update-oid-request-submission" ref="instance('oid-request-registry-instance')/oid[dotNotation/@value=instance('oid-search-instance')/selected-request-oid]" action="{$exist-db}/xquery/update-oid-request.xq?registry={instance('oidregistry')}&amp;language={instance('language')}" method="post" replace="none" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    <xforms:output ref="$resources/submission-update-error-label"/>: <xforms:output value="event('error-type')"/>
+                    <xforms:output value="event('response-body')"/>
+                </xforms:message>
+                <xforms:message ev:event="xforms-submit-done" level="modal">
+                    <xforms:output ref="$resources/submission-update-success-label"/>
+                </xforms:message>
+            </xforms:submission>
+            <xforms:action ev:event="xforms-model-construct-done">
+                <!-- the OID registry identifier (if given as a parameter) -->
+                <xforms:setvalue ref="instance('oidregistry')" value="xxforms:get-request-parameter('registry')"/>
+                <xxforms:variable name="session-language" select="xxforms:get-session-attribute('language')"/>
+                <xforms:setvalue ref="instance('language')" value="if (string-length($session-language)&gt;0) then $session-language/string() else ('nl-NL')"/>
+                <xforms:insert context="." origin="xxforms:set-session-attribute('language', instance('language'))"/>
+                <!--xforms:send submission="update-searchresults-instance"/>
+                <xforms:send submission="update-request-searchresults-instance"/-->
+                <xforms:send submission="get-resources-submission"/>
+                <xforms:send submission="get-oids-schema-submission"/>
+                <xforms:send submission="get-oids-request-registry-submission"/>
+                <xforms:send submission="get-oids-registry-submission"/>
+                <xforms:send submission="get-all-oid-registries-submission"/>
+            </xforms:action>
+            <!--
+            <xforms:action ev:event="xforms-ready">
+                <xforms:setvalue ref="instance('oid-search-instance')/selected-request-oid" value="(instance('oid-request-registry-instance')/oid/dotNotation)[1]/@value"/>
+                <xforms:setfocus control="initial-focus-point"/>
+            </xforms:action>
+            -->
+            <xforms:bind nodeset="instance('oid-request-registry-instance')/oid" id="open"/>
+            <xforms:bind nodeset="instance('oid-registry-instance')/oid" id="current"/>
+            <xforms:bind nodeset="instance('oid-request-instance')/dotNotation/@value" id="oi-dn-vl" required="true()"/>
+            <xforms:bind nodeset="instance('oid-request-instance')/symbolicName/@value" id="oi-sn" required="true()"/>
+            <xforms:bind nodeset="instance('oid-request-instance')/description/@language" id="oi-ds-la" required="true()"/>
+            <!--
+            <xforms:bind nodeset="instance('oid-request-instance')/description/@language" id="oi-ds-laen" required="true()" constraint="count(.[@language = 'en-US'])=1"/>
+            -->
+            <xforms:bind nodeset="instance('oid-request-instance')/description/@mediaType" id="oi-ds-mt" required="true()"/>
+            <xforms:bind nodeset="instance('oid-request-instance')/description/@value" id="oi-ds-va" required="true()"/>
+            <xforms:bind nodeset="instance('oid-request-instance')/responsibleAuthority/validTime/low/@value" id="oi-respa-vt-low" type="xs:date" required="true()"/>
+            <xforms:bind nodeset="instance('oid-request-instance')/responsibleAuthority/validTime/high/@value" id="oi-respa-vt-high" type="xs:date"/>
+            <xforms:bind nodeset="instance('oid-request-instance')/submittingAuthority/applicationDate/@value" id="oi-subma-sc" type="xs:date"/>
+            
+            <!--xforms:bind nodeset="instance('oid-request-instance')/additionalProperty/attribute/@value" id="oi-ap-attr" required="true()"/>
+            <xforms:bind nodeset="instance('oid-request-instance')/additionalProperty/value/@value" id="oi-ap-val" required="true()"/-->
+            <xforms:bind nodeset="instance('oid-request-instance')/historyAnnotation/annotationDate/@value" id="oi-ha-annd" type="xs:date"/>
+            <xforms:bind nodeset="instance('oid-request-instance')/historyAnnotation/text" id="oi-ha-text" required="true()"/>
+
+            <!--xforms:bind nodeset="instance('oid-request-instance')/reference/ref/@value" id="oi-ref-re" required="true()"/-->
+            <xforms:bind nodeset="instance('oid-request-instance')/reference/lastVisitedDate/@value" id="oi-ref-lvd" type="xs:date"/>
+
+            <!-- instance and bindings for append/delete triggers that determine whether or not to diplay based on @relevant -->
+            <xforms:instance id="views">
+                <data>
+                    <description-delete-trigger/>
+                    <description-append-trigger/>
+                    <registrationAuthority-person-delete-trigger/>
+                    <registrationAuthority-person-append-trigger/>
+                    <responsibleAuthority-append-trigger/>
+                    <responsibleAuthority-delete-trigger/>
+                    <responsibleAuthority-validTime-high-append-trigger/>
+                    <responsibleAuthority-person-delete-trigger/>
+                    <responsibleAuthority-person-append-trigger/>
+                    <submittingAuthority-person-append-trigger/>
+                    <submittingAuthority-delete-trigger/>
+                    <submittingAuthority-append-trigger/>
+                    <submittingAuthority-person-delete-trigger/>
+                    <submittingAuthority-person-append-trigger/>
+                    <additionalProperty-delete-trigger/>
+                    <additionalProperty-append-trigger/>
+                    <historyAnnotation-delete-trigger/>
+                    <historyAnnotation-append-trigger/>
+                    <reference-delete-trigger/>
+                    <reference-append-trigger/>
+                </data>
+            </xforms:instance>
+            <xforms:bind id="description-delete-trigger" nodeset="instance('views')/description-delete-trigger" relevant="instance('oid-request-instance')/description[2]"/>
+            <xforms:bind id="description-append-trigger" nodeset="instance('views')/description-append-trigger"/>
+            <xforms:bind id="registration-authority-person-delete-trigger" nodeset="instance('views')/registrationAuthority-person-delete-trigger" relevant="instance('oid-request-instance')/registrationAuthority/person"/>
+            <xforms:bind id="registration-authority-person-append-trigger" nodeset="instance('views')/registrationAuthority-person-append-trigger" relevant="not(instance('oid-request-instance')/registrationAuthority/person)"/>
+            <xforms:bind id="responsible-authority-delete-trigger" nodeset="instance('views')/responsibleAuthority-delete-trigger" relevant="instance('oid-request-instance')/responsibleAuthority[2]"/>
+            <xforms:bind id="responsible-authority-append-trigger" nodeset="instance('views')/responsibleAuthority-append-trigger"/>
+            <xforms:bind id="responsible-authority-validTime-high-append-trigger" nodeset="instance('views')/responsibleAuthority-validTime-high-append-trigger" relevant="not(instance('oid-request-instance')/responsibleAuthority/validTime/high)"/>
+            <xforms:bind id="responsible-authority-person-delete-trigger" nodeset="instance('views')/responsibleAuthority-person-delete-trigger"/>
+            <xforms:bind id="responsible-authority-person-append-trigger" nodeset="instance('views')/responsibleAuthority-person-append-trigger"/>
+            <xforms:bind id="submitting-authority-delete-trigger" nodeset="instance('views')/submittingAuthority-delete-trigger" relevant="instance('oid-request-instance')/submittingAuthority[1]"/>
+            <xforms:bind id="submitting-authority-append-trigger" nodeset="instance('views')/submittingAuthority-append-trigger" relevant="not(instance('oid-request-instance')/submittingAuthority)"/>
+            <xforms:bind id="submitting-authority-person-delete-trigger" nodeset="instance('views')/submittingAuthority-person-delete-trigger" relevant="instance('oid-request-instance')/submittingAuthority/person"/>
+            <xforms:bind id="submitting-authority-person-append-trigger" nodeset="instance('views')/submittingAuthority-person-append-trigger" relevant="not(instance('oid-request-instance')/submittingAuthority/person)"/>
+            <xforms:bind id="additionalProperty-delete-trigger" nodeset="instance('views')/additionalProperty-delete-trigger" relevant="instance('oid-request-instance')/additionalProperty"/>
+            <xforms:bind id="additionalProperty-append-trigger" nodeset="instance('views')/additionalProperty-append-trigger"/>
+            <xforms:bind id="historyAnnotation-delete-trigger" nodeset="instance('views')/historyAnnotation-delete-trigger" relevant="instance('oid-request-instance')/historyAnnotation"/>
+            <xforms:bind id="historyAnnotation-append-trigger" nodeset="instance('views')/historyAnnotation-append-trigger"/>
+            <xforms:bind id="reference-delete-trigger" nodeset="instance('views')/reference-delete-trigger" relevant="instance('oid-request-instance')/reference"/>
+            <xforms:bind id="reference-append-trigger" nodeset="instance('views')/reference-append-trigger"/>
+            <!-- end: bindings for append/delete triggers that determine whether or not to diplay based on @relevant -->
+        </xforms:model>
+    </xhtml:head>
+    <xhtml:body>
+        <xhtml:table width="100%">
+            <!-- 
+                this is either 
+                - a select box to choose the right regsitry identifier
+                OR
+                - a tabview with the OID list, a new request form and a list of open reuqests
+            -->
+            <xforms:group ref=".[string-length(instance('oidregistry')) = 0]">
+                <!-- no OID registries found at all -->
+                <xforms:group ref=".[count(instance('all-oid-registries-instance')/registry) &lt;= 1]">
+                    <xhtml:tr>
+                        <xhtml:td>
+                            <xforms:output ref="'No OID registries found.'"/>
+                        </xhtml:td>
+                    </xhtml:tr>
+                </xforms:group>
+                <xforms:group ref=".[count(instance('all-oid-registries-instance')/registry) &gt; 1]">
+                    <!-- no OID registry identifier chosen or given as parameter, so ask -->
+                    <xhtml:tr>
+                        <xhtml:td>
+                            <xforms:output ref="'Please choose an OID registry: '"/>
+                            <xforms:select1 ref="instance('all-oid-registries-instance')/*" class="short-text">
+                                <xforms:itemset nodeset="instance('all-oid-registries-instance')/registry">
+                                    <xforms:label ref="@displayName"/>
+                                    <xforms:value ref="@name"/>
+                                </xforms:itemset>
+                                <xforms:action ev:event="xforms-value-changed">
+                                    <xxforms:variable name="or" select="."/>
+                                    <xforms:load resource="/oid-registry?registry={$or}" show="new"/>
+                                </xforms:action>
+                            </xforms:select1>
+                        </xhtml:td>
+                    </xhtml:tr>
+                </xforms:group>
+            </xforms:group>
+            <!-- row with tabview -->
+            <xforms:group ref=".[string-length(instance('oidregistry')) &gt; 0]">
+                <xhtml:tr>
+                    <xhtml:td>
+                        <fr:tabview>
+                        <!-- 
+                            list of OIDs in current registry
+                            ================================
+                        -->
+                            <fr:tab id="oid-registry-view">
+                                <fr:label ref="concat($resources/oid-registry,' (',count(instance('oid-registry-instance')/oid),' / ',instance('oid-registry-instance')/@total,')')"/>
+                            <!-- FIXME: once this setfocus is active, it is not possible anymore to switch to another tab as the forms keeps setting focus back to this tab/control -->
+                            <!--xforms:action ev:event="fr-select">
+                                <xforms:setfocus control="oidSearch"/>
+                            </xforms:action-->
+                            <!-- row with oid search -->
+                            <!--xhtml:table class="detail">
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/searchterms"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <fr:autocomplete ref="instance('selected-oid-instance')" id="oidSearch" dynamic-itemset="true" max-results-displayed="50">
+                                            <xforms:action ev:event="xforms-value-changed">
+                                                <xforms:setvalue ref="instance('oid-navigation')"
+                                                    value="instance('oid-searchresults-instance')/oid[@oid=instance('selected-oid-instance')]/@oid"/>
+                                            </xforms:action>
+                                            <!- - React to user searching
+                                                  add additional info to the label and strip it here - ->
+                                            <xforms:action ev:event="fr-search-changed">
+                                                <!- - add additional info to the label and strip it here !!! - ->
+                                                <xxforms:variable name="search-value" select="event('fr-search-value')"/>
+                                                <xxforms:variable name="make-suggestion"
+                                                    select="string-length($search-value) >= 1 and not(instance('oid-searchresults-instance')//oid[description/@value=$search-value])"/>
+                                                <xforms:action if="$make-suggestion">
+                                                    <!- - Update itemset - ->
+                                                    <xforms:setvalue ref="instance('oid-search-instance')" value="$search-value"/>
+                                                    <xforms:send submission="update-searchresults-instance">
+                                                        <xforms:message ev:event="xforms-submit-error" level="modal"/>
+                                                    </xforms:send>
+                                                </xforms:action>
+                                                <xforms:action if="not($make-suggestion) and not(instance('oid-searchresults-instance')//oid[description/@value=$search-value])">
+                                                    <xforms:delete nodeset="instance('oid-search-instance')/oid"/>
+                                                </xforms:action>
+                                            </xforms:action>
+                                            <xforms:itemset nodeset="instance('oid-searchresults-instance')/oid">
+                                                <!- - add additional info to the label, see above - ->
+                                                <xforms:label ref="description[@language='en-US']/@value"/>
+                                                <xforms:value ref="@id"/>
+                                            </xforms:itemset>
+                                        </fr:autocomplete>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xhtml:table-->
+                                <p/>
+                                <xhtml:div class="detail">
+                                <!-- table with issue list -->
+                                    <fr:datatable scrollable="vertical" height="400px">
+                                        <xhtml:thead>
+                                            <xhtml:tr>
+                                                <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                                    <xforms:output ref="$resources/iso13582-oid-status"/>
+                                                </xhtml:th>
+                                                <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                                    <xforms:output ref="$resources/oid"/>
+                                                </xhtml:th>
+                                                <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                                    <xforms:output ref="$resources/iso13582-oid-description"/>
+                                                </xhtml:th>
+                                            </xhtml:tr>
+                                        </xhtml:thead>
+                                        <xhtml:tbody>
+                                            <xforms:repeat nodeset="instance('oid-registry-instance')/oid">
+                                                <xhtml:tr id="oid-registry-table">
+                                                    <xhtml:td>
+                                                        <xforms:output ref="@status"/>
+                                                    </xhtml:td>
+                                                    <xhtml:td>
+                                                        <xforms:output ref="@dotNotation"/>
+                                                    </xhtml:td>
+                                                    <xhtml:td>
+                                                        <xforms:output ref="description[@language='en-US']/@value"/>
+                                                    </xhtml:td>
+                                                </xhtml:tr>
+                                            </xforms:repeat>
+                                        </xhtml:tbody>
+                                        <xforms:action ev:event="fr-selection-changed">
+                                        <!--xforms:setvalue ref="instance('oid-search-instance')/pending" value="event('selected')/dotNotation/@value"/-->
+                                            <xforms:setvalue ref="instance('oid-search-instance')/selected-oid" value="event('selected')//dotNotation/@value"/>
+                                        </xforms:action>
+                                    </fr:datatable>
+                                </xhtml:div>
+                            </fr:tab>
+                        <!-- 
+                            new request tab
+                            ===============
+                        -->
+                            <fr:tab id="new-oid-request-form-view">
+                                <fr:label ref="$resources/oid-request"/>
+                                <xhtml:div>
+                                    <xforms:group ref="instance('oid-request-instance')" id="new-oid-request-group">
+                                        <xhtml:table width="100%">
+                                        <!--
+                                        <xhtml:tr>
+                                            <xhtml:td colspan="4" style="background-color:#FFC0CB;">
+                                                <fr:error-summary id="error-summary" observer="new-oid-request-group" errors-count-ref="instance('ui')/errors-count">
+                                                    <fr:label>Error in this form</fr:label>
+                                                </fr:error-summary>
+                                                <xxforms:variable name="invalid-binds" select="xxforms:invalid-binds(.)"/>
+                                                <xforms:output mediatype="text/html" value="xxforms:serialize(xxforms:call-xpl('oxf:/ops/utils/formatting/format.xpl', 'data', $invalid-binds, 'data')/*, 'html')"/>
+                                                <xhtml:ul>
+                                                    <xforms:repeat nodeset="instance('oid-request-instance')/*">
+                                                        <xxforms:variable name="invalid-binds" select="xxforms:invalid-binds(.)"/>
+                                                        <xforms:output mediatype="text/html" value="xxforms:serialize(xxforms:call-xpl('oxf:/ops/utils/formatting/format.xpl', 'data', $invalid-binds, 'data')/*, 'html')"/>
+                                                        <xforms:repeat nodeset="for $bind-id in $invalid-binds return xxforms:element('bind-id', $bind-id)">
+                                                            <xhtml:li>
+                                                                <xforms:output ref="if ($invalid-binds = 'must-be-present') then 'Age missing'
+                                                                    else if ($invalid-binds = 'must-be-integer') then 'Age must be an integer'
+                                                                    else if ($invalid-binds = 'must-be-positive') then 'Age must be positive'
+                                                                    else if ($invalid-binds = 'must-be-lower') then 'Age must be lower or equal to 150'
+                                                                    else if ($invalid-binds = 'h-must-be-present') then 'Height must be present'
+                                                                    else if ($invalid-binds = 'h-must-be-integer') then 'Height must be an integer'
+                                                                    else ('NO ERRORS')"/>
+                                                            </xhtml:li>
+                                                        </xforms:repeat>
+                                                    </xforms:repeat>
+                                                </xhtml:ul>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                        -->
+                                        <!-- oid -->
+                                        <!-- oid.category -->
+                                            <xhtml:tr>
+                                            <!-- oid -->
+                                                <xhtml:td class="item-label" style="width:170px;">
+                                                    <xforms:output ref="$resources/iso13582-oid-dotNotation">
+                                                        <xforms:help>
+                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='oid']//xs:*[@name='dotNotation']//xs:documentation"/>
+                                                        </xforms:help>
+                                                    </xforms:output>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:input ref="instance('oid-request-instance')/dotNotation/@value" id="initial-focus-point">
+                                                        <xforms:alert>
+                                                            <xforms:output ref="$resources/required-field"/>
+                                                        </xforms:alert>
+                                                    </xforms:input>
+                                                </xhtml:td>
+                                            <!-- oid.category -->
+                                                <xhtml:td class="item-label" style="width:170px;">
+                                                    <xforms:output ref="$resources/iso13582-oid-category">
+                                                        <xforms:help>
+                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='oid']//xs:*[@name='category']//xs:documentation"/>
+                                                        </xforms:help>
+                                                    </xforms:output>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:select1 ref="instance('oid-request-instance')/category/@code" class="auto-width">
+                                                        <xforms:itemset nodeset="instance('oids-types')//xs:simpleType[@name='list_OIDcategories']/*/xs:enumeration">
+                                                            <xforms:label ref="(xs:annotation/xs:appinfo/xforms:label[@xml:lang=instance('language')])[1]"/>
+                                                            <xforms:value ref="@value"/>
+                                                        </xforms:itemset>
+                                                        <xforms:alert>
+                                                            <xforms:output ref="$resources/required-field"/>
+                                                        </xforms:alert>
+                                                    </xforms:select1>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        <!-- oid.symbolicName -->
+                                        <!-- oid.status -->
+                                            <xhtml:tr>
+                                            <!-- oid.symbolicName -->
+                                                <xhtml:td class="item-label" style="width:170px;">
+                                                    <xforms:output ref="$resources/iso13582-oid-symbolicName">
+                                                        <xforms:help>
+                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='oid']//xs:*[@name='symbolicName']//xs:documentation"/>
+                                                        </xforms:help>
+                                                    </xforms:output>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:input ref="instance('oid-request-instance')/symbolicName/@value">
+                                                        <xforms:alert>
+                                                            <xforms:output ref="$resources/required-field"/>
+                                                        </xforms:alert>
+                                                    </xforms:input>
+                                                </xhtml:td>
+                                            <!-- oid.status -->
+                                                <xhtml:td class="item-label" style="width:170px;">
+                                                    <xforms:output ref="$resources/iso13582-oid-status">
+                                                        <xforms:help>
+                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='oid']//xs:*[@name='status']//xs:documentation"/>
+                                                        </xforms:help>
+                                                    </xforms:output>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:output ref="instance('oid-request-instance')/status/@code">
+                                                        <xforms:alert>
+                                                            <xforms:output ref="$resources/required-field"/>
+                                                        </xforms:alert>
+                                                    </xforms:output>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        <!-- oid.description -->
+                                            <xhtml:tr>
+                                                <xhtml:td class="heading" colspan="4">
+                                                    <xforms:output ref="$resources/iso13582-oid-description">
+                                                        <xforms:help>
+                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='oid']//xs:*[@name='description']//xs:documentation"/>
+                                                        </xforms:help>
+                                                    </xforms:output>
+                                                    <xforms:trigger bind="description-append-trigger">
+                                                        <xforms:label>
+                                                        <!--xforms:output ref="$resources/button-append"/-->
+                                                            <xhtml:img src="/img/plus.png" alt=""/>
+                                                        </xforms:label>
+                                                        <xforms:action ev:event="DOMActivate">
+                                                            <xforms:insert nodeset="instance('oid-request-instance')/description" at="last()" position="after" origin="instance('oid-description')"/>
+                                                            <xforms:setvalue ref="instance('oid-request-instance')/description[last()]/@language" value="if (not(instance('oid-request-instance')/description[@language='nl-NL'])) then 'nl-NL' else ('')"/>
+                                                        </xforms:action>
+                                                    </xforms:trigger>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                            <xhtml:tr>
+                                                <xhtml:td colspan="4">
+                                                    <xhtml:table width="100%">
+                                                        <xhtml:tr>
+                                                            <xhtml:td/>
+                                                            <xhtml:td>
+                                                                <xforms:output ref="$resources/iso13582-oid-ED-language"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td>
+                                                                <xforms:output ref="$resources/iso13582-oid-description"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td>
+                                                                <xforms:output ref="$resources/iso13582-oid-description-thumbnail"/>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                        <xforms:repeat nodeset="instance('oid-request-instance')/description" id="description-repeat">
+                                                            <xhtml:tr>
+                                                                <xhtml:td style="width:1%;">
+                                                                    <xforms:group ref=".[@language!='en-US']">
+                                                                        <xforms:trigger bind="description-delete-trigger">
+                                                                            <xforms:label>
+                                                                            <!--xforms:output ref="$resources/button-delete"/-->
+                                                                                <xhtml:img src="/img/remove.gif" alt=""/>
+                                                                            </xforms:label>
+                                                                            <xforms:delete nodeset="instance('oid-request-instance')/description[index('description-repeat')]" ev:event="DOMActivate"/>
+                                                                        </xforms:trigger>
+                                                                    </xforms:group>
+                                                                </xhtml:td>
+                                                                <xhtml:td style="width:1%; padding-top:4px;">
+                                                                    <xforms:group ref=".[@language='en-US']">
+                                                                    <!-- a disabled select for en-US which is reuqired -->
+                                                                        <xhtml:select disabled="diasbled" class="auto-width xforms-control xforms-select1 xforms-select1-appearance-minimal">
+                                                                            <xhtml:option>en-US</xhtml:option>
+                                                                        </xhtml:select>
+                                                                    </xforms:group>
+                                                                    <xforms:group ref=".[@language!='en-US']">
+                                                                        <xforms:select1 ref="@language" class="auto-width" id="x">
+                                                                            <xforms:item>
+                                                                                <xforms:label>
+                                                                                    <xforms:output ref="$resources/iso13582-oid-empty-option"/>
+                                                                                </xforms:label>
+                                                                                <xforms:value/>
+                                                                            </xforms:item>
+                                                                            <xforms:itemset nodeset="instance('oids-types')//xs:simpleType[@name='language-COUNTRY']/*/xs:enumeration[@value!='en-US']">
+                                                                                <xforms:label ref="(xs:annotation/xs:appinfo/xforms:label[@xml:lang=instance('language')])[1]"/>
+                                                                                <xforms:value ref="@value"/>
+                                                                            </xforms:itemset>
+                                                                            <xforms:alert value="if (xxforms:invalid-binds(.) = 'oi-ds-la') then $resources/required-field else ''"/>
+                                                                        </xforms:select1>
+                                                                    </xforms:group>
+                                                                </xhtml:td>
+                                                                <xhtml:td style="width:88%;">
+                                                                    <xforms:textarea ref="@value" xxforms:rows="2" style="width:98%;">
+                                                                        <xforms:alert>
+                                                                            <xforms:output ref="$resources/required-field"/>
+                                                                        </xforms:alert>
+                                                                    </xforms:textarea>
+                                                                </xhtml:td>
+                                                                <xhtml:td style="width:10%;">
+                                                                    <xforms:textarea ref="thumbnail/@value" xxforms:rows="2" style="width:98%;"/>
+                                                                </xhtml:td>
+                                                            </xhtml:tr>
+                                                        </xforms:repeat>
+                                                    <!-- oid.registrationAuthority -->
+                                                    </xhtml:table>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                            <xhtml:tr>
+                                                <xhtml:td class="heading" colspan="4">
+                                                    <xforms:output ref="$resources/iso13582-oid-registrationAuthority"/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        <!-- oid.registrationAuthority.code -->
+                                            <xhtml:tr>
+                                                <xhtml:td class="item-label" style="width:170px;">
+                                                    <xforms:output ref="$resources/iso13582-oid-code">
+                                                        <xforms:help>
+                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='RegistrationAuthorityType']//xs:*[@name='code']//xs:documentation"/>
+                                                        </xforms:help>
+                                                    </xforms:output>
+                                                </xhtml:td>
+                                                <xhtml:td colspan="3">
+                                                    <xforms:select1 ref="instance('oid-request-instance')/registrationAuthority/code/@code" class="short-text">
+                                                        <xforms:itemset nodeset="instance('oids-types')//xs:simpleType[@name='list_RoleCodes']/*/xs:enumeration">
+                                                            <xforms:label ref="(xs:annotation/xs:appinfo/xforms:label[@xml:lang=instance('language')])[1]"/>
+                                                            <xforms:value ref="@value"/>
+                                                        </xforms:itemset>
+                                                        <xforms:alert>
+                                                            <xforms:output ref="$resources/required-field"/>
+                                                        </xforms:alert>
+                                                    </xforms:select1>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        <!-- oid.registrationAuthority.scopingOrganization.heading -->
+                                        <!-- oid.registrationAuthority.person.heading -->
+                                            <xhtml:tr>
+                                                <xhtml:td colspan="4">
+                                                    <xhtml:table width="100%" style="margin: 7px;">
+                                                        <xhtml:tr>
+                                                            <xhtml:td colspan="2" class="heading" style="width:50%;">
+                                                                <xforms:output ref="$resources/iso13582-oid-scopingOrganization"/>
+                                                            </xhtml:td>
+                                                        <!-- oid..registrationAuthority.person -->
+                                                            <xhtml:td colspan="2" class="heading" style="width:50%;">
+                                                                <xforms:output ref="$resources/iso13582-oid-person"/>
+                                                                <xforms:trigger bind="registration-authority-person-append-trigger">
+                                                                    <xforms:label>
+                                                                    <!--xforms:output ref="$resources/button-append"/-->
+                                                                        <xhtml:img src="/img/plus.png" alt=""/>
+                                                                    </xforms:label>
+                                                                    <xforms:action ev:event="DOMActivate">
+                                                                        <xforms:insert nodeset="instance('oid-request-instance')/registrationAuthority/scopingOrganization" position="before" origin="instance('oid-request-person-instance')"/>
+                                                                    </xforms:action>
+                                                                </xforms:trigger>
+                                                                <xforms:trigger bind="registration-authority-person-delete-trigger">
+                                                                    <xforms:label>
+                                                                    <!--xforms:output ref="$resources/button-delete"/-->
+                                                                        <xhtml:img src="/img/remove.gif" alt=""/>
+                                                                    </xforms:label>
+                                                                    <xforms:delete nodeset="instance('oid-request-instance')/registrationAuthority/person" ev:event="DOMActivate"/>
+                                                                </xforms:trigger>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                    
+                                                    <!-- oid.registrationAuthority.scopingOrganization.details -->
+                                                    <!-- oid.registrationAuthority.person.details -->
+                                                        <xhtml:tr width="50%">
+                                                        <!-- oid.registrationAuthority.scopingOrganization.details -->
+                                                            <xhtml:td colspan="2" style="border-right:solid black 1px">
+                                                                <xforms:group ref="instance('oid-request-instance')/registrationAuthority/scopingOrganization">
+                                                                    <xhtml:table width="100%">
+                                                                    <!-- oid.registrationAuthority.scopingOrganization.id -->
+                                                                        <xhtml:tr>
+                                                                            <xhtml:td class="item-label" style="width:170px;">
+                                                                                <xforms:output ref="$resources/iso13582-oid-scopingOrganization-id">
+                                                                                    <xforms:help>
+                                                                                        <xforms:output ref="instance('oids-types')//xs:*[@name='OrganizationType']//xs:*[@name='id']//xs:documentation"/>
+                                                                                    </xforms:help>
+                                                                                </xforms:output>
+                                                                            </xhtml:td>
+                                                                            <xhtml:td>
+                                                                                <xforms:input ref="instance('oid-request-instance')/registrationAuthority/scopingOrganization/id/@value"/>
+                                                                            </xhtml:td>
+                                                                        </xhtml:tr>
+                                                                    <!-- oid.registrationAuthority.scopingOrganization.name -->
+                                                                        <xhtml:tr>
+                                                                            <xhtml:td class="item-label" style="width:170px;">
+                                                                                <xforms:output ref="$resources/iso13582-oid-scopingOrganization-name">
+                                                                                    <xforms:help>
+                                                                                        <xforms:output ref="instance('oids-types')//xs:*[@name='OrganizationType']//xs:*[@name='name']//xs:documentation"/>
+                                                                                    </xforms:help>
+                                                                                </xforms:output>
+                                                                            </xhtml:td>
+                                                                            <xhtml:td>
+                                                                                <xforms:input ref="instance('oid-request-instance')/registrationAuthority/scopingOrganization/name/part/@value">
+                                                                                    <xforms:alert>
+                                                                                        <xforms:output ref="$resources/required-field"/>
+                                                                                    </xforms:alert>
+                                                                                </xforms:input>
+                                                                            </xhtml:td>
+                                                                        </xhtml:tr>
+                                                                    <!-- oid.registrationAuthority.scopingOrganization.addr -->
+                                                                        <xhtml:tr>
+                                                                            <xhtml:td class="item-label" style="width:170px;">
+                                                                                <xforms:output ref="$resources/iso13582-oid-scopingOrganization-addr">
+                                                                                    <xforms:help>
+                                                                                        <xforms:output ref="instance('oids-types')//xs:*[@name='OrganizationType']//xs:*[@name='addr']//xs:documentation"/>
+                                                                                    </xforms:help>
+                                                                                </xforms:output>
+                                                                            </xhtml:td>
+                                                                            <xhtml:td>
+                                                                                <xforms:input ref="instance('oid-request-instance')/registrationAuthority/scopingOrganization/addr/part/@value"/>
+                                                                            </xhtml:td>
+                                                                        </xhtml:tr>
+                                                                    <!-- oid.registrationAuthority.scopingOrganization.telecom -->
+                                                                        <xhtml:tr>
+                                                                            <xhtml:td class="item-label" style="width:170px;">
+                                                                                <xforms:output ref="$resources/iso13582-oid-telecom">
+                                                                                    <xforms:help>
+                                                                                        <xforms:output ref="instance('oids-types')//xs:*[@name='OrganizationType']//xs:*[@name='telecom']//xs:documentation"/>
+                                                                                    </xforms:help>
+                                                                                </xforms:output>
+                                                                            </xhtml:td>
+                                                                            <xhtml:td>
+                                                                                <xforms:input ref="instance('oid-request-instance')/registrationAuthority/scopingOrganization/telecom/@value"/>
+                                                                            </xhtml:td>
+                                                                        </xhtml:tr>
+                                                                    </xhtml:table>
+                                                                </xforms:group>
+                                                            </xhtml:td>
+                                                        <!-- oid.registrationAuthority.person.details -->
+                                                            <xhtml:td colspan="2">
+                                                                <xforms:group ref="instance('oid-request-instance')/registrationAuthority/person">
+                                                                    <xhtml:table width="100%">
+                                                                    <!-- oid.registrationAuthority.person.name -->
+                                                                        <xhtml:tr>
+                                                                            <xhtml:td class="item-label" style="width:170px;">
+                                                                                <xforms:output ref="$resources/iso13582-oid-person-name">
+                                                                                    <xforms:help>
+                                                                                        <xforms:output ref="instance('oids-types')//xs:*[@name='PersonType']//xs:*[@name='name']//xs:documentation"/>
+                                                                                    </xforms:help>
+                                                                                </xforms:output>
+                                                                            </xhtml:td>
+                                                                            <xhtml:td>
+                                                                                <xforms:input ref="instance('oid-request-instance')/registrationAuthority/person/name/part/@value">
+                                                                                    <xforms:alert>
+                                                                                        <xforms:output ref="$resources/required-field"/>
+                                                                                    </xforms:alert>
+                                                                                </xforms:input>
+                                                                            </xhtml:td>
+                                                                        </xhtml:tr>
+                                                                    <!-- oid.registrationAuthority.person.addr -->
+                                                                        <xhtml:tr>
+                                                                            <xhtml:td class="item-label" style="width:170px;">
+                                                                                <xforms:output ref="$resources/iso13582-oid-person-addr">
+                                                                                    <xforms:help>
+                                                                                        <xforms:output ref="instance('oids-types')//xs:*[@name='PersonType']//xs:*[@name='addr']//xs:documentation"/>
+                                                                                    </xforms:help>
+                                                                                </xforms:output>
+                                                                            </xhtml:td>
+                                                                            <xhtml:td>
+                                                                                <xforms:input ref="instance('oid-request-instance')/registrationAuthority/person/addr/part/@value"/>
+                                                                            </xhtml:td>
+                                                                        </xhtml:tr>
+                                                                    <!-- oid.registrationAuthority.person.telecom -->
+                                                                        <xhtml:tr>
+                                                                            <xhtml:td class="item-label" style="width:170px;">
+                                                                                <xforms:output ref="$resources/iso13582-oid-telecom">
+                                                                                    <xforms:help>
+                                                                                        <xforms:output ref="instance('oids-types')//xs:*[@name='PersonType']//xs:*[@name='telecom']//xs:documentation"/>
+                                                                                    </xforms:help>
+                                                                                </xforms:output>
+                                                                            </xhtml:td>
+                                                                            <xhtml:td>
+                                                                                <xforms:input ref="instance('oid-request-instance')/registrationAuthority/person/telecom/@value"/>
+                                                                            </xhtml:td>
+                                                                        </xhtml:tr>
+                                                                    </xhtml:table>
+                                                                </xforms:group>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                    </xhtml:table>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                            <xhtml:tr>
+                                                <xhtml:td colspan="4">
+                                                    <xhtml:hr/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        <!-- oid.responsibleAuthority -->
+                                            <xhtml:tr>
+                                                <xhtml:td class="heading" colspan="4">
+                                                    <xforms:output ref="$resources/iso13582-oid-responsibleAuthority"/>
+                                                    <xforms:trigger bind="responsible-authority-append-trigger">
+                                                        <xforms:label>
+                                                        <!--xforms:output ref="$resources/button-append"/-->
+                                                            <xhtml:img src="/img/plus.png" alt=""/>
+                                                        </xforms:label>
+                                                        <xforms:action ev:event="DOMActivate">
+                                                            <xforms:insert nodeset="instance('oid-request-instance')/responsibleAuthority" position="after" origin="instance('oid-request-responsibleAuthority-instance')"/>
+                                                        </xforms:action>
+                                                    </xforms:trigger>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                            <xforms:repeat nodeset="instance('oid-request-instance')/responsibleAuthority" id="responsibleAuthority-repeat">
+                                                <xxforms:variable name="responsibleAuthorityposition" select="position()"/>
+                                                <xforms:group ref="instance('oid-request-instance')/responsibleAuthority[position()&gt;1]">
+                                                    <xhtml:tr>
+                                                        <xhtml:td colspan="4">
+                                                            <xhtml:div class="h2">
+                                                                <xforms:output ref="concat($resources/iso13582-oid-responsibleAuthority,' (', $responsibleAuthorityposition,')')"/>
+                                                                <xforms:trigger bind="responsible-authority-delete-trigger">
+                                                                    <xforms:label>
+                                                                    <!--xforms:output ref="$resources/button-append"/-->
+                                                                        <xhtml:img src="/img/remove.gif" alt=""/>
+                                                                    </xforms:label>
+                                                                    <xforms:action ev:event="DOMActivate">
+                                                                        <xforms:delete nodeset="instance('oid-request-instance')/responsibleAuthority[index('responsibleAuthority-repeat')]"/>
+                                                                    </xforms:action>
+                                                                </xforms:trigger>
+                                                            </xhtml:div>
+                                                        </xhtml:td>
+                                                    </xhtml:tr>
+                                                </xforms:group>
+                                            <!-- oid.responsibleAuthority.code -->
+                                            <!-- oid.responsibleAuthority.status -->
+                                            <!-- oid.responsibleAuthority.validTime.low -->
+                                            <!-- oid.responsibleAuthority.validTime.high -->
+                                                <xhtml:tr>
+                                                    <xhtml:td colspan="4">
+                                                        <xhtml:table width="100%">
+                                                            <xhtml:tr style="vertical-align:middle;">
+                                                            <!-- oid.responsibleAuthority.code -->
+                                                                <xhtml:td class="item-label" style="width:auto;">
+                                                                    <xforms:output ref="$resources/iso13582-oid-code">
+                                                                        <xforms:help>
+                                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='ResponsibleAuthorityType']//xs:*[@name='code']//xs:documentation"/>
+                                                                        </xforms:help>
+                                                                    </xforms:output>
+                                                                </xhtml:td>
+                                                                <xhtml:td>
+                                                                    <xforms:select1 ref="code/@code" class="auto-width">
+                                                                        <xforms:itemset nodeset="instance('oids-types')//xs:simpleType[@name='list_RoleCodes']/*/xs:enumeration">
+                                                                            <xforms:label ref="(xs:annotation/xs:appinfo/xforms:label[@xml:lang=instance('language')])[1]"/>
+                                                                            <xforms:value ref="@value"/>
+                                                                        </xforms:itemset>
+                                                                        <xforms:alert>
+                                                                            <xforms:output ref="$resources/required-field"/>
+                                                                        </xforms:alert>
+                                                                    </xforms:select1>
+                                                                </xhtml:td>
+                                                            <!-- oid.responsibleAuthority.status -->
+                                                                <xhtml:td class="item-label" style="width:auto;">
+                                                                    <xforms:output ref="$resources/iso13582-oid-status">
+                                                                        <xforms:help>
+                                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='ResponsibleAuthorityType']//xs:*[@name='statusCode']//xs:documentation"/>
+                                                                        </xforms:help>
+                                                                    </xforms:output>
+                                                                </xhtml:td>
+                                                                <xhtml:td>
+                                                                    <xforms:select1 ref="statusCode/@code" class="auto-width">
+                                                                        <xforms:itemset nodeset="instance('oids-types')//xs:simpleType[@name='list_RoleStatus']/*/xs:enumeration">
+                                                                            <xforms:label ref="(xs:annotation/xs:appinfo/xforms:label[@xml:lang=instance('language')])[1]"/>
+                                                                            <xforms:value ref="@value"/>
+                                                                        </xforms:itemset>
+                                                                        <xforms:alert>
+                                                                            <xforms:output ref="$resources/required-field"/>
+                                                                        </xforms:alert>
+                                                                    </xforms:select1>
+                                                                </xhtml:td>
+                                                            <!-- oid.responsibleAuthority.validTime.low -->
+                                                                <xhtml:td class="item-label" style="width:auto;">
+                                                                    <xforms:output ref="$resources/iso13582-oid-validTime-low">
+                                                                        <xforms:help>
+                                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='ResponsibleAuthorityType']//xs:*[@name='validTime']//xs:documentation"/>
+                                                                        </xforms:help>
+                                                                    </xforms:output>
+                                                                </xhtml:td>
+                                                                <xhtml:td>
+                                                                    <xforms:input ref="validTime/low/@value" class="auto-width">
+                                                                        <xforms:alert>
+                                                                            <xforms:output ref="$resources/required-field"/>
+                                                                        </xforms:alert>
+                                                                    </xforms:input>
+                                                                </xhtml:td>
+                                                            <!-- oid.responsibleAuthority.validTime.high -->
+                                                                <xhtml:td class="item-label" style="width:auto;">
+                                                                    <xforms:output ref="$resources/iso13582-oid-validTime-high"/>
+                                                                </xhtml:td>
+                                                                <xhtml:td>
+                                                                    <xforms:input ref="validTime/high/@value" class="auto-width"/>
+                                                                </xhtml:td>
+                                                            </xhtml:tr>
+                                                        </xhtml:table>
+                                                    </xhtml:td>
+                                                </xhtml:tr>
+                                            <!-- oid..responsibleAuthority.organization.heading -->
+                                            <!-- oid..responsibleAuthority.person.heading -->
+                                                <xhtml:tr>
+                                                    <xhtml:td colspan="4">
+                                                        <xhtml:table width="100%" style="margin: 7px;">
+                                                            <xhtml:tr>
+                                                                <xhtml:td colspan="2" class="heading" style="width:50%;">
+                                                                    <xforms:output ref="$resources/iso13582-oid-scopingOrganization"/>
+                                                                </xhtml:td>
+                                                            <!-- oid..registrationAuthority.person -->
+                                                                <xhtml:td colspan="2" class="heading" style="width:50%;">
+                                                                    <xforms:output ref="$resources/iso13582-oid-person"/>
+                                                                    <xforms:group ref=".[count(person)=0]">
+                                                                        <xforms:trigger bind="responsible-authority-person-append-trigger">
+                                                                            <xforms:label>
+                                                                            <!--xforms:output ref="$resources/button-append"/-->
+                                                                                <xhtml:img src="/img/plus.png" alt=""/>
+                                                                            </xforms:label>
+                                                                            <xforms:action ev:event="DOMActivate">
+                                                                                <xforms:insert nodeset="instance('oid-request-instance')/responsibleAuthority[index('responsibleAuthority-repeat')]/scopingOrganization" position="before" origin="instance('oid-request-person-instance')"/>
+                                                                            </xforms:action>
+                                                                        </xforms:trigger>
+                                                                    </xforms:group>
+                                                                    <xforms:group ref="./person">
+                                                                        <xforms:trigger bind="responsible-authority-person-delete-trigger">
+                                                                            <xforms:label>
+                                                                            <!--xforms:output ref="$resources/button-delete"/-->
+                                                                                <xhtml:img src="/img/remove.gif" alt=""/>
+                                                                            </xforms:label>
+                                                                            <xforms:delete nodeset="instance('oid-request-instance')/responsibleAuthority[index('responsibleAuthority-repeat')]/person" ev:event="DOMActivate"/>
+                                                                        </xforms:trigger>
+                                                                    </xforms:group>
+                                                                </xhtml:td>
+                                                            </xhtml:tr>
+                                                        <!-- oid.responsibleAuthority.scopingOrganization -->
+                                                        <!-- oid.responsibleAuthority.person -->
+                                                            <xhtml:tr>
+                                                            <!-- oid.responsibleAuthority.scopingOrganization -->
+                                                                <xhtml:td colspan="2" style="border-right:solid black 1px">
+                                                                    <xhtml:table width="100%">
+                                                                        <xforms:group ref="./scopingOrganization">
+                                                                        <!-- oid.responsibleAuthority.scopingOrganization.id -->
+                                                                            <xhtml:tr>
+                                                                                <xhtml:td class="item-label" style="width:170px;">
+                                                                                    <xforms:output ref="$resources/iso13582-oid-scopingOrganization-id">
+                                                                                        <xforms:help>
+                                                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='OrganizationType']//xs:*[@name='id']//xs:documentation"/>
+                                                                                        </xforms:help>
+                                                                                    </xforms:output>
+                                                                                </xhtml:td>
+                                                                                <xhtml:td>
+                                                                                    <xforms:input ref="./id/@value"/>
+                                                                                </xhtml:td>
+                                                                            </xhtml:tr>
+                                                                        <!-- oid.responsibleAuthority.scopingOrganization.name -->
+                                                                            <xhtml:tr>
+                                                                                <xhtml:td class="item-label" style="width:170px;">
+                                                                                    <xforms:output ref="$resources/iso13582-oid-scopingOrganization-name">
+                                                                                        <xforms:help>
+                                                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='OrganizationType']//xs:*[@name='name']//xs:documentation"/>
+                                                                                        </xforms:help>
+                                                                                    </xforms:output>
+                                                                                </xhtml:td>
+                                                                                <xhtml:td>
+                                                                                    <xforms:input ref="./name/part/@value">
+                                                                                        <xforms:alert>
+                                                                                            <xforms:output ref="$resources/required-field"/>
+                                                                                        </xforms:alert>
+                                                                                    </xforms:input>
+                                                                                </xhtml:td>
+                                                                            </xhtml:tr>
+                                                                        <!-- oid.responsibleAuthority.scopingOrganization.addr -->
+                                                                            <xhtml:tr>
+                                                                                <xhtml:td class="item-label" style="width:170px;">
+                                                                                    <xforms:output ref="$resources/iso13582-oid-scopingOrganization-addr">
+                                                                                        <xforms:help>
+                                                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='OrganizationType']//xs:*[@name='addr']//xs:documentation"/>
+                                                                                        </xforms:help>
+                                                                                    </xforms:output>
+                                                                                </xhtml:td>
+                                                                                <xhtml:td>
+                                                                                    <xforms:input ref="./addr/part/@value"/>
+                                                                                </xhtml:td>
+                                                                            </xhtml:tr>
+                                                                        <!-- oid.responsibleAuthority.scopingOrganization.telecom -->
+                                                                            <xhtml:tr>
+                                                                                <xhtml:td class="item-label" style="width:170px;">
+                                                                                    <xforms:output ref="$resources/iso13582-oid-telecom">
+                                                                                        <xforms:help>
+                                                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='OrganizationType']//xs:*[@name='telecom']//xs:documentation"/>
+                                                                                        </xforms:help>
+                                                                                    </xforms:output>
+                                                                                </xhtml:td>
+                                                                                <xhtml:td>
+                                                                                    <xforms:input ref="./telecom/@value"/>
+                                                                                </xhtml:td>
+                                                                            </xhtml:tr>
+                                                                        </xforms:group>
+                                                                    </xhtml:table>
+                                                                </xhtml:td>
+                                                            <!-- oid.responsibleAuthority.person -->
+                                                                <xhtml:td colspan="2">
+                                                                    <xhtml:table width="100%">
+                                                                        <xforms:group ref="./person">
+                                                                        <!-- oid.responsibleAuthority.person.name -->
+                                                                            <xhtml:tr>
+                                                                                <xhtml:td class="item-label" style="width:170px;">
+                                                                                    <xforms:output ref="$resources/iso13582-oid-person-name">
+                                                                                        <xforms:help>
+                                                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='PersonType']//xs:*[@name='name']//xs:documentation"/>
+                                                                                        </xforms:help>
+                                                                                    </xforms:output>
+                                                                                </xhtml:td>
+                                                                                <xhtml:td>
+                                                                                    <xforms:input ref="./name/part/@value">
+                                                                                        <xforms:alert>
+                                                                                            <xforms:output ref="$resources/required-field"/>
+                                                                                        </xforms:alert>
+                                                                                    </xforms:input>
+                                                                                </xhtml:td>
+                                                                            </xhtml:tr>
+                                                                        <!-- oid.responsibleAuthority.person.addr -->
+                                                                            <xhtml:tr>
+                                                                                <xhtml:td class="item-label" style="width:170px;">
+                                                                                    <xforms:output ref="$resources/iso13582-oid-person-addr">
+                                                                                        <xforms:help>
+                                                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='PersonType']//xs:*[@name='addr']//xs:documentation"/>
+                                                                                        </xforms:help>
+                                                                                    </xforms:output>
+                                                                                </xhtml:td>
+                                                                                <xhtml:td>
+                                                                                    <xforms:input ref="./addr/part/@value"/>
+                                                                                </xhtml:td>
+                                                                            </xhtml:tr>
+                                                                        <!-- oid.responsibleAuthority.person.telecom -->
+                                                                            <xhtml:tr>
+                                                                                <xhtml:td class="item-label" style="width:170px;">
+                                                                                    <xforms:output ref="$resources/iso13582-oid-telecom">
+                                                                                        <xforms:help>
+                                                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='PersonType']//xs:*[@name='telecom']//xs:documentation"/>
+                                                                                        </xforms:help>
+                                                                                    </xforms:output>
+                                                                                </xhtml:td>
+                                                                                <xhtml:td>
+                                                                                    <xforms:input ref="./telecom/@value"/>
+                                                                                </xhtml:td>
+                                                                            </xhtml:tr>
+                                                                        </xforms:group>
+                                                                    </xhtml:table>
+                                                                </xhtml:td>
+                                                            </xhtml:tr>
+                                                        </xhtml:table>
+                                                    </xhtml:td>
+                                                </xhtml:tr>
+                                            </xforms:repeat>
+                                        <!-- end: responsibleAuthority-repeat -->
+                                            <xhtml:tr>
+                                                <xhtml:td colspan="4">
+                                                    <xhtml:hr/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        <!-- oid.submittingAuthority -->
+                                            <xhtml:tr>
+                                                <xhtml:td class="heading" colspan="4">
+                                                    <xforms:output ref="$resources/iso13582-oid-submittingAuthority"/>
+                                                    <xforms:trigger bind="submitting-authority-delete-trigger">
+                                                        <xforms:label>
+                                                        <!--xforms:output ref="$resources/button-delete"/-->
+                                                            <xhtml:img src="/img/remove.gif" alt=""/>
+                                                        </xforms:label>
+                                                        <xforms:delete nodeset="instance('oid-request-instance')/submittingAuthority" ev:event="DOMActivate"/>
+                                                    </xforms:trigger>
+                                                    <xforms:trigger bind="submitting-authority-append-trigger">
+                                                        <xforms:label>
+                                                        <!--xforms:output ref="$resources/button-append"/-->
+                                                            <xhtml:img src="/img/plus.png" alt=""/>
+                                                        </xforms:label>
+                                                        <xforms:action ev:event="DOMActivate">
+                                                            <xforms:insert nodeset="instance('oid-request-instance')/responsibleAuthority[last()]" position="after" origin="instance('oid-request-submittingAuthority-instance')"/>
+                                                        </xforms:action>
+                                                    </xforms:trigger>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                            <xforms:group ref="instance('oid-request-instance')/submittingAuthority">
+                                            <!-- oid.submittingAuthority.code -->
+                                            <!-- oid.submittingAuthority.applicationDate -->
+                                                <xhtml:tr>
+                                                <!-- oid..submittingAuthority.code -->
+                                                    <xhtml:td class="item-label" style="width:170px;">
+                                                        <xforms:output ref="$resources/iso13582-oid-code">
+                                                            <xforms:help>
+                                                                <xforms:output ref="instance('oids-types')//xs:*[@name='SubmittingAuthorityType']//xs:*[@name='code']//xs:documentation"/>
+                                                            </xforms:help>
+                                                        </xforms:output>
+                                                    </xhtml:td>
+                                                    <xhtml:td>
+                                                        <xforms:select1 ref="instance('oid-request-instance')/submittingAuthority/code/@code" class="short-text">
+                                                            <xforms:itemset nodeset="instance('oids-types')//xs:simpleType[@name='list_RoleCodes']/*/xs:enumeration">
+                                                                <xforms:label ref="(xs:annotation/xs:appinfo/xforms:label[@xml:lang=instance('language')])[1]"/>
+                                                                <xforms:value ref="@value"/>
+                                                            </xforms:itemset>
+                                                            <xforms:alert>
+                                                                <xforms:output ref="$resources/required-field"/>
+                                                            </xforms:alert>
+                                                        </xforms:select1>
+                                                    </xhtml:td>
+                                                <!-- oid..submittingAuthority.applicationDate -->
+                                                    <xhtml:td class="item-label" style="width:170px;">
+                                                        <xforms:output ref="$resources/iso13582-oid-applicationDate">
+                                                            <xforms:help>
+                                                                <xforms:output ref="instance('oids-types')//xs:*[@name='SubmittingAuthorityType']//xs:*[@name='applicationDate']//xs:documentation"/>
+                                                            </xforms:help>
+                                                        </xforms:output>
+                                                    </xhtml:td>
+                                                    <xhtml:td>
+                                                        <xforms:input ref="./applicationDate/@value" class="auto-width"/>
+                                                    </xhtml:td>
+                                                </xhtml:tr>
+                                            <!-- oid.submittingAuthority.organization.heading -->
+                                            <!-- oid.submittingAuthority.person.heading -->
+                                                <xhtml:tr>
+                                                    <xhtml:td colspan="4">
+                                                        <xhtml:table width="100%" style="margin: 7px;">
+                                                            <xhtml:tr>
+                                                                <xhtml:td colspan="2" class="heading" style="width:50%;">
+                                                                    <xforms:output ref="$resources/iso13582-oid-scopingOrganization"/>
+                                                                </xhtml:td>
+                                                            <!-- oid..registrationAuthority.person -->
+                                                                <xhtml:td colspan="2" class="heading" style="width:50%;">
+                                                                    <xforms:output ref="$resources/iso13582-oid-person"/>
+                                                                    <xforms:trigger bind="submitting-authority-person-append-trigger">
+                                                                        <xforms:label>
+                                                                        <!--xforms:output ref="$resources/button-append"/-->
+                                                                            <xhtml:img src="/img/plus.png" alt=""/>
+                                                                        </xforms:label>
+                                                                        <xforms:action ev:event="DOMActivate">
+                                                                            <xforms:insert nodeset="instance('oid-request-instance')/submittingAuthority/scopingOrganization" position="before" origin="instance('oid-request-person-instance')"/>
+                                                                        </xforms:action>
+                                                                    </xforms:trigger>
+                                                                    <xforms:trigger bind="submitting-authority-person-delete-trigger">
+                                                                        <xforms:label>
+                                                                        <!--xforms:output ref="$resources/button-delete"/-->
+                                                                            <xhtml:img src="/img/remove.gif" alt=""/>
+                                                                        </xforms:label>
+                                                                        <xforms:delete nodeset="instance('oid-request-instance')/submittingAuthority/person" ev:event="DOMActivate"/>
+                                                                    </xforms:trigger>
+                                                                </xhtml:td>
+                                                            </xhtml:tr>
+                                                        <!-- oid.submittingAuthority.scopingOrganization.details -->
+                                                        <!-- oid.submittingAuthority.person.details -->
+                                                            <xhtml:tr>
+                                                            <!-- oid..submittingAuthority.scopingOrganization -->
+                                                                <xhtml:td colspan="2" style="border-right:solid black 1px">
+                                                                    <xhtml:table width="100%">
+                                                                        <xforms:group ref="instance('oid-request-instance')/submittingAuthority/scopingOrganization">
+                                                                        <!-- oid..submittingAuthority.scopingOrganization.id -->
+                                                                            <xhtml:tr>
+                                                                                <xhtml:td class="item-label" style="width:170px;">
+                                                                                    <xforms:output ref="$resources/iso13582-oid-scopingOrganization-id">
+                                                                                        <xforms:help>
+                                                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='OrganizationType']//xs:*[@name='id']//xs:documentation"/>
+                                                                                        </xforms:help>
+                                                                                    </xforms:output>
+                                                                                </xhtml:td>
+                                                                                <xhtml:td>
+                                                                                    <xforms:input ref="instance('oid-request-instance')/submittingAuthority/scopingOrganization/id/@value"/>
+                                                                                </xhtml:td>
+                                                                            </xhtml:tr>
+                                                                        <!-- oid.submittingAuthority.scopingOrganization.name -->
+                                                                            <xhtml:tr>
+                                                                                <xhtml:td class="item-label" style="width:170px;">
+                                                                                    <xforms:output ref="$resources/iso13582-oid-scopingOrganization-name">
+                                                                                        <xforms:help>
+                                                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='OrganizationType']//xs:*[@name='name']//xs:documentation"/>
+                                                                                        </xforms:help>
+                                                                                    </xforms:output>
+                                                                                </xhtml:td>
+                                                                                <xhtml:td>
+                                                                                    <xforms:input ref="instance('oid-request-instance')/submittingAuthority/scopingOrganization/name/part/@value">
+                                                                                        <xforms:alert>
+                                                                                            <xforms:output ref="$resources/required-field"/>
+                                                                                        </xforms:alert>
+                                                                                    </xforms:input>
+                                                                                </xhtml:td>
+                                                                            </xhtml:tr>
+                                                                        <!-- oid.submittingAuthority.scopingOrganization.addr -->
+                                                                            <xhtml:tr>
+                                                                                <xhtml:td class="item-label" style="width:170px;">
+                                                                                    <xforms:output ref="$resources/iso13582-oid-scopingOrganization-addr">
+                                                                                        <xforms:help>
+                                                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='OrganizationType']//xs:*[@name='addr']//xs:documentation"/>
+                                                                                        </xforms:help>
+                                                                                    </xforms:output>
+                                                                                </xhtml:td>
+                                                                                <xhtml:td>
+                                                                                    <xforms:input ref="instance('oid-request-instance')/submittingAuthority/scopingOrganization/addr/part/@value"/>
+                                                                                </xhtml:td>
+                                                                            </xhtml:tr>
+                                                                        <!-- oid.submittingAuthority.scopingOrganization.telecom -->
+                                                                            <xhtml:tr>
+                                                                                <xhtml:td class="item-label" style="width:170px;">
+                                                                                    <xforms:output ref="$resources/iso13582-oid-telecom">
+                                                                                        <xforms:help>
+                                                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='OrganizationType']//xs:*[@name='telecom']//xs:documentation"/>
+                                                                                        </xforms:help>
+                                                                                    </xforms:output>
+                                                                                </xhtml:td>
+                                                                                <xhtml:td>
+                                                                                    <xforms:input ref="instance('oid-request-instance')/submittingAuthority/scopingOrganization/telecom/@value"/>
+                                                                                </xhtml:td>
+                                                                            </xhtml:tr>
+                                                                        </xforms:group>
+                                                                    </xhtml:table>
+                                                                </xhtml:td>
+                                                            <!-- oid.submittingAuthority.person -->
+                                                                <xhtml:td colspan="2">
+                                                                    <xhtml:table width="100%">
+                                                                        <xforms:group ref="instance('oid-request-instance')/submittingAuthority/person">
+                                                                        <!-- oid..submittingAuthority.person.name -->
+                                                                            <xhtml:tr>
+                                                                                <xhtml:td class="item-label" style="width:170px;">
+                                                                                    <xforms:output ref="$resources/iso13582-oid-person-name">
+                                                                                        <xforms:help>
+                                                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='PersonType']//xs:*[@name='name']//xs:documentation"/>
+                                                                                        </xforms:help>
+                                                                                    </xforms:output>
+                                                                                </xhtml:td>
+                                                                                <xhtml:td>
+                                                                                    <xforms:input ref="instance('oid-request-instance')/submittingAuthority/person/name/part/@value">
+                                                                                        <xforms:alert>
+                                                                                            <xforms:output ref="$resources/required-field"/>
+                                                                                        </xforms:alert>
+                                                                                    </xforms:input>
+                                                                                </xhtml:td>
+                                                                            </xhtml:tr>
+                                                                        <!-- oid..submittingAuthority.person.addr -->
+                                                                            <xhtml:tr>
+                                                                                <xhtml:td class="item-label" style="width:170px;">
+                                                                                    <xforms:output ref="$resources/iso13582-oid-person-addr">
+                                                                                        <xforms:help>
+                                                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='PersonType']//xs:*[@name='addr']//xs:documentation"/>
+                                                                                        </xforms:help>
+                                                                                    </xforms:output>
+                                                                                </xhtml:td>
+                                                                                <xhtml:td>
+                                                                                    <xforms:input ref="instance('oid-request-instance')/submittingAuthority/person/addr/part/@value"/>
+                                                                                </xhtml:td>
+                                                                            </xhtml:tr>
+                                                                        <!-- oid..submittingAuthority.person.telecom -->
+                                                                            <xhtml:tr>
+                                                                                <xhtml:td class="item-label" style="width:170px;">
+                                                                                    <xforms:output ref="$resources/iso13582-oid-telecom">
+                                                                                        <xforms:help>
+                                                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='PersonType']//xs:*[@name='telecom']//xs:documentation"/>
+                                                                                        </xforms:help>
+                                                                                    </xforms:output>
+                                                                                </xhtml:td>
+                                                                                <xhtml:td>
+                                                                                    <xforms:input ref="instance('oid-request-instance')/submittingAuthority/person/telecom/@value"/>
+                                                                                </xhtml:td>
+                                                                            </xhtml:tr>
+                                                                        </xforms:group>
+                                                                    </xhtml:table>
+                                                                </xhtml:td>
+                                                            </xhtml:tr>
+                                                        </xhtml:table>
+                                                    </xhtml:td>
+                                                </xhtml:tr>
+                                            </xforms:group>
+                                        <!-- oid.additionalProperty.heading -->
+                                            <xhtml:tr>
+                                                <xhtml:td class="heading" colspan="4">
+                                                    <xforms:output ref="$resources/iso13582-oid-additionalProperty"/>
+                                                    <xforms:trigger bind="additionalProperty-append-trigger">
+                                                        <xforms:label>
+                                                        <!--xforms:output ref="$resources/button-append"/-->
+                                                            <xhtml:img src="/img/plus.png" alt=""/>
+                                                        </xforms:label>
+                                                        <xforms:action ev:event="DOMActivate">
+                                                            <xforms:insert nodeset="instance('oid-request-instance')/*[local-name()=submittingAuthority or local-name()=responsibleAuthority or last()]" position="after" origin="instance('oid-request-additionalProperty-instance')"/>
+                                                            <xforms:setvalue ref="instance('oid-request-instance')/additionalProperty[last()]/attribute/@value" value="instance('oids-types')//xs:simpleType[@name='additionalPropertyAttributes']/*/xs:enumeration[1]/@value"/>
+                                                            <xforms:setvalue ref="instance('oid-request-instance')/additionalProperty[last()]/value/@value" value="instance('oids-types')//xs:simpleType[@name='additionalPropertyValues']/*/xs:enumeration[1]/@value"/>
+                                                        </xforms:action>
+                                                    </xforms:trigger>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                            <xforms:repeat nodeset="instance('oid-request-instance')/additionalProperty" id="additionalProperty-repeat">
+                                                <xxforms:variable name="additionalPropertyposition" select="position()"/>
+                                                <xhtml:tr>
+                                                    <xhtml:td colspan="4">
+                                                        <xhtml:table width="100%">
+                                                            <xhtml:tr>
+                                                            <!-- oid.additionalProperty.delete.button -->
+                                                                <xhtml:td style="width:50px;">
+                                                                    <xforms:trigger bind="additionalProperty-delete-trigger">
+                                                                        <xforms:label>
+                                                                        <!--xforms:output ref="$resources/button-delete"/-->
+                                                                            <xhtml:img src="/img/remove.gif" alt=""/>
+                                                                            <xforms:output ref="$additionalPropertyposition"/>
+                                                                        </xforms:label>
+                                                                        <xforms:delete nodeset="instance('oid-request-instance')/additionalProperty[index('additionalProperty-repeat')]" ev:event="DOMActivate"/>
+                                                                    </xforms:trigger>
+                                                                </xhtml:td>
+                                                            <!-- oid.additionalProperty.attribute -->
+                                                                <xhtml:td class="item-label" style="width:170px;">
+                                                                    <xforms:output ref="$resources/iso13582-oid-additionalProperty-attribute">
+                                                                        <xforms:help>
+                                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='AdditionalPropertyType']//xs:*[@name='attribute']//xs:documentation"/>
+                                                                        </xforms:help>
+                                                                    </xforms:output>
+                                                                </xhtml:td>
+                                                                <xhtml:td>
+                                                                    <xforms:select1 ref="instance('oid-request-instance')/additionalProperty[$additionalPropertyposition]/attribute/@value" class="short-text">
+                                                                        <xforms:itemset nodeset="instance('oids-types')//xs:simpleType[@name='additionalPropertyAttributes']/*/xs:enumeration">
+                                                                            <xforms:label ref="(xs:annotation/xs:appinfo/xforms:label[@xml:lang=instance('language')])[1]"/>
+                                                                            <xforms:value ref="@value"/>
+                                                                        </xforms:itemset>
+                                                                        <xforms:alert>
+                                                                            <xforms:output ref="$resources/required-field"/>
+                                                                        </xforms:alert>
+                                                                    </xforms:select1>
+                                                                </xhtml:td>
+                                                            <!-- oid.additionalProperty.value -->
+                                                                <xhtml:td class="item-label" style="width:170px;">
+                                                                    <xforms:output ref="$resources/iso13582-oid-additionalProperty-value">
+                                                                        <xforms:help>
+                                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='AdditionalPropertyType']//xs:*[@name='value']//xs:documentation"/>
+                                                                        </xforms:help>
+                                                                    </xforms:output>
+                                                                </xhtml:td>
+                                                                <xhtml:td>
+                                                                    <xforms:select1 ref="instance('oid-request-instance')/additionalProperty[$additionalPropertyposition]/value/@value" class="short-text">
+                                                                        <xforms:itemset nodeset="instance('oids-types')//xs:simpleType[@name='additionalPropertyValues']/*/xs:enumeration">
+                                                                            <xforms:label ref="(xs:annotation/xs:appinfo/xforms:label[@xml:lang=instance('language')])[1]"/>
+                                                                            <xforms:value ref="@value"/>
+                                                                        </xforms:itemset>
+                                                                        <xforms:alert>
+                                                                            <xforms:output ref="$resources/required-field"/>
+                                                                        </xforms:alert>
+                                                                    </xforms:select1>
+                                                                </xhtml:td>
+                                                            </xhtml:tr>
+                                                        </xhtml:table>
+                                                    </xhtml:td>
+                                                </xhtml:tr>
+                                            </xforms:repeat>
+                                        <!-- oid.historyAnnotation.heading -->
+                                            <xhtml:tr>
+                                                <xhtml:td class="heading" colspan="4">
+                                                    <xforms:output ref="$resources/iso13582-oid-historyAnnotation"/>
+                                                    <xforms:trigger bind="historyAnnotation-append-trigger">
+                                                        <xforms:label>
+                                                        <!--xforms:output ref="$resources/button-append"/-->
+                                                            <xhtml:img src="/img/plus.png" alt=""/>
+                                                        </xforms:label>
+                                                        <xforms:action ev:event="DOMActivate">
+                                                            <xforms:insert nodeset="instance('oid-request-instance')/*[local-name()=additionalProperty or local-name()=submittingAuthority or local-name()=responsibleAuthority or last()]" position="after" origin="instance('oid-request-historyAnnotation-instance')"/>
+                                                        </xforms:action>
+                                                    </xforms:trigger>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                            <xforms:repeat nodeset="instance('oid-request-instance')/historyAnnotation" id="historyAnnotation-repeat">
+                                                <xxforms:variable name="historyAnnotationposition" select="position()"/>
+                                                <xhtml:tr>
+                                                    <xhtml:td colspan="4">
+                                                        <xhtml:table width="100%">
+                                                            <xhtml:tr>
+                                                            <!-- oid.historyAnnotation.delete.button -->
+                                                                <xhtml:td style="width:50px;">
+                                                                    <xforms:trigger bind="historyAnnotation-delete-trigger">
+                                                                        <xforms:label>
+                                                                        <!--xforms:output ref="$resources/button-delete"/-->
+                                                                            <xhtml:img src="/img/remove.gif" alt=""/>
+                                                                            <xforms:output ref="$historyAnnotationposition"/>
+                                                                        </xforms:label>
+                                                                        <xforms:delete nodeset="instance('oid-request-instance')/historyAnnotation[index('historyAnnotation-repeat')]" ev:event="DOMActivate"/>
+                                                                    </xforms:trigger>
+                                                                </xhtml:td>
+                                                            <!-- oid.historyAnnotation.annotationDate -->
+                                                                <xhtml:td class="item-label" style="width:170px;">
+                                                                    <xforms:output ref="$resources/iso13582-oid-annotationDate">
+                                                                        <xforms:help>
+                                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='HistoryAnnotationType']//xs:*[@name='annotationDate']//xs:documentation"/>
+                                                                        </xforms:help>
+                                                                    </xforms:output>
+                                                                </xhtml:td>
+                                                                <xhtml:td>
+                                                                    <xforms:input ref="./annotationDate/@value" class="auto-width"/>
+                                                                </xhtml:td>
+                                                            <!-- oid.historyAnnotation.text -->
+                                                                <xhtml:td class="item-label" style="width:170px;">
+                                                                    <xforms:output ref="$resources/iso13582-oid-text">
+                                                                        <xforms:help>
+                                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='HistoryAnnotationType']//xs:*[@name='text']//xs:documentation"/>
+                                                                        </xforms:help>
+                                                                    </xforms:output>
+                                                                </xhtml:td>
+                                                                <xhtml:td>
+                                                                    <xforms:input ref="text/@value">
+                                                                        <xforms:alert>
+                                                                            <xforms:output ref="$resources/required-field"/>
+                                                                        </xforms:alert>
+                                                                    </xforms:input>
+                                                                </xhtml:td>
+                                                            </xhtml:tr>
+                                                        </xhtml:table>
+                                                    </xhtml:td>
+                                                </xhtml:tr>
+                                            </xforms:repeat>
+                                        <!-- oid.reference.heading -->
+                                            <xhtml:tr>
+                                                <xhtml:td class="heading" colspan="4">
+                                                    <xforms:output ref="$resources/iso13582-oid-reference"/>
+                                                    <xforms:trigger bind="reference-append-trigger">
+                                                        <xforms:label>
+                                                        <!--xforms:output ref="$resources/button-append"/-->
+                                                            <xhtml:img src="/img/plus.png" alt=""/>
+                                                        </xforms:label>
+                                                        <xforms:action ev:event="DOMActivate">
+                                                            <xforms:insert nodeset="instance('oid-request-instance')/*[last()]" position="after" origin="instance('oid-request-reference-instance')"/>
+                                                        </xforms:action>
+                                                    </xforms:trigger>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                            <xforms:repeat nodeset="instance('oid-request-instance')/reference" id="reference-repeat">
+                                                <xxforms:variable name="referenceposition" select="position()"/>
+                                                <xhtml:tr>
+                                                    <xhtml:td colspan="4">
+                                                        <xhtml:table>
+                                                            <xhtml:tr>
+                                                                <xhtml:td style="width:50px;">
+                                                                    <xforms:trigger bind="reference-delete-trigger">
+                                                                        <xforms:label>
+                                                                        <!--xforms:output ref="$resources/button-delete"/-->
+                                                                            <xhtml:img src="/img/remove.gif" alt=""/>
+                                                                            <xforms:output ref="$referenceposition"/>
+                                                                        </xforms:label>
+                                                                        <xforms:delete nodeset="instance('oid-request-instance')/reference[index('reference-repeat')]" ev:event="DOMActivate"/>
+                                                                    </xforms:trigger>
+                                                                </xhtml:td>
+                                                            <!-- oid.reference.ref -->
+                                                                <xhtml:td class="item-label" style="width:170px;">
+                                                                    <xforms:output ref="$resources/iso13582-oid-reference-ref">
+                                                                        <xforms:help>
+                                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='ReferenceType']//xs:*[@name='ref']//xs:documentation"/>
+                                                                        </xforms:help>
+                                                                    </xforms:output>
+                                                                </xhtml:td>
+                                                                <xhtml:td>
+                                                                    <xforms:input ref="instance('oid-request-instance')/reference[$referenceposition]/ref/@value">
+                                                                        <xforms:alert>
+                                                                            <xforms:output ref="$resources/required-field"/>
+                                                                        </xforms:alert>
+                                                                    </xforms:input>
+                                                                </xhtml:td>
+                                                            <!-- oid.reference.type -->
+                                                                <xhtml:td class="item-label" style="width:170px;">
+                                                                    <xforms:output ref="$resources/iso13582-oid-reference-type">
+                                                                        <xforms:help>
+                                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='ReferenceType']//xs:*[@name='type']//xs:documentation"/>
+                                                                        </xforms:help>
+                                                                    </xforms:output>
+                                                                </xhtml:td>
+                                                                <xhtml:td>
+                                                                    <xforms:select1 ref="instance('oid-request-instance')/reference[$referenceposition]/type/@code" class="auto-width">
+                                                                        <xforms:itemset nodeset="instance('oids-types')//xs:simpleType[@name='list_ReferenceTypeCodes']/*/xs:enumeration">
+                                                                            <xforms:label ref="(xs:annotation/xs:appinfo/xforms:label[@xml:lang=instance('language')])[1]"/>
+                                                                            <xforms:value ref="@value"/>
+                                                                        </xforms:itemset>
+                                                                        <xforms:alert>
+                                                                            <xforms:output ref="$resources/required-field"/>
+                                                                        </xforms:alert>
+                                                                    </xforms:select1>
+                                                                </xhtml:td>
+                                                            <!-- oid.reference.lastVisitedDate -->
+                                                                <xhtml:td class="item-label" style="width:170px;">
+                                                                    <xforms:output ref="$resources/iso13582-oid-reference-lastVisitedDate">
+                                                                        <xforms:help>
+                                                                            <xforms:output ref="instance('oids-types')//xs:*[@name='ReferenceType']//xs:*[@name='lastVisitedDate']//xs:documentation"/>
+                                                                        </xforms:help>
+                                                                    </xforms:output>
+                                                                </xhtml:td>
+                                                                <xhtml:td>
+                                                                    <xforms:input ref="./lastVisitedDate/@value" class="auto-width"/>
+                                                                </xhtml:td>
+                                                            </xhtml:tr>
+                                                        </xhtml:table>
+                                                    </xhtml:td>
+                                                </xhtml:tr>
+                                            </xforms:repeat>
+                                        </xhtml:table>
+                                    </xforms:group>
+                                    <xhtml:table>
+                                        <xhtml:tr>
+                                            <xhtml:td colspan="4">
+                                                <fr:button>
+                                                    <xforms:label ref="$resources/save-changes"/>
+                                                    <xforms:action ev:event="DOMActivate">
+                                                    
+                                                    <!--
+                                                    <xforms:dispatch name="fr-visit-all" targetid="error-summary"/>
+                                                    <xforms:setvalue ref="instance('ui')/show-errors">true</xforms:setvalue>
+                                                    -->
+                                                    
+                                                    <!-- delete xs:date field to avoid validation-error, add after updating otherwise it effectively goes poof -->
+                                                        <xforms:delete nodeset="instance('oid-request-instance')/responsibleAuthority/validTime/high[@value='']" ev:event="DOMActivate"/>
+                                                    <!-- submit the new request -->
+                                                        <xforms:send submission="new-oid-request-submission"/>
+                                                    <!-- refresh the view so the tabs get updated and the user don't have to -->
+                                                        <xforms:send submission="get-oids-request-registry-submission"/>
+                                                        <xforms:insert nodeset="instance('oid-request-instance')/oid/responsibleAuthority/validTime/high[@value='']" ev:event="DOMActivate"/>
+                                                    <!-- add xs:date field after updating otherwise it effectively goes poof -->
+                                                        <xforms:insert nodeset="instance('oid-request-instance')/oid/responsibleAuthority/validTime/low[not(following-sibling::high)]" position="after" origin="instance('oid-request-validTime-high-instance')" ev:event="DOMActivate"/>
+                                                    </xforms:action>
+                                                </fr:button>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xhtml:table>
+                                </xhtml:div>
+                            </fr:tab>
+                        <!-- 
+                            pending oid requests
+                            ====================
+                        -->
+                            <fr:tab id="oid-requests-view">
+                                <fr:label ref="concat($resources/oid-status-pending,' (',count(instance('oid-request-registry-instance')/oid),')')"/>
+                                <xforms:action ev:event="fr-select">
+                                    <xforms:setfocus control="requestSearch"/>
+                                </xforms:action>
+                                <xforms:action ev:event="fr-deselect"/>
+                                <xhtml:div class="detail">
+                                <!-- table with issue list -->
+                                    <fr:datatable width="100%" scrollable="vertical" height="400px">
+                                        <xhtml:thead>
+                                            <xhtml:tr>
+                                                <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                                    <xforms:output ref="$resources/iso13582-oid-status"/>
+                                                </xhtml:th>
+                                                <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                                    <xforms:output ref="$resources/oid"/>
+                                                </xhtml:th>
+                                                <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                                    <xforms:output ref="$resources/iso13582-oid-desciption"/>
+                                                </xhtml:th>
+                                            </xhtml:tr>
+                                        </xhtml:thead>
+                                        <xhtml:tbody>
+                                            <xforms:repeat nodeset="instance('oid-request-registry-instance')/oid">
+                                                <xhtml:tr id="pending-oid-request-table">
+                                                    <xhtml:td>
+                                                        <xforms:output ref="status/@code"/>
+                                                    </xhtml:td>
+                                                    <xhtml:td>
+                                                        <xforms:output ref="dotNotation/@value"/>
+                                                    </xhtml:td>
+                                                    <xhtml:td>
+                                                        <xforms:output ref="description[@language='en-US']/@value"/>
+                                                    </xhtml:td>
+                                                </xhtml:tr>
+                                            </xforms:repeat>
+                                        </xhtml:tbody>
+                                        <xforms:action ev:event="fr-selection-changed">
+                                        <!--xforms:setvalue ref="instance('oid-search-instance')/pending" value="event('selected')/dotNotation/@value"/-->
+                                            <xforms:setvalue ref="instance('oid-search-instance')/selected-request-oid" value="event('selected')/dotNotation/@value"/>
+                                        </xforms:action>
+                                    </fr:datatable>
+                                </xhtml:div>
+                            </fr:tab>
+                        </fr:tabview>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xforms:group>
+        </xhtml:table>
+        <!--fr:xforms-inspector/-->
+    </xhtml:body>
+</xhtml:html>

@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="602"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1120"/>
+   <Title name="EntityNameUseR2" date="2012-08-02" version="1.000">Description:A set of codes advising a system or user which name in a set of names to select for a given purpose.</Title>
+   <Authors>
+      <Author name="Responsible"/>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="Assumed" kind="concept">
+      <Meta name="internalId" value="22772"/>
+      <SubClass code="A"/>
+      <SubClass code="ANON"/>
+      <SubClass code="I"/>
+      <SubClass code="P"/>
+      <SubClass code="R"/>
+      <Rubric id="d1e117095" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A name that a person has assumed or has been assumed to them.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117111" kind="short">
+         <Label xml:lang="en-US">Assumed</Label>
+      </Rubric>
+      <Rubric id="d1e117111" kind="preferred">
+         <Label xml:lang="en-US">Assumed</Label>
+      </Rubric>
+   </Class>
+   <Class code="M" kind="concept">
+      <Meta name="internalId" value="22780"/>
+      <Rubric id="d1e117123" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A name used prior to marriage.Note that marriage naming customs vary greatly around the world. This name use is for use by applications that collect and store maiden names. Though the concept of maiden name is often gender specific, the use of this term is not gender specific. The use of this term does not imply any particular history for a person's name, nor should the maiden name be determined algorithmically</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117139" kind="short">
+         <Label xml:lang="en-US">maiden name</Label>
+      </Rubric>
+      <Rubric id="d1e117139" kind="preferred">
+         <Label xml:lang="en-US">maiden name</Label>
+      </Rubric>
+   </Class>
+   <Class code="N" kind="concept">
+      <Meta name="internalId" value="22769"/>
+      <Rubric id="d1e117150" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Known as/conventional/the one you normally use</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117166" kind="short">
+         <Label xml:lang="en-US">customary</Label>
+      </Rubric>
+      <Rubric id="d1e117166" kind="preferred">
+         <Label xml:lang="en-US">customary</Label>
+      </Rubric>
+   </Class>
+   <Class code="NameRepresentationUse" kind="concept">
+      <Meta name="internalId" value="22765"/>
+      <SubClass code="ABC"/>
+      <SubClass code="IDE"/>
+      <SubClass code="SYL"/>
+      <Rubric id="d1e117177" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Identifies the different representations of a name . The representation may affect how the name is used . (E.g . use of Ideographic for formal communications.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117193" kind="short">
+         <Label xml:lang="en-US">NameRepresentationUse</Label>
+      </Rubric>
+      <Rubric id="d1e117193" kind="preferred">
+         <Label xml:lang="en-US">NameRepresentationUse</Label>
+      </Rubric>
+   </Class>
+   <Class code="OLD" kind="concept">
+      <Meta name="internalId" value="22778"/>
+      <SubClass code="DN"/>
+      <Rubric id="d1e117204" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>This name is no longer in use (note: Names may also carry valid time ranges . This code is used to cover the situations where it is known that the name is no longer valid, but no particular time range for its use is known)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117220" kind="short">
+         <Label xml:lang="en-US">no longer in use</Label>
+      </Rubric>
+      <Rubric id="d1e117220" kind="preferred">
+         <Label xml:lang="en-US">no longer in use</Label>
+      </Rubric>
+   </Class>
+   <Class code="OR" kind="concept">
+      <Meta name="internalId" value="22770"/>
+      <Rubric id="d1e117231" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The formal name as registered in an official (government) registry, but which name might not be commonly used . May correspond to the concept of legal name</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117247" kind="short">
+         <Label xml:lang="en-US">official registry name</Label>
+      </Rubric>
+      <Rubric id="d1e117247" kind="preferred">
+         <Label xml:lang="en-US">official registry name</Label>
+      </Rubric>
+   </Class>
+   <Class code="PHON" kind="concept">
+      <Meta name="internalId" value="22782"/>
+      <Rubric id="d1e117258" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The name as understood by the data enterer, i.e. a close approximation of a phonetic spelling of the name, not based on a phonetic algorithm.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117274" kind="short">
+         <Label xml:lang="en-US">phonetic</Label>
+      </Rubric>
+      <Rubric id="d1e117274" kind="preferred">
+         <Label xml:lang="en-US">phonetic</Label>
+      </Rubric>
+   </Class>
+   <Class code="SRCH" kind="concept">
+      <Meta name="internalId" value="22781"/>
+      <Rubric id="d1e117286" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A name intended for use in searching or matching. This is used when the name is incomplete and contains enough details for search matching, but not enough for other uses.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117302" kind="short">
+         <Label xml:lang="en-US">search</Label>
+      </Rubric>
+      <Rubric id="d1e117302" kind="preferred">
+         <Label xml:lang="en-US">search</Label>
+      </Rubric>
+   </Class>
+   <Class code="T" kind="concept">
+      <Meta name="internalId" value="22771"/>
+      <Rubric id="d1e117313" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A temporary name. Note that a name valid time can provide more detailed information. This may also be used for temporary names assigned at birth or in emergency situations.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117329" kind="short">
+         <Label xml:lang="en-US">temporary</Label>
+      </Rubric>
+      <Rubric id="d1e117329" kind="preferred">
+         <Label xml:lang="en-US">temporary</Label>
+      </Rubric>
+   </Class>
+   <Class code="A" kind="concept">
+      <Meta name="internalId" value="22776"/>
+      <SuperClass code="Assumed"/>
+      <Rubric id="d1e117340" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A name used in a Professional or Business context . Examples: Continuing to use a maiden name in a professional context, or using a stage performing name (some of these names are also pseudonyms)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117361" kind="short">
+         <Label xml:lang="en-US">business name</Label>
+      </Rubric>
+      <Rubric id="d1e117361" kind="preferred">
+         <Label xml:lang="en-US">business name</Label>
+      </Rubric>
+   </Class>
+   <Class code="ANON" kind="concept">
+      <Meta name="internalId" value="22775"/>
+      <SuperClass code="Assumed"/>
+      <Rubric id="d1e117372" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Anonymous assigned name (used to protect a persons identity for privacy reasons)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117393" kind="short">
+         <Label xml:lang="en-US">Anonymous</Label>
+      </Rubric>
+      <Rubric id="d1e117393" kind="preferred">
+         <Label xml:lang="en-US">Anonymous</Label>
+      </Rubric>
+   </Class>
+   <Class code="I" kind="concept">
+      <Meta name="internalId" value="22773"/>
+      <SuperClass code="Assumed"/>
+      <Rubric id="d1e117404" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>e.g . Chief Red Cloud</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117425" kind="short">
+         <Label xml:lang="en-US">Indigenous/Tribal</Label>
+      </Rubric>
+      <Rubric id="d1e117425" kind="preferred">
+         <Label xml:lang="en-US">Indigenous/Tribal</Label>
+      </Rubric>
+   </Class>
+   <Class code="P" kind="concept">
+      <Meta name="internalId" value="22774"/>
+      <SuperClass code="Assumed"/>
+      <Rubric id="d1e117436" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A non-official name by which the person is sometimes known. (This may also be used to record informal names such as a nickname)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117457" kind="short">
+         <Label xml:lang="en-US">Other/Pseudonym/Alias</Label>
+      </Rubric>
+      <Rubric id="d1e117457" kind="preferred">
+         <Label xml:lang="en-US">Other/Pseudonym/Alias</Label>
+      </Rubric>
+   </Class>
+   <Class code="R" kind="concept">
+      <Meta name="internalId" value="22777"/>
+      <SuperClass code="Assumed"/>
+      <Rubric id="d1e117469" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A name assumed as part of a religious vocation . e.g . Sister Mary Francis, Brother John</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117490" kind="short">
+         <Label xml:lang="en-US">religious</Label>
+      </Rubric>
+      <Rubric id="d1e117490" kind="preferred">
+         <Label xml:lang="en-US">religious</Label>
+      </Rubric>
+   </Class>
+   <Class code="ABC" kind="concept">
+      <Meta name="internalId" value="22766"/>
+      <SuperClass code="NameRepresentationUse"/>
+      <Rubric id="d1e117501" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Alphabetic transcription of name in latin alphabet (Japanese: romaji)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117522" kind="short">
+         <Label xml:lang="en-US">alphabetic</Label>
+      </Rubric>
+      <Rubric id="d1e117522" kind="preferred">
+         <Label xml:lang="en-US">alphabetic</Label>
+      </Rubric>
+   </Class>
+   <Class code="IDE" kind="concept">
+      <Meta name="internalId" value="22767"/>
+      <SuperClass code="NameRepresentationUse"/>
+      <Rubric id="d1e117533" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Ideographic representation of name (e.g., Japanese kanji, Chinese characters)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117554" kind="short">
+         <Label xml:lang="en-US">ideographic</Label>
+      </Rubric>
+      <Rubric id="d1e117554" kind="preferred">
+         <Label xml:lang="en-US">ideographic</Label>
+      </Rubric>
+   </Class>
+   <Class code="SYL" kind="concept">
+      <Meta name="internalId" value="22768"/>
+      <SuperClass code="NameRepresentationUse"/>
+      <Rubric id="d1e117565" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Syllabic transcription of name (e.g., Japanese kana, Korean hangul)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117586" kind="short">
+         <Label xml:lang="en-US">syllabic</Label>
+      </Rubric>
+      <Rubric id="d1e117586" kind="preferred">
+         <Label xml:lang="en-US">syllabic</Label>
+      </Rubric>
+   </Class>
+   <Class code="DN" kind="concept">
+      <Meta name="internalId" value="22779"/>
+      <SuperClass code="OLD"/>
+      <Rubric id="d1e117597" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>This name should no longer be used when interacting with the person (i.e . in addition to no longer being used, the name should not be even mentioned when interacting with the person)Note: applications are not required to compare names labeled "Do Not Use" and other names in order to eliminate name parts that are common between the other name and a name labeled "Do Not Use".</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e117618" kind="short">
+         <Label xml:lang="en-US">do not use</Label>
+      </Rubric>
+      <Rubric id="d1e117618" kind="preferred">
+         <Label xml:lang="en-US">do not use</Label>
+      </Rubric>
+   </Class>
+</ClaML>

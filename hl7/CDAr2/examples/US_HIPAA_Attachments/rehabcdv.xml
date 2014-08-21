@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href='CDA.xsl' type='text/xsl'?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument classCode="DOCCLIN" moodCode="EVN" xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../schemas/CDA.xsd">
+  <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+  <id extension="rehabcdv" root="2.16.840.1.113883.19.2744.1.1"/>
+  <!-- The document contains a discharge note identified by LOINC code 11490-0. -->
+  <code code="11490-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Discharge Note"/>
+  <title>Discharge Summary</title>
+  <!-- A message was created on August 14, 2006 at 5:39:24 AM. -->
+  <effectiveTime value="20060814053924"/>
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality" displayName="Normal"/>
+  <!-- Patient Identification includes name and gender. -->
+  <!-- The patient name is Patient H. Sample. The medical record ID of the patient for the sending institution is 6910828. -->
+  <recordTarget contextControlCode="OP" typeCode="RCT">
+    <patientRole classCode="PAT">
+      <id extension="184569" root="2.16.840.1.113883.19.2744.1.2"/>
+      <patient>
+        <name>
+          <given>Patient</given>
+          <given>H</given>
+          <family>Sample</family>
+        </name>
+        <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" displayName="Male"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+
+  <!-- author of the document -->
+  <author contextControlCode="OP" typeCode="AUT">
+    <time value="20060612"/>
+    <assignedAuthor>
+      <id extension="A522" root="2.16.840.1.113883.19.2744.1.3"/>
+      <assignedPerson>
+        <name>
+          <given>Ken</given>
+          <family>Cure</family>
+          <suffix>MD</suffix>
+        </name>
+      </assignedPerson>
+    </assignedAuthor>
+  </author>
+
+  <!-- organization maintaining the document -->
+  <custodian typeCode="CST">
+    <assignedCustodian classCode="ASSIGNED">
+      <representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+        <id extension="ghc" root="2.16.840.1.113883.19.2744.1.3.1"/>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+
+  <!-- legal authenticator  -->
+  <!-- Dr. Cure signed the note on 30 October 2006 at 12:53 PM. -->
+  <legalAuthenticator contextControlCode="OP" typeCode="LA">
+    <time value="200610301253"/>
+    <signatureCode code="S"/>
+    <assignedEntity>
+      <id extension="A522" root="2.16.840.1.113883.19.2744.1.3"/>
+      <assignedPerson>
+        <name>
+          <given>Ken</given>
+          <family>Cure</family>
+          <suffix>MD</suffix>
+        </name>
+      </assignedPerson>
+    </assignedEntity>
+  </legalAuthenticator>
+
+  <authenticator>
+    <time value="20060622"/>
+    <signatureCode code="S"/>
+    <assignedEntity classCode="ASSIGNED">
+      <!-- fix root to indicate NJ license -->
+      <id extension="3582901" root="2.16.840.1.113883.19.2744.1.3"/>
+      <assignedPerson>
+        <name>
+          <given>Jonah</given>
+          <given>J</given>
+          <family>Jones</family>
+          <suffix>MS</suffix>
+        </name>
+      </assignedPerson>
+    </assignedEntity>
+  </authenticator>
+
+  <!-- The claim associated with this CDA document is identified by the value XA728302 in data 
+          element TRN02-Attachment Control Number of Loop 2000A-Payer/Provider Control Number. 
+  -->
+  <inFulfillmentOf>
+    <order>
+      <id extension="XA728302" root="2.16.840.1.113883.19.2744.1.5"/>
+    </order>
+  </inFulfillmentOf>
+  
+  <documentationOf>
+    <serviceEvent>
+      <code code="TBD" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="DATE RANGE OF TREATMENT"/>
+      <effectiveTime>
+        <low value="20060612"/>
+        <high value="20060930"/>
+      </effectiveTime>
+    </serviceEvent>
+  </documentationOf>
+  
+  <documentationOf>
+    <serviceEvent>
+      <code code="18639-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="DATE RANGE DESCRIBED BY PLAN"/>
+      <effectiveTime>
+        <low value="20060622"/>
+        <high value="20060922"/>
+      </effectiveTime>
+    </serviceEvent>
+  </documentationOf>
+  
+  <!-- The billing account number within the sending institution that is associated with the claim is 773789090. -->
+  <componentOf>
+    <encompassingEncounter>
+      <id extension="773789090" root="2.16.840.1.113883.19.2744.1.4"/>
+      <effectiveTime value="20060814"/>
+      <!-- The provider is Ken Cure, MD, who is identified as ID number A522 by the hospital. -->
+      <responsibleParty>
+        <assignedEntity>
+          <id extension="A522" root="2.16.840.1.113883.19.2744.1.3"/>
+          <assignedPerson>
+            <name>
+              <given>Ken</given>
+              <family>Cure</family>
+              <suffix>MD</suffix>
+            </name>
+          </assignedPerson>
+        </assignedEntity>
+      </responsibleParty>
+    </encompassingEncounter>
+  </componentOf>
+  
+  
+
+  <component contextConductionInd="true" typeCode="COMP">
+    <structuredBody>
+      <component>
+        <section>
+          <code code="19007-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PRIMARY DIAGNOSIS"/>
+          <title>PRIMARY DIAGNOSIS</title>
+          <text>
+            <paragraph ID="content-1"><content ID="content-2">bipolar affective disorder</content> as of 26 March 2006</paragraph>
+          </text>
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="19007-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PRIMARY DIAGNOSIS"/>
+              <text>
+                <reference value="#content-1"/>
+              </text>
+              <effectiveTime>
+                <low value="20060326"/>
+              </effectiveTime>
+              <value code="296.4" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD-9-CM" displayName="BIPOLAR AFFECTIVE D/O" xsi:type="CD">
+                <originalText>
+                  <reference value="#content-2"/>
+                </originalText>
+              </value>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <code code="TBD" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="DATE RANGE OF TREATMENT"/>
+          <title>Treatment Dates</title>
+          <text>
+            <paragraph>June 12, 2006 - September 30, 2006</paragraph>
+          </text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <code code="18639-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="DATE RANGE COVERED BY PLAN"/>
+          <title>Plan Dates</title>
+          <text>
+            <paragraph>June 22, 2006 - September 22, 2006</paragraph>
+          </text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <code code="18637-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="VISIT FREQUENCY"/>
+          <title>Frequency of Visits</title>
+          <text>
+            <paragraph>3 times per week</paragraph>
+          </text>
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="18637-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="VISIT FREQUENCY"/>
+              <value unit="1/mo" value="3" xsi:type="PQ"/>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <code code="18631-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="DIAGNOSIS ADDRESSED BY PLAN"/>
+          <title>DIAGNOSIS ADDRESSED BY PLAN</title>
+          <text>
+            <paragraph ID="content-3">bipolar affective disorder</paragraph>
+          </text>
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="18631-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="DIAGNOSIS ADDRESSED BY PLAN"/>
+              <text>
+                <reference value="#content-3"/>
+              </text>
+              <value code="296.4" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD-9-CM" displayName="BIPOLAR AFFECTIVE D/O" xsi:type="CD"/>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <code code="18642-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HOSPITALIZATION LEADING TO TREATMENT"/>
+          <title>Prior Hospitalizations</title>
+          <text>
+            <paragraph ID="content-4">March 26, 2006 - March 29, 2006</paragraph>
+          </text>
+          <entry>
+            <encounter classCode="ENC" moodCode="EVN">
+              <code code="18642-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HOSPITALIZATION LEADING TO TREATMENT"/>
+              <text>
+                <reference value="#content-4"/>
+              </text>
+              <effectiveTime>
+                <low value="20060326"/>
+                <high value="20060329"/>
+              </effectiveTime>
+            </encounter>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <code code="18654-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PRIOR MEDICAL HISTORY + LEVEL OF FUNCTION"/>
+          <title>PMH + Prior Function</title>
+          <text>
+            <paragraph>PATIENT HAS HAD MULTIPLE PSYCHIATRIC HOSPITALIZATIONS OVER MANY YEARS, MOST RECENTLY 2 INPATIENT ADMISSIONS TO GENERAL HOSPITAL FOR
+              SUICIDAL IDEATION AND SEVERE ANXIETY. PATIENT HAS BEEN UN OR UNDEREMPLOYED SINCE SUICIDE DEATH OF HIS TWIN BROTHER.</paragraph>
+          </text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <code code="18655-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="INITIAL ASSESSMENT"/>
+          <title>Initial Assessment</title>
+          <text>
+            <paragraph>PATIENT IS EXTREMELY ANXIOUS, AGITATED AND NEEDY, CANNOT HOLD EMPLOYMENT, HAS DIFFICULTY ATTENDING PROGRAM REGULARLY, AND CANNOT SIT IN
+              GROUPS FOR 10 MINUTES AT A TIME. RETURNS TO HOSPITAL INPATIENT WARDS WHENEVER ANXIETY BECOMES OVERWHELMING, WHICH IS OFTEN. </paragraph>
+          </text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <code code="18658-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PROGRESS NOTE+ATTAINMENT OF GOALS"/>
+          <title>Progress</title>
+          <text>
+            <paragraph><caption>PROGRESS</caption>915/90853 GROUP THERAPY: SYMPTOM MANAGEMENT ON 7/17,22,24,27,29,31 WITH PSYCHOLOGIST: PATIENT MADE ATTEMPTS TO
+              COME AND PARTICIPATE IN SYMPTOMMANAGEMENT GROUP. PATIENT WAS URGED TO USE ANXIETY CONTROL TECHNIQUES HE HAD BEEN TAUGHT TO TOLERATE INCREASING
+              LONGER STAGES IN GROUP. PATIENT RESPONDED BY BEING ABLE TO STAY AND PARTICIPATE IN GROUP 50% LONGER. </paragraph>
+            <paragraph>LAB WORK DONE ON 07/17/00 <br/>LITHIUM LEVEL 90 <br/>ROUTINE MONITORING OF THERAPEUTIC RESPONSE.</paragraph>
+            <list listType="ordered">
+              <caption>GOALS</caption>
+              <item>PATIENT IS WORKING TO COME UP WITH ALTERNATIVES TO INPATIENT HOSPITALIZATION WHEN HE FEELS ABANDONED OR ANXIOUS</item>
+              <item>PATIENT IS EXPECTED TO RETURN TO THE LEVEL OF EMPLOYMENT THAT IS COMMENSORATE WITH HIS COGNITIVE ABILITIES.</item>
+            </list>
+          </text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <code code="18657-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PLAN OF TREATMENT"/>
+          <title>Plan</title>
+          <text>
+            <paragraph>915/90853 GROUP THERAPY: SYMPTOM MANAGEMENT 3X WEEK WITH PSYCHOLOGIST</paragraph>
+            <paragraph>LAB WORK 1X MONTH: TO MONITOR LITHIUM FOR THERAPEUTIC LEVEL.</paragraph>
+          </text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <code code="18651-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MEDICATION ADMINISTERED"/>
+          <title>Medications</title>
+          <text>
+            <table>
+              <thead>
+                <tr>
+                  <th>Medication</th>
+                  <th>Dose</th>
+                  <th>Route</th>
+                  <th>Frequency</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ID="med-1">
+                  <td>LITHIUM LEVEL</td>
+                  <td>600 MG</td>
+                  <td> PO</td>
+                  <td>QAM</td>
+                </tr>
+                <tr ID="med-2">
+                  <td>LITHIUM LEVEL</td>
+                  <td>900 MG</td>
+                  <td>PO</td>
+                  <td>QHS</td>
+                </tr>
+                <tr ID="med-3">
+                  <td>THIOTHIXENE</td>
+                  <td>5 MG</td>
+                  <td>PO</td>
+                  <td>TID</td>
+                </tr>
+                <tr ID="med-4">
+                  <td>BENZTROPINE</td>
+                  <td>1 MG</td>
+                  <td>PO</td>
+                  <td>TID</td>
+                </tr>
+                <tr ID="med-5">
+                  <td>INDOMETHACIN</td>
+                  <td>50 MG</td>
+                  <td>PO</td>
+                  <td>TID</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <code code="18651-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MEDICATION ADMINISTERED"/>
+              <text>
+                <reference value="#med-1"/>
+              </text>
+              <!-- In claims attachments, the first effective time defines the bounded range over which the meds are to be taken.
+                This information is not known for this example, and so these values are set to null, with the reason that they are UNKnown.
+                -->
+              <effectiveTime xsi:type="IVL_TS">
+                <low nullFlavor="UNK"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <!-- QAM is in the morning, but is not coded in HL7 data types, so use ACM, which means before breakfast -->
+              <effectiveTime xsi:type="EIVL_TS">
+                <event code="ACM"/>
+              </effectiveTime>
+              <routeCode code="PO" codeSystem="2.16.840.1.113883.5.112" codeSystemName="RouteOfAdministration" displayName="Orally"/>
+              <doseQuantity unit="mg" value="600"/>
+              <consumable>
+                <manufacturedProduct>
+                  <manufacturedLabeledDrug>
+                    <code/>
+                    <name>LITHIUM</name>
+                  </manufacturedLabeledDrug>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <code code="18651-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MEDICATION ADMINISTERED"/>
+              <text>
+                <reference value="#med-2"/>
+              </text>
+              <effectiveTime xsi:type="IVL_TS">
+                <low nullFlavor="UNK"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <!-- QHS is at the hour of sleep, which uses HS for the code  -->
+              <effectiveTime xsi:type="EIVL_TS">
+                <event code="HS"/>
+              </effectiveTime>
+              <routeCode code="PO" codeSystem="2.16.840.1.113883.5.112" codeSystemName="RouteOfAdministration" displayName="Orally"/>
+              <doseQuantity unit="mg" value="900"/>
+              <consumable>
+                <manufacturedProduct>
+                  <manufacturedLabeledDrug>
+                    <code/>
+                    <name>LITHIUM</name>
+                  </manufacturedLabeledDrug>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <code code="18651-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MEDICATION ADMINISTERED"/>
+              <text>
+                <reference value="#med-3"/>
+              </text>
+              <effectiveTime nullFlavor="UNK"/>
+              <!-- TID is three times per day.  The period specified between doses in the PIVL_TS below results in a frequency of 3 times a day (period = 1/ frequency)  
+                When institutionSpecified is true, it means at institution specified times, which results in the same meaning as TID.
+                -->
+              <effectiveTime institutionSpecified="true" operator="A" xsi:type="PIVL_TS">
+                <period unit="h" value="8"/>
+              </effectiveTime>
+              <routeCode code="PO" codeSystem="2.16.840.1.113883.5.112" codeSystemName="RouteOfAdministration" displayName="Orally"/>
+              <doseQuantity unit="mg" value="5"/>
+              <consumable>
+                <manufacturedProduct>
+                  <manufacturedLabeledDrug>
+                    <code/>
+                    <name>THIOTHIXENE</name>
+                  </manufacturedLabeledDrug>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <code code="18651-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MEDICATION ADMINISTERED"/>
+              <text>
+                <reference value="#med-4"/>
+              </text>
+              <effectiveTime xsi:type="IVL_TS">
+                <low nullFlavor="UNK"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime institutionSpecified="true" operator="A" xsi:type="PIVL_TS">
+                <period unit="h" value="8"/>
+              </effectiveTime>
+              <routeCode code="PO" codeSystem="2.16.840.1.113883.5.112" codeSystemName="RouteOfAdministration" displayName="Orally"/>
+              <doseQuantity unit="mg" value="1"/>
+              <consumable>
+                <manufacturedProduct>
+                  <manufacturedLabeledDrug>
+                    <code/>
+                    <name>BENZTROPINE</name>
+                  </manufacturedLabeledDrug>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <code code="18651-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MEDICATION ADMINISTERED"/>
+              <text>
+                <reference value="#med-5"/>
+              </text>
+              <effectiveTime xsi:type="IVL_TS">
+                <low nullFlavor="UNK"/>
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <effectiveTime institutionSpecified="true" operator="A" xsi:type="PIVL_TS">
+                <period unit="h" value="8"/>
+              </effectiveTime>
+              <routeCode code="PO" codeSystem="2.16.840.1.113883.5.112" codeSystemName="RouteOfAdministration" displayName="Orally"/>
+              <doseQuantity unit="mg" value="50"/>
+              <consumable>
+                <manufacturedProduct>
+                  <manufacturedLabeledDrug>
+                    <code/>
+                    <name>INDOMETHACIN</name>
+                  </manufacturedLabeledDrug>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <code code="18659-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="REASON TO CONTINUE"/>
+          <title>Continued Treatment</title>
+          <text>
+            <paragraph>PATIENT HAS ACTIVE ANXIETY SYMPTOMS AND SUICIDAL IDEATION AND REQUIRES THIS LEVEL OF CARE TO HELP PREVENT RELAPSE AND INPATIENT
+              TREATMENT.</paragraph>
+          </text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <code code="18660-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="JUSTIFICATION FOR ADMISSION"/>
+          <title>Reason for Admission</title>
+          <text>
+            <paragraph>PATIENT HAD SEVERAL RECENT PSYCHIATRIC HOSPITALIZATIONS FOR ANXIETY AND SUICIDAL IDEATION, AND REQUIRED THE SUPPORT AND STRUCTURE OF DAY
+              HOSPITAL PROGRAM TO PREVENT RELAPSE AND REHOSPITALIZATION.</paragraph>
+          </text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <code code="18661-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PSYCHIATRIC SYMPTOMS"/>
+          <title>Symptoms and Behavior</title>
+          <text>
+            <paragraph>PATIENT WAS AGITATED, ANXIOUS AND NEEDY, EXPRESSING FEARS OF ABANDONMENT AND PASSIVE SUICIDAL IDEATION. PATIENT REQUIRED FREQUENT
+              REINFORCEMENT IN ORDER TO CONTINUE TO FUNCTION OUTSIDE OF AN INPATIENT PSYCHIATRIC WARD.</paragraph>
+          </text>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

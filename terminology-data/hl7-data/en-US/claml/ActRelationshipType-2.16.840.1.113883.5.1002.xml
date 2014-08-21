@@ -1,0 +1,2213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="134"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1002"/>
+   <Title name="ActRelationshipType" date="2012-08-02" version="1.000">The source is an excerpt from the target.</Title>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="ART" kind="concept">
+      <Meta name="internalId" value="23252"/>
+      <SubClass code="_ActRelationshipConditional"/>
+      <SubClass code="COMP"/>
+      <SubClass code="OUTC"/>
+      <SubClass code="PERT"/>
+      <SubClass code="SEQL"/>
+      <SubClass code="VALUE"/>
+      <Rubric id="d1e71114" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A directed association between a source Act and a target Act.</p>
+            <p>
+               <b>Usage Note:</b>This code should never be transmitted in an instance as the value of ActRelationship.typeCode (attribute)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e71136" kind="short">
+         <Label xml:lang="en-US">act relationship type</Label>
+      </Rubric>
+      <Rubric id="d1e71136" kind="preferred">
+         <Label xml:lang="en-US">act relationship type</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActRelationshipTemporallyPertainsEnd" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="23077"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship"
+            value="endTemporallyRelatedTo"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship"
+            value="temporallyRelatedEndInformation"/>
+      <SuperClass code="_ActClassTemporallyPertains"/>
+      <SubClass code="EAE"/>
+      <SubClass code="EAS"/>
+      <SubClass code="EBE"/>
+      <SubClass code="EBS"/>
+      <SubClass code="ECW"/>
+      <SubClass code="ECWS"/>
+      <Rubric id="d1e71205" kind="definition">
+         <Label xml:lang="en-US">A relationship that defines the relative time of the end source act based on the time of the target act.</Label>
+      </Rubric>
+      <Rubric id="d1e71230" kind="short">
+         <Label xml:lang="en-US">ActRelationshipTemporallyPertainsEnd</Label>
+      </Rubric>
+      <Rubric id="d1e71230" kind="preferred">
+         <Label xml:lang="en-US">ActRelationshipTemporallyPertainsEnd</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActRelationshipTemporallyPertainsStart" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="23075"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship"
+            value="startTemporallyRelatedTo"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship"
+            value="temporallyRelatedStartInformation"/>
+      <SuperClass code="_ActClassTemporallyPertains"/>
+      <SubClass code="SAE"/>
+      <SubClass code="SAS"/>
+      <SubClass code="SBE"/>
+      <SubClass code="SBS"/>
+      <SubClass code="SCW"/>
+      <SubClass code="SCWE"/>
+      <Rubric id="d1e71241" kind="definition">
+         <Label xml:lang="en-US">A relationship that defines the relative time of the start source act based on the time of the target act.</Label>
+      </Rubric>
+      <Rubric id="d1e71266" kind="short">
+         <Label xml:lang="en-US">ActRelationshipTemporallyPertainsStart</Label>
+      </Rubric>
+      <Rubric id="d1e71266" kind="preferred">
+         <Label xml:lang="en-US">ActRelationshipTemporallyPertainsStart</Label>
+      </Rubric>
+   </Class>
+   <Class code="DURING" kind="concept">
+      <Meta name="internalId" value="23034"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="spansOccurrenceOf"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="occursDuring"/>
+      <SuperClass code="_ActClassTemporallyPertains"/>
+      <Rubric id="d1e71278" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A relationship in which the source act's effective time is wholly within the target act's effective time.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e71306" kind="short">
+         <Label xml:lang="en-US">occurs during</Label>
+      </Rubric>
+      <Rubric id="d1e71306" kind="preferred">
+         <Label xml:lang="en-US">occurs during</Label>
+      </Rubric>
+   </Class>
+   <Class code="OVERLAP" kind="concept">
+      <Meta name="internalId" value="23035"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="overlapsWith"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="overlapsWith"/>
+      <SuperClass code="_ActClassTemporallyPertains"/>
+      <Rubric id="d1e71317" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A relationship in which the source act's effective time overlaps the target act's effective time in any way.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e71345" kind="short">
+         <Label xml:lang="en-US">overlaps with</Label>
+      </Rubric>
+      <Rubric id="d1e71345" kind="preferred">
+         <Label xml:lang="en-US">overlaps with</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActRelationshipCostTracking" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21360"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="costTracking"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DOB______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="costTrackingOf"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DOB______"/>
+      <SuperClass code="_ActRelationshipAccounting"/>
+      <SubClass code="CHRG"/>
+      <SubClass code="COST"/>
+      <Rubric id="d1e71356" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Expresses values for describing the relationship relationship between an InvoiceElement or InvoiceElementGroup and a billable act.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e71390" kind="short">
+         <Label xml:lang="en-US">ActRelationshipCostTracking</Label>
+      </Rubric>
+      <Rubric id="d1e71390" kind="preferred">
+         <Label xml:lang="en-US">ActRelationshipCostTracking</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActRelationshipPosting" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21359"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="posting"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DOA______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="postingTo"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DOA______"/>
+      <SuperClass code="_ActRelationshipAccounting"/>
+      <SubClass code="CREDIT"/>
+      <SubClass code="DEBIT"/>
+      <Rubric id="d1e71401" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Expresses values for describing the relationship between a FinancialTransaction and an Account.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e71435" kind="short">
+         <Label xml:lang="en-US">ActRelationshipPosting</Label>
+      </Rubric>
+      <Rubric id="d1e71435" kind="preferred">
+         <Label xml:lang="en-US">ActRelationshipPosting</Label>
+      </Rubric>
+   </Class>
+   <Class code="CIND" kind="concept">
+      <Meta name="internalId" value="10323"/>
+      <Meta name="appliesTo" value="action"/>
+      <Meta name="howApplies" value="contra-indication"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="contraindication"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="CC_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="contraindicationFor"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="CC_______"/>
+      <SuperClass code="_ActRelationshipConditional"/>
+      <Rubric id="d1e71446" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A contraindication is just a negation of a reason, i.e. it gives a condition under which the action is not to be done. Both, source and target can be any kind of service; target service is in criterion mood. How the strength of a contraindication is expressed (e.g., relative, absolute) is left as an open issue. The priorityNumber attribute could be used.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e71479" kind="short">
+         <Label xml:lang="en-US">has contra-indication</Label>
+      </Rubric>
+      <Rubric id="d1e71479" kind="preferred">
+         <Label xml:lang="en-US">has contra-indication</Label>
+      </Rubric>
+   </Class>
+   <Class code="PRCN" kind="concept">
+      <Meta name="internalId" value="10319"/>
+      <Meta name="appliesTo" value="action"/>
+      <Meta name="howApplies" value="pre-condition"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="precondition"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="CD_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="preconditionFor"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="CD_______"/>
+      <SuperClass code="_ActRelationshipConditional"/>
+      <Rubric id="d1e71491" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A requirement to be true before a service is performed. The target can be any service in criterion mood. For multiple pre-conditions a conjunction attribute (AND, OR, XOR) is applicable.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e71524" kind="short">
+         <Label xml:lang="en-US">has pre-condition</Label>
+      </Rubric>
+      <Rubric id="d1e71524" kind="preferred">
+         <Label xml:lang="en-US">has pre-condition</Label>
+      </Rubric>
+   </Class>
+   <Class code="RSON" kind="concept">
+      <Meta name="internalId" value="10321"/>
+      <Meta name="appliesTo" value="action"/>
+      <Meta name="howApplies" value="reason"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="reason"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="CA_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="reasonOf"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="CA_______"/>
+      <SuperClass code="_ActRelationshipConditional"/>
+      <SubClass code="BLOCK"/>
+      <SubClass code="DIAG"/>
+      <SubClass code="IMM"/>
+      <SubClass code="MITGT"/>
+      <SubClass code="PRYLX"/>
+      <SubClass code="TREAT"/>
+      <Rubric id="d1e71537" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The reason or rationale for a service. A reason link is weaker than a trigger, it only suggests that some service may be or might have been a reason for some action, but not that this reason requires/required the action to be taken. Also, as opposed to the trigger, there is no strong timely relation between the reason and the action. As well as providing various types of information about the rationale for a service, the RSON act relationship is routinely used between a SBADM act and an OBS act to describe the indication for use of a medication. Child concepts may be used to describe types of indication.</p>
+            <p>
+               <i>Discussion:</i>In prior releases, the code "SUGG" (suggests) was expressed as "an inversion of the reason link." That code has been retired in favor of the inversion indicator that is an attribute of ActRelationship.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e71579" kind="short">
+         <Label xml:lang="en-US">has reason</Label>
+      </Rubric>
+      <Rubric id="d1e71579" kind="preferred">
+         <Label xml:lang="en-US">has reason</Label>
+      </Rubric>
+   </Class>
+   <Class code="TRIG" kind="concept">
+      <Meta name="internalId" value="10320"/>
+      <Meta name="appliesTo" value="action"/>
+      <Meta name="howApplies" value="trigger"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="trigger"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="CB_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="triggerFor"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="CB_______"/>
+      <SuperClass code="_ActRelationshipConditional"/>
+      <Rubric id="d1e71591" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A pre-condition that if true should result in the source Act being executed. The target is in typically in criterion mood. When reported after the fact (i.e. the criterion has been met) it may be in Event mood. A delay between the trigger and the triggered action can be specified.</p>
+            <p>
+               <i>Discussion:</i>This includes the concept of a required act for a service or financial instrument such as an insurance plan or policy. In such cases, the trigger is the occurrence of a specific condition such as coverage limits being exceeded.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e71630" kind="short">
+         <Label xml:lang="en-US">has trigger</Label>
+      </Rubric>
+      <Rubric id="d1e71630" kind="preferred">
+         <Label xml:lang="en-US">has trigger</Label>
+      </Rubric>
+   </Class>
+   <Class code="CHRG" kind="concept">
+      <Meta name="internalId" value="14904"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="charge"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DOBA_____"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="chargeFor"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DOBA_____"/>
+      <SuperClass code="_ActRelationshipCostTracking"/>
+      <Rubric id="d1e71642" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A relationship that provides an ability to associate a financial transaction (target) as a charge to a clinical act (source). A clinical act may have a charge associated with the execution or delivery of the service.</p>
+            <p>The financial transaction will define the charge (bill) for delivery or performance of the service.</p>
+            <p>Charges and costs are distinct terms. A charge defines what is charged or billed to another organization or entity within an organization. The cost defines what it costs an organization to perform or deliver a service or product.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e71677" kind="short">
+         <Label xml:lang="en-US">has charge</Label>
+      </Rubric>
+      <Rubric id="d1e71677" kind="preferred">
+         <Label xml:lang="en-US">has charge</Label>
+      </Rubric>
+   </Class>
+   <Class code="COST" kind="concept">
+      <Meta name="internalId" value="14903"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="cost"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DOBB_____"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="costOf"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DOBB_____"/>
+      <SuperClass code="_ActRelationshipCostTracking"/>
+      <Rubric id="d1e71688" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A relationship that provides an ability to associate a financial transaction (target) as a cost to a clinical act (source). A clinical act may have an inherit cost associated with the execution or delivery of the service.</p>
+            <p>The financial transaction will define the cost of delivery or performance of the service.</p>
+            <p>Charges and costs are distinct terms. A charge defines what is charged or billed to another organization or entity within an organization. The cost defines what it costs an organization to perform or deliver a service or product.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e71723" kind="short">
+         <Label xml:lang="en-US">has cost</Label>
+      </Rubric>
+      <Rubric id="d1e71723" kind="preferred">
+         <Label xml:lang="en-US">has cost</Label>
+      </Rubric>
+   </Class>
+   <Class code="CREDIT" kind="concept">
+      <Meta name="internalId" value="14902"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="credit"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DOAA_____"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="creditTo"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DOAA_____"/>
+      <SuperClass code="_ActRelationshipPosting"/>
+      <Rubric id="d1e71734" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A credit relationship ties a financial transaction (target) to an account (source). A credit, once applied (posted), may have either a positive or negative effect on the account balance, depending on the type of account. An asset account credit will decrease the account balance. A non-asset account credit will decrease the account balance.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e71763" kind="short">
+         <Label xml:lang="en-US">has credit</Label>
+      </Rubric>
+      <Rubric id="d1e71763" kind="preferred">
+         <Label xml:lang="en-US">has credit</Label>
+      </Rubric>
+   </Class>
+   <Class code="DEBIT" kind="concept">
+      <Meta name="internalId" value="14901"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="debit"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DOAB_____"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="debitTo"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DOAB_____"/>
+      <SuperClass code="_ActRelationshipPosting"/>
+      <Rubric id="d1e71774" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A debit relationship ties a financial transaction (target) to an account (source). A debit, once applied (posted), may have either a positive or negative effect on the account balance, depending on the type of account. An asset account debit will increase the account balance. A non-asset account debit will decrease the account balance.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e71803" kind="short">
+         <Label xml:lang="en-US">has debit</Label>
+      </Rubric>
+      <Rubric id="d1e71803" kind="preferred">
+         <Label xml:lang="en-US">has debit</Label>
+      </Rubric>
+   </Class>
+   <Class code="EAE" kind="concept">
+      <Meta name="internalId" value="23081"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="endsBeforeEndOf"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="endsAfterEndOf"/>
+      <SuperClass code="_ActRelationshipTemporallyPertainsEnd"/>
+      <Rubric id="d1e71815" kind="definition">
+         <Label xml:lang="en-US">A relationship in which the source act ends after the target act ends.</Label>
+      </Rubric>
+      <Rubric id="d1e71835" kind="short">
+         <Label xml:lang="en-US">ends after end of</Label>
+      </Rubric>
+      <Rubric id="d1e71835" kind="preferred">
+         <Label xml:lang="en-US">ends after end of</Label>
+      </Rubric>
+   </Class>
+   <Class code="EAS" kind="concept">
+      <Meta name="internalId" value="23079"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="startsBeforeEndOf"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="endsAfterStartOf"/>
+      <SuperClass code="_ActRelationshipTemporallyPertainsEnd"/>
+      <SubClass code="EDU"/>
+      <Rubric id="d1e71846" kind="definition">
+         <Label xml:lang="en-US">A relationship in which the source act ends after the target act starts.</Label>
+      </Rubric>
+      <Rubric id="d1e71866" kind="short">
+         <Label xml:lang="en-US">ends after start of</Label>
+      </Rubric>
+      <Rubric id="d1e71866" kind="preferred">
+         <Label xml:lang="en-US">ends after start of</Label>
+      </Rubric>
+   </Class>
+   <Class code="EBE" kind="concept">
+      <Meta name="internalId" value="23461"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="endsAfterEndOf"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="endsBeforeEndOf"/>
+      <SuperClass code="_ActRelationshipTemporallyPertainsEnd"/>
+      <Rubric id="d1e71877" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The source Act ends after the end of the target Act (i.e. if we say "ActOne EBE ActTwo", it means that ActOne ends before the end of ActTwo, therefore ActOne is the source and ActTwo is the target).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e71900" kind="short">
+         <Label xml:lang="en-US">ends before end</Label>
+      </Rubric>
+      <Rubric id="d1e71900" kind="preferred">
+         <Label xml:lang="en-US">ends before end</Label>
+      </Rubric>
+   </Class>
+   <Class code="EBS" kind="concept">
+      <Meta name="internalId" value="23078"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="startsAfterEndOf"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="endsBeforeStartOf"/>
+      <SuperClass code="_ActRelationshipTemporallyPertainsEnd"/>
+      <Rubric id="d1e71911" kind="definition">
+         <Label xml:lang="en-US">A relationship in which the source act ends before the target act starts.</Label>
+      </Rubric>
+      <Rubric id="d1e71931" kind="short">
+         <Label xml:lang="en-US">ends before start of</Label>
+      </Rubric>
+      <Rubric id="d1e71931" kind="preferred">
+         <Label xml:lang="en-US">ends before start of</Label>
+      </Rubric>
+   </Class>
+   <Class code="ECW" kind="concept">
+      <Meta name="internalId" value="23033"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship"
+            value="endsConcurrentlyWith"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship"
+            value="endsConcurrentlyWith"/>
+      <SuperClass code="_ActRelationshipTemporallyPertainsEnd"/>
+      <SubClass code="CONCURRENT"/>
+      <Rubric id="d1e71942" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A relationship in which the source act's effective time ends with the end of the target act's effective time.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e71965" kind="short">
+         <Label xml:lang="en-US">ends concurrent with</Label>
+      </Rubric>
+      <Rubric id="d1e71965" kind="preferred">
+         <Label xml:lang="en-US">ends concurrent with</Label>
+      </Rubric>
+   </Class>
+   <Class code="ECWS" kind="concept">
+      <Meta name="internalId" value="23463"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship"
+            value="startsConcurrentWithEndOf"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship"
+            value="endsConcurrentWithStartOf"/>
+      <SuperClass code="_ActRelationshipTemporallyPertainsEnd"/>
+      <Rubric id="d1e71976" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The source Act ends when the target act starts (i.e. if we say "ActOne ECWS ActTwo", it means that ActOne ends when ActTwo starts, therefore ActOne is the source and ActTwo is the target).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e71999" kind="short">
+         <Label xml:lang="en-US">ends concurrent with start</Label>
+      </Rubric>
+      <Rubric id="d1e71999" kind="preferred">
+         <Label xml:lang="en-US">ends concurrent with start</Label>
+      </Rubric>
+   </Class>
+   <Class code="SAE" kind="concept">
+      <Meta name="internalId" value="22043"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="endsBeforeStartof"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="startsAfterEndOf"/>
+      <SuperClass code="_ActRelationshipTemporallyPertainsStart"/>
+      <Rubric id="d1e72011" kind="definition">
+         <Label xml:lang="en-US">A relationship in which the source act starts after the target act ends.</Label>
+      </Rubric>
+      <Rubric id="d1e72033" kind="short">
+         <Label xml:lang="en-US">starts after end of</Label>
+      </Rubric>
+      <Rubric id="d1e72033" kind="preferred">
+         <Label xml:lang="en-US">starts after end of</Label>
+      </Rubric>
+   </Class>
+   <Class code="SAS" kind="concept">
+      <Meta name="internalId" value="21308"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="startsBeforeStartOf"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="startsAfterStartOf"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DNA______"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DNA______"/>
+      <SuperClass code="_ActRelationshipTemporallyPertainsStart"/>
+      <SubClass code="SDU"/>
+      <Rubric id="d1e72044" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The source Act starts after the start of the target Act (i.e. if we say "ActOne SAS ActTwo", it means that ActOne starts after the start of ActTwo, therefore ActOne is the source and ActTwo is the target).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e72073" kind="short">
+         <Label xml:lang="en-US">starts after start of</Label>
+      </Rubric>
+      <Rubric id="d1e72073" kind="preferred">
+         <Label xml:lang="en-US">starts after start of</Label>
+      </Rubric>
+   </Class>
+   <Class code="SBE" kind="concept">
+      <Meta name="internalId" value="23460"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="endsAfterStartOf"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="startsBeforeEndOf"/>
+      <SuperClass code="_ActRelationshipTemporallyPertainsStart"/>
+      <Rubric id="d1e72084" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The source Act starts after the end of the target Act (i.e. if we say "ActOne SBE ActTwo", it means that ActOne starts before the end of ActTwo, therefore ActOne is the source and ActTwo is the target).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e72107" kind="short">
+         <Label xml:lang="en-US">starts before end</Label>
+      </Rubric>
+      <Rubric id="d1e72107" kind="preferred">
+         <Label xml:lang="en-US">starts before end</Label>
+      </Rubric>
+   </Class>
+   <Class code="SBS" kind="concept">
+      <Meta name="internalId" value="23076"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="startsAfterStartOf"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship"
+            value="startsBeforeStartOf"/>
+      <SuperClass code="_ActRelationshipTemporallyPertainsStart"/>
+      <Rubric id="d1e72118" kind="definition">
+         <Label xml:lang="en-US">A relationship in which the source act begins before the target act begins.</Label>
+      </Rubric>
+      <Rubric id="d1e72138" kind="short">
+         <Label xml:lang="en-US">starts before start of</Label>
+      </Rubric>
+      <Rubric id="d1e72138" kind="preferred">
+         <Label xml:lang="en-US">starts before start of</Label>
+      </Rubric>
+   </Class>
+   <Class code="SCW" kind="concept">
+      <Meta name="internalId" value="23036"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship"
+            value="startsConcurrentlyWith"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship"
+            value="startsConcurrentlyWith"/>
+      <SuperClass code="_ActRelationshipTemporallyPertainsStart"/>
+      <SubClass code="CONCURRENT"/>
+      <Rubric id="d1e72149" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A relationship in which the source act's effective time starts with the start of the target act's effective time.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e72172" kind="short">
+         <Label xml:lang="en-US">starts concurrent with</Label>
+      </Rubric>
+      <Rubric id="d1e72172" kind="preferred">
+         <Label xml:lang="en-US">starts concurrent with</Label>
+      </Rubric>
+   </Class>
+   <Class code="SCWE" kind="concept">
+      <Meta name="internalId" value="23462"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship"
+            value="endsConcurrentWithStartOf"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship"
+            value="startsConcurrentWithEndOf"/>
+      <SuperClass code="_ActRelationshipTemporallyPertainsStart"/>
+      <Rubric id="d1e72183" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The source Act starts when the target act ends (i.e. if we say "ActOne SCWE ActTwo", it means that ActOne starts when ActTwo ends, therefore ActOne is the source and ActTwo is the target).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e72206" kind="short">
+         <Label xml:lang="en-US">starts concurrent with end</Label>
+      </Rubric>
+      <Rubric id="d1e72206" kind="preferred">
+         <Label xml:lang="en-US">starts concurrent with end</Label>
+      </Rubric>
+   </Class>
+   <Class code="OBJC" kind="concept">
+      <Meta name="internalId" value="10327"/>
+      <Meta name="appliesTo" value="service"/>
+      <Meta name="howApplies" value="criterion"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="maintenanceGoal"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="ACA______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="maintenanceGoalOf"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="ACA______"/>
+      <SuperClass code="_ActRelationsipObjective"/>
+      <Rubric id="d1e72218" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A desired state that a service action aims to maintain. E.g., keep systolic blood pressure between 90 and 110 mm Hg. Source is an intervention service. Target must be an observation in criterion mood.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e72251" kind="short">
+         <Label xml:lang="en-US">has continuing objective</Label>
+      </Rubric>
+      <Rubric id="d1e72251" kind="preferred">
+         <Label xml:lang="en-US">has continuing objective</Label>
+      </Rubric>
+   </Class>
+   <Class code="OBJF" kind="concept">
+      <Meta name="internalId" value="10326"/>
+      <Meta name="appliesTo" value="service"/>
+      <Meta name="howApplies" value="criterion"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="finalGoal"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="ACB______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="finalGoalOf"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="ACB______"/>
+      <SuperClass code="_ActRelationsipObjective"/>
+      <Rubric id="d1e72263" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A desired outcome that a service action aims to meet finally. Source is any service (typically an intervention). Target must be an observation in criterion mood.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e72296" kind="short">
+         <Label xml:lang="en-US">has final objective</Label>
+      </Rubric>
+      <Rubric id="d1e72296" kind="preferred">
+         <Label xml:lang="en-US">has final objective</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActRelationshipConditional" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="20945"/>
+      <Meta name="conductible" value="true"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="conditions"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="C________"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="conditionedBy"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="C________"/>
+      <SuperClass code="ART"/>
+      <SubClass code="CIND"/>
+      <SubClass code="PRCN"/>
+      <SubClass code="RSON"/>
+      <SubClass code="TRIG"/>
+      <Rubric id="d1e72308" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Specifies under what circumstances (target Act) the source-Act may, must, must not or has occurred</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e72339" kind="short">
+         <Label xml:lang="en-US">ActRelationshipConditional</Label>
+      </Rubric>
+      <Rubric id="d1e72339" kind="preferred">
+         <Label xml:lang="en-US">ActRelationshipConditional</Label>
+      </Rubric>
+   </Class>
+   <Class code="COMP" kind="concept">
+      <Meta name="internalId" value="10318"/>
+      <Meta name="conductible" value="false"/>
+      <Meta name="isDocumentCharacteristic" value="false"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="component"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="E________"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="componentOf"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="E________"/>
+      <SuperClass code="ART"/>
+      <SubClass code="ARR"/>
+      <SubClass code="CTRLV"/>
+      <SubClass code="DEP"/>
+      <Rubric id="d1e72350" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A collection of sub-services as steps or subtasks performed for the source service. Services may be performed sequentially or concurrently.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e72381" kind="short">
+         <Label xml:lang="en-US">has component</Label>
+      </Rubric>
+      <Rubric id="d1e72381" kind="preferred">
+         <Label xml:lang="en-US">has component</Label>
+      </Rubric>
+   </Class>
+   <Class code="OUTC" kind="concept">
+      <Meta name="internalId" value="10324"/>
+      <Meta name="appliesTo" value="condition or action"/>
+      <Meta name="conductible" value="false"/>
+      <Meta name="howApplies" value="outcome"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="outcome"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="A________"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="outcomeOf"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="A________"/>
+      <SuperClass code="ART"/>
+      <SubClass code="_ActRelationsipObjective"/>
+      <SubClass code="GOAL"/>
+      <SubClass code="RISK"/>
+      <Rubric id="d1e72392" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An observation that should follow or does actually follow as a result or consequence of a condition or action (sometimes called "post-conditional".) Target must be an observation as a goal, risk or any criterion. For complex outcomes a conjunction attribute (AND, OR, XOR) can be used. An outcome link is often inverted to describe an outcome assessment.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e72428" kind="short">
+         <Label xml:lang="en-US">has outcome</Label>
+      </Rubric>
+      <Rubric id="d1e72428" kind="preferred">
+         <Label xml:lang="en-US">has outcome</Label>
+      </Rubric>
+   </Class>
+   <Class code="PERT" kind="concept">
+      <Meta name="internalId" value="10329"/>
+      <Meta name="appliesTo" value="any service"/>
+      <Meta name="conductible" value="true"/>
+      <Meta name="howApplies" value="any service"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship"
+            value="pertinentInformation"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="D________"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="pertainsTo"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="D________"/>
+      <SuperClass code="ART"/>
+      <SubClass code="_ActClassTemporallyPertains"/>
+      <SubClass code="_ActRelationshipAccounting"/>
+      <SubClass code="AUTH"/>
+      <SubClass code="CAUS"/>
+      <SubClass code="COVBY"/>
+      <SubClass code="DRIV"/>
+      <SubClass code="ELNK"/>
+      <SubClass code="EVID"/>
+      <SubClass code="EXACBY"/>
+      <SubClass code="EXPL"/>
+      <SubClass code="ITEMSLOC"/>
+      <SubClass code="LIMIT"/>
+      <SubClass code="META"/>
+      <SubClass code="MFST"/>
+      <SubClass code="NAME"/>
+      <SubClass code="PREV"/>
+      <SubClass code="REFR"/>
+      <SubClass code="REFV"/>
+      <SubClass code="RELVBY"/>
+      <SubClass code="SPRT"/>
+      <SubClass code="SUBJ"/>
+      <SubClass code="SUMM"/>
+      <Rubric id="d1e72439" kind="definition">
+         <Label xml:lang="en-US">
+            <p>This is a very unspecific relationship from one item of clinical information to another. It does not judge about the role the pertinent information plays.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e72475" kind="short">
+         <Label xml:lang="en-US">has pertinent information</Label>
+      </Rubric>
+      <Rubric id="d1e72475" kind="preferred">
+         <Label xml:lang="en-US">has pertinent information</Label>
+      </Rubric>
+   </Class>
+   <Class code="SEQL" kind="concept">
+      <Meta name="internalId" value="10337"/>
+      <Meta name="conductible" value="false"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="sequelTo"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="B________"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="sequel"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="B________"/>
+      <SuperClass code="ART"/>
+      <SubClass code="APND"/>
+      <SubClass code="BSLN"/>
+      <SubClass code="COMPLY"/>
+      <SubClass code="DOC"/>
+      <SubClass code="FLFS"/>
+      <SubClass code="GEN"/>
+      <SubClass code="GEVL"/>
+      <SubClass code="INST"/>
+      <SubClass code="MOD"/>
+      <SubClass code="MTCH"/>
+      <SubClass code="OPTN"/>
+      <SubClass code="RCHAL"/>
+      <SubClass code="REV"/>
+      <SubClass code="RPLC"/>
+      <SubClass code="SUCC"/>
+      <SubClass code="UPDT"/>
+      <SubClass code="XCRPT"/>
+      <SubClass code="XFRM"/>
+      <Rubric id="d1e72487" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An act relationship indicating that the source act follows the target act. The source act should in principle represent the same kind of act as the target. Source and target need not have the same mood code (mood will often differ). The target of a sequel is called antecedent. Examples for sequel relationships are: revision, transformation, derivation from a prototype (as a specialization is a derivation of a generalization), followup, realization, instantiation.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e72518" kind="short">
+         <Label xml:lang="en-US">is sequel</Label>
+      </Rubric>
+      <Rubric id="d1e72518" kind="preferred">
+         <Label xml:lang="en-US">is sequel</Label>
+      </Rubric>
+   </Class>
+   <Class code="VALUE" kind="concept">
+      <Meta name="internalId" value="23319"/>
+      <SuperClass code="ART"/>
+      <Rubric id="d1e72529" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Indicates that the target Act represents the result of the source observation Act.</p>
+            <p>
+               <b>FormalConstraint:</b>Source Act must be an Observation or specialization there-of. Source Act must not have the value attribute specified</p>
+            <p>
+               <b>UsageNote:</b>This relationship allows the result of an observation to be fully expressed as RIM acts as opposed to being embedded in the value attribute. For example, sending a Document act as the result of an imaging observation, sending a list of Procedures and/or other acts as the result of a medical history observation.</p>
+            <p>The valueNegationInd attribute on the source Act has the same semantics of "negated finding" when it applies to the target of a VALUE ActRelationship as it does to the value attribute. On the other hand, if the ActRelationship.negationInd is true for a VALUE ActRelationship, that means the specified observation does not have the indicated value but does not imply a negated finding. Because the semantics are extremely close, it is recommended that Observation.valueNegationInd be used, not ActRelationship.negationInd.</p>
+            <p>
+               <b>OpenIssue:</b>The implications of negationInd on ActRelationship and the valueNegationind on Observation.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e72571" kind="short">
+         <Label xml:lang="en-US">has value</Label>
+      </Rubric>
+      <Rubric id="d1e72571" kind="preferred">
+         <Label xml:lang="en-US">has value</Label>
+      </Rubric>
+   </Class>
+   <Class code="ARR" kind="concept">
+      <Meta name="internalId" value="17911"/>
+      <Meta name="isDocumentCharacteristic" value="false"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="arrivedBy"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="EB_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="arrivalFor"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="EB_______"/>
+      <SuperClass code="COMP"/>
+      <Rubric id="d1e72582" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The relationship that links to a Transportation Act (target) from another Act (source) indicating that the subject of the source Act entered into the source Act by means of the target Transportation act.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e72611" kind="short">
+         <Label xml:lang="en-US">arrival</Label>
+      </Rubric>
+      <Rubric id="d1e72611" kind="preferred">
+         <Label xml:lang="en-US">arrival</Label>
+      </Rubric>
+   </Class>
+   <Class code="CTRLV" kind="concept">
+      <Meta name="internalId" value="17902"/>
+      <Meta name="isDocumentCharacteristic" value="false"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="controlVariable"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="EA_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="controlVariableFor"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="EA_______"/>
+      <SuperClass code="COMP"/>
+      <Rubric id="d1e72622" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A relationship from an Act to a Control Variable. For example, if a Device makes an Observation, this relates the Observation to its Control Variables documenting the device's settings that influenced the observation.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e72651" kind="short">
+         <Label xml:lang="en-US">has control variable</Label>
+      </Rubric>
+      <Rubric id="d1e72651" kind="preferred">
+         <Label xml:lang="en-US">has control variable</Label>
+      </Rubric>
+   </Class>
+   <Class code="DEP" kind="concept">
+      <Meta name="internalId" value="17912"/>
+      <Meta name="isDocumentCharacteristic" value="false"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="departedBy"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="EC_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="departureFor"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="EC_______"/>
+      <SuperClass code="COMP"/>
+      <Rubric id="d1e72662" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The relationship that links to a Transportation Act (target) from another Act (source) indicating that the subject of the source Act departed from the source Act by means of the target Transportation act.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e72691" kind="short">
+         <Label xml:lang="en-US">departure</Label>
+      </Rubric>
+      <Rubric id="d1e72691" kind="preferred">
+         <Label xml:lang="en-US">departure</Label>
+      </Rubric>
+   </Class>
+   <Class code="EDU" kind="concept">
+      <Meta name="internalId" value="23080"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="encompassesEndOf"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="endsDuring"/>
+      <SuperClass code="EAS"/>
+      <Rubric id="d1e72702" kind="definition">
+         <Label xml:lang="en-US">A relationship in which the source act ends between the start and end of the target act.</Label>
+      </Rubric>
+      <Rubric id="d1e72722" kind="short">
+         <Label xml:lang="en-US">ends during</Label>
+      </Rubric>
+      <Rubric id="d1e72722" kind="preferred">
+         <Label xml:lang="en-US">ends during</Label>
+      </Rubric>
+   </Class>
+   <Class code="CONCURRENT" kind="concept">
+      <Meta name="internalId" value="23032"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="isConcurrentWith"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="isConcurrentWith"/>
+      <SuperClass code="ECW"/>
+      <SuperClass code="SCW"/>
+      <Rubric id="d1e72734" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A relationship in which the source act's effective time is the same as the target act's effective time.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e72762" kind="short">
+         <Label xml:lang="en-US">concurrent with</Label>
+      </Rubric>
+      <Rubric id="d1e72762" kind="preferred">
+         <Label xml:lang="en-US">concurrent with</Label>
+      </Rubric>
+   </Class>
+   <Class code="OCCR" kind="concept">
+      <Meta name="internalId" value="11614"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="occurrenceOf"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="BAA______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="occurrence"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="BAA______"/>
+      <SuperClass code="FLFS"/>
+      <Rubric id="d1e72773" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The source act is a single occurrence of a repeatable target act. The source and target act can be in any mood on the "completion track" but the source act must be as far as or further along the track than the target act (i.e., the occurrence of an intent can be an event but not vice versa).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e72802" kind="short">
+         <Label xml:lang="en-US">occurrence</Label>
+      </Rubric>
+      <Rubric id="d1e72802" kind="preferred">
+         <Label xml:lang="en-US">occurrence</Label>
+      </Rubric>
+      <Rubric id="d1e72804" kind="short">
+         <Label xml:lang="en-US">is occurrence of</Label>
+      </Rubric>
+   </Class>
+   <Class code="OREF" kind="concept">
+      <Meta name="internalId" value="11628"/>
+      <Meta name="appliesTo" value="ActMood = ARQ or APT and ActMood = ORD"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="referencedOrder"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="BAB______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="referencedBy"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="BAB______"/>
+      <SuperClass code="FLFS"/>
+      <Rubric id="d1e72815" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Relates either an appointment request or an appointment to the order for the service being scheduled.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e72846" kind="short">
+         <Label xml:lang="en-US">references order</Label>
+      </Rubric>
+      <Rubric id="d1e72846" kind="preferred">
+         <Label xml:lang="en-US">references order</Label>
+      </Rubric>
+   </Class>
+   <Class code="SCH" kind="concept">
+      <Meta name="internalId" value="11627"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="scheduleRequest"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="BAC______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="requestedBy"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="BAC______"/>
+      <SuperClass code="FLFS"/>
+      <Rubric id="d1e72857" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Associates a specific time (and associated resources) with a scheduling request or other intent.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e72886" kind="short">
+         <Label xml:lang="en-US">schedules request</Label>
+      </Rubric>
+      <Rubric id="d1e72886" kind="preferred">
+         <Label xml:lang="en-US">schedules request</Label>
+      </Rubric>
+      <Rubric id="d1e72888" kind="short">
+         <Label xml:lang="en-US">schedules</Label>
+      </Rubric>
+   </Class>
+   <Class code="ACTIMM" kind="concept">
+      <Meta name="internalId" value="23305"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship"
+            value="activelyImmunizedAgainst"/>
+      <SuperClass code="IMM"/>
+      <Rubric id="d1e72899" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The source act is intended to provide active immunity against the effects of the target act (the target act describes an infectious disease)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e72922" kind="short">
+         <Label xml:lang="en-US">active immunization against</Label>
+      </Rubric>
+      <Rubric id="d1e72922" kind="preferred">
+         <Label xml:lang="en-US">active immunization against</Label>
+      </Rubric>
+   </Class>
+   <Class code="PASSIMM" kind="concept">
+      <Meta name="internalId" value="23306"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship"
+            value="passivelyImmunizedAgainst"/>
+      <SuperClass code="IMM"/>
+      <Rubric id="d1e72934" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The source act is intended to provide passive immunity against the effects of the target act (the target act describes an infectious disease).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e72957" kind="short">
+         <Label xml:lang="en-US">passive immunization against</Label>
+      </Rubric>
+      <Rubric id="d1e72957" kind="preferred">
+         <Label xml:lang="en-US">passive immunization against</Label>
+      </Rubric>
+   </Class>
+   <Class code="RCVY" kind="concept">
+      <Meta name="internalId" value="22189"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="recoveredFrom"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="recovers"/>
+      <SuperClass code="MITGT"/>
+      <Rubric id="d1e72970" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The source act is performed to recover from the effects of the target act.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e72998" kind="short">
+         <Label xml:lang="en-US">recovers</Label>
+      </Rubric>
+      <Rubric id="d1e72998" kind="preferred">
+         <Label xml:lang="en-US">recovers</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActRelationsipObjective" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21384"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="goal"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="AC_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="goalOf"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="AC_______"/>
+      <SuperClass code="OUTC"/>
+      <SubClass code="OBJC"/>
+      <SubClass code="OBJF"/>
+      <Rubric id="d1e73009" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The target act is a desired outcome of the source act. Source is any act (typically an intervention). Target must be an observation in criterion mood.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e73038" kind="short">
+         <Label xml:lang="en-US">Act Relationsip Objective</Label>
+      </Rubric>
+      <Rubric id="d1e73038" kind="preferred">
+         <Label xml:lang="en-US">Act Relationsip Objective</Label>
+      </Rubric>
+   </Class>
+   <Class code="GOAL" kind="concept">
+      <Meta name="internalId" value="10325"/>
+      <Meta name="appliesTo" value="observation, condition"/>
+      <Meta name="howApplies" value="goal"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="goal"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="AB_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="goalOf"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="AB_______"/>
+      <SuperClass code="OUTC"/>
+      <Rubric id="d1e73049" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A goal that one defines given a patient's health condition. Subsequently planned actions aim to meet that goal. Source is an observation or condition node, target must be an observation in goal mood.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e73082" kind="short">
+         <Label xml:lang="en-US">has goal</Label>
+      </Rubric>
+      <Rubric id="d1e73082" kind="preferred">
+         <Label xml:lang="en-US">has goal</Label>
+      </Rubric>
+   </Class>
+   <Class code="RISK" kind="concept">
+      <Meta name="internalId" value="10328"/>
+      <Meta name="appliesTo" value="observation, condition"/>
+      <Meta name="howApplies" value="risk"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="risk"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="AA_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="riskOf"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="AA_______"/>
+      <SuperClass code="OUTC"/>
+      <Rubric id="d1e73094" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A noteworthy undesired outcome of a patient's condition that is either likely enough to become an issue or is less likely but dangerous enough to be addressed.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e73127" kind="short">
+         <Label xml:lang="en-US">has risk</Label>
+      </Rubric>
+      <Rubric id="d1e73127" kind="preferred">
+         <Label xml:lang="en-US">has risk</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActClassTemporallyPertains" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21307"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship"
+            value="temporallyRelatedInformation"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DN_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="temporallyRelatesTo"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DN_______"/>
+      <Meta name="code-retired" value="TemporallyPertains"/>
+      <SuperClass code="PERT"/>
+      <SubClass code="_ActRelationshipTemporallyPertainsEnd"/>
+      <SubClass code="_ActRelationshipTemporallyPertainsStart"/>
+      <SubClass code="DURING"/>
+      <SubClass code="OVERLAP"/>
+      <Rubric id="d1e73153" kind="short">
+         <Label xml:lang="en-US">ActClassTemporallyPertains</Label>
+      </Rubric>
+      <Rubric id="d1e73153" kind="preferred">
+         <Label xml:lang="en-US">ActClassTemporallyPertains</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActRelationshipAccounting" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="20946"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="accounting"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DO_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="accountingFor"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DO_______"/>
+      <Meta name="code-retired" value="_ActRelationshipPosts"/>
+      <SuperClass code="PERT"/>
+      <SubClass code="_ActRelationshipCostTracking"/>
+      <SubClass code="_ActRelationshipPosting"/>
+      <Rubric id="d1e73166" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Codes that describe the relationship between an Act and a financial instrument such as a financial transaction, account or invoice element.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e73195" kind="short">
+         <Label xml:lang="en-US">ActRelationshipAccounting</Label>
+      </Rubric>
+      <Rubric id="d1e73195" kind="preferred">
+         <Label xml:lang="en-US">ActRelationshipAccounting</Label>
+      </Rubric>
+   </Class>
+   <Class code="AUTH" kind="concept">
+      <Meta name="internalId" value="14019"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="authorization"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DH_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="authorizationOf"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DH_______"/>
+      <SuperClass code="PERT"/>
+      <Rubric id="d1e73209" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A relationship in which the target act authorizes or certifies the source act.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e73238" kind="short">
+         <Label xml:lang="en-US">authorized by</Label>
+      </Rubric>
+      <Rubric id="d1e73238" kind="preferred">
+         <Label xml:lang="en-US">authorized by</Label>
+      </Rubric>
+   </Class>
+   <Class code="CAUS" kind="concept">
+      <Meta name="internalId" value="10332"/>
+      <Meta name="appliesTo" value="cause"/>
+      <Meta name="howApplies" value="effect"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="causeOf"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DD_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="cause"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DD_______"/>
+      <SuperClass code="PERT"/>
+      <Rubric id="d1e73249" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>An assertion that an act was the cause of another act.This is stronger and more specific than the support link. The source (cause) is typically an observation, but may be any act, while the target may be any act.</p>
+            <p>
+               <b>Examples:</b>
+            </p>
+            <ul>
+               <li>a growth of Staphylococcus aureus may be considered the cause of an abscess</li>
+               <li>contamination of the infusion bag was deemed to be the cause of the infection that the patient experienced</li>
+               <li>lack of staff on the shift was deemed to be a supporting factor (proximal factor) causing the patient safety incident where the patient fell out of bed because the bed-sides had not been put up which caused the night patient to fall out of bed</li>
+            </ul>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e73303" kind="short">
+         <Label xml:lang="en-US">is etiology for</Label>
+      </Rubric>
+      <Rubric id="d1e73303" kind="preferred">
+         <Label xml:lang="en-US">is etiology for</Label>
+      </Rubric>
+   </Class>
+   <Class code="COVBY" kind="concept">
+      <Meta name="internalId" value="14894"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="coverage"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DP_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="coverageOf"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DP_______"/>
+      <SuperClass code="PERT"/>
+      <Rubric id="d1e73315" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A relationship in which the source act is covered by or is under the authority of a target act. A financial instrument such as an Invoice Element is covered by one or more specific instances of an Insurance Policy.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e73344" kind="short">
+         <Label xml:lang="en-US">covered by</Label>
+      </Rubric>
+      <Rubric id="d1e73344" kind="preferred">
+         <Label xml:lang="en-US">covered by</Label>
+      </Rubric>
+   </Class>
+   <Class code="DRIV" kind="concept">
+      <Meta name="internalId" value="10334"/>
+      <Meta name="appliesTo" value="output parameter"/>
+      <Meta name="howApplies" value="input parameter"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="derivedFrom"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DF_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="derivation"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DF_______"/>
+      <SuperClass code="PERT"/>
+      <Rubric id="d1e73355" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Associates a derived Act with its input parameters. E.G., an anion-gap observation can be associated as being derived from given sodium-, (potassium-,), chloride-, and bicarbonate-observations. The narrative content (Act.text) of a source act is wholly machine-derived from the collection of target acts.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e73388" kind="short">
+         <Label xml:lang="en-US">is derived from</Label>
+      </Rubric>
+      <Rubric id="d1e73388" kind="preferred">
+         <Label xml:lang="en-US">is derived from</Label>
+      </Rubric>
+   </Class>
+   <Class code="ELNK" kind="concept">
+      <Meta name="internalId" value="18865"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="links"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="BG_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="linkedBy"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="BG_______"/>
+      <SuperClass code="PERT"/>
+      <Rubric id="d1e73400" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Expresses an association that links two instances of the same act over time, indicating that the instance are part of the same episode, e.g. linking two condition nodes for episode of illness; linking two encounters for episode of encounter.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e73429" kind="short">
+         <Label xml:lang="en-US">episodeLink</Label>
+      </Rubric>
+      <Rubric id="d1e73429" kind="preferred">
+         <Label xml:lang="en-US">episodeLink</Label>
+      </Rubric>
+   </Class>
+   <Class code="EVID" kind="concept">
+      <Meta name="internalId" value="21572"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <SuperClass code="PERT"/>
+      <Rubric id="d1e73440" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicates that the target Act provides evidence in support of the action represented by the source Act. The target is not a 'reason' for the source act, but rather gives supporting information on why the source act is an appropriate course of action. Possible targets might be clinical trial results, journal articles, similar successful therapies, etc.</p>
+            <p>
+               <i>Rationale:</i>Provides a mechanism for conveying clinical justification for non-approved or otherwise non-traditional therapies.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e73466" kind="short">
+         <Label xml:lang="en-US">provides evidence for</Label>
+      </Rubric>
+      <Rubric id="d1e73466" kind="preferred">
+         <Label xml:lang="en-US">provides evidence for</Label>
+      </Rubric>
+   </Class>
+   <Class code="EXACBY" kind="concept">
+      <Meta name="internalId" value="22827"/>
+      <SuperClass code="PERT"/>
+      <Rubric id="d1e73479" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The source act is aggravated by the target act. (Example "chest pain" EXACBY "exercise")</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e73500" kind="short">
+         <Label xml:lang="en-US">exacerbated by</Label>
+      </Rubric>
+      <Rubric id="d1e73500" kind="preferred">
+         <Label xml:lang="en-US">exacerbated by</Label>
+      </Rubric>
+   </Class>
+   <Class code="EXPL" kind="concept">
+      <Meta name="internalId" value="10331"/>
+      <Meta name="howApplies" value="explaining observation or condition"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="explanation"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DI_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="explanationFor"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DI_______"/>
+      <SuperClass code="PERT"/>
+      <Rubric id="d1e73511" kind="definition">
+         <Label xml:lang="en-US">
+            <p>This is the inversion of support. Used to indicate that a given observation is explained by another observation or condition.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e73542" kind="short">
+         <Label xml:lang="en-US">has explanation</Label>
+      </Rubric>
+      <Rubric id="d1e73542" kind="preferred">
+         <Label xml:lang="en-US">has explanation</Label>
+      </Rubric>
+   </Class>
+   <Class code="ITEMSLOC" kind="concept">
+      <Meta name="internalId" value="20841"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="itemStorage"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DR_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="itemStorageFor"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DR_______"/>
+      <SuperClass code="PERT"/>
+      <Rubric id="d1e73553" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Items located</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e73582" kind="short">
+         <Label xml:lang="en-US">items located</Label>
+      </Rubric>
+      <Rubric id="d1e73582" kind="preferred">
+         <Label xml:lang="en-US">items located</Label>
+      </Rubric>
+   </Class>
+   <Class code="LIMIT" kind="concept">
+      <Meta name="internalId" value="14896"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="limitation"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DQ_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="limitationOf"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DQ_______"/>
+      <SuperClass code="PERT"/>
+      <Rubric id="d1e73593" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A relationship that limits or restricts the source act by the elements of the target act. For example, an authorization may be limited by a financial amount (up to $500). Target Act must be in EVN.CRIT mood.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e73622" kind="short">
+         <Label xml:lang="en-US">limited by</Label>
+      </Rubric>
+      <Rubric id="d1e73622" kind="preferred">
+         <Label xml:lang="en-US">limited by</Label>
+      </Rubric>
+   </Class>
+   <Class code="META" kind="concept">
+      <Meta name="internalId" value="23111"/>
+      <Meta name="conductible" value="false"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="metadataFor"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="metadata"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DZ_______"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="AA_______"/>
+      <SuperClass code="PERT"/>
+      <Rubric id="d1e73633" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Indicates that the attributes and associations of the target act provide metadata (for example, identifiers, authorship, etc.) for the source act.</p>
+            <p>
+               <b>Constraint:</b>Source act must have the Act.isCriterion attribute set to true. Target act must be an Act with a moodCode of EVN.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e73673" kind="short">
+         <Label xml:lang="en-US">has metadata</Label>
+      </Rubric>
+      <Rubric id="d1e73673" kind="preferred">
+         <Label xml:lang="en-US">has metadata</Label>
+      </Rubric>
+   </Class>
+   <Class code="MFST" kind="concept">
+      <Meta name="internalId" value="10333"/>
+      <Meta name="appliesTo" value="manifestation"/>
+      <Meta name="howApplies" value="cause"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="manifestationOf"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DE_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="manifestation"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DE_______"/>
+      <SuperClass code="PERT"/>
+      <Rubric id="d1e73684" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An assertion that a new observation may be the manifestation of another existing observation or action. This assumption is attributed to the same actor who asserts the manifestation. This is stronger and more specific than an inverted support link. For example, an agitated appearance can be asserted to be the manifestation (effect) of a known hyperthyroxia. This expresses that one might not have realized a symptom if it would not be a common manifestation of a known condition. The target (cause) may be any service, while the source (manifestation) must be an observation.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e73717" kind="short">
+         <Label xml:lang="en-US">is manifestation of</Label>
+      </Rubric>
+      <Rubric id="d1e73717" kind="preferred">
+         <Label xml:lang="en-US">is manifestation of</Label>
+      </Rubric>
+   </Class>
+   <Class code="NAME" kind="concept">
+      <Meta name="internalId" value="10336"/>
+      <Meta name="appliesTo" value="condition thread"/>
+      <Meta name="howApplies" value="name"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="conditionNamed"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DJ_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship"
+            value="assignedConditionName"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DJ_______"/>
+      <SuperClass code="PERT"/>
+      <Rubric id="d1e73730" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Used to assign a "name" to a condition thread. Source is a condition node, target can be any service.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e73763" kind="short">
+         <Label xml:lang="en-US">assigns name</Label>
+      </Rubric>
+      <Rubric id="d1e73763" kind="preferred">
+         <Label xml:lang="en-US">assigns name</Label>
+      </Rubric>
+   </Class>
+   <Class code="PREV" kind="concept">
+      <Meta name="internalId" value="14018"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="predecessor"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DC_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="successor"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DC_______"/>
+      <SuperClass code="PERT"/>
+      <Rubric id="d1e73775" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A relationship in which the target act is a predecessor instance to the source act. Generally each of these instances is similar, but no identical. In healthcare coverage it is used to link a claim item to a previous claim item that might have claimed for the same set of services.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e73804" kind="short">
+         <Label xml:lang="en-US">has previous instance</Label>
+      </Rubric>
+      <Rubric id="d1e73804" kind="preferred">
+         <Label xml:lang="en-US">has previous instance</Label>
+      </Rubric>
+      <Rubric id="d1e73806" kind="short">
+         <Label xml:lang="en-US">Previous instance</Label>
+      </Rubric>
+   </Class>
+   <Class code="REFR" kind="concept">
+      <Meta name="internalId" value="14020"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="reference"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DK_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="referencedBy"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DK_______"/>
+      <SuperClass code="PERT"/>
+      <SubClass code="USE"/>
+      <Rubric id="d1e73817" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A relationship in which the target act is referred to by the source act. This permits a simple reference relationship that distinguishes between the referent and the referee.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e73846" kind="short">
+         <Label xml:lang="en-US">refers to</Label>
+      </Rubric>
+      <Rubric id="d1e73846" kind="preferred">
+         <Label xml:lang="en-US">refers to</Label>
+      </Rubric>
+   </Class>
+   <Class code="REFV" kind="concept">
+      <Meta name="internalId" value="10335"/>
+      <Meta name="howApplies" value="range"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="referenceRange"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DL_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="referenceRangeFor"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DL_______"/>
+      <SuperClass code="PERT"/>
+      <Rubric id="d1e73857" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Reference ranges are essentially descriptors of a class of result values assumed to be "normal", "abnormal", or "critical." Those can vary by sex, age, or any other criterion. Source and target are observations, the target is in criterion mood. This link type can act as a trigger in case of alarms being triggered by critical results.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e73888" kind="short">
+         <Label xml:lang="en-US">has reference values</Label>
+      </Rubric>
+      <Rubric id="d1e73888" kind="preferred">
+         <Label xml:lang="en-US">has reference values</Label>
+      </Rubric>
+   </Class>
+   <Class code="RELVBY" kind="concept">
+      <Meta name="internalId" value="22828"/>
+      <SuperClass code="PERT"/>
+      <Rubric id="d1e73899" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The source act is wholly or partially alleviated by the target act. (Example "chest pain" RELVBY "sublingual nitroglycerin administration")</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e73920" kind="short">
+         <Label xml:lang="en-US">relieved by</Label>
+      </Rubric>
+      <Rubric id="d1e73920" kind="preferred">
+         <Label xml:lang="en-US">relieved by</Label>
+      </Rubric>
+   </Class>
+   <Class code="SPRT" kind="concept">
+      <Meta name="internalId" value="10330"/>
+      <Meta name="howApplies" value="supporting evidence"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="support"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DA_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="supportOf"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DA_______"/>
+      <SuperClass code="PERT"/>
+      <SubClass code="SPRTBND"/>
+      <Rubric id="d1e73931" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Used to indicate that an existing service is suggesting evidence for a new observation. The assumption of support is attributed to the same actor who asserts the observation. Source must be an observation, target may be any service (e.g., to indicate a status post).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e73962" kind="short">
+         <Label xml:lang="en-US">has support</Label>
+      </Rubric>
+      <Rubric id="d1e73962" kind="preferred">
+         <Label xml:lang="en-US">has support</Label>
+      </Rubric>
+   </Class>
+   <Class code="SUBJ" kind="concept">
+      <Meta name="internalId" value="13971"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="subject"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DB_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="subjectOf"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DB_______"/>
+      <SuperClass code="PERT"/>
+      <Rubric id="d1e73974" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Relates an Act to its subject Act that the first Act is primarily concerned with.</p>
+            <p>Examples</p>
+            <ol>
+               <li>
+                  <p>The first Act may be a ControlAct manipulating the subject Act</p>
+               </li>
+               <li>
+                  <p>The first act is a region of interest (ROI) that defines a region within the subject Act.</p>
+               </li>
+               <li>
+                  <p>The first act is a reporting or notification Act, that echos the subject Act for a specific new purpose.</p>
+               </li>
+            </ol>
+            <p>Constraints</p>
+            <p>An Act may have multiple subject acts.</p>
+            <p>Rationale</p>
+            <p>The ActRelationshipType "has subject" is similar to the ParticipationType "subject", Acts that primarily operate on physical subjects use the Participation, those Acts that primarily operate on other Acts (other information) use the ActRelationship.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e74040" kind="short">
+         <Label xml:lang="en-US">has subject</Label>
+      </Rubric>
+      <Rubric id="d1e74040" kind="preferred">
+         <Label xml:lang="en-US">has subject</Label>
+      </Rubric>
+   </Class>
+   <Class code="SUMM" kind="concept">
+      <Meta name="internalId" value="15988"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="summary"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DM_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="summaryOf"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DM_______"/>
+      <SuperClass code="PERT"/>
+      <Rubric id="d1e74051" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An act that contains summary values for a list or set of subordinate acts. For example, a summary of transactions for a particular accounting period.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e74080" kind="short">
+         <Label xml:lang="en-US">summarized by</Label>
+      </Rubric>
+      <Rubric id="d1e74080" kind="preferred">
+         <Label xml:lang="en-US">summarized by</Label>
+      </Rubric>
+   </Class>
+   <Class code="USE" kind="concept">
+      <Meta name="internalId" value="23102"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="usedBy"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="uses"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DKA______"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DKA______"/>
+      <SuperClass code="REFR"/>
+      <Rubric id="d1e74091" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicates that the source act makes use of (or will make use of) the information content of the target act.</p>
+            <p>
+               <i>UsageNotes:</i>A usage relationship only makes sense if the target act is authored and occurs independently of the source act. Otherwise a simpler relationship such as COMP would be appropriate.</p>
+            <p>
+               <i>Rationale:</i>There is a need when defining a clinical trial protocol to indicate that the protocol makes use of other protocol or treatment specifications. This is stronger than the assertion of "references". References may exist without usage, and in a clinical trial protocol is common to assert both: what other specifications does this trial use and what other specifications does it merely reference.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e74130" kind="short">
+         <Label xml:lang="en-US">uses</Label>
+      </Rubric>
+      <Rubric id="d1e74130" kind="preferred">
+         <Label xml:lang="en-US">uses</Label>
+      </Rubric>
+   </Class>
+   <Class code="BLOCK" kind="concept">
+      <Meta name="internalId" value="22188"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="blockedBy"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="blocks"/>
+      <SuperClass code="RSON"/>
+      <Rubric id="d1e74141" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The source act is performed to block the effects of the target act. This act relationship should be used when describing near miss type incidents where potential harm could have occurred, but the action described in the source act blocked the potential harmful effects of the incident actually occurring.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e74169" kind="short">
+         <Label xml:lang="en-US">blocks</Label>
+      </Rubric>
+      <Rubric id="d1e74169" kind="preferred">
+         <Label xml:lang="en-US">blocks</Label>
+      </Rubric>
+   </Class>
+   <Class code="DIAG" kind="concept">
+      <Meta name="internalId" value="21644"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="diagnosedBy"/>
+      <SuperClass code="RSON"/>
+      <Rubric id="d1e74180" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The source act is intended to help establish the presence of a (an adverse) situation described by the target act. This is not limited to diseases but can apply to any adverse situation or condition of medical or technical nature.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e74206" kind="short">
+         <Label xml:lang="en-US">diagnoses</Label>
+      </Rubric>
+      <Rubric id="d1e74206" kind="preferred">
+         <Label xml:lang="en-US">diagnoses</Label>
+      </Rubric>
+   </Class>
+   <Class code="IMM" kind="concept">
+      <Meta name="internalId" value="23304"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="immunizedAgainst"/>
+      <SuperClass code="RSON"/>
+      <SubClass code="ACTIMM"/>
+      <SubClass code="PASSIMM"/>
+      <Rubric id="d1e74217" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The source act is intented to provide immunity against the effects of the target act (the target act describes an infectious disease)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e74240" kind="short">
+         <Label xml:lang="en-US">immunization against</Label>
+      </Rubric>
+      <Rubric id="d1e74240" kind="preferred">
+         <Label xml:lang="en-US">immunization against</Label>
+      </Rubric>
+   </Class>
+   <Class code="MITGT" kind="concept">
+      <Meta name="internalId" value="19986"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="mitigates"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="CAA______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="mitigatedBy"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="CAA______"/>
+      <SuperClass code="RSON"/>
+      <SubClass code="RCVY"/>
+      <Rubric id="d1e74253" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The source act removes or lessens the occurrence or effect of the target act.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e74282" kind="short">
+         <Label xml:lang="en-US">mitigates</Label>
+      </Rubric>
+      <Rubric id="d1e74282" kind="preferred">
+         <Label xml:lang="en-US">mitigates</Label>
+      </Rubric>
+   </Class>
+   <Class code="PRYLX" kind="concept">
+      <Meta name="internalId" value="23303"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="prophylaxisOf"/>
+      <SuperClass code="RSON"/>
+      <Rubric id="d1e74293" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The source act is intended to reduce the risk of of an adverse situation to emerge as described by the target act. This is not limited to diseases but can apply to any adverse situation or condition of medical or technical nature.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e74316" kind="short">
+         <Label xml:lang="en-US">prophylaxis of</Label>
+      </Rubric>
+      <Rubric id="d1e74316" kind="preferred">
+         <Label xml:lang="en-US">prophylaxis of</Label>
+      </Rubric>
+   </Class>
+   <Class code="TREAT" kind="concept">
+      <Meta name="internalId" value="23307"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="treatmentFor"/>
+      <SuperClass code="RSON"/>
+      <SubClass code="ADJUNCT"/>
+      <SubClass code="MTREAT"/>
+      <SubClass code="PALLTREAT"/>
+      <SubClass code="SYMP"/>
+      <Rubric id="d1e74328" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The source act is intended to improve a pre-existing adverse situation described by the target act. This is not limited to diseases but can apply to any adverse situation or condition of medical or technical nature.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e74351" kind="short">
+         <Label xml:lang="en-US">treats</Label>
+      </Rubric>
+      <Rubric id="d1e74351" kind="preferred">
+         <Label xml:lang="en-US">treats</Label>
+      </Rubric>
+   </Class>
+   <Class code="SDU" kind="concept">
+      <Meta name="internalId" value="23082"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="encompassesStartOf"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="startsDuring"/>
+      <SuperClass code="SAS"/>
+      <Rubric id="d1e74363" kind="definition">
+         <Label xml:lang="en-US">A relationship in which the source act begins between the start and end of the target act.</Label>
+      </Rubric>
+      <Rubric id="d1e74383" kind="short">
+         <Label xml:lang="en-US">starts during</Label>
+      </Rubric>
+      <Rubric id="d1e74383" kind="preferred">
+         <Label xml:lang="en-US">starts during</Label>
+      </Rubric>
+   </Class>
+   <Class code="APND" kind="concept">
+      <Meta name="internalId" value="10339"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="appendage"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="BJ_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="appendageOf"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="BJ_______"/>
+      <SuperClass code="SEQL"/>
+      <Rubric id="d1e74394" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An addendum (source) to an existing service object (target), containing supplemental information. The addendum is itself an original service object linked to the supplemented service object. The supplemented service object remains in place and its content and status are unaltered.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e74423" kind="short">
+         <Label xml:lang="en-US">is appendage</Label>
+      </Rubric>
+      <Rubric id="d1e74423" kind="preferred">
+         <Label xml:lang="en-US">is appendage</Label>
+      </Rubric>
+   </Class>
+   <Class code="BSLN" kind="concept">
+      <Meta name="internalId" value="23101"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="baselineFor"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="baseline"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="BG_______"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="BG_______"/>
+      <SuperClass code="SEQL"/>
+      <Rubric id="d1e74434" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicates that the target observation(s) provide an initial reference for the source observation or observation group.</p>
+            <p>
+               <i>UsageConstraints:</i>Both source and target must be Observations or specializations thereof.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e74467" kind="short">
+         <Label xml:lang="en-US">has baseline</Label>
+      </Rubric>
+      <Rubric id="d1e74467" kind="preferred">
+         <Label xml:lang="en-US">has baseline</Label>
+      </Rubric>
+   </Class>
+   <Class code="COMPLY" kind="concept">
+      <Meta name="internalId" value="22626"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="compliesWith"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="compliance"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="BO_______"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="BO_______"/>
+      <SuperClass code="SEQL"/>
+      <Rubric id="d1e74479" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The source act complies with, adheres to, conforms to, or is permissible under (in whole or in part) the policy, contract, agreement, law, conformance criteria, certification guidelines or requirement conveyed by the target act.</p>
+            <p>Examples for compliance relationships are: audits of adherence with a security policy, certificate of conformance to system certification requirements, or consent directive in compliance with or permissible under a privacy policy.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e74514" kind="short">
+         <Label xml:lang="en-US">complies with</Label>
+      </Rubric>
+      <Rubric id="d1e74514" kind="preferred">
+         <Label xml:lang="en-US">complies with</Label>
+      </Rubric>
+   </Class>
+   <Class code="DOC" kind="concept">
+      <Meta name="internalId" value="11609"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="documentationOf"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="BH_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="documentation"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="BH_______"/>
+      <SuperClass code="SEQL"/>
+      <Rubric id="d1e74525" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The source act documents the target act.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e74554" kind="short">
+         <Label xml:lang="en-US">documents</Label>
+      </Rubric>
+      <Rubric id="d1e74554" kind="preferred">
+         <Label xml:lang="en-US">documents</Label>
+      </Rubric>
+   </Class>
+   <Class code="FLFS" kind="concept">
+      <Meta name="internalId" value="10342"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="inFulfillmentOf"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="BA_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="fulfillment"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="BA_______"/>
+      <SuperClass code="SEQL"/>
+      <SubClass code="OCCR"/>
+      <SubClass code="OREF"/>
+      <SubClass code="SCH"/>
+      <Rubric id="d1e74565" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The source act fulfills (in whole or in part) the target act. Source act must be in a mood equal or more actual than the target act.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e74594" kind="short">
+         <Label xml:lang="en-US">fulfills</Label>
+      </Rubric>
+      <Rubric id="d1e74594" kind="preferred">
+         <Label xml:lang="en-US">fulfills</Label>
+      </Rubric>
+   </Class>
+   <Class code="GEN" kind="concept">
+      <Meta name="internalId" value="10348"/>
+      <Meta name="appliesTo" value="specialization"/>
+      <Meta name="howApplies" value="generalization"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="generalization"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="BC_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="specialization"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="BC_______"/>
+      <SuperClass code="SEQL"/>
+      <Rubric id="d1e74605" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The generalization relationship can be used to express categorical knowledge about services (e.g., amilorid, triamterene, and spironolactone have the common generalization potassium sparing diuretic).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e74638" kind="short">
+         <Label xml:lang="en-US">has generalization</Label>
+      </Rubric>
+      <Rubric id="d1e74638" kind="preferred">
+         <Label xml:lang="en-US">has generalization</Label>
+      </Rubric>
+   </Class>
+   <Class code="GEVL" kind="concept">
+      <Meta name="internalId" value="10346"/>
+      <Meta name="appliesTo" value="evaluation"/>
+      <Meta name="howApplies" value="goal"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="evaluationOf"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="BD_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="evaluation"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="BD_______"/>
+      <SuperClass code="SEQL"/>
+      <Rubric id="d1e74650" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A goal-evaluation links an observation (intent or actual) to a goal to indicate that the observation evaluates the goal. Given the goal and the observation, a "goal distance" (e.g., goal to observation) can be "calculated" and need not be sent explicitly.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e74683" kind="short">
+         <Label xml:lang="en-US">evaluates (goal)</Label>
+      </Rubric>
+      <Rubric id="d1e74683" kind="preferred">
+         <Label xml:lang="en-US">evaluates (goal)</Label>
+      </Rubric>
+   </Class>
+   <Class code="INST" kind="concept">
+      <Meta name="internalId" value="10341"/>
+      <Meta name="appliesTo" value="instance"/>
+      <Meta name="howApplies" value="master"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="definition"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="BB_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="instantiation"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="BB_______"/>
+      <SuperClass code="SEQL"/>
+      <Rubric id="d1e74695" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Used to capture the link between a potential service ("master" or plan) and an actual service, where the actual service instantiates the potential service. The instantiation may override the master's defaults.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e74728" kind="short">
+         <Label xml:lang="en-US">instantiates (master)</Label>
+      </Rubric>
+      <Rubric id="d1e74728" kind="preferred">
+         <Label xml:lang="en-US">instantiates (master)</Label>
+      </Rubric>
+   </Class>
+   <Class code="MOD" kind="concept">
+      <Meta name="internalId" value="21638"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <SuperClass code="SEQL"/>
+      <Rubric id="d1e74741" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Definition: Used to link a newer version or 'snapshot' of a business object (source) to an older version or 'snapshot' of the same business object (target).</p>
+            <p>
+               <i>Usage:</i>The identifier of the Act should be the same for both source and target. If the identifiers are distinct, RPLC should be used instead.</p>
+            <p>Name from source to target = "modifiesPrior"</p>
+            <p>Name from target to source = "modifiesByNew"</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e74773" kind="short">
+         <Label xml:lang="en-US">modifies</Label>
+      </Rubric>
+      <Rubric id="d1e74773" kind="preferred">
+         <Label xml:lang="en-US">modifies</Label>
+      </Rubric>
+   </Class>
+   <Class code="MTCH" kind="concept">
+      <Meta name="internalId" value="10345"/>
+      <Meta name="appliesTo" value="matching service"/>
+      <Meta name="howApplies" value="trigger"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="matchOf"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="BF_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="match"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="BF_______"/>
+      <SuperClass code="SEQL"/>
+      <Rubric id="d1e74785" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A trigger-match links an actual service (e.g., an observation or procedure that took place) with a service in criterion mood. For example if the trigger is "observation of pain" and pain is actually observed, and if that pain-observation caused the trigger to fire, that pain-observation can be linked with the trigger.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e74818" kind="short">
+         <Label xml:lang="en-US">matches (trigger)</Label>
+      </Rubric>
+      <Rubric id="d1e74818" kind="preferred">
+         <Label xml:lang="en-US">matches (trigger)</Label>
+      </Rubric>
+   </Class>
+   <Class code="OPTN" kind="concept">
+      <Meta name="internalId" value="10347"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="option"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="BN_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="optionFor"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="BN_______"/>
+      <SuperClass code="SEQL"/>
+      <Rubric id="d1e74830" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A relationship between a source Act that provides more detailed properties to the target Act.</p>
+            <p>The source act thus is a specialization of the target act, but instead of mentioning all the inherited properties it only mentions new property bindings or refinements.</p>
+            <p>The typical use case is to specify certain alternative variants of one kind of Act. The priorityNumber attribute is used to weigh refinements as preferred over other alternative refinements.</p>
+            <p>Example: several routing options for a drug are specified as one SubstanceAdministration for the general treatment with attached refinements for the various routing options.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e74868" kind="short">
+         <Label xml:lang="en-US">has option</Label>
+      </Rubric>
+      <Rubric id="d1e74868" kind="preferred">
+         <Label xml:lang="en-US">has option</Label>
+      </Rubric>
+   </Class>
+   <Class code="RCHAL" kind="concept">
+      <Meta name="internalId" value="22044"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <SuperClass code="SEQL"/>
+      <Rubric id="d1e74879" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A relationship in which the target act is carried out to determine whether an effect attributed to the source act can be recreated.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e74902" kind="short">
+         <Label xml:lang="en-US">re-challenge</Label>
+      </Rubric>
+      <Rubric id="d1e74902" kind="preferred">
+         <Label xml:lang="en-US">re-challenge</Label>
+      </Rubric>
+   </Class>
+   <Class code="REV" kind="concept">
+      <Meta name="internalId" value="14898"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="reversalOf"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="BK_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="reversal"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="BK_______"/>
+      <SuperClass code="SEQL"/>
+      <Rubric id="d1e74914" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A relationship between a source Act that seeks to reverse or undo the action of the prior target Act.</p>
+            <p>Example: A posted financial transaction (e.g., a debit transaction) was applied in error and must be reversed (e.g., by a credit transaction) the credit transaction is identified as an undo (or reversal) of the prior target transaction.</p>
+            <p>Constraints: the "completion track" mood of the target Act must be equally or more "actual" than the source act. I.e., when the target act is EVN the source act can be EVN, or any INT. If the target act is INT, the source act can be INT.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e74949" kind="short">
+         <Label xml:lang="en-US">reverses</Label>
+      </Rubric>
+      <Rubric id="d1e74949" kind="preferred">
+         <Label xml:lang="en-US">reverses</Label>
+      </Rubric>
+   </Class>
+   <Class code="RPLC" kind="concept">
+      <Meta name="internalId" value="10338"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="replacementOf"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="BI_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="replacement"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="BI_______"/>
+      <SuperClass code="SEQL"/>
+      <Rubric id="d1e74960" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A replacement source act replaces an existing target act. The state of the target act being replaced becomes obselete, but the act is typically still retained in the system for historical reference. The source and target must be of the same type.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e74989" kind="short">
+         <Label xml:lang="en-US">replaces</Label>
+      </Rubric>
+      <Rubric id="d1e74989" kind="preferred">
+         <Label xml:lang="en-US">replaces</Label>
+      </Rubric>
+   </Class>
+   <Class code="SUCC" kind="concept">
+      <Meta name="internalId" value="11616"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="predecessor"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="BIA______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="successor"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="BIA______"/>
+      <SuperClass code="SEQL"/>
+      <Rubric id="d1e75001" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>A new act that carries forward the intention of the original act, but does not completely replace it. The status of the predecessor act must be 'completed'. The original act is the target act and the successor is the source act.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e75042" kind="short">
+         <Label xml:lang="en-US">succeeds</Label>
+      </Rubric>
+      <Rubric id="d1e75042" kind="preferred">
+         <Label xml:lang="en-US">succeeds</Label>
+      </Rubric>
+   </Class>
+   <Class code="UPDT" kind="concept">
+      <Meta name="internalId" value="10340"/>
+      <Meta name="appliesTo" value="new head of thread"/>
+      <Meta name="howApplies" value="old head of thread"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="updateOf"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="BE_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="update"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="BE_______"/>
+      <SuperClass code="SEQL"/>
+      <Rubric id="d1e75053" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A condition thread relationship specifically links condition nodes together to form a condition thread. The source is the new condition node and the target links to the most recent node of the existing condition thread.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e75086" kind="short">
+         <Label xml:lang="en-US">updates (condition)</Label>
+      </Rubric>
+      <Rubric id="d1e75086" kind="preferred">
+         <Label xml:lang="en-US">updates (condition)</Label>
+      </Rubric>
+   </Class>
+   <Class code="XCRPT" kind="concept">
+      <Meta name="internalId" value="18660"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="excerptFrom"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="BM_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="excerpt"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="BM_______"/>
+      <SuperClass code="SEQL"/>
+      <SubClass code="VRXCRPT"/>
+      <Rubric id="d1e75098" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The source is an excerpt from the target.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e75127" kind="short">
+         <Label xml:lang="en-US">Excerpts</Label>
+      </Rubric>
+      <Rubric id="d1e75127" kind="preferred">
+         <Label xml:lang="en-US">Excerpts</Label>
+      </Rubric>
+   </Class>
+   <Class code="XFRM" kind="concept">
+      <Meta name="internalId" value="11624"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="transformationOf"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="BL_______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="transformation"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="BL_______"/>
+      <SuperClass code="SEQL"/>
+      <Rubric id="d1e75138" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Used when the target Act is a transformation of the source Act. (For instance, used to show that a CDA document is a transformation of a DICOM SR document.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e75167" kind="short">
+         <Label xml:lang="en-US">transformation</Label>
+      </Rubric>
+      <Rubric id="d1e75167" kind="preferred">
+         <Label xml:lang="en-US">transformation</Label>
+      </Rubric>
+   </Class>
+   <Class code="SPRTBND" kind="concept">
+      <Meta name="internalId" value="17899"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship" value="boundedSupport"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="DAA______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="boundedSupportOf"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="DAA______"/>
+      <SuperClass code="SPRT"/>
+      <Rubric id="d1e75178" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A specialization of "has support" (SPRT), used to relate a secondary observation to a Region of Interest on a multidimensional observation, if the ROI specifies the true boundaries of the secondary observation as opposed to only marking the approximate area. For example, if the start and end of an ST elevation episode is visible in an EKG, this relation would indicate the ROI bounds the "ST elevation" observation -- the ROI defines the true beginning and ending of the episode. Conversely, if a ROI simply contains ST elevation, but it does not define the bounds (start and end) of the episode, the more general "has support" relation is used. Likewise, if a ROI on an image defines the true bounds of a "1st degree burn", the relation "has bounded support" is used; but if the ROI only points to the approximate area of the burn, the general "has support" relation is used.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e75207" kind="short">
+         <Label xml:lang="en-US">has bounded support</Label>
+      </Rubric>
+      <Rubric id="d1e75207" kind="preferred">
+         <Label xml:lang="en-US">has bounded support</Label>
+      </Rubric>
+   </Class>
+   <Class code="ADJUNCT" kind="concept">
+      <Meta name="internalId" value="23310"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship"
+            value="adjunctiveTreatmentFor"/>
+      <SuperClass code="TREAT"/>
+      <Rubric id="d1e75218" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The source act is intended to offer an additional treatment for the management or cure of a pre-existing adverse situation described by the target act. This is not limited to diseases but can apply to any adverse situation or condition of medical or technical nature. It is not a requirement that the non-adjunctive treatment is explicitly specified.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e75241" kind="short">
+         <Label xml:lang="en-US">adjunctive treatment</Label>
+      </Rubric>
+      <Rubric id="d1e75241" kind="preferred">
+         <Label xml:lang="en-US">adjunctive treatment</Label>
+      </Rubric>
+   </Class>
+   <Class code="MTREAT" kind="concept">
+      <Meta name="internalId" value="23308"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship"
+            value="maintenanceTreatmentFor"/>
+      <SuperClass code="TREAT"/>
+      <Rubric id="d1e75254" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The source act is intended to provide long term maintenance improvement or management of a pre-existing adverse situation described by the target act. This is not limited to diseases but can apply to any adverse situation or condition of medical or technical nature.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e75277" kind="short">
+         <Label xml:lang="en-US">maintenance treatment</Label>
+      </Rubric>
+      <Rubric id="d1e75277" kind="preferred">
+         <Label xml:lang="en-US">maintenance treatment</Label>
+      </Rubric>
+   </Class>
+   <Class code="PALLTREAT" kind="concept">
+      <Meta name="internalId" value="23309"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship"
+            value="palliativeTreatmentFor"/>
+      <SuperClass code="TREAT"/>
+      <Rubric id="d1e75289" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The source act is intended to provide palliation for the effects of the target act.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e75312" kind="short">
+         <Label xml:lang="en-US">palliates</Label>
+      </Rubric>
+      <Rubric id="d1e75312" kind="preferred">
+         <Label xml:lang="en-US">palliates</Label>
+      </Rubric>
+   </Class>
+   <Class code="SYMP" kind="concept">
+      <Meta name="internalId" value="21645"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship"
+            value="symptomaticTreatmentFor"/>
+      <SuperClass code="TREAT"/>
+      <Rubric id="d1e75324" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The source act is intented to provide symptomatic relief for the effects of the target act.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e75350" kind="short">
+         <Label xml:lang="en-US">symptomatic relief</Label>
+      </Rubric>
+      <Rubric id="d1e75350" kind="preferred">
+         <Label xml:lang="en-US">symptomatic relief</Label>
+      </Rubric>
+   </Class>
+   <Class code="VRXCRPT" kind="concept">
+      <Meta name="internalId" value="18661"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:outboundRelationship:ActRelationship"
+            value="verbatimExcerptFrom"/>
+      <Meta name="Sort:Act:outboundRelationship:ActRelationship" value="BMA______"/>
+      <Meta name="Name:Act:inboundRelationship:ActRelationship" value="verbatimExcerpt"/>
+      <Meta name="Sort:Act:inboundRelationship:ActRelationship" value="BMA______"/>
+      <SuperClass code="XCRPT"/>
+      <Rubric id="d1e75361" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The source is a direct quote from the target.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e75390" kind="short">
+         <Label xml:lang="en-US">Excerpt verbatim</Label>
+      </Rubric>
+      <Rubric id="d1e75390" kind="preferred">
+         <Label xml:lang="en-US">Excerpt verbatim</Label>
+      </Rubric>
+   </Class>
+</ClaML>

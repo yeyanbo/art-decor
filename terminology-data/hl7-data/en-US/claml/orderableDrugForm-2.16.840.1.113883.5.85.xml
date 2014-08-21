@@ -1,0 +1,2007 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="60"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.85"/>
+   <Title name="orderableDrugForm" date="2012-08-02" version="1.000">OpenIssue: Missing description.</Title>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="_AdministrableDrugForm" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21101"/>
+      <SubClass code="APPFUL"/>
+      <SubClass code="DROP"/>
+      <SubClass code="PUFF"/>
+      <SubClass code="SCOOP"/>
+      <SubClass code="SPRY"/>
+      <Rubric id="d1e176169" kind="short">
+         <Label xml:lang="en-US">AdministrableDrugForm</Label>
+      </Rubric>
+      <Rubric id="d1e176169" kind="preferred">
+         <Label xml:lang="en-US">AdministrableDrugForm</Label>
+      </Rubric>
+   </Class>
+   <Class code="_DispensableDrugForm" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21102"/>
+      <SubClass code="_GasDrugForm"/>
+      <SubClass code="_GasLiquidMixture"/>
+      <SubClass code="_GasSolidSpray"/>
+      <SubClass code="_Liquid"/>
+      <SubClass code="_LiquidLiquidEmulsion"/>
+      <SubClass code="_LiquidSolidSuspension"/>
+      <SubClass code="_SolidDrugForm"/>
+      <Rubric id="d1e176178" kind="short">
+         <Label xml:lang="en-US">DispensableDrugForm</Label>
+      </Rubric>
+      <Rubric id="d1e176178" kind="preferred">
+         <Label xml:lang="en-US">DispensableDrugForm</Label>
+      </Rubric>
+   </Class>
+   <Class code="APPFUL" kind="concept">
+      <Meta name="internalId" value="14572"/>
+      <SuperClass code="_AdministrableDrugForm"/>
+      <Rubric id="d1e176192" kind="short">
+         <Label xml:lang="en-US">Applicatorful</Label>
+      </Rubric>
+      <Rubric id="d1e176192" kind="preferred">
+         <Label xml:lang="en-US">Applicatorful</Label>
+      </Rubric>
+   </Class>
+   <Class code="DROP" kind="concept">
+      <Meta name="internalId" value="14420"/>
+      <SuperClass code="_AdministrableDrugForm"/>
+      <SuperClass code="SOL"/>
+      <SubClass code="NDROP"/>
+      <SubClass code="OPDROP"/>
+      <SubClass code="ORDROP"/>
+      <SubClass code="OTDROP"/>
+      <Rubric id="d1e176211" kind="short">
+         <Label xml:lang="en-US">Drops</Label>
+      </Rubric>
+      <Rubric id="d1e176211" kind="preferred">
+         <Label xml:lang="en-US">Drops</Label>
+      </Rubric>
+   </Class>
+   <Class code="PUFF" kind="concept">
+      <Meta name="internalId" value="14571"/>
+      <SuperClass code="_AdministrableDrugForm"/>
+      <Rubric id="d1e176225" kind="short">
+         <Label xml:lang="en-US">Puff</Label>
+      </Rubric>
+      <Rubric id="d1e176225" kind="preferred">
+         <Label xml:lang="en-US">Puff</Label>
+      </Rubric>
+   </Class>
+   <Class code="SCOOP" kind="concept">
+      <Meta name="internalId" value="14574"/>
+      <SuperClass code="_AdministrableDrugForm"/>
+      <Rubric id="d1e176239" kind="short">
+         <Label xml:lang="en-US">Scoops</Label>
+      </Rubric>
+      <Rubric id="d1e176239" kind="preferred">
+         <Label xml:lang="en-US">Scoops</Label>
+      </Rubric>
+   </Class>
+   <Class code="SPRY" kind="concept">
+      <Meta name="internalId" value="14573"/>
+      <SuperClass code="_AdministrableDrugForm"/>
+      <Rubric id="d1e176254" kind="short">
+         <Label xml:lang="en-US">Sprays</Label>
+      </Rubric>
+      <Rubric id="d1e176254" kind="preferred">
+         <Label xml:lang="en-US">Sprays</Label>
+      </Rubric>
+   </Class>
+   <Class code="_GasDrugForm" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21103"/>
+      <SuperClass code="_DispensableDrugForm"/>
+      <SubClass code="GASINHL"/>
+      <Rubric id="d1e176265" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Any elastic aeriform fluid in which the molecules are separated from one another and have free paths.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e176283" kind="short">
+         <Label xml:lang="en-US">GasDrugForm</Label>
+      </Rubric>
+      <Rubric id="d1e176283" kind="preferred">
+         <Label xml:lang="en-US">GasDrugForm</Label>
+      </Rubric>
+   </Class>
+   <Class code="_GasLiquidMixture" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21104"/>
+      <SuperClass code="_DispensableDrugForm"/>
+      <SubClass code="AER"/>
+      <SubClass code="DERMSPRY"/>
+      <SubClass code="FOAM"/>
+      <SubClass code="RECSPRY"/>
+      <SubClass code="VAGSPRY"/>
+      <Rubric id="d1e176297" kind="short">
+         <Label xml:lang="en-US">GasLiquidMixture</Label>
+      </Rubric>
+      <Rubric id="d1e176297" kind="preferred">
+         <Label xml:lang="en-US">GasLiquidMixture</Label>
+      </Rubric>
+   </Class>
+   <Class code="_GasSolidSpray" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21105"/>
+      <SuperClass code="_DispensableDrugForm"/>
+      <SubClass code="INHL"/>
+      <SubClass code="PWDSPRY"/>
+      <SubClass code="SPRYADAPT"/>
+      <Rubric id="d1e176311" kind="short">
+         <Label xml:lang="en-US">GasSolidSpray</Label>
+      </Rubric>
+      <Rubric id="d1e176311" kind="preferred">
+         <Label xml:lang="en-US">GasSolidSpray</Label>
+      </Rubric>
+   </Class>
+   <Class code="_Liquid" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21106"/>
+      <SuperClass code="_DispensableDrugForm"/>
+      <SubClass code="LIQCLN"/>
+      <SubClass code="OIL"/>
+      <SubClass code="SOL"/>
+      <Rubric id="d1e176322" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A state of substance that is an intermediate one entered into as matter goes from solid to gas; liquids are also intermediate in that they have neither the orderliness of a crystal nor the randomness of a gas. (Note: This term should not be used to describe solutions, only pure chemicals in their liquid state.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e176340" kind="short">
+         <Label xml:lang="en-US">Liquid</Label>
+      </Rubric>
+      <Rubric id="d1e176340" kind="preferred">
+         <Label xml:lang="en-US">Liquid</Label>
+      </Rubric>
+   </Class>
+   <Class code="_LiquidLiquidEmulsion" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21107"/>
+      <SuperClass code="_DispensableDrugForm"/>
+      <SubClass code="CRM"/>
+      <SubClass code="LTN"/>
+      <SubClass code="OINT"/>
+      <Rubric id="d1e176351" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A two-phase system in which one liquid is dispersed throughout another liquid in the form of small droplets.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e176369" kind="short">
+         <Label xml:lang="en-US">LiquidLiquidEmulsion</Label>
+      </Rubric>
+      <Rubric id="d1e176369" kind="preferred">
+         <Label xml:lang="en-US">LiquidLiquidEmulsion</Label>
+      </Rubric>
+   </Class>
+   <Class code="_LiquidSolidSuspension" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21108"/>
+      <SuperClass code="_DispensableDrugForm"/>
+      <SubClass code="GEL"/>
+      <SubClass code="PASTE"/>
+      <SubClass code="SUSP"/>
+      <Rubric id="d1e176381" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A liquid preparation which consists of solid particles dispersed throughout a liquid phase in which the particles are not soluble.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e176399" kind="short">
+         <Label xml:lang="en-US">LiquidSolidSuspension</Label>
+      </Rubric>
+      <Rubric id="d1e176399" kind="preferred">
+         <Label xml:lang="en-US">LiquidSolidSuspension</Label>
+      </Rubric>
+   </Class>
+   <Class code="_SolidDrugForm" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21109"/>
+      <SuperClass code="_DispensableDrugForm"/>
+      <SubClass code="BAR"/>
+      <SubClass code="BEAD"/>
+      <SubClass code="CAKE"/>
+      <SubClass code="CEMENT"/>
+      <SubClass code="CRYS"/>
+      <SubClass code="DISK"/>
+      <SubClass code="FLAKE"/>
+      <SubClass code="GRAN"/>
+      <SubClass code="GUM"/>
+      <SubClass code="PAD"/>
+      <SubClass code="PATCH"/>
+      <SubClass code="PELLET"/>
+      <SubClass code="PILL"/>
+      <SubClass code="POWD"/>
+      <SubClass code="SUPP"/>
+      <SubClass code="SWAB"/>
+      <SubClass code="WAFER"/>
+      <Rubric id="d1e176413" kind="short">
+         <Label xml:lang="en-US">SolidDrugForm</Label>
+      </Rubric>
+      <Rubric id="d1e176413" kind="preferred">
+         <Label xml:lang="en-US">SolidDrugForm</Label>
+      </Rubric>
+   </Class>
+   <Class code="GASINHL" kind="concept">
+      <Meta name="internalId" value="14569"/>
+      <SuperClass code="_GasDrugForm"/>
+      <Rubric id="d1e176427" kind="short">
+         <Label xml:lang="en-US">Gas for Inhalation</Label>
+      </Rubric>
+      <Rubric id="d1e176427" kind="preferred">
+         <Label xml:lang="en-US">Gas for Inhalation</Label>
+      </Rubric>
+   </Class>
+   <Class code="AER" kind="concept">
+      <Meta name="internalId" value="14551"/>
+      <SuperClass code="_GasLiquidMixture"/>
+      <SubClass code="BAINHL"/>
+      <SubClass code="INHLSOL"/>
+      <SubClass code="MDINHL"/>
+      <SubClass code="NASSPRY"/>
+      <Rubric id="d1e176441" kind="short">
+         <Label xml:lang="en-US">Aerosol</Label>
+      </Rubric>
+      <Rubric id="d1e176441" kind="preferred">
+         <Label xml:lang="en-US">Aerosol</Label>
+      </Rubric>
+   </Class>
+   <Class code="DERMSPRY" kind="concept">
+      <Meta name="internalId" value="14556"/>
+      <SuperClass code="_GasLiquidMixture"/>
+      <Rubric id="d1e176455" kind="short">
+         <Label xml:lang="en-US">Dermal Spray</Label>
+      </Rubric>
+      <Rubric id="d1e176455" kind="preferred">
+         <Label xml:lang="en-US">Dermal Spray</Label>
+      </Rubric>
+   </Class>
+   <Class code="FOAM" kind="concept">
+      <Meta name="internalId" value="14546"/>
+      <SuperClass code="_GasLiquidMixture"/>
+      <SubClass code="FOAMAPL"/>
+      <SubClass code="RECFORM"/>
+      <SubClass code="VAGFOAM"/>
+      <Rubric id="d1e176469" kind="short">
+         <Label xml:lang="en-US">Foam</Label>
+      </Rubric>
+      <Rubric id="d1e176469" kind="preferred">
+         <Label xml:lang="en-US">Foam</Label>
+      </Rubric>
+   </Class>
+   <Class code="RECSPRY" kind="concept">
+      <Meta name="internalId" value="14557"/>
+      <SuperClass code="_GasLiquidMixture"/>
+      <Rubric id="d1e176484" kind="short">
+         <Label xml:lang="en-US">Rectal Spray</Label>
+      </Rubric>
+      <Rubric id="d1e176484" kind="preferred">
+         <Label xml:lang="en-US">Rectal Spray</Label>
+      </Rubric>
+   </Class>
+   <Class code="VAGSPRY" kind="concept">
+      <Meta name="internalId" value="14558"/>
+      <SuperClass code="_GasLiquidMixture"/>
+      <Rubric id="d1e176498" kind="short">
+         <Label xml:lang="en-US">Vaginal Spray</Label>
+      </Rubric>
+      <Rubric id="d1e176498" kind="preferred">
+         <Label xml:lang="en-US">Vaginal Spray</Label>
+      </Rubric>
+   </Class>
+   <Class code="INHL" kind="concept">
+      <Meta name="internalId" value="14560"/>
+      <SuperClass code="_GasSolidSpray"/>
+      <SubClass code="BAINHLPWD"/>
+      <SubClass code="INHLPWD"/>
+      <SubClass code="MDINHLPWD"/>
+      <SubClass code="NASINHL"/>
+      <SubClass code="ORINHL"/>
+      <Rubric id="d1e176512" kind="short">
+         <Label xml:lang="en-US">Inhalant</Label>
+      </Rubric>
+      <Rubric id="d1e176512" kind="preferred">
+         <Label xml:lang="en-US">Inhalant</Label>
+      </Rubric>
+   </Class>
+   <Class code="PWDSPRY" kind="concept">
+      <Meta name="internalId" value="14567"/>
+      <SuperClass code="_GasSolidSpray"/>
+      <Rubric id="d1e176526" kind="short">
+         <Label xml:lang="en-US">Powder Spray</Label>
+      </Rubric>
+      <Rubric id="d1e176526" kind="preferred">
+         <Label xml:lang="en-US">Powder Spray</Label>
+      </Rubric>
+   </Class>
+   <Class code="SPRYADAPT" kind="concept">
+      <Meta name="internalId" value="14566"/>
+      <SuperClass code="_GasSolidSpray"/>
+      <Rubric id="d1e176540" kind="short">
+         <Label xml:lang="en-US">Spray with Adaptor</Label>
+      </Rubric>
+      <Rubric id="d1e176540" kind="preferred">
+         <Label xml:lang="en-US">Spray with Adaptor</Label>
+      </Rubric>
+   </Class>
+   <Class code="LIQCLN" kind="concept">
+      <Meta name="internalId" value="14414"/>
+      <SuperClass code="_Liquid"/>
+      <SubClass code="LIQSOAP"/>
+      <SubClass code="SHMP"/>
+      <Rubric id="d1e176554" kind="short">
+         <Label xml:lang="en-US">Liquid Cleanser</Label>
+      </Rubric>
+      <Rubric id="d1e176554" kind="preferred">
+         <Label xml:lang="en-US">Liquid Cleanser</Label>
+      </Rubric>
+   </Class>
+   <Class code="OIL" kind="concept">
+      <Meta name="internalId" value="14417"/>
+      <SuperClass code="_Liquid"/>
+      <SubClass code="TOPOIL"/>
+      <Rubric id="d1e176566" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An unctuous, combustible substance which is liquid, or easily liquefiable, on warming, and is soluble in ether but insoluble in water. Such substances, depending on their origin, are classified as animal, mineral, or vegetable oils.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e176584" kind="short">
+         <Label xml:lang="en-US">Oil</Label>
+      </Rubric>
+      <Rubric id="d1e176584" kind="preferred">
+         <Label xml:lang="en-US">Oil</Label>
+      </Rubric>
+   </Class>
+   <Class code="SOL" kind="concept">
+      <Meta name="internalId" value="14419"/>
+      <SuperClass code="_Liquid"/>
+      <SubClass code="DROP"/>
+      <SubClass code="IPSOL"/>
+      <SubClass code="IRSOL"/>
+      <SubClass code="IVSOL"/>
+      <SubClass code="ORALSOL"/>
+      <SubClass code="RECSOL"/>
+      <SubClass code="TOPSOL"/>
+      <Rubric id="d1e176595" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A liquid preparation that contains one or more chemical substances dissolved, i.e., molecularly dispersed, in a suitable solvent or mixture of mutually miscible solvents.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e176613" kind="short">
+         <Label xml:lang="en-US">Solution</Label>
+      </Rubric>
+      <Rubric id="d1e176613" kind="preferred">
+         <Label xml:lang="en-US">Solution</Label>
+      </Rubric>
+   </Class>
+   <Class code="CRM" kind="concept">
+      <Meta name="internalId" value="14466"/>
+      <SuperClass code="_LiquidLiquidEmulsion"/>
+      <SubClass code="NASCRM"/>
+      <SubClass code="OPCRM"/>
+      <SubClass code="ORCRM"/>
+      <SubClass code="OTCRM"/>
+      <SubClass code="RECCRM"/>
+      <SubClass code="TOPCRM"/>
+      <SubClass code="VAGCRM"/>
+      <Rubric id="d1e176624" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A semisolid dosage form containing one or more drug substances dissolved or dispersed in a suitable base; more recently, the term has been restricted to products consisting of oil-in-water emulsions or aqueous microcrystalline dispersions of long chain fatty acids or alcohols that are water washable and more cosmetically and aesthetically acceptable.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e176642" kind="short">
+         <Label xml:lang="en-US">Cream</Label>
+      </Rubric>
+      <Rubric id="d1e176642" kind="preferred">
+         <Label xml:lang="en-US">Cream</Label>
+      </Rubric>
+   </Class>
+   <Class code="LTN" kind="concept">
+      <Meta name="internalId" value="14464"/>
+      <SuperClass code="_LiquidLiquidEmulsion"/>
+      <SubClass code="TOPLTN"/>
+      <Rubric id="d1e176653" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The term "lotion" has been used to categorize many topical suspensions, solutions and emulsions intended for application to the skin.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e176671" kind="short">
+         <Label xml:lang="en-US">Lotion</Label>
+      </Rubric>
+      <Rubric id="d1e176671" kind="preferred">
+         <Label xml:lang="en-US">Lotion</Label>
+      </Rubric>
+   </Class>
+   <Class code="OINT" kind="concept">
+      <Meta name="internalId" value="14475"/>
+      <SuperClass code="_LiquidLiquidEmulsion"/>
+      <SubClass code="NASOINT"/>
+      <SubClass code="OINTAPL"/>
+      <SubClass code="OPOINT"/>
+      <SubClass code="OTOINT"/>
+      <SubClass code="RECOINT"/>
+      <SubClass code="TOPOINT"/>
+      <SubClass code="VAGOINT"/>
+      <Rubric id="d1e176682" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A semisolid preparation intended for external application to the skin or mucous membranes.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e176700" kind="short">
+         <Label xml:lang="en-US">Ointment</Label>
+      </Rubric>
+      <Rubric id="d1e176700" kind="preferred">
+         <Label xml:lang="en-US">Ointment</Label>
+      </Rubric>
+   </Class>
+   <Class code="GEL" kind="concept">
+      <Meta name="internalId" value="14442"/>
+      <SuperClass code="_LiquidSolidSuspension"/>
+      <SubClass code="GELAPL"/>
+      <SubClass code="NASGEL"/>
+      <SubClass code="OPGEL"/>
+      <SubClass code="OTGEL"/>
+      <SubClass code="TOPGEL"/>
+      <SubClass code="URETHGEL"/>
+      <SubClass code="VAGGEL"/>
+      <Rubric id="d1e176711" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A semisolid system consisting of either suspensions made up of small inorganic particles or large organic molecules interpenetrated by a liquid.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e176729" kind="short">
+         <Label xml:lang="en-US">Gel</Label>
+      </Rubric>
+      <Rubric id="d1e176729" kind="preferred">
+         <Label xml:lang="en-US">Gel</Label>
+      </Rubric>
+   </Class>
+   <Class code="PASTE" kind="concept">
+      <Meta name="internalId" value="14451"/>
+      <SuperClass code="_LiquidSolidSuspension"/>
+      <SubClass code="PUD"/>
+      <SubClass code="TPASTE"/>
+      <Rubric id="d1e176741" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A semisolid dosage form that contains one or more drug substances intended for topical application.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e176759" kind="short">
+         <Label xml:lang="en-US">Paste</Label>
+      </Rubric>
+      <Rubric id="d1e176759" kind="preferred">
+         <Label xml:lang="en-US">Paste</Label>
+      </Rubric>
+   </Class>
+   <Class code="SUSP" kind="concept">
+      <Meta name="internalId" value="14454"/>
+      <SuperClass code="_LiquidSolidSuspension"/>
+      <SubClass code="ITSUSP"/>
+      <SubClass code="OPSUSP"/>
+      <SubClass code="ORSUSP"/>
+      <SubClass code="OTSUSP"/>
+      <SubClass code="RECSUSP"/>
+      <Rubric id="d1e176773" kind="short">
+         <Label xml:lang="en-US">Suspension</Label>
+      </Rubric>
+      <Rubric id="d1e176773" kind="preferred">
+         <Label xml:lang="en-US">Suspension</Label>
+      </Rubric>
+   </Class>
+   <Class code="BAR" kind="concept">
+      <Meta name="internalId" value="14485"/>
+      <SuperClass code="_SolidDrugForm"/>
+      <SubClass code="BARSOAP"/>
+      <SubClass code="CHEWBAR"/>
+      <Rubric id="d1e176787" kind="short">
+         <Label xml:lang="en-US">Bar</Label>
+      </Rubric>
+      <Rubric id="d1e176787" kind="preferred">
+         <Label xml:lang="en-US">Bar</Label>
+      </Rubric>
+   </Class>
+   <Class code="BEAD" kind="concept">
+      <Meta name="internalId" value="14489"/>
+      <SuperClass code="_SolidDrugForm"/>
+      <Rubric id="d1e176798" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A solid dosage form in the shape of a small ball.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e176816" kind="short">
+         <Label xml:lang="en-US">Beads</Label>
+      </Rubric>
+      <Rubric id="d1e176816" kind="preferred">
+         <Label xml:lang="en-US">Beads</Label>
+      </Rubric>
+   </Class>
+   <Class code="CAKE" kind="concept">
+      <Meta name="internalId" value="14490"/>
+      <SuperClass code="_SolidDrugForm"/>
+      <Rubric id="d1e176830" kind="short">
+         <Label xml:lang="en-US">Cake</Label>
+      </Rubric>
+      <Rubric id="d1e176830" kind="preferred">
+         <Label xml:lang="en-US">Cake</Label>
+      </Rubric>
+   </Class>
+   <Class code="CEMENT" kind="concept">
+      <Meta name="internalId" value="14491"/>
+      <SuperClass code="_SolidDrugForm"/>
+      <Rubric id="d1e176841" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A substance that serves to produce solid union between two surfaces.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e176859" kind="short">
+         <Label xml:lang="en-US">Cement</Label>
+      </Rubric>
+      <Rubric id="d1e176859" kind="preferred">
+         <Label xml:lang="en-US">Cement</Label>
+      </Rubric>
+   </Class>
+   <Class code="CRYS" kind="concept">
+      <Meta name="internalId" value="14492"/>
+      <SuperClass code="_SolidDrugForm"/>
+      <Rubric id="d1e176871" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A naturally produced angular solid of definite form in which the ultimate units from which it is built up are systematically arranged; they are usually evenly spaced on a regular space lattice.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e176889" kind="short">
+         <Label xml:lang="en-US">Crystals</Label>
+      </Rubric>
+      <Rubric id="d1e176889" kind="preferred">
+         <Label xml:lang="en-US">Crystals</Label>
+      </Rubric>
+   </Class>
+   <Class code="DISK" kind="concept">
+      <Meta name="internalId" value="14493"/>
+      <SuperClass code="_SolidDrugForm"/>
+      <Rubric id="d1e176900" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A circular plate-like organ or structure.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e176918" kind="short">
+         <Label xml:lang="en-US">Disk</Label>
+      </Rubric>
+      <Rubric id="d1e176918" kind="preferred">
+         <Label xml:lang="en-US">Disk</Label>
+      </Rubric>
+   </Class>
+   <Class code="FLAKE" kind="concept">
+      <Meta name="internalId" value="14494"/>
+      <SuperClass code="_SolidDrugForm"/>
+      <Rubric id="d1e176932" kind="short">
+         <Label xml:lang="en-US">Flakes</Label>
+      </Rubric>
+      <Rubric id="d1e176932" kind="preferred">
+         <Label xml:lang="en-US">Flakes</Label>
+      </Rubric>
+   </Class>
+   <Class code="GRAN" kind="concept">
+      <Meta name="internalId" value="14495"/>
+      <SuperClass code="_SolidDrugForm"/>
+      <Rubric id="d1e176943" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A small particle or grain.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e176961" kind="short">
+         <Label xml:lang="en-US">Granules</Label>
+      </Rubric>
+      <Rubric id="d1e176961" kind="preferred">
+         <Label xml:lang="en-US">Granules</Label>
+      </Rubric>
+   </Class>
+   <Class code="GUM" kind="concept">
+      <Meta name="internalId" value="14496"/>
+      <SuperClass code="_SolidDrugForm"/>
+      <Rubric id="d1e176972" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A sweetened and flavored insoluble plastic material of various shapes which when chewed, releases a drug substance into the oral cavity.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e176990" kind="short">
+         <Label xml:lang="en-US">ChewingGum</Label>
+      </Rubric>
+      <Rubric id="d1e176990" kind="preferred">
+         <Label xml:lang="en-US">ChewingGum</Label>
+      </Rubric>
+   </Class>
+   <Class code="PAD" kind="concept">
+      <Meta name="internalId" value="14497"/>
+      <SuperClass code="_SolidDrugForm"/>
+      <SubClass code="MEDPAD"/>
+      <Rubric id="d1e177004" kind="short">
+         <Label xml:lang="en-US">Pad</Label>
+      </Rubric>
+      <Rubric id="d1e177004" kind="preferred">
+         <Label xml:lang="en-US">Pad</Label>
+      </Rubric>
+   </Class>
+   <Class code="PATCH" kind="concept">
+      <Meta name="internalId" value="14499"/>
+      <SuperClass code="_SolidDrugForm"/>
+      <SubClass code="TPATCH"/>
+      <Rubric id="d1e177016" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A drug delivery system that contains an adhesived backing and that permits its ingredients to diffuse from some portion of it (e.g., the backing itself, a reservoir, the adhesive, or some other component) into the body from the external site where it is applied.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e177034" kind="short">
+         <Label xml:lang="en-US">Patch</Label>
+      </Rubric>
+      <Rubric id="d1e177034" kind="preferred">
+         <Label xml:lang="en-US">Patch</Label>
+      </Rubric>
+   </Class>
+   <Class code="PELLET" kind="concept">
+      <Meta name="internalId" value="14533"/>
+      <SuperClass code="_SolidDrugForm"/>
+      <Rubric id="d1e177045" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A small sterile solid mass consisting of a highly purified drug (with or without excipients) made by the formation of granules, or by compression and molding.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e177063" kind="short">
+         <Label xml:lang="en-US">Pellet</Label>
+      </Rubric>
+      <Rubric id="d1e177063" kind="preferred">
+         <Label xml:lang="en-US">Pellet</Label>
+      </Rubric>
+   </Class>
+   <Class code="PILL" kind="concept">
+      <Meta name="internalId" value="14506"/>
+      <SuperClass code="_SolidDrugForm"/>
+      <SubClass code="CAP"/>
+      <SubClass code="TAB"/>
+      <Rubric id="d1e177074" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A small, round solid dosage form containing a medicinal agent intended for oral administration.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e177092" kind="short">
+         <Label xml:lang="en-US">Pill</Label>
+      </Rubric>
+      <Rubric id="d1e177092" kind="preferred">
+         <Label xml:lang="en-US">Pill</Label>
+      </Rubric>
+   </Class>
+   <Class code="POWD" kind="concept">
+      <Meta name="internalId" value="14534"/>
+      <SuperClass code="_SolidDrugForm"/>
+      <SubClass code="TOPPWD"/>
+      <Rubric id="d1e177103" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An intimate mixture of dry, finely divided drugs and/or chemicals that may be intended for internal or external use.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e177121" kind="short">
+         <Label xml:lang="en-US">Powder</Label>
+      </Rubric>
+      <Rubric id="d1e177121" kind="preferred">
+         <Label xml:lang="en-US">Powder</Label>
+      </Rubric>
+   </Class>
+   <Class code="SUPP" kind="concept">
+      <Meta name="internalId" value="14538"/>
+      <SuperClass code="_SolidDrugForm"/>
+      <SubClass code="RECSUPP"/>
+      <SubClass code="URETHSUPP"/>
+      <SubClass code="VAGSUPP"/>
+      <Rubric id="d1e177132" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A solid body of various weights and shapes, adapted for introduction into the rectal, vaginal, or urethral orifice of the human body; they usually melt, soften, or dissolve at body temperature.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e177150" kind="short">
+         <Label xml:lang="en-US">Suppository</Label>
+      </Rubric>
+      <Rubric id="d1e177150" kind="preferred">
+         <Label xml:lang="en-US">Suppository</Label>
+      </Rubric>
+   </Class>
+   <Class code="SWAB" kind="concept">
+      <Meta name="internalId" value="14542"/>
+      <SuperClass code="_SolidDrugForm"/>
+      <SubClass code="MEDSWAB"/>
+      <Rubric id="d1e177161" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A wad of absorbent material usually wound around one end of a small stick and used for applying medication or for removing material from an area.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e177179" kind="short">
+         <Label xml:lang="en-US">Swab</Label>
+      </Rubric>
+      <Rubric id="d1e177179" kind="preferred">
+         <Label xml:lang="en-US">Swab</Label>
+      </Rubric>
+   </Class>
+   <Class code="WAFER" kind="concept">
+      <Meta name="internalId" value="14544"/>
+      <SuperClass code="_SolidDrugForm"/>
+      <Rubric id="d1e177191" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A thin slice of material containing a medicinal agent.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e177209" kind="short">
+         <Label xml:lang="en-US">Wafer</Label>
+      </Rubric>
+      <Rubric id="d1e177209" kind="preferred">
+         <Label xml:lang="en-US">Wafer</Label>
+      </Rubric>
+   </Class>
+   <Class code="BAINHL" kind="concept">
+      <Meta name="internalId" value="14553"/>
+      <SuperClass code="AER"/>
+      <Rubric id="d1e177223" kind="short">
+         <Label xml:lang="en-US">Breath Activated Inhaler</Label>
+      </Rubric>
+      <Rubric id="d1e177223" kind="preferred">
+         <Label xml:lang="en-US">Breath Activated Inhaler</Label>
+      </Rubric>
+   </Class>
+   <Class code="INHLSOL" kind="concept">
+      <Meta name="internalId" value="14555"/>
+      <SuperClass code="AER"/>
+      <Rubric id="d1e177237" kind="short">
+         <Label xml:lang="en-US">Inhalant Solution</Label>
+      </Rubric>
+      <Rubric id="d1e177237" kind="preferred">
+         <Label xml:lang="en-US">Inhalant Solution</Label>
+      </Rubric>
+   </Class>
+   <Class code="MDINHL" kind="concept">
+      <Meta name="internalId" value="14552"/>
+      <SuperClass code="AER"/>
+      <Rubric id="d1e177251" kind="short">
+         <Label xml:lang="en-US">Metered Dose Inhaler</Label>
+      </Rubric>
+      <Rubric id="d1e177251" kind="preferred">
+         <Label xml:lang="en-US">Metered Dose Inhaler</Label>
+      </Rubric>
+   </Class>
+   <Class code="NASSPRY" kind="concept">
+      <Meta name="internalId" value="14554"/>
+      <SuperClass code="AER"/>
+      <Rubric id="d1e177265" kind="short">
+         <Label xml:lang="en-US">Nasal Spray</Label>
+      </Rubric>
+      <Rubric id="d1e177265" kind="preferred">
+         <Label xml:lang="en-US">Nasal Spray</Label>
+      </Rubric>
+   </Class>
+   <Class code="BARSOAP" kind="concept">
+      <Meta name="internalId" value="14486"/>
+      <SuperClass code="BAR"/>
+      <SubClass code="MEDBAR"/>
+      <Rubric id="d1e177279" kind="short">
+         <Label xml:lang="en-US">Bar Soap</Label>
+      </Rubric>
+      <Rubric id="d1e177279" kind="preferred">
+         <Label xml:lang="en-US">Bar Soap</Label>
+      </Rubric>
+   </Class>
+   <Class code="CHEWBAR" kind="concept">
+      <Meta name="internalId" value="14488"/>
+      <SuperClass code="BAR"/>
+      <Rubric id="d1e177291" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A solid dosage form usually in the form of a rectangle that is meant to be chewed.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e177309" kind="short">
+         <Label xml:lang="en-US">Chewable Bar</Label>
+      </Rubric>
+      <Rubric id="d1e177309" kind="preferred">
+         <Label xml:lang="en-US">Chewable Bar</Label>
+      </Rubric>
+   </Class>
+   <Class code="MEDBAR" kind="concept">
+      <Meta name="internalId" value="14487"/>
+      <SuperClass code="BARSOAP"/>
+      <Rubric id="d1e177323" kind="short">
+         <Label xml:lang="en-US">Medicated Bar Soap</Label>
+      </Rubric>
+      <Rubric id="d1e177323" kind="preferred">
+         <Label xml:lang="en-US">Medicated Bar Soap</Label>
+      </Rubric>
+   </Class>
+   <Class code="SRBUCTAB" kind="concept">
+      <Meta name="internalId" value="14519"/>
+      <SuperClass code="BUCTAB"/>
+      <Rubric id="d1e177337" kind="short">
+         <Label xml:lang="en-US">Sustained Release Buccal Tablet</Label>
+      </Rubric>
+      <Rubric id="d1e177337" kind="preferred">
+         <Label xml:lang="en-US">Sustained Release Buccal Tablet</Label>
+      </Rubric>
+   </Class>
+   <Class code="ORCAP" kind="concept">
+      <Meta name="internalId" value="14508"/>
+      <SuperClass code="CAP"/>
+      <SubClass code="ENTCAP"/>
+      <SubClass code="ERCAP"/>
+      <Rubric id="d1e177351" kind="short">
+         <Label xml:lang="en-US">Oral Capsule</Label>
+      </Rubric>
+      <Rubric id="d1e177351" kind="preferred">
+         <Label xml:lang="en-US">Oral Capsule</Label>
+      </Rubric>
+   </Class>
+   <Class code="NASCRM" kind="concept">
+      <Meta name="internalId" value="14467"/>
+      <SuperClass code="CRM"/>
+      <Rubric id="d1e177365" kind="short">
+         <Label xml:lang="en-US">Nasal Cream</Label>
+      </Rubric>
+      <Rubric id="d1e177365" kind="preferred">
+         <Label xml:lang="en-US">Nasal Cream</Label>
+      </Rubric>
+   </Class>
+   <Class code="OPCRM" kind="concept">
+      <Meta name="internalId" value="14468"/>
+      <SuperClass code="CRM"/>
+      <Rubric id="d1e177379" kind="short">
+         <Label xml:lang="en-US">Ophthalmic Cream</Label>
+      </Rubric>
+      <Rubric id="d1e177379" kind="preferred">
+         <Label xml:lang="en-US">Ophthalmic Cream</Label>
+      </Rubric>
+   </Class>
+   <Class code="ORCRM" kind="concept">
+      <Meta name="internalId" value="14469"/>
+      <SuperClass code="CRM"/>
+      <Rubric id="d1e177394" kind="short">
+         <Label xml:lang="en-US">Oral Cream</Label>
+      </Rubric>
+      <Rubric id="d1e177394" kind="preferred">
+         <Label xml:lang="en-US">Oral Cream</Label>
+      </Rubric>
+   </Class>
+   <Class code="OTCRM" kind="concept">
+      <Meta name="internalId" value="14470"/>
+      <SuperClass code="CRM"/>
+      <Rubric id="d1e177408" kind="short">
+         <Label xml:lang="en-US">Otic Cream</Label>
+      </Rubric>
+      <Rubric id="d1e177408" kind="preferred">
+         <Label xml:lang="en-US">Otic Cream</Label>
+      </Rubric>
+   </Class>
+   <Class code="RECCRM" kind="concept">
+      <Meta name="internalId" value="14471"/>
+      <SuperClass code="CRM"/>
+      <Rubric id="d1e177422" kind="short">
+         <Label xml:lang="en-US">Rectal Cream</Label>
+      </Rubric>
+      <Rubric id="d1e177422" kind="preferred">
+         <Label xml:lang="en-US">Rectal Cream</Label>
+      </Rubric>
+   </Class>
+   <Class code="TOPCRM" kind="concept">
+      <Meta name="internalId" value="14472"/>
+      <SuperClass code="CRM"/>
+      <Rubric id="d1e177436" kind="short">
+         <Label xml:lang="en-US">Topical Cream</Label>
+      </Rubric>
+      <Rubric id="d1e177436" kind="preferred">
+         <Label xml:lang="en-US">Topical Cream</Label>
+      </Rubric>
+   </Class>
+   <Class code="VAGCRM" kind="concept">
+      <Meta name="internalId" value="14473"/>
+      <SuperClass code="CRM"/>
+      <SubClass code="VAGCRMAPL"/>
+      <Rubric id="d1e177450" kind="short">
+         <Label xml:lang="en-US">Vaginal Cream</Label>
+      </Rubric>
+      <Rubric id="d1e177450" kind="preferred">
+         <Label xml:lang="en-US">Vaginal Cream</Label>
+      </Rubric>
+   </Class>
+   <Class code="NDROP" kind="concept">
+      <Meta name="internalId" value="14422"/>
+      <SuperClass code="DROP"/>
+      <Rubric id="d1e177464" kind="short">
+         <Label xml:lang="en-US">Nasal Drops</Label>
+      </Rubric>
+      <Rubric id="d1e177464" kind="preferred">
+         <Label xml:lang="en-US">Nasal Drops</Label>
+      </Rubric>
+   </Class>
+   <Class code="OPDROP" kind="concept">
+      <Meta name="internalId" value="14421"/>
+      <SuperClass code="DROP"/>
+      <Rubric id="d1e177479" kind="short">
+         <Label xml:lang="en-US">Ophthalmic Drops</Label>
+      </Rubric>
+      <Rubric id="d1e177479" kind="preferred">
+         <Label xml:lang="en-US">Ophthalmic Drops</Label>
+      </Rubric>
+   </Class>
+   <Class code="ORDROP" kind="concept">
+      <Meta name="internalId" value="14423"/>
+      <SuperClass code="DROP"/>
+      <SuperClass code="ORALSOL"/>
+      <Rubric id="d1e177498" kind="short">
+         <Label xml:lang="en-US">Oral Drops</Label>
+      </Rubric>
+      <Rubric id="d1e177498" kind="preferred">
+         <Label xml:lang="en-US">Oral Drops</Label>
+      </Rubric>
+   </Class>
+   <Class code="OTDROP" kind="concept">
+      <Meta name="internalId" value="14424"/>
+      <SuperClass code="DROP"/>
+      <Rubric id="d1e177512" kind="short">
+         <Label xml:lang="en-US">Otic Drops</Label>
+      </Rubric>
+      <Rubric id="d1e177512" kind="preferred">
+         <Label xml:lang="en-US">Otic Drops</Label>
+      </Rubric>
+   </Class>
+   <Class code="ERECTAB" kind="concept">
+      <Meta name="internalId" value="14525"/>
+      <SuperClass code="ECTAB"/>
+      <SuperClass code="ERTAB"/>
+      <Rubric id="d1e177531" kind="short">
+         <Label xml:lang="en-US">Extended Release Enteric Coated Tablet</Label>
+      </Rubric>
+      <Rubric id="d1e177531" kind="preferred">
+         <Label xml:lang="en-US">Extended Release Enteric Coated Tablet</Label>
+      </Rubric>
+   </Class>
+   <Class code="ERENTCAP" kind="concept">
+      <Meta name="internalId" value="14510"/>
+      <SuperClass code="ENTCAP"/>
+      <SuperClass code="ERCAP"/>
+      <Rubric id="d1e177550" kind="short">
+         <Label xml:lang="en-US">Extended Release Enteric Coated Capsule</Label>
+      </Rubric>
+      <Rubric id="d1e177550" kind="preferred">
+         <Label xml:lang="en-US">Extended Release Enteric Coated Capsule</Label>
+      </Rubric>
+   </Class>
+   <Class code="ERCAP12" kind="concept">
+      <Meta name="internalId" value="14513"/>
+      <SuperClass code="ERCAP"/>
+      <Rubric id="d1e177564" kind="short">
+         <Label xml:lang="en-US">12 Hour Extended Release Capsule</Label>
+      </Rubric>
+      <Rubric id="d1e177564" kind="preferred">
+         <Label xml:lang="en-US">12 Hour Extended Release Capsule</Label>
+      </Rubric>
+   </Class>
+   <Class code="ERCAP24" kind="concept">
+      <Meta name="internalId" value="14514"/>
+      <SuperClass code="ERCAP"/>
+      <Rubric id="d1e177579" kind="short">
+         <Label xml:lang="en-US">24 Hour Extended Release Capsule</Label>
+      </Rubric>
+      <Rubric id="d1e177579" kind="preferred">
+         <Label xml:lang="en-US">24 Hour Extended Release Capsule</Label>
+      </Rubric>
+   </Class>
+   <Class code="ERSUSP12" kind="concept">
+      <Meta name="internalId" value="14459"/>
+      <SuperClass code="ERSUSP"/>
+      <Rubric id="d1e177627" kind="short">
+         <Label xml:lang="en-US">12 Hour Extended-Release Suspension</Label>
+      </Rubric>
+      <Rubric id="d1e177627" kind="preferred">
+         <Label xml:lang="en-US">12 Hour Extended-Release Suspension</Label>
+      </Rubric>
+   </Class>
+   <Class code="ERSUSP24" kind="concept">
+      <Meta name="internalId" value="14460"/>
+      <SuperClass code="ERSUSP"/>
+      <Rubric id="d1e177641" kind="short">
+         <Label xml:lang="en-US">24 Hour Extended Release Suspension</Label>
+      </Rubric>
+      <Rubric id="d1e177641" kind="preferred">
+         <Label xml:lang="en-US">24 Hour Extended Release Suspension</Label>
+      </Rubric>
+   </Class>
+   <Class code="ERTAB12" kind="concept">
+      <Meta name="internalId" value="14528"/>
+      <SuperClass code="ERTAB"/>
+      <Rubric id="d1e177655" kind="short">
+         <Label xml:lang="en-US">12 Hour Extended Release Tablet</Label>
+      </Rubric>
+      <Rubric id="d1e177655" kind="preferred">
+         <Label xml:lang="en-US">12 Hour Extended Release Tablet</Label>
+      </Rubric>
+   </Class>
+   <Class code="ERTAB24" kind="concept">
+      <Meta name="internalId" value="14527"/>
+      <SuperClass code="ERTAB"/>
+      <Rubric id="d1e177669" kind="short">
+         <Label xml:lang="en-US">24 Hour Extended Release Tablet</Label>
+      </Rubric>
+      <Rubric id="d1e177669" kind="preferred">
+         <Label xml:lang="en-US">24 Hour Extended Release Tablet</Label>
+      </Rubric>
+   </Class>
+   <Class code="FOAMAPL" kind="concept">
+      <Meta name="internalId" value="14547"/>
+      <SuperClass code="FOAM"/>
+      <Rubric id="d1e177684" kind="short">
+         <Label xml:lang="en-US">Foam with Applicator</Label>
+      </Rubric>
+      <Rubric id="d1e177684" kind="preferred">
+         <Label xml:lang="en-US">Foam with Applicator</Label>
+      </Rubric>
+   </Class>
+   <Class code="RECFORM" kind="concept">
+      <Meta name="internalId" value="14548"/>
+      <SuperClass code="FOAM"/>
+      <Rubric id="d1e177698" kind="short">
+         <Label xml:lang="en-US">Rectal foam</Label>
+      </Rubric>
+      <Rubric id="d1e177698" kind="preferred">
+         <Label xml:lang="en-US">Rectal foam</Label>
+      </Rubric>
+   </Class>
+   <Class code="VAGFOAM" kind="concept">
+      <Meta name="internalId" value="14549"/>
+      <SuperClass code="FOAM"/>
+      <SubClass code="VAGFOAMAPL"/>
+      <Rubric id="d1e177712" kind="short">
+         <Label xml:lang="en-US">Vaginal foam</Label>
+      </Rubric>
+      <Rubric id="d1e177712" kind="preferred">
+         <Label xml:lang="en-US">Vaginal foam</Label>
+      </Rubric>
+   </Class>
+   <Class code="GELAPL" kind="concept">
+      <Meta name="internalId" value="14443"/>
+      <SuperClass code="GEL"/>
+      <Rubric id="d1e177726" kind="short">
+         <Label xml:lang="en-US">Gel with Applicator</Label>
+      </Rubric>
+      <Rubric id="d1e177726" kind="preferred">
+         <Label xml:lang="en-US">Gel with Applicator</Label>
+      </Rubric>
+   </Class>
+   <Class code="NASGEL" kind="concept">
+      <Meta name="internalId" value="14444"/>
+      <SuperClass code="GEL"/>
+      <Rubric id="d1e177740" kind="short">
+         <Label xml:lang="en-US">Nasal Gel</Label>
+      </Rubric>
+      <Rubric id="d1e177740" kind="preferred">
+         <Label xml:lang="en-US">Nasal Gel</Label>
+      </Rubric>
+   </Class>
+   <Class code="OPGEL" kind="concept">
+      <Meta name="internalId" value="14445"/>
+      <SuperClass code="GEL"/>
+      <Rubric id="d1e177754" kind="short">
+         <Label xml:lang="en-US">Ophthalmic Gel</Label>
+      </Rubric>
+      <Rubric id="d1e177754" kind="preferred">
+         <Label xml:lang="en-US">Ophthalmic Gel</Label>
+      </Rubric>
+   </Class>
+   <Class code="OTGEL" kind="concept">
+      <Meta name="internalId" value="14446"/>
+      <SuperClass code="GEL"/>
+      <Rubric id="d1e177769" kind="short">
+         <Label xml:lang="en-US">Otic Gel</Label>
+      </Rubric>
+      <Rubric id="d1e177769" kind="preferred">
+         <Label xml:lang="en-US">Otic Gel</Label>
+      </Rubric>
+   </Class>
+   <Class code="TOPGEL" kind="concept">
+      <Meta name="internalId" value="14447"/>
+      <SuperClass code="GEL"/>
+      <Rubric id="d1e177783" kind="short">
+         <Label xml:lang="en-US">Topical Gel</Label>
+      </Rubric>
+      <Rubric id="d1e177783" kind="preferred">
+         <Label xml:lang="en-US">Topical Gel</Label>
+      </Rubric>
+   </Class>
+   <Class code="URETHGEL" kind="concept">
+      <Meta name="internalId" value="14448"/>
+      <SuperClass code="GEL"/>
+      <Rubric id="d1e177797" kind="short">
+         <Label xml:lang="en-US">Urethral Gel</Label>
+      </Rubric>
+      <Rubric id="d1e177797" kind="preferred">
+         <Label xml:lang="en-US">Urethral Gel</Label>
+      </Rubric>
+   </Class>
+   <Class code="VAGGEL" kind="concept">
+      <Meta name="internalId" value="14449"/>
+      <SuperClass code="GEL"/>
+      <SubClass code="VGELAPL"/>
+      <Rubric id="d1e177811" kind="short">
+         <Label xml:lang="en-US">Vaginal Gel</Label>
+      </Rubric>
+      <Rubric id="d1e177811" kind="preferred">
+         <Label xml:lang="en-US">Vaginal Gel</Label>
+      </Rubric>
+   </Class>
+   <Class code="BAINHLPWD" kind="concept">
+      <Meta name="internalId" value="14562"/>
+      <SuperClass code="INHL"/>
+      <Rubric id="d1e177825" kind="short">
+         <Label xml:lang="en-US">Breath Activated Powder Inhaler</Label>
+      </Rubric>
+      <Rubric id="d1e177825" kind="preferred">
+         <Label xml:lang="en-US">Breath Activated Powder Inhaler</Label>
+      </Rubric>
+   </Class>
+   <Class code="INHLPWD" kind="concept">
+      <Meta name="internalId" value="14561"/>
+      <SuperClass code="INHL"/>
+      <Rubric id="d1e177839" kind="short">
+         <Label xml:lang="en-US">Inhalant Powder</Label>
+      </Rubric>
+      <Rubric id="d1e177839" kind="preferred">
+         <Label xml:lang="en-US">Inhalant Powder</Label>
+      </Rubric>
+   </Class>
+   <Class code="MDINHLPWD" kind="concept">
+      <Meta name="internalId" value="14563"/>
+      <SuperClass code="INHL"/>
+      <Rubric id="d1e177854" kind="short">
+         <Label xml:lang="en-US">Metered Dose Powder Inhaler</Label>
+      </Rubric>
+      <Rubric id="d1e177854" kind="preferred">
+         <Label xml:lang="en-US">Metered Dose Powder Inhaler</Label>
+      </Rubric>
+   </Class>
+   <Class code="NASINHL" kind="concept">
+      <Meta name="internalId" value="14564"/>
+      <SuperClass code="INHL"/>
+      <Rubric id="d1e177868" kind="short">
+         <Label xml:lang="en-US">Nasal Inhalant</Label>
+      </Rubric>
+      <Rubric id="d1e177868" kind="preferred">
+         <Label xml:lang="en-US">Nasal Inhalant</Label>
+      </Rubric>
+   </Class>
+   <Class code="ORINHL" kind="concept">
+      <Meta name="internalId" value="14565"/>
+      <SuperClass code="INHL"/>
+      <Rubric id="d1e177882" kind="short">
+         <Label xml:lang="en-US">Oral Inhalant</Label>
+      </Rubric>
+      <Rubric id="d1e177882" kind="preferred">
+         <Label xml:lang="en-US">Oral Inhalant</Label>
+      </Rubric>
+   </Class>
+   <Class code="DOUCHE" kind="concept">
+      <Meta name="internalId" value="14428"/>
+      <SuperClass code="IRSOL"/>
+      <Rubric id="d1e177893" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A liquid preparation, intended for the irrigative cleansing of the vagina, that is prepared from powders, liquid solutions, or liquid concentrates and contains one or more chemical substances dissolved in a suitable solvent or mutually miscible solvents.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e177911" kind="short">
+         <Label xml:lang="en-US">Douche</Label>
+      </Rubric>
+      <Rubric id="d1e177911" kind="preferred">
+         <Label xml:lang="en-US">Douche</Label>
+      </Rubric>
+   </Class>
+   <Class code="ENEMA" kind="concept">
+      <Meta name="internalId" value="14429"/>
+      <SuperClass code="IRSOL"/>
+      <Rubric id="d1e177922" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A rectal preparation for therapeutic, diagnostic, or nutritive purposes.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e177940" kind="short">
+         <Label xml:lang="en-US">Enema</Label>
+      </Rubric>
+      <Rubric id="d1e177940" kind="preferred">
+         <Label xml:lang="en-US">Enema</Label>
+      </Rubric>
+   </Class>
+   <Class code="OPIRSOL" kind="concept">
+      <Meta name="internalId" value="14430"/>
+      <SuperClass code="IRSOL"/>
+      <Rubric id="d1e177954" kind="short">
+         <Label xml:lang="en-US">Ophthalmic Irrigation Solution</Label>
+      </Rubric>
+      <Rubric id="d1e177954" kind="preferred">
+         <Label xml:lang="en-US">Ophthalmic Irrigation Solution</Label>
+      </Rubric>
+   </Class>
+   <Class code="LIQSOAP" kind="concept">
+      <Meta name="internalId" value="14415"/>
+      <SuperClass code="LIQCLN"/>
+      <Rubric id="d1e177969" kind="short">
+         <Label xml:lang="en-US">Medicated Liquid Soap</Label>
+      </Rubric>
+      <Rubric id="d1e177969" kind="preferred">
+         <Label xml:lang="en-US">Medicated Liquid Soap</Label>
+      </Rubric>
+   </Class>
+   <Class code="SHMP" kind="concept">
+      <Meta name="internalId" value="14416"/>
+      <SuperClass code="LIQCLN"/>
+      <Rubric id="d1e177980" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A liquid soap or detergent used to clean the hair and scalp and is often used as a vehicle for dermatologic agents.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e177998" kind="short">
+         <Label xml:lang="en-US">Shampoo</Label>
+      </Rubric>
+      <Rubric id="d1e177998" kind="preferred">
+         <Label xml:lang="en-US">Shampoo</Label>
+      </Rubric>
+   </Class>
+   <Class code="TOPLTN" kind="concept">
+      <Meta name="internalId" value="14465"/>
+      <SuperClass code="LTN"/>
+      <Rubric id="d1e178012" kind="short">
+         <Label xml:lang="en-US">Topical Lotion</Label>
+      </Rubric>
+      <Rubric id="d1e178012" kind="preferred">
+         <Label xml:lang="en-US">Topical Lotion</Label>
+      </Rubric>
+   </Class>
+   <Class code="TOPOIL" kind="concept">
+      <Meta name="internalId" value="14418"/>
+      <SuperClass code="OIL"/>
+      <Rubric id="d1e178026" kind="short">
+         <Label xml:lang="en-US">Topical Oil</Label>
+      </Rubric>
+      <Rubric id="d1e178026" kind="preferred">
+         <Label xml:lang="en-US">Topical Oil</Label>
+      </Rubric>
+   </Class>
+   <Class code="NASOINT" kind="concept">
+      <Meta name="internalId" value="14479"/>
+      <SuperClass code="OINT"/>
+      <Rubric id="d1e178040" kind="short">
+         <Label xml:lang="en-US">Nasal Ointment</Label>
+      </Rubric>
+      <Rubric id="d1e178040" kind="preferred">
+         <Label xml:lang="en-US">Nasal Ointment</Label>
+      </Rubric>
+   </Class>
+   <Class code="OINTAPL" kind="concept">
+      <Meta name="internalId" value="14476"/>
+      <SuperClass code="OINT"/>
+      <Rubric id="d1e178054" kind="short">
+         <Label xml:lang="en-US">Ointment with Applicator</Label>
+      </Rubric>
+      <Rubric id="d1e178054" kind="preferred">
+         <Label xml:lang="en-US">Ointment with Applicator</Label>
+      </Rubric>
+   </Class>
+   <Class code="OPOINT" kind="concept">
+      <Meta name="internalId" value="14477"/>
+      <SuperClass code="OINT"/>
+      <Rubric id="d1e178069" kind="short">
+         <Label xml:lang="en-US">Ophthalmic Ointment</Label>
+      </Rubric>
+      <Rubric id="d1e178069" kind="preferred">
+         <Label xml:lang="en-US">Ophthalmic Ointment</Label>
+      </Rubric>
+   </Class>
+   <Class code="OTOINT" kind="concept">
+      <Meta name="internalId" value="14478"/>
+      <SuperClass code="OINT"/>
+      <Rubric id="d1e178083" kind="short">
+         <Label xml:lang="en-US">Otic Ointment</Label>
+      </Rubric>
+      <Rubric id="d1e178083" kind="preferred">
+         <Label xml:lang="en-US">Otic Ointment</Label>
+      </Rubric>
+   </Class>
+   <Class code="RECOINT" kind="concept">
+      <Meta name="internalId" value="14480"/>
+      <SuperClass code="OINT"/>
+      <Rubric id="d1e178097" kind="short">
+         <Label xml:lang="en-US">Rectal Ointment</Label>
+      </Rubric>
+      <Rubric id="d1e178097" kind="preferred">
+         <Label xml:lang="en-US">Rectal Ointment</Label>
+      </Rubric>
+   </Class>
+   <Class code="TOPOINT" kind="concept">
+      <Meta name="internalId" value="14481"/>
+      <SuperClass code="OINT"/>
+      <Rubric id="d1e178111" kind="short">
+         <Label xml:lang="en-US">Topical Ointment</Label>
+      </Rubric>
+      <Rubric id="d1e178111" kind="preferred">
+         <Label xml:lang="en-US">Topical Ointment</Label>
+      </Rubric>
+   </Class>
+   <Class code="VAGOINT" kind="concept">
+      <Meta name="internalId" value="14482"/>
+      <SuperClass code="OINT"/>
+      <SubClass code="VAGOINTAPL"/>
+      <Rubric id="d1e178125" kind="short">
+         <Label xml:lang="en-US">Vaginal Ointment</Label>
+      </Rubric>
+      <Rubric id="d1e178125" kind="preferred">
+         <Label xml:lang="en-US">Vaginal Ointment</Label>
+      </Rubric>
+   </Class>
+   <Class code="ELIXIR" kind="concept">
+      <Meta name="internalId" value="14432"/>
+      <SuperClass code="ORALSOL"/>
+      <Rubric id="d1e178136" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A clear, pleasantly flavored, sweetened hydroalcoholic liquid containing dissolved medicinal agents; it is intended for oral use.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e178154" kind="short">
+         <Label xml:lang="en-US">Elixir</Label>
+      </Rubric>
+      <Rubric id="d1e178154" kind="preferred">
+         <Label xml:lang="en-US">Elixir</Label>
+      </Rubric>
+   </Class>
+   <Class code="RINSE" kind="concept">
+      <Meta name="internalId" value="14434"/>
+      <SuperClass code="ORALSOL"/>
+      <Rubric id="d1e178166" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An aqueous solution which is most often used for its deodorant, refreshing, or antiseptic effect.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e178184" kind="short">
+         <Label xml:lang="en-US">Mouthwash/Rinse</Label>
+      </Rubric>
+      <Rubric id="d1e178184" kind="preferred">
+         <Label xml:lang="en-US">Mouthwash/Rinse</Label>
+      </Rubric>
+   </Class>
+   <Class code="SYRUP" kind="concept">
+      <Meta name="internalId" value="14433"/>
+      <SuperClass code="ORALSOL"/>
+      <Rubric id="d1e178195" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An oral solution containing high concentrations of sucrose or other sugars; the term has also been used to include any other liquid dosage form prepared in a sweet and viscid vehicle, including oral suspensions.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e178213" kind="short">
+         <Label xml:lang="en-US">Syrup</Label>
+      </Rubric>
+      <Rubric id="d1e178213" kind="preferred">
+         <Label xml:lang="en-US">Syrup</Label>
+      </Rubric>
+   </Class>
+   <Class code="ENTCAP" kind="concept">
+      <Meta name="internalId" value="14509"/>
+      <SuperClass code="ORCAP"/>
+      <SubClass code="ERENTCAP"/>
+      <Rubric id="d1e178227" kind="short">
+         <Label xml:lang="en-US">Enteric Coated Capsule</Label>
+      </Rubric>
+      <Rubric id="d1e178227" kind="preferred">
+         <Label xml:lang="en-US">Enteric Coated Capsule</Label>
+      </Rubric>
+   </Class>
+   <Class code="ERCAP" kind="concept">
+      <Meta name="internalId" value="14511"/>
+      <SuperClass code="ORCAP"/>
+      <SubClass code="ERENTCAP"/>
+      <SubClass code="ERCAP12"/>
+      <SubClass code="ERCAP24"/>
+      <Rubric id="d1e178238" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A solid dosage form in which the drug is enclosed within either a hard or soft soluble container made from a suitable form of gelatin, and which releases a drug (or drugs) in such a manner to allow a reduction in dosing frequency as compared to that drug (or drugs) presented as a conventional dosage form.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e178256" kind="short">
+         <Label xml:lang="en-US">Extended Release Capsule</Label>
+      </Rubric>
+      <Rubric id="d1e178256" kind="preferred">
+         <Label xml:lang="en-US">Extended Release Capsule</Label>
+      </Rubric>
+   </Class>
+   <Class code="ERSUSP" kind="concept">
+      <Meta name="internalId" value="14458"/>
+      <SuperClass code="ORSUSP"/>
+      <SubClass code="ERSUSP12"/>
+      <SubClass code="ERSUSP24"/>
+      <Rubric id="d1e178270" kind="short">
+         <Label xml:lang="en-US">Extended-Release Suspension</Label>
+      </Rubric>
+      <Rubric id="d1e178270" kind="preferred">
+         <Label xml:lang="en-US">Extended-Release Suspension</Label>
+      </Rubric>
+   </Class>
+   <Class code="BUCTAB" kind="concept">
+      <Meta name="internalId" value="14518"/>
+      <SuperClass code="ORTAB"/>
+      <SubClass code="SRBUCTAB"/>
+      <Rubric id="d1e178284" kind="short">
+         <Label xml:lang="en-US">Buccal Tablet</Label>
+      </Rubric>
+      <Rubric id="d1e178284" kind="preferred">
+         <Label xml:lang="en-US">Buccal Tablet</Label>
+      </Rubric>
+   </Class>
+   <Class code="CAPLET" kind="concept">
+      <Meta name="internalId" value="14517"/>
+      <SuperClass code="ORTAB"/>
+      <Rubric id="d1e178299" kind="short">
+         <Label xml:lang="en-US">Caplet</Label>
+      </Rubric>
+      <Rubric id="d1e178299" kind="preferred">
+         <Label xml:lang="en-US">Caplet</Label>
+      </Rubric>
+   </Class>
+   <Class code="CHEWTAB" kind="concept">
+      <Meta name="internalId" value="14520"/>
+      <SuperClass code="ORTAB"/>
+      <Rubric id="d1e178310" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A solid dosage form containing medicinal substances with or without suitable diluents that is intended to be chewed, producing a pleasant tasting residue in the oral cavity that is easily swallowed and does not leave a bitter or unpleasant after-taste.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e178328" kind="short">
+         <Label xml:lang="en-US">Chewable Tablet</Label>
+      </Rubric>
+      <Rubric id="d1e178328" kind="preferred">
+         <Label xml:lang="en-US">Chewable Tablet</Label>
+      </Rubric>
+   </Class>
+   <Class code="CPTAB" kind="concept">
+      <Meta name="internalId" value="14521"/>
+      <SuperClass code="ORTAB"/>
+      <Rubric id="d1e178342" kind="short">
+         <Label xml:lang="en-US">Coated Particles Tablet</Label>
+      </Rubric>
+      <Rubric id="d1e178342" kind="preferred">
+         <Label xml:lang="en-US">Coated Particles Tablet</Label>
+      </Rubric>
+   </Class>
+   <Class code="DISINTAB" kind="concept">
+      <Meta name="internalId" value="14523"/>
+      <SuperClass code="ORTAB"/>
+      <Rubric id="d1e178353" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A solid dosage form containing medicinal substances which disintegrates rapidly, usually within a matter of seconds, when placed upon the tongue.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e178371" kind="short">
+         <Label xml:lang="en-US">Disintegrating Tablet</Label>
+      </Rubric>
+      <Rubric id="d1e178371" kind="preferred">
+         <Label xml:lang="en-US">Disintegrating Tablet</Label>
+      </Rubric>
+   </Class>
+   <Class code="DRTAB" kind="concept">
+      <Meta name="internalId" value="14522"/>
+      <SuperClass code="ORTAB"/>
+      <Rubric id="d1e178385" kind="short">
+         <Label xml:lang="en-US">Delayed Release Tablet</Label>
+      </Rubric>
+      <Rubric id="d1e178385" kind="preferred">
+         <Label xml:lang="en-US">Delayed Release Tablet</Label>
+      </Rubric>
+   </Class>
+   <Class code="ECTAB" kind="concept">
+      <Meta name="internalId" value="14524"/>
+      <SuperClass code="ORTAB"/>
+      <SubClass code="ERECTAB"/>
+      <Rubric id="d1e178399" kind="short">
+         <Label xml:lang="en-US">Enteric Coated Tablet</Label>
+      </Rubric>
+      <Rubric id="d1e178399" kind="preferred">
+         <Label xml:lang="en-US">Enteric Coated Tablet</Label>
+      </Rubric>
+   </Class>
+   <Class code="ERTAB" kind="concept">
+      <Meta name="internalId" value="14526"/>
+      <SuperClass code="ORTAB"/>
+      <SubClass code="ERECTAB"/>
+      <SubClass code="ERTAB12"/>
+      <SubClass code="ERTAB24"/>
+      <Rubric id="d1e178411" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A solid dosage form containing a drug which allows at least a reduction in dosing frequency as compared to that drug presented in conventional dosage form.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e178429" kind="short">
+         <Label xml:lang="en-US">Extended Release Tablet</Label>
+      </Rubric>
+      <Rubric id="d1e178429" kind="preferred">
+         <Label xml:lang="en-US">Extended Release Tablet</Label>
+      </Rubric>
+   </Class>
+   <Class code="ORTROCHE" kind="concept">
+      <Meta name="internalId" value="14530"/>
+      <SuperClass code="ORTAB"/>
+      <Rubric id="d1e178440" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A solid preparation containing one or more medicaments, usually in a flavored, sweetened base which is intended to dissolve or disintegrate slowly in the mouth.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e178458" kind="short">
+         <Label xml:lang="en-US">Lozenge/Oral Troche</Label>
+      </Rubric>
+      <Rubric id="d1e178458" kind="preferred">
+         <Label xml:lang="en-US">Lozenge/Oral Troche</Label>
+      </Rubric>
+   </Class>
+   <Class code="SLTAB" kind="concept">
+      <Meta name="internalId" value="14531"/>
+      <SuperClass code="ORTAB"/>
+      <Rubric id="d1e178472" kind="short">
+         <Label xml:lang="en-US">Sublingual Tablet</Label>
+      </Rubric>
+      <Rubric id="d1e178472" kind="preferred">
+         <Label xml:lang="en-US">Sublingual Tablet</Label>
+      </Rubric>
+   </Class>
+   <Class code="MEDPAD" kind="concept">
+      <Meta name="internalId" value="14498"/>
+      <SuperClass code="PAD"/>
+      <Rubric id="d1e178486" kind="short">
+         <Label xml:lang="en-US">Medicated Pad</Label>
+      </Rubric>
+      <Rubric id="d1e178486" kind="preferred">
+         <Label xml:lang="en-US">Medicated Pad</Label>
+      </Rubric>
+   </Class>
+   <Class code="PUD" kind="concept">
+      <Meta name="internalId" value="14453"/>
+      <SuperClass code="PASTE"/>
+      <Rubric id="d1e178500" kind="short">
+         <Label xml:lang="en-US">Pudding</Label>
+      </Rubric>
+      <Rubric id="d1e178500" kind="preferred">
+         <Label xml:lang="en-US">Pudding</Label>
+      </Rubric>
+   </Class>
+   <Class code="TPASTE" kind="concept">
+      <Meta name="internalId" value="14452"/>
+      <SuperClass code="PASTE"/>
+      <Rubric id="d1e178511" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A paste formulation intended to clean and/or polish the teeth, and which may contain certain additional agents.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e178529" kind="short">
+         <Label xml:lang="en-US">Toothpaste</Label>
+      </Rubric>
+      <Rubric id="d1e178529" kind="preferred">
+         <Label xml:lang="en-US">Toothpaste</Label>
+      </Rubric>
+   </Class>
+   <Class code="TPATCH" kind="concept">
+      <Meta name="internalId" value="14500"/>
+      <SuperClass code="PATCH"/>
+      <SubClass code="TPATH16"/>
+      <SubClass code="TPATH24"/>
+      <SubClass code="TPATH2WK"/>
+      <SubClass code="TPATH72"/>
+      <SubClass code="TPATHWK"/>
+      <Rubric id="d1e178544" kind="short">
+         <Label xml:lang="en-US">Transdermal Patch</Label>
+      </Rubric>
+      <Rubric id="d1e178544" kind="preferred">
+         <Label xml:lang="en-US">Transdermal Patch</Label>
+      </Rubric>
+   </Class>
+   <Class code="CAP" kind="concept">
+      <Meta name="internalId" value="14507"/>
+      <SuperClass code="PILL"/>
+      <SubClass code="ORCAP"/>
+      <Rubric id="d1e178555" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A solid dosage form in which the drug is enclosed within either a hard or soft soluble container or "shell" made from a suitable form of gelatin.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e178573" kind="short">
+         <Label xml:lang="en-US">Capsule</Label>
+      </Rubric>
+      <Rubric id="d1e178573" kind="preferred">
+         <Label xml:lang="en-US">Capsule</Label>
+      </Rubric>
+   </Class>
+   <Class code="TAB" kind="concept">
+      <Meta name="internalId" value="14515"/>
+      <SuperClass code="PILL"/>
+      <SubClass code="ORTAB"/>
+      <SubClass code="VAGTAB"/>
+      <Rubric id="d1e178584" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A solid dosage form containing medicinal substances with or without suitable diluents.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e178602" kind="short">
+         <Label xml:lang="en-US">Tablet</Label>
+      </Rubric>
+      <Rubric id="d1e178602" kind="preferred">
+         <Label xml:lang="en-US">Tablet</Label>
+      </Rubric>
+   </Class>
+   <Class code="TOPPWD" kind="concept">
+      <Meta name="internalId" value="14535"/>
+      <SuperClass code="POWD"/>
+      <SubClass code="RECPWD"/>
+      <SubClass code="VAGPWD"/>
+      <Rubric id="d1e178616" kind="short">
+         <Label xml:lang="en-US">Topical Powder</Label>
+      </Rubric>
+      <Rubric id="d1e178616" kind="preferred">
+         <Label xml:lang="en-US">Topical Powder</Label>
+      </Rubric>
+   </Class>
+   <Class code="IPSOL" kind="concept">
+      <Meta name="internalId" value="14425"/>
+      <SuperClass code="SOL"/>
+      <Rubric id="d1e178630" kind="short">
+         <Label xml:lang="en-US">Intraperitoneal Solution</Label>
+      </Rubric>
+      <Rubric id="d1e178630" kind="preferred">
+         <Label xml:lang="en-US">Intraperitoneal Solution</Label>
+      </Rubric>
+   </Class>
+   <Class code="IRSOL" kind="concept">
+      <Meta name="internalId" value="14427"/>
+      <SuperClass code="SOL"/>
+      <SubClass code="DOUCHE"/>
+      <SubClass code="ENEMA"/>
+      <SubClass code="OPIRSOL"/>
+      <Rubric id="d1e178641" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A sterile solution intended to bathe or flush open wounds or body cavities; they're used topically, never parenterally.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e178659" kind="short">
+         <Label xml:lang="en-US">Irrigation Solution</Label>
+      </Rubric>
+      <Rubric id="d1e178659" kind="preferred">
+         <Label xml:lang="en-US">Irrigation Solution</Label>
+      </Rubric>
+   </Class>
+   <Class code="IVSOL" kind="concept">
+      <Meta name="internalId" value="14426"/>
+      <SuperClass code="SOL"/>
+      <Rubric id="d1e178674" kind="short">
+         <Label xml:lang="en-US">Intravenous Solution</Label>
+      </Rubric>
+      <Rubric id="d1e178674" kind="preferred">
+         <Label xml:lang="en-US">Intravenous Solution</Label>
+      </Rubric>
+   </Class>
+   <Class code="ORALSOL" kind="concept">
+      <Meta name="internalId" value="14431"/>
+      <SuperClass code="SOL"/>
+      <SubClass code="ORDROP"/>
+      <SubClass code="ELIXIR"/>
+      <SubClass code="RINSE"/>
+      <SubClass code="SYRUP"/>
+      <Rubric id="d1e178688" kind="short">
+         <Label xml:lang="en-US">Oral Solution</Label>
+      </Rubric>
+      <Rubric id="d1e178688" kind="preferred">
+         <Label xml:lang="en-US">Oral Solution</Label>
+      </Rubric>
+   </Class>
+   <Class code="RECSOL" kind="concept">
+      <Meta name="internalId" value="14436"/>
+      <SuperClass code="SOL"/>
+      <Rubric id="d1e178702" kind="short">
+         <Label xml:lang="en-US">Rectal Solution</Label>
+      </Rubric>
+      <Rubric id="d1e178702" kind="preferred">
+         <Label xml:lang="en-US">Rectal Solution</Label>
+      </Rubric>
+   </Class>
+   <Class code="TOPSOL" kind="concept">
+      <Meta name="internalId" value="14437"/>
+      <SuperClass code="SOL"/>
+      <SubClass code="LIN"/>
+      <SubClass code="MUCTOPSOL"/>
+      <SubClass code="TINC"/>
+      <Rubric id="d1e178716" kind="short">
+         <Label xml:lang="en-US">Topical Solution</Label>
+      </Rubric>
+      <Rubric id="d1e178716" kind="preferred">
+         <Label xml:lang="en-US">Topical Solution</Label>
+      </Rubric>
+   </Class>
+   <Class code="RECSUPP" kind="concept">
+      <Meta name="internalId" value="14539"/>
+      <SuperClass code="SUPP"/>
+      <Rubric id="d1e178730" kind="short">
+         <Label xml:lang="en-US">Rectal Suppository</Label>
+      </Rubric>
+      <Rubric id="d1e178730" kind="preferred">
+         <Label xml:lang="en-US">Rectal Suppository</Label>
+      </Rubric>
+   </Class>
+   <Class code="URETHSUPP" kind="concept">
+      <Meta name="internalId" value="14541"/>
+      <SuperClass code="SUPP"/>
+      <Rubric id="d1e178744" kind="short">
+         <Label xml:lang="en-US">Urethral suppository</Label>
+      </Rubric>
+      <Rubric id="d1e178744" kind="preferred">
+         <Label xml:lang="en-US">Urethral suppository</Label>
+      </Rubric>
+   </Class>
+   <Class code="VAGSUPP" kind="concept">
+      <Meta name="internalId" value="14540"/>
+      <SuperClass code="SUPP"/>
+      <Rubric id="d1e178759" kind="short">
+         <Label xml:lang="en-US">Vaginal Suppository</Label>
+      </Rubric>
+      <Rubric id="d1e178759" kind="preferred">
+         <Label xml:lang="en-US">Vaginal Suppository</Label>
+      </Rubric>
+   </Class>
+   <Class code="ITSUSP" kind="concept">
+      <Meta name="internalId" value="14455"/>
+      <SuperClass code="SUSP"/>
+      <Rubric id="d1e178773" kind="short">
+         <Label xml:lang="en-US">Intrathecal Suspension</Label>
+      </Rubric>
+      <Rubric id="d1e178773" kind="preferred">
+         <Label xml:lang="en-US">Intrathecal Suspension</Label>
+      </Rubric>
+   </Class>
+   <Class code="OPSUSP" kind="concept">
+      <Meta name="internalId" value="14456"/>
+      <SuperClass code="SUSP"/>
+      <Rubric id="d1e178787" kind="short">
+         <Label xml:lang="en-US">Ophthalmic Suspension</Label>
+      </Rubric>
+      <Rubric id="d1e178787" kind="preferred">
+         <Label xml:lang="en-US">Ophthalmic Suspension</Label>
+      </Rubric>
+   </Class>
+   <Class code="ORSUSP" kind="concept">
+      <Meta name="internalId" value="14457"/>
+      <SuperClass code="SUSP"/>
+      <SubClass code="ERSUSP"/>
+      <Rubric id="d1e178801" kind="short">
+         <Label xml:lang="en-US">Oral Suspension</Label>
+      </Rubric>
+      <Rubric id="d1e178801" kind="preferred">
+         <Label xml:lang="en-US">Oral Suspension</Label>
+      </Rubric>
+   </Class>
+   <Class code="OTSUSP" kind="concept">
+      <Meta name="internalId" value="14461"/>
+      <SuperClass code="SUSP"/>
+      <Rubric id="d1e178815" kind="short">
+         <Label xml:lang="en-US">Otic Suspension</Label>
+      </Rubric>
+      <Rubric id="d1e178815" kind="preferred">
+         <Label xml:lang="en-US">Otic Suspension</Label>
+      </Rubric>
+   </Class>
+   <Class code="RECSUSP" kind="concept">
+      <Meta name="internalId" value="14462"/>
+      <SuperClass code="SUSP"/>
+      <Rubric id="d1e178829" kind="short">
+         <Label xml:lang="en-US">Rectal Suspension</Label>
+      </Rubric>
+      <Rubric id="d1e178829" kind="preferred">
+         <Label xml:lang="en-US">Rectal Suspension</Label>
+      </Rubric>
+   </Class>
+   <Class code="MEDSWAB" kind="concept">
+      <Meta name="internalId" value="14543"/>
+      <SuperClass code="SWAB"/>
+      <Rubric id="d1e178844" kind="short">
+         <Label xml:lang="en-US">Medicated swab</Label>
+      </Rubric>
+      <Rubric id="d1e178844" kind="preferred">
+         <Label xml:lang="en-US">Medicated swab</Label>
+      </Rubric>
+   </Class>
+   <Class code="ORTAB" kind="concept">
+      <Meta name="internalId" value="14516"/>
+      <SuperClass code="TAB"/>
+      <SubClass code="BUCTAB"/>
+      <SubClass code="CAPLET"/>
+      <SubClass code="CHEWTAB"/>
+      <SubClass code="CPTAB"/>
+      <SubClass code="DISINTAB"/>
+      <SubClass code="DRTAB"/>
+      <SubClass code="ECTAB"/>
+      <SubClass code="ERTAB"/>
+      <SubClass code="ORTROCHE"/>
+      <SubClass code="SLTAB"/>
+      <Rubric id="d1e178858" kind="short">
+         <Label xml:lang="en-US">Oral Tablet</Label>
+      </Rubric>
+      <Rubric id="d1e178858" kind="preferred">
+         <Label xml:lang="en-US">Oral Tablet</Label>
+      </Rubric>
+   </Class>
+   <Class code="VAGTAB" kind="concept">
+      <Meta name="internalId" value="14532"/>
+      <SuperClass code="TAB"/>
+      <Rubric id="d1e178872" kind="short">
+         <Label xml:lang="en-US">Vaginal Tablet</Label>
+      </Rubric>
+      <Rubric id="d1e178872" kind="preferred">
+         <Label xml:lang="en-US">Vaginal Tablet</Label>
+      </Rubric>
+   </Class>
+   <Class code="RECPWD" kind="concept">
+      <Meta name="internalId" value="14536"/>
+      <SuperClass code="TOPPWD"/>
+      <Rubric id="d1e178886" kind="short">
+         <Label xml:lang="en-US">Rectal Powder</Label>
+      </Rubric>
+      <Rubric id="d1e178886" kind="preferred">
+         <Label xml:lang="en-US">Rectal Powder</Label>
+      </Rubric>
+   </Class>
+   <Class code="VAGPWD" kind="concept">
+      <Meta name="internalId" value="14537"/>
+      <SuperClass code="TOPPWD"/>
+      <Rubric id="d1e178900" kind="short">
+         <Label xml:lang="en-US">Vaginal Powder</Label>
+      </Rubric>
+      <Rubric id="d1e178900" kind="preferred">
+         <Label xml:lang="en-US">Vaginal Powder</Label>
+      </Rubric>
+   </Class>
+   <Class code="LIN" kind="concept">
+      <Meta name="internalId" value="14438"/>
+      <SuperClass code="TOPSOL"/>
+      <Rubric id="d1e178911" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A solution or mixture of various substances in oil, alcoholic solutions of soap, or emulsions intended for external application.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e178929" kind="short">
+         <Label xml:lang="en-US">Liniment</Label>
+      </Rubric>
+      <Rubric id="d1e178929" kind="preferred">
+         <Label xml:lang="en-US">Liniment</Label>
+      </Rubric>
+   </Class>
+   <Class code="MUCTOPSOL" kind="concept">
+      <Meta name="internalId" value="14440"/>
+      <SuperClass code="TOPSOL"/>
+      <Rubric id="d1e178944" kind="short">
+         <Label xml:lang="en-US">Mucous Membrane Topical Solution</Label>
+      </Rubric>
+      <Rubric id="d1e178944" kind="preferred">
+         <Label xml:lang="en-US">Mucous Membrane Topical Solution</Label>
+      </Rubric>
+   </Class>
+   <Class code="TINC" kind="concept">
+      <Meta name="internalId" value="14439"/>
+      <SuperClass code="TOPSOL"/>
+      <Rubric id="d1e178958" kind="short">
+         <Label xml:lang="en-US">Tincture</Label>
+      </Rubric>
+      <Rubric id="d1e178958" kind="preferred">
+         <Label xml:lang="en-US">Tincture</Label>
+      </Rubric>
+   </Class>
+   <Class code="TPATH16" kind="concept">
+      <Meta name="internalId" value="14501"/>
+      <SuperClass code="TPATCH"/>
+      <Rubric id="d1e178972" kind="short">
+         <Label xml:lang="en-US">16 Hour Transdermal Patch</Label>
+      </Rubric>
+      <Rubric id="d1e178972" kind="preferred">
+         <Label xml:lang="en-US">16 Hour Transdermal Patch</Label>
+      </Rubric>
+   </Class>
+   <Class code="TPATH24" kind="concept">
+      <Meta name="internalId" value="14502"/>
+      <SuperClass code="TPATCH"/>
+      <Rubric id="d1e178986" kind="short">
+         <Label xml:lang="en-US">24 Hour Transdermal Patch</Label>
+      </Rubric>
+      <Rubric id="d1e178986" kind="preferred">
+         <Label xml:lang="en-US">24 Hour Transdermal Patch</Label>
+      </Rubric>
+   </Class>
+   <Class code="TPATH2WK" kind="concept">
+      <Meta name="internalId" value="14505"/>
+      <SuperClass code="TPATCH"/>
+      <Rubric id="d1e179000" kind="short">
+         <Label xml:lang="en-US">Biweekly Transdermal Patch</Label>
+      </Rubric>
+      <Rubric id="d1e179000" kind="preferred">
+         <Label xml:lang="en-US">Biweekly Transdermal Patch</Label>
+      </Rubric>
+   </Class>
+   <Class code="TPATH72" kind="concept">
+      <Meta name="internalId" value="14503"/>
+      <SuperClass code="TPATCH"/>
+      <Rubric id="d1e179014" kind="short">
+         <Label xml:lang="en-US">72 Hour Transdermal Patch</Label>
+      </Rubric>
+      <Rubric id="d1e179014" kind="preferred">
+         <Label xml:lang="en-US">72 Hour Transdermal Patch</Label>
+      </Rubric>
+   </Class>
+   <Class code="TPATHWK" kind="concept">
+      <Meta name="internalId" value="14504"/>
+      <SuperClass code="TPATCH"/>
+      <Rubric id="d1e179029" kind="short">
+         <Label xml:lang="en-US">Weekly Transdermal Patch</Label>
+      </Rubric>
+      <Rubric id="d1e179029" kind="preferred">
+         <Label xml:lang="en-US">Weekly Transdermal Patch</Label>
+      </Rubric>
+   </Class>
+   <Class code="VAGCRMAPL" kind="concept">
+      <Meta name="internalId" value="14474"/>
+      <SuperClass code="VAGCRM"/>
+      <Rubric id="d1e179043" kind="short">
+         <Label xml:lang="en-US">Vaginal Cream with Applicator</Label>
+      </Rubric>
+      <Rubric id="d1e179043" kind="preferred">
+         <Label xml:lang="en-US">Vaginal Cream with Applicator</Label>
+      </Rubric>
+   </Class>
+   <Class code="VAGFOAMAPL" kind="concept">
+      <Meta name="internalId" value="14550"/>
+      <SuperClass code="VAGFOAM"/>
+      <Rubric id="d1e179057" kind="short">
+         <Label xml:lang="en-US">Vaginal foam with applicator</Label>
+      </Rubric>
+      <Rubric id="d1e179057" kind="preferred">
+         <Label xml:lang="en-US">Vaginal foam with applicator</Label>
+      </Rubric>
+   </Class>
+   <Class code="VGELAPL" kind="concept">
+      <Meta name="internalId" value="14450"/>
+      <SuperClass code="VAGGEL"/>
+      <Rubric id="d1e179071" kind="short">
+         <Label xml:lang="en-US">Vaginal Gel with Applicator</Label>
+      </Rubric>
+      <Rubric id="d1e179071" kind="preferred">
+         <Label xml:lang="en-US">Vaginal Gel with Applicator</Label>
+      </Rubric>
+   </Class>
+   <Class code="VAGOINTAPL" kind="concept">
+      <Meta name="internalId" value="14483"/>
+      <SuperClass code="VAGOINT"/>
+      <Rubric id="d1e179085" kind="short">
+         <Label xml:lang="en-US">Vaginal Ointment with Applicator</Label>
+      </Rubric>
+      <Rubric id="d1e179085" kind="preferred">
+         <Label xml:lang="en-US">Vaginal Ointment with Applicator</Label>
+      </Rubric>
+   </Class>
+</ClaML>

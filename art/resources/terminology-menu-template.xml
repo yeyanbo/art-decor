@@ -1,0 +1,154 @@
+<menu>
+    <!-- menu sections visible if not decor project -->
+    <!-- Terminology section -->
+    <section id="home" link="home">
+        <name language="nl-NL">Home</name>
+        <name language="en-US">Home</name>
+        <name language="de-DE">Home</name>
+        <name language="pl-PL">Home</name>
+    </section>
+    <!-- Terminology section -->
+    <section id="terminology" link="terminology-home">
+        <name language="nl-NL">Explorers</name>
+        <name language="en-US">Explorers</name>
+        <name language="de-DE">Explorers</name>
+        <name language="pl-PL">Explorers</name>
+        <!-- @data contains the terminology-data package name -->
+        <application id="snomed-ct" link="snomed-ct" data="snomed-data">
+            <name language="nl-NL">Snomed CT</name>
+            <name language="en-US">Snomed CT</name>
+            <name language="de-DE">Snomed CT</name>
+            <name language="pl-PL">Snomed CT</name>
+        </application>
+        <application id="dhd-thesaurus" link="dhd-thesaurus" data="dhd-data">
+            <name language="nl-NL">DHD Diagnose Thesaurus</name>
+            <name language="en-US">DHD Diagnosis Thesaurus</name>
+            <name language="de-DE">DHD Diagnose Thesaurus</name>
+            <name language="pl-PL">DHD Diagnosis Thesaurus</name>
+        </application>
+        <application id="ica-explorer" link="ica-explorer" data="ica-data">
+            <name language="nl-NL">Nationale Contra-indicatielijst</name>
+            <name language="en-US">National Contra-indication list (NL)</name>
+            <name language="de-DE">Nationale Kontraindikationenliste (NL)</name>
+            <name language="pl-PL">National Contra-indication list (NL)</name>
+        </application>
+        <application id="iso-9999" link="iso-9999" data="iso9999-data">
+            <name language="nl-NL">ISO 9999 Medische Hulpmiddelen</name>
+            <name language="en-US">ISO 9999</name>
+            <name language="de-DE">ISO 9999</name>
+            <name language="pl-PL">ISO 9999</name>
+        </application>
+        <application id="loinc" link="loinc" data="loinc-data">
+            <name language="nl-NL">LOINC</name>
+            <name language="en-US">LOINC</name>
+            <name language="de-DE">LOINC</name>
+            <name language="pl-PL">LOINC</name>
+        </application>
+    </section>
+    <section id="refsets">
+        <name language="nl-NL">Referentiesets</name>
+        <name language="en-US">Reference sets</name>
+        <name language="de-DE">Reference sets</name>
+        <name language="pl-PL">Reference sets</name>
+        <application id="dhd-thesaurus-editor" link="dhd-thesaurus-editor" data="dhd-data">
+            <name language="nl-NL">DHD-diagnosethesauruseditor</name>
+            <name language="en-US">DHD Diagnosis Thesaurus Editor</name>
+            <name language="de-DE">DHD Diagnose Thesaurus Editor</name>
+            <name language="pl-PL">DHD Diagnosis Thesaurus Editor</name>
+        </application>
+        <application id="ica-mapping" link="ica-mapping" data="ica-data">
+            <name language="nl-NL">Nationale Contra-indicatielijst</name>
+            <name language="en-US">National Contra-indication list (NL)</name>
+            <name language="de-DE">Nationale Kontraindikationenliste (NL)</name>
+            <name language="pl-PL">National Contra-indication list (NL)</name>
+        </application>
+        <application id="snomed-extension" link="snomed-extension" data="extension-data">
+            <name language="nl-NL">Snomed Extensie</name>
+            <name language="en-US">Snomed Extension</name>
+            <name language="de-DE">Snomed Extension</name>
+            <name language="pl-PL">Snomed Extension</name>
+        </application>
+    </section>
+    <!-- Demo section -->
+    <section id="demo">
+        <name language="nl-NL">Demo</name>
+        <name language="en-US">Demo</name>
+        <name language="de-DE">Demo</name>
+        <name language="pl-PL">Demo</name>
+        <application id="diagnosis-registration-demo" link="diagnosis-registration-demo">
+            <name language="nl-NL">Diagnoseregistratie</name>
+            <name language="en-US">Diagnosis registration</name>
+            <name language="de-DE">Diagnosis registration</name>
+            <name language="pl-PL">Diagnosis registration</name>
+        </application>
+    </section>
+    <!-- Tools section -->
+    <section id="tools" groups="dba">
+        <name language="nl-NL">Tools</name>
+        <name language="en-US">Tools</name>
+        <name language="de-DE">Tools</name>
+        <name language="pl-PL">Tools</name>
+        <application id="oid-registry" link="/oid-registry">
+            <name language="nl-NL">OID-register</name>
+            <name language="en-US">OID Registry</name>
+            <name language="de-DE">OID-Register</name>
+            <name language="pl-PL">OID Registry</name>
+        </application>
+    </section>
+    <!-- Application section -->
+    <section id="application" link="application">
+        <name language="nl-NL">Applicatie</name>
+        <name language="en-US">Application</name>
+        <name language="de-DE">Applikation</name>
+        <name language="pl-PL">Application</name>
+        <application id="configuration" link="configuration">
+            <name language="nl-NL">Configuratie</name>
+            <name language="en-US">Configuration</name>
+            <name language="de-DE">Konfiguration</name>
+            <name language="pl-PL">Configuration</name>
+        </application>
+        <application id="art-settings" link="art-settings" groups="dba">
+            <name language="nl-NL">Serverinstellingen</name>
+            <name language="en-US">Server settings</name>
+            <name language="de-DE">Server-Einstellungen</name>
+            <name language="pl-PL">Server settings</name>
+        </application>
+        <application id="art-users" link="art-users" groups="dba">
+            <name language="nl-NL">Gebruikers</name>
+            <name language="en-US">Users</name>
+            <name language="de-DE">Benutzer</name>
+            <name language="pl-PL">Users</name>
+        </application>
+        <application id="language-support" link="language-support" groups="dba">
+            <name language="nl-NL">Talen</name>
+            <name language="en-US">Languages</name>
+            <name language="de-DE">Sprachen</name>
+            <name language="pl-PL">Languages</name>
+        </application>
+        <application id="decor-admin" link="decor-admin" groups="dba">
+            <name language="nl-NL">DECOR-beheer</name>
+            <name language="en-US">DECOR Administration</name>
+            <name language="de-DE">DECOR Administration</name>
+            <name language="pl-PL">DECOR Administration</name>
+        </application>
+    </section>
+    <!-- About section -->
+    <section id="about">
+        <name language="nl-NL">Over</name>
+        <name language="en-US">About</name>
+        <name language="de-DE">Über</name>
+        <name language="pl-PL">About</name>
+        <application id="about-nictiz" link="about-nictiz">
+            <name language="nl-NL">Nictiz</name>
+            <name language="en-US">Nictiz</name>
+            <name language="de-DE">Nictiz</name>
+            <name language="pl-PL">Nictiz</name>
+        </application>
+        <application id="about-art-decor" link="about-art-decor">
+            <name language="nl-NL">ART-DECOR</name>
+            <name language="en-US">ART-DECOR</name>
+            <name language="de-DE">ART-DECOR</name>
+            <name language="pl-PL">ART-DECOR</name>
+        </application>
+    </section>
+</menu>

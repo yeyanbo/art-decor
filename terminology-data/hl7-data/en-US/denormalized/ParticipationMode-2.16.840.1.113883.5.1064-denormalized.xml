@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="60"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1064"/>
+   <Title name="ParticipationMode" date="2012-08-02" version="1.000">A set of codes specifying the modality by which the Entity playing the Role is participating in the Act. Examples: Physically present, over the telephone, written communication. Rationale: Particularly for author (originator) participants this is used to specify whether the information represented by the act was initially provided verbally, (hand-)written, or electronically.</Title>
+   <Class code="rootClass">
+      <SubClass subCount="0" code="ELECTRONIC" kind="concept">
+         <Rubric id="d1e180985" kind="preferred">
+            <Label xml:lang="en-US">electronic data</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="PHYSICAL" kind="concept">
+         <Rubric id="d1e181010" kind="preferred">
+            <Label xml:lang="en-US">physical presence</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="REMOTE" kind="concept">
+         <Rubric id="d1e181034" kind="preferred">
+            <Label xml:lang="en-US">remote presence</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="4" code="VERBAL" kind="concept">
+         <Rubric id="d1e181058" kind="preferred">
+            <Label xml:lang="en-US">verbal</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="4" code="WRITTEN" kind="concept">
+         <Rubric id="d1e181082" kind="preferred">
+            <Label xml:lang="en-US">written</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">ParticipationMode</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">A set of codes specifying the modality by which the Entity playing the Role is participating in the Act. Examples: Physically present, over the telephone, written communication. Rationale: Particularly for author (originator) participants this is used to specify whether the information represented by the act was initially provided verbally, (hand-)written, or electronically.</Label>
+      </Rubric>
+   </Class>
+   <Class code="ELECTRONIC" kind="concept">
+      <Meta name="internalId" value="16554"/>
+      <Rubric id="d1e180972" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Participation by non-human-languaged based electronic signal</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e180985" kind="short">
+         <Label xml:lang="en-US">electronic data</Label>
+      </Rubric>
+      <Rubric id="d1e180985" kind="preferred">
+         <Label xml:lang="en-US">electronic data</Label>
+      </Rubric>
+   </Class>
+   <Class code="PHYSICAL" kind="concept">
+      <Meta name="internalId" value="16556"/>
+      <Rubric id="d1e180997" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Participation by direct action where subject and actor are in the same location. (The participation involves more than communication.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e181010" kind="short">
+         <Label xml:lang="en-US">physical presence</Label>
+      </Rubric>
+      <Rubric id="d1e181010" kind="preferred">
+         <Label xml:lang="en-US">physical presence</Label>
+      </Rubric>
+   </Class>
+   <Class code="REMOTE" kind="concept">
+      <Meta name="internalId" value="16557"/>
+      <Rubric id="d1e181021" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Participation by direct action where subject and actor are in separate locations, and the actions of the actor are transmitted by electronic or mechanical means. (The participation involves more than communication.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e181034" kind="short">
+         <Label xml:lang="en-US">remote presence</Label>
+      </Rubric>
+      <Rubric id="d1e181034" kind="preferred">
+         <Label xml:lang="en-US">remote presence</Label>
+      </Rubric>
+   </Class>
+   <Class code="VERBAL" kind="concept">
+      <Meta name="internalId" value="16544"/>
+      <SubClass code="DICTATE" subCount="0">
+         <Rubric id="d1e181111" kind="preferred">
+            <Label xml:lang="en-US">dictated</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="FACE" subCount="0">
+         <Rubric id="d1e181140" kind="preferred">
+            <Label xml:lang="en-US">face-to-face</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PHONE" subCount="0">
+         <Rubric id="d1e181170" kind="preferred">
+            <Label xml:lang="en-US">telephone</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="VIDEOCONF" subCount="0">
+         <Rubric id="d1e181199" kind="preferred">
+            <Label xml:lang="en-US">videoconferencing</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e181045" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Participation by voice communication</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e181058" kind="short">
+         <Label xml:lang="en-US">verbal</Label>
+      </Rubric>
+      <Rubric id="d1e181058" kind="preferred">
+         <Label xml:lang="en-US">verbal</Label>
+      </Rubric>
+   </Class>
+   <Class code="WRITTEN" kind="concept">
+      <Meta name="internalId" value="16549"/>
+      <SubClass code="EMAILWRIT" subCount="0">
+         <Rubric id="d1e181228" kind="preferred">
+            <Label xml:lang="en-US">email</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="FAXWRIT" subCount="0">
+         <Rubric id="d1e181257" kind="preferred">
+            <Label xml:lang="en-US">telefax</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="HANDWRIT" subCount="0">
+         <Rubric id="d1e181286" kind="preferred">
+            <Label xml:lang="en-US">handwritten</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="TYPEWRIT" subCount="0">
+         <Rubric id="d1e181315" kind="preferred">
+            <Label xml:lang="en-US">typewritten</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e181069" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Participation by human language recorded on a physical material</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e181082" kind="short">
+         <Label xml:lang="en-US">written</Label>
+      </Rubric>
+      <Rubric id="d1e181082" kind="preferred">
+         <Label xml:lang="en-US">written</Label>
+      </Rubric>
+   </Class>
+   <Class code="DICTATE" kind="concept">
+      <Meta name="internalId" value="16547"/>
+      <SuperClass code="VERBAL">
+         <Rubric id="d1e181058" kind="preferred">
+            <Label xml:lang="en-US">verbal</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e181093" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Participation by pre-recorded voice. Communication is limited to one direction (from the recorder to recipient).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e181111" kind="short">
+         <Label xml:lang="en-US">dictated</Label>
+      </Rubric>
+      <Rubric id="d1e181111" kind="preferred">
+         <Label xml:lang="en-US">dictated</Label>
+      </Rubric>
+   </Class>
+   <Class code="FACE" kind="concept">
+      <Meta name="internalId" value="16545"/>
+      <SuperClass code="VERBAL">
+         <Rubric id="d1e181058" kind="preferred">
+            <Label xml:lang="en-US">verbal</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e181122" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Participation by voice communication where parties speak to each other directly.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e181140" kind="short">
+         <Label xml:lang="en-US">face-to-face</Label>
+      </Rubric>
+      <Rubric id="d1e181140" kind="preferred">
+         <Label xml:lang="en-US">face-to-face</Label>
+      </Rubric>
+   </Class>
+   <Class code="PHONE" kind="concept">
+      <Meta name="internalId" value="16546"/>
+      <SuperClass code="VERBAL">
+         <Rubric id="d1e181058" kind="preferred">
+            <Label xml:lang="en-US">verbal</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e181152" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Participation by voice communication where the voices of the communicating parties are transported over an electronic medium</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e181170" kind="short">
+         <Label xml:lang="en-US">telephone</Label>
+      </Rubric>
+      <Rubric id="d1e181170" kind="preferred">
+         <Label xml:lang="en-US">telephone</Label>
+      </Rubric>
+   </Class>
+   <Class code="VIDEOCONF" kind="concept">
+      <Meta name="internalId" value="16548"/>
+      <SuperClass code="VERBAL">
+         <Rubric id="d1e181058" kind="preferred">
+            <Label xml:lang="en-US">verbal</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e181181" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Participation by voice and visual communication where the voices and images of the communicating parties are transported over an electronic medium</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e181199" kind="short">
+         <Label xml:lang="en-US">videoconferencing</Label>
+      </Rubric>
+      <Rubric id="d1e181199" kind="preferred">
+         <Label xml:lang="en-US">videoconferencing</Label>
+      </Rubric>
+   </Class>
+   <Class code="EMAILWRIT" kind="concept">
+      <Meta name="internalId" value="16553"/>
+      <SuperClass code="WRITTEN">
+         <Rubric id="d1e181082" kind="preferred">
+            <Label xml:lang="en-US">written</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e181210" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Participation by text or diagrams transmitted over an electronic mail system.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e181228" kind="short">
+         <Label xml:lang="en-US">email</Label>
+      </Rubric>
+      <Rubric id="d1e181228" kind="preferred">
+         <Label xml:lang="en-US">email</Label>
+      </Rubric>
+   </Class>
+   <Class code="FAXWRIT" kind="concept">
+      <Meta name="internalId" value="16552"/>
+      <SuperClass code="WRITTEN">
+         <Rubric id="d1e181082" kind="preferred">
+            <Label xml:lang="en-US">written</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e181239" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Participation by text or diagrams printed on paper that have been transmitted over a fax device</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e181257" kind="short">
+         <Label xml:lang="en-US">telefax</Label>
+      </Rubric>
+      <Rubric id="d1e181257" kind="preferred">
+         <Label xml:lang="en-US">telefax</Label>
+      </Rubric>
+   </Class>
+   <Class code="HANDWRIT" kind="concept">
+      <Meta name="internalId" value="16550"/>
+      <SuperClass code="WRITTEN">
+         <Rubric id="d1e181082" kind="preferred">
+            <Label xml:lang="en-US">written</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e181268" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Participation by text or diagrams printed on paper or other recording medium</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e181286" kind="short">
+         <Label xml:lang="en-US">handwritten</Label>
+      </Rubric>
+      <Rubric id="d1e181286" kind="preferred">
+         <Label xml:lang="en-US">handwritten</Label>
+      </Rubric>
+   </Class>
+   <Class code="TYPEWRIT" kind="concept">
+      <Meta name="internalId" value="16551"/>
+      <SuperClass code="WRITTEN">
+         <Rubric id="d1e181082" kind="preferred">
+            <Label xml:lang="en-US">written</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e181297" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Participation by text or diagrams printed on paper or other recording medium where the recording was performed using a typewriter, typesetter, computer or similar mechanism.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e181315" kind="short">
+         <Label xml:lang="en-US">typewritten</Label>
+      </Rubric>
+      <Rubric id="d1e181315" kind="preferred">
+         <Label xml:lang="en-US">typewritten</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

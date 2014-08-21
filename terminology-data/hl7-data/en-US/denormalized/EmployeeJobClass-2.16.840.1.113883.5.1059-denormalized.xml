@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="47"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1059"/>
+   <Title name="EmployeeJobClass" date="2012-08-02" version="1.000"/>
+   <Class code="rootClass">
+      <SubClass subCount="0" code="FT" kind="concept">
+         <Rubric id="d1e107313" kind="preferred">
+            <Label xml:lang="en-US">full-time</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="PT" kind="concept">
+         <Rubric id="d1e107337" kind="preferred">
+            <Label xml:lang="en-US">part-time</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">EmployeeJobClass</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl"/>
+      </Rubric>
+   </Class>
+   <Class code="FT" kind="concept">
+      <Meta name="internalId" value="16037"/>
+      <Rubric id="d1e107300" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Employment in which the employee is expected to work at least a standard work week (defined by the US Bureau of Labor Statistics as 35-44 hours per week)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e107313" kind="short">
+         <Label xml:lang="en-US">full-time</Label>
+      </Rubric>
+      <Rubric id="d1e107313" kind="preferred">
+         <Label xml:lang="en-US">full-time</Label>
+      </Rubric>
+   </Class>
+   <Class code="PT" kind="concept">
+      <Meta name="internalId" value="16038"/>
+      <Rubric id="d1e107324" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Employment in which the employee is expected to work less than a standard work week (defined by the US Bureau of Labor Statistics as 35-44 hours per week)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e107337" kind="short">
+         <Label xml:lang="en-US">part-time</Label>
+      </Rubric>
+      <Rubric id="d1e107337" kind="preferred">
+         <Label xml:lang="en-US">part-time</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

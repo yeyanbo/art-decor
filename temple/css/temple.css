@@ -1,0 +1,89 @@
+﻿h1 {
+    font-family: Verdana, Arial, sans-serif;
+    color: #E16E22;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.meta-info {
+    font-family: Verdana, Arial, sans-serif;
+    font-size : 12px;
+}
+
+table {
+    width: 100%;
+}
+
+div#explorer {
+    width: 20%;
+    float:left;
+}
+
+ul.templatelist {
+    overflow: auto;
+    max-height: 36em;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.templatelist>li {
+    white-space: nowrap; 
+}
+
+div#content {
+    float: left;
+    width: 95%;
+}
+
+div#menu {
+    position: static;
+    top: 0;
+    margin: 2px;
+}
+
+div#output {
+    position: relative;
+    bottom: 0;
+}
+
+div#helpers {
+    width: 16%;
+    float: right;
+}
+
+div#footer {
+    clear: both;
+}
+
+button, input[type=submit], input[type=button], a.linkbutton {
+    font-family: Verdana, Arial, sans-serif;
+    font-size : 12px;
+    padding: 0.2em 1em;
+    margin: 0.2em;
+    text-decoration: none;
+    color: white;
+    background-color: #362828; 
+    border: 2px; 
+    border-top: 1px solid white;
+}
+
+button[disabled] {
+    background: gray;
+}
+
+body, html, #main, #content, #editors, form, textarea
+{   
+    height: 100%;
+    background-image:url('../img/top-pic.png');
+    background-repeat: no-repeat;
+}
+
+.CodeMirror {
+  border: 1px solid #eee;
+  height: auto;
+}
+.CodeMirror-scroll {
+  overflow-y: hidden;
+  overflow-x: auto;
+}

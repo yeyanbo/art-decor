@@ -1,0 +1,1148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sch="http://purl.oclc.org/dsdl/schematron" elementFormDefault="qualified">
+    <xs:element name="author">
+        <xs:complexType mixed="true">
+            <xs:attribute name="id" type="Oid" use="required"/>
+            <xs:attribute name="username" type="xs:string" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="DecorObjectType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Decor Object Types</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="EnumerationToken">
+            <xs:enumeration value="DS">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Dataset</xforms:label>
+                        <xforms:label xml:lang="en-US">Dataset</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">dataset</xs:documentation>
+                    <xs:documentation xml:lang="nl-NL">data set</xs:documentation>
+                    <xs:documentation xml:lang="de-DE">Datenset</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="DE">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Data element</xforms:label>
+                        <xforms:label xml:lang="en-US">Data Element</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">data element</xs:documentation>
+                    <xs:documentation xml:lang="nl-NL">data element</xs:documentation>
+                    <xs:documentation xml:lang="de-DE">Datenelement</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="SC">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Scenario</xforms:label>
+                        <xforms:label xml:lang="en-US">Scenario</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">scenario</xs:documentation>
+                    <xs:documentation xml:lang="nl-NL">scenario</xs:documentation>
+                    <xs:documentation xml:lang="de-DE">Szenario</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="TR">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Transactie</xforms:label>
+                        <xforms:label xml:lang="en-US">Transaction</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">transactie</xs:documentation>
+                    <xs:documentation xml:lang="nl-NL">transaction</xs:documentation>
+                    <xs:documentation xml:lang="de-DE">Transaktion</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="AC">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Acteurs</xforms:label>
+                        <xforms:label xml:lang="en-US">Actors</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">acteurs</xs:documentation>
+                    <xs:documentation xml:lang="nl-NL">actors</xs:documentation>
+                    <xs:documentation xml:lang="de-DE">Aktoren</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="VS">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Waardelijst</xforms:label>
+                        <xforms:label xml:lang="en-US">Value Set</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">value set</xs:documentation>
+                    <xs:documentation xml:lang="nl-NL">value set</xs:documentation>
+                    <xs:documentation xml:lang="de-DE">Value Set</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="IS">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Issue</xforms:label>
+                        <xforms:label xml:lang="en-US">Issue</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">issue</xs:documentation>
+                    <xs:documentation xml:lang="nl-NL">issue</xs:documentation>
+                    <xs:documentation xml:lang="de-DE">Issue</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="RL">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Regel</xforms:label>
+                        <xforms:label xml:lang="en-US">Rule</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">regel (intern)</xs:documentation>
+                    <xs:documentation xml:lang="nl-NL">rule (internal)</xs:documentation>
+                    <xs:documentation xml:lang="de-DE">Regel (intern)</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="TM">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Template</xforms:label>
+                        <xforms:label xml:lang="en-US">Template</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">template</xs:documentation>
+                    <xs:documentation xml:lang="nl-NL">template</xs:documentation>
+                    <xs:documentation xml:lang="de-DE">Template</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="CL">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Conceptlijst</xforms:label>
+                        <xforms:label xml:lang="en-US">Concept list</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">conceptlijst</xs:documentation>
+                    <xs:documentation xml:lang="nl-NL">concept list</xs:documentation>
+                    <xs:documentation xml:lang="de-DE">Konzeptliste</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="EL">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Element</xforms:label>
+                        <xforms:label xml:lang="en-US">Element</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">element</xs:documentation>
+                    <xs:documentation xml:lang="nl-NL">element</xs:documentation>
+                    <xs:documentation xml:lang="de-DE">Element</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="issues">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="issue" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="issue">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="object" minOccurs="1" maxOccurs="unbounded" type="IssueObject"/>
+                <xs:choice minOccurs="1" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">The list of historic events in terms of comments tracking and assignments</xs:documentation>
+                    </xs:annotation>
+                    <xs:element name="tracking" minOccurs="1" maxOccurs="unbounded" type="IssueTracking"/>
+                    <xs:element name="assignment" minOccurs="0" maxOccurs="unbounded" type="IssueAssignment"/>
+                </xs:choice>
+            </xs:sequence>
+            <xs:attribute name="id" type="Oid" use="required">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">The unique id of this issue</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="type" type="IssueType" use="required">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">The type of this issue</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="priority" type="IssuePriority" use="optional" default="N">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">The priority level of this issue, defaults to normal</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="displayName" type="LongDescriptiveName" use="optional">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">A short text to describe the issue (headline)</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="IssueType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Kind of issue</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="EnumerationToken">
+            <xs:enumeration value="INC">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Storing</xforms:label>
+                        <xforms:label xml:lang="en-US">Incident</xforms:label>
+                        <xforms:label xml:lang="de-DE">Störung</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">Incident</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="RFC">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Wijzigingsverzoek</xforms:label>
+                        <xforms:label xml:lang="en-US">Change Request</xforms:label>
+                        <xforms:label xml:lang="de-DE">Änderungswunsch</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">Change Request</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="FUT">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Voor de toekomst</xforms:label>
+                        <xforms:label xml:lang="en-US">For future consideration</xforms:label>
+                        <xforms:label xml:lang="de-DE">Zur zukünftigen Berücksichtigung</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">For future consideration</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="CLF">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Verduidelijking/toelichting noodzakelijk</xforms:label>
+                        <xforms:label xml:lang="en-US">Request for Information/Education</xforms:label>
+                        <xforms:label xml:lang="de-DE">Bitte um Information/Aufklärung</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">Request for Information/Education</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="IssuePriority">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Priority of issue</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="EnumerationToken">
+            <xs:enumeration value="HH">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Hoogste</xforms:label>
+                        <xforms:label xml:lang="en-US">Highest</xforms:label>
+                        <xforms:label xml:lang="de-DE">Höchste</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">Highest</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="H">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Hoog</xforms:label>
+                        <xforms:label xml:lang="en-US">High</xforms:label>
+                        <xforms:label xml:lang="de-DE">Hoch</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">High</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="N">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Normaal</xforms:label>
+                        <xforms:label xml:lang="en-US">Normal</xforms:label>
+                        <xforms:label xml:lang="de-DE">Normal</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">Normal</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="L">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Laag</xforms:label>
+                        <xforms:label xml:lang="en-US">Low</xforms:label>
+                        <xforms:label xml:lang="de-DE">Niedrig</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">Low</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="LL">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Laagst</xforms:label>
+                        <xforms:label xml:lang="en-US">Lowest</xforms:label>
+                        <xforms:label xml:lang="de-DE">Niedrigste</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">Lowest</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="IssueObject">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">The object(s) that are subject to the issue</xs:documentation>
+            <xs:appinfo>
+                <sch:pattern name="Validate issue object">
+                    <sch:rule context="//issue/object">
+                        <sch:assert test="@id or @name">ERROR: issue object must have an id or a name.</sch:assert>
+                        <sch:assert test="@id or (@name and @flexibility)">ERROR: if issue object has a name only, flexibility must be stated.</sch:assert>
+                    </sch:rule>
+                </sch:pattern>
+            </xs:appinfo>
+        </xs:annotation>
+        <xs:attribute name="id" type="Oid" use="optional"/>
+        <xs:attribute name="name" type="ShortDescriptiveName" use="optional"/>
+        <xs:attribute name="type" type="IssueObjectType" use="required"/>
+        <xs:attribute name="effectiveDate" type="TimeStampNoTimezone" use="required"/>
+        <xs:attribute name="flexibility" type="StaticFlexibility" use="optional"/>
+    </xs:complexType>
+    <xs:simpleType name="IssueObjectType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">The type of the object that is subject to an issue</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="DecorObjectType">
+            <xs:enumeration value="VS">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Object with issues is a value set</xs:documentation>
+                    <xs:documentation xml:lang="nl-NL">Object met de issues is een value set</xs:documentation>
+                    <xs:documentation xml:lang="de-DE">Objekt mit dem Problem ist ein Value Set</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="DE">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Object with issues is a data element</xs:documentation>
+                    <xs:documentation xml:lang="nl-NL">Object met de issues is een data element</xs:documentation>
+                    <xs:documentation xml:lang="de-DE">Objekt mit dem Problem ist ein Datenelement</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="TM">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Object with issues is a template</xs:documentation>
+                    <xs:documentation xml:lang="nl-NL">Object met de issues is een template</xs:documentation>
+                    <xs:documentation xml:lang="de-DE">Objekt mit dem Problem ist ein Template</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="EL">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Object with issues is an element</xs:documentation>
+                    <xs:documentation xml:lang="nl-NL">Object met de issues is een element</xs:documentation>
+                    <xs:documentation xml:lang="de-DE">Objekt mit dem Problem ist ein Element</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="TR">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Object with issues is a transaction</xs:documentation>
+                    <xs:documentation xml:lang="nl-NL">Object met de issues is een transactie</xs:documentation>
+                    <xs:documentation xml:lang="de-DE">Objekt mit dem Problem ist eine Transaktion</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="IssueTracking">
+        <xs:sequence>
+            <xs:element ref="author" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="desc" minOccurs="1" maxOccurs="unbounded" type="FreeFormMarkupWithLanguage"/>
+        </xs:sequence>
+        <xs:attribute name="effectiveDate" type="TimeStampNoTimezone" use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Identifies the effective date and time of the version of the object.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="statusCode" type="IssueStatusCodeLifeCycle" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="IssueAssignment" mixed="true">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">The assignment of an issue to a person or group</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="author" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">The id of the author of this assignment</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="desc" minOccurs="0" maxOccurs="unbounded" type="FreeFormMarkupWithLanguage">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">What is the description or question associated with this assignment</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="to" type="Oid" use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Identifier of the person or group where this issue has been assigned to</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="name" type="ShortDescriptiveName" use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Name / label of the person or group where this issue has been assigned to</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="effectiveDate" type="TimeStampNoTimezone" use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Identifies the effective date and time of the assignment of the issue.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:simpleType name="IssueStatusCodeLifeCycle">
+        <!-- 
+            (start) - > new
+            a new issue has been created, not yet finished
+            
+            new - > open
+            a new issue has been opened, ready for action
+            
+            open - > inprogress
+            the work on this issue is in progress
+            
+            open/inprogress - > feedback - > inprogress
+            if further information or feedback on an issue is needed
+            once the information is available the status can get back to inprogress
+            
+            open/inprogress - > rejected (end)
+            an issue has been found to be rejected no further action is taken on the issue
+            
+            open/inprogress - > deferred - > inprogress
+            open/inprogress - > deferred - > closed (end)
+            an issue has been found to be deferred for future action and
+            - further action is taken on the issue later
+            - the issue is closed later
+            
+            open/inprogress - > referred (end)
+            an issue has been found to be referred to other entities to take action on the issue
+            
+            cancelled
+            at any time an issue may be cancelled (end)
+            
+            resolved
+            an open/closed issue may proceed to resolved at any time
+            
+            the often found status "assigned" is detectable (if there is an assignee), not a status
+            
+        -->
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Life cycle of the status code of an issue</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="EnumerationToken">
+            <xs:enumeration value="new">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Nieuw</xforms:label>
+                        <xforms:label xml:lang="en-US">New</xforms:label>
+                        <xforms:label xml:lang="de-DE">Neu</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">Issue just created. It is new and will soon become a draft/open/finalized issue. Beyond the author, nobody should look at this issue unless it's
+                        status code is open or beyond.</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="open">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Open</xforms:label>
+                        <xforms:label xml:lang="en-US">Open</xforms:label>
+                        <xforms:label xml:lang="de-DE">Offen</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">Issue is open, ready for actions to take on, also open for comments</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="inprogress">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">In behandeling</xforms:label>
+                        <xforms:label xml:lang="en-US">In Progress</xforms:label>
+                        <xforms:label xml:lang="de-DE">In Bearbeitung</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">Issue is in progress</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="feedback">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Feedback nodig</xforms:label>
+                        <xforms:label xml:lang="en-US">Feedback needed</xforms:label>
+                        <xforms:label xml:lang="de-DE">Feedback nötig</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">Issue is in progress but needs feedback from others</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="closed">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Gesloten</xforms:label>
+                        <xforms:label xml:lang="en-US">Closed</xforms:label>
+                        <xforms:label xml:lang="de-DE">Geschlossen</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">Issue is closed including an solution</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="rejected">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Afgewezen</xforms:label>
+                        <xforms:label xml:lang="en-US">Rejected</xforms:label>
+                        <xforms:label xml:lang="de-DE">Abgewiesen</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">Issue is rejected</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="deferred">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Uitgesteld</xforms:label>
+                        <xforms:label xml:lang="en-US">Deferred</xforms:label>
+                        <xforms:label xml:lang="de-DE">Zurückgestellt</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">Issue is deferred</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="cancelled">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <xforms:label xml:lang="nl-NL">Geannuleerd</xforms:label>
+                        <xforms:label xml:lang="en-US">Cancelled</xforms:label>
+                        <xforms:label xml:lang="de-DE">Annuliert</xforms:label>
+                    </xs:appinfo>
+                    <xs:documentation xml:lang="en-US">Issue is cancelled</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="StaticFlexibility">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">As an expression of static flexibility this contains simply a valid date (without the prefix "static")</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:date"/>
+    </xs:simpleType>
+    <xs:simpleType name="DynamicFlexibility">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Fixed string "dynamic", means most recent version of the object</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="dynamic">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">dynamic</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- following is borrowed from the mif-core-patterns.xsd and other mif schemas -->
+    <xs:simpleType name="TimeStampNoTimezone">
+        <xs:restriction base="xs:dateTime">
+            <xs:pattern value="\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SmallNonNegativeInteger">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">An integer that is greater than or equal to zero, with a maximum length of 6 characters</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:nonNegativeInteger">
+            <xs:maxExclusive value="1000000"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SmallPositiveInteger">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">An integer that is greater than or equal to 1, with a maximum length of 6 characters</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:positiveInteger">
+            <xs:maxExclusive value="1000000"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- Simple types used in defining various attributes -->
+    <xs:simpleType name="Uuid">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Universal Unique Identifier (aka GUID). Used for identifiers</xs:documentation>
+            <xs:appinfo>
+                <sch:pattern name="Validate Uuid type">
+                    <!--<sch:rule context="mif:Uuid">-->
+                    <!-- Exclude guiids in graphicIds because these are referencing a guid elsewhere in the document 
+						<sch:report test="count(//attribute(*, mif:Uuid)[count(parent::element(*,mif:GraphicInformation))=0][.=current()]|//element(*, mif:Uuid)[.=current()])>1">
+							ERROR: UUIDs should never be duplicated within a document.</sch:report> -->
+                    <!--</sch:rule>-->
+                </sch:pattern>
+            </xs:appinfo>
+        </xs:annotation>
+        <xs:restriction base="xs:token">
+            <xs:length value="36"/>
+            <xs:pattern value="[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="HashCode">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Base64 representation of a SHA-256 hashcode</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([A-Za-z0-9/+]){27}="/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Oid">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">ISO Object Identifier. Used for identifiers</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:token">
+            <xs:maxLength value="255"/>
+            <xs:pattern value="[1-9][0-9]*(\.[0-9]+)*"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="OidChoiceList">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Choice list of Oids</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:token">
+            <xs:maxLength value="1028"/>
+            <xs:pattern value="([1-9][0-9]*(\.[0-9]+)*)(\|[1-9][0-9]*(\.[0-9]+)*)*"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DefinedContextKind">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Defines pre-defined 'contexts'. At present these consist primarily of realms.</xs:documentation>
+        </xs:annotation>
+        <xs:union memberTypes="AffiliateKind"/>
+    </xs:simpleType>
+    <xs:simpleType name="RealmKind">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Allows both pre-defined affiliates and other affiliate issued sub-realm identifiers</xs:documentation>
+        </xs:annotation>
+        <xs:union memberTypes="EnumerationToken DefinedContextKind"/>
+    </xs:simpleType>
+    <xs:simpleType name="RealmNamespaceKind">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Allows affiliate and free-form as well as OID-based namespaces to be identified for keeping content distinct</xs:documentation>
+        </xs:annotation>
+        <xs:union memberTypes="RealmKind Oid"/>
+    </xs:simpleType>
+    <xs:simpleType name="Uri">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Used for references to some external resource.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:anyURI">
+            <xs:maxLength value="255"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Url">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Used for hypertext references. (Must be prefixed by "http://")</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:anyURI">
+            <xs:maxLength value="255"/>
+            <xs:pattern value="http(s)?://.+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="EMail">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Used for email references. (Must be prefixed by "mailto://")</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:anyURI">
+            <xs:maxLength value="255"/>
+            <xs:pattern value="mailto:.+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="LocalFileReference">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Used for file references. (Must be prefixed by "file://")</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:anyURI">
+            <xs:maxLength value="255"/>
+            <xs:pattern value="(file://)?([A-Za-z0-9_\-\.]+/)*[A-Za-z0-9_\-\.]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="NonEmptyString">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Used as the base for most string datatypes. (Ensures that empty strings are not allowed.). Should never be implemented directly because it has no length
+                limits.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:token">
+            <xs:minLength value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="CMETAttributionString">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Type for CMET attribution types. Basically a length-limited lowerCamelCase string that allows dashes and has a length limit.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+            <xs:maxLength value="50"/>
+            <xs:pattern value="[a-z][a-z0-9A-Z\-]*"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="LowerCamelCase">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Type for attribute and association type names. Should never be implemented directly because it has no length limits.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+            <xs:pattern value="[a-z][a-z0-9]*([A-Z][a-z0-9]*)*"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="UpperCamelCase">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Type for class and type names</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+            <xs:pattern value="([A-Z][a-z0-9_\-]*)+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="PrefixedUpperCamelCase">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Used for CMET type names. (Basically class names with a prefix separated by an underscore)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+            <xs:maxLength value="50"/>
+            <xs:pattern value="[A-Z]+_([A-Z][a-z0-9_\-]*)+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="BasicFormalName">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Used for formal names and short descriptions</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="NonEmptyString">
+            <xs:maxLength value="120"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="FormalProperName">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Used for class and type names</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="UpperCamelCase">
+            <xs:maxLength value="60"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AllClassName">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Choice of a class name or a CMET name</xs:documentation>
+        </xs:annotation>
+        <xs:union memberTypes="FormalProperName PrefixedUpperCamelCase"/>
+    </xs:simpleType>
+    <xs:simpleType name="FormalPropertyName">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Used for attribute, association and property names</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="LowerCamelCase">
+            <xs:maxLength value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ShortDescriptiveName">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Used when descriptions are intended to be very short</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="NonEmptyString">
+            <xs:maxLength value="80"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="LongDescriptiveName">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Used when descriptions can be potentially quite long</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="NonEmptyString">
+            <xs:maxLength value="255"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="XDomainName">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Used for x-domains</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+            <xs:maxLength value="50"/>
+            <xs:pattern value="(x_)?([A-Z][a-z0-9_]*)+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DatatypeName">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Used for datatype names</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+            <xs:maxLength value="60"/>
+            <xs:pattern value="[A-Z_]+(.[A-Za-z]+)*(.diffType)?"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="MimeType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Used to filter MIME type names</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:token">
+            <xs:maxLength value="40"/>
+            <xs:pattern value="[a-z]+/[a-z0-9\-]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Version">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Used for version numbers</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="16"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ShortString">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Used for very short strings</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="10"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="CollapsedPackageId">
+        <xs:restriction base="xs:token">
+            <xs:pattern value="([A-Za-z,0-9,_,\-]{1,80}=){0,7}[A-Za-z,0-9,_,\-,\.]{1,80}">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Allows between 1 and 7 strings of length 1 to 80 characters (uppercase alpha, digits, underscore and space) where strings are separated by
+                        "="</xs:documentation>
+                </xs:annotation>
+            </xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TemplateId">
+        <xs:restriction base="xs:NMTOKEN">
+            <xs:pattern value="([A-Z0-9_\-]{1,80}=){0,6}[A-Z0-9_\-]{1,80}#([A-Z][a-z0-9_\-]*)+(\.[a-z][a-z0-9]*([A-Z][a-z0-9]*)*)?">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">TemplateId followed by "#" followed by a class name followed by an optional "." and attribute name</xs:documentation>
+                </xs:annotation>
+            </xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="BasicId">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Used for generic identifiers</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="40"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:attributeGroup name="MultiplicityRangeRequired">
+        <xs:annotation>
+            <xs:appinfo>
+                <sch:pattern name="Validate MultiplicityRange type">
+                    <sch:rule abstract="true" id="MultiplicityRange">
+                        <sch:report test="@maximumMultiplicity!='*' and number(@minimumMultiplicity)&gt;number(@maximumMultiplicity)"> ERROR: MinimumMultiplicity must be less than or equal to
+                            maximumMultiplicity.</sch:report>
+                    </sch:rule>
+                </sch:pattern>
+            </xs:appinfo>
+            <xs:documentation xml:lang="en-US">Used to define multiplicty</xs:documentation>
+            <xs:documentation xml:lang="en-US">UML: Corresponds to UML type MultiplicityRange, with exception that upper boundary cannot be 0</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="minimumMultiplicity" type="SmallNonNegativeInteger" use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Identifies the minimum number of repetitions of this element that may occur within the containing element.</xs:documentation>
+                <xs:documentation xml:lang="en-US">UML: multiplicity (lower-bound)</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="maximumMultiplicity" type="UnlimitedInteger" use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Identifies the maximum number of repetitions of this element that may occur within the containing element.</xs:documentation>
+                <xs:documentation xml:lang="en-US">UML: multiplicity (upper-bound)</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
+    <xs:attributeGroup name="MultiplicityRangeOptional">
+        <xs:annotation>
+            <xs:appinfo>
+                <sch:pattern name="Validate MultiplicityRange type">
+                    <sch:rule abstract="true" id="MultiplicityRange">
+                        <sch:report test="@maximumMultiplicity!='*' and number(@minimumMultiplicity)&gt;number(@maximumMultiplicity)"> ERROR: MinimumMultiplicity must be less than or equal to
+                            maximumMultiplicity.</sch:report>
+                    </sch:rule>
+                </sch:pattern>
+            </xs:appinfo>
+            <xs:documentation xml:lang="en-US">Used to define multiplicty</xs:documentation>
+            <xs:documentation xml:lang="en-US">UML: Corresponds to UML type MultiplicityRange, with exception that upper boundary cannot be 0</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="minimumMultiplicity" type="SmallNonNegativeInteger" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Identifies the minimum number of repetitions of this element that may occur within the containing element.</xs:documentation>
+                <xs:documentation xml:lang="en-US">UML: multiplicity (lower-bound)</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="maximumMultiplicity" type="UnlimitedInteger" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Identifies the maximum number of repetitions of this element that may occur within the containing element.</xs:documentation>
+                <xs:documentation xml:lang="en-US">UML: multiplicity (upper-bound)</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
+    <xs:simpleType name="UnlimitedInteger">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">UML: Corresponds to UnlimitedInteger. (Only distinction is that this type does not allow 0 while UML does)</xs:documentation>
+        </xs:annotation>
+        <xs:union memberTypes="SmallPositiveInteger UnlimitedMultiplicity"/>
+    </xs:simpleType>
+    <xs:simpleType name="UnlimitedMultiplicity">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Used as a 'part' of the UnlimitedInteger type</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="*">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Unlimited</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="EnumerationToken">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Used as the base class for all 'codes' which qualify or must be handled as NMTOKEN</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+            <xs:maxLength value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="EnumerationString">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Used as the base class for all 'codes' which cannot be handled as NMTOKEN</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AffiliateKind">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">The list of HL7 affiliates.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="EnumerationToken">
+            <xs:enumeration value="AR">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Argentina</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="AU">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Australia</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="AT">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Austria</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="BR">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Brazil</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="CA">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Canada</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="CL">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Chile</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="CN">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">China</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="HR">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Croatia</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="CZ">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Czech Republic</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="DK">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Denmark</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="FI">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Finland</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="FR">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">France</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="DE">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Germany</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="GR">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Greece</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="IN">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">India</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="IE">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Ireland</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="IT">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Italy</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="JP">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Japan</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="KR">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Korea</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="LT">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Lithuania</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="MX">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Mexico</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="NL">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Netherlands</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="NZ">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">New Zealand</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="RO">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Romania</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="SOA">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Southern Africa</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ES">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Spain</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="SE">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Sweden</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="CH">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Switzerland</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="TW">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Taiwan</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="TR">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Turkey</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UK">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">United Kingdom</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="US">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">United States</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UY">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Uruguay</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UV">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-US">Applies to all realms (unless there is a realm-specific override)</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="FreeFormMarkupWithLanguage" mixed="true">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Allows unconstrained markup to identify the language in which it is expressed and when it was last translated</xs:documentation>
+            <xs:documentation xml:lang="en-US">UML: Handled as 'mixed text' stored as a string, but with parallel tags identifying langage</xs:documentation>
+            <xs:appinfo>
+                <sch:pattern name="Validate FreeFormMarkupWithLanguage type">
+                    <sch:rule abstract="true" id="FreeFormMarkupWithLanguage">
+                        <sch:report test="count(preceding-sibling::*[name(.)=name(current())][@language=current()/@language or                              ((@language='EN' or not(@language)) and (current()/@language='EN' or not(current()/@language)))])!=0"> ERROR: Each repetition of complex markup with language must be a different langage (no language is equivalent to 'EN').</sch:report>
+                    </sch:rule>
+                </sch:pattern>
+            </xs:appinfo>
+        </xs:annotation>
+        <xs:complexContent mixed="true">
+            <xs:extension base="VariousMixedContent">
+                <xs:attribute name="language" type="xs:language" use="optional" default="en-US">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Indicates the language in which the marked up text is expressed</xs:documentation>
+                        <xs:documentation xml:lang="en-US">UML: part of a complex stereotype tag</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="lastTranslated" type="TimeStampNoTimezone" use="optional">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Indicates when this languages rendition was last translated from the original.</xs:documentation>
+                        <xs:documentation xml:lang="en-US">UML: part of a complex stereotype tag</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="mimeType" type="MimeType" use="optional">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Indicates the mime type in which the data is expressed. If not specified, applications must interpret the content based on other context or
+                            specific application rules. Applications that do not recognize content must retain it unchanged.</xs:documentation>
+                        <xs:documentation xml:lang="en-US">UML: Part of a complex tag</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="BusinessNameWithLanguage" mixed="true">
+        <xs:annotation>
+            <xs:documentation>A name for the artifact that will be meaningful to business or domain experts. One artifact may have different business name translations for each realm and/or
+                language.</xs:documentation>
+            <xs:documentation>UML: tagged value on ModelElement</xs:documentation>
+            <xs:documentation>DublinCore: Maps to 'Alternative'</xs:documentation>
+            <xs:appinfo>
+                <sch:pattern name="Validate BusinessNameWithLanguage type">
+                    <sch:rule abstract="true" id="BusinessNameWithLanguage">
+                        <sch:report test="count(preceding-sibling::*[name(.)=name(current())][@language=current()/@language or                              ((@language='EN' or not(@language)) and (current()/@language='EN' or not(current()/@language)))])!=0"> ERROR: Each repetition of complex markup with language must be a different langage (no language is equivalent to 'EN').</sch:report>
+                    </sch:rule>
+                </sch:pattern>
+            </xs:appinfo>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="language" type="xs:language" use="optional" default="en-US">
+                    <xs:annotation>
+                        <xs:documentation>Indicates the language in which the business name is expressed</xs:documentation>
+                        <xs:documentation>UML: Part of a complex tag value</xs:documentation>
+                        <xs:documentation>DublinCore: Language</xs:documentation>
+                        <xs:documentation>Alpha</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="VariousMixedContent" mixed="true">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">A type that allows unconstrained mixed-text markup</xs:documentation>
+        </xs:annotation>
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:any processContents="skip"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+
+    <!-- =================================== -->
+</xs:schema>

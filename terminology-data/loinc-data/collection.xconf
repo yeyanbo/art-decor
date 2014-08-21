@@ -1,0 +1,16 @@
+<collection xmlns="http://exist-db.org/collection-config/1.0">
+    <index xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <lucene>
+            <analyzer class="org.apache.lucene.analysis.standard.StandardAnalyzer">
+                <param name="stopwords" type="java.util.Set"/>
+            </analyzer>
+            <text qname="concept"/>
+            <text qname="component"/>
+            <text qname="shortName"/>
+            <text qname="longName"/>
+        </lucene>
+        <create qname="component" type="xs:string"/>
+       <create qname="@loinc_num" type="xs:string"/>
+       <create qname="@status" type="xs:string"/>
+    </index>
+</collection>

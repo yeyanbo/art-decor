@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Note: this example has been manually updated (in a significant way) to comply with CDA R2. 
+    The instance originally used a pre-adopted version of R2 based on a non-final XML ITS -->
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3"
+  xmlns:voc="urn:hl7-org:v3/voc"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:hl7-org:v3 ../schemas/CDA.xsd">
+  <typeId extension="99999" root="2.16.840.1.113883.1.3"/>
+  <id root="0.2.440.200194.1.1" extension="SDTC000018" displayable="true" assigningAuthorityName="Hamamatsu University Hospital" />
+  <code code="FU" codeSystem="2.16.840.1.113883.10.9.13" codeSystemName="ReferralReasonCategory" codeSystemVersion="1.0" displayName="一般診療依頼" />
+  <title>診療情報提供書（患者紹介）</title>
+  <effectiveTime value="19991117" xsi:type="TS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality" codeSystemVersion="V161" displayName="normal" />
+  <setId root="0.2.440.200194.2.2" extension="SET00001" displayable="true" assigningAuthorityName="Hamamatsu University Hospital" />
+  <versionNumber value="1" />
+
+<!--
+ ***************************************************************************
+ *                             患者情報
+ ***************************************************************************
+-->
+
+  <recordTarget typeCode="RCT" contextControlCode="OP">
+    <patientRole classCode="PAT">
+      <id root="0.2.440.200194.2.1" extension="0123871" displayable="true" assigningAuthorityName="Hamamatsu University Hospital" />
+      <addr>港区芝５－２９－２３</addr>
+      <addr>
+        <country partType="CNT">日本</country>
+        <state partType="STA">東京都</state>
+        <city partType="CTY">港区芝５－２９－２３</city>
+        <postalCode partType="ZIP">108-8420</postalCode>
+      </addr>
+      <telecom value="tel:03-3456-7733" />
+      <patient classCode="PSN" determinerCode="INSTANCE">
+        <name use="IDE L">
+          <family partType="FAM">患者</family>
+          <given partType="GIV">女１</given>
+        </name>
+        <name use="SYL L">
+          <family partType="FAM">カンジャ</family>
+          <given partType="GIV">オンナ１</given>
+        </name>
+        <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="V161" displayName="Female" />
+        <birthTime value="19390303000000" />
+      </patient>
+      <providerOrganization classCode="ORG" determinerCode="INSTANCE" />
+    </patientRole>
+  </recordTarget>
+
+<!--
+ ***************************************************************************
+ *                             紹介元情報
+ ***************************************************************************
+-->
+
+  <author typeCode="AUT" contextControlCode="OP">
+    <time value="19991117" xsi:type="TS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    <assignedAuthor classCode="ASSIGNED">
+      <id root="0.2.440.200194.2.2" extension="KD000002" displayable="true" assigningAuthorityName="Hamamatsu University Hospital" />
+      <addr>浜松市５丁目８番</addr>
+      <addr>
+        <country partType="CNT">日本</country>
+        <state partType="STA">静岡県</state>
+        <city partType="CTY">浜松市５丁目８番</city>
+        <postalCode partType="ZIP">123-1234</postalCode>
+      </addr>
+      <telecom value="tel:053-435-0000" />
+      <assignedPerson classCode="PSN" determinerCode="INSTANCE">
+          <name use="IDE L">
+            <family partType="FAM">○○</family>
+            <given partType="GIV">正義</given>
+          </name>
+          <name use="SYL L">
+            <family partType="FAM">○○</family>
+            <given partType="GIV">マサヨシ</given>
+          </name>
+      </assignedPerson>
+      <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+        <id root="0.2.440.200194.3.1" extension="PV000010" displayable="true" />
+        <name>浜松医大付属病院</name>
+        <asOrganizationPartOf classCode="PART">
+          <wholeOrganization classCode="ORG" determinerCode="INSTANCE">
+            <id root="0.2.440.200194.3.2" extension="DP000001" displayable="true" />
+            <name>内科</name>
+          </wholeOrganization>
+        </asOrganizationPartOf>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+
+  <!-- custodian added -->
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id/>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  
+  <!--
+ ***************************************************************************
+ *                             紹介先情報
+ ***************************************************************************
+-->
+
+  <informationRecipient typeCode="PRCP">
+    <intendedRecipient classCode="ASSIGNED">
+      <id root="0.2.440.200195.11.1" extension="UD000005" displayable="true" assigningAuthorityName="Southern Hamamatsu Hospital" />
+      <addr>浜松市６丁目３番</addr>
+      <addr>
+        <country partType="CNT">日本</country>
+        <state partType="STA">静岡県</state>
+        <city partType="CTY">浜松市６丁目３番</city>
+        <postalCode partType="ZIP">789-6789</postalCode>
+      </addr>
+      <telecom value="tel:053-435-1111" />
+      <informationRecipient classCode="PSN" determinerCode="INSTANCE">
+          <name use="IDE L">
+            <family partType="FAM">松永</family>
+            <given partType="GIV">幸治</given>
+          </name>
+          <name use="SYL L">
+            <family partType="FAM">マツナガ</family>
+            <given partType="GIV">コウジ</given>
+          </name>
+      </informationRecipient>
+      <receivedOrganization classCode="ORG" determinerCode="INSTANCE">
+        <id root="0.2.440.200195.22.1" extension="PV000040" displayable="true" />
+        <name>浜松南部病院</name>
+        <asOrganizationPartOf classCode="PART">
+          <wholeOrganization classCode="ORG" determinerCode="INSTANCE">
+            <id root="0.2.440.200194.22.2" extension="DP000101" displayable="true" />
+            <name>内科</name>
+          </wholeOrganization>
+        </asOrganizationPartOf>
+      </receivedOrganization>
+    </intendedRecipient>
+  </informationRecipient>
+
+<!--
+ ***************************************************************************
+ *                             ＢＯＤＹ
+ ***************************************************************************
+-->
+
+  <component typeCode="COMP" contextConductionInd="true">
+    <structuredBody classCode="DOCBODY" moodCode="EVN">
+
+<!--
+ ***************************************************************************
+ *                             提供情報説明
+ ***************************************************************************
+-->
+
+        <component typeCode="COMP" contextConductionInd="true">
+          <section classCode="DOCSECT" moodCode="EVN">
+            <code code="ES" codeSystem="2.16.840.1.113883.6.1" codeSystemName="SectionCode" codeSystemVersion="1.0" displayName="提供情報説明" />
+            <text>御依頼いただきました放射線治療ならびに化学療法の終了</text>
+          </section>
+        </component>
+
+<!--
+ ***************************************************************************
+ *                             現疾患
+ ***************************************************************************
+-->
+
+        <component typeCode="COMP" contextConductionInd="true">
+          <section classCode="DOCSECT" moodCode="EVN">
+            <code code="PD" codeSystem="2.16.840.1.113883.6.1" codeSystemName="SectionCode" codeSystemVersion="1.0" displayName="現疾患" />
+            <text>肺癌（小細胞癌）　　Stage IV</text>
+            <entry typeCode="COMP" contextConductionInd="true">
+              <observation classCode="OBS" moodCode="INT">
+                  <id root="0.2.440.200194.4.1" extension="PD0001" displayable="true" assigningAuthorityName="Hamamatsu University Hospital" />
+                  <code code="AE" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" codeSystemVersion="V161" displayName="American Express" />
+                  <effectiveTime operator="I" xsi:type="IVL_TS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <low value="19991117" inclusive="true" />
+                  </effectiveTime>
+                  <value code="C349" codeSystem="0.2.440.200194.10.9.13" codeSystemName="DiagnosisCode" codeSystemVersion="1.0" displayName="小細胞肺癌" xsi:type="CD" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+              </observation>
+            </entry>
+          </section>
+        </component>
+
+<!--
+ ***************************************************************************
+ *                             既往歴
+ ***************************************************************************
+-->
+
+        <component typeCode="COMP" contextConductionInd="true">
+          <section classCode="DOCSECT" moodCode="EVN">
+            <code code="PH" codeSystem="2.16.840.1.113883.6.1" codeSystemName="SectionCode" codeSystemVersion="1.0" displayName="既往歴" />
+            <text>特になし</text>
+          </section>
+        </component>
+
+<!--
+ ***************************************************************************
+ *                             家族歴
+ ***************************************************************************
+-->
+
+        <component typeCode="COMP" contextConductionInd="true">
+          <section classCode="DOCSECT" moodCode="EVN">
+            <code code="FH" codeSystem="2.16.840.1.113883.6.1" codeSystemName="SectionCode" codeSystemVersion="1.0" displayName="家族歴" />
+            <text>特になし</text>
+          </section>
+        </component>
+
+<!--
+ ***************************************************************************
+ *                             現病歴
+ ***************************************************************************
+-->
+
+        <component typeCode="COMP" contextConductionInd="true">
+          <section classCode="DOCSECT" moodCode="EVN">
+            <code code="PI" codeSystem="2.16.840.1.113883.6.1" codeSystemName="SectionCode" codeSystemVersion="1.0" displayName="現病歴" />
+            <text>
+平成11年５月１６日当科入院，胸腹部ＣＴ、頭部ＭＲＩ、骨シンチ施行致しました。入院翌日より放射線治療開始しております。
+            </text>
+          </section>
+        </component>
+
+<!--
+ ***************************************************************************
+ *                             診療要約
+ ***************************************************************************
+-->
+
+        <component typeCode="COMP" contextConductionInd="true">
+          <section classCode="DOCSECT" moodCode="EVN">
+            <code code="ES" codeSystem="2.16.840.1.113883.6.1" codeSystemName="SectionCode" codeSystemVersion="1.0" displayName="診療要約" />
+            <text>
+右側肺門を含めたmain tumorに対し63Gy/35fx、両側鎖上部に45Gy/25fxの照射を行いました。特に副反応みられず、７月３日よりCBDCA 450mg＋VP-16 100mg×３の化学療法を３クール行いました。軽度の顆粒球減少出現しましたが、現在は落ちついております。
+Main tumor は現在径12mmほどに縮小、鎖上リンパ節も触診上ほぼ消失しております。マーカーは添付資料のように相変わらず境界域のままですが、左上葉の含気も十分にあり、咳嗽も下記内服薬程度でコントロールできています。
+ご本人の希望もあり、今後の経過観察につきよろしく御高診の程、御願い申しあげます。
+            </text>
+          </section>
+        </component>
+
+<!--
+ ***************************************************************************
+ *                             現投与
+ ***************************************************************************
+-->
+
+        <component typeCode="COMP" contextConductionInd="true">
+          <section classCode="DOCSECT" moodCode="EVN">
+            <code code="PM" codeSystem="2.16.840.1.113883.6.1" codeSystemName="SectionCode" codeSystemVersion="1.0" displayName="現投与" />
+            <text>  実施済　処方　皮膚科　○○　康裕  　外来　昼　院内　000149　会計済　    
+    Rp1　    　    
+      ジルテック錠 10mg                       1 錠          
+          １日１回　朝食後　　　　　　　　　　14 日
+    Rp2　    　    
+      ポララミン復効錠 6mg                    1 錠          
+          かゆい時　　　　　　　　　　　　　　14 回
+    Rp3　    　    
+      トプシムローション 10g                  4 本          
+          １日２回　　　　　　　　　　　　　　 
+          頭
+    Rp4　    　混用
+      ヒルドイド軟膏 20g                    0.5 本          
+      リンデロン-Ｖ軟膏 5g                    2 本          
+          １日２回　　　　　　　　　　　　　　 
+              体幹、四肢</text>
+            <author typeCode="AUT" contextControlCode="OP">
+              <time value="19991117" xsi:type="TS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+              <assignedAuthor classCode="ASSIGNED">
+                <id root="0.2.440.200194.5.1" extension="ER0002" displayable="true" assigningAuthorityName="Hamamatsu University Hospital" />
+                <assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                    <name use="IDE L">
+                      <family partType="FAM">○○</family>
+                      <given partType="GIV">康裕</given>
+                    </name>
+                    <name use="SYL L">
+                      <family partType="FAM">○○</family>
+                      <given partType="GIV">ヤスヒロ</given>
+                    </name>
+                  </assignedPerson>
+                </assignedAuthor>
+            </author>
+            <entry typeCode="COMP" contextConductionInd="true">
+              <substanceAdministration classCode="SBADM" moodCode="EVN">
+                  <consumable typeCode="CSM">
+                    <manufacturedProduct classCode="MANU">
+                      <manufacturedLabeledDrug classCode="MMAT" determinerCode="KIND">
+                        <code code="1005653" codeSystem="0.2.440.200194.10.9.1" codeSystemName="DrugCode" codeSystemVersion="1.0" displayName="ジルテック錠 10mg" />
+                        <name>ジルテック錠 10mg</name>
+                      </manufacturedLabeledDrug>
+                    </manufacturedProduct>
+                  </consumable>
+                  <entryRelationship typeCode="COMP">
+                    <sequenceNumber value="1" />
+                    <supply classCode="SPLY" moodCode="EVN">
+                      <quantity value="14" unit="{錠}" />
+                    </supply>
+                  </entryRelationship>
+                </substanceAdministration>
+            </entry>
+            <entry typeCode="COMP" contextConductionInd="true">
+                <substanceAdministration classCode="SBADM" moodCode="EVN">
+                  <consumable typeCode="CSM">
+                    <manufacturedProduct classCode="MANU">
+                      <manufacturedLabeledDrug classCode="MMAT" determinerCode="KIND">
+                        <code code="1005653" codeSystem="0.2.440.200194.10.9.2" codeSystemName="DrugCode" codeSystemVersion="1.0" displayName="ポララミン復効錠 6mg" />
+                        <name>ポララミン復効錠 6mg</name>
+                      </manufacturedLabeledDrug>
+                    </manufacturedProduct>
+                  </consumable>
+                  <entryRelationship typeCode="COMP">
+                    <sequenceNumber value="1" />
+                    <supply classCode="SPLY" moodCode="EVN">
+                      <quantity value="14" unit="{錠}" />
+                    </supply>
+                  </entryRelationship>
+                </substanceAdministration>
+            </entry>
+            <entry typeCode="COMP" contextConductionInd="true">
+              <substanceAdministration classCode="SBADM" moodCode="EVN">
+                  <consumable typeCode="CSM">
+                    <manufacturedProduct classCode="MANU">
+                      <manufacturedLabeledDrug classCode="MMAT" determinerCode="KIND">
+                        <code code="1005653" codeSystem="0.2.440.200194.10.9.3" codeSystemName="DrugCode" codeSystemVersion="1.0" displayName="トプシムローション 10g" />
+                        <name>トプシムローション 10g</name>
+                      </manufacturedLabeledDrug>
+                    </manufacturedProduct>
+                  </consumable>
+                  <entryRelationship typeCode="COMP">
+                    <sequenceNumber value="1" />
+                    <supply classCode="SPLY" moodCode="EVN">
+                      <quantity value="4" unit="{本}" />
+                    </supply>
+                  </entryRelationship>
+                </substanceAdministration>
+            </entry>
+            <entry typeCode="COMP" contextConductionInd="true">
+              <substanceAdministration classCode="SBADM" moodCode="EVN">
+                  <consumable typeCode="CSM">
+                    <manufacturedProduct classCode="MANU">
+                      <manufacturedLabeledDrug classCode="MMAT" determinerCode="KIND">
+                        <code code="1005653" codeSystem="0.2.440.200194.10.9.4" codeSystemName="DrugCode" codeSystemVersion="1.0" displayName="ヒルドイド軟膏 20g" />
+                        <name>ヒルドイド軟膏 20g</name>
+                      </manufacturedLabeledDrug>
+                    </manufacturedProduct>
+                  </consumable>
+                  <entryRelationship typeCode="COMP">
+                    <sequenceNumber value="1" />
+                    <supply classCode="SPLY" moodCode="EVN">
+                      <quantity value="0.5" unit="{本}" />
+                    </supply>
+                  </entryRelationship>
+                </substanceAdministration>
+            </entry>
+            <entry typeCode="COMP" contextConductionInd="true">
+              <substanceAdministration classCode="SBADM" moodCode="EVN">
+                  <consumable typeCode="CSM">
+                    <manufacturedProduct classCode="MANU">
+                      <manufacturedLabeledDrug classCode="MMAT" determinerCode="KIND">
+                        <code code="1005653" codeSystem="0.2.440.200194.10.9.5" codeSystemName="DrugCode" codeSystemVersion="1.0" displayName="リンデロン-Ｖ軟膏 5g" />
+                        <name>リンデロン-Ｖ軟膏 5g</name>
+                      </manufacturedLabeledDrug>
+                    </manufacturedProduct>
+                  </consumable>
+                  <entryRelationship typeCode="COMP">
+                    <sequenceNumber value="1" />
+                    <supply classCode="SPLY" moodCode="EVN">
+                      <quantity value="2" unit="{本}" />
+                    </supply>
+                  </entryRelationship>
+                </substanceAdministration>
+            </entry>
+          
+          </section>
+        </component>
+      </structuredBody>
+  </component>
+
+<!--
+ ***************************************************************************
+ *                             保険情報
+ ***************************************************************************
+-->
+
+  <!-- removed, not part of R2
+  <pertinentInformation typeCode="PERT">
+    <pertinentCoverage classCode="COV" moodCode="EVN">
+      <code code="RIC01" codeSystem="0.430.1.12345.10.9.13" codeSystemName="ReferralInsuranceCategory" codeSystemVersion="1.0" displayName="政府管掌健康保険" />
+      <effectiveTime operator="I" />
+    </pertinentCoverage>
+  </pertinentInformation> -->
+</ClinicalDocument>

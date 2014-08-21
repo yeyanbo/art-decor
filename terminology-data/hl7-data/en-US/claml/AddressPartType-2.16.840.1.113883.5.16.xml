@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="134"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.16"/>
+   <Title name="AddressPartType" date="2012-08-02" version="1.000">Description: Code that specifies whether an address part names the street, city, country, postal code, post box, etc. Discussion: The hierarchical nature of these concepts shows composition. E.g. "Street Name" is part of "Street Address Line"</Title>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="ADL" kind="concept">
+      <Meta name="internalId" value="10651"/>
+      <Rubric id="d1e77174" kind="definition">
+         <Label xml:lang="en-US">
+            <p>This can be a unit designator, such as apartment number, suite number, or floor. There may be several unit designators in an address (e.g., "3rd floor, Appt. 342"). This can also be a designator pointing away from the location, rather than specifying a smaller location within some larger one (e.g., Dutch "t.o." means "opposite to" for house boats located across the street facing houses).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77192" kind="short">
+         <Label xml:lang="en-US">additional locator</Label>
+      </Rubric>
+      <Rubric id="d1e77192" kind="preferred">
+         <Label xml:lang="en-US">additional locator</Label>
+      </Rubric>
+   </Class>
+   <Class code="AL" kind="concept">
+      <Meta name="internalId" value="22619"/>
+      <SubClass code="DAL"/>
+      <SubClass code="SAL"/>
+      <Rubric id="d1e77203" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>An address line is for either an additional locator, a delivery address or a street address.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77219" kind="short">
+         <Label xml:lang="en-US">address line</Label>
+      </Rubric>
+      <Rubric id="d1e77219" kind="preferred">
+         <Label xml:lang="en-US">address line</Label>
+      </Rubric>
+   </Class>
+   <Class code="BNN" kind="concept">
+      <Meta name="internalId" value="17881"/>
+      <Rubric id="d1e77230" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The numeric portion of a building number</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77248" kind="short">
+         <Label xml:lang="en-US">building number numeric</Label>
+      </Rubric>
+      <Rubric id="d1e77248" kind="preferred">
+         <Label xml:lang="en-US">building number numeric</Label>
+      </Rubric>
+   </Class>
+   <Class code="BNR" kind="concept">
+      <Meta name="internalId" value="10649"/>
+      <Rubric id="d1e77259" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The number of a building, house or lot alongside the street. Also known as "primary street number". This does not number the street but rather the building.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77277" kind="short">
+         <Label xml:lang="en-US">building number</Label>
+      </Rubric>
+      <Rubric id="d1e77277" kind="preferred">
+         <Label xml:lang="en-US">building number</Label>
+      </Rubric>
+   </Class>
+   <Class code="BNS" kind="concept">
+      <Meta name="internalId" value="17882"/>
+      <Rubric id="d1e77288" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Any alphabetic character, fraction or other text that may appear after the numeric portion of a building number</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77306" kind="short">
+         <Label xml:lang="en-US">building number suffix</Label>
+      </Rubric>
+      <Rubric id="d1e77306" kind="preferred">
+         <Label xml:lang="en-US">building number suffix</Label>
+      </Rubric>
+   </Class>
+   <Class code="CAR" kind="concept">
+      <Meta name="internalId" value="17879"/>
+      <Rubric id="d1e77317" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The name of the party who will take receipt at the specified address, and will take on responsibility for ensuring delivery to the target recipient</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77330" kind="short">
+         <Label xml:lang="en-US">care of</Label>
+      </Rubric>
+      <Rubric id="d1e77330" kind="preferred">
+         <Label xml:lang="en-US">care of</Label>
+      </Rubric>
+   </Class>
+   <Class code="CEN" kind="concept">
+      <Meta name="internalId" value="17934"/>
+      <Rubric id="d1e77342" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A geographic sub-unit delineated for demographic purposes.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77355" kind="short">
+         <Label xml:lang="en-US">census tract</Label>
+      </Rubric>
+      <Rubric id="d1e77355" kind="preferred">
+         <Label xml:lang="en-US">census tract</Label>
+      </Rubric>
+   </Class>
+   <Class code="CNT" kind="concept">
+      <Meta name="internalId" value="10644"/>
+      <Rubric id="d1e77366" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Country</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77379" kind="short">
+         <Label xml:lang="en-US">country</Label>
+      </Rubric>
+      <Rubric id="d1e77379" kind="preferred">
+         <Label xml:lang="en-US">country</Label>
+      </Rubric>
+   </Class>
+   <Class code="CPA" kind="concept">
+      <Meta name="internalId" value="12210"/>
+      <Rubric id="d1e77390" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A sub-unit of a state or province. (49 of the United States of America use the term "county;" Louisiana uses the term "parish".)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77403" kind="short">
+         <Label xml:lang="en-US">county or parish</Label>
+      </Rubric>
+      <Rubric id="d1e77403" kind="preferred">
+         <Label xml:lang="en-US">county or parish</Label>
+      </Rubric>
+   </Class>
+   <Class code="CTY" kind="concept">
+      <Meta name="internalId" value="10646"/>
+      <Rubric id="d1e77414" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The name of the city, town, village, or other community or delivery center</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77427" kind="short">
+         <Label xml:lang="en-US">municipality</Label>
+      </Rubric>
+      <Rubric id="d1e77427" kind="preferred">
+         <Label xml:lang="en-US">municipality</Label>
+      </Rubric>
+   </Class>
+   <Class code="DEL" kind="concept">
+      <Meta name="internalId" value="10643"/>
+      <Rubric id="d1e77438" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Delimiters are printed without framing white space. If no value component is provided, the delimiter appears as a line break.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77451" kind="short">
+         <Label xml:lang="en-US">delimiter</Label>
+      </Rubric>
+      <Rubric id="d1e77451" kind="preferred">
+         <Label xml:lang="en-US">delimiter</Label>
+      </Rubric>
+   </Class>
+   <Class code="DINST" kind="concept">
+      <Meta name="internalId" value="17890"/>
+      <Rubric id="d1e77462" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicates the type of delivery installation (the facility to which the mail will be delivered prior to final shipping via the delivery mode.) Example: post office, letter carrier depot, community mail center, station, etc.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77480" kind="short">
+         <Label xml:lang="en-US">delivery installation type</Label>
+      </Rubric>
+      <Rubric id="d1e77480" kind="preferred">
+         <Label xml:lang="en-US">delivery installation type</Label>
+      </Rubric>
+   </Class>
+   <Class code="DINSTA" kind="concept">
+      <Meta name="internalId" value="17892"/>
+      <Rubric id="d1e77492" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The location of the delivery installation, usually a town or city, and is only required if the area is different from the municipality. Area to which mail delivery service is provided from any postal facility or service such as an individual letter carrier, rural route, or postal route.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77510" kind="short">
+         <Label xml:lang="en-US">delivery installation area</Label>
+      </Rubric>
+      <Rubric id="d1e77510" kind="preferred">
+         <Label xml:lang="en-US">delivery installation area</Label>
+      </Rubric>
+   </Class>
+   <Class code="DINSTQ" kind="concept">
+      <Meta name="internalId" value="17891"/>
+      <Rubric id="d1e77521" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A number, letter or name identifying a delivery installation. E.g., for Station A, the delivery installation qualifier would be 'A'.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77539" kind="short">
+         <Label xml:lang="en-US">delivery installation qualifier</Label>
+      </Rubric>
+      <Rubric id="d1e77539" kind="preferred">
+         <Label xml:lang="en-US">delivery installation qualifier</Label>
+      </Rubric>
+   </Class>
+   <Class code="DIR" kind="concept">
+      <Meta name="internalId" value="10650"/>
+      <Rubric id="d1e77550" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Direction (e.g., N, S, W, E)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77568" kind="short">
+         <Label xml:lang="en-US">direction</Label>
+      </Rubric>
+      <Rubric id="d1e77568" kind="preferred">
+         <Label xml:lang="en-US">direction</Label>
+      </Rubric>
+   </Class>
+   <Class code="DMOD" kind="concept">
+      <Meta name="internalId" value="17888"/>
+      <Rubric id="d1e77579" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicates the type of service offered, method of delivery. For example: post office box, rural route, general delivery, etc.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77597" kind="short">
+         <Label xml:lang="en-US">delivery mode</Label>
+      </Rubric>
+      <Rubric id="d1e77597" kind="preferred">
+         <Label xml:lang="en-US">delivery mode</Label>
+      </Rubric>
+   </Class>
+   <Class code="DMODID" kind="concept">
+      <Meta name="internalId" value="17889"/>
+      <Rubric id="d1e77608" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Represents the routing information such as a letter carrier route number. It is the identifying number of the designator (the box number or rural route number).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77626" kind="short">
+         <Label xml:lang="en-US">delivery mode identifier</Label>
+      </Rubric>
+      <Rubric id="d1e77626" kind="preferred">
+         <Label xml:lang="en-US">delivery mode identifier</Label>
+      </Rubric>
+   </Class>
+   <Class code="INT" kind="concept">
+      <Meta name="internalId" value="22620"/>
+      <Rubric id="d1e77637" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>An intersection denotes that the actual address is located AT or CLOSE TO the intersection OF two or more streets.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77658" kind="short">
+         <Label xml:lang="en-US">intersection</Label>
+      </Rubric>
+      <Rubric id="d1e77658" kind="preferred">
+         <Label xml:lang="en-US">intersection</Label>
+      </Rubric>
+   </Class>
+   <Class code="POB" kind="concept">
+      <Meta name="internalId" value="10652"/>
+      <Rubric id="d1e77670" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A numbered box located in a post station.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77688" kind="short">
+         <Label xml:lang="en-US">post box</Label>
+      </Rubric>
+      <Rubric id="d1e77688" kind="preferred">
+         <Label xml:lang="en-US">post box</Label>
+      </Rubric>
+   </Class>
+   <Class code="PRE" kind="concept">
+      <Meta name="internalId" value="17880"/>
+      <Rubric id="d1e77699" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A subsection of a municipality</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77712" kind="short">
+         <Label xml:lang="en-US">precinct</Label>
+      </Rubric>
+      <Rubric id="d1e77712" kind="preferred">
+         <Label xml:lang="en-US">precinct</Label>
+      </Rubric>
+   </Class>
+   <Class code="STA" kind="concept">
+      <Meta name="internalId" value="10645"/>
+      <Rubric id="d1e77723" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A sub-unit of a country with limited sovereignty in a federally organized country.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77736" kind="short">
+         <Label xml:lang="en-US">state or province</Label>
+      </Rubric>
+      <Rubric id="d1e77736" kind="preferred">
+         <Label xml:lang="en-US">state or province</Label>
+      </Rubric>
+   </Class>
+   <Class code="STB" kind="concept">
+      <Meta name="internalId" value="17883"/>
+      <Rubric id="d1e77747" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The base name of a roadway or artery recognized by a municipality (excluding street type and direction)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77765" kind="short">
+         <Label xml:lang="en-US">street name base</Label>
+      </Rubric>
+      <Rubric id="d1e77765" kind="preferred">
+         <Label xml:lang="en-US">street name base</Label>
+      </Rubric>
+   </Class>
+   <Class code="STR" kind="concept">
+      <Meta name="internalId" value="10648"/>
+      <Rubric id="d1e77779" kind="short">
+         <Label xml:lang="en-US">street name</Label>
+      </Rubric>
+      <Rubric id="d1e77779" kind="preferred">
+         <Label xml:lang="en-US">street name</Label>
+      </Rubric>
+   </Class>
+   <Class code="STTYP" kind="concept">
+      <Meta name="internalId" value="17884"/>
+      <Rubric id="d1e77790" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The designation given to the street. (e.g. Street, Avenue, Crescent, etc.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77808" kind="short">
+         <Label xml:lang="en-US">street type</Label>
+      </Rubric>
+      <Rubric id="d1e77808" kind="preferred">
+         <Label xml:lang="en-US">street type</Label>
+      </Rubric>
+   </Class>
+   <Class code="UNID" kind="concept">
+      <Meta name="internalId" value="17886"/>
+      <Rubric id="d1e77820" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The number or name of a specific unit contained within a building or complex, as assigned by that building or complex.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77838" kind="short">
+         <Label xml:lang="en-US">unit identifier</Label>
+      </Rubric>
+      <Rubric id="d1e77838" kind="preferred">
+         <Label xml:lang="en-US">unit identifier</Label>
+      </Rubric>
+   </Class>
+   <Class code="UNIT" kind="concept">
+      <Meta name="internalId" value="17885"/>
+      <Rubric id="d1e77849" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicates the type of specific unit contained within a building or complex. E.g. Appartment, Floor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77867" kind="short">
+         <Label xml:lang="en-US">unit designator</Label>
+      </Rubric>
+      <Rubric id="d1e77867" kind="preferred">
+         <Label xml:lang="en-US">unit designator</Label>
+      </Rubric>
+   </Class>
+   <Class code="ZIP" kind="concept">
+      <Meta name="internalId" value="10647"/>
+      <Rubric id="d1e77878" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A postal code designating a region defined by the postal service.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77891" kind="short">
+         <Label xml:lang="en-US">postal code</Label>
+      </Rubric>
+      <Rubric id="d1e77891" kind="preferred">
+         <Label xml:lang="en-US">postal code</Label>
+      </Rubric>
+   </Class>
+   <Class code="DAL" kind="concept">
+      <Meta name="internalId" value="17887"/>
+      <SuperClass code="AL"/>
+      <Rubric id="d1e77902" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A delivery address line is frequently used instead of breaking out delivery mode, delivery installation, etc. An address generally has only a delivery address line or a street address line, but not both.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77920" kind="short">
+         <Label xml:lang="en-US">delivery address line</Label>
+      </Rubric>
+      <Rubric id="d1e77920" kind="preferred">
+         <Label xml:lang="en-US">delivery address line</Label>
+      </Rubric>
+   </Class>
+   <Class code="SAL" kind="concept">
+      <Meta name="internalId" value="14822"/>
+      <SuperClass code="AL"/>
+      <Rubric id="d1e77931" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A street address line is frequently used instead of breaking out build number, street name, street type, etc. An address generally has only a delivery address line or a street address line, but not both.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e77952" kind="short">
+         <Label xml:lang="en-US">street address line</Label>
+      </Rubric>
+      <Rubric id="d1e77952" kind="preferred">
+         <Label xml:lang="en-US">street address line</Label>
+      </Rubric>
+   </Class>
+</ClaML>

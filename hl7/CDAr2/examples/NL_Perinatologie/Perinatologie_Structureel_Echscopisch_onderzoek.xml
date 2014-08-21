@@ -1,0 +1,325 @@
+<hl7:ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:peri="urn:nictiz-nl:v3/peri" xmlns:hl7="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd" classCode="DOCCLIN" moodCode="EVN">
+
+    <!-- Country specific context  -->
+    <hl7:realmCode code="NL"/>
+
+    <!-- type ID constant -->
+    <hl7:typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+
+    <!-- template identification for this type of document -->
+    <hl7:templateId root="2.16.840.1.113883.2.4.6.10.90.4"/>
+
+    <!-- identification of this report, beware: not equal to service identification @ serviceEvent -->
+    <hl7:id extension="s785893847" root="2.16.840.1.113883.2.4.6.6.99.2354.2.14"/>
+
+    <!-- categorization of this report document: LOINC code for study report obstetric ultrasound -->
+    <hl7:code code="11525-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Study report (OB US)"/>
+
+    <!-- optional title of this report-->
+    <hl7:title>Structureel echoscopisch onderzoek 16-12-2009</hl7:title>
+
+    <!-- date report was created -->
+    <hl7:effectiveTime value="20091216113201"/>
+
+    <!-- confidentiality, constant -->
+    <hl7:confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+
+    <!-- language -->
+    <hl7:languageCode code="nl-NL"/>
+    
+    <!-- set id and version number for versioning -->
+    <hl7:setId extension="d7s01236" root="2.16.840.1.113883.2.4.6.6.99.2354.2.14"/>
+    <hl7:versionNumber value="1"/>
+    <hl7:recordTarget typeCode="RCT" contextControlCode="OP">
+        <!-- patient/client information (women) -->
+        <hl7:patientRole classCode="PAT">
+            <!-- Civil Service Number (burgerservicenummer) -->
+            <hl7:id extension="880197249" root="2.16.840.1.113883.2.4.6.3"/>
+            <hl7:patient classCode="PSN" determinerCode="INSTANCE">
+                <!-- name women -->
+                <hl7:name use="L">
+                    <hl7:given>Mieke</hl7:given>
+                    <hl7:family>Cliënt</hl7:family>
+                </hl7:name>
+                <!-- date of birth -->
+                <hl7:birthTime value="19701023"/>
+            </hl7:patient>
+        </hl7:patientRole>
+    </hl7:recordTarget>
+    <hl7:author typeCode="AUT" contextControlCode="OP">
+        <!-- author of this report -->
+        <hl7:time value="200912161015"/>
+        <hl7:assignedAuthor classCode="ASSIGNED">
+            <!-- identification author -->
+            <hl7:id root="2.16.528.1.1007.3.1" extension="000077745"/>
+            <!-- type of author -->
+            <hl7:code code="AA.001" codeSystem="2.16.840.1.113883.2.4.98.111"/>
+            <hl7:assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                <hl7:name>
+                    <hl7:given>Hans</hl7:given>
+                    <hl7:family>Straatman</hl7:family>
+                </hl7:name>
+            </hl7:assignedPerson>
+            <hl7:representedOrganization classCode="ORG" determinerCode="INSTANCE">
+                <hl7:id extension="84675322" root="2.16.528.1.1007.3.3"/>
+                <hl7:name>Echocentrum Geluid en Zicht</hl7:name>
+                <hl7:addr>
+                    <hl7:streetName>Prins Hendrikstraat</hl7:streetName>
+                    <hl7:houseNumber>1</hl7:houseNumber>
+                    <hl7:postalCode>2011 VM</hl7:postalCode>
+                    <hl7:city>Haarlem</hl7:city>
+                </hl7:addr>
+                <!-- organization type -->
+                <peri:code code="E1" codeSystem="2.16.840.1.113883.2.4.15.1060" displayName="Echocentrum"/>
+            </hl7:representedOrganization>
+        </hl7:assignedAuthor>
+    </hl7:author>
+    <hl7:custodian typeCode="CST">
+        <!-- custodian -->
+        <hl7:assignedCustodian classCode="ASSIGNED">
+            <hl7:representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+                <hl7:id extension="84675322" root="2.16.528.1.1007.3.3"/>
+            </hl7:representedCustodianOrganization>
+        </hl7:assignedCustodian>
+    </hl7:custodian>
+    <hl7:documentationOf typeCode="DOC">
+        <hl7:serviceEvent classCode="OBS" moodCode="EVN">
+            
+            <!-- service identification: unique identificatie of this ultrasound (echo) service/study -->
+            <hl7:id extension="seo6574897" root="2.16.840.1.113883.2.4.6.6.99.2354.10"/>
+
+            <!-- type of ultrasound study -->
+            <hl7:code code="3" codeSystem="2.16.840.1.113883.2.4.4.13.38" displayName="Onderzoektype SEO"/>
+
+            <!-- date of ultrasound study -->
+            <hl7:effectiveTime value="20091216"/>
+
+            <!-- healthcare provider person / organization -->
+            <hl7:performer typeCode="PRF">
+                <hl7:assignedEntity classCode="ASSIGNED">
+                    <hl7:id root="2.16.528.1.1007.3.1" extension="000077745"/>
+                    <hl7:code code="AA.001" codeSystem="2.16.840.1.113883.2.4.98.111"/>
+                    <hl7:assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                        <hl7:name>
+                            <hl7:given>Hans</hl7:given>
+                            <hl7:family>Straatman</hl7:family>
+                        </hl7:name>
+                    </hl7:assignedPerson>
+                    <hl7:representedOrganization classCode="ORG" determinerCode="INSTANCE">
+                        <hl7:id extension="84675322" root="2.16.528.1.1007.3.3"/>
+                        <hl7:name>Echocentrum Geluid en Zicht</hl7:name>
+                        <hl7:addr>
+                            <hl7:streetName>Prins Hendrikstraat</hl7:streetName>
+                            <hl7:houseNumber>1</hl7:houseNumber>
+                            <hl7:postalCode>2011 VM</hl7:postalCode>
+                            <hl7:city>Haarlem</hl7:city>
+                        </hl7:addr>
+                    </hl7:representedOrganization>
+                </hl7:assignedEntity>
+            </hl7:performer>
+        </hl7:serviceEvent>
+    </hl7:documentationOf>
+
+    <!-- now for the study results: CDA body -->
+    <hl7:component typeCode="COMP" contextConductionInd="true">
+        <hl7:structuredBody classCode="DOCBODY" moodCode="EVN">
+            <hl7:component typeCode="COMP" contextConductionInd="true">
+                <!-- Zwangerschap -->
+                <hl7:section classCode="DOCSECT" moodCode="EVN">
+                    <hl7:code code="11449-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Pregnancy status"/>
+                    <hl7:title>Zwangerschap</hl7:title>
+                    <hl7:text>
+                        <hl7:list>
+                            <hl7:item>Graviditeit: 3</hl7:item>
+                            <hl7:item>Hoeveelling: 1</hl7:item>
+                            <hl7:item>Actuele aantal foetus: 1</hl7:item>
+                            <hl7:item>A terme datum (actueel): 09-05-2010 (bepaald op 21-09-2009 o.b.v. echoscopie)</hl7:item>
+                        </hl7:list>
+                    </hl7:text>
+                    <hl7:entry typeCode="DRIV" contextConductionInd="true">
+                        <hl7:organizer classCode="CLUSTER" moodCode="EVN">
+                            <hl7:code code="11449-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Pregnancy status"/>
+                            <hl7:statusCode code="completed"/>
+                            <hl7:component typeCode="COMP" contextConductionInd="true">
+                                <hl7:observation classCode="OBS" moodCode="EVN">
+                                    <!-- Gravidity / Graviditeit -->
+                                    <hl7:code code="Gravidity" codeSystem="2.16.840.1.113883.2.4.4.13"/>
+                                    <hl7:value xsi:type="INT" value="3"/>
+                                </hl7:observation>
+                            </hl7:component>
+                            <hl7:component typeCode="COMP" contextConductionInd="true">
+                                <hl7:observation classCode="OBS" moodCode="EVN">
+                                    <!-- Multiple fetus / Hoeveelling -->
+                                    <hl7:id root="2.16.840.1.113883.2.4.99.23444.112" extension="b355"/>
+                                    <hl7:code code="NFetusMax" codeSystem="2.16.840.1.113883.2.4.4.13"/>
+                                    <hl7:effectiveTime value="20090921"/>
+                                    <hl7:value xsi:type="INT" value="1"/>
+                                </hl7:observation>
+                            </hl7:component>
+                            <hl7:component typeCode="COMP" contextConductionInd="true">
+                                <hl7:observation classCode="OBS" moodCode="EVN">
+                                    <!-- Actual number of fetus / Actuele aantal foetus -->
+                                    <hl7:id root="2.16.840.1.113883.2.4.99.23444.112" extension="b352"/>
+                                    <hl7:code code="NFetusCur" codeSystem="2.16.840.1.113883.2.4.4.13"/>
+                                    <hl7:effectiveTime value="20090921"/>
+                                    <hl7:value xsi:type="INT" value="1"/>
+                                </hl7:observation>
+                            </hl7:component>
+                            <hl7:component typeCode="COMP" contextConductionInd="true">
+                                <hl7:observation classCode="OBS" moodCode="EVN">
+                                    <!-- Expected delivery date / A terme datum -->
+                                    <hl7:id root="2.16.840.1.113883.2.4.6.6.99.23444.17" extension="6547ed"/>
+                                    <hl7:code code="EDD" codeSystem="2.16.840.1.113883.2.4.4.13"/>
+                                    <!-- Date of EDD determination / Datum bepaling à terme datum -->
+                                    <hl7:effectiveTime value="20090921"/>
+                                    <!-- EDD / A terme datum -->
+                                    <hl7:value xsi:type="TS" value="20100509"/>
+                                    <hl7:entryRelationship typeCode="SPRT">
+                                        <hl7:observation classCode="OBS" moodCode="EVN">
+                                            <!-- Is this the actual EDD / Actuele a terme datum? -->
+                                            <hl7:code code="ActualEDD" codeSystem="2.16.840.1.113883.2.4.4.13"/>
+                                            <hl7:value xsi:type="BL" value="true"/>
+                                        </hl7:observation>
+                                    </hl7:entryRelationship>
+                                    <hl7:entryRelationship typeCode="SPRT">
+                                        <hl7:observation classCode="OBS" moodCode="EVN">
+                                            <!-- EDD based on / A terme datum o.b.v. -->
+                                            <hl7:code code="EDDBasedOn" codeSystem="2.16.840.1.113883.2.4.4.13"/>
+                                            <hl7:value xsi:type="CE" code="3" codeSystem="2.16.840.1.113883.2.4.4.13.15"/>
+                                        </hl7:observation>
+                                    </hl7:entryRelationship>
+                                </hl7:observation>
+                            </hl7:component>
+                        </hl7:organizer>
+                    </hl7:entry>
+                </hl7:section>
+            </hl7:component>
+            <hl7:component typeCode="COMP" contextConductionInd="true">
+                <!--  Fetus specific information -->
+                <hl7:section classCode="DOCSECT" moodCode="EVN">
+                    <hl7:code code="12130-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Study observation.general^Fetus"/>
+                    <hl7:title>Foetusspecifiek</hl7:title>
+                    <hl7:text>
+                        <hl7:paragraph>Identificatie:</hl7:paragraph>
+                        <hl7:list>
+                            <hl7:item>Foetus identificatie: 121 (2.16.840.1.113883.2.4.6.6.99.2354.10)</hl7:item>
+                            <hl7:item>Foetus volgletter: A</hl7:item>
+                        </hl7:list>
+                        <hl7:br/>
+                        <hl7:paragraph>Resultaten SEO:</hl7:paragraph>
+                        <hl7:list>
+                            <hl7:item>Type: primair onderzoek</hl7:item>
+                            <hl7:item>HC: 188.8 mm</hl7:item>
+                            <hl7:item>Cerebellum: 22.9 mm</hl7:item>
+                            <hl7:item>AC: 162.1 mm</hl7:item>
+                            <hl7:item>FL: 32.4 mm</hl7:item>
+                            <hl7:item>Algehele beoordeling: niet conclusief</hl7:item>
+                            <hl7:item>Afwijkende bevindingen (type GUO): Neuraalbuisdefecten (onzeker)</hl7:item>
+                            <hl7:item>Sonomarker: Kort femur</hl7:item>
+                        </hl7:list>
+                    </hl7:text>
+                    <hl7:entry typeCode="DRIV" contextConductionInd="true">
+                        <!-- DRIV says that the text is derived from the entries below -->
+                        <hl7:organizer classCode="CLUSTER" moodCode="EVN">
+                            <!-- per fetus an organizer to group the information -->
+                            
+                            <!-- type and status (completed) of the study -->
+                            <hl7:code code="12130-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Study observation.general^Fetus"/>
+                            <hl7:statusCode code="completed"/>
+                            <hl7:participant typeCode="SBJ">
+                                <!-- subject is fetus -->
+                                <hl7:participantRole classCode="PRS">
+                                    <!-- fetus identification: unique id -->
+                                    <hl7:id extension="121" root="2.16.840.1.113883.2.4.6.6.99.2354.10"/>
+                                    <!-- type of "person", fixed to CHILD -->
+                                    <hl7:code code="CHILD" codeSystem="2.16.840.1.113883.5.111"/>
+                                </hl7:participantRole>
+                            </hl7:participant>
+                            
+                            <!--
+                                fetus sequence letter
+                                the sequence letter (in case of a multiple birth) indicates for which fetus the
+                                information is specified. In practice this is often limited to just two or
+                                three possible values​​.
+                            -->
+                            <hl7:component typeCode="COMP" contextConductionInd="true">
+                                <hl7:observation classCode="OBS" moodCode="EVN">
+                                    <hl7:code code="11951-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="fetus identification"/>
+                                    <hl7:value xsi:type="CE" code="A" codeSystem="2.16.840.1.113883.2.4.4.13.42"/>
+                                </hl7:observation>
+                            </hl7:component>
+                            
+                            <!-- Type of SEO -->
+                            <hl7:component typeCode="COMP" contextConductionInd="true">
+                                <hl7:observation classCode="OBS" moodCode="EVN">
+                                    <hl7:code code="SEOType" codeSystem="2.16.840.1.113883.2.4.4.13"/>
+                                    <hl7:value xsi:type="CE" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.33" displayName="primair onderzoek"/>
+                                </hl7:observation>
+                            </hl7:component>
+
+                            <!-- Head circumference -->
+                            <hl7:component typeCode="COMP" contextConductionInd="true">
+                                <hl7:observation classCode="OBS" moodCode="EVN">
+                                    <hl7:code code="11984-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Head circumference^Fetus"/>
+                                    <hl7:value xsi:type="PQ" value="188.8" unit="mm"/>
+                                </hl7:observation>
+                            </hl7:component>
+                            
+                            <!-- Diameter transverse Cerebellum -->
+                            <hl7:component typeCode="COMP" contextConductionInd="true">
+                                <hl7:observation classCode="OBS" moodCode="EVN">
+                                    <hl7:code code="11863-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Diameter.transverse Cerebellum^Fetus"/>
+                                    <hl7:value xsi:type="PQ" value="22.9" unit="mm"/>
+                                </hl7:observation>
+                            </hl7:component>
+                            
+                            <!-- Abdominal circumference -->
+                            <hl7:component typeCode="COMP" contextConductionInd="true">
+                                <hl7:observation classCode="OBS" moodCode="EVN">
+                                    <hl7:code code="11979-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Abdominal circumference^Fetus"/>
+                                    <hl7:value xsi:type="PQ" value="162.1" unit="mm"/>
+                                </hl7:observation>
+                            </hl7:component>
+                            
+                            <!-- Femur length -->
+                            <hl7:component typeCode="COMP" contextConductionInd="true">
+                                <hl7:observation classCode="OBS" moodCode="EVN">
+                                    <hl7:code code="11963-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Femur length^Fetus"/>
+                                    <hl7:value xsi:type="PQ" value="32.4" unit="mm"/>
+                                </hl7:observation>
+                            </hl7:component>
+                         
+                            <!-- Overall rating, rough indication of the findings -->
+                            <hl7:component typeCode="COMP" contextConductionInd="true">
+                                <hl7:observation classCode="OBS" moodCode="EVN">
+                                    <hl7:code code="GlobFind" codeSystem="2.16.840.1.113883.2.4.4.13"/>
+                                    <hl7:value xsi:type="CE" code="3" codeSystem="2.16.840.1.113883.2.4.4.13.36" displayName="niet conclusief"/>
+                                </hl7:observation>
+                            </hl7:component>
+                            
+                            <!-- Abnormal findings according GUO classification, noted during this ultrasound examination -->
+                            <hl7:component typeCode="COMP" contextConductionInd="true">
+                                <hl7:observation classCode="OBS" moodCode="EVN">
+                                    <hl7:code code="GUOFind" codeSystem="2.16.840.1.113883.2.4.4.13"/>
+                                    <!-- certainty abnormal findings (GUO) -->
+                                    <peri:uncertaintyCode code="U" codeSystem="2.16.840.1.113883.5.1053" displayName="onzeker"/>
+                                    <hl7:value xsi:type="CE" code="1" codeSystem="2.16.840.1.113883.2.4.4.13.34" displayName="Neuraalbuisdefecten"/>
+                                </hl7:observation>
+                            </hl7:component>
+                            
+                            <!-- Sonomarker, Ultrasound finding which provides an indication that there is a deviation -->
+                            <hl7:component typeCode="COMP" contextConductionInd="true">
+                                <hl7:observation classCode="OBS" moodCode="EVN">
+                                    <hl7:code code="SonoMarker" codeSystem="2.16.840.1.113883.2.4.4.13"/>
+                                    <!-- certainty sonomarker -->
+                                    <peri:uncertaintyCode code="U" codeSystem="2.16.840.1.113883.5.1053" displayName="onzeker"/>
+                                    <hl7:value xsi:type="CE" code="7" codeSystem="2.16.840.1.113883.2.4.4.13.35" displayName="Kort femur"/>
+                                </hl7:observation>
+                            </hl7:component>
+                        </hl7:organizer>
+                    </hl7:entry>
+                </hl7:section>
+            </hl7:component>
+        </hl7:structuredBody>
+    </hl7:component>
+</hl7:ClinicalDocument>

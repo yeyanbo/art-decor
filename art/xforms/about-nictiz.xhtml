@@ -1,0 +1,111 @@
+<!--
+    Copyright (C) 2011-2014 ART-DECOR expert group art-decor.org
+    
+    Author: Gerrit Boers
+    Help: Kai U. Heitmann
+    
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+    
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+    
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:atp="urn:nictiz.atp" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:widget="http://orbeon.org/oxf/xml/widget" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="home" xsi:schemaLocation="http://www.w3.org/1999/xhtml ../../orbeon_schemas/xhtml1-transitional-orbeon.xsd">
+    <xhtml:head>
+        <xhtml:title>
+            <xforms:output ref="$resources/about-nictiz"/>
+        </xhtml:title>
+      <!-- styling specific for this xform -->
+        <xhtml:style type="text/css"> 
+         .xforms-repeat-selected-item-2 { 
+         font-weight: normal; background-color: inherit; color: black; 
+         }
+         .titlehead { 
+         padding-left : 50px; text-align : left; color : #fd986e; font-size : 16px; border-bottom: .1em solid #dddddd; 
+         } 
+         .titletext { 
+         padding-left : 100px; text-align : left; color : #bbbbbb; font-size : 14px; font-weight: normal; background-color: inherit;
+         }
+         .titleimg { 
+         padding-left : 100px; padding-top: 10px; 
+         } 
+         td.paddedtd { 
+         padding:0.2em 0.5em;
+         } 
+         .pack {
+         padding: 3em 1em;
+         } 
+         .hometop { 
+         color : #e16e22; font-weight : bold; font-size : 18px; text-align : left; padding-bottom : .4em; margin-top : 0; margin-bottom : 0; line-height : 120%;
+         } 
+         .note_available { 
+         background-repeat:no-repeat; padding:2px 0 0 18px; line-height:18px; background-image:url('img/note.png') 
+         } 
+         .lastlogin { 
+         padding-bottom : 10px; text-align : left; color : #bbbbbb; background-color: inherit;
+         } 
+      </xhtml:style>
+        <xforms:model id="main-model">
+         <!-- instance with logo -->
+            <xforms:instance id="logo">
+                <logo href="http://www.nictiz.nl">nictiz-logo.png</logo>
+            </xforms:instance>
+         <!-- Variable with path to art-exist -->
+            <xxforms:variable name="art-exist" select="xxforms:property('art.exist.url')"/>
+            <xxforms:variable name="art-external-exist" select="xxforms:property('art.external.exist.url')"/>
+         <!-- resources for internationalization -->
+            <xforms:instance id="resources-instance">
+                <dummy/>
+            </xforms:instance>
+         <!-- submission for loading resources -->
+            <xforms:submission id="get-resources-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-form-resources.xquery" replace="instance" instance="resources-instance"/>
+         <!-- language -->
+            <xforms:instance id="language">
+                <language/>
+            </xforms:instance>
+
+         <!-- instance for DECOR Schema -->
+            <xforms:instance id="decor-types">
+                <dummy/>
+            </xforms:instance>
+         <!-- get decor schema submission -->
+            <xforms:submission id="get-decor-types" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-schema-types.xquery" replace="instance" instance="decor-types"/>
+
+         <!-- load instances -->
+            <xforms:action ev:event="xforms-model-construct-done">
+                <xforms:send submission="get-resources-submission"/>
+                <xforms:setvalue ref="instance('language')" value="instance('resources-instance')//resources[1]/@xml:lang/string()"/>
+                <xforms:insert context="." origin="xxforms:set-session-attribute('language', instance('language'))"/>
+                <xforms:send submission="get-decor-types"/>
+                <xforms:setvalue ref="instance('comefrom')" value="xxforms:get-session-attribute('comefrom')"/>
+                <xforms:insert context="." origin="xxforms:set-session-attribute('comefrom', '')"/>
+                <xforms:setvalue ref="instance('user-safe')" value="'true'"/>
+            </xforms:action>
+            <xforms:action ev:event="xforms-model-construct-done load-resources"/>
+            <xxforms:variable name="resources" select="instance('resources-instance')//resources[1]"/>
+        </xforms:model>
+    </xhtml:head>
+   <!-- Start of XForm body -->
+    <xhtml:body>
+        <xhtml:div style="width:600px;">
+            <xhtml:p>
+                <xhtml:strong>Optimale toepassing van eHealth en ICT in de zorg kan niet zonder standaardisatie. In nauwe samenwerking met zorgverleners, koepelorganisaties, standaardisatieorganisaties en industrie draagt Nictiz zorg voor de ontwikkeling en beschikbaarheid van de noodzakelijke standaarden.
+         </xhtml:strong>
+                <xhtml:br/>We doen dit door het organiseren van gemeenschappelijke ontwikkelprojecten, kennisoverdracht en kwaliteitstoetsing.</xhtml:p>
+            <xhtml:p>
+                <xhtml:strong>Expertise</xhtml:strong>
+                <xhtml:br/>Actuele standaardisatiegebieden waar Nictiz aan werkt zijn o.a. patiënt en zelfmanagement,medicatieveiligheid, basiszorg, specialistische zorg, integrale zorg, en perinatale- en jeugdgezondheidszorg. Eenheid van taal en informatiebeveiliging zijn de fundamenten voor de ontwikkeling van standaarden, net als Europese en internationale samenwerking. De standaarden die zijn ontwikkeld ten behoeve van medicatiegegevens en dienstwaarneming huisartsen en die gebruikt worden binnen de infrastructuur voor zorgcommunicatie zijn hier een onderdeel van.
+         </xhtml:p>
+            <xhtml:p>
+                <xhtml:strong>Standaardisatie</xhtml:strong>
+                <xhtml:br/>eHealth en ICT zijn nooit een doel op zich. Standaardisatie vindt plaats met als doel uiteindelijk de kwaliteit, de toegankelijkheid en betaalbaarheid van zorg te verbeteren. Om effectief een zorgstandaardte kunnen toepassen in de dagelijkse praktijk van de zorg is vrijwel altijd ook een informatiestandaardnoodzakelijk. Nictiz bewaakt de noodzakelijke onderlinge samenhang van de ontwikkelde informatiestandaarden en werkt in Europees en internationaal verband aan harmonisatie. 
+         </xhtml:p>
+            <xhtml:p>Voor meer informatie over Nictiz: <xhtml:a href="http://www.nictiz.nl" target="_blank">www.nictiz.nl</xhtml:a>.
+           </xhtml:p>
+        </xhtml:div>
+    </xhtml:body>
+</xhtml:html>

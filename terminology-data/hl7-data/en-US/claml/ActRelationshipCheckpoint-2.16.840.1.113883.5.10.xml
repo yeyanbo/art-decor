@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="134"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.10"/>
+   <Title name="ActRelationshipCheckpoint" date="2012-08-02" version="1.000"/>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="B" kind="concept">
+      <Meta name="internalId" value="10351"/>
+      <Rubric id="d1e70179" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Condition is tested every time before execution of the service (WHILE condition DO service).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70192" kind="short">
+         <Label xml:lang="en-US">beginning</Label>
+      </Rubric>
+      <Rubric id="d1e70192" kind="preferred">
+         <Label xml:lang="en-US">beginning</Label>
+      </Rubric>
+   </Class>
+   <Class code="E" kind="concept">
+      <Meta name="internalId" value="10352"/>
+      <Rubric id="d1e70204" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Condition is tested at the end of a repeated service execution. The service is repeated only if the condition is true (DO service WHILE condition).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70217" kind="short">
+         <Label xml:lang="en-US">end</Label>
+      </Rubric>
+      <Rubric id="d1e70217" kind="preferred">
+         <Label xml:lang="en-US">end</Label>
+      </Rubric>
+   </Class>
+   <Class code="S" kind="concept">
+      <Meta name="internalId" value="10350"/>
+      <Rubric id="d1e70228" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Condition is tested once before the service is executed (IF condition THEN service).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70241" kind="short">
+         <Label xml:lang="en-US">entry</Label>
+      </Rubric>
+      <Rubric id="d1e70241" kind="preferred">
+         <Label xml:lang="en-US">entry</Label>
+      </Rubric>
+   </Class>
+   <Class code="T" kind="concept">
+      <Meta name="internalId" value="10353"/>
+      <Rubric id="d1e70252" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Condition must be true throughout the execution and the service is interrupted (asynchronously) as soon as the condition turns false (asynchronous WHILE loop). The service must be interruptible.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70265" kind="short">
+         <Label xml:lang="en-US">through</Label>
+      </Rubric>
+      <Rubric id="d1e70265" kind="preferred">
+         <Label xml:lang="en-US">through</Label>
+      </Rubric>
+   </Class>
+   <Class code="X" kind="concept">
+      <Meta name="internalId" value="10354"/>
+      <Rubric id="d1e70276" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Condition is a loop checkpoint, i.e. it is a step of an activity plan and, if negative causes the containing loop to exit.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70289" kind="short">
+         <Label xml:lang="en-US">exit</Label>
+      </Rubric>
+      <Rubric id="d1e70289" kind="preferred">
+         <Label xml:lang="en-US">exit</Label>
+      </Rubric>
+   </Class>
+</ClaML>

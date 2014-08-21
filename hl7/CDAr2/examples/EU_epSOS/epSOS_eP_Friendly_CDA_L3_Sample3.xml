@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDASchema/CDA_extended.xsd" classCode="DOCCLIN" moodCode="EVN">
+	<!--Validated: 2011-02-16-->
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.1.1"/>
+	<id root="2.16.724.4.8.10.200.10" extension="b3e092760f274530a032fffecc6917905af316f5"/>
+	<code codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="57833-6" displayName="ePrescription"/>
+	<title>CLM epSOS ePrescription example (2)</title>
+	<effectiveTime value="20100930"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" displayName="Normal"/>
+	<languageCode code="es-ES"/>
+	<setId root="2.16.724.4.8.10.200.10" extension="b3e092760f274530a032fffecc6917905af316f5S"/>
+	<recordTarget typeCode="RCT" contextControlCode="OP">
+		<patientRole classCode="PAT">
+			<!--National identifier: CÓDIGO SNS -->
+			<id root="2.16.17.710.801.1000.2.1.1.1.19" extension="BBBBBBBBGG212412"/>
+			<!--DNI-->
+			<id extension="23456789D" root="1.3.6.1.4.1.19126.3"/>
+			<!--NASS-->
+			<id extension="051999999971" root="1.3.6.1.4.1.19126.4"/>
+			<!--  Regional health card identifier: CIP  -->
+			<id root="2.16.724.4.41" extension="GRGN560321911022"/>
+			<!--  Regional health card identifier: CITE-->
+			<id root="2.16.724.4.42" extension="803411"/>
+			<addr use="HP">
+				<state>Castilla-La Mancha</state>
+				<city>Toledo</city>
+				<precinct>Toledo</precinct>
+				<country>ES</country>
+				<postalCode>45071</postalCode>
+				<streetAddressLine>Calle Huérfanos Cristinos, 15</streetAddressLine>
+			</addr>
+			<telecom use="HP" value="tel:+34925654321"/>
+			<telecom nullFlavor="NI"/>
+			<patient classCode="PSN" determinerCode="INSTANCE">
+				<name>
+					<given>Begoña</given>
+					<family>García</family>
+					<family>González</family>
+				</name>
+				<administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1" displayName="Mujer"/>
+				<birthTime value="19560321"/>
+				<languageCommunication>
+					<languageCode code="es-ES"/>
+				</languageCommunication>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<!--Prescriber-->
+	<author typeCode="AUT" contextControlCode="OP">
+		<functionCode code="221" codeSystem="2.16.840.1.113883.2.9.6.2.7" displayName="Doctor" codeSystemName="epSOSHealthcareProfessionalRoles"/>
+		<time value="20100915"/>
+		<assignedAuthor classCode="ASSIGNED">
+			<!--Prescriber identifier: CIAS -->
+			<id root="2.16.724.4.8.10.100.50" extension="1107171003V"/>
+			<!--Prescriber identifier: Num. colegiado -->
+			<id root="2.16.724.4.8.10.100.20.10" extension="45/06873-1"/>
+			<addr nullFlavor="NI"/>
+			<telecom nullFlavor="NI"/>
+			<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+				<name>
+					<given>María</given>
+					<family>López</family>
+					<family>Garrido</family>
+				</name>
+			</assignedPerson>
+			<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<id root="2.16.724.4.8.10.100.10" extension="0800000000000000011070310"/>
+				<name>C.S. Benquerencia</name>
+				<telecom nullFlavor="NI"/>
+				<addr use="WP">
+					<state>Castilla-La Mancha</state>
+					<city>Toledo</city>
+					<precinct>Toledo</precinct>
+					<country>ES</country>
+					<postalCode>45007</postalCode>
+					<streetAddressLine>Guadarrama, S/N</streetAddressLine>
+				</addr>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian typeCode="CST">
+		<assignedCustodian classCode="ASSIGNED">
+			<representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+				<id root="2.16.724.4.8"/>
+				<name>SESCAM</name>
+				<telecom use="HP" value="tel:+34925274100"/>
+				<addr use="HP">
+					<state>Castilla-La Mancha</state>
+					<city>Toledo</city>
+					<precinct>Toledo</precinct>
+					<country>ES</country>
+					<postalCode>45077</postalCode>
+					<streetAddressLine>Av. Río Guadiana, 4</streetAddressLine>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<legalAuthenticator typeCode="LA" contextControlCode="OP">
+		<time value="20100930"/>
+		<signatureCode code="S"/>
+		<assignedEntity classCode="ASSIGNED">
+			<id root="2.16.724.4.8"/>
+			<assignedPerson nullFlavor="NA"/>
+			<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<id root="2.16.724.4.8"/>
+				<name>SESCAM</name>
+				<addr use="HP">
+					<state>Castilla-La Mancha</state>
+					<city>Toledo</city>
+					<precinct>Toledo</precinct>
+					<country>ES</country>
+					<postalCode>45007</postalCode>
+					<streetAddressLine>Av. Río Guadiana, 4</streetAddressLine>
+				</addr>
+			</representedOrganization>
+		</assignedEntity>
+	</legalAuthenticator>
+	<documentationOf typeCode="DOC">
+		<serviceEvent classCode="PCPR" moodCode="EVN">
+			<effectiveTime>
+				<high value="20100915"/>
+			</effectiveTime>
+		</serviceEvent>
+	</documentationOf>
+	<relatedDocument typeCode="XFRM">
+		<parentDocument>
+      <id root="2.16.724.4.8.10.200.10"  extension="b3e092760f274530a032fffecc6917905af316f5o" />
+		</parentDocument>
+	</relatedDocument>
+  <relatedDocument typeCode="APND">
+    <parentDocument>
+      <id root="2.16.724.4.8.10.200.10"  extension="b3e092760f274530a032fffecc6917905af316f5A" />
+    </parentDocument>
+  </relatedDocument>
+  
+	<component typeCode="COMP" contextConductionInd="true">
+		<structuredBody classCode="DOCBODY" moodCode="EVN">
+			<!--ePrescription-->
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<templateId root="2.16.840.1.113883.10.20.1.8"/>
+					<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.1"/>
+					<!--Prescription ID-->
+					<id root="2.16.724.4.8.10.200.20" extension="573375"/>
+					<code code="57828-6" displayName="Prescriptions" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Resumen de medicamentos prescritos</title>
+					<text ID="A1">SALBUTAMOL 5 G/L 10ML SOLUCION NEBULIZADORA INHALATORIA</text>
+					<entry typeCode="COMP" contextConductionInd="true">
+						<substanceAdministration classCode="SBADM" moodCode="INT">
+							<templateId root="2.16.840.1.113883.10.20.1.24"/>
+							<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.2"/>
+							<!--Prescription item ID-->
+							<id root="2.16.724.4.8.10.200.20" extension="573375"/>
+							<code nullFlavor="NI"/>
+							<text>
+								<reference value="#A1"/>
+							</text>
+							<statusCode code="active"/>
+							<!--Duration of treatment-->
+							<effectiveTime xsi:type="IVL_TS">
+								<low value="20100915"/>
+								<high value="20100920"/>
+							</effectiveTime>
+							<!--Frequency of intakes-->
+							<effectiveTime operator="A" xsi:type="PIVL_TS" institutionSpecified="true">
+								<period value="6" unit="h"/>
+							</effectiveTime>
+							<!--Route of administration-->
+							<routeCode code="20020000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Inhalación"/>
+							<!--Number of units per intake: 3 inhalations-->
+							<doseQuantity>
+								<low value="3" unit="1"/>
+								<high value="3" unit="1"/>
+							</doseQuantity>
+							<consumable>
+								<manufacturedProduct classCode="MANU" xmlns:epsos="urn:epsos-org:ep:medication">
+									<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.1"/>
+									<manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+										<!--National medicinal product code: Nomenclator Alcántara-->
+										<code code="941807" codeSystem="2.16.724.4.21.5.4" codeSystemName="Nomenclator Alcántara" displayName="VENTOLIN 5MG/ML 1 FRASC 10ML SOLUC INHALAC NEBULIZ"/>
+										<!--Brand name-->
+										<name>VENTOLIN 5MG/ML 1 FRASC 10ML SOLUC INHALAC NEBULIZ</name>
+										<!--Pharmaceutical dose form-->
+										<epsos:formCode code="11101000" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Nebulizador"/>
+										<epsos:asContent classCode="CONT">
+											<!--Package size-->
+											<epsos:containerPackagedMedicine classCode="CONT" determinerCode="INSTANCE">
+												<!--Medicinal product package-->
+												<epsos:formCode nullFlavor="NI"/>
+												<epsos:capacityQuantity value="10" unit="mL"/>
+											</epsos:containerPackagedMedicine>
+										</epsos:asContent>
+										<epsos:ingredient classCode="ACTI">
+											<!--Strength-->
+											<epsos:quantity>
+												<epsos:numerator xsi:type="epsos:PQ" value="5" unit="mg"/>
+												<epsos:denominator xsi:type="epsos:PQ" value="1" unit="mL"/>
+											</epsos:quantity>
+											<epsos:ingredient classCode="MMAT" determinerCode="KIND">
+												<!--Active ingredient-->
+												<epsos:code code="R03AC02" codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC WHO" displayName="salbutamol"/>
+												<epsos:name>salbutamol</epsos:name>
+											</epsos:ingredient>
+										</epsos:ingredient>
+									</manufacturedMaterial>
+								</manufacturedProduct>
+							</consumable>
+							<!--Number of packages-->
+							<entryRelationship typeCode="COMP">
+								<supply moodCode="RQO" classCode="SPLY">
+									<independentInd value="false"/>
+									<quantity value="1" unit="1"/>
+								</supply>
+							</entryRelationship>
+							<!--Substitution information-->
+							<entryRelationship typeCode="SUBJ" inversionInd="true">
+								<observation classCode="OBS" moodCode="EVN">
+									<code code="SUBST" codeSystem="2.16.840.1.113883.5.6" codeSystemName="ActClass" displayName="Información sobre posible sustitución"/>
+									<value xsi:type="CE" code="N" codeSystem="2.16.840.1.113883.5.1070" codeSystemName="HL7:substanceAdminSubstitution" displayName="Sustitución no permitida" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+								</observation>
+							</entryRelationship>
+						</substanceAdministration>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

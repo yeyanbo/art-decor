@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="29"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.63"/>
+   <Title name="LivingArrangement" date="2012-08-02" version="1.000">A code depicting the living arrangements of a person</Title>
+   <Class code="rootClass">
+      <SubClass subCount="2" code="HL" kind="concept">
+         <Rubric id="d1e142529" kind="preferred">
+            <Label xml:lang="en-US">homeless</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="4" code="I" kind="concept">
+         <Rubric id="d1e142554" kind="preferred">
+            <Label xml:lang="en-US">Institution</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="3" code="PR" kind="concept">
+         <Rubric id="d1e142581" kind="preferred">
+            <Label xml:lang="en-US">private residence</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">LivingArrangement</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">A code depicting the living arrangements of a person</Label>
+      </Rubric>
+   </Class>
+   <Class code="HL" kind="concept">
+      <Meta name="internalId" value="22193"/>
+      <SubClass code="M" subCount="0">
+         <Rubric id="d1e142610" kind="preferred">
+            <Label xml:lang="en-US">Nomadic</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="T" subCount="0">
+         <Rubric id="d1e142639" kind="preferred">
+            <Label xml:lang="en-US">Transient</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e142513" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Living arrangements lacking a permanent residence.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e142529" kind="short">
+         <Label xml:lang="en-US">homeless</Label>
+      </Rubric>
+      <Rubric id="d1e142529" kind="preferred">
+         <Label xml:lang="en-US">homeless</Label>
+      </Rubric>
+   </Class>
+   <Class code="I" kind="concept">
+      <Meta name="internalId" value="10189"/>
+      <SubClass code="CS" subCount="0">
+         <Rubric id="d1e142671" kind="preferred">
+            <Label xml:lang="en-US">community shelter</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="G" subCount="0">
+         <Rubric id="d1e142700" kind="preferred">
+            <Label xml:lang="en-US">Group Home</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="N" subCount="0">
+         <Rubric id="d1e142730" kind="preferred">
+            <Label xml:lang="en-US">Nursing Home</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="X" subCount="0">
+         <Rubric id="d1e142759" kind="preferred">
+            <Label xml:lang="en-US">Extended care facility</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e142541" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Institution</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e142554" kind="short">
+         <Label xml:lang="en-US">Institution</Label>
+      </Rubric>
+      <Rubric id="d1e142554" kind="preferred">
+         <Label xml:lang="en-US">Institution</Label>
+      </Rubric>
+   </Class>
+   <Class code="PR" kind="concept">
+      <Meta name="internalId" value="22190"/>
+      <SubClass code="H" subCount="0">
+         <Rubric id="d1e142788" kind="preferred">
+            <Label xml:lang="en-US">Independent Household</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="R" subCount="0">
+         <Rubric id="d1e142817" kind="preferred">
+            <Label xml:lang="en-US">Retirement Community</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SL" subCount="0">
+         <Rubric id="d1e142849" kind="preferred">
+            <Label xml:lang="en-US">supported living</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e142565" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>A living arrangement within a private residence for single family.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e142581" kind="short">
+         <Label xml:lang="en-US">private residence</Label>
+      </Rubric>
+      <Rubric id="d1e142581" kind="preferred">
+         <Label xml:lang="en-US">private residence</Label>
+      </Rubric>
+   </Class>
+   <Class code="M" kind="concept">
+      <Meta name="internalId" value="10195"/>
+      <SuperClass code="HL">
+         <Rubric id="d1e142529" kind="preferred">
+            <Label xml:lang="en-US">homeless</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e142592" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Nomadic</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e142610" kind="short">
+         <Label xml:lang="en-US">Nomadic</Label>
+      </Rubric>
+      <Rubric id="d1e142610" kind="preferred">
+         <Label xml:lang="en-US">Nomadic</Label>
+      </Rubric>
+   </Class>
+   <Class code="T" kind="concept">
+      <Meta name="internalId" value="10194"/>
+      <SuperClass code="HL">
+         <Rubric id="d1e142529" kind="preferred">
+            <Label xml:lang="en-US">homeless</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e142621" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Transient</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e142639" kind="short">
+         <Label xml:lang="en-US">Transient</Label>
+      </Rubric>
+      <Rubric id="d1e142639" kind="preferred">
+         <Label xml:lang="en-US">Transient</Label>
+      </Rubric>
+   </Class>
+   <Class code="CS" kind="concept">
+      <Meta name="internalId" value="22192"/>
+      <SuperClass code="I">
+         <Rubric id="d1e142554" kind="preferred">
+            <Label xml:lang="en-US">Institution</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e142650" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>A group living arrangement specifically for the care of those in need of temporary and crisis housing assistance. Examples include domestic violence shelters, shelters for displaced or homeless individuals, Salvation Army, Jesus House, etc. Community based services may be provided.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e142671" kind="short">
+         <Label xml:lang="en-US">community shelter</Label>
+      </Rubric>
+      <Rubric id="d1e142671" kind="preferred">
+         <Label xml:lang="en-US">community shelter</Label>
+      </Rubric>
+   </Class>
+   <Class code="G" kind="concept">
+      <Meta name="internalId" value="10193"/>
+      <SuperClass code="I">
+         <Rubric id="d1e142554" kind="preferred">
+            <Label xml:lang="en-US">Institution</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e142682" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Group Home</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e142700" kind="short">
+         <Label xml:lang="en-US">Group Home</Label>
+      </Rubric>
+      <Rubric id="d1e142700" kind="preferred">
+         <Label xml:lang="en-US">Group Home</Label>
+      </Rubric>
+   </Class>
+   <Class code="N" kind="concept">
+      <Meta name="internalId" value="10190"/>
+      <SuperClass code="I">
+         <Rubric id="d1e142554" kind="preferred">
+            <Label xml:lang="en-US">Institution</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e142712" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Nursing Home</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e142730" kind="short">
+         <Label xml:lang="en-US">Nursing Home</Label>
+      </Rubric>
+      <Rubric id="d1e142730" kind="preferred">
+         <Label xml:lang="en-US">Nursing Home</Label>
+      </Rubric>
+   </Class>
+   <Class code="X" kind="concept">
+      <Meta name="internalId" value="10191"/>
+      <SuperClass code="I">
+         <Rubric id="d1e142554" kind="preferred">
+            <Label xml:lang="en-US">Institution</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e142741" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Extended care facility</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e142759" kind="short">
+         <Label xml:lang="en-US">Extended care facility</Label>
+      </Rubric>
+      <Rubric id="d1e142759" kind="preferred">
+         <Label xml:lang="en-US">Extended care facility</Label>
+      </Rubric>
+   </Class>
+   <Class code="H" kind="concept">
+      <Meta name="internalId" value="10188"/>
+      <SuperClass code="PR">
+         <Rubric id="d1e142581" kind="preferred">
+            <Label xml:lang="en-US">private residence</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e142770" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Independent Household</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e142788" kind="short">
+         <Label xml:lang="en-US">Independent Household</Label>
+      </Rubric>
+      <Rubric id="d1e142788" kind="preferred">
+         <Label xml:lang="en-US">Independent Household</Label>
+      </Rubric>
+   </Class>
+   <Class code="R" kind="concept">
+      <Meta name="internalId" value="10192"/>
+      <SuperClass code="PR">
+         <Rubric id="d1e142581" kind="preferred">
+            <Label xml:lang="en-US">private residence</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e142799" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Retirement Community</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e142817" kind="short">
+         <Label xml:lang="en-US">Retirement Community</Label>
+      </Rubric>
+      <Rubric id="d1e142817" kind="preferred">
+         <Label xml:lang="en-US">Retirement Community</Label>
+      </Rubric>
+   </Class>
+   <Class code="SL" kind="concept">
+      <Meta name="internalId" value="22191"/>
+      <SuperClass code="PR">
+         <Rubric id="d1e142581" kind="preferred">
+            <Label xml:lang="en-US">private residence</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e142828" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Assisted living in a single family residence for persons with physical, behavioral, or functional health, or socio-economic challenges. There may or may not be on-site supervision but the housing is designed to assist the client with developing independent living skills. Community based services may be provided.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e142849" kind="short">
+         <Label xml:lang="en-US">supported living</Label>
+      </Rubric>
+      <Rubric id="d1e142849" kind="preferred">
+         <Label xml:lang="en-US">supported living</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

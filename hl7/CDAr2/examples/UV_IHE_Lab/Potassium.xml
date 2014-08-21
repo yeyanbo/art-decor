@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Notes: Example has been modified to be CDA R2 compliant. 
+       DIR telecom use-code (pre-adopted in France) has been replaced by CDA R2 "WP"
+       ClinicalDocument.typeId has been added
+       ClinicalDocument.id has been added
+       Clinical statement changes: the example used a later version of the clinical statement model. Various changes were made   -->
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:lab="urn:hl7-org:lab" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../schemas/CDA.xsd">
+	<!-- Content of the header -->
+	<realmCode code="FR"/>
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<id extension="999123" root="1.3.6.4.1.4.1.2835.1"/>
+	<code code="11502-2" displayName="LABORATORY REPORT.TOTAL" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+	<title>Compte rendu d'analyses médicales du laboratoire Hexalis</title>
+	<effectiveTime value="20050303171504+0500"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+	<languageCode code="fr-FR"/>
+	<setId extension="999021" root="1.3.6.4.1.4.1.2835.1"/>
+	<versionNumber value="1"/>
+	<recordTarget>
+		<patientRole>
+			<id extension="12345" root="2.16.840.1.113883.3.933"/>
+			<addr>
+				<streetAddressLine>16 rue Montbrillant</streetAddressLine>
+				<city>LYONl</city>
+				<postalCode>69003</postalCode>
+			</addr>
+			<patient>
+				<name>
+					<prefix>M.</prefix>
+					<given>LOIC</given>
+					<family>BRIGANDAT</family>
+				</name>
+				<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+				<birthTime value="19600127"/>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author>
+		<time value="20050329224411+0500"/>
+		<assignedAuthor>
+			<id extension="1" root="1.3.6.4.1.4.1.2835.1"/>
+			<code code="SELF" codeSystem="2.16.840.1.113883.5.111"/>
+			<addr>
+				<streetAddressLine>21 North Ave</streetAddressLine>
+				<city>Burlington</city>
+				<state>MA</state>
+				<postalCode>01803</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom value="tel:(999)555-1212" use="WP"/>
+			<assignedPerson>
+				<name>
+					<prefix>Dr.</prefix>
+					<given>Bernard</given>
+					<family>Wiseman</family>
+					<suffix>Sr.</suffix>
+				</name>
+			</assignedPerson>
+		</assignedAuthor>
+	</author>
+	<author>
+		<time value="20050329224411+0500"/>
+		<assignedAuthor>
+			<id extension="1" root="1.3.6.4.1.4.1.2835.1"/>
+			<addr>
+				<streetAddressLine>21 North Ave</streetAddressLine>
+				<city>Burlington</city>
+				<state>MA</state>
+				<postalCode>01803</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom value="tel:(999)555-1212" use="WP"/>
+			<assignedAuthoringDevice>
+				<softwareName>Good Health Clinic System v1.0</softwareName>
+			</assignedAuthoringDevice>
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id extension="1" root="1.3.6.4.1.4.1.2835.3"/>
+				<name>Good Health Clinic</name>
+				<telecom value="tel:(999)555-1212" use="WP"/>
+				<addr>
+					<streetAddressLine>21 North Ave</streetAddressLine>
+					<city>Burlington</city>
+					<state>MA</state>
+					<postalCode>01803</postalCode>
+					<country>USA</country>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<informationRecipient>
+		<intendedRecipient>
+			<id extension="4" root="1.3.6.4.1.4.1.2835.2"/>
+			<addr>
+				<streetAddressLine>21 North Ave</streetAddressLine>
+				<city>Burlington</city>
+				<state>MA</state>
+				<postalCode>01803</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom value="tel:(999)555-1212" use="WP"/>
+			<informationRecipient>
+				<name>
+					<prefix>Dr.</prefix>
+					<given>Phil</given>
+					<family>Green</family>
+				</name>
+			</informationRecipient>
+			<receivedOrganization>
+				<name>Good Health Clinic</name>
+			</receivedOrganization>
+		</intendedRecipient>
+	</informationRecipient>
+	<legalAuthenticator>
+		<time value="20050329224512+0500"/>
+		<signatureCode code="S"/>
+		<assignedEntity>
+			<id extension="1" root="1.3.6.4.1.4.1.2835.1"/>
+			<addr>
+				<streetAddressLine>21 North Ave</streetAddressLine>
+				<city>Burlington</city>
+				<state>MA</state>
+				<postalCode>01803</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom value="tel:(999)555-1212" use="WP"/>
+			<assignedPerson>
+				<name>
+					<prefix>Dr.</prefix>
+					<given>Bernard</given>
+					<family>Wiseman</family>
+					<suffix>Sr.</suffix>
+				</name>
+			</assignedPerson>
+		</assignedEntity>
+	</legalAuthenticator>
+	<documentationOf>
+		<serviceEvent classCode="PCPR">
+			<effectiveTime>
+				<low value="19600127"/>
+				<high value="20050329"/>
+			</effectiveTime>
+			<performer typeCode="PRF">
+				<functionCode code="PCP" codeSystem="2.16.840.1.113883.5.88"/>
+				<time>
+					<low value="1998"/>
+					<high value="2005"/>
+				</time>
+				<assignedEntity>
+					<id extension="1" root="1.3.6.4.1.4.1.2835.1"/>
+					<code code="59058001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="General Physician"/>
+					<addr>
+						<streetAddressLine>21 North Ave</streetAddressLine>
+						<city>Burlington</city>
+						<state>MA</state>
+						<postalCode>01803</postalCode>
+						<country>USA</country>
+					</addr>
+					<telecom value="tel:(999)555-1212" use="WP"/>
+					<assignedPerson>
+						<name>
+							<prefix>Dr.</prefix>
+							<given>Bernard</given>
+							<family>Wiseman</family>
+							<suffix>Sr.</suffix>
+						</name>
+					</assignedPerson>
+				</assignedEntity>
+			</performer>
+		</serviceEvent>
+	</documentationOf>
+	<componentOf>
+		<encompassingEncounter>
+			<id extension="9937012" root="1.3.6.4.1.4.1.2835.12"/>
+			<code code="99213" codeSystem="2.16.840.1.113883.6.12" displayName="Evaluation and Managment" codeSystemName="CPT-4"/>
+			<effectiveTime>
+				<low value="20050329"/>
+				<high value="20050329"/>
+			</effectiveTime>
+			<dischargeDispositionCode code="01" codeSystem="2.16.840.1.113883.6.21" displayName="Routine Discharge" codeSystemName="UB92"/>
+		</encompassingEncounter>
+	</componentOf>
+	<component>
+		<!-- 	
+			Body of the report 
+		-->
+		<structuredBody>
+			<component>
+				<!-- 	Specialty Chemistry 	-->
+				<section>
+					<code code="18719-5" codeSystem="2.16.840.1.113883.6.1" displayName="CHEMISTRY STUDIES"/>
+					<component>
+						<section>
+							<code code="12814-0" codeSystem="2.16.840.1.113883.6.1" displayName="POTASSIUM"/>
+							<text>
+								<table border="1">
+									<thead align="center">
+										<tr>
+											<th/>
+											<th styleCode="Bold">Mar 21, 2006 07:10</th>
+											<th>Reference range</th>
+											<th>Int.c.</th>
+											<th>Mar 12, 2006 08:15</th>
+											<th>Jan 01, 2006 05:12</th>
+										</tr>
+									</thead>
+									<tbody align="center">
+										<tr>
+											<td>K (mmol/L)</td>
+											<td styleCode="Bold">3.4</td>
+											<td>3.5 - 5.0</td>
+											<td>L, D</td>
+											<td>4.6</td>
+											<td>3.3</td>
+										</tr>
+									</tbody>
+								</table>
+								<paragraph>Result controlled with a second run</paragraph>
+							</text>
+							<!-- 
+								Level 3 entry starts here
+							 -->
+							<entry typeCode="DRIV">
+								<templateId root="1.3.6.1.4.1.19376.1.3" extension="Lab.Report.Data.Processing. Entry"/>
+								<!-- 	Report_Organizer from which the section is derived -->
+								<act classCode="ACT" moodCode="EVN">
+									<code code="12814-0" codeSystem="2.16.840.1.113883.6.1" displayName="POTASSIUM"/>
+									<statusCode code="completed"/>
+									<entryRelationship typeCode="COMP">
+									
+										<observation classCode="OBS" moodCode="EVN">
+											<code code="12814-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+											<statusCode code="completed"/>
+											<!-- Clinically relevant time for the observation (= specimen collection  time) -->
+											<effectiveTime value="200603210710"/>
+											<!-- Current result 3.4  -->
+											<value xsi:type="PQ" value="3.4" unit="mmol/L"/>
+											<!-- 2 interpretation codes : Low, Significant decrease -->
+											<interpretationCode code="L" codeSystem="2.16.840.1.113883.5.83"/>
+											<interpretationCode code="D" codeSystem="2.16.840.1.113883.5.83"/>
+											<entryRelationship typeCode="SPRT">
+												<!-- Previous result 4.6 from Mar 12, 2006 08:05 -->
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="11273-0" codeSystem="2.16.840.1.113883.6.1"/>
+													<statusCode code="completed"/>
+													<effectiveTime value="200603120805"/>
+													<value xsi:type="PQ" value="4.6" unit="mmol/L"/>
+												</observation>
+											</entryRelationship>
+											<entryRelationship typeCode="SPRT">
+												<!-- Previous result 3.3 from Jan 1st, 2006 05:12 -->
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="11273-0" codeSystem="2.16.840.1.113883.6.1"/>
+													<statusCode code="completed"/>
+													<effectiveTime value="200601010512"/>
+													<value xsi:type="PQ" value="4.6" unit="mmol/L"/>
+												</observation>
+											</entryRelationship>
+											<!-- Reference range for this patient: [3.5 - 5.0] -->
+											<referenceRange typeCode="REFV">
+												<observationRange classCode="OBS" moodCode="EVN.CRT">
+													<value xsi:type="IVL_PQ">
+														<low value="3.5" unit="mmol/L"/>
+														<high value="5.0" unit="mmol/L"/>
+													</value>
+												</observationRange>
+											</referenceRange>
+										</observation>
+									</entryRelationship>
+									<!-- Comment for the section represented by this entry -->
+									<entryRelationship typeCode="COMP">
+										<act classCode="ACT" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<text>Result controlled with a second run</text>
+										</act>
+									</entryRelationship>
+								</act>
+							</entry>
+						</section>
+					</component>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

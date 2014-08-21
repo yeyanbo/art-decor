@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="132"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.14"/>
+   <Title name="ActStatus" date="2012-08-02" version="1.000">Codes representing the defined possible states of an Act, as defined by the Act class state machine.</Title>
+   <Class code="rootClass">
+      <SubClass subCount="7" code="normal" kind="concept">
+         <Rubric id="d1e76392" kind="preferred">
+            <Label xml:lang="en-US">normal</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="nullified" kind="concept">
+         <Rubric id="d1e76417" kind="preferred">
+            <Label xml:lang="en-US">nullified</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="obsolete" kind="concept">
+         <Rubric id="d1e76441" kind="preferred">
+            <Label xml:lang="en-US">obsolete</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">ActStatus</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">Codes representing the defined possible states of an Act, as defined by the Act class state machine.</Label>
+      </Rubric>
+   </Class>
+   <Class code="normal" kind="concept">
+      <Meta name="internalId" value="15936"/>
+      <SubClass code="aborted" subCount="0">
+         <Rubric id="d1e76470" kind="preferred">
+            <Label xml:lang="en-US">aborted</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="active" subCount="0">
+         <Rubric id="d1e76499" kind="preferred">
+            <Label xml:lang="en-US">active</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="cancelled" subCount="0">
+         <Rubric id="d1e76528" kind="preferred">
+            <Label xml:lang="en-US">cancelled</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="completed" subCount="0">
+         <Rubric id="d1e76557" kind="preferred">
+            <Label xml:lang="en-US">completed</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="held" subCount="0">
+         <Rubric id="d1e76587" kind="preferred">
+            <Label xml:lang="en-US">held</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="new" subCount="0">
+         <Rubric id="d1e76616" kind="preferred">
+            <Label xml:lang="en-US">new</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="suspended" subCount="0">
+         <Rubric id="d1e76645" kind="preferred">
+            <Label xml:lang="en-US">suspended</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e76379" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Encompasses the expected states of an Act, but excludes "nullified" and "obsolete" which represent unusual terminal states for the life-cycle.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e76392" kind="short">
+         <Label xml:lang="en-US">normal</Label>
+      </Rubric>
+      <Rubric id="d1e76392" kind="preferred">
+         <Label xml:lang="en-US">normal</Label>
+      </Rubric>
+   </Class>
+   <Class code="nullified" kind="concept">
+      <Meta name="internalId" value="15934"/>
+      <Rubric id="d1e76404" kind="definition">
+         <Label xml:lang="en-US">
+            <p>This Act instance was created in error and has been 'removed' and is treated as though it never existed. A record is retained for audit purposes only.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e76417" kind="short">
+         <Label xml:lang="en-US">nullified</Label>
+      </Rubric>
+      <Rubric id="d1e76417" kind="preferred">
+         <Label xml:lang="en-US">nullified</Label>
+      </Rubric>
+   </Class>
+   <Class code="obsolete" kind="concept">
+      <Meta name="internalId" value="15935"/>
+      <Rubric id="d1e76428" kind="definition">
+         <Label xml:lang="en-US">
+            <p>This Act instance has been replaced by a new instance.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e76441" kind="short">
+         <Label xml:lang="en-US">obsolete</Label>
+      </Rubric>
+      <Rubric id="d1e76441" kind="preferred">
+         <Label xml:lang="en-US">obsolete</Label>
+      </Rubric>
+   </Class>
+   <Class code="aborted" kind="concept">
+      <Meta name="internalId" value="15941"/>
+      <SuperClass code="normal">
+         <Rubric id="d1e76392" kind="preferred">
+            <Label xml:lang="en-US">normal</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76452" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The Act has been terminated prior to the originally intended completion.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e76470" kind="short">
+         <Label xml:lang="en-US">aborted</Label>
+      </Rubric>
+      <Rubric id="d1e76470" kind="preferred">
+         <Label xml:lang="en-US">aborted</Label>
+      </Rubric>
+   </Class>
+   <Class code="active" kind="concept">
+      <Meta name="internalId" value="15942"/>
+      <SuperClass code="normal">
+         <Rubric id="d1e76392" kind="preferred">
+            <Label xml:lang="en-US">normal</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76481" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The Act can be performed or is being performed</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e76499" kind="short">
+         <Label xml:lang="en-US">active</Label>
+      </Rubric>
+      <Rubric id="d1e76499" kind="preferred">
+         <Label xml:lang="en-US">active</Label>
+      </Rubric>
+   </Class>
+   <Class code="cancelled" kind="concept">
+      <Meta name="internalId" value="15938"/>
+      <SuperClass code="normal">
+         <Rubric id="d1e76392" kind="preferred">
+            <Label xml:lang="en-US">normal</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76510" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The Act has been abandoned before activation.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e76528" kind="short">
+         <Label xml:lang="en-US">cancelled</Label>
+      </Rubric>
+      <Rubric id="d1e76528" kind="preferred">
+         <Label xml:lang="en-US">cancelled</Label>
+      </Rubric>
+   </Class>
+   <Class code="completed" kind="concept">
+      <Meta name="internalId" value="15940"/>
+      <SuperClass code="normal">
+         <Rubric id="d1e76392" kind="preferred">
+            <Label xml:lang="en-US">normal</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76539" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An Act that has terminated normally after all of its constituents have been performed.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e76557" kind="short">
+         <Label xml:lang="en-US">completed</Label>
+      </Rubric>
+      <Rubric id="d1e76557" kind="preferred">
+         <Label xml:lang="en-US">completed</Label>
+      </Rubric>
+   </Class>
+   <Class code="held" kind="concept">
+      <Meta name="internalId" value="15937"/>
+      <SuperClass code="normal">
+         <Rubric id="d1e76392" kind="preferred">
+            <Label xml:lang="en-US">normal</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76569" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An Act that is still in the preparatory stages has been put aside. No action can occur until the Act is released.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e76587" kind="short">
+         <Label xml:lang="en-US">held</Label>
+      </Rubric>
+      <Rubric id="d1e76587" kind="preferred">
+         <Label xml:lang="en-US">held</Label>
+      </Rubric>
+   </Class>
+   <Class code="new" kind="concept">
+      <Meta name="internalId" value="15943"/>
+      <SuperClass code="normal">
+         <Rubric id="d1e76392" kind="preferred">
+            <Label xml:lang="en-US">normal</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76598" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An Act that is in the preparatory stages and may not yet be acted upon</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e76616" kind="short">
+         <Label xml:lang="en-US">new</Label>
+      </Rubric>
+      <Rubric id="d1e76616" kind="preferred">
+         <Label xml:lang="en-US">new</Label>
+      </Rubric>
+   </Class>
+   <Class code="suspended" kind="concept">
+      <Meta name="internalId" value="15939"/>
+      <SuperClass code="normal">
+         <Rubric id="d1e76392" kind="preferred">
+            <Label xml:lang="en-US">normal</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e76627" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An Act that has been activated (actions could or have been performed against it), but has been temporarily disabled. No further action should be taken against it until it is released</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e76645" kind="short">
+         <Label xml:lang="en-US">suspended</Label>
+      </Rubric>
+      <Rubric id="d1e76645" kind="preferred">
+         <Label xml:lang="en-US">suspended</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

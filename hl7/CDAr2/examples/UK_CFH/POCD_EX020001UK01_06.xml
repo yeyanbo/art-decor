@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	This example message is provided for illustrative purposes only. It has had no clinical validation. Whilst every effort has been taken to ensure that the examples are consistent with the
+	message specification contained within the MiM, where there are conflicts with the written message specification or schema, the specification or schema shall be considered to take
+	precedence
+-->
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xsi:schemaLocation="urn:hl7-org:v3 ../../schemas/POCD_MT000001UK04.xsd" classCode="DOCCLIN" moodCode="EVN" xmlns:npfitlc="NPFIT:HL7:Localisation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3">
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040" />
+	<npfitlc:messageType root="2.16.840.1.113883.2.1.3.2.4.18.17" extension="POCD_MT020001UK01" />
+	<id root="6E550D4B-0DA8-4DE5-A38E-C8E10F857524" />
+	<code code="xxx" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" />
+	<title>Urgent Care Summary Report</title>
+	<effectiveTime value="200708020045" />
+	<confidentialityCode code="V" displayName="very restricted" codeSystem="2.16.840.1.113883.5.25" />
+	<setId root="C0632D3E-6ABB-44C4-94F9-7A683D487C0D" />
+	<versionNumber value="1" />
+	<recordTarget typeCode="RCT" contextControlCode="OP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145020UK03#PatientRole" />
+		<patientRole classCode="PAT">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145020UK03#PatientRole" />
+			<id root="2.16.840.1.113883.2.1.4.1" extension="9963254128" />
+		</patientRole>
+	</recordTarget>
+	<author typeCode="AUT" contextControlCode="OP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145001UK03#AssignedAuthorSDS" />
+		<functionCode code="OA" displayName="Originating Author" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.178" />
+		<time value="200708020045" />
+		<assignedAuthor classCode="ASSIGNED">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#AssignedAuthorSDS" />
+			<id root="1.2.826.0.1285.0.2.0.67" extension="200088768787" />
+			<id root="1.2.826.0.1285.0.2.0.65" extension="100099800274" />
+			<code code="R8009" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Receptionist Access Role" />
+			<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#assignedPerson" />
+				<name>
+					<given>Peter</given>
+					<family>Wren</family>
+				</name>
+			</assignedPerson>
+			<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#representedOrganization" />
+				<id root="2.16.840.1.113883.2.1.3.2.4.19.2" extension="5N199" />
+				<name>Leeds City Out of Hours Centre</name>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian typeCode="CST">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145018UK03#AssignedCustodian" />
+		<assignedCustodian classCode="ASSIGNED">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145018UK03#AssignedCustodian" />
+			<representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145018UK03#representedCustodianOrganization" />
+				<id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="5N1" />
+				<name>Leeds PCT</name>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<informationRecipient typeCode="PRCP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145017UK03#IntendedRecipient" />
+		<intendedRecipient classCode="ASSIGNED">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145017UK03#IntendedRecipient" />
+			<receivedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145017UK03#representedOrganization" />
+				<id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="YEA" />
+				<name>NATIONAL CARE RECORDS SERVICE SPINE</name>
+			</receivedOrganization>
+		</intendedRecipient>
+	</informationRecipient>
+	<informationRecipient typeCode="TRC">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145021UK03#AssignedEntitySDS" />
+		<intendedRecipient classCode="ASSIGNED">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145021UK03#AssignedEntitySDS" />
+			<npfitlc:recipientRoleCode code="GP" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="General Practitioner" />
+			<id root="1.2.826.0.1285.0.2.0.67" extension="200011232197" />
+			<id root="1.2.826.0.1285.0.2.0.65" extension="100033245398" />
+			<informationRecipient classCode="PSN" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145021UK03#assignedPerson" />
+				<name>
+					<given>Constance</given>
+					<family>Lincoln-Wills</family>
+				</name>
+			</informationRecipient>
+		</intendedRecipient>
+	</informationRecipient>
+	<componentOf typeCode="COMP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146060UK01#EncompassingEncounter" />
+		<encompassingEncounter classCode="ENC" moodCode="EVN">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146060UK01#EncompassingEncounter" />
+			<id root="2BA86E88-3B98-4607-9A54-D3917A45471C" />
+			<code code="xxx" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="xxx" />
+			<effectiveTime>
+				<low value="200708012345" />
+				<high value="200708020020" />
+			</effectiveTime>
+			<dischargeDispositionCode />
+			<responsibleParty typeCode="RESP">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146060UK01#responsibleParty" />
+				<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145022UK02#AssignedEntitySDS" />
+				<assignedEntity classCode="ASSIGNED">
+					<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145022UK02#AssignedEntitySDS" />
+					<id root="1.2.826.0.1285.0.2.0.67" extension="200032198754" />
+					<id root="1.2.826.0.1285.0.2.0.65" extension="100066325486" />
+					<code code="R8000" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Clinical Practitioner Access Role" />
+					<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+						<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145022UK02#assignedPerson" />
+						<name>
+							<given>Susan</given>
+							<family>Potts</family>
+						</name>
+					</assignedPerson>
+				</assignedEntity>
+			</responsibleParty>
+			<location typeCode="LOC">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146060UK01#location" />
+				<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145024UK01#HealthCareFacility" />
+				<healthCareFacility classCode="SDLOC">
+					<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145024UK01#HealthCareFacility" />
+					<id />
+					<code code="xxx" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="xxx" />
+				</healthCareFacility>
+			</location>
+		</encompassingEncounter>
+	</componentOf>
+	<component typeCode="COMP" contextConductionInd="true">
+		<structuredBody classCode="DOCBODY" moodCode="EVN">
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<id root="3A856B82-F9A4-4876-BEF0-C1692B9AEE1B" />
+					<!--Here are the coded entries-->
+					<entry typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146012UK04#Finding" />
+						<observation classCode="OBS" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146012UK04#Finding" />
+							<id root="31D76B01-42DA-4314-A82B-88FD09FBBD0E" />
+							<code code="418646009" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Dead - expected">
+								<originalText>
+									<reference value="#c1" />
+								</originalText>
+							</code>
+							<statusCode code="completed" />
+							<effectiveTime value="200708022350" />
+						</observation>
+					</entry>
+					<!--Here are the coded entries-->
+					<entry typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146005UK04#CareEvent" />
+						<encounter classCode="ENC" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146005UK04#CareEvent" />
+							<id root="D6644FF4-B431-48A6-AB73-93CF5A231F5F" />
+							<code code="185462000" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Home visit request by relative">
+								<originalText>
+									<reference value="#b1" />
+								</originalText>
+							</code>
+							<statusCode code="completed" />
+							<effectiveTime>
+								<low value="200708012345" />
+								<high value="200708020020" />
+							</effectiveTime>
+							<participant typeCode="LOC" contextControlCode="OP">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146005UK04#location1" />
+								<participantRole classCode="SDLOC">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146005UK04#careSetting" />
+									<code code="394778007" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Client's or patient's home" />
+								</participantRole>
+							</participant>
+						</encounter>
+					</entry>
+					<component typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146061UK01#Section1" />
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#Section1" />
+							<id root="8880F048-3C5F-4EAD-AB4C-0618237BCCAA" />
+							<title>Presenting Information</title>
+							<text>
+								<paragraph>
+									Call Handler: Gillian Gilbert, Call Handler<br />
+									Caller Name: Anne Stein (Wife)
+								</paragraph>
+								<paragraph>Patient has been terminally ill with Lung cancer and wife now thinks he has passed away</paragraph>
+							</text>
+							<author typeCode="AUT" contextControlCode="OP">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#author" />
+								<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145001UK03#AssignedAuthorSDS" />
+								<functionCode code="OA" displayName="Originating Author" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.178" />
+								<time value="200708022345" />
+								<assignedAuthor classCode="ASSIGNED">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#AssignedAuthorSDS" />
+									<id root="1.2.826.0.1285.0.2.0.67" extension="200046748635" />
+									<id root="1.2.826.0.1285.0.2.0.65" extension="100047363946" />
+									<code code="R8009" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Receptionist Access Role" />
+									<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#assignedPerson" />
+										<name>
+											<given>Gillian</given>
+											<family>Gilbert</family>
+										</name>
+									</assignedPerson>
+									<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#representedOrganization" />
+										<id root="2.16.840.1.113883.2.1.3.2.4.19.2" extension="5LN99" />
+										<name>Leeds City Out of Hours Centre</name>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+						</section>
+					</component>
+					<component typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146061UK01#Section1" />
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#Section1" />
+							<id root="A32B0A3F-BC31-4499-B55E-E7EDC0AA2570" />
+							<title>Home Visit</title>
+							<text>
+								<content ID="b1">
+									Clinician: Peter Wren, General Practitioner<br />
+									Consultation Time: 01-Aug-07 23:45 - 02-Aug-07 00:20
+								</content>
+							</text>
+							<component typeCode="COMP" contextConductionInd="true">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#component1" />
+								<section classCode="DOCSECT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#section2" />
+									<id root="6E915B5B-DE42-4F7B-A50E-853A809CF6AE" />
+									<title>History</title>
+									<text>
+										<paragraph>
+											Patient has been terminally ill with Lung cancer and wife now thinks he has passed away. Has been seen by his own doctor and Hospice team in the last week.
+										</paragraph>
+									</text>
+								</section>
+							</component>
+							<component typeCode="COMP" contextConductionInd="true">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#component1" />
+								<section classCode="DOCSECT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#section2" />
+									<id root="DB86CCEA-9505-4E6E-81F5-ACCC5ADAF256" />
+									<title>Examination</title>
+									<text>
+										<content ID="c1">Dead- expected.</content>
+									</text>
+								</section>
+							</component>
+						</section>
+					</component>
+					<component typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146061UK01#Section1" />
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#Section1" />
+							<id root="48302ECD-4D03-4308-9421-A272356BC39D" />
+							<title>Final Outcome</title>
+							<text>
+								<paragraph>Wife advised to call undertaker.</paragraph>
+							</text>
+							<component typeCode="COMP" contextConductionInd="true">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#component1" />
+								<section classCode="DOCSECT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#section2" />
+									<id root="54ECF16A-6431-484B-A62A-DBDC17B0CAD3" />
+									<title>Advice to GP</title>
+									<text>
+										<paragraph>Death from natural causes.  Coroner does not need to be informed.</paragraph>
+									</text>
+								</section>
+							</component>
+						</section>
+					</component>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

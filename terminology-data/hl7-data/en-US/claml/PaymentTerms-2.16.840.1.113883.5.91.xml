@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="88"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.91"/>
+   <Title name="PaymentTerms" date="2012-08-02" version="1.000">Describes payment terms for a financial transaction, used in an invoice. This is typically expressed as a responsibility of the acceptor or payor of an invoice.</Title>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="COD" kind="concept">
+      <Meta name="internalId" value="14913"/>
+      <Rubric id="d1e184314" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Payment in full for products and/or services is required as soon as the service is performed or goods delivered.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e184327" kind="short">
+         <Label xml:lang="en-US">Cash on Delivery</Label>
+      </Rubric>
+      <Rubric id="d1e184327" kind="preferred">
+         <Label xml:lang="en-US">Cash on Delivery</Label>
+      </Rubric>
+   </Class>
+   <Class code="N30" kind="concept">
+      <Meta name="internalId" value="14909"/>
+      <Rubric id="d1e184339" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Payment in full for products and/or services is required 30 days from the time the service is performed or goods delivered.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e184352" kind="short">
+         <Label xml:lang="en-US">Net 30 days</Label>
+      </Rubric>
+      <Rubric id="d1e184352" kind="preferred">
+         <Label xml:lang="en-US">Net 30 days</Label>
+      </Rubric>
+   </Class>
+   <Class code="N60" kind="concept">
+      <Meta name="internalId" value="14910"/>
+      <Rubric id="d1e184363" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Payment in full for products and/or services is required 60 days from the time the service is performed or goods delivered.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e184376" kind="short">
+         <Label xml:lang="en-US">Net 60 days</Label>
+      </Rubric>
+      <Rubric id="d1e184376" kind="preferred">
+         <Label xml:lang="en-US">Net 60 days</Label>
+      </Rubric>
+   </Class>
+   <Class code="N90" kind="concept">
+      <Meta name="internalId" value="14911"/>
+      <Rubric id="d1e184387" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Payment in full for products and/or services is required 90 days from the time the service is performed or goods delivered.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e184400" kind="short">
+         <Label xml:lang="en-US">Net 90 days</Label>
+      </Rubric>
+      <Rubric id="d1e184400" kind="preferred">
+         <Label xml:lang="en-US">Net 90 days</Label>
+      </Rubric>
+   </Class>
+</ClaML>

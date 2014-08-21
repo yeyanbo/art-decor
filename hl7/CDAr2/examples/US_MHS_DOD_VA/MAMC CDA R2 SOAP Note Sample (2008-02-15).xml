@@ -1,0 +1,300 @@
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns:gdn2="http://tempuri.org/" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1" 
+	xmlns:dateFormatter="urn:cdaDateFormatter" 
+	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../../schemas/CDA.xsd">
+	<realmCode code="US"/>
+	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+	<id extension="2716145_20080219121659" root="2.16.840.1.113883.3.42.127.125.1"/>
+	<code code="34131-3" displayName="Subsequent evaluation note (outpatient)" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+	<title>MADIGAN ARMY MEDICAL CENTER OUTPATIENT ENCOUNTER</title>
+	<effectiveTime value="20080219121659-08"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+	<languageCode code="en-US"/>
+	<setId extension="S2716145_20080219121659" root="2.16.840.1.113883.3.42.127.125.1"/>
+	<versionNumber value="1"/>
+	<recordTarget>
+		<patientRole>
+			<id root="2.16.840.1.113883.3.42.10001.100001.10" extension="20000007025"/>  <!-- FMP/SSN -->
+			<id root="2.16.840.1.113883.3.42.127.125.2" extension="1401491"/>   <!-- CHCS patient ID -->
+			<addr>   
+				<streetAddressLine>9600 Veterans Drive</streetAddressLine>
+				<city>TACOMA</city>
+				<state>WASHINGTON</state>
+				<postalCode>98493</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom use="HP" value="(253) 582-8440"/>
+			<patient>
+				<name>
+					<family>ZZTEST</family>
+					<given>VADOD TWO</given>
+				</name>
+				<administrativeGenderCode codeSystem="2.16.840.1.113883.5.1" code="M"/>
+				<birthTime value="19640211"/>
+			</patient>
+			<providerOrganization>
+				<id extension="HP0125" root="2.16.840.1.113883.3.42.127.100001.13"/> <!-- CHCS Host ID -->
+				<name>Madigan Army Medical Center</name>
+				
+				<telecom value="tel:(253)555-1212" use="WP"/>
+				<addr>
+					<streetAddressLine>9040 Fitzsimmons Ave </streetAddressLine>
+					<city>Tacoma</city>
+					<state>WA</state>
+					<postalCode>98431</postalCode>
+					<country>USA</country>
+				</addr>
+			</providerOrganization>
+		</patientRole>
+	</recordTarget>
+	<author>
+		<time value="20080215114014-08"/>
+		<assignedAuthor>
+			<id extension="999999-PROVIDER-ID" root="2.16.840.1.113883.3.42.127.125.3"/>
+			<addr>
+				<streetAddressLine>9040 Fitzsimmons Ave </streetAddressLine>
+				<city>Tacoma</city>
+				<state>WA</state>
+				<postalCode>98431</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom value="tel:(253)555-1212" use="WP"/>
+			<assignedPerson>
+				<name>
+					<family>FIRST M</family>
+					<given>LAST</given>
+				</name>
+			</assignedPerson>
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id extension="HP0125" root="2.16.840.1.113883.3.42.127.100001.13"/> <!-- CHCS Host ID -->
+				<name>Madigan Army Medical Center</name>
+				
+				<telecom value="tel:(253)555-1212" use="WP"/>
+				<addr>
+					<streetAddressLine>9040 Fitzsimmons Ave </streetAddressLine>
+					<city>Tacoma</city>
+					<state>WA</state>
+					<postalCode>98431</postalCode>
+					<country>USA</country>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<authenticator>
+		<time value="20080215114014-08"/>
+		<signatureCode code="S"/>
+		<assignedEntity>
+			<id extension="999999-PROVIDER-ID" root="2.16.840.1.113883.3.42.127.125.3"/>
+			<addr>
+				<streetAddressLine>9040 Fitzsimmons Ave </streetAddressLine>
+				<city>Tacoma</city>
+				<state>WA</state>
+				<postalCode>98431</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom value="tel:(253)555-1212" use="WP"/>
+			<assignedPerson>
+				<name>
+					<family>FIRST M</family>
+					<given>LAST</given>
+				</name>
+			</assignedPerson>
+		</assignedEntity>
+	</authenticator>
+	<component>
+		<structuredBody>
+			<component>
+				<section>
+					<title>Appointment</title>
+					<text>
+						<paragraph>Walk-in Appointment on 2/15/2008</paragraph>
+						<paragraph/>
+						<paragraph>20080215000000-08</paragraph>
+					</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<code code="8661-1" codeSystem="2.16.840.1.113883.6.1" displayName="REASON FOR VISIT/CHIEF COMPLAINT"/>
+					<title>Reason for Visit/Chief Complaint</title>
+					<text>Knee Injury</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<title>Encounter Entries</title>
+					<component>
+						<section>
+							<title>Note 1</title>
+							<component>
+								<section>
+									<code code="8661-1" codeSystem="2.16.840.1.113883.6.1" displayName="REASON FOR VISIT/CHIEF COMPLAINT"/>
+									<title>Reason for Visit/Chief Complaint</title>
+									<text>Knee Injury</text>
+								</section>
+							</component>
+							<component>
+								<section>
+									<title>Date</title>
+									<text>20080215113716-08</text>
+								</section>
+							</component>
+							<component>
+								<section>
+									<title>Provider</title>
+									<text>
+										<table>
+											<tbody>
+												<tr>
+													<th>Provider Id</th>
+													<th>Name</th>
+													<th>Clinic Name</th>
+												</tr>
+												<tr>
+													<td>999999-PROVIDER-ID</td>
+													<td>LAST, FIRST M</td>
+													<td/>
+												</tr>
+											</tbody>
+										</table>
+									</text>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="29545-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<title>Subjective</title>
+									<text>Patient twisted knee walking down steps at his house.  He iced it and elevated
+it for two days, but it continued to swell.
+</text>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="10210-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<title>Objective</title>
+									<text>Swelling in knee is visible.
+
+Vitals Date: 2/15/2008 11:33:00 AM
+SYS: 130
+DIAS: 80
+Pulse: 70
+Resp: 20
+Weight(KG/LBS): 180/81.647
+Height(CM/IN)180.34/71
+BMI:25.1
+Temp(C/F): 36.778/98.2
+O2: 98
+Pain Level: 3
+
+</text>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="11494-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<title>Assessment</title>
+									<text>Definite knee sttrain, but no permanent tissue damage.</text>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="18776-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<title>Plan</title>
+									<text>Take ant-inflamitories, continue to ice and elevate.  If problem does not go
+away in 1 week, return to the clinic.</text>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="34101-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+									<title>Multi Problem</title>
+									<text/>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="29274-8" codeSystem="2.16.840.1.113883.6.1" displayName="VITAL SIGNS"/>
+									<title>Vital Signs</title>
+									<text>
+										<table>
+											<thead>
+												<tr><th>Date / Time</th></tr>
+												<tr><td>20080215113300-08</td></tr>
+											</thead>
+											<tbody>
+												<tr>
+													<th>Height</th>
+													<td>180.34 cm (71 in)</td>
+												</tr>
+												<tr>
+													<th>Weight</th>
+													<td>180 lbs (81.647 kg)</td>
+												</tr>
+												<tr>
+													<th>BMI</th>
+													<td>25.1 kg/m2</td>
+												</tr>
+												<tr>
+													<th>BSA</th>
+													<td>0 m2</td>
+												</tr>
+												<tr>
+													<th>Temperature</th>
+													<td>36.778 C (36.778 F)</td>
+												</tr>
+												<tr>
+													<th>Pulse</th>
+													<td>0 / minute</td>
+												</tr>
+												<tr>
+													<th>Respirations</th>
+													<td>20 / minute, unlabored</td>
+												</tr>
+												<tr>
+													<th>Systolic</th>
+													<td>130 mmHg</td>
+												</tr>
+												<tr>
+													<th>Diastolic</th>
+													<td>80 mmHg</td>
+												</tr>
+											</tbody>
+										</table>
+									</text>
+								</section>
+							</component>
+						</section>
+					</component>
+				</section>
+			</component>
+			<component>
+				<section>
+					<code code="11450-4" codeSystem="2.16.840.1.113883.6.1" displayName="PROBLEM LIST"/>
+					<title>Problem List</title>
+					<text>
+						<table>
+							<tbody>
+								<tr>
+									<th>ICD</th>
+									<th>TEXT</th>
+									<th>DX SOURCE</th>
+								</tr>
+								<tr>
+									<td>453.9</td>
+									<td>VENOUS THROMBOSIS NOS</td>
+									<td>ICDB</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

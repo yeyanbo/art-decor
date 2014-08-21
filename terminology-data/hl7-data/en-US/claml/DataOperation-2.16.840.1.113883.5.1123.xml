@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="855"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1123"/>
+   <Title name="DataOperation" date="2012-08-02" version="1.000"/>
+   <Authors>
+      <Author name="Responsible"/>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="OPERATE" kind="concept">
+      <Meta name="internalId" value="22873"/>
+      <SubClass code="CREATE"/>
+      <SubClass code="DELETE"/>
+      <SubClass code="EXECUTE"/>
+      <SubClass code="READ"/>
+      <SubClass code="UPDATE"/>
+      <Rubric id="d1e94773" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Act on an object or objects.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e94789" kind="short">
+         <Label xml:lang="en-US">operate</Label>
+      </Rubric>
+      <Rubric id="d1e94789" kind="preferred">
+         <Label xml:lang="en-US">operate</Label>
+      </Rubric>
+   </Class>
+   <Class code="ABORT" kind="concept">
+      <Meta name="internalId" value="22879"/>
+      <SuperClass code="MODIFYSTATUS"/>
+      <Rubric id="d1e94801" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Change the status of an object representing an Act to "aborted", i.e., terminated prior to the originally intended completion. For an HL7 Act, the state transitions per the HL7 Reference Information Model.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e94822" kind="short">
+         <Label xml:lang="en-US">abort</Label>
+      </Rubric>
+      <Rubric id="d1e94822" kind="preferred">
+         <Label xml:lang="en-US">abort</Label>
+      </Rubric>
+   </Class>
+   <Class code="ACTIVATE" kind="concept">
+      <Meta name="internalId" value="22880"/>
+      <SuperClass code="MODIFYSTATUS"/>
+      <Rubric id="d1e94833" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Change the status of an object representing an Act to "active", i.e., so it can be performed or is being performed, for the first time. (Contrast with REACTIVATE.) For an HL7 Act, the state transitions per the HL7 Reference Information Model.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e94854" kind="short">
+         <Label xml:lang="en-US">activate</Label>
+      </Rubric>
+      <Rubric id="d1e94854" kind="preferred">
+         <Label xml:lang="en-US">activate</Label>
+      </Rubric>
+   </Class>
+   <Class code="CANCEL" kind="concept">
+      <Meta name="internalId" value="22881"/>
+      <SuperClass code="MODIFYSTATUS"/>
+      <Rubric id="d1e94865" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Change the status of an object representing an Act to "cancelled", i.e., abandoned before activation. For an HL7 Act, the state transitions per the HL7 Reference Information Model.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e94886" kind="short">
+         <Label xml:lang="en-US">cancel</Label>
+      </Rubric>
+      <Rubric id="d1e94886" kind="preferred">
+         <Label xml:lang="en-US">cancel</Label>
+      </Rubric>
+   </Class>
+   <Class code="COMPLETE" kind="concept">
+      <Meta name="internalId" value="22882"/>
+      <SuperClass code="MODIFYSTATUS"/>
+      <Rubric id="d1e94897" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Change the status of an object representing an Act to "completed", i.e., terminated normally after all of its constituents have been performed. For an HL7 Act, the state transitions per the HL7 Reference Information Model.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e94918" kind="short">
+         <Label xml:lang="en-US">complete</Label>
+      </Rubric>
+      <Rubric id="d1e94918" kind="preferred">
+         <Label xml:lang="en-US">complete</Label>
+      </Rubric>
+   </Class>
+   <Class code="HOLD" kind="concept">
+      <Meta name="internalId" value="22883"/>
+      <SuperClass code="MODIFYSTATUS"/>
+      <Rubric id="d1e94929" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Change the status of an object representing an Act to "held", i.e., put aside an Act that is still in preparatory stages. No action can occur until the Act is released. For an HL7 Act, the state transitions per the HL7 Reference Information Model.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e94950" kind="short">
+         <Label xml:lang="en-US">hold</Label>
+      </Rubric>
+      <Rubric id="d1e94950" kind="preferred">
+         <Label xml:lang="en-US">hold</Label>
+      </Rubric>
+   </Class>
+   <Class code="JUMP" kind="concept">
+      <Meta name="internalId" value="22884"/>
+      <SuperClass code="MODIFYSTATUS"/>
+      <Rubric id="d1e94961" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Change the status of an object representing an Act to a normal state. For an HL7 Act, the state transitions per the HL7 Reference Information Model.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e94982" kind="short">
+         <Label xml:lang="en-US">jump</Label>
+      </Rubric>
+      <Rubric id="d1e94982" kind="preferred">
+         <Label xml:lang="en-US">jump</Label>
+      </Rubric>
+   </Class>
+   <Class code="NULLIFY" kind="concept">
+      <Meta name="internalId" value="22885"/>
+      <SuperClass code="MODIFYSTATUS"/>
+      <Rubric id="d1e94994" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Change the status of an object representing an Act to "nullified", i.e., treat as though it never existed. For an HL7 Act, the state transitions per the HL7 Reference Information Model.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e95015" kind="short">
+         <Label xml:lang="en-US">nullify</Label>
+      </Rubric>
+      <Rubric id="d1e95015" kind="preferred">
+         <Label xml:lang="en-US">nullify</Label>
+      </Rubric>
+   </Class>
+   <Class code="OBSOLETE" kind="concept">
+      <Meta name="internalId" value="22886"/>
+      <SuperClass code="MODIFYSTATUS"/>
+      <Rubric id="d1e95026" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Change the status of an object representing an Act to "obsolete" when it has been replaced by a new instance. For an HL7 Act, the state transitions per the HL7 Reference Information Model.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e95047" kind="short">
+         <Label xml:lang="en-US">obsolete</Label>
+      </Rubric>
+      <Rubric id="d1e95047" kind="preferred">
+         <Label xml:lang="en-US">obsolete</Label>
+      </Rubric>
+   </Class>
+   <Class code="REACTIVATE" kind="concept">
+      <Meta name="internalId" value="22887"/>
+      <SuperClass code="MODIFYSTATUS"/>
+      <Rubric id="d1e95058" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Change the status of a formerly active object representing an Act to "active", i.e., so it can again be performed or is being performed. (Contrast with ACTIVATE.) For an HL7 Act, the state transitions per the HL7 Reference Information Model.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e95079" kind="short">
+         <Label xml:lang="en-US">reactivate</Label>
+      </Rubric>
+      <Rubric id="d1e95079" kind="preferred">
+         <Label xml:lang="en-US">reactivate</Label>
+      </Rubric>
+   </Class>
+   <Class code="RELEASE" kind="concept">
+      <Meta name="internalId" value="22888"/>
+      <SuperClass code="MODIFYSTATUS"/>
+      <Rubric id="d1e95090" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Change the status of an object representing an Act so it is no longer "held", i.e., allow action to occur. For an HL7 Act, the state transitions per the HL7 Reference Information Model.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e95111" kind="short">
+         <Label xml:lang="en-US">release</Label>
+      </Rubric>
+      <Rubric id="d1e95111" kind="preferred">
+         <Label xml:lang="en-US">release</Label>
+      </Rubric>
+   </Class>
+   <Class code="RESUME" kind="concept">
+      <Meta name="internalId" value="22889"/>
+      <SuperClass code="MODIFYSTATUS"/>
+      <Rubric id="d1e95122" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Change the status of a suspended object representing an Act to "active", i.e., so it can be performed or is being performed. For an HL7 Act, the state transitions per the HL7 Reference Information Model.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e95143" kind="short">
+         <Label xml:lang="en-US">resume</Label>
+      </Rubric>
+      <Rubric id="d1e95143" kind="preferred">
+         <Label xml:lang="en-US">resume</Label>
+      </Rubric>
+   </Class>
+   <Class code="SUSPEND" kind="concept">
+      <Meta name="internalId" value="22890"/>
+      <SuperClass code="MODIFYSTATUS"/>
+      <Rubric id="d1e95154" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Change the status of an object representing an Act to <b>suspended</b>, i.e., so it is temporarily not in service.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e95178" kind="short">
+         <Label xml:lang="en-US">suspend</Label>
+      </Rubric>
+      <Rubric id="d1e95178" kind="preferred">
+         <Label xml:lang="en-US">suspend</Label>
+      </Rubric>
+   </Class>
+   <Class code="CREATE" kind="concept">
+      <Meta name="internalId" value="22874"/>
+      <SuperClass code="OPERATE"/>
+      <Rubric id="d1e95190" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Fundamental operation in an Information System (IS) that results only in the act of bringing an object into existence. Note: The preceding definition is taken from the HL7 RBAC specification. There is no restriction on how the operation is invoked, e.g., via a user interface. For an HL7 Act, the state transitions per the HL7 Reference Information Model.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e95211" kind="short">
+         <Label xml:lang="en-US">create</Label>
+      </Rubric>
+      <Rubric id="d1e95211" kind="preferred">
+         <Label xml:lang="en-US">create</Label>
+      </Rubric>
+   </Class>
+   <Class code="DELETE" kind="concept">
+      <Meta name="internalId" value="22891"/>
+      <SuperClass code="OPERATE"/>
+      <Rubric id="d1e95222" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Fundamental operation in an Information System (IS) that results only in the removal of information about an object from memory or storage. Note: The preceding definition is taken from the HL7 RBAC specification. There is no restriction on how the operation is invoked, e.g., via a user interface.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e95243" kind="short">
+         <Label xml:lang="en-US">delete</Label>
+      </Rubric>
+      <Rubric id="d1e95243" kind="preferred">
+         <Label xml:lang="en-US">delete</Label>
+      </Rubric>
+      <Rubric id="d1e95245" kind="short">
+         <Label xml:lang="en-US">remove</Label>
+      </Rubric>
+      <Rubric id="d1e95245" kind="preferred">
+         <Label xml:lang="en-US">remove</Label>
+      </Rubric>
+   </Class>
+   <Class code="EXECUTE" kind="concept">
+      <Meta name="internalId" value="22892"/>
+      <SuperClass code="OPERATE"/>
+      <Rubric id="d1e95257" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Fundamental operation in an IS that results only in initiating performance of a single or set of programs (i.e., software objects). Note: The preceding definition is taken from the HL7 RBAC specification. There is no restriction on how the operation is invoked, e.g., via a user interface.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e95278" kind="short">
+         <Label xml:lang="en-US">execute</Label>
+      </Rubric>
+      <Rubric id="d1e95278" kind="preferred">
+         <Label xml:lang="en-US">execute</Label>
+      </Rubric>
+   </Class>
+   <Class code="READ" kind="concept">
+      <Meta name="internalId" value="22875"/>
+      <SuperClass code="OPERATE"/>
+      <Rubric id="d1e95289" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Fundamental operation in an Information System (IS) that results only in the flow of information about an object to a subject. Note: The preceding definition is taken from the HL7 RBAC specification. There is no restriction on how the operation is invoked, e.g., via a user interface.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e95310" kind="short">
+         <Label xml:lang="en-US">read</Label>
+      </Rubric>
+      <Rubric id="d1e95310" kind="preferred">
+         <Label xml:lang="en-US">read</Label>
+      </Rubric>
+   </Class>
+   <Class code="UPDATE" kind="concept">
+      <Meta name="internalId" value="22876"/>
+      <SuperClass code="OPERATE"/>
+      <SubClass code="APPEND"/>
+      <SubClass code="MODIFYSTATUS"/>
+      <Rubric id="d1e95321" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Fundamental operation in an Information System (IS) that results only in the revision or alteration of an object. Note: The preceding definition is taken from the HL7 RBAC specification. There is no restriction on how the operation is invoked, e.g., via a user interface.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e95342" kind="short">
+         <Label xml:lang="en-US">revise</Label>
+      </Rubric>
+      <Rubric id="d1e95342" kind="preferred">
+         <Label xml:lang="en-US">revise</Label>
+      </Rubric>
+      <Rubric id="d1e95344" kind="short">
+         <Label xml:lang="en-US">update</Label>
+      </Rubric>
+      <Rubric id="d1e95344" kind="preferred">
+         <Label xml:lang="en-US">update</Label>
+      </Rubric>
+   </Class>
+   <Class code="APPEND" kind="concept">
+      <Meta name="internalId" value="22877"/>
+      <SuperClass code="UPDATE"/>
+      <Rubric id="d1e95356" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Fundamental operation in an Information System (IS) that results only in the addition of information to an object already in existence. Note: The preceding definition is taken from the HL7 RBAC specification. There is no restriction on how the operation is invoked, e.g., via a user interface.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e95377" kind="short">
+         <Label xml:lang="en-US">append</Label>
+      </Rubric>
+      <Rubric id="d1e95377" kind="preferred">
+         <Label xml:lang="en-US">append</Label>
+      </Rubric>
+   </Class>
+   <Class code="MODIFYSTATUS" kind="concept">
+      <Meta name="internalId" value="22878"/>
+      <SuperClass code="UPDATE"/>
+      <SubClass code="ABORT"/>
+      <SubClass code="ACTIVATE"/>
+      <SubClass code="CANCEL"/>
+      <SubClass code="COMPLETE"/>
+      <SubClass code="HOLD"/>
+      <SubClass code="JUMP"/>
+      <SubClass code="NULLIFY"/>
+      <SubClass code="OBSOLETE"/>
+      <SubClass code="REACTIVATE"/>
+      <SubClass code="RELEASE"/>
+      <SubClass code="RESUME"/>
+      <SubClass code="SUSPEND"/>
+      <Rubric id="d1e95389" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Change the status of an object representing an Act.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e95410" kind="short">
+         <Label xml:lang="en-US">modify status</Label>
+      </Rubric>
+      <Rubric id="d1e95410" kind="preferred">
+         <Label xml:lang="en-US">modify status</Label>
+      </Rubric>
+   </Class>
+</ClaML>

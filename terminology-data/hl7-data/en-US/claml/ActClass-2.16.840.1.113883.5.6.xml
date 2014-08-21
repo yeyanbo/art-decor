@@ -1,0 +1,2184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="145"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.6"/>
+   <Title name="ActClass" date="2012-08-02" version="1.000"/>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="ACT" kind="concept">
+      <Meta name="internalId" value="13856"/>
+      <Meta name="Name:Class" value="Act"/>
+      <SubClass code="_ActClassRecordOrganizer"/>
+      <SubClass code="ACCM"/>
+      <SubClass code="ACCT"/>
+      <SubClass code="ACSN"/>
+      <SubClass code="ADJUD"/>
+      <SubClass code="CACT"/>
+      <SubClass code="CNTRCT"/>
+      <SubClass code="CONS"/>
+      <SubClass code="CONTREG"/>
+      <SubClass code="CTTEVENT"/>
+      <SubClass code="DISPACT"/>
+      <SubClass code="EXPOS"/>
+      <SubClass code="INC"/>
+      <SubClass code="INFRM"/>
+      <SubClass code="INVE"/>
+      <SubClass code="LIST"/>
+      <SubClass code="MPROT"/>
+      <SubClass code="OBS"/>
+      <SubClass code="PCPR"/>
+      <SubClass code="POLICY"/>
+      <SubClass code="PROC"/>
+      <SubClass code="REG"/>
+      <SubClass code="REV"/>
+      <SubClass code="SPCTRT"/>
+      <SubClass code="SPLY"/>
+      <SubClass code="STORE"/>
+      <SubClass code="SUBST"/>
+      <SubClass code="TRFR"/>
+      <SubClass code="TRNS"/>
+      <SubClass code="XACT"/>
+      <Rubric id="d1e22047" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A record of something that is being done, has been done, can be done, or is intended or requested to be done.</p>
+            <p>
+               <i>Examples:</i>The kinds of acts that are common in health care are (1) a clinical observation, (2) an assessment of health condition (such as problems and diagnoses), (3) healthcare goals, (4) treatment services (such as medication, surgery, physical and psychological therapy), (5) assisting, monitoring or attending, (6) training and education services to patients and their next of kin, (7) and notary services (such as advanced directives or living will), (8) editing and maintaining documents, and many others.</p>
+            <p>
+               <i>Discussion and Rationale:</i>Acts are the pivot of the RIM; all domain information and processes are represented primarily in Acts. Any profession or business, including healthcare, is primarily constituted of intentional and occasionally non-intentional actions, performed and recorded by responsible actors. An Act-instance is a record of such an action.</p>
+            <p>Acts connect to Entities in their Roles through Participations and connect to other Acts through ActRelationships. Participations are the authors, performers and other responsible parties as well as subjects and beneficiaries (which includes tools and material used in the performance of the act, which are also subjects). The moodCode distinguishes between Acts that are meant as factual records, vs. records of intended or ordered services, and the other modalities in which act can appear.</p>
+            <p>One of the Participations that all acts have (at least implicitly) is a primary author, who is responsible of the Act and who "owns" the act. Responsibility for the act means responsibility for what is being stated in the Act and as what it is stated. Ownership of the act is assumed in the sense of who may operationally modify the same act. Ownership and responsibility of the Act is not the same as ownership or responsibility of what the Act-object refers to in the real world. The same real world activity can be described by two people, each being the author of their Act, describing the same real world activity. Yet one can be a witness while the other can be a principal performer. The performer has responsibilities for the physical actions; the witness only has responsibility for making a true statement to the best of his or her ability. The two Act-instances may even disagree, but because each is properly attributed to its author, such disagreements can exist side by side and left to arbitration by a recipient of these Act-instances.</p>
+            <p>In this sense, an Act-instance represents a "statement" according to Rector and Nowlan (1991) [Foundations for an electronic medical record. Methods Inf Med. 30.] Rector and Nowlan have emphasized the importance of understanding the medical record not as a collection of facts, but "a faithful record of what clinicians have heard, seen, thought, and done." Rector and Nowlan go on saying that "the other requirements for a medical record, e.g., that it be attributable and permanent, follow naturally from this view." Indeed the Act class is this attributable statement, and the rules of updating acts (discussed in the state-transition model, see Act.statusCode) versus generating new Act-instances are designed according to this principle of permanent attributable statements.</p>
+            <p>Rector and Nolan focus on the electronic medical record as a collection of statements, while attributed statements, these are still mostly factual statements. However, the Act class goes beyond this limitation to attributed factual statements, representing what is known as "speech-acts" in linguistics and philosophy. The notion of speech-act includes that there is pragmatic meaning in language utterances, aside from just factual statements; and that these utterances interact with the real world to change the state of affairs, even directly cause physical activities to happen. For example, an order is a speech act that (provided it is issued adequately) will cause the ordered action to be physically performed. The speech act theory has culminated in the seminal work by Austin (1962) [How to do things with words. Oxford University Press].</p>
+            <p>An activity in the real world may progress from defined, through planned and ordered to executed, which is represented as the mood of the Act. Even though one might think of a single activity as progressing from planned to executed, this progression is reflected by multiple Act-instances, each having one and only one mood that will not change along the Act-instance life cycle. This is because the attribution and content of speech acts along this progression of an activity may be different, and it is often critical that a permanent and faithful record be maintained of this progression. The specification of orders or promises or plans must not be overwritten by the specification of what was actually done, so as to allow comparing actions with their earlier specifications. Act-instances that describe this progression of the same real world activity are linked through the ActRelationships (of the relationship category "sequel").</p>
+            <p>Act as statements or speech-acts are the only representation of real world facts or processes in the HL7 RIM. The truth about the real world is constructed through a combination (and arbitration) of such attributed statements only, and there is no class in the RIM whose objects represent "objective state of affairs" or "real processes" independent from attributed statements. As such, there is no distinction between an activity and its documentation. Every Act includes both to varying degrees. For example, a factual statement made about recent (but past) activities, authored (and signed) by the performer of such activities, is commonly known as a procedure report or original documentation (e.g., surgical procedure report, clinic note etc.). Conversely, a status update on an activity that is presently in progress, authored by the performer (or a close observer) is considered to capture that activity (and is later superceded by a full procedure report). However, both status update and procedure report are acts of the same kind, only distinguished by mood and state (see statusCode) and completeness of the information.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e22093" kind="short">
+         <Label xml:lang="en-US">act</Label>
+      </Rubric>
+      <Rubric id="d1e22093" kind="preferred">
+         <Label xml:lang="en-US">act</Label>
+      </Rubric>
+   </Class>
+   <Class code="COMPOSITION" kind="concept">
+      <Meta name="internalId" value="20083"/>
+      <Meta name="Name:Class" value="Composition"/>
+      <SuperClass code="_ActClassRecordOrganizer"/>
+      <SubClass code="DOC"/>
+      <Rubric id="d1e22356" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A context representing a grouped commitment of information to the EHR. It is considered the unit of modification of the record, the unit of transmission in record extracts, and the unit of attestation by authorizing clinicians.</p>
+            <p>A composition represents part of a patient record originating from a single interaction between an authenticator and the record.</p>
+            <p>Unless otherwise stated all statements within a composition have the same authenticator, apply to the same patient and were recorded in a single session of use of a single application.</p>
+            <p>A composition contains organizers and entries.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e22385" kind="short">
+         <Label xml:lang="en-US">composition</Label>
+      </Rubric>
+      <Rubric id="d1e22385" kind="preferred">
+         <Label xml:lang="en-US">composition</Label>
+      </Rubric>
+      <Rubric id="d1e22388" kind="short">
+         <Label xml:lang="en-US">Attestable unit</Label>
+      </Rubric>
+   </Class>
+   <Class code="CONTAINER" kind="concept">
+      <Meta name="internalId" value="22712"/>
+      <Meta name="Name:Class" value="Container"/>
+      <SuperClass code="_ActClassRecordOrganizer"/>
+      <SubClass code="CATEGORY"/>
+      <SubClass code="DOCBODY"/>
+      <SubClass code="DOCSECT"/>
+      <SubClass code="TOPIC"/>
+      <Rubric id="d1e22399" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Container of clinical statements. Navigational. No semantic content. Knowledge of the section code is not required to interpret contained observations. Represents a heading in a heading structure, or "container tree".</p>
+            <p>The record entries relating to a single clinical session are usually grouped under headings that represent phases of the encounter, or assist with layout and navigation. Clinical headings usually reflect the clinical workflow during a care session, and might also reflect the main author's reasoning processes. Much research has demonstrated that headings are used differently by different professional groups and specialties, and that headings are not used consistently enough to support safe automatic processing of the E H R.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e22425" kind="short">
+         <Label xml:lang="en-US">record container</Label>
+      </Rubric>
+      <Rubric id="d1e22425" kind="preferred">
+         <Label xml:lang="en-US">record container</Label>
+      </Rubric>
+   </Class>
+   <Class code="EXTRACT" kind="concept">
+      <Meta name="internalId" value="20080"/>
+      <Meta name="Name:Class" value="Extract"/>
+      <SuperClass code="_ActClassRecordOrganizer"/>
+      <SubClass code="EHR"/>
+      <Rubric id="d1e22437" kind="definition">
+         <Label xml:lang="en-US">
+            <p>This context represents the part of a patient record conveyed in a single communication. It is drawn from a providing system for the purposes of communication to a requesting process (which might be another repository, a client application or a middleware service such as an electronic guideline engine), and supporting the faithful inclusion of the communicated data in the receiving system.</p>
+            <p>An extract may be the entirety of the patient record as held by the sender or it may be a part of that record (e.g. changes since a specified date).</p>
+            <p>An extract contains folders or compositions.</p>
+            <p>An extract cannot contain another extract.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e22466" kind="short">
+         <Label xml:lang="en-US">extract</Label>
+      </Rubric>
+      <Rubric id="d1e22466" kind="preferred">
+         <Label xml:lang="en-US">extract</Label>
+      </Rubric>
+   </Class>
+   <Class code="FOLDER" kind="concept">
+      <Meta name="internalId" value="20082"/>
+      <Meta name="Name:Class" value="Folder"/>
+      <SuperClass code="_ActClassRecordOrganizer"/>
+      <Rubric id="d1e22478" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A context representing the high-level organization of an extract e.g. to group parts of the record by episode, care team, clinical specialty, clinical condition, or source application. Internationally, this kind of organizing structure is used variably: in some centers and systems the folder is treated as an informal compartmentalization of the overall health record; in others it might represent a significant legal portion of the EHR relating to the originating enterprise or team.</p>
+            <p>A folder contains compositions.</p>
+            <p>Folders may be nested within folders.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e22504" kind="short">
+         <Label xml:lang="en-US">folder</Label>
+      </Rubric>
+      <Rubric id="d1e22504" kind="preferred">
+         <Label xml:lang="en-US">folder</Label>
+      </Rubric>
+   </Class>
+   <Class code="GROUPER" kind="concept">
+      <Meta name="internalId" value="22713"/>
+      <Meta name="Name:Class" value="Grouper"/>
+      <SuperClass code="_ActClassRecordOrganizer"/>
+      <SubClass code="CLUSTER"/>
+      <Rubric id="d1e22516" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>An ACT that organizes a set of component acts into a semantic grouping that share a particular context such as timeframe, patient, etc.</p>
+            <p>
+               <b>UsageNotes:</b>The focus in a GROUPER act is the grouping of the contained acts. For example "a request to group" (RQO), "a type of grouping that is allowed to occur" (DEF), etc.</p>
+            <p>Unlike WorkingList, which represents a dynamic, shared, continuously updated collection to provide a "view" of a set of objects, GROUPER collections tend to be static and simply indicate a shared set of semantics. Note that sharing of semantics can be achieved using ACT as well. However, with GROUPER, the sole semantic is of grouping.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e22548" kind="short">
+         <Label xml:lang="en-US">grouper</Label>
+      </Rubric>
+      <Rubric id="d1e22548" kind="preferred">
+         <Label xml:lang="en-US">grouper</Label>
+      </Rubric>
+   </Class>
+   <Class code="ROIBND" kind="concept">
+      <Meta name="internalId" value="17895"/>
+      <Meta name="Name:Class" value="BoundedROI"/>
+      <SuperClass code="_ActClassROI"/>
+      <Rubric id="d1e22560" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A Region of Interest (ROI) specified for a multidimensional observation, such as an Observation Series (OBSSER). The ROI is specified using a set of observation criteria, each delineating the boundary of the region in one of the dimensions in the multidimensional observation. The relationship between a ROI and its referenced Act is specified through an ActRelationship of type subject (SUBJ), which must always be present. Each of the boundary criteria observations is connected with the ROI using ActRelationships of type "has component" (COMP). In each boundary criterion, the Act.code names the dimension and the Observation.value specifies the range of values inside the region. Typically the bounded dimension is continuous, and so the Observation.value will be an interval (IVL) data type. The Observation.value need not be specified if the respective dimension is only named but not constrained. For example, an ROI for the QT interval of a certain beat in ECG Lead II would contain 2 boundary criteria, one naming the interval in time (constrained), and the other naming the interval in ECG Lead II (only named, but not constrained).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e22580" kind="short">
+         <Label xml:lang="en-US">bounded ROI</Label>
+      </Rubric>
+      <Rubric id="d1e22580" kind="preferred">
+         <Label xml:lang="en-US">bounded ROI</Label>
+      </Rubric>
+   </Class>
+   <Class code="ROIOVL" kind="concept">
+      <Meta name="internalId" value="16392"/>
+      <Meta name="Name:Class" value="OverlayROL"/>
+      <SuperClass code="_ActClassROI"/>
+      <Rubric id="d1e22593" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A Region of Interest (ROI) specified for an image using an overlay shape. Typically used to make reference to specific regions in images, e.g., to specify the location of a radiologic finding in an image or to specify the site of a physical finding by "circling" a region in a schematic picture of a human body. The units of the coordinate values are in pixels. The origin is in the upper left hand corner, with positive X values going to the right and positive Y values going down. The relationship between a ROI and its referenced Act is specified through an ActRelationship of type "subject" (SUBJ), which must always be present.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e22613" kind="short">
+         <Label xml:lang="en-US">overlay ROI</Label>
+      </Rubric>
+      <Rubric id="d1e22613" kind="preferred">
+         <Label xml:lang="en-US">overlay ROI</Label>
+      </Rubric>
+   </Class>
+   <Class code="LLD" kind="concept">
+      <Meta name="internalId" value="21939"/>
+      <SuperClass code="_SubjectBodyPosition"/>
+      <Rubric id="d1e22625" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Lying on the left side.</p>
+            <p>
+               <b>
+                  <i>Deprecation Comment:</i>
+               </b>This concept has been deprecated because it does not describe a type of Act (as it should in the ActClass code system), but rather encodes the result or value of an observation. The same code has been added to the ObservationValue code system.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e22661" kind="short">
+         <Label xml:lang="en-US">left lateral decubitus</Label>
+      </Rubric>
+      <Rubric id="d1e22661" kind="preferred">
+         <Label xml:lang="en-US">left lateral decubitus</Label>
+      </Rubric>
+   </Class>
+   <Class code="PRN" kind="concept">
+      <Meta name="internalId" value="21932"/>
+      <SuperClass code="_SubjectBodyPosition"/>
+      <Rubric id="d1e22672" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Lying with the front or ventral surface downward; lying face down.</p>
+            <p>
+               <b>
+                  <i>Deprecation Comment:</i>
+               </b>This concept has been deprecated because it does not describe a type of Act (as it should in the ActClass code system), but rather encodes the result or value of an observation. The same code has been added to the ObservationValue code system.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e22708" kind="short">
+         <Label xml:lang="en-US">prone</Label>
+      </Rubric>
+      <Rubric id="d1e22708" kind="preferred">
+         <Label xml:lang="en-US">prone</Label>
+      </Rubric>
+   </Class>
+   <Class code="RLD" kind="concept">
+      <Meta name="internalId" value="21938"/>
+      <SuperClass code="_SubjectBodyPosition"/>
+      <Rubric id="d1e22719" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Lying on the right side.</p>
+            <p>
+               <b>
+                  <i>Deprecation Comment:</i>
+               </b>This concept has been deprecated because it does not describe a type of Act (as it should in the ActClass code system), but rather encodes the result or value of an observation. The same code has been added to the ObservationValue code system.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e22755" kind="short">
+         <Label xml:lang="en-US">right lateral decubitus</Label>
+      </Rubric>
+      <Rubric id="d1e22755" kind="preferred">
+         <Label xml:lang="en-US">right lateral decubitus</Label>
+      </Rubric>
+   </Class>
+   <Class code="SFWL" kind="concept">
+      <Meta name="internalId" value="21940"/>
+      <SuperClass code="_SubjectBodyPosition"/>
+      <Rubric id="d1e22766" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A semi-sitting position in bed with the head of the bed elevated approximately 45 degrees.</p>
+            <p>
+               <b>
+                  <i>Deprecation Comment:</i>
+               </b>This concept has been deprecated because it does not describe a type of Act (as it should in the ActClass code system), but rather encodes the result or value of an observation. The same code has been added to the ObservationValue code system.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e22802" kind="short">
+         <Label xml:lang="en-US">Semi-Fowler's</Label>
+      </Rubric>
+      <Rubric id="d1e22802" kind="preferred">
+         <Label xml:lang="en-US">Semi-Fowler's</Label>
+      </Rubric>
+   </Class>
+   <Class code="SIT" kind="concept">
+      <Meta name="internalId" value="21933"/>
+      <SuperClass code="_SubjectBodyPosition"/>
+      <Rubric id="d1e22813" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Resting the body on the buttocks, typically with upper torso erect or semi erect.</p>
+            <p>
+               <b>
+                  <i>Deprecation Comment:</i>
+               </b>This concept has been deprecated because it does not describe a type of Act (as it should in the ActClass code system), but rather encodes the result or value of an observation. The same code has been added to the ObservationValue code system.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e22849" kind="short">
+         <Label xml:lang="en-US">sitting</Label>
+      </Rubric>
+      <Rubric id="d1e22849" kind="preferred">
+         <Label xml:lang="en-US">sitting</Label>
+      </Rubric>
+   </Class>
+   <Class code="STN" kind="concept">
+      <Meta name="internalId" value="21934"/>
+      <SuperClass code="_SubjectBodyPosition"/>
+      <Rubric id="d1e22861" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To be stationary, upright, vertical, on one's legs.</p>
+            <p>
+               <b>
+                  <i>Deprecation Comment:</i>
+               </b>This concept has been deprecated because it does not describe a type of Act (as it should in the ActClass code system), but rather encodes the result or value of an observation. The same code has been added to the ObservationValue code system.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e22897" kind="short">
+         <Label xml:lang="en-US">standing</Label>
+      </Rubric>
+      <Rubric id="d1e22897" kind="preferred">
+         <Label xml:lang="en-US">standing</Label>
+      </Rubric>
+   </Class>
+   <Class code="SUP" kind="concept">
+      <Meta name="internalId" value="21935"/>
+      <SuperClass code="_SubjectBodyPosition"/>
+      <SubClass code="RTRD"/>
+      <SubClass code="TRD"/>
+      <Rubric id="d1e22908" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>
+                  <i>Deprecation Comment:</i>
+               </b>This concept has been deprecated because it does not describe a type of Act (as it should in the ActClass code system), but rather encodes the result or value of an observation. The same code has been added to the ObservationValue code system.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e22941" kind="short">
+         <Label xml:lang="en-US">supine</Label>
+      </Rubric>
+      <Rubric id="d1e22941" kind="preferred">
+         <Label xml:lang="en-US">supine</Label>
+      </Rubric>
+   </Class>
+   <Class code="_SubjectBodyPosition" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21930"/>
+      <Meta name="Name:Class" value="SubjectBodyPosition"/>
+      <SuperClass code="_SubjectPhysicalPosition"/>
+      <SubClass code="LLD"/>
+      <SubClass code="PRN"/>
+      <SubClass code="RLD"/>
+      <SubClass code="SFWL"/>
+      <SubClass code="SIT"/>
+      <SubClass code="STN"/>
+      <SubClass code="SUP"/>
+      <Rubric id="d1e22952" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Contains codes for defining the observed, physical position of a subject, such as during an observation, assessment, collection of a specimen, etc. ECG waveforms and vital signs, such as blood pressure, are two examples where a general, observed position typically needs to be noted.</p>
+            <p>
+               <b>
+                  <i>Deprecation Comment:</i>
+               </b>This concept has been deprecated because it does not describe a type of Act (as it should in the ActClass code system), but rather encodes the result or value of an observation. The same code has been added to the ObservationValue code system.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e22990" kind="short">
+         <Label xml:lang="en-US">subject body position</Label>
+      </Rubric>
+      <Rubric id="d1e22990" kind="preferred">
+         <Label xml:lang="en-US">subject body position</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActClassRecordOrganizer" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22711"/>
+      <Meta name="Name:Class" value="RecordOrganizer"/>
+      <SuperClass code="ACT"/>
+      <SubClass code="COMPOSITION"/>
+      <SubClass code="CONTAINER"/>
+      <SubClass code="EXTRACT"/>
+      <SubClass code="FOLDER"/>
+      <SubClass code="GROUPER"/>
+      <Rubric id="d1e23034" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Used to group a set of acts sharing a common context. Organizer structures can nest within other context structures - such as where a document is contained within a folder, or a folder is contained within an EHR extract.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e23054" kind="short">
+         <Label xml:lang="en-US">record organizer</Label>
+      </Rubric>
+      <Rubric id="d1e23054" kind="preferred">
+         <Label xml:lang="en-US">record organizer</Label>
+      </Rubric>
+   </Class>
+   <Class code="ACCM" kind="concept">
+      <Meta name="internalId" value="16137"/>
+      <Meta name="Name:Class" value="Accommodation"/>
+      <SuperClass code="ACT"/>
+      <Rubric id="d1e23066" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An accommodation is a service provided for a Person or other LivingSubject in which a place is provided for the subject to reside for a period of time. Commonly used to track the provision of ward, private and semi-private accommodations for a patient.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e23086" kind="short">
+         <Label xml:lang="en-US">accommodation</Label>
+      </Rubric>
+      <Rubric id="d1e23086" kind="preferred">
+         <Label xml:lang="en-US">accommodation</Label>
+      </Rubric>
+   </Class>
+   <Class code="ACCT" kind="concept">
+      <Meta name="internalId" value="13991"/>
+      <Meta name="Name:Class" value="Account"/>
+      <SuperClass code="ACT"/>
+      <Rubric id="d1e23099" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A financial account established to track the net result of financial acts.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e23119" kind="short">
+         <Label xml:lang="en-US">account</Label>
+      </Rubric>
+      <Rubric id="d1e23119" kind="preferred">
+         <Label xml:lang="en-US">account</Label>
+      </Rubric>
+   </Class>
+   <Class code="ACSN" kind="concept">
+      <Meta name="internalId" value="16740"/>
+      <Meta name="Name:Class" value="Accession"/>
+      <SuperClass code="ACT"/>
+      <Rubric id="d1e23131" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A unit of work, a grouper of work items as defined by the system performing that work. Typically some laboratory order fulfillers communicate references to accessions in their communications regarding laboratory orders. Often one or more specimens are related to an accession such that in some environments the accession number is taken as an identifier for a specimen (group).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e23151" kind="short">
+         <Label xml:lang="en-US">accession</Label>
+      </Rubric>
+      <Rubric id="d1e23151" kind="preferred">
+         <Label xml:lang="en-US">accession</Label>
+      </Rubric>
+   </Class>
+   <Class code="ADJUD" kind="concept">
+      <Meta name="internalId" value="16747"/>
+      <Meta name="Name:Class" value="InvoiceAdjudication"/>
+      <SuperClass code="ACT"/>
+      <Rubric id="d1e23163" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A transformation process where a requested invoice is transformed into an agreed invoice. Represents the adjudication processing of an invoice (claim). Adjudication results can be adjudicated as submitted, with adjustments or refused.</p>
+            <p>Adjudication results comprise 2 components: the adjudication processing results and a restated (or adjudicated) invoice or claim</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e23186" kind="short">
+         <Label xml:lang="en-US">financial adjudication</Label>
+      </Rubric>
+      <Rubric id="d1e23186" kind="preferred">
+         <Label xml:lang="en-US">financial adjudication</Label>
+      </Rubric>
+      <Rubric id="d1e23189" kind="short">
+         <Label xml:lang="en-US">financial adjudication results</Label>
+      </Rubric>
+   </Class>
+   <Class code="CACT" kind="concept">
+      <Meta name="internalId" value="11534"/>
+      <Meta name="Name:Class" value="ControlAct"/>
+      <SuperClass code="ACT"/>
+      <SubClass code="ACTN"/>
+      <SubClass code="INFO"/>
+      <SubClass code="STC"/>
+      <Rubric id="d1e23200" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An act representing a system action such as the change of state of another act or the initiation of a query. All control acts represent trigger events in the HL7 context. ControlActs may occur in different moods.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e23229" kind="short">
+         <Label xml:lang="en-US">control act</Label>
+      </Rubric>
+      <Rubric id="d1e23229" kind="preferred">
+         <Label xml:lang="en-US">control act</Label>
+      </Rubric>
+   </Class>
+   <Class code="CNTRCT" kind="concept">
+      <Meta name="internalId" value="14002"/>
+      <Meta name="Name:Class" value="Contract"/>
+      <SuperClass code="ACT"/>
+      <SubClass code="FCNTRCT"/>
+      <Rubric id="d1e23241" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An agreement of obligation between two or more parties that is subject to contractual law and enforcement.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e23261" kind="short">
+         <Label xml:lang="en-US">contract</Label>
+      </Rubric>
+      <Rubric id="d1e23261" kind="preferred">
+         <Label xml:lang="en-US">contract</Label>
+      </Rubric>
+   </Class>
+   <Class code="CONS" kind="concept">
+      <Meta name="internalId" value="11537"/>
+      <Meta name="Name:Class" value="Consent"/>
+      <SuperClass code="ACT"/>
+      <Rubric id="d1e23273" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The Consent class represents informed consents and all similar medico-legal transactions between the patient (or his legal guardian) and the provider. Examples are informed consent for surgical procedures, informed consent for clinical trials, advanced beneficiary notice, against medical advice decline from service, release of information agreement, etc.</p>
+            <p>The details of consents vary. Often an institution has a number of different consent forms for various purposes, including reminding the physician about the topics to mention. Such forms also include patient education material. In electronic medical record communication, consents thus are information-generating acts on their own and need to be managed similar to medical activities. Thus, Consent is modeled as a special class of Act.</p>
+            <p>The "signatures" to the consent document are represented electronically through Participation instances to the consent object. Typically an informed consent has Participation.typeCode of "performer", the healthcare provider informing the patient, and "consenter", the patient or legal guardian. Some consent may associate a witness or a notary public (e.g., living wills, advanced directives). In consents where a healthcare provider is not required (e.g. living will), the performer may be the patient himself or a notary public.</p>
+            <p>Some consent has a minimum required delay between the consent and the service, so as to allow the patient to rethink his decisions. This minimum delay can be expressed in the act definition by the ActRelationship.pauseQuantity attribute that delays the service until the pause time has elapsed after the consent has been completed.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e23302" kind="short">
+         <Label xml:lang="en-US">consent</Label>
+      </Rubric>
+      <Rubric id="d1e23302" kind="preferred">
+         <Label xml:lang="en-US">consent</Label>
+      </Rubric>
+   </Class>
+   <Class code="CONTREG" kind="concept">
+      <Meta name="internalId" value="14005"/>
+      <Meta name="Name:Class" value="ContainerRegistration"/>
+      <SuperClass code="ACT"/>
+      <Rubric id="d1e23315" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An Act where a container is registered either via an automated sensor, such as a barcode reader, or by manual receipt</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e23335" kind="short">
+         <Label xml:lang="en-US">container registration</Label>
+      </Rubric>
+      <Rubric id="d1e23335" kind="preferred">
+         <Label xml:lang="en-US">container registration</Label>
+      </Rubric>
+   </Class>
+   <Class code="CTTEVENT" kind="concept">
+      <Meta name="internalId" value="18973"/>
+      <Meta name="Name:Class" value="TimePointEvent"/>
+      <SuperClass code="ACT"/>
+      <Rubric id="d1e23347" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An identified point during a clinical trial at which one or more actions are scheduled to be performed (definition mood), or are actually performed (event mood). The actions may or may not involve an encounter between the subject and a healthcare professional.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e23367" kind="short">
+         <Label xml:lang="en-US">clinical trial timepoint event</Label>
+      </Rubric>
+      <Rubric id="d1e23367" kind="preferred">
+         <Label xml:lang="en-US">clinical trial timepoint event</Label>
+      </Rubric>
+   </Class>
+   <Class code="DISPACT" kind="concept">
+      <Meta name="internalId" value="21428"/>
+      <Meta name="Name:Class" value="DisciplinaryAction"/>
+      <SuperClass code="ACT"/>
+      <Rubric id="d1e23379" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An action taken with respect to a subject Entity by a regulatory or authoritative body with supervisory capacity over that entity. The action is taken in response to behavior by the subject Entity that body finds to be undesirable.</p>
+            <p>Suspension, license restrictions, monetary fine, letter of reprimand, mandated training, mandated supervision, etc. <i>Examples:</i>
+            </p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e23405" kind="short">
+         <Label xml:lang="en-US">disciplinary action</Label>
+      </Rubric>
+      <Rubric id="d1e23405" kind="preferred">
+         <Label xml:lang="en-US">disciplinary action</Label>
+      </Rubric>
+   </Class>
+   <Class code="EXPOS" kind="concept">
+      <Meta name="internalId" value="21980"/>
+      <Meta name="Name:Class" value="Exposure"/>
+      <SuperClass code="ACT"/>
+      <SubClass code="AEXPOS"/>
+      <SubClass code="TEXPOS"/>
+      <Rubric id="d1e23417" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An interaction between entities that provides opportunity for transmission of a physical, chemical, or biological agent from an exposure source entity to an exposure target entity.</p>
+            <p>
+               <i>Examples:</i>The following examples are provided to indicate what interactions are considered exposures rather than other types of Acts:</p>
+            <ul>
+               <li>
+                  <p>A patient accidentally receives three times the recommended dose of their medication due to a dosing error.</p>
+                  <ul>
+                     <li>
+                        <p>This is a substance administration. Public health and/or safety authorities may also be interested in documenting this with an associated exposure.</p>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <p>A patient accidentally is dispensed an incorrect medicine (e.g., clomiphene instead of clomipramine). They have taken several doses before the mistake is detected. They are therefore "exposed" to a medicine that there was no therapeutic indication for them to receive.</p>
+                  <ul>
+                     <li>
+                        <p>There are several substance administrations in this example. Public health and/or safety authorities may also be interested in documenting this with associated exposures.</p>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <p>In a busy medical ward, a patient is receiving chemotherapy for a lymphoma. Unfortunately, the IV infusion bag containing the medicine splits, spraying cytotoxic medication over the patient being treated and the patient in the adjacent bed.</p>
+                  <ul>
+                     <li>
+                        <p>There are three substance administrations in this example. The first is the intended one (IV infusion) with its associated (implicit) exposure. There is an incident with an associated substance administration to the same patient involving the medication sprayed over the patient as well as an associated exposure. Additionally, the incident includes a substance administration involving the spraying of medication on the adjacent patient, also with an associated exposure.</p>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <p>A patient who is a refugee from a war-torn African nation arrives in a busy inner city A&amp;E department suffering from a cough with bloody sputum. Not understanding the registration and triage process, they sit in the waiting room for several hours before it is noticed that they have not booked in. As soon as they are being processed, it is suspected that they are suffering from TB. Vulnerable (immunosuppressed) patients who were sharing the waiting room with this patient may have been exposed to the tubercule bacillus, and must be traced for investigation.</p>
+                  <ul>
+                     <li>
+                        <p>This is an exposure (or possibly multiple exposures) in the waiting room involving the refugee and everyone else in the waiting room during the period. There might also be a number of known or presumed substance administrations (coughing) via several possible routes. The substance administrations are only hypotheses until confirmed by further testing.</p>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <p>A patient who has received an elective total hip replacement procedure suffers a prolonged stay in hospital, due to contracting an MRSA infection in the surgical wound site after the surgery.</p>
+                  <ul>
+                     <li>
+                        <p>This is an exposure to MRSA. Although there was some sort of substance administration, it's possible the exact mechanism for introduction of the MRSA into the wound will not be identified.</p>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <p>Routine maintenance of the X-ray machines at a local hospital reveals a serious breach of the shielding on one of the machines. Patients who have undergone investigations using that machine in the last month are likely to have been exposed to significantly higher doses of X-rays than was intended, and must be tracked for possible adverse effects.</p>
+                  <ul>
+                     <li>
+                        <p>There has been an exposure of each patient who used the machine in the past 30 days. Some patients may have had substance administrations.</p>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <p>A new member of staff is employed in the laundry processing room of a small cottage hospital, and a misreading of the instructions for adding detergents results in fifty times the usual concentration of cleaning materials being added to a batch of hospital bedding. As a result, several patients have been exposed to very high levels of detergents still present in the "clean" bedding, and have experienced dermatological reactions to this.</p>
+                  <ul>
+                     <li>
+                        <p>There has been an incident with multiple exposures to several patients. Although there are substance administrations involving the application of the detergent to the skin of the patients, it is expected that the substance administrations would not be directly documented.</p>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <p>Seven patients who are residents in a health care facility for the elderly mentally ill have developed respiratory problems. After several months of various tests having been performed and various medications prescribed to these patients, the problem is traced to their being "sensitive" to a new fungicide used in the wall plaster of the ward where these patients reside.</p>
+                  <ul>
+                     <li>
+                        <p>The patients have been continuously exposed to the fungicide. Although there have been continuous substance administrations (via breathing) this would not normally be documented as a substance administration.</p>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <p>A patient with osteoarthritis of the knees is treated symptomatically using analgesia, paracetamol (acetaminophen) 1g up to four times a day for pain relief. His GP does not realize that the patient has, 20 years previously (while at college) had severe alcohol addiction problems, and now, although this is completely under control, his liver has suffered significantly, leaving him more sensitive to hepatic toxicity from paracetamol use. Later that year, the patient returns with a noticeable level of jaundice. Paracetamol is immediately withdrawn and alternative solutions for the knee pain are sought. The jaundice gradually subsides with conservative management, but referral to the gastroenterologist is required for advice and monitoring.</p>
+                  <ul>
+                     <li>
+                        <p>There is a substance administration with an associated exposure. The exposure component is based on the relative toxic level of the substance to a patient with a compromised liver function.</p>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <p>A patient goes to their GP complaining of abdominal pain, having been discharged from the local hospital ten days' previously after an emergency appendectomy. The GP can find nothing particularly amiss, and presumes it is post operative surgical pain that will resolve. The patient returns a fortnight later, when the GP prescribes further analgesia, but does decide to request an outpatient surgical follow-up appointment. At this post-surgical outpatient review, the registrar decides to order an ultrasound, which, when performed three weeks later, shows a small faint inexplicable mass. A laparoscopy is then performed, as a day case procedure, and a piece of a surgical swab is removed from the patient's abdominal cavity. Thankfully, a full recovery then takes place.</p>
+                  <ul>
+                     <li>
+                        <p>This is a procedural sequelae. There may be an Incident recorded for this also.</p>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <p>A patient is slightly late for a regular pacemaker battery check in the Cardiology department of the local hospital. They are hurrying down the second floor corridor. A sudden summer squall has recently passed over the area, and rain has come in through an open corridor window leaving a small puddle on the corridor floor. In their haste, the patient slips in the puddle and falls so badly that they have to be taken to the A&amp;E department, where it is discovered on investigation they have slightly torn the cruciate ligament in their left knee.</p>
+                  <ul>
+                     <li>
+                        <p>This is not an exposure. There has been an incident.</p>
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+            <p>
+               <i>Usage Notes:</i>This class deals only with opportunity and not the outcome of the exposure; i.e. not all exposed parties will necessarily experience actual harm or benefit.</p>
+            <p>Exposure differs from Substance Administration by the absence of the participation of a performer in the act.</p>
+            <p>The following participations SHOULD be used with the following participations to distinguish the specific entities:</p>
+            <ul>
+               <li>
+                  <p>The exposed entity participates via the "exposure target" (EXPTRGT) participation.</p>
+               </li>
+               <li>
+                  <p>An entity that has carried the agent transmitted in the exposure participates via the "exposure source" (EXSRC) participation. For example:</p>
+                  <ul>
+                     <li>
+                        <p>a person or animal who carried an infectious disease and interacts (EXSRC) with another person or animal (EXPTRGT) transmitting the disease agent;</p>
+                     </li>
+                     <li>
+                        <p>a place or other environment (EXSRC) and a person or animal (EXPTRGT) who is exposed in the presence of this environment.</p>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <p>When it is unknown whether a participating entity is the source of the agent (EXSRC) or the target of the transmission (EXPTRGT), the "exposure participant" (EXPART) is used.</p>
+               </li>
+               <li>
+                  <p>The physical (including energy), chemical or biological substance which is participating in the exposure uses the "exposure agent" (EXPAGNT) participation. There are at least three scenarios:</p>
+                  <ol>
+                     <li>
+                        <p>the player of the Role that participates as EXPAGNT is the chemical or biological substance mixed or carried by the scoper-entity of the Role (e.g., ingredient role); or</p>
+                     </li>
+                     <li>
+                        <p>the player of the Role that participates as EXPAGNT is a mixture known to contain the chemical, radiological or biological substance of interest; or</p>
+                     </li>
+                     <li>
+                        <p>the player of the Role that participates as a EXPAGNT is known to carry the agent (i.e., the player is a fomite, vector, etc.).</p>
+                     </li>
+                  </ol>
+               </li>
+            </ul>
+            <p>The Exposure.statusCode attribute should be interpreted as the state of the Exposure business object (e.g., active, aborted, completed) and not the clinical status of the exposure (e.g., probable, confirmed). The clinical status of the exposure should be associated with the exposure via a subject observation.</p>
+            <p>
+               <i>Design Comment:</i>The usage notes require a clear criterion for determining whether an act is an exposure or substance administration-deleterious potential, uncertainty of actual transmission, or otherwise. SBADM states that the criterion is the presence of a performer-but there are examples above that call this criterion into question (e.g., the first one, concerning a dosing error).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e23697" kind="short">
+         <Label xml:lang="en-US">exposure</Label>
+      </Rubric>
+      <Rubric id="d1e23697" kind="preferred">
+         <Label xml:lang="en-US">exposure</Label>
+      </Rubric>
+   </Class>
+   <Class code="INC" kind="concept">
+      <Meta name="internalId" value="13989"/>
+      <Meta name="Name:Class" value="Incident"/>
+      <SuperClass code="ACT"/>
+      <Rubric id="d1e23709" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An event that occurred outside of the control of one or more of the parties involved. Includes the concept of an accident.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e23729" kind="short">
+         <Label xml:lang="en-US">incident</Label>
+      </Rubric>
+      <Rubric id="d1e23729" kind="preferred">
+         <Label xml:lang="en-US">incident</Label>
+      </Rubric>
+   </Class>
+   <Class code="INFRM" kind="concept">
+      <Meta name="internalId" value="18908"/>
+      <Meta name="Name:Class" value="Inform"/>
+      <SuperClass code="ACT"/>
+      <Rubric id="d1e23741" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The act of transmitting information and understanding about a topic to a subject where the participation association must be SBJ.</p>
+            <p>
+               <b>Discussion:</b>This act may be used to request that a patient or provider be informed about an Act, or to indicate that a person was informed about a particular act.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e23767" kind="short">
+         <Label xml:lang="en-US">inform</Label>
+      </Rubric>
+      <Rubric id="d1e23767" kind="preferred">
+         <Label xml:lang="en-US">inform</Label>
+      </Rubric>
+   </Class>
+   <Class code="INVE" kind="concept">
+      <Meta name="internalId" value="13992"/>
+      <Meta name="Name:Class" value="InvoiceElement"/>
+      <SuperClass code="ACT"/>
+      <Rubric id="d1e23780" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Represents concepts related to invoice processing in health care</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e23800" kind="short">
+         <Label xml:lang="en-US">invoice element</Label>
+      </Rubric>
+      <Rubric id="d1e23800" kind="preferred">
+         <Label xml:lang="en-US">invoice element</Label>
+      </Rubric>
+   </Class>
+   <Class code="LIST" kind="concept">
+      <Meta name="internalId" value="11541"/>
+      <Meta name="Name:Class" value="WorkingList"/>
+      <SuperClass code="ACT"/>
+      <Rubric id="d1e23812" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Working list collects a dynamic list of individual instances of Act via ActRelationship which reflects the need of an individual worker, team of workers, or an organization to manage lists of acts for many different clinical and administrative reasons. Examples of working lists include problem lists, goal lists, allergy lists, and to-do lists.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e23832" kind="short">
+         <Label xml:lang="en-US">working list</Label>
+      </Rubric>
+      <Rubric id="d1e23832" kind="preferred">
+         <Label xml:lang="en-US">working list</Label>
+      </Rubric>
+   </Class>
+   <Class code="MPROT" kind="concept">
+      <Meta name="internalId" value="16230"/>
+      <Meta name="Name:Class" value="MonitoringProgram"/>
+      <SuperClass code="ACT"/>
+      <Rubric id="d1e23844" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An officially or unofficially instituted program to track acts of a particular type or categorization.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e23864" kind="short">
+         <Label xml:lang="en-US">monitoring program</Label>
+      </Rubric>
+      <Rubric id="d1e23864" kind="preferred">
+         <Label xml:lang="en-US">monitoring program</Label>
+      </Rubric>
+   </Class>
+   <Class code="OBS" kind="concept">
+      <Meta name="internalId" value="11529"/>
+      <Meta name="Name:Class" value="Observation"/>
+      <SuperClass code="ACT"/>
+      <SubClass code="_ActClassROI"/>
+      <SubClass code="_SubjectPhysicalPosition"/>
+      <SubClass code="ALRT"/>
+      <SubClass code="BATTERY"/>
+      <SubClass code="CLNTRL"/>
+      <SubClass code="CNOD"/>
+      <SubClass code="CONC"/>
+      <SubClass code="COND"/>
+      <SubClass code="DGIMG"/>
+      <SubClass code="GEN"/>
+      <SubClass code="INVSTG"/>
+      <SubClass code="OBSSER"/>
+      <SubClass code="POS"/>
+      <SubClass code="SPCOBS"/>
+      <SubClass code="VERIF"/>
+      <Rubric id="d1e23876" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>An act that is intended to result in new information about a subject. The main difference between Observations and other Acts is that Observations have a value attribute. The <b>code</b>attribute of Observation and the <b>value</b>attribute of Observation must be considered in combination to determine the semantics of the observation.</p>
+            <p>
+               <b>Discussion:</b>
+            </p>
+            <p>Structurally, many observations are name-value-pairs, where the Observation.code (inherited from Act) is the name and the Observation.value is the value of the property. Such a construct is also known as a variable (a named feature that can assume a value) hence, the Observation class is always used to hold generic name-value-pairs or variables, even though the variable valuation may not be the result of an elaborate observation method. It may be a simple answer to a question or it may be an assertion or setting of a parameter.</p>
+            <p>As with all Act statements, Observation statements describe what was done, and in the case of Observations, this includes a description of what was actually observed (results or answers); and those results or answers are part of the observation and not split off into other objects.</p>
+            <p>The method of action is asserted by the Observation classCode or its subclasses at the least granular level, by the Observation.code attribute value at the medium level of granularity, and by the attribute value of observation.methodCode when a finer level of granularity is required. The method in whole or in part may also appear in the attribute value of Observation.value when using coded data types to express the value of the attribute. Relevant aspects of methodology may also be restated in value when the results themselves imply or state a methodology.</p>
+            <p>An observation may consist of component observations each having their own Observation.code and Observation.value. In this case, the composite observation may not have an Observation.value for itself. For instance, a white blood cell count consists of the sub-observations for the counts of the various granulocytes, lymphocytes and other normal or abnormal blood cells (e.g., blasts). The overall white blood cell count Observation itself may therefore not have a value by itself (even though it could have one, e.g., the sum total of white blood cells). Thus, as long as an Act is essentially an Act of recognizing and noting information about a subject, it is an Observation, regardless of whether it has a simple value by itself or whether it has sub-observations.</p>
+            <p>Even though observations are professional acts (see Act) and as such are intentional actions, this does not require that every possible outcome of an observation be pondered in advance of it being actually made. For instance, differential white blood cell counts (WBC) rarely show blasts, but if they do, this is part of the WBC observation even though blasts might not be predefined in the structure of a normal WBC.</p>
+            <p>Clinical documents commonly have Subjective and Objective findings, both of which are kinds of Observations. In addition, clinical documents commonly contain Assessments, which are also kinds of Observations. Thus, the establishment of a diagnosis is an Observation.</p>
+            <p>
+               <b>Examples:</b>
+            </p>
+            <ul>
+               <li>
+                  <p>Recording the results of a Family History Assessment</p>
+               </li>
+               <li>
+                  <p>Laboratory test and associated result</p>
+               </li>
+               <li>
+                  <p>Physical exam test and associated result</p>
+               </li>
+               <li>
+                  <p>Device temperature</p>
+               </li>
+               <li>
+                  <p>Soil lead level</p>
+               </li>
+            </ul>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e23969" kind="short">
+         <Label xml:lang="en-US">observation</Label>
+      </Rubric>
+      <Rubric id="d1e23969" kind="preferred">
+         <Label xml:lang="en-US">observation</Label>
+      </Rubric>
+   </Class>
+   <Class code="PCPR" kind="concept">
+      <Meta name="internalId" value="18964"/>
+      <Meta name="Name:Class" value="CareProvision"/>
+      <SuperClass code="ACT"/>
+      <SubClass code="ENC"/>
+      <Rubric id="d1e23981" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An <b>Act</b>that of taking on whole or partial responsibility for, or attention to, safety and well-being of a subject of care.</p>
+            <p>
+               <i>Discussion:</i>A <b>care provision</b>event may exist without any other care actions taking place. For example, when a patient is assigned to the care of a particular health professional.</p>
+            <p>In <b>request</b>(RQO) mood <b>care provision</b>communicates a referral, which is a request:</p>
+            <ul>
+               <li>
+                  <p>from one party (linked as a <b>participant</b>of type <b>author</b>(AUT)),</p>
+               </li>
+               <li>
+                  <p>to another party (linked as a <b>participant</b>of type <b>performer</b>(PRF),</p>
+               </li>
+               <li>
+                  <p>to take responsibility for a scope specified by the code attribute,</p>
+               </li>
+               <li>
+                  <p>for an entity (linked as a <b>participant</b>of type <b>subject</b>(SBJ)).</p>
+               </li>
+            </ul>
+            <p>The scope of the care for which responsibility is taken is identified by <i>code</i>attribute.</p>
+            <p>In <b>event</b>(EVN) mood <b>care provision</b>indicates the effective time interval of a specified scope of responsibility by a <b>performer</b>(PRF) or set of <b>performers</b>(PRF) for a <b>subject</b>(SBJ).</p>
+            <p>
+               <i>Examples:</i>
+            </p>
+            <ol>
+               <li>
+                  <p>Referral from GP to a specialist.</p>
+               </li>
+               <li>
+                  <p>Assignment of a patient or group of patients to the case list of a health professional.</p>
+               </li>
+               <li>
+                  <p>Assignment of inpatients to the care of particular nurses for a working shift.</p>
+               </li>
+            </ol>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e24119" kind="short">
+         <Label xml:lang="en-US">care provision</Label>
+      </Rubric>
+      <Rubric id="d1e24119" kind="preferred">
+         <Label xml:lang="en-US">care provision</Label>
+      </Rubric>
+   </Class>
+   <Class code="POLICY" kind="concept">
+      <Meta name="internalId" value="21981"/>
+      <Meta name="Name:Class" value="Policy"/>
+      <SuperClass code="ACT"/>
+      <SubClass code="JURISPOL"/>
+      <SubClass code="ORGPOL"/>
+      <SubClass code="SCOPOL"/>
+      <SubClass code="STDPOL"/>
+      <Rubric id="d1e24131" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A mandate, regulation, obligation, requirement, rule, or expectation unilaterally imposed by one party on:</p>
+            <ul>
+               <li>
+                  <p>The activity of another party</p>
+               </li>
+               <li>
+                  <p>The behavior of another party</p>
+               </li>
+               <li>
+                  <p>The manner in which an act is executed</p>
+               </li>
+            </ul>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e24175" kind="short">
+         <Label xml:lang="en-US">policy</Label>
+      </Rubric>
+      <Rubric id="d1e24175" kind="preferred">
+         <Label xml:lang="en-US">policy</Label>
+      </Rubric>
+   </Class>
+   <Class code="PROC" kind="concept">
+      <Meta name="internalId" value="11532"/>
+      <Meta name="Name:Class" value="Procedure"/>
+      <SuperClass code="ACT"/>
+      <SubClass code="SBADM"/>
+      <SubClass code="SBEXT"/>
+      <Rubric id="d1e24188" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An Act whose immediate and primary outcome (post-condition) is the alteration of the physical condition of the subject.</p>
+            <p>
+               <i>Examples:</i>: Procedures may involve the disruption of some body surface (e.g. an incision in a surgical procedure), but they also include conservative procedures such as reduction of a luxated join, chiropractic treatment, massage, balneotherapy, acupuncture, shiatsu, etc. Outside of clinical medicine, procedures may be such things as alteration of environments (e.g. straightening rivers, draining swamps, building dams) or the repair or change of machinery etc.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e24214" kind="short">
+         <Label xml:lang="en-US">procedure</Label>
+      </Rubric>
+      <Rubric id="d1e24214" kind="preferred">
+         <Label xml:lang="en-US">procedure</Label>
+      </Rubric>
+   </Class>
+   <Class code="REG" kind="concept">
+      <Meta name="internalId" value="15932"/>
+      <Meta name="Name:Class" value="Registration"/>
+      <SuperClass code="ACT"/>
+      <Rubric id="d1e24226" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Represents the act of maintaining information about the registration of its associated registered subject. The subject can be either an Act or a Role, and includes subjects such as lab exam definitions, drug protocol definitions, prescriptions, persons, patients, practitioners, and equipment.</p>
+            <p>The registration may have a unique identifier - separate from the unique identification of the subject - as well as a core set of related participations and act relationships that characterize the registration event and aid in the disposition of the subject information by a receiving system.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e24249" kind="short">
+         <Label xml:lang="en-US">registration</Label>
+      </Rubric>
+      <Rubric id="d1e24249" kind="preferred">
+         <Label xml:lang="en-US">registration</Label>
+      </Rubric>
+   </Class>
+   <Class code="REV" kind="concept">
+      <Meta name="internalId" value="21380"/>
+      <Meta name="Name:Class" value="Review"/>
+      <SuperClass code="ACT"/>
+      <Rubric id="d1e24261" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The act of examining and evaluating the subject, usually another act. For example, "This prescription needs to be reviewed in 2 months."</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e24281" kind="short">
+         <Label xml:lang="en-US">review</Label>
+      </Rubric>
+      <Rubric id="d1e24281" kind="preferred">
+         <Label xml:lang="en-US">review</Label>
+      </Rubric>
+   </Class>
+   <Class code="SPCTRT" kind="concept">
+      <Meta name="internalId" value="14023"/>
+      <Meta name="Name:Class" value="SpecimenTreatment"/>
+      <SuperClass code="ACT"/>
+      <Rubric id="d1e24293" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A procedure or treatment performed on a specimen to prepare it for analysis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e24313" kind="short">
+         <Label xml:lang="en-US">specimen treatment</Label>
+      </Rubric>
+      <Rubric id="d1e24313" kind="preferred">
+         <Label xml:lang="en-US">specimen treatment</Label>
+      </Rubric>
+   </Class>
+   <Class code="SPLY" kind="concept">
+      <Meta name="internalId" value="11535"/>
+      <Meta name="Name:Class" value="Supply"/>
+      <SuperClass code="ACT"/>
+      <SubClass code="DIET"/>
+      <Rubric id="d1e24325" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supply orders and deliveries are simple Acts that focus on the delivered product. The product is associated with the Supply Act via Participation.typeCode="product". With general Supply Acts, the precise identification of the Material (manufacturer, serial numbers, etc.) is important. Most of the detailed information about the Supply should be represented using the Material class. If delivery needs to be scheduled, tracked, and billed separately, one can associate a Transportation Act with the Supply Act. Pharmacy dispense services are represented as Supply Acts, associated with a SubstanceAdministration Act. The SubstanceAdministration class represents the administration of medication, while dispensing is supply.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e24345" kind="short">
+         <Label xml:lang="en-US">supply</Label>
+      </Rubric>
+      <Rubric id="d1e24345" kind="preferred">
+         <Label xml:lang="en-US">supply</Label>
+      </Rubric>
+   </Class>
+   <Class code="STORE" kind="concept">
+      <Meta name="internalId" value="22826"/>
+      <Meta name="Name:Class" value="Storage"/>
+      <SuperClass code="ACT"/>
+      <Rubric id="d1e24357" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The act of putting something away for safe keeping. The "something" may be physical object such as a specimen, or information, such as observations regarding a specimen.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e24377" kind="short">
+         <Label xml:lang="en-US">storage</Label>
+      </Rubric>
+      <Rubric id="d1e24377" kind="preferred">
+         <Label xml:lang="en-US">storage</Label>
+      </Rubric>
+   </Class>
+   <Class code="SUBST" kind="concept">
+      <Meta name="internalId" value="20094"/>
+      <Meta name="Name:Class" value="Substitution"/>
+      <SuperClass code="ACT"/>
+      <Rubric id="d1e24390" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Definition: Indicates that the subject Act has undergone or should undergo substitution of a type indicated by Act.code.</p>
+            <p>Rationale: Used to specify "allowed" substitution when creating orders, "actual" susbstitution when sending events, as well as the reason for the substitution and who was responsible for it.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e24413" kind="short">
+         <Label xml:lang="en-US">Substitution</Label>
+      </Rubric>
+      <Rubric id="d1e24413" kind="preferred">
+         <Label xml:lang="en-US">Substitution</Label>
+      </Rubric>
+   </Class>
+   <Class code="TRFR" kind="concept">
+      <Meta name="internalId" value="22186"/>
+      <Meta name="Name:Class" value="Transfer"/>
+      <SuperClass code="ACT"/>
+      <Rubric id="d1e24425" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The act of transferring information without the intent of imparting understanding about a topic to the subject that is the recipient or holder of the transferred information where the participation association must be RCV or HLD.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e24448" kind="short">
+         <Label xml:lang="en-US">transfer</Label>
+      </Rubric>
+      <Rubric id="d1e24448" kind="preferred">
+         <Label xml:lang="en-US">transfer</Label>
+      </Rubric>
+   </Class>
+   <Class code="TRNS" kind="concept">
+      <Meta name="internalId" value="11539"/>
+      <Meta name="Name:Class" value="Transportation"/>
+      <SuperClass code="ACT"/>
+      <Rubric id="d1e24460" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Transportation is the moving of a payload (people or material) from a location of origin to a destination location. Thus, any transport service has the three target instances of type payload, origin, and destination, besides the targets that are generally used for any service (i.e., performer, device, etc.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e24480" kind="short">
+         <Label xml:lang="en-US">transportation</Label>
+      </Rubric>
+      <Rubric id="d1e24480" kind="preferred">
+         <Label xml:lang="en-US">transportation</Label>
+      </Rubric>
+   </Class>
+   <Class code="XACT" kind="concept">
+      <Meta name="internalId" value="11545"/>
+      <Meta name="Name:Class" value="FinancialTransaction"/>
+      <SuperClass code="ACT"/>
+      <Rubric id="d1e24492" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A sub-class of Act representing any transaction between two accounts whose value is measured in monetary terms.</p>
+            <p>In the "intent" mood, communicates a request for a transaction to be initiated, or communicates a transfer of value between two accounts.</p>
+            <p>In the "event" mood, communicates the posting of a transaction to an account.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e24518" kind="short">
+         <Label xml:lang="en-US">financial transaction</Label>
+      </Rubric>
+      <Rubric id="d1e24518" kind="preferred">
+         <Label xml:lang="en-US">financial transaction</Label>
+      </Rubric>
+   </Class>
+   <Class code="ACTN" kind="concept">
+      <Meta name="internalId" value="18952"/>
+      <Meta name="Name:Class" value="ActionControlAct"/>
+      <SuperClass code="CACT"/>
+      <Rubric id="d1e24549" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Sender asks addressee to do something depending on the focal Act of the payload. An example is "fulfill this order". Addressee has responsibilities to either reject the message or to act on it in an appropriate way (specified by the specific receiver responsibilities for the interaction).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e24569" kind="short">
+         <Label xml:lang="en-US">action</Label>
+      </Rubric>
+      <Rubric id="d1e24569" kind="preferred">
+         <Label xml:lang="en-US">action</Label>
+      </Rubric>
+   </Class>
+   <Class code="INFO" kind="concept">
+      <Meta name="internalId" value="18953"/>
+      <Meta name="Name:Class" value="InformationControlAct"/>
+      <SuperClass code="CACT"/>
+      <Rubric id="d1e24582" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Sender sends payload to addressee as information. Addressee does not have responsibilities beyond serving addressee's own interest (i.e., read and memorize if you see fit). This is equivalent to an FYI on a memo.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e24602" kind="short">
+         <Label xml:lang="en-US">information</Label>
+      </Rubric>
+      <Rubric id="d1e24602" kind="preferred">
+         <Label xml:lang="en-US">information</Label>
+      </Rubric>
+   </Class>
+   <Class code="STC" kind="concept">
+      <Meta name="internalId" value="18954"/>
+      <Meta name="Name:Class" value="StateTransitionControlAct"/>
+      <SuperClass code="CACT"/>
+      <Rubric id="d1e24614" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Sender transmits a status change pertaining to the focal act of the payload. This status of the focal act is the final state of the state transition. This can be either a request or an event, according to the mood of the control act.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e24637" kind="short">
+         <Label xml:lang="en-US">state transition control</Label>
+      </Rubric>
+      <Rubric id="d1e24637" kind="preferred">
+         <Label xml:lang="en-US">state transition control</Label>
+      </Rubric>
+   </Class>
+   <Class code="OUTB" kind="concept">
+      <Meta name="internalId" value="11531"/>
+      <Meta name="Name:Class" value="Outbreak"/>
+      <SuperClass code="CASE"/>
+      <Rubric id="d1e24649" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An outbreak represents a series of public health cases. The date on which an outbreak starts is the earliest date of onset among the cases assigned to the outbreak, and its ending date is the last date of onset among the cases assigned to the outbreak.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e24669" kind="short">
+         <Label xml:lang="en-US">outbreak</Label>
+      </Rubric>
+      <Rubric id="d1e24669" kind="preferred">
+         <Label xml:lang="en-US">outbreak</Label>
+      </Rubric>
+   </Class>
+   <Class code="FCNTRCT" kind="concept">
+      <Meta name="internalId" value="14003"/>
+      <Meta name="Name:Class" value="FinancialContract"/>
+      <SuperClass code="CNTRCT"/>
+      <SubClass code="COV"/>
+      <Rubric id="d1e24681" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A contract whose value is measured in monetary terms.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e24701" kind="short">
+         <Label xml:lang="en-US">financial contract</Label>
+      </Rubric>
+      <Rubric id="d1e24701" kind="preferred">
+         <Label xml:lang="en-US">financial contract</Label>
+      </Rubric>
+   </Class>
+   <Class code="DOC" kind="concept">
+      <Meta name="internalId" value="18938"/>
+      <Meta name="Name:Class" value="Document"/>
+      <SuperClass code="COMPOSITION"/>
+      <SubClass code="DOCCLIN"/>
+      <Rubric id="d1e24713" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The notion of a document comes particularly from the paper world, where it corresponds to the contents recorded on discrete pieces of paper. In the electronic world, a document is a kind of composition that bears resemblance to their paper world counter-parts. Documents typically are meant to be human-readable.</p>
+            <p>HL7's notion of document differs from that described in the W3C XML Recommendation, in which a document refers specifically to the contents that fall between the root element's start-tag and end-tag. Not all XML documents are HL7 documents.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e24736" kind="short">
+         <Label xml:lang="en-US">document</Label>
+      </Rubric>
+      <Rubric id="d1e24736" kind="preferred">
+         <Label xml:lang="en-US">document</Label>
+      </Rubric>
+   </Class>
+   <Class code="CASE" kind="concept">
+      <Meta name="internalId" value="11530"/>
+      <Meta name="Name:Class" value="PublicHealthCase"/>
+      <SuperClass code="COND"/>
+      <SubClass code="OUTB"/>
+      <Rubric id="d1e24748" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A public health case is an Observation representing a condition or event that has a specific significance for public health. Typically it involves an instance or instances of a reportable infectious disease or other condition. The public health case can include a health-related event concerning a single individual or it may refer to multiple health-related events that are occurrences of the same disease or condition of interest to public health. An outbreak involving multiple individuals may be considered as a type of public health case. A public health case definition (Act.moodCode = "definition") includes the description of the clinical, laboratory, and epidemiologic indicators associated with a disease or condition of interest to public health. There are case definitions for conditions that are reportable, as well as for those that are not. There are also case definitions for outbreaks. A public health case definition is a construct used by public health for the purpose of counting cases, and should not be used as clinical indications for treatment. Examples include AIDS, toxic-shock syndrome, and salmonellosis and their associated indicators that are used to define a case.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e24768" kind="short">
+         <Label xml:lang="en-US">public health case</Label>
+      </Rubric>
+      <Rubric id="d1e24768" kind="preferred">
+         <Label xml:lang="en-US">public health case</Label>
+      </Rubric>
+   </Class>
+   <Class code="CATEGORY" kind="concept">
+      <Meta name="internalId" value="20086"/>
+      <Meta name="Name:Class" value="Category"/>
+      <SuperClass code="CONTAINER"/>
+      <Rubric id="d1e24781" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A group of entries within a composition or topic that have a common characteristic - for example, Examination, Diagnosis, Management OR Subjective, Objective, Analysis, Plan.</p>
+            <p>The distinction from Topic relates to value sets. For Category there is a bounded list of things like "Examination", "Diagnosis" or SOAP categories. For Topic the list is wide open to any clinical condition or reason for a part of an encounter.</p>
+            <p>A CATEGORY MAY CONTAIN ENTRIES.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e24807" kind="short">
+         <Label xml:lang="en-US">category</Label>
+      </Rubric>
+      <Rubric id="d1e24807" kind="preferred">
+         <Label xml:lang="en-US">category</Label>
+      </Rubric>
+   </Class>
+   <Class code="DOCBODY" kind="concept">
+      <Meta name="internalId" value="13947"/>
+      <Meta name="Name:Class" value="DocumentBody"/>
+      <SuperClass code="CONTAINER"/>
+      <Rubric id="d1e24819" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A context that distinguishes the body of a document from the document header. This is seen, for instance, in HTML documents, which have discrete &lt;head&gt; and &lt;body&gt; elements.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e24839" kind="short">
+         <Label xml:lang="en-US">document body</Label>
+      </Rubric>
+      <Rubric id="d1e24839" kind="preferred">
+         <Label xml:lang="en-US">document body</Label>
+      </Rubric>
+   </Class>
+   <Class code="DOCSECT" kind="concept">
+      <Meta name="internalId" value="13946"/>
+      <Meta name="Name:Class" value="DocumentSection"/>
+      <SuperClass code="CONTAINER"/>
+      <Rubric id="d1e24851" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A context that subdivides the body of a document. Document sections are typically used for human navigation, to give a reader a clue as to the expected content. Document sections are used to organize and provide consistency to the contents of a document body. Document sections can contain document sections and can contain entries.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e24871" kind="short">
+         <Label xml:lang="en-US">document section</Label>
+      </Rubric>
+      <Rubric id="d1e24871" kind="preferred">
+         <Label xml:lang="en-US">document section</Label>
+      </Rubric>
+      <Rubric id="d1e24874" kind="short">
+         <Label xml:lang="en-US">Section</Label>
+      </Rubric>
+   </Class>
+   <Class code="TOPIC" kind="concept">
+      <Meta name="internalId" value="20085"/>
+      <Meta name="Name:Class" value="Topic"/>
+      <SuperClass code="CONTAINER"/>
+      <Rubric id="d1e24885" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A group of entries within a composition that are related to a common clinical theme - such as a specific disorder or problem, prevention, screening and provision of contraceptive services.</p>
+            <p>A topic may contain categories and entries.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e24908" kind="short">
+         <Label xml:lang="en-US">topic</Label>
+      </Rubric>
+      <Rubric id="d1e24908" kind="preferred">
+         <Label xml:lang="en-US">topic</Label>
+      </Rubric>
+   </Class>
+   <Class code="DOCCLIN" kind="concept">
+      <Meta name="internalId" value="13948"/>
+      <Meta name="Name:Class" value="ClinicalDocument"/>
+      <SuperClass code="DOC"/>
+      <SubClass code="CDALVLONE"/>
+      <Rubric id="d1e24920" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A clinical document is a documentation of clinical observations and services, with the following characteristics:</p>
+            <ol>
+               <li>
+                  <p>Persistence - A clinical document continues to exist in an unaltered state, for a time period defined by local and regulatory requirements;</p>
+               </li>
+               <li>
+                  <p>Stewardship - A clinical document is maintained by a person or organization entrusted with its care;</p>
+               </li>
+               <li>
+                  <p>Potential for authentication - A clinical document is an assemblage of information that is intended to be legally authenticated;</p>
+               </li>
+               <li>
+                  <p>Wholeness - Authentication of a clinical document applies to the whole and does not apply to portions of the document without the full context of the document;</p>
+               </li>
+               <li>
+                  <p>Human readability - A clinical document is human readable.</p>
+               </li>
+            </ol>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e24973" kind="short">
+         <Label xml:lang="en-US">clinical document</Label>
+      </Rubric>
+      <Rubric id="d1e24973" kind="preferred">
+         <Label xml:lang="en-US">clinical document</Label>
+      </Rubric>
+   </Class>
+   <Class code="CDALVLONE" kind="concept">
+      <Meta name="internalId" value="14795"/>
+      <Meta name="Name:Class" value="CDALevelOneClinicalDocument"/>
+      <SuperClass code="DOCCLIN"/>
+      <Rubric id="d1e24985" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A clinical document that conforms to Level One of the HL7 Clinical Document Architecture (CDA)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25005" kind="short">
+         <Label xml:lang="en-US">CDA Level One clinical document</Label>
+      </Rubric>
+      <Rubric id="d1e25005" kind="preferred">
+         <Label xml:lang="en-US">CDA Level One clinical document</Label>
+      </Rubric>
+   </Class>
+   <Class code="AEXPOS" kind="concept">
+      <Meta name="internalId" value="22349"/>
+      <Meta name="Name:Class" value="AcquisitionExposure"/>
+      <SuperClass code="EXPOS"/>
+      <Rubric id="d1e25018" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>
+            </p>
+            <p>An acquisition exposure act describes the proximity (location and time) through which the participating entity was potentially exposed to a physical (including energy), chemical or biological agent from another entity. The acquisition exposure act is used in conjunction with transmission exposure acts as part of an analysis technique for contact tracing. Although an exposure can be decomposed into transmission and acquisition exposures, there is no requirement that all exposures be treated in this fashion.</p>
+            <p>
+               <b>Constraints:</b>The Acquisition Exposure inherits the participation constraints that apply to Exposure with the following exception. The EXPSRC (exposure source) participation must never be associated with the Transmission Exposure either directly or via context conduction.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25050" kind="short">
+         <Label xml:lang="en-US">acquisition exposure</Label>
+      </Rubric>
+      <Rubric id="d1e25050" kind="preferred">
+         <Label xml:lang="en-US">acquisition exposure</Label>
+      </Rubric>
+   </Class>
+   <Class code="TEXPOS" kind="concept">
+      <Meta name="internalId" value="22348"/>
+      <Meta name="Name:Class" value="TransmissionExposure"/>
+      <SuperClass code="EXPOS"/>
+      <Rubric id="d1e25062" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>
+            </p>
+            <p>A transmission exposure act describes the proximity (time and location) over which the participating source entity was capable of transmitting a physical (including energy), chemical or biological substance agent to another entity. The transmission exposure act is used in conjunction with acquisition exposure acts as part of an analysis technique for contact tracing. Although an exposure can be decomposed into transmission and acquisition exposures, there is no requirement that all exposures be treated in this fashion.</p>
+            <p>
+               <b>Constraints:</b>The Transmission Exposure inherits the participation constraints that apply to Exposure with the following exception. The EXPTRGT (exposure target) participation must never be associated with the Transmission Exposure either directly or via context conduction.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25094" kind="short">
+         <Label xml:lang="en-US">transmission exposure</Label>
+      </Rubric>
+      <Rubric id="d1e25094" kind="preferred">
+         <Label xml:lang="en-US">transmission exposure</Label>
+      </Rubric>
+   </Class>
+   <Class code="EHR" kind="concept">
+      <Meta name="internalId" value="20081"/>
+      <Meta name="Name:Class" value="ElectronicHealthRecord"/>
+      <SuperClass code="EXTRACT"/>
+      <Rubric id="d1e25106" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A context that comprises all compositions. The EHR is an extract that includes the entire chart.</p>
+            <p>
+               <b>NOTE:</b>In an exchange scenario, an EHR is a specialization of an extract.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25132" kind="short">
+         <Label xml:lang="en-US">electronic health record</Label>
+      </Rubric>
+      <Rubric id="d1e25132" kind="preferred">
+         <Label xml:lang="en-US">electronic health record</Label>
+      </Rubric>
+   </Class>
+   <Class code="COV" kind="concept">
+      <Meta name="internalId" value="14004"/>
+      <Meta name="Name:Class" value="Coverage"/>
+      <SuperClass code="FCNTRCT"/>
+      <Rubric id="d1e25144" kind="definition">
+         <Label xml:lang="en-US">
+            <p>When used in the EVN mood, this concept means with respect to a covered party:</p>
+            <ol>
+               <li>
+                  <p>A health care insurance policy or plan that is contractually binding between two or more parties; or</p>
+               </li>
+               <li>
+                  <p>A health care program, usually administered by government entities, that provides coverage to persons determined eligible under the terms of the program.</p>
+               </li>
+            </ol>
+            <ul>
+               <li>
+                  <p>When used in the definition (DEF) mood, COV means potential coverage for a patient who may or may not be a covered party.</p>
+               </li>
+               <li>
+                  <p>The concept's meaning is fully specified by the choice of ActCoverageTypeCode (abstract) ActProgramCode or ActInsurancePolicyCode.</p>
+               </li>
+            </ul>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25194" kind="short">
+         <Label xml:lang="en-US">coverage</Label>
+      </Rubric>
+      <Rubric id="d1e25194" kind="preferred">
+         <Label xml:lang="en-US">coverage</Label>
+      </Rubric>
+   </Class>
+   <Class code="DETPOL" kind="concept">
+      <Meta name="internalId" value="22002"/>
+      <Meta name="Name:Class" value="DeterminantPeptide"/>
+      <SuperClass code="GEN"/>
+      <Rubric id="d1e25206" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A determinant peptide in a polypeptide as described by polypeptide.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25229" kind="short">
+         <Label xml:lang="en-US">determinant peptide</Label>
+      </Rubric>
+      <Rubric id="d1e25229" kind="preferred">
+         <Label xml:lang="en-US">determinant peptide</Label>
+      </Rubric>
+   </Class>
+   <Class code="EXP" kind="concept">
+      <Meta name="internalId" value="22000"/>
+      <Meta name="Name:Class" value="ExpressionLevel"/>
+      <SuperClass code="GEN"/>
+      <Rubric id="d1e25241" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>An expression level of genes/proteins or other expressed genomic entities.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25264" kind="short">
+         <Label xml:lang="en-US">expression level</Label>
+      </Rubric>
+      <Rubric id="d1e25264" kind="preferred">
+         <Label xml:lang="en-US">expression level</Label>
+      </Rubric>
+   </Class>
+   <Class code="LOC" kind="concept">
+      <Meta name="internalId" value="22003"/>
+      <Meta name="Name:Class" value="Locus"/>
+      <SuperClass code="GEN"/>
+      <Rubric id="d1e25277" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The position of a gene (or other significant sequence) on the genome.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25300" kind="short">
+         <Label xml:lang="en-US">locus</Label>
+      </Rubric>
+      <Rubric id="d1e25300" kind="preferred">
+         <Label xml:lang="en-US">locus</Label>
+      </Rubric>
+   </Class>
+   <Class code="PHN" kind="concept">
+      <Meta name="internalId" value="22004"/>
+      <Meta name="Name:Class" value="Phenotype"/>
+      <SuperClass code="GEN"/>
+      <Rubric id="d1e25312" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A genomic phenomenon that is expressed externally in the organism.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25335" kind="short">
+         <Label xml:lang="en-US">phenotype</Label>
+      </Rubric>
+      <Rubric id="d1e25335" kind="preferred">
+         <Label xml:lang="en-US">phenotype</Label>
+      </Rubric>
+   </Class>
+   <Class code="POL" kind="concept">
+      <Meta name="internalId" value="22001"/>
+      <Meta name="Name:Class" value="Polypeptide"/>
+      <SuperClass code="GEN"/>
+      <Rubric id="d1e25347" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A polypeptide resulting from the translation of a gene.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25370" kind="short">
+         <Label xml:lang="en-US">polypeptide</Label>
+      </Rubric>
+      <Rubric id="d1e25370" kind="preferred">
+         <Label xml:lang="en-US">polypeptide</Label>
+      </Rubric>
+   </Class>
+   <Class code="SEQ" kind="concept">
+      <Meta name="internalId" value="21998"/>
+      <Meta name="Name:Class" value="BioSequence"/>
+      <SuperClass code="GEN"/>
+      <Rubric id="d1e25382" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A sequence of biomolecule like the DNA, RNA, protein and the like.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25405" kind="short">
+         <Label xml:lang="en-US">bio sequence</Label>
+      </Rubric>
+      <Rubric id="d1e25405" kind="preferred">
+         <Label xml:lang="en-US">bio sequence</Label>
+      </Rubric>
+   </Class>
+   <Class code="SEQVAR" kind="concept">
+      <Meta name="internalId" value="21999"/>
+      <Meta name="Name:Class" value="BioSequenceVariation"/>
+      <SuperClass code="GEN"/>
+      <Rubric id="d1e25417" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A variation in a sequence as described by BioSequence.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25440" kind="short">
+         <Label xml:lang="en-US">bio sequence variation</Label>
+      </Rubric>
+      <Rubric id="d1e25440" kind="preferred">
+         <Label xml:lang="en-US">bio sequence variation</Label>
+      </Rubric>
+   </Class>
+   <Class code="CLUSTER" kind="concept">
+      <Meta name="internalId" value="20088"/>
+      <Meta name="Name:Class" value="Cluster"/>
+      <SuperClass code="GROUPER"/>
+      <Rubric id="d1e25452" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>An ACT that organizes a set of component acts into a semantic grouping that have a shared subject. The subject may be either a subject participation (SBJ), subject act relationship (SUBJ), or child participation/act relationship types.</p>
+            <p>
+               <b>Discussion:</b>The focus in a CLUSTER act is the grouping of the contained acts. For example "a request to cluster" (RQO), "a type of cluster that is allowed to occur" (DEF), etc.</p>
+            <p>
+               <b>Examples:</b>
+            </p>
+            <ul>
+               <li>
+                  <p>Radiologic investigations that might include administration of a dye, followed by radiographic observations;</p>
+               </li>
+               <li>
+                  <p>"Isolate cluster" which includes all testing and specimen processing performed on a specific isolate;</p>
+               </li>
+               <li>
+                  <p>a set of actions to perform at a particular stage in a clinical trial.</p>
+               </li>
+            </ul>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25508" kind="short">
+         <Label xml:lang="en-US">Cluster</Label>
+      </Rubric>
+      <Rubric id="d1e25508" kind="preferred">
+         <Label xml:lang="en-US">Cluster</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActClassROI" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="20847"/>
+      <Meta name="Name:Class" value="RegionOfInterest"/>
+      <SuperClass code="OBS"/>
+      <SubClass code="ROIBND"/>
+      <SubClass code="ROIOVL"/>
+      <Rubric id="d1e25521" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Regions of Interest (ROI) within a subject Act. Primarily used for making secondary observations on a subset of a subject observation. The relationship between a ROI and its referenced Act is specified through an ActRelationship of type "subject" (SUBJ), which must always be present.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25541" kind="short">
+         <Label xml:lang="en-US">ActClassROI</Label>
+      </Rubric>
+      <Rubric id="d1e25541" kind="preferred">
+         <Label xml:lang="en-US">ActClassROI</Label>
+      </Rubric>
+   </Class>
+   <Class code="_SubjectPhysicalPosition" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21929"/>
+      <Meta name="Name:Class" value="SubjectPhysicalPosition"/>
+      <SuperClass code="OBS"/>
+      <SubClass code="_SubjectBodyPosition"/>
+      <Rubric id="d1e25553" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The spatial relationship of a subject whether human, other animal, or plant, to a frame of reference such as gravity or a collection device.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25573" kind="short">
+         <Label xml:lang="en-US">subject physical position</Label>
+      </Rubric>
+      <Rubric id="d1e25573" kind="preferred">
+         <Label xml:lang="en-US">subject physical position</Label>
+      </Rubric>
+   </Class>
+   <Class code="ALRT" kind="concept">
+      <Meta name="internalId" value="16123"/>
+      <Meta name="Name:Class" value="DetectedIssue"/>
+      <SuperClass code="OBS"/>
+      <Rubric id="d1e25585" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An observation identifying a potential adverse outcome as a result of an Act or combination of Acts.</p>
+            <p>
+               <i>Examples:</i>Detection of a drug-drug interaction; Identification of a late-submission for an invoice; Requesting discharge for a patient who does not meet hospital-defined discharge criteria.</p>
+            <p>
+               <i>Discussion:</i>This class is commonly used for identifying 'business rule' or 'process' problems that may result in a refusal to carry out a particular request. In some circumstances it may be possible to 'bypass' a problem by modifying the request to acknowledge the issue and/or by providing some form of mitigation.</p>
+            <p>
+               <i>Constraints:</i>the Act or Acts that may cause the the adverse outcome are the target of a subject ActRelationship. The subbtypes of this concept indicate the type of problem being detected (e.g. drug-drug interaction) while the Observation.value is used to repesent a specific problem code (e.g. specific drug-drug interaction id).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25623" kind="short">
+         <Label xml:lang="en-US">detected issue</Label>
+      </Rubric>
+      <Rubric id="d1e25623" kind="preferred">
+         <Label xml:lang="en-US">detected issue</Label>
+      </Rubric>
+   </Class>
+   <Class code="BATTERY" kind="concept">
+      <Meta name="internalId" value="20089"/>
+      <Meta name="Name:Class" value="Battery"/>
+      <SuperClass code="OBS"/>
+      <Rubric id="d1e25635" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>An observation that is composed of a set of observations. These observations typically have a logical or practical grouping for generally accepted clinical or functional purposes, such as observations that are run together because of automation. A battery can define required and optional component observations and, in some cases, will define complex rules that determine whether or not a particular observation is made. BATTERY is a constraint on the Observation class in that it is understood to always be composed of component observations.</p>
+            <p>
+               <b>UsageNotes:</b>The focus in a BATTERY is that it is composed of individual observations. In request (RQO) mood, a battery is a request to perform the component observations. In event (EVN) mood a battery is a reporting of associated set of observation events. In definition mood a battery is the definition of the associated set of observations.</p>
+            <p>
+               <b>Examples:</b>Vital signs, Full blood count, Chemistry panel.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25670" kind="short">
+         <Label xml:lang="en-US">battery</Label>
+      </Rubric>
+      <Rubric id="d1e25670" kind="preferred">
+         <Label xml:lang="en-US">battery</Label>
+      </Rubric>
+   </Class>
+   <Class code="CLNTRL" kind="concept">
+      <Meta name="internalId" value="18972"/>
+      <Meta name="Name:Class" value="ClinicalTrial"/>
+      <SuperClass code="OBS"/>
+      <Rubric id="d1e25682" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The set of actions that define an experiment to assess the effectiveness and/or safety of a biopharmaceutical product (food, drug, device, etc.). In definition mood, this set of actions is often embodied in a clinical trial protocol; in event mood, this designates the aggregate act of applying the actions to one or more subjects.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25702" kind="short">
+         <Label xml:lang="en-US">clinical trial</Label>
+      </Rubric>
+      <Rubric id="d1e25702" kind="preferred">
+         <Label xml:lang="en-US">clinical trial</Label>
+      </Rubric>
+   </Class>
+   <Class code="CNOD" kind="concept">
+      <Meta name="internalId" value="18863"/>
+      <Meta name="Name:Class" value="ConditionNode"/>
+      <SuperClass code="OBS"/>
+      <Rubric id="d1e25714" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An instance of Observation of a Condition at a point in time that includes any Observations or Procedures associated with that Condition as well as links to previous instances of Condition Node for the same Condition</p>
+            <p>
+               <b>
+                  <i>Deprecation Comment:</i>
+               </b>This concept has been deprecated because an alternative structure for tracking the evolution of a problem has been presented and adopted by the Care Provision Work Group.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25752" kind="short">
+         <Label xml:lang="en-US">Condition Node</Label>
+      </Rubric>
+      <Rubric id="d1e25752" kind="preferred">
+         <Label xml:lang="en-US">Condition Node</Label>
+      </Rubric>
+   </Class>
+   <Class code="CONC" kind="concept">
+      <Meta name="internalId" value="22933"/>
+      <Meta name="Name:Class" value="Concern"/>
+      <SuperClass code="OBS"/>
+      <Rubric id="d1e25765" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>A worry that tends to persist over time and has as its subject a state or process. The subject of the worry has the potential to require intervention or management.</p>
+            <p>
+               <b>Examples:</b>an observation result, procedure, substance administration, equipment repair status, device recall status, a health risk, a financial risk, public health risk, pregnancy, health maintenance, allergy, and acute or chronic illness.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25794" kind="short">
+         <Label xml:lang="en-US">concern</Label>
+      </Rubric>
+      <Rubric id="d1e25794" kind="preferred">
+         <Label xml:lang="en-US">concern</Label>
+      </Rubric>
+   </Class>
+   <Class code="COND" kind="concept">
+      <Meta name="internalId" value="18862"/>
+      <Meta name="Name:Class" value="Condition"/>
+      <SuperClass code="OBS"/>
+      <SubClass code="CASE"/>
+      <Rubric id="d1e25806" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An observable finding or state that persists over time and tends to require intervention or management, and, therefore, distinguished from an Observation made at a point in time; may exist before an Observation of the Condition is made or after interventions to manage the Condition are undertaken. Examples: equipment repair status, device recall status, a health risk, a financial risk, public health risk, pregnancy, health maintenance, chronic illness</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25826" kind="short">
+         <Label xml:lang="en-US">Condition</Label>
+      </Rubric>
+      <Rubric id="d1e25826" kind="preferred">
+         <Label xml:lang="en-US">Condition</Label>
+      </Rubric>
+   </Class>
+   <Class code="DGIMG" kind="concept">
+      <Meta name="internalId" value="13921"/>
+      <Meta name="Name:Class" value="DiagnosticImage"/>
+      <SuperClass code="OBS"/>
+      <Rubric id="d1e25838" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Class for holding attributes unique to diagnostic images.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25858" kind="short">
+         <Label xml:lang="en-US">diagnostic image</Label>
+      </Rubric>
+      <Rubric id="d1e25858" kind="preferred">
+         <Label xml:lang="en-US">diagnostic image</Label>
+      </Rubric>
+   </Class>
+   <Class code="GEN" kind="concept">
+      <Meta name="internalId" value="21997"/>
+      <Meta name="Name:Class" value="GenomicObservation"/>
+      <SuperClass code="OBS"/>
+      <SubClass code="DETPOL"/>
+      <SubClass code="EXP"/>
+      <SubClass code="LOC"/>
+      <SubClass code="PHN"/>
+      <SubClass code="POL"/>
+      <SubClass code="SEQ"/>
+      <SubClass code="SEQVAR"/>
+      <Rubric id="d1e25870" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>An observation of genomic phenomena.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25893" kind="short">
+         <Label xml:lang="en-US">genomic observation</Label>
+      </Rubric>
+      <Rubric id="d1e25893" kind="preferred">
+         <Label xml:lang="en-US">genomic observation</Label>
+      </Rubric>
+   </Class>
+   <Class code="INVSTG" kind="concept">
+      <Meta name="internalId" value="21323"/>
+      <Meta name="Name:Class" value="Investigation"/>
+      <SuperClass code="OBS"/>
+      <Rubric id="d1e25905" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An formalized inquiry into the circumstances surrounding a particular unplanned event or potential event for the purposes of identifying possible causes and contributing factors for the event. This investigation could be conducted at a local institutional level or at the level of a local or national government.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25925" kind="short">
+         <Label xml:lang="en-US">investigation</Label>
+      </Rubric>
+      <Rubric id="d1e25925" kind="preferred">
+         <Label xml:lang="en-US">investigation</Label>
+      </Rubric>
+   </Class>
+   <Class code="OBSSER" kind="concept">
+      <Meta name="internalId" value="18875"/>
+      <Meta name="Name:Class" value="ObservationSeries"/>
+      <SuperClass code="OBS"/>
+      <SubClass code="OBSCOR"/>
+      <Rubric id="d1e25937" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Container for Correlated Observation Sequences sharing a common frame of reference. All Observations of the same cd must be comparable and relative to the common frame of reference. For example, a 3-channel ECG device records a 12-lead ECG in 4 steps (3 leads at a time). Each of the separate 3-channel recordings would be in their own "OBSCOR". And, all 4 OBSCOR would be contained in one OBSSER because all the times are relative to the same origin (beginning of the recording) and all the ECG signals were from a fixed set of electrodes.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25957" kind="short">
+         <Label xml:lang="en-US">observation series</Label>
+      </Rubric>
+      <Rubric id="d1e25957" kind="preferred">
+         <Label xml:lang="en-US">observation series</Label>
+      </Rubric>
+   </Class>
+   <Class code="POS" kind="concept">
+      <Meta name="internalId" value="21646"/>
+      <Meta name="Name:Class" value="Position"/>
+      <SuperClass code="OBS"/>
+      <SubClass code="POSACC"/>
+      <SubClass code="POSCOORD"/>
+      <Rubric id="d1e25970" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An observation denoting the physical location of a person or thing based on a reference coordinate system.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e25990" kind="short">
+         <Label xml:lang="en-US">position</Label>
+      </Rubric>
+      <Rubric id="d1e25990" kind="preferred">
+         <Label xml:lang="en-US">position</Label>
+      </Rubric>
+   </Class>
+   <Class code="SPCOBS" kind="concept">
+      <Meta name="internalId" value="13949"/>
+      <Meta name="Name:Class" value="SpecimenObservation"/>
+      <SuperClass code="OBS"/>
+      <Rubric id="d1e26002" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An observation on a specimen in a laboratory environment that may affect processing, analysis or result interpretation</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e26022" kind="short">
+         <Label xml:lang="en-US">specimen observation</Label>
+      </Rubric>
+      <Rubric id="d1e26022" kind="preferred">
+         <Label xml:lang="en-US">specimen observation</Label>
+      </Rubric>
+      <Rubric id="d1e26025" kind="short">
+         <Label xml:lang="en-US">ActClassSpecObs</Label>
+      </Rubric>
+   </Class>
+   <Class code="VERIF" kind="concept">
+      <Meta name="internalId" value="21304"/>
+      <Meta name="Name:Class" value="Verfication"/>
+      <SuperClass code="OBS"/>
+      <Rubric id="d1e26036" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An act which describes the process whereby a 'verifying party' validates either the existence of the Role attested to by some Credential or the actual Vetting act and its details.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e26056" kind="short">
+         <Label xml:lang="en-US">Verification</Label>
+      </Rubric>
+      <Rubric id="d1e26056" kind="preferred">
+         <Label xml:lang="en-US">Verification</Label>
+      </Rubric>
+   </Class>
+   <Class code="OBSCOR" kind="concept">
+      <Meta name="internalId" value="18876"/>
+      <Meta name="Name:Class" value="CorrelatedObservation"/>
+      <SuperClass code="OBSSER"/>
+      <Rubric id="d1e26068" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Container for Observation Sequences (Observations whose values are contained in LIST&lt;&gt;'s) having values correlated with each other. Each contained Observation Sequence LIST&lt;&gt; must be the same length. Values in the LIST&lt;&gt;'s are correlated based on index. E.g. the values in position 2 in all the LIST&lt;&gt;'s are correlated. This is analogous to a table where each column is an Observation Sequence with a LIST&lt;&gt; of values, and each row in the table is a correlation between the columns. For example, a 12-lead ECG would contain 13 sequences: one sequence for time, and a sequence for each of the 12 leads.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e26088" kind="short">
+         <Label xml:lang="en-US">correlated observation sequences</Label>
+      </Rubric>
+      <Rubric id="d1e26088" kind="preferred">
+         <Label xml:lang="en-US">correlated observation sequences</Label>
+      </Rubric>
+   </Class>
+   <Class code="ENC" kind="concept">
+      <Meta name="internalId" value="11542"/>
+      <Meta name="Name:Class" value="Encounter"/>
+      <SuperClass code="PCPR"/>
+      <Rubric id="d1e26100" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An interaction between a patient and healthcare participant(s) for the purpose of providing patient service(s) or assessing the health status of a patient. For example, outpatient visit to multiple departments, home health support (including physical therapy), inpatient hospital stay, emergency room visit, field visit (e.g., traffic accident), office visit, occupational therapy, telephone call.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e26120" kind="short">
+         <Label xml:lang="en-US">encounter</Label>
+      </Rubric>
+      <Rubric id="d1e26120" kind="preferred">
+         <Label xml:lang="en-US">encounter</Label>
+      </Rubric>
+   </Class>
+   <Class code="JURISPOL" kind="concept">
+      <Meta name="internalId" value="21982"/>
+      <Meta name="Name:Class" value="JurisdictionalPolicy"/>
+      <SuperClass code="POLICY"/>
+      <Rubric id="d1e26132" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A mandate, regulation, obligation, requirement, rule, or expectation unilaterally imposed by a jurisdiction on:</p>
+            <ul>
+               <li>
+                  <p>The activity of another party</p>
+               </li>
+               <li>
+                  <p>The behavior of another party</p>
+               </li>
+               <li>
+                  <p>The manner in which an act is executed</p>
+               </li>
+            </ul>
+            <p>
+               <b>Examples:</b>A jurisdictional mandate regarding the prescribing and dispensing of a particular medication. A jurisdictional privacy or security regulation dictating the manner in which personal health information is disclosed. A jurisdictional requirement that certain services or health conditions are reported to a monitoring program, e.g., immunizations, methadone treatment, or cancer registries.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e26182" kind="short">
+         <Label xml:lang="en-US">jurisdictional policy</Label>
+      </Rubric>
+      <Rubric id="d1e26182" kind="preferred">
+         <Label xml:lang="en-US">jurisdictional policy</Label>
+      </Rubric>
+   </Class>
+   <Class code="ORGPOL" kind="concept">
+      <Meta name="internalId" value="21983"/>
+      <Meta name="Name:Class" value="OrganizationalPolicy"/>
+      <SuperClass code="POLICY"/>
+      <Rubric id="d1e26195" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A mandate, obligation, requirement, rule, or expectation unilaterally imposed by an organization on:</p>
+            <ul>
+               <li>
+                  <p>The activity of another party</p>
+               </li>
+               <li>
+                  <p>The behavior of another party</p>
+               </li>
+               <li>
+                  <p>The manner in which an act is executed</p>
+               </li>
+            </ul>
+            <p>
+               <b>Examples:</b>A clinical or research protocols imposed by a payer, a malpractice insurer, or an institution to which a provider must adhere. A mandate imposed by a denominational institution for a provider to provide or withhold certain information from the patient about treatment options.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e26245" kind="short">
+         <Label xml:lang="en-US">organizational policy</Label>
+      </Rubric>
+      <Rubric id="d1e26245" kind="preferred">
+         <Label xml:lang="en-US">organizational policy</Label>
+      </Rubric>
+   </Class>
+   <Class code="SCOPOL" kind="concept">
+      <Meta name="internalId" value="21984"/>
+      <Meta name="Name:Class" value="ScopeOfPracticePolicy"/>
+      <SuperClass code="POLICY"/>
+      <Rubric id="d1e26257" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>An ethical or clinical obligation, requirement, rule, or expectation imposed or strongly encouraged by organizations that oversee particular clinical domains or provider certification which define the boundaries within which a provider may practice and which may have legal basis or ramifications on:</p>
+            <ul>
+               <li>
+                  <p>The activity of another party</p>
+               </li>
+               <li>
+                  <p>The behavior of another party</p>
+               </li>
+               <li>
+                  <p>The manner in which an act is executed</p>
+               </li>
+            </ul>
+            <p>
+               <b>Examples:</b>An ethical obligation for a provider to fully inform a patient about all treatment options. An ethical obligation for a provider not to disclose personal health information that meets certain criteria, e.g., where disclosure might result in harm to the patient or another person. The set of health care services which a provider is credentialed or privileged to provide.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e26307" kind="short">
+         <Label xml:lang="en-US">scope of practice policy</Label>
+      </Rubric>
+      <Rubric id="d1e26307" kind="preferred">
+         <Label xml:lang="en-US">scope of practice policy</Label>
+      </Rubric>
+   </Class>
+   <Class code="STDPOL" kind="concept">
+      <Meta name="internalId" value="21985"/>
+      <Meta name="Name:Class" value="StandardOfPracticePolicy"/>
+      <SuperClass code="POLICY"/>
+      <Rubric id="d1e26319" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A requirement, rule, or expectation typically documented as guidelines, protocols, or formularies imposed or strongly encouraged by an organization that oversees or has authority over the practices within a domain, and which may have legal basis or ramifications on:</p>
+            <ul>
+               <li>
+                  <p>The activity of another party</p>
+               </li>
+               <li>
+                  <p>The behavior of another party</p>
+               </li>
+               <li>
+                  <p>The manner in which an act is executed</p>
+               </li>
+            </ul>
+            <p>
+               <b>Examples:</b>A payer may require a prescribing provider to adhere to formulary guidelines. An institution may adopt clinical guidelines and protocols and implement these within its electronic health record and decision support systems.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e26369" kind="short">
+         <Label xml:lang="en-US">standard of practice policy</Label>
+      </Rubric>
+      <Rubric id="d1e26369" kind="preferred">
+         <Label xml:lang="en-US">standard of practice policy</Label>
+      </Rubric>
+   </Class>
+   <Class code="POSACC" kind="concept">
+      <Meta name="internalId" value="21648"/>
+      <Meta name="Name:Class" value="PositionAccuracy"/>
+      <SuperClass code="POS"/>
+      <Rubric id="d1e26381" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>An observation representing the degree to which the assignment of the spatial coordinates, based on a matching algorithm by a geocoding engine against a reference spatial database, matches true or accepted values.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e26404" kind="short">
+         <Label xml:lang="en-US">position accuracy</Label>
+      </Rubric>
+      <Rubric id="d1e26404" kind="preferred">
+         <Label xml:lang="en-US">position accuracy</Label>
+      </Rubric>
+   </Class>
+   <Class code="POSCOORD" kind="concept">
+      <Meta name="internalId" value="21647"/>
+      <Meta name="Name:Class" value="PositionCoordinate"/>
+      <SuperClass code="POS"/>
+      <Rubric id="d1e26416" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>An observation representing one of a set of numerical values used to determine the position of a place. The name of the coordinate value is determined by the reference coordinate system.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e26439" kind="short">
+         <Label xml:lang="en-US">position coordinate</Label>
+      </Rubric>
+      <Rubric id="d1e26439" kind="preferred">
+         <Label xml:lang="en-US">position coordinate</Label>
+      </Rubric>
+   </Class>
+   <Class code="SBADM" kind="concept">
+      <Meta name="internalId" value="11528"/>
+      <Meta name="Name:Class" value="SubstanceAdministration"/>
+      <SuperClass code="PROC"/>
+      <Rubric id="d1e26451" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The act of introducing or otherwise applying a substance to the subject.</p>
+            <p>
+               <i>Discussion:</i>The effect of the substance is typically established on a biochemical basis, however, that is not a requirement. For example, radiotherapy can largely be described in the same way, especially if it is a systemic therapy such as radio-iodine. This class also includes the application of chemical treatments to an area.</p>
+            <p>
+               <i>Examples:</i>Chemotherapy protocol; Drug prescription; Vaccination record</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e26483" kind="short">
+         <Label xml:lang="en-US">substance administration</Label>
+      </Rubric>
+      <Rubric id="d1e26483" kind="preferred">
+         <Label xml:lang="en-US">substance administration</Label>
+      </Rubric>
+   </Class>
+   <Class code="SBEXT" kind="concept">
+      <Meta name="internalId" value="22832"/>
+      <Meta name="Name:Class" value="SubstanceExtraction"/>
+      <SuperClass code="PROC"/>
+      <SubClass code="SPECCOLLECT"/>
+      <Rubric id="d1e26496" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The act of removing a substance from the subject.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e26519" kind="short">
+         <Label xml:lang="en-US">Substance Extraction</Label>
+      </Rubric>
+      <Rubric id="d1e26519" kind="preferred">
+         <Label xml:lang="en-US">Substance Extraction</Label>
+      </Rubric>
+   </Class>
+   <Class code="SPECCOLLECT" kind="concept">
+      <Meta name="internalId" value="21457"/>
+      <Meta name="Name:Class" value="SpecimenCollection"/>
+      <SuperClass code="SBEXT"/>
+      <Rubric id="d1e26531" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A procedure for obtaining a specimen from a source entity.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e26551" kind="short">
+         <Label xml:lang="en-US">Specimen Collection</Label>
+      </Rubric>
+      <Rubric id="d1e26551" kind="preferred">
+         <Label xml:lang="en-US">Specimen Collection</Label>
+      </Rubric>
+   </Class>
+   <Class code="DIET" kind="concept">
+      <Meta name="internalId" value="16109"/>
+      <Meta name="Name:Class" value="Diet"/>
+      <SuperClass code="SPLY"/>
+      <Rubric id="d1e26563" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Diet services are supply services, with some aspects resembling Medication services: the detail of the diet is given as a description of the Material associated via Participation.typeCode="product". Medically relevant diet types may be communicated in the Diet.code attribute using domain ActDietCode, however, the detail of the food supplied and the various combinations of dishes should be communicated as Material instances.</p>
+            <p>
+               <b>Deprecation Note</b>
+            </p>
+            <p>
+               <b>Class:</b>Use either the Supply class (if dealing with what should be given to the patient) or SubstanceAdministration class (if dealing with what the patient should consume)</p>
+            <p>
+               <b>energyQuantity:</b>This quantity can be conveyed by using a Content relationship with a quantity attribute expressing the calories</p>
+            <p>
+               <b>carbohydrateQuantity:</b>This quantity can be conveyed using a Content relationship to an Entity with a code of carbohydrate and a quantity attribute on the content relationship.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e26616" kind="short">
+         <Label xml:lang="en-US">diet</Label>
+      </Rubric>
+      <Rubric id="d1e26616" kind="preferred">
+         <Label xml:lang="en-US">diet</Label>
+      </Rubric>
+   </Class>
+   <Class code="RTRD" kind="concept">
+      <Meta name="internalId" value="21937"/>
+      <SuperClass code="SUP"/>
+      <Rubric id="d1e26628" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Lying on the back, on an inclined plane, typically about 30-45 degrees with head raised and feet lowered.</p>
+            <p>
+               <b>
+                  <i>Deprecation Comment:</i>
+               </b>This concept has been deprecated because it does not describe a type of Act (as it should in the ActClass code system), but rather encodes the result or value of an observation. The same code has been added to the ObservationValue code system.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e26664" kind="short">
+         <Label xml:lang="en-US">reverse trendelenburg</Label>
+      </Rubric>
+      <Rubric id="d1e26664" kind="preferred">
+         <Label xml:lang="en-US">reverse trendelenburg</Label>
+      </Rubric>
+   </Class>
+   <Class code="TRD" kind="concept">
+      <Meta name="internalId" value="21936"/>
+      <SuperClass code="SUP"/>
+      <Rubric id="d1e26675" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Lying on the back, on an inclined plane, typically about 30-45 degrees, with head lowered and feet raised.</p>
+            <p>
+               <b>
+                  <i>Deprecation Comment:</i>
+               </b>This concept has been deprecated because it does not describe a type of Act (as it should in the ActClass code system), but rather encodes the result or value of an observation. The same code has been added to the ObservationValue code system.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e26711" kind="short">
+         <Label xml:lang="en-US">trendelenburg</Label>
+      </Rubric>
+      <Rubric id="d1e26711" kind="preferred">
+         <Label xml:lang="en-US">trendelenburg</Label>
+      </Rubric>
+   </Class>
+</ClaML>

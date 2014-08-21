@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="507"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1116"/>
+   <Title name="IdentifierScope" date="2012-08-02" version="1.000">Description: Codes to specify the scope in which the identifier applies to the object with which it is associated, and used in the datatype property II.</Title>
+   <Authors>
+      <Author name="Responsible"/>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="BUSN" kind="concept">
+      <Meta name="internalId" value="22609"/>
+      <Rubric id="d1e141238" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>An identifier whose scope is defined by the business practices associated with the object. In contrast to the other scope identifiers, the scope of the use of the id is not necessarily restricted to a single object, but may be reused for other objects closely associated with the object due to business practice.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e141254" kind="short">
+         <Label xml:lang="en-US">Business Identifier</Label>
+      </Rubric>
+      <Rubric id="d1e141254" kind="preferred">
+         <Label xml:lang="en-US">Business Identifier</Label>
+      </Rubric>
+   </Class>
+   <Class code="OBJ" kind="concept">
+      <Meta name="internalId" value="22610"/>
+      <Rubric id="d1e141266" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The identifier associated with a particular object. It remains consistent as the object undergoes state transitions.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e141282" kind="short">
+         <Label xml:lang="en-US">Object Identifier</Label>
+      </Rubric>
+      <Rubric id="d1e141282" kind="preferred">
+         <Label xml:lang="en-US">Object Identifier</Label>
+      </Rubric>
+   </Class>
+   <Class code="VER" kind="concept">
+      <Meta name="internalId" value="22611"/>
+      <Rubric id="d1e141293" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>An identifier that references a particular object as it existed at a given point in time. The identifier <b>SHALL</b>change with each state transition on the object. I.e. The version identifier of an object prior to a 'suspend' state transition is distinct from the identifier of the object after the state transition. Each version identifier can be tied to exactly one ControlAct event which brought that version into being (though the control act may never be instantiated).</p>
+            <p>
+               <b>NOTE:</b>Applications that do not support versioning of objects must ignore and not persist these ids to avoid confusion resulting from leaving the same identifier on an object that undergoes changes.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e141318" kind="short">
+         <Label xml:lang="en-US">Version Identifier</Label>
+      </Rubric>
+      <Rubric id="d1e141318" kind="preferred">
+         <Label xml:lang="en-US">Version Identifier</Label>
+      </Rubric>
+   </Class>
+   <Class code="VW" kind="concept">
+      <Meta name="internalId" value="22612"/>
+      <Rubric id="d1e141329" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>An identifier that references a particular object as it existed at a given point in time. The identifier <b>SHALL</b>change with each state transition on the object.</p>
+            <p>
+               <b>Example</b>The version identifier of an object prior to a 'suspend' state transition is distinct from the identifier of the object after the state transition. Each version identifier can be tied to exactly one ControlAct event which brought that version into being (though the control act may never be instantiated).</p>
+            <p>
+               <b>NOTE:</b>Applications that do not support versioning of objects must ignore and not persist these ids to avoid confusion resulting from leaving the same identifier on an object that undergoes changes.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e141360" kind="short">
+         <Label xml:lang="en-US">View Specific Identifier</Label>
+      </Rubric>
+      <Rubric id="d1e141360" kind="preferred">
+         <Label xml:lang="en-US">View Specific Identifier</Label>
+      </Rubric>
+   </Class>
+</ClaML>

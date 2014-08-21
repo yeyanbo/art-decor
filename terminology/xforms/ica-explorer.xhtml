@@ -1,0 +1,576 @@
+<!--
+    Copyright (C) 2011 Nictiz.
+    
+    Author: Gerrit Boers
+
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:widget="http://orbeon.org/oxf/xml/widget" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="decor-terminology" xsi:schemaLocation="http://www.w3.org/1999/xhtml ../../orbeon_schemas/xhtml1-transitional-orbeon.xsd">
+    <xhtml:head>
+        <xhtml:style type="text/css">
+         .xforms-repeat-selected-item-2 {
+         font-weight: normal;
+         background-color: inherit; 
+         color : black
+         }
+         td.item-label-var, td.heading-var {
+         background-color:#f0ebe4;
+         color:#7a6e62;
+         padding-left : 0.5em;
+         padding-right : 0em;
+         padding-top : 0.25em;
+         padding-bottom : 0.25em;
+         text-align:left;
+         vertical-align:top;
+         }
+         td.heading-var {
+         font-weight: bold;
+         }
+         .xforms-input.long-text input {
+         width: 40em;
+         margin-bottom: 2px;
+         text-align: left
+         }
+      </xhtml:style>
+        <xhtml:title>
+            <xforms:output ref="$resources/ica-mapping"/>
+        </xhtml:title>
+        <xforms:model>
+         <!-- Variable with path to art-exist for use by form -->
+            <xxforms:variable name="art-exist" select="xxforms:property('art.exist.url')"/>
+         <!-- Variable with path to terminology-eXist for use by form -->
+            <xxforms:variable name="terminology-exist" select="xxforms:property('terminology.exist.url')"/>
+         <!-- Variable with path to terminology-eXist used to pass to client as link for services (SNOMED, LOINC) -->
+            <xxforms:variable name="terminology-external-exist" select="xxforms:property('terminology.external.exist.url')"/>
+         <!-- resources for internationalization -->
+            <xforms:instance id="resources-instance">
+                <dummy/>
+            </xforms:instance>
+         <!-- submission for loading resources -->
+            <xforms:submission id="get-resources-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-form-resources.xquery?packageRoot=terminology" replace="instance" instance="resources-instance" xxforms:readonly="true">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred:<xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- language -->
+            <xforms:instance id="language">
+                <language/>
+            </xforms:instance>
+         <!-- instance for DECOR Schema types -->
+            <xforms:instance id="decor-types">
+                <dummy/>
+            </xforms:instance>
+         <!-- get decor submission -->
+            <xforms:submission id="get-decor-types" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-schema-enumerations.xq" replace="instance" instance="decor-types" xxforms:readonly="true"/>
+         <!-- instance for users -->
+            <xforms:instance id="users-instance">
+                <users/>
+            </xforms:instance>
+            <xforms:submission id="get-users-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-user-list.xquery" replace="instance" instance="users-instance" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}"/>
+         <!-- instance for new author -->
+            <xforms:instance id="author-instance" xxforms:exclude-result-prefixes="#all">
+                <author id="" username="guest">Guest</author>
+            </xforms:instance>
+
+         <!-- instance for overall edit status -->
+            <xforms:instance id="data-safe" xxforms:exclude-result-prefixes="#all">
+                <data-safe>true</data-safe>
+            </xforms:instance>
+         <!-- instance for project edit status -->
+            <xforms:instance id="project-safe" xxforms:exclude-result-prefixes="#all">
+                <data-safe>true</data-safe>
+            </xforms:instance>
+         <!-- instance for ci-list edit status -->
+            <xforms:instance id="list-safe" xxforms:exclude-result-prefixes="#all">
+                <data-safe>true</data-safe>
+            </xforms:instance>
+
+         <!-- instance for help, temporary solution, must move to db -->
+            <xforms:instance id="help-instance">
+                <help-files>
+                    <search language="en-US">
+                        <div class="h3">Finding Terms</div>
+                        <p>Finding terms with the least amount of keystrokes possible, that is the goal.<br/> To achieve this goal the search field offers a combination of wildcard and exact match searches.</p>
+                        <b>General Properties</b>
+                        <ul>
+                            <li> Searches starting with lower case letters will also find terms starting with upper case letters. </li>
+                            <li> Results are ordered by wordcount and term length. </li>
+                            <li> Starting a search term with lower case will perform a wildcard search. </li>
+                            <li> Single term wildcard searches require a minimum of 4 keystrokes. </li>
+                            <li> Starting a search term with upper case will perform an exact match search. </li>
+                            <li> Single term exact match searches require a minimum of 2 keystrokes. </li>
+                        </ul>
+                        <b>Examples</b>
+                        <table width="100%">
+                            <tr>
+                                <td class="floating-label">Searching for</td>
+                                <td class="floating-label">Enter</td>
+                            </tr>
+                            <tr>
+                                <td>Salbutamol</td>
+                                <td>salb</td>
+                            </tr>
+                            <tr>
+                                <td>Pneumonia</td>
+                                <td>pneu</td>
+                            </tr>
+                            <tr>
+                                <td>Acute asthma</td>
+                                <td>acu ast</td>
+                            </tr>
+                            <tr>
+                                <td>Medication review</td>
+                                <td>med rev</td>
+                            </tr>
+                            <tr>
+                                <td>Pain lower back</td>
+                                <td>pa lo ba</td>
+                            </tr>
+                            <tr>
+                                <td>Oxazepam tablets 10mg</td>
+                                <td>ox ta 10</td>
+                            </tr>
+                            <tr>
+                                <td>Haemoglobin A</td>
+                                <td>hae A</td>
+                            </tr>
+                            <tr>
+                                <td>WCC (White blood cell count)</td>
+                                <td>WCC</td>
+                            </tr>
+                            <tr>
+                                <td>Hb (Hemoglobin)</td>
+                                <td>Hb</td>
+                            </tr>
+                            <tr>
+                                <td>FH: Asthma (Family history: Asthma)</td>
+                                <td>FH as</td>
+                            </tr>
+                        </table>
+                    </search>
+                    <search language="nl-NL">
+                        <div class="h3">Termen vinden</div>
+                        <p>Termen vinden met zo weinig mogelijk toetsaanslagen, dat is het doel.<br/> Om dit te bereiken ondersteunt het zoekveld het zoeken op exacte overeenkomst en het zogenaamde 'wildcard' zoeken.</p>
+                        <b>Algemene Eigenschappen</b>
+                        <ul>
+                            <li> Bij zoektermen met kleine letters worden ook overeenkomende termen met hoofdletters gevonden. </li>
+                            <li> Resultaten worden gesorteerd op aantal woorden en lengte van de term. </li>
+                            <li> Als een zoekterm met een kleine letter begint dan wordt gezocht naar termen beginnend met de zoekterm (wildcard). </li>
+                            <li> Wanneer de opdracht bestaat uit één enkele zoekterm beginnend met een kleine letter, dan moet deze minimaal vier letters bevatten. </li>
+                            <li> Als een zoekterm begint met een hoofdletter dan dan wordt gezocht naar termen die exact overeenkomen.. </li>
+                            <li> Wanneer de opdracht bestaat uit één enkele zoekterm beginnend met een hoofdletter, dan moet deze minimaal twee letters bevatten. </li>
+                        </ul>
+                        <b>Voorbeelden</b>
+                        <table width="100%">
+                            <tr>
+                                <td class="floating-label">U zoekt</td>
+                                <td class="floating-label">Toets</td>
+                            </tr>
+                            <tr>
+                                <td>Salbutamol</td>
+                                <td>salb</td>
+                            </tr>
+                            <tr>
+                                <td>Pneumonia</td>
+                                <td>pneu</td>
+                            </tr>
+                            <tr>
+                                <td>Acute asthma</td>
+                                <td>acu ast</td>
+                            </tr>
+                            <tr>
+                                <td>Medication review</td>
+                                <td>med rev</td>
+                            </tr>
+                            <tr>
+                                <td>Pain lower back</td>
+                                <td>pa lo ba</td>
+                            </tr>
+                            <tr>
+                                <td>Oxazepam tablets 10mg</td>
+                                <td>ox ta 10</td>
+                            </tr>
+                            <tr>
+                                <td>Haemoglobin A</td>
+                                <td>hae A</td>
+                            </tr>
+                            <tr>
+                                <td>WCC (White blood cell count)</td>
+                                <td>WCC</td>
+                            </tr>
+                            <tr>
+                                <td>Hb (Hemoglobin)</td>
+                                <td>Hb</td>
+                            </tr>
+                            <tr>
+                                <td>FH: Asthma (Family history: Asthma)</td>
+                                <td>FH as</td>
+                            </tr>
+                        </table>
+                    </search>
+                </help-files>
+            </xforms:instance>
+
+
+
+
+         <!-- *** ICA *** -->
+         <!-- project -->
+            <xforms:instance id="project" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+         <!-- event observer for project changes -->
+            <xforms:action ev:observer="project" ev:event="xforms-insert xforms-delete xxforms-value-changed">
+                <xforms:setvalue ref="instance('project-safe')">false</xforms:setvalue>
+                <xforms:setvalue ref="instance('data-safe')">false</xforms:setvalue>
+            </xforms:action>
+            <xforms:submission id="get-project" serialization="none" method="get" resource="{$terminology-exist}/ica/modules/get-ci-list-project.xquery" replace="instance" instance="project"/>
+         <!-- save project -->
+            <xforms:submission id="save-project" ref="instance('project')" resource="{$terminology-exist}/ica/modules/save-ci-list-project.xquery" method="post" replace="instance" xxforms:instance="project-safe" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">A submission error occurred: <xforms:output value="event('error-type')"/>
+                    <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- instance for ci navigation -->
+            <xforms:instance id="ci-navigation" xxforms:exclude-result-prefixes="#all">
+                <id>1</id>
+            </xforms:instance>
+         <!-- ica navigation nodeset -->
+            <xforms:instance id="ica-nodeset">
+                <nodeset>instance('ci-list-version')/ci[@statusCode=('new','draft','final')]</nodeset>
+            </xforms:instance>
+         <!-- status filters -->
+            <xforms:instance id="status-filters">
+                <filters>
+                    <filter nodeset="instance('ci-list-version')/ci">
+                        <name language="nl-NL">Alle</name>
+                        <name language="en-US">All</name>
+                        <name language="de-DE">Alle</name>
+                    </filter>
+                    <filter nodeset="instance('ci-list-version')/ci[@statusCode=('new','draft','final')]">
+                        <name language="nl-NL">Actueel</name>
+                        <name language="en-US">Current</name>
+                        <name language="de-DE">Actuell</name>
+                    </filter>
+                    <filter nodeset="instance('ci-list-version')/ci[@statusCode='new']">
+                        <name language="nl-NL">Nieuw</name>
+                        <name language="en-US">New</name>
+                        <name language="de-DE">Neu</name>
+                    </filter>
+                    <filter nodeset="instance('ci-list-version')/ci[@statusCode='draft']">
+                        <name language="nl-NL">Ontwerp</name>
+                        <name language="en-US">Draft</name>
+                        <name language="de-DE">Draft</name>
+                    </filter>
+                    <filter nodeset="instance('ci-list-version')/ci[@statusCode='final']">
+                        <name language="nl-NL">Definitief</name>
+                        <name language="en-US">Final</name>
+                        <name language="de-DE">Final</name>
+                    </filter>
+                    <filter nodeset="instance('ci-list-version')/ci[@statusCode='rejected']">
+                        <name language="nl-NL">Afgewezen</name>
+                        <name language="en-US">Rejected</name>
+                        <name language="de-DE">Rejected</name>
+                    </filter>
+                </filters>
+            </xforms:instance>
+         <!-- instance for ICA mapping -->
+            <xforms:instance id="ci-list-version">
+                <dummy/>
+            </xforms:instance>
+         <!-- selected CI -->
+            <xforms:instance id="selected-ci" xxforms:exclude-result-prefixes="#all">
+                <ci/>
+            </xforms:instance>
+         <!-- get selected CI -->
+            <xforms:submission id="get-ci" serialization="none" method="get" resource="{$terminology-exist}/ica/modules/get-ci.xquery?id={instance('ci-navigation')}" replace="instance" instance="selected-ci"/>
+
+
+         <!--         <xforms:submission id="get-ica-submission" serialization="none" method="get" resource="{$terminology-exist}/ica/modules/RetrieveICA-mapping.xquery" replace="instance" instance="ci-list-version"/>-->
+            <xforms:submission id="get-ci-list" serialization="none" method="get" resource="{$terminology-exist}/ica/modules/get-ci-list.xquery" replace="instance" instance="ci-list-version"/>
+         <!-- instance for new ICA mapping -->
+            <xforms:instance id="new-ica" xxforms:exclude-result-prefixes="#all">
+                <ci code="" statusCode="new" id="" effectiveDate="">
+                    <edit mode="new"/>
+                    <description language="nl-NL"/>
+                    <rationale language="nl-NL"/>
+                    <text language="nl-NL"/>
+               <!--<icpc code=""/>
+               <icd-9 code=""/>
+               <icd-10 code=""/>
+               <snomed code=""/>-->
+                </ci>
+            </xforms:instance>
+            <xforms:setfocus ev:event="xforms-ready" control="navigate"/>
+            <xforms:action ev:event="xforms-model-construct-done">
+                <xforms:send submission="get-resources-submission"/>
+                <xforms:setvalue ref="instance('language')" value="if (string-length(xxforms:get-session-attribute('language'))&gt;0) then (xxforms:get-session-attribute('language')) else (instance('resources-instance')//resources[1]/@xml:lang/string())"/>
+                <xforms:insert context="." origin="xxforms:set-session-attribute('language', instance('language'))"/>
+                <xforms:send submission="get-users-submission"/>
+                <xforms:send submission="get-decor-types"/>
+            <!--            <xforms:send submission="get-ica-submission"/>-->
+                <xforms:send submission="get-project"/>
+                <xforms:send submission="get-ci-list"/>
+            </xforms:action>
+            <xxforms:script ev:event="xforms-ready">
+            window.onbeforeunload = function() {
+            if (ORBEON.xforms.Document.getValue('data-safe-input') != 'true')
+            return "Deze tekst kunnen we aanpassen.";
+            }
+            </xxforms:script>
+            <xforms:action ev:event="xforms-ready">
+                <xforms:send submission="get-ci-list"/>
+                <xforms:setvalue ref="instance('ci-navigation')" value="if (count(xxforms:evaluate(instance('ica-nodeset')))&gt;0) then xxforms:evaluate(instance('ica-nodeset'))[1]/@id else ('')"/>
+                <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                <xforms:setvalue ref="instance('list-safe')">true</xforms:setvalue>
+                <xforms:setvalue ref="instance('project-safe')">true</xforms:setvalue>
+            </xforms:action>
+            <xxforms:variable name="resources" select="instance('resources-instance')//resources[1]"/>
+            <xxforms:variable name="editor" select="contains(xxforms:get-session-attribute('groups'),'editor') and instance('project')/project/author[@username=xxforms:get-session-attribute('username')]"/>
+            <xxforms:variable name="issueCreator" select="contains(xxforms:get-session-attribute('groups'),'issues') and instance('project')/project/author[@username=xxforms:get-session-attribute('username')]"/>
+            <xxforms:variable name="isGroup" select="instance('classification-list')/group[@collection=instance('selected-group')]/@isGroup='true'"/>
+        </xforms:model>
+    </xhtml:head>
+    <xhtml:body>
+
+      <!-- CONTRA-INDICATIONS -->
+
+      <!-- table with master-detail columns -->
+        <xhtml:table width="100%">
+            <xhtml:tr>
+            <!-- left column with navigation -->
+                <xhtml:td width="35%">
+               <!-- table for tree navigation components -->
+                    <xhtml:table width="100%">
+                  <!-- row with heading and insert button	-->
+                        <xhtml:tr>
+                            <xhtml:td class="heading" colspan="2">
+                                <xhtml:div class="heading">
+                                    <xforms:output ref="$resources/ica-mapping"/>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+
+                  <!-- row with navigation list -->
+                        <xhtml:tr>
+                            <xhtml:td width="100%" colspan="2">
+                                <xhtml:div class="navigate">
+                                    <xforms:select1 id="navigate" ref="instance('ci-navigation')" appearance="compact">
+                                       <xforms:itemset nodeset="instance('ci-list-version')/ci[@statusCode='active']">
+                                            <xforms:label ref="text"/>
+                                            <xforms:value ref="@id"/>
+                                        </xforms:itemset>
+                                        <xforms:action ev:event="xforms-value-changed">
+                                            <xforms:send submission="get-ci"/>
+                                        </xforms:action>
+                                    </xforms:select1>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                    </xhtml:table>
+                </xhtml:td>
+            <!-- code details -->
+                <xhtml:td width="65%">
+                    <xhtml:table width="100%" class="detail">
+                        <xforms:group ref="instance('selected-ci')">
+                     <!-- row with heading and buttons -->
+                            <xhtml:tr>
+                                <xhtml:td class="heading" colspan="2">
+                                    <xhtml:div class="heading">
+                                        <xforms:output ref="text[@language=instance('language')]"/>
+                                    </xhtml:div>
+                                </xhtml:td>
+                            </xhtml:tr>
+                     <!-- READONLY -->
+                            <xforms:group ref=".[not(edit) or (edit and @statusCode=('final','deprecated'))]">
+                        <!-- id -->
+                        <!--                        <xhtml:tr>
+                           <xhtml:td class="item-label">
+                              <xforms:output ref="$resources/id"/>
+                           </xhtml:td>
+                           <xhtml:td>
+                              <xforms:output ref="@id"/>
+                           </xhtml:td>
+                        </xhtml:tr>-->
+                        <!-- effective date -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/date"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="@effectiveDate" xxforms:format="if (instance('language')='en-US') then format-date(.,'[M01]/[D01]/[Y]') else format-date(.,'[D01]-[M01]-[Y]')"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                        <!-- description -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/description"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output mediatype="text/html" ref="description"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                        <!-- rationale -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/rationale"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output mediatype="text/html" ref="rationale"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xforms:group>
+                     <!-- MAPPINGS heading -->
+                            <xhtml:tr>
+                                <xhtml:td class="heading" colspan="2">
+                                    <xhtml:div class="heading">
+                                        <xforms:output ref="$resources/mappings"/>
+                                    </xhtml:div>
+                                </xhtml:td>
+                            </xhtml:tr>
+                     <!-- MAPPINGS READONLY -->
+                     <!-- CIC -->
+                            <xhtml:tr>
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/cic"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xhtml:table width="100%">
+                                        <xforms:repeat nodeset="cic" id="cic">
+                                            <xhtml:tr class="not-selectable">
+                                                <xhtml:td width="15%">
+                                                    <xforms:output ref="@code"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:output ref="desc"/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:repeat>
+                                    </xhtml:table>
+                                </xhtml:td>
+                            </xhtml:tr>
+                           <!-- shb-ci-->
+                            <xhtml:tr>
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/SHB-CI"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xhtml:table width="100%">
+                                        <xforms:repeat nodeset="shb-ci">
+                                            <xhtml:tr class="not-selectable">
+                                                <xhtml:td width="15%">
+                                                    <xforms:output ref="@code"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:output ref="desc"/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:repeat>
+                                    </xhtml:table>
+                                </xhtml:td>
+                            </xhtml:tr>
+                     <!-- ICPC -->
+                            <xhtml:tr>
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/icpc"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xhtml:table width="100%">
+                                        <xforms:repeat nodeset="icpc" id="icpc">
+                                            <xhtml:tr class="not-selectable">
+                                                <xhtml:td width="15%">
+                                                    <xforms:output ref="@code"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:output ref="desc"/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:repeat>
+                                    </xhtml:table>
+                                </xhtml:td>
+                            </xhtml:tr>
+                     <!-- ICD-9 -->
+                            <xhtml:tr>
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/icd9"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xhtml:table width="100%">
+                                        <xforms:repeat nodeset="icd-9" id="icd9">
+                                            <xhtml:tr class="not-selectable">
+                                                <xhtml:td width="15%">
+                                                    <xforms:output ref="@code"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:output ref="desc"/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:repeat>
+                                    </xhtml:table>
+                                </xhtml:td>
+                            </xhtml:tr>
+                     <!-- ICD-10 -->
+                            <xhtml:tr>
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/icd10"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xhtml:table width="100%">
+                                        <xforms:repeat nodeset="icd-10" id="icd10">
+                                            <xhtml:tr class="not-selectable">
+                                                <xhtml:td width="15%">
+                                                    <xforms:output ref="@code"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:output ref="desc"/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:repeat>
+                                    </xhtml:table>
+                                </xhtml:td>
+                            </xhtml:tr>
+                     <!-- SNOMED-CT -->
+                            <xhtml:tr>
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/snomed-ct"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xhtml:table width="100%">
+                                        <xforms:repeat nodeset="snomed" id="snomed">
+                                            <xhtml:tr class="not-selectable">
+                                                <xhtml:td width="15%">
+                                                    <xforms:output ref="@code"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:group ref=".[@code castable as xs:integer]">
+                                                        <xforms:trigger appearance="minimal">
+                                                            <xforms:label ref="."/>
+                                                            <xforms:action ev:event="DOMActivate">
+                                                                <xforms:load resource="{$terminology-external-exist}/snomed/viewConcept/{@code}" show="new"/>
+                                                            </xforms:action>
+                                                        </xforms:trigger>
+                                                    </xforms:group>
+                                                    <xforms:group ref=".[not(@code castable as xs:integer)]">
+                                                        <xforms:output ref="desc"/>
+                                                    </xforms:group>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:repeat>
+                                    </xhtml:table>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xforms:group>
+                    </xhtml:table>
+                </xhtml:td>
+            </xhtml:tr>
+        </xhtml:table>
+    </xhtml:body>
+</xhtml:html>

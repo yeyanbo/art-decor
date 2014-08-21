@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="CDA.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:hl7-org:v3 ../schemas/CDA.xsd">
+ <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+ <templateId extension="EVO" root="2.16.840.1.113883.2.10.1.1.9"/>
+ <id extension="123" root="2.16.840.1.113883.2.10.1.2.1"/>
+ <code code="34108-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+  displayName="Consulta Ambulatoria"/>
+ <title>Hospital Italiano - Consulta Ambulatoria</title>
+ <effectiveTime value="20051124121152"/>
+ <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+ <languageCode code="es-AR"/>
+ <versionNumber value="1"/>
+ <recordTarget>
+  <patientRole>
+   <id extension="285491" root="2.16.840.1.113883.2.10.1.1.1"/>
+   <patient>
+    <name>
+     <given>DAMIAN ALBERTO</given>
+     <family>BORBOLLA </family>
+    </name>
+    <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+    <birthTime value="19770919"/>
+   </patient>
+  </patientRole>
+ </recordTarget>
+ <author>
+  <time value="20051124121152"/>
+  <assignedAuthor>
+   <id extension="1261" root="2.16.840.1.113883.2.10.1.1.2"/>
+   <assignedPerson>
+    <name>
+     <given>DANIEL ROBERTO</given>
+     <family>LUNA </family>
+    </name>
+   </assignedPerson>
+  </assignedAuthor>
+ </author>
+ <custodian>
+  <assignedCustodian>
+   <representedCustodianOrganization>
+    <id extension="223" root="2.16.840.1.113883.2.10.1.1.4"/>
+    <name>CLINICA MEDICA</name>
+   </representedCustodianOrganization>
+  </assignedCustodian>
+ </custodian>
+ <legalAuthenticator>
+  <time value="20051124121152"/>
+  <signatureCode code="S"/>
+  <assignedEntity>
+   <id extension="1261" root="2.16.840.1.113883.2.10.1.1.2"/>
+   <assignedPerson>
+    <name>
+     <given>DANIEL ROBERTO</given>
+     <family>LUNA </family>
+    </name>
+   </assignedPerson>
+   <representedOrganization>
+    <id root="2.16.840.1.113883.2.10.1"/>
+   </representedOrganization>
+  </assignedEntity>
+ </legalAuthenticator>
+ <component>
+  <structuredBody>
+   <component>
+    <section>
+     <code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PROBLEMS"/>
+     <title>PROBLEMAS (Nuevos)</title>
+     <text>
+      <list>
+       <item>DOLOR DE CABEZA (Activo)</item>
+       <item>OTITIS (Activo)</item>
+      </list>
+     </text>
+    </section>
+   </component>
+
+   <component>
+    <section>
+     <code code="X-ASSMT" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="ASSESSMENT"/>
+     <title>EVOLUCIONES AMBULATORIAS</title>
+     <text>
+      <list>
+       <item>DOLOR DE CABEZA (Activo) - Es producido por la otitis que presenta. De todas formas se
+        indican analgésicos. Si el dolor se generaliza, se le indica ver al medico de cabecera.</item>
+       <item>EPISODIOS DE CONVULSIONES (Pasivo) - Ya no las presenta. Aparentemente fue producido
+        por un pico de stress. Los estudios dieron bien. se mantiene el control.</item>
+       <item>OTITIS (Activo) - Presenta inflamación en oido derecho, se aspira, se indican gotas y
+        antibioticos.Control en una semana.</item>
+      </list>
+     </text>
+    </section>
+   </component>
+   <component>
+    <section>
+     <code code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="RELEVANT DIAGNOSTIC TESTS" />
+     <title>ESTUDIOS / PRACTICAS</title>
+     <text>
+      <list>
+       <item>AUDIOMETRIA TONAL</item>
+       <item>HEPATOGRAMA</item>
+       <item>GLUCEMIA</item>
+       <item>ERITROSEDIMENTACION</item>
+       <item>CREATININEMIA</item>
+       <item>COLESTEROL TOTAL</item>
+       <item>ELECTROCARDIOGRAMA</item>
+      </list>
+     </text>
+    </section>
+   </component>
+   <component>
+    <section>
+     <code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MEDICATION"/>
+     <title>INDICACIONES FARMACOLOGICAS</title>
+     <text>
+      <table>
+       <tbody>
+        <tr>
+         <th>PRODUCTO</th>
+         <th>CANTIDAD</th>
+         <th>CRONICO</th>
+         <th>TRAT_PROLONGADO</th>
+        </tr>
+        <tr>
+         <td>MATRIX 400mg Comp. x 10</td>
+         <td>36</td>
+         <td>12</td>
+         <td>N</td>
+
+        </tr>
+        <tr>
+         <td>TRIFAMOX 1000mg Comp. x 16</td>
+         <td>23</td>
+         <td>12</td>
+         <td>N</td>
+
+        </tr>
+       </tbody>
+      </table>
+     </text>
+    </section>
+   </component>
+  </structuredBody>
+ </component>
+</ClinicalDocument>

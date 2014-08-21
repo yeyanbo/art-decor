@@ -1,0 +1,863 @@
+<messsages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="REST-i18n.xsd">
+    
+    <!-- 
+        parameters in entry text denoted as %%1, %%2 etc.
+        
+    -->
+    
+    <!--
+        general entries
+        ===============
+    -->
+    <entry key="disclaimer">
+        <text language="en-US">The content of this publictaion has been carefully prepared and reviewed. However, %%1 does not guarantee the accuracy, completeness or quality of the information
+            provided, or that it is up-to-date. Liability claims against %%1 in respect of material or immaterial damage caused by the use or non-use of the information offered or by inaccurate or
+            incomplete information are in principle ruled out provided that there is no provable culpable intent or gross negligence on the institute’s part. </text>
+        <text language="nl-NL">Hoewel deze publicatie met de uiterste zorg is samengesteld, kan %%1 geen aansprakelijkheid aanvaarden voor directe of indirecte schade ontstaan door de inhoud van de – al
+            dan niet door derden aangeboden – informatie.</text>
+    </entry>
+    
+    <!--
+        assert and report error entries
+        ===============================
+        %%1 is always the item reference
+        
+        * The value for “ClinicalDocument/code” SHALL be selected from ValueSet 1.2.34.1.25 LoincDocumentTypeCode DYNAMIC.
+        Or
+        * The value for “ClinicalDocument/code” SHOULD be selected from ValueSet 1.2.34.1.25 LoincDocumentTypeCode OR ValueSet 1.2.34.1.26 SnomedCtDocumentTypeCode DYNAMIC.
+        Or
+        * The value for “ClinicalDocument/code” SHOULD be selected from ValueSet 1.2.34.1.25 LoincDocumentTypeCode DYNAMIC.
+        Or
+        * The value for “ClinicalDocument/code” SHALL be selected from ValueSet 1.2.34.1.25 DYNAMIC.
+        Or
+        * The value for “ClinicalDocument/code” SHOULD be selected from ValueSet LoincDocumentTypeCode DYNAMIC.
+        
+        
+        * The value for “ClinicalDocument/code” SHALL be selected from ValueSet 1.2.34.1.25 LoincDocumentTypeCode STATIC 20061017.
+        Or
+        * The value for “ClinicalDocument/code” SHALL be selected from ValueSet 1.2.34.1.25 LoincDocumentTypeCode OR ValueSet 1.2.34.1.26 SnomedCtDocumentTypeCode STATIC 20061017.
+        Or
+        * The value for “ClinicalDocument/code” SHOULD be selected from ValueSet 1.2.34.1.25 LoincDocumentTypeCode STATIC 20061017.
+        Or
+        * The value for “ClinicalDocument/code” SHALL be selected from ValueSet 1.2.34.1.25 STATIC 20061017.
+        Or
+        * The value for “ClinicalDocument/code” SHOULD be selected from ValueSet LoincDocumentTypeCode STATIC 20061017.
+        
+        
+        * The value for “ClinicalDocument/code” SHALL be 42134-7 “DischargeSummary” 2.16.840.1.113883.6.1 LOINC STATIC 20061017.
+        
+        
+    -->
+    <entry key="errorNoOIDsFound">
+        <text language="en-US">No OIDs found</text>
+        <text language="de-DE">Keine OID's gefunden</text>
+        <text language="nl-NL">Geen OID's gevonden</text>
+    </entry>
+    <entry key="errorGetImageNotEnoughParameters">
+        <text language="en-US">For GetImage you must specify at least the parameter prefix</text>
+        <text language="de-DE">Für GetImage braucht man mindestens der Parameter prefix</text>
+        <text language="nl-NL">Voor GetImage is tenminste de parameter prefix verplicht</text>
+    </entry>
+    <entry key="errorRetrieveOIDNotEnoughParameters">
+        <text language="en-US">For RetrieveOID you must specify at least one of the parameters id, name or prefix</text>
+        <text language="de-DE">Für RetrieveOID braucht man mindestens einen der Parameter id, name oder prefix</text>
+        <text language="nl-NL">Voor RetrieveOID is tenminste de parameter id, name of prefix verplicht</text>
+    </entry>
+    <entry key="errorRetrieveCodesystemNotEnoughParameters">
+        <text language="en-US">For RetrieveCodeSystem you must specify at least one of the parameters id or name</text>
+        <text language="de-DE">Für RetrieveCodeSystem braucht man mindestens einen der Parameter id oder name</text>
+        <text language="nl-NL">Voor RetrieveCodeSystem is tenminste de parameter id, of name verplicht</text>
+    </entry>
+    <entry key="errorRetrieveValuesetNotEnoughParameters">
+        <text language="en-US">For RetrieveValueSet you must specify at least one of the parameters id or name</text>
+        <text language="de-DE">Für RetrieveValueSet braucht man mindestens einen der Parameter id oder name</text>
+        <text language="nl-NL">Voor RetrieveValueSet is tenminste de parameter id, of name verplicht</text>
+    </entry>
+    <entry key="errorRetrieveTemplateNotEnoughParameters">
+        <text language="en-US">For RetrieveTemplate you must specify at least one of the parameters ref or id or name</text>
+        <text language="de-DE">Für RetrieveTemplate braucht man mindestens einen der Parameter ref oder id oder name</text>
+        <text language="nl-NL">Voor RetrieveTemplate is tenminste de parameter ref, id, of name verplicht</text>
+    </entry>
+    <entry key="errorRetrieveOIDNoResults">
+        <text language="en-US">No OID found with these parameters: %%1</text>
+        <text language="de-DE">Keine OID gefunden mit diesen Parametern: %%1</text>
+        <text language="nl-NL">Geen OID gevonden met deze parameters: %%1</text>
+    </entry>
+    <entry key="warningRetrieveOIDMaxResultsExceeded">
+        <text language="en-US">Warning: showing max %%1 of %%2 results.</text>
+        <text language="de-DE">Warning: showing max %%1 of %%2 results.</text>
+        <text language="nl-NL">Waarschuwing: het maximum van %%1 van totaal %%2 resultaten wordt getoond.</text>
+    </entry>
+    <entry key="errorRetrieveCodeNoResults">
+        <text language="en-US">No code found with these parameters: %%1</text>
+        <text language="de-DE">Kein Kode gefunden mit diesen Parametern: %%1</text>
+        <text language="nl-NL">Geen code gevonden met deze parameters: %%1</text>
+    </entry>
+    <entry key="errorRetrieveDatasetNoResults">
+        <text language="en-US">No Dataset found with these parameters: %%1</text>
+        <text language="de-DE">Kein Dataset gefunden mit diesen Parametern: %%1</text>
+        <text language="nl-NL">Geen dataset gevonden met deze parameters: %%1</text>
+    </entry>
+    <entry key="errorRetrieveProjectNoResults">
+        <text language="en-US">No Project found with these parameters: %%1</text>
+        <text language="de-DE">Kein Project gefunden mit diesen Parametern: %%1</text>
+        <text language="nl-NL">Geen project gevonden met deze parameters: %%1</text>
+    </entry>
+    <entry key="errorRetrieveProjectNoSingleResult">
+        <text language="en-US">Could not find exactly one Project with these parameters: %%1</text>
+        <text language="de-DE">Nicht exact ein Project gefunden mit diesen Parametern: %%1</text>
+        <text language="nl-NL">Niet exact een project gevonden met deze parameters: %%1</text>
+    </entry>
+    <entry key="errorRetrieveTransactionNoResults">
+        <text language="en-US">No Transaction found with these parameters: %%1</text>
+        <text language="de-DE">Keine Transaction mit diesen Parametern: %%1 gefunden</text>
+        <text language="nl-NL">Geen transactie gevonden met deze parameters: %%1</text>
+    </entry>
+    <entry key="errorRetrieveCodesystemNoResults">
+        <text language="en-US">No code system found with these parameters: %%1</text>
+        <text language="de-DE">Kein Kodesystem gefunden mit diesen Parametern: %%1</text>
+        <text language="nl-NL">Geen codestelsel gevonden met deze parameters: %%1</text>
+    </entry>
+    <entry key="errorRetrieveValuesetNoResults">
+        <text language="en-US">No value set found with these parameters: %%1</text>
+        <text language="de-DE">Kein ValueSet gefunden mit diesen Parametern: %%1</text>
+        <text language="nl-NL">Geen waardelijst gevonden met deze parameters: %%1</text>
+    </entry>
+    <entry key="errorRetrieveTemplateNoResults">
+        <text language="en-US">No template found with these parameters: %%1</text>
+        <text language="de-DE">Kein Template gefunden mit diesen Parametern: %%1</text>
+        <text language="nl-NL">Geen template gevonden met deze parameters: %%1</text>
+    </entry>
+    <entry key="errorRetrieveTemplateMultipleResults">
+        <text language="en-US">Multiple templates found with these parameters: %%1</text>
+        <text language="de-DE">Mehrere Templates gefunden mit diesen Parametern: %%1</text>
+        <text language="nl-NL">Meerdere templates gevonden met deze parameters: %%1</text>
+    </entry>
+    <entry key="errorNotImplementedYet">
+        <text language="en-US">Not implemented yet</text>
+        <text language="de-DE">Noch nicht implementiert</text>
+        <text language="nl-NL">Nog niet geïmplementeerd</text>
+    </entry>
+    <entry key="errorOidAlreadyExistsOnRegistry">
+        <text language="en-US">The OID you were trying to add to the registry already exists. Consider updating.</text>
+        <text language="de-DE">The OID you were trying to add to the registry already exists. Consider updating.</text>
+        <text language="nl-NL">De OID die u probeerde toe te voegen aan het register bestaat al. Overweeg deze te wijzigen.</text>
+    </entry>
+    <entry key="errorOidAlreadyExistsOnProductionRegistry">
+        <text language="en-US">The OID you were trying to add to the request registry already exists in the production registry. Consider updating the request.</text>
+        <text language="de-DE">The OID you were trying to add to the request registry already exists in the production registry. Consider updating the request.</text>
+        <text language="nl-NL">De OID die u probeerde toe te voegen aan het aanvraagregister bestaat al in het productieregister. Overweeg de aanvraag te wijzigen.</text>
+    </entry>
+    <entry key="errorOidDoesNotExistOnRegistry">
+        <text language="en-US">The OID you were trying to update in the registry does not exist. Consider adding.</text>
+        <text language="de-DE">The OID you were trying to update in the registry does not exist. Consider adding.</text>
+        <text language="nl-NL">De OID die u probeerde te wijzigen in het register bestaat nog niet. Overweeg deze toe te voegen.</text>
+    </entry>
+    <entry key="errorOidValidationError">
+        <text language="en-US">Validation errors encountered. Consider revising.</text>
+        <text language="de-DE">Validation errors encountered. Consider revising.</text>
+        <text language="nl-NL">Er zijn validatiefouten opgetreden. Overweeg wijzigingen.</text>
+    </entry>
+    <entry key="titleOIDIndex">
+        <text language="en-US">OID Index</text>
+        <text language="de-DE">OID Index</text>
+        <text language="nl-NL">Index van OID's</text>
+    </entry>
+    <entry key="titleOIDRegistry">
+        <text language="en-US">OID Registry</text>
+        <text language="de-DE">OID Register</text>
+        <text language="nl-NL">OID Register</text>
+    </entry>
+    <entry key="titleProjectIndex">
+        <text language="en-US">Project Index %%1</text>
+        <text language="de-DE">Projektverzeichnis %%1</text>
+        <text language="nl-NL">Projectindex %%1</text>
+    </entry>
+    <entry key="titleDatasetIndex">
+        <text language="en-US">Dataset Index %%1</text>
+        <text language="de-DE">Datensatz Index %%1</text>
+        <text language="nl-NL">Datasetindex %%1</text>
+    </entry>
+    <entry key="titleTemplateIndex">
+        <text language="en-US">Template Index %%1</text>
+        <text language="de-DE">Template Index %%1</text>
+        <text language="nl-NL">Templateindex %%1</text>
+    </entry>
+    <entry key="titleRenderCDA">
+        <text language="en-US">Render Clinical Document</text>
+        <text language="de-DE">Zeige Clinical Document</text>
+        <text language="nl-NL">Toon Clinical Document</text>
+    </entry>
+    <entry key="titleTransactionIndex">
+        <text language="en-US">Transaction Index %%1</text>
+        <text language="de-DE">Transaktions-Index %%1</text>
+        <text language="nl-NL">Transactie-index %%1</text>
+    </entry>
+    <entry key="titleValueSetIndex">
+        <text language="en-US">Value Set Index %%1</text>
+        <text language="de-DE">Value Set Index %%1</text>
+        <text language="nl-NL">Waardelijstindex %%1</text>
+    </entry>
+    <entry key="Project">
+        <text language="en-US">Project</text>
+        <text language="de-DE">Projekt</text>
+        <text language="nl-NL">Project</text>
+    </entry>
+    <entry key="Codes">
+        <text language="en-US">Codes</text>
+        <text language="de-DE">Kodes</text>
+        <text language="nl-NL">Coes</text>
+    </entry>
+    <entry key="DataSets">
+        <text language="en-US">Data Sets</text>
+        <text language="de-DE">Datensätze</text>
+        <text language="nl-NL">Datasets</text>
+    </entry>
+    <entry key="Transactions">
+        <text language="en-US">Transactions</text>
+        <text language="de-DE">Transaktionen</text>
+        <text language="nl-NL">Transacties</text>
+    </entry>
+    <entry key="DataSet">
+        <text language="en-US">Data Set %%1</text>
+        <text language="de-DE">Datensatz %%1</text>
+        <text language="nl-NL">Dataset %%1</text>
+    </entry>
+    <entry key="Transaction">
+        <text language="en-US">Transaction %%1</text>
+        <text language="de-DE">Transaktion %%1</text>
+        <text language="nl-NL">Transactie %%1</text>
+    </entry>
+    <entry key="ValueSets">
+        <text language="en-US">Value Sets</text>
+        <text language="de-DE">Value Sets</text>
+        <text language="nl-NL">Waardelijsten</text>
+    </entry>
+    <entry key="Templates">
+        <text language="en-US">Templates</text>
+        <text language="de-DE">Templates</text>
+        <text language="nl-NL">Templates</text>
+    </entry>
+    <entry key="showColumn">
+        <text language="en-US">Show column...</text>
+        <text language="de-DE">Zeige Spalte...</text>
+        <text language="nl-NL">Toon kolom...</text>
+    </entry>
+    <entry key="else">
+        <text language="en-US">Else</text>
+        <text language="de-DE">Sonst</text>
+        <text language="nl-NL">Anders</text>
+    </entry>
+    <entry key="columnDataset">
+        <text language="en-US">Data Set</text>
+        <text language="de-DE">Datensatz</text>
+        <text language="nl-NL">Dataset</text>
+    </entry>
+    <entry key="columnOID">
+        <text language="en-US">OID</text>
+        <text language="de-DE">OID</text>
+        <text language="nl-NL">OID</text>
+    </entry>
+    <entry key="columnScenario">
+        <text language="en-US">Scenario</text>
+        <text language="de-DE">Szenario</text>
+        <text language="nl-NL">Scenario</text>
+    </entry>
+    <entry key="columnSymbolicName">
+        <text language="en-US">Symbolic Name</text>
+        <text language="de-DE">Symbolischer Name</text>
+        <text language="nl-NL">Symbolische naam</text>
+    </entry>
+    <entry key="columnProjects">
+        <text language="en-US">Projects</text>
+        <text language="de-DE">Projekte</text>
+        <text language="nl-NL">Projecten</text>
+    </entry>
+    <entry key="columnTerminology">
+        <text language="en-US">Terminology</text>
+        <text language="de-DE">Terminologie</text>
+        <text language="nl-NL">Terminologie</text>
+    </entry>
+    <entry key="columnValueSetName">
+        <text language="en-US">Value Set Name</text>
+        <text language="de-DE">Value Set Name</text>
+        <text language="nl-NL">Waardelijst-naam</text>
+    </entry>
+    <entry key="columnValueSet">
+        <text language="en-US">Value Set</text>
+        <text language="de-DE">Value Set</text>
+        <text language="nl-NL">Waardelijst</text>
+    </entry>
+    <entry key="columnValueSetID">
+        <text language="en-US">Value Set Id</text>
+        <text language="de-DE">Value Set Id</text>
+        <text language="nl-NL">Waardelijst-id</text>
+    </entry>
+    <entry key="columnAllView">
+        <text language="en-US">All</text>
+        <text language="de-DE">Alles</text>
+        <text language="nl-NL">Alles</text>
+    </entry>
+    <entry key="columnDataView">
+        <text language="en-US">Data view</text>
+        <text language="de-DE">Daten-Sicht</text>
+        <text language="nl-NL">Data view</text>
+    </entry>
+    <entry key="columnCareView">
+        <text language="en-US">Care view</text>
+        <text language="de-DE">Sicht des Gesundheitsdienstleisters</text>
+        <text language="nl-NL">Zorg view</text>
+    </entry>
+    <entry key="columnCareViewSmall">
+        <text language="en-US">Care view limited</text>
+        <text language="de-DE">Sicht des Gesundheitsdienstleisters, eingeschränkt</text>
+        <text language="nl-NL">Zorg view beperkt</text>
+    </entry>
+    <entry key="columnID">
+        <text language="en-US">ID</text>
+        <text language="de-DE">ID</text>
+        <text language="nl-NL">ID</text>
+    </entry>
+    <entry key="columnCardinality">
+        <text language="en-US">Card</text>
+        <text language="de-DE">Kard</text>
+        <text language="nl-NL">Card</text>
+    </entry>
+    <entry key="columnMin">
+        <text language="en-US">Min</text>
+        <text language="de-DE">Min</text>
+        <text language="nl-NL">Min</text>
+    </entry>
+    <entry key="columnConformance">
+        <text language="en-US">Conf</text>
+        <text language="de-DE">Conf</text>
+        <text language="nl-NL">Conf</text>
+    </entry>
+    <entry key="columnMandatory">
+        <text language="en-US">Mandatory</text>
+        <text language="de-DE">Mandatory</text>
+        <text language="nl-NL">Vereist</text>
+    </entry>
+    <entry key="columnOperationalization">
+        <text language="en-US">Operationalizations</text>
+        <text language="de-DE">Operationalisierungen</text>
+        <text language="nl-NL">Operationalisaties</text>
+    </entry>
+    <entry key="columnRationale">
+        <text language="en-US">Rationale</text>
+        <text language="de-DE">Rationale</text>
+        <text language="nl-NL">Rationale</text>
+    </entry>
+    <entry key="columnSource">
+        <text language="en-US">Source</text>
+        <text language="de-DE">Quelle</text>
+        <text language="nl-NL">Bron</text>
+    </entry>
+    <entry key="columnComment">
+        <text language="en-US">Comment</text>
+        <text language="de-DE">Kommentar</text>
+        <text language="nl-NL">Opmerking</text>
+    </entry>
+    <entry key="columnCondition">
+        <text language="en-US">Condition</text>
+        <text language="de-DE">Condition</text>
+        <text language="nl-NL">Conditie</text>
+    </entry>
+    <entry key="tooltipMin">
+        <text language="en-US">Minimum number of occurrences</text>
+        <text language="de-DE">Minimale Anzahl des Vorkommens</text>
+        <text language="nl-NL">Minimum aantal voorkomens</text>
+    </entry>
+    <entry key="columnMax">
+        <text language="en-US">Number</text>
+        <text language="de-DE">Anzahl</text>
+        <text language="nl-NL">Aantal</text>
+    </entry>
+    <entry key="tooltipMax">
+        <text language="en-US">Maximum number of occurrences</text>
+        <text language="de-DE">Maximale Anzahl des Vorkommens</text>
+        <text language="nl-NL">Maximum aantal voorkomens</text>
+    </entry>
+    <entry key="columnUnit">
+        <text language="en-US">Unit</text>
+        <text language="de-DE">Einheit</text>
+        <text language="nl-NL">Eenheid</text>
+    </entry>
+    <entry key="columnExample">
+        <text language="en-US">Example</text>
+        <text language="de-DE">Beispiel</text>
+        <text language="nl-NL">Voorbeeld</text>
+    </entry>
+    <entry key="columnDatatype">
+        <text language="en-US">Datatype</text>
+        <text language="de-DE">Datentyp</text>
+        <text language="nl-NL">Datatype</text>
+    </entry>
+    <entry key="columnStatus">
+        <text language="en-US">Status</text>
+        <text language="de-DE">Status</text>
+        <text language="nl-NL">Status</text>
+    </entry>
+    <entry key="columnName">
+        <text language="en-US">Name</text>
+        <text language="de-DE">Name</text>
+        <text language="nl-NL">Naam</text>
+    </entry>
+    <entry key="columnLatestVersion">
+        <text language="en-US">Latest Version</text>
+        <text language="de-DE">Letzte Version</text>
+        <text language="nl-NL">Nieuwste versie</text>
+    </entry>
+    <entry key="columnVersionLabel">
+        <text language="en-US">Version Label</text>
+        <text language="de-DE">Versions-Label</text>
+        <text language="nl-NL">Versielabel</text>
+    </entry>
+    <entry key="columnProjectPrefix">
+        <text language="en-US">Project Prefix</text>
+        <text language="de-DE">Project Prefix</text>
+        <text language="nl-NL">Projectprefix</text>
+    </entry>
+    <entry key="columnRealm">
+        <text language="en-US">Realm</text>
+        <text language="de-DE">Realm</text>
+        <text language="nl-NL">Realm</text>
+    </entry>
+    <entry key="columnCodes">
+        <text language="en-US">Codes</text>
+        <text language="de-DE">Codes</text>
+        <text language="nl-NL">Codes</text>
+    </entry>
+    <entry key="columnDescription">
+        <text language="en-US">Description</text>
+        <text language="de-DE">Beschreibung</text>
+        <text language="nl-NL">Omschrijving</text>
+    </entry>
+    <entry key="columnResponsibleAuthority">
+        <text language="en-US">Responsible Authority</text>
+        <text language="de-DE">Verantwortliche Stelle</text>
+        <text language="nl-NL">Beheerder</text>
+    </entry>
+    <entry key="columnResponsibleAuthorityEffectiveTime">
+        <text language="en-US">Responsible Authority: effective time</text>
+        <text language="de-DE">Verantwortliche Stelle: Gültigkeit</text>
+        <text language="nl-NL">Beheerder: geldigheid</text>
+    </entry>
+    <entry key="columnResponsibleAuthorityStatus">
+        <text language="en-US">Responsible Authority: status</text>
+        <text language="de-DE">Verantwortliche Stelle: Status</text>
+        <text language="nl-NL">Beheerder: status</text>
+    </entry>
+    <entry key="columnRegistrationAuthority">
+        <text language="en-US">Registration Authority</text>
+        <text language="de-DE">Registriert durch</text>
+        <text language="nl-NL">Geregistreerd door</text>
+    </entry>
+    <entry key="columnCategory">
+        <text language="en-US">Category</text>
+        <text language="de-DE">Kategorie</text>
+        <text language="nl-NL">Categorie</text>
+    </entry>
+    <entry key="columnExtraProperties">
+        <text language="en-US">Extra Properties</text>
+        <text language="de-DE">Zusätzliche Eigenschaften</text>
+        <text language="nl-NL">Extra attributen</text>
+    </entry>
+    <entry key="columnReference">
+        <text language="en-US">Reference</text>
+        <text language="de-DE">Referenz</text>
+        <text language="nl-NL">Referentie</text>
+    </entry>
+    <entry key="columnLevelSlashType">
+        <text language="en-US">Level/&#160;Type</text>
+        <text language="de-DE">Level/&#160;Typ</text>
+        <text language="nl-NL">Niveau/&#160;Type</text>
+    </entry>
+    <entry key="columnCode">
+        <text language="en-US">Code</text>
+        <text language="en-NL">Code</text>
+        <text language="de-DE">Code</text>
+        <text language="nl-NL">Code</text>
+    </entry>
+    <entry key="columnCodeSystem">
+        <text language="en-US">Code System</text>
+        <text language="de-DE">Codesystem</text>
+        <text language="nl-NL">Codesysteem</text>
+    </entry>
+    <entry key="columnCodeSystemID">
+        <text language="en-US">Code System Id</text>
+        <text language="de-DE">Codesystem Id</text>
+        <text language="nl-NL">Codesysteem-id</text>
+    </entry>
+    <entry key="columnCodeSystemName">
+        <text language="en-US">Code System Name</text>
+        <text language="de-DE">Codesystem Name</text>
+        <text language="nl-NL">Codesysteem-naam</text>
+    </entry>
+    <entry key="columnCodeSystemVersion">
+        <text language="en-US">Code System Version</text>
+        <text language="de-DE">Codesystem Version</text>
+        <text language="nl-NL">Codesysteemversie</text>
+    </entry>
+    <entry key="columnVerbatim">
+        <text language="en-US">Verbatim</text>
+        <text language="de-DE">Verbatim</text>
+        <text language="nl-NL">Verbatim</text>
+    </entry>
+    <entry key="columnCompiled">
+        <text language="en-US">Compiled</text>
+        <text language="de-DE">Compiled</text>
+        <text language="nl-NL">Gecompileerd</text>
+    </entry>
+    <entry key="columnCommunity">
+        <text language="en-US">Community</text>
+        <text language="de-DE">Community</text>
+        <text language="nl-NL">Community</text>
+    </entry>
+    <entry key="retrievalModeVerbatim">
+        <text language="en-US">Get</text>
+        <text language="de-DE">Get</text>
+        <text language="nl-NL">Ophalen</text>
+    </entry>
+    <entry key="retrievalModeCompiled">
+        <text language="en-US">Get</text>
+        <text language="de-DE">Get</text>
+        <text language="nl-NL">Ophalen</text>
+    </entry>
+    <entry key="helpVerbatim">
+        <text language="en-US">Get a copy of the project as-is without resolving any references to artifacts outside the project e.g. a repository</text>
+        <text language="de-DE">Get a copy of the project as-is without resolving any references to artifacts outside the project e.g. a repository</text>
+        <text language="nl-NL">Kopie ophalen van het project zonder referenties naar artefacten buiten het project, zoals in een repository, te verwerken</text>
+    </entry>
+    <entry key="helpCompiled">
+        <text language="en-US">Get a copy of the project and resolve references to artifacts outside the project, making the project self-contained for the purpose of HTML and Schematron generation. NOTE: Unsuited for any other purpose!</text>
+        <text language="de-DE">Get a copy of the project and resolve references to artifacts outside the project, making the project self-contained for the purpose of HTML and Schematron generation. NOTE: Unsuited for any other purpose!</text>
+        <text language="nl-NL">Kopie ophalen van het project waarbij referenties naar artefacten buiten het project worden verwerkt zodat het een zelfstandig project wordt ten behoeve van HTML- en Schematrongeneratie. LET OP: Ongeschikt voor enig ander doel!</text>
+    </entry>
+    <entry key="headingError">
+        <text language="en-US">Error</text>
+        <text language="de-DE">Fehler</text>
+        <text language="nl-NL">Fout</text>
+    </entry>
+    <entry key="headingUpload">
+        <text language="en-US">Upload</text>
+        <text language="de-DE">Upload</text>
+        <text language="nl-NL">Upload</text>
+    </entry>
+    <entry key="headingCommandline">
+        <text language="en-US">Command Line</text>
+        <text language="de-DE">Kommandozeile</text>
+        <text language="nl-NL">Commandoregel</text>
+    </entry>
+    <entry key="instructionsRenderCDA">
+        <text language="en-US">Upload a valid HL7 V3 CDAr2 or CDAr3 document and click "HTML" and "Show" to see the human readable rendering of that document, or upload a valid CDAr2 document and click "CDAr3" and "Show" to convert it into CDAr3 and show the result in plain XML</text>
+        <text language="de-DE">Upload a valid HL7 V3 CDAr2 or CDAr3 document and click "HTML" and "Show" to see the human readable rendering of that document, or upload a valid CDAr2 document and click "CDAr3" and "Show" to convert it into CDAr3 and show the result in plain XML</text>
+        <text language="nl-NL">Upload een geldig HL7v3 CDAr2 of CDAr3 bestand, selecteer "HTML" en "Tonen" om de voor mensen leesbare versie van het document weer te geven, of upload een geldig CDAr2 document om deze te converteren naar CDAr3 en het resultaat van de conversie weer te geven in XML</text>
+    </entry>
+    <entry key="instructionsRenderCDACommandLine1">
+        <text language="en-US">Command line equivalent to convert &lt;i&gt;cda.xml&lt;/i&gt; into &lt;i&gt;cda.html&lt;/i&gt; using &lt;a href="http://curl.haxx.se"&gt;cURL&lt;/a&gt;
+        </text>
+        <text language="de-DE">Command line equivalent to convert &lt;i&gt;cda.xml&lt;/i&gt; into &lt;i&gt;cda.html&lt;/i&gt; using &lt;a href="http://curl.haxx.se"&gt;cURL&lt;/a&gt;
+        </text>
+        <text language="nl-NL">Equivalent op de commandoregel om &lt;i&gt;cda.xml&lt;/i&gt; te converteren naar &lt;i&gt;cda.html&lt;/i&gt; met &lt;a href="http://curl.haxx.se"&gt;cURL&lt;/a&gt;
+        </text>
+    </entry>
+    <entry key="instructionsRenderCDACommandLine2">
+        <text language="en-US">Command line equivalent to convert &lt;i&gt;cdar2.xml&lt;/i&gt; into &lt;i&gt;cdar3.xml&lt;/i&gt; using &lt;a href="http://curl.haxx.se"&gt;cURL&lt;/a&gt;
+        </text>
+        <text language="de-DE">Command line equivalent to convert &lt;i&gt;cdar2.xml&lt;/i&gt; into &lt;i&gt;cdar3.xml&lt;/i&gt; using &lt;a href="http://curl.haxx.se"&gt;cURL&lt;/a&gt;
+        </text>
+        <text language="nl-NL">Equivalent op de commandoregel om &lt;i&gt;cdar2.xml&lt;/i&gt; te converteren naar &lt;i&gt;cdar3.xml&lt;/i&gt; met &lt;a href="http://curl.haxx.se"&gt;cURL&lt;/a&gt;
+        </text>
+    </entry>
+    <entry key="columnConceptName">
+        <text language="en-US">Concept Name</text>
+        <text language="de-DE">Konzeptname</text>
+        <text language="nl-NL">Conceptnaam</text>
+    </entry>
+    <entry key="columnDisplayName">
+        <text language="en-US">Display Name</text>
+        <text language="de-DE">Anzeigename</text>
+        <text language="nl-NL">Weergavenaam</text>
+    </entry>
+    <entry key="buttonCollapseAll">
+        <text language="en-US">Collapse All</text>
+        <text language="de-DE">Alles einklappen</text>
+        <text language="nl-NL">Alles inklappen</text>
+    </entry>
+    <entry key="buttonExpandAll">
+        <text language="en-US">Expand All</text>
+        <text language="de-DE">Alles ausklappen</text>
+        <text language="nl-NL">Alles uitklappen</text>
+    </entry>
+    <entry key="buttonCollapseAllCodes">
+        <text language="en-US">Collapse All Codes</text>
+        <text language="de-DE">Alle Codes einklappen</text>
+        <text language="nl-NL">Alle codes inklappen</text>
+    </entry>
+    <entry key="buttonShow">
+        <text language="en-US">HTML</text>
+        <text language="de-DE">HTML</text>
+        <text language="nl-NL">HTML</text>
+    </entry>
+    <entry key="buttonConvert">
+        <text language="en-US">CDAr3</text>
+        <text language="de-DE">CDAr3</text>
+        <text language="nl-NL">CDAr3</text>
+    </entry>
+    <entry key="buttonGo">
+        <text language="en-US">Show</text>
+        <text language="de-DE">Zeigen</text>
+        <text language="nl-NL">Tonen</text>
+    </entry>
+    <entry key="effectiveDate">
+        <text language="en-US">Effective Date</text>
+        <text language="de-DE">Gültigkeit</text>
+        <text language="nl-NL">Geldigheid</text>
+    </entry>
+    <entry key="expirationDate">
+        <text language="en-US">Expiration Date</text>
+        <text language="de-DE">Ende Gültigkeit</text>
+        <text language="nl-NL">Verloopdatum</text>
+    </entry>
+    <entry key="effectiveTime">
+        <text language="en-US">Effective Time</text>
+        <text language="de-DE">Gültigkeit</text>
+        <text language="nl-NL">Geldigheid</text>
+    </entry>
+    <entry key="contactPerson">
+        <text language="en-US">Contact Person</text>
+        <text language="de-DE">Kontaktperson</text>
+        <text language="nl-NL">Contactpersoon</text>
+    </entry>
+    <entry key="contactOrganization">
+        <text language="en-US">, Organisation</text>
+        <text language="de-DE">, Organisation</text>
+        <text language="nl-NL">, organisatie</text>
+    </entry>
+    <entry key="effectiveTimeFrom">
+        <text language="en-US">from&#160;%%1</text>
+        <text language="de-DE">von&#160;%%1</text>
+        <text language="nl-NL">van&#160;%%1</text>
+    </entry>
+    <entry key="effectiveTimeTo">
+        <text language="en-US"> to&#160;%%1</text>
+        <text language="de-DE"> bis&#160;%%1</text>
+        <text language="nl-NL"> tot&#160;%%1</text>
+    </entry>
+    <entry key="registrationStatus">
+        <text language="en-US">Registration Status</text>
+        <text language="de-DE">Status Registrierung</text>
+        <text language="nl-NL">Registratiestatus</text>
+    </entry>
+    <entry key="language">
+        <text language="en-US">Language </text>
+        <text language="de-DE">Sprache </text>
+        <text language="nl-NL">Taal </text>
+    </entry>
+    <entry key="lastVisit">
+        <text language="en-US"> last visit: </text>
+        <text language="de-DE"> letzter Besuch: </text>
+        <text language="nl-NL"> laatst bezocht: </text>
+    </entry>
+    <entry key="goTo">
+        <text language="en-US">Show </text>
+        <text language="de-DE">Zeige </text>
+        <text language="nl-NL">Toon </text>
+    </entry>
+    <entry key="displayAs">
+        <text language="en-US">Display as </text>
+        <text language="de-DE">Zeige als </text>
+        <text language="nl-NL">Toon als </text>
+    </entry>
+    <entry key="xSourceCodeSystem">
+        <text language="en-US">Source&#160;Code&#160;System</text>
+        <text language="de-DE">Quell-Codesystem</text>
+        <text language="nl-NL">Bron&#160;codesysteem</text>
+    </entry>
+    <entry key="titleError">
+        <text language="en-US">Error</text>
+        <text language="de-DE">Fehler</text>
+        <text language="nl-NL">Fout</text>
+    </entry>
+    <entry key="xCompleteCodeSystem">
+        <text language="en-US">A valid code from the code system:</text>
+        <text language="de-DE">Ein gültiger Code aus dem Codesystem:</text>
+        <text language="nl-NL">Een geldige code uit het codesysteem:</text>
+    </entry>
+    <entry key="xCompleteCodeSystems">
+        <text language="en-US">A valid code from one of the %%1 code systems:</text>
+        <text language="de-DE">Ein gültiger Code aus einer der %%1 Codesysteme:</text>
+        <text language="nl-NL">Een geldige code uit één van de %%1 codesystemen:</text>
+    </entry>
+    <entry key="flexibilityDynamic">
+        <text language="en-US"> DYNAMIC </text>
+        <text language="de-DE"> DYNAMIC </text>
+        <text language="nl-NL"> DYNAMISCH </text>
+    </entry>
+    <entry key="dynamic">
+        <text language="en-US">dynamic</text>
+        <text language="de-DE">dynamic</text>
+        <text language="nl-NL">dynamisch</text>
+    </entry>
+    <entry key="static">
+        <text language="en-US">static</text>
+        <text language="de-DE">static</text>
+        <text language="nl-NL">statisch</text>
+    </entry>
+    <entry key="columnFlexibility">
+        <text language="en-US">Flexibility</text>
+        <text language="de-DE">Flexibilität</text>
+        <text language="nl-NL">Flexibiliteit</text>
+    </entry>
+    <entry key="orOneOfTheFollowing">
+        <text language="en-US">Or one of the following:</text>
+        <text language="de-DE">Or one of the following:</text>
+        <text language="nl-NL">Of een van de volgende:</text>
+    </entry>
+    <entry key="CodeSystemLegendaLine">
+        <text language="en-US">Legenda: Type L=leaf, S=specializable, A=abstract, D=deprecated. NullFlavors to appear in @nullFlavor attribute instead of @code.</text>
+        <text language="de-DE">Legende: Typ L=leaf, S=specializable, A=abstract, D=deprecated. NullFlavors werden im @nullFlavor Attribut statt in @code angegeben.</text>
+        <text language="nl-NL">Legenda: Type L=leaf, S=specializable, A=abstract, D=deprecated. NullFlavors komen in het attribuut @nullFlavor in plaats van in @code.</text>
+    </entry>
+    <entry key="Condition">
+        <text language="en-US">Condition</text>
+        <text language="de-DE">Bedingung</text>
+        <text language="nl-NL">Conditie</text>
+    </entry>
+    <entry key="textFunctionalPerspective">
+        <text language="en-US">Functional Perspective</text>
+        <text language="de-DE">Functional Perspective</text>
+        <text language="nl-NL">Functioneel perspectief</text>
+    </entry>
+    <entry key="textTechnicalPerspective">
+        <text language="en-US">Technical Perspective</text>
+        <text language="de-DE">Technical Perspective</text>
+        <text language="nl-NL">Technisch perspectief</text>
+    </entry>
+    <entry key="fromRepoOrProject">
+        <text language="en-US">from</text>
+        <text language="de-DE">von</text>
+        <text language="nl-NL">uit</text>
+    </entry>
+    <entry key="viaProject">
+        <text language="en-US">via</text>
+        <text language="de-DE">via</text>
+        <text language="nl-NL">via</text>
+    </entry>
+    <entry key="projectVersion">
+        <text language="en-US">project version</text>
+        <text language="de-DE">Projekt Version</text>
+        <text language="nl-NL">projectversie</text>
+    </entry>
+    <entry key="errorCouldNotResolveReference">
+        <text language="en-US">Could not resolve reference</text>
+        <text language="de-DE">Referenz Ziel nicht gefunden</text>
+        <text language="nl-NL">Kon de referentie niet vinden</text>
+    </entry>
+    <entry key="CodeSystemReferenceData">
+        <text language="en-US">Reference to another code systems with id='%%1' and name='%%2'</text>
+        <text language="de-DE">Reference to another codesystem with id='%%1' and name='%%2'</text>
+        <text language="nl-NL">Referentie naar een andere codestelsel met id='%%1' en naam='%%2'</text>
+    </entry>
+    <entry key="ValueSetReferenceData">
+        <text language="en-US">Reference to another value set with id='%%1' and name='%%2'</text>
+        <text language="de-DE">Reference to another value set with id='%%1' and name='%%2'</text>
+        <text language="nl-NL">Referentie naar een andere waardelijst met id='%%1' en naam='%%2'</text>
+    </entry>
+    <entry key="SelectProject">
+        <text language="en-US">Select a project: </text>
+        <text language="de-DE">Bitte wählen Sie ein Project: </text>
+        <text language="nl-NL">Selecteer een project: </text>
+    </entry>
+    <entry key="ReportType">
+        <text language="en-US">Report type</text>
+        <text language="de-DE">Report Typ</text>
+        <text language="nl-NL">Rapporttype</text>
+    </entry>
+    <entry key="OptionAll">
+        <text language="en-US">--All--</text>
+        <text language="de-DE">--Alle--</text>
+        <text language="nl-NL">--Alle--</text>
+    </entry>
+    <entry key="contains">
+        <text language="en-US">contains</text>
+        <text language="de-DE">enthält</text>
+        <text language="nl-NL">bevat</text>
+    </entry>
+    <entry key="FullIndex">
+        <text language="en-US">Full index</text>
+        <text language="de-DE">Vollständigen Index</text>
+        <text language="nl-NL">Volledige index</text>
+    </entry>
+    <entry key="Find">
+        <text language="en-US">Find</text>
+        <text language="de-DE">Suchen</text>
+        <text language="nl-NL">Zoeken</text>
+    </entry>
+    <entry key="Send">
+        <text language="en-US">Send</text>
+        <text language="de-DE">Senden</text>
+        <text language="nl-NL">Verzenden</text>
+    </entry>
+    <entry key="Filter">
+        <text language="en-US">Filter</text>
+        <text language="de-DE">Filter</text>
+        <text language="nl-NL">Filteren</text>
+    </entry>
+    <entry key="FoundXResults">
+        <text language="en-US">%%1 found</text>
+        <text language="de-DE">%%1 gefunden</text>
+        <text language="nl-NL">%%1 gevonden</text>
+    </entry>
+    <entry key="columnRegistry">
+        <text language="en-US">OID Registry</text>
+        <text language="de-DE">OID Register</text>
+        <text language="nl-NL">OID Register</text>
+    </entry>
+    <entry key="trNoProblemsFound">
+        <text language="en-US">No problems found</text>
+        <text language="nl-NL">Geen problemen gevonden</text>
+        <text language="de-DE">Kein Problem gefunden</text>
+    </entry>
+    <entry key="trConceptNotFoundOrMismatch">
+        <text language="en-US">Concept not found or different name found and/or concept has new status</text>
+        <text language="nl-NL">Concept niet gevonden of met andere naam en/of status</text>
+        <text language="de-DE">Concept not found or different name found and/or concept has new status</text>
+    </entry>
+    <entry key="trConceptNotFoundOrMismatchName">
+        <text language="en-US">Could not find concept, or concept has different name in codesystem</text>
+        <text language="nl-NL">Concept niet gevonden of met andere naam</text>
+        <text language="de-DE">Could not find concept, or concept has different name in codesystem</text>
+    </entry>
+    <entry key="trAssociationFoundCountTitle">
+        <text language="en-US">Terminology Associations (%%1 differences found)</text>
+        <text language="nl-NL">Terminologiekoppelingen (%%1 verschillen gevonden)</text>
+        <text language="de-DE">Terminology Associations (%%1 differences found)</text>
+    </entry>
+    <entry key="trValuesetsFoundCountTitle">
+        <text language="en-US">Valuesets (%%1 differences found in %%2 valuesets)</text>
+        <text language="nl-NL">Waardelijsten (%%1 verschillen gevonden in  %%2 waardelijsten)</text>
+        <text language="de-DE">Valuesets (%%1 differences found in %%2 valuesets)</text>
+    </entry>
+    <entry key="columnConceptId">
+        <text language="en-US">Concept Id</text>
+        <text language="nl-NL">Concept-id</text>
+        <text language="de-DE">Konzept Id</text>
+    </entry>
+    <entry key="columnOriginalData">
+        <text language="en-US">Original Codesystem Data</text>
+        <text language="nl-NL">Oorspronkelijke gegevens codesysteem</text>
+        <text language="de-DE">Original Codesystem Data</text>
+    </entry>
+    <entry key="trConceptNotInValueSetOrMismatchName">
+        <text language="en-US">Could not find concept in the valueset that the dataset conceptlist binds to, or concept has different name</text>
+        <text language="nl-NL">Concept niet gevonden in de waardelijst waar het waardedomein aan is gekoppeld, of concept heeft een andere naam</text>
+        <text language="de-DE">Could not find concept in the valueset that the dataset conceptlist binds to, or concept has different name</text>
+    </entry>
+    <entry key="trConceptTypeUnknownOrMismatchName">
+        <text language="en-US">Could not determine the concept type and/or could not find the concept or concept has a different name</text>
+        <text language="nl-NL">Concept heeft onbekend type en/of niet gevonden, of concept heeft een andere naam</text>
+        <text language="de-DE">Could not determine the concept type and/or could not find the concept or concept has a different name</text>
+    </entry>
+</messsages>

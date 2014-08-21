@@ -1,0 +1,361 @@
+<!--
+    Copyright (C) 2011-2014 ART-DECOR expert group art-decor.org
+    
+    Author: Gerrit Boers
+
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:widget="http://orbeon.org/oxf/xml/widget" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="decor-codesystem-ids" xsi:schemaLocation="http://www.w3.org/1999/xhtml ../../orbeon_schemas/xhtml1-transitional-orbeon.xsd">
+    <xhtml:head>
+        <xhtml:title>
+            <xforms:output ref="if (instance('project-instance')/name[@language=$resources/@xml:lang]) then (instance('project-instance')/name[@language=$resources/@xml:lang]) else (instance('project-instance')/name[1])"/> - <xforms:output ref="$resources/codesystems"/>
+        </xhtml:title>
+        <xforms:model id="decor-codesystems">
+         <!-- Variable with path to art-external-exist for use by html -->
+            <xxforms:variable name="art-external-exist" select="xxforms:property('art.external.exist.url')"/>
+         <!-- Variable with path to art-exist -->
+            <xxforms:variable name="art-exist" select="xxforms:property('art.exist.url')"/>
+         <!-- resources for internationalization -->
+            <xforms:instance id="resources-instance">
+                <dummy/>
+            </xforms:instance>
+            <!-- submission for loading resources -->
+            <xforms:submission id="get-resources-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-form-resources.xquery" replace="instance" instance="resources-instance"/>
+            <!-- language -->
+            <xforms:instance id="language">
+                <language/>
+            </xforms:instance>
+
+            <!-- instance for edit status -->
+            <xforms:instance id="data-safe">
+                <data-safe>true</data-safe>
+            </xforms:instance>
+            <xforms:instance id="edit">
+                <edit>
+                    <codeSystem>false</codeSystem>
+                    <references>false</references>
+                </edit>
+            </xforms:instance>
+
+         <!-- instance for document name -->
+            <xforms:instance id="document">
+                <name>dsexpl1</name>
+            </xforms:instance>
+            
+         <!-- instance for DECOR Schema enumerations -->
+            <xforms:instance id="decor-types">
+                <dummy/>
+            </xforms:instance>
+         <!-- get decor schema submission -->
+            <xforms:submission id="get-decor-schema-types" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-schema-types.xquery" replace="instance" instance="decor-types" xxforms:readonly="true"/>
+
+         <!-- instance for DECOR project -->
+            <xforms:instance id="project-instance">
+                <dummy/>
+            </xforms:instance>
+            <xforms:submission id="get-decor-project-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-project.xq?project={instance('document')}" replace="instance" instance="project-instance"/>
+
+         <!-- codeSystem list -->
+            <xforms:instance id="decor-codesystem-list" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+            <xforms:bind nodeset="instance('decor-codesystem-list')/codeSystem" id="codeSystemsAvailable"/>
+         <!-- get codesystem list -->
+            <xforms:submission id="get-decor-codesystem-list" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-codesystem-list.xquery?project={instance('document')}&amp;language={instance('language')}" replace="instance" instance="decor-codesystem-list">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+            
+         <!-- codeSystem references -->
+            <xforms:instance id="codesystem-references">
+                <dummy/>
+            </xforms:instance>
+         <!-- event observer for codeSystem references changes -->
+            <xforms:action ev:observer="codesystem-references" ev:event="xforms-insert xforms-delete xxforms-value-changed">
+                <xforms:setvalue ref="instance('data-safe')">false</xforms:setvalue>
+                <xforms:setvalue ref="instance('edit')/references">true</xforms:setvalue>
+            </xforms:action>
+         <!-- get codesystem references -->
+            <xforms:submission id="get-codesystem-references" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-codesystem-references.xquery?project={instance('document')}" replace="instance" instance="codesystem-references">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- save codesystem references -->
+            <xforms:submission id="save-codesystem-references" ref="instance('codesystem-references')" resource="{$art-exist}/modules/save-decor-codesystem-references.xquery" method="post" replace="none" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+            
+         <!-- instance for missing codeSystems -->
+            <xforms:instance id="missing-codeSystems">
+                <dummy/>
+            </xforms:instance>
+            <xforms:instance id="enable-add-missing-codeSystems">
+                <dummy/>
+            </xforms:instance>
+         <!-- get missing ids -->
+            <xforms:submission id="get-missing-codeSystems" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-project-missing-codesystems.xquery?project={instance('document')}&amp;language={instance('language')}" replace="instance" instance="missing-codeSystems">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- add missing codeSystems submission -->
+            <xforms:submission id="add-missing-codeSystems" ref="instance('missing-codeSystems')" action="{$art-exist}/modules/add-decor-missing-codesystems.xquery?language={instance('language')}" method="post" replace="instance" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+            <xforms:bind nodeset="instance('enable-add-missing-codeSystems')" readonly="count(instance('missing-codeSystems')/*[(@name|@displayName)=''])>0"/>
+            <xforms:action ev:event="xforms-model-construct-done">
+                <xforms:send submission="get-resources-submission"/>
+                <xforms:send submission="get-decor-project-submission"/>
+                <xforms:setvalue ref="instance('language')" value="if (string-length(xxforms:get-session-attribute('language'))&gt;0) then (xxforms:get-session-attribute('language')) else (instance('project-instance')/@defaultLanguage/string())"/>
+                <xforms:send submission="get-decor-schema-types"/>
+                <xforms:setvalue ref="instance('document')" value="xxforms:get-request-parameter('prefix')"/>
+                <xforms:send submission="get-decor-codesystem-list"/>
+                <xforms:send submission="get-codesystem-references"/>
+                <xforms:send submission="get-missing-codeSystems"/>
+            </xforms:action>
+            <xforms:action ev:event="xforms-ready">
+                <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+            </xforms:action>
+            <xxforms:script ev:event="xforms-ready">
+                window.onbeforeunload = function() {
+                    if (ORBEON.xforms.Document.getValue('data-safe-input') != 'true')
+                    return "Deze tekst kunnen we aanpassen.";
+                }
+            </xxforms:script>
+            <!-- relevant language is returned as first node, rest should be empty -->
+            <xxforms:variable name="resources" select="instance('resources-instance')//resources[1]"/>
+            <xxforms:variable name="editor" select="contains(xxforms:get-session-attribute('groups'),'editor') and instance('project-instance')/author[@username=xxforms:get-session-attribute('username')]"/>
+        </xforms:model>
+    </xhtml:head>
+    <xhtml:body>
+        <!-- special output used to give warning if user leaves page -->
+        <xforms:output ref="instance('data-safe')" id="data-safe-input" style="display: none"/>
+        <!-- save and cancel buttons -->
+        <xhtml:table width="100%">
+            <xhtml:tr>
+                <xhtml:td>
+                    <!-- show cancel and save buttons if data-safe=false -->
+                    <xforms:group ref=".[instance('data-safe')='false'][instance('edit')/references='true']">
+                        <xhtml:div class="buttons">
+                            <fr:button>
+                                <xforms:label ref="$resources/cancel"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xforms:send submission="get-codesystem-references"/>
+                                    <xforms:setvalue ref="instance('edit')/references">false</xforms:setvalue>
+                                    <xforms:action if="instance('edit')/codeSystem='false'">
+                                        <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                                    </xforms:action>
+                                </xforms:action>
+                            </fr:button>
+                            <fr:button>
+                                <xforms:label ref="$resources/save"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xforms:send submission="save-codesystem-references"/>
+                                    <xforms:setvalue ref="instance('edit')/references">false</xforms:setvalue>
+                                    <xforms:action if="instance('edit')/codeSystem='false'">
+                                        <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                                    </xforms:action>
+                                </xforms:action>
+                            </fr:button>
+                        </xhtml:div>
+                    </xforms:group>
+                </xhtml:td>
+            </xhtml:tr>
+        </xhtml:table>
+        <!-- codesystems -->
+        <fr:accordion class="fr-accordion-lnf">
+            <!-- codesystem references -->
+            <fr:case selected="true" id="external-codesystems">
+                <fr:label ref="concat($resources/external-codesystems, ' (', count(instance('codesystem-references')/codeSystem), ')')"/>
+                <xhtml:table width="100%" class="detail">
+                    <xhtml:tr>
+                        <xhtml:td class="heading" colspan="3">
+                            <xhtml:div class="heading">
+                                <xforms:output ref="$resources/external-codesystems"/>
+                            </xhtml:div>
+                            <xhtml:div class="buttons">
+                                <xforms:group ref=".[$editor]">
+                                    <fr:button>
+                                        <xforms:label>
+                                            <xhtml:img src="/img/plus.png" alt="" align="right"/>
+                                        </xforms:label>
+                                        <xforms:hint ref="$resources/add"/>
+                                        <xforms:action ev:event="DOMActivate">
+                                            <xforms:insert context="instance('codesystem-references')" nodeset="codeSystem" at="index('codeSystem-references')" position="after" origin="xxforms:element('codeSystem',(xxforms:attribute('ref',''),xxforms:attribute('name',''),xxforms:attribute('displayName','')))"/>
+                                            <xforms:setfocus control="codeSystem-references"/>
+                                        </xforms:action>
+                                    </fr:button>
+                                </xforms:group>
+                            </xhtml:div>
+                        </xhtml:td>
+                    </xhtml:tr>
+                    <xhtml:tr>
+                        <xhtml:td class="item-label">
+                            <xforms:output ref="$resources/id"/>
+                        </xhtml:td>
+                        <xhtml:td class="item-label">
+                            <xforms:output ref="$resources/name"/>
+                        </xhtml:td>
+                        <xhtml:td class="item-label">
+                            <xforms:output ref="$resources/display-name"/>
+                        </xhtml:td>
+                    </xhtml:tr>
+                    <xforms:group ref=".[$editor]">
+                        <xforms:repeat nodeset="codeSystem" id="codeSystem-references">
+                            <xhtml:tr>
+                                <xhtml:td>
+                                    <xforms:input ref="@ref"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:input ref="@name"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:input ref="@displayName"/>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xforms:repeat>
+                    </xforms:group>
+                    <xforms:group ref="instance('codesystem-references')[not($editor)]">
+                        <xforms:repeat nodeset="codeSystem">
+                            <xhtml:tr>
+                                <xhtml:td>
+                                    <xforms:output ref="@ref"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:output ref="@name"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:output ref="@displayName"/>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xforms:repeat>
+                    </xforms:group>
+                </xhtml:table>
+            </fr:case>
+            <!-- project codesystems including indication if missing -->
+            <fr:case selected="true" id="used-codesystems">
+                <fr:label ref="concat($resources/used-codesystems, ' (', count(instance('decor-codesystem-list')/usedCodeSystems/codeSystem), ')')"/>
+                <xhtml:table width="100%" class="detail">
+                    <xhtml:tr>
+                        <xhtml:td class="heading" colspan="3">
+                            <xhtml:div class="heading">
+                                <xforms:output ref="$resources/used-codesystems"/>
+                            </xhtml:div>
+                        </xhtml:td>
+                    </xhtml:tr>
+                    <xhtml:tr class="not-selectable">
+                        <xhtml:td class="item-label">
+                            <xforms:output ref="$resources/id"/>
+                        </xhtml:td>
+                        <xhtml:td class="item-label">
+                            <xforms:output ref="$resources/name"/>
+                        </xhtml:td>
+                        <xhtml:td class="item-label">
+                            <xforms:output ref="$resources/display-name"/>
+                        </xhtml:td>
+                    </xhtml:tr>
+                    <xforms:repeat nodeset="instance('decor-codesystem-list')/usedCodeSystems/codeSystem">
+                        <xhtml:tr class="not-selectable">
+                            <xhtml:td>
+                                <xforms:output ref="@ref"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:output ref="@name"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:output ref="@displayName"/>
+                            </xhtml:td>
+                        </xhtml:tr>
+                    </xforms:repeat>
+                </xhtml:table>
+            </fr:case>
+            <!-- missing codesystem references -->
+            <fr:case selected="true" id="missing-codesystems">
+                <fr:label ref="concat($resources/missing-codesystems, ' (', count(instance('missing-codeSystems')/codeSystem), ')')"/>
+                <xhtml:table width="100%" class="detail">
+                    <xhtml:tr>
+                        <xhtml:td class="heading" colspan="3">
+                            <xhtml:div class="heading">
+                                <xforms:output ref="$resources/missing-codesystems"/>
+                            </xhtml:div>
+                            <xforms:group ref=".[$editor]">
+                                <xhtml:div class="buttons">
+                                    <fr:button ref="xxforms:instance('enable-add-missing-codeSystems')">
+                                        <xforms:label>
+                                            <xhtml:img src="/img/plus.png" alt="" align="right"/>
+                                        </xforms:label>
+                                        <xforms:hint ref="$resources/add"/>
+                                        <xforms:action ev:event="DOMActivate">
+                                            <xforms:send submission="add-missing-codeSystems"/>
+                                            <xforms:send submission="get-codesystem-references"/>
+                                            <xforms:setvalue ref="instance('edit')/references">false</xforms:setvalue>
+                                            <xforms:action if="instance('edit')/codeSystem='false'">
+                                                <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                                            </xforms:action>
+                                        </xforms:action>
+                                    </fr:button>
+                                </xhtml:div>
+                            </xforms:group>
+                        </xhtml:td>
+                    </xhtml:tr>
+                    <xhtml:tr>
+                        <xhtml:td class="item-label">
+                            <xforms:output ref="$resources/id"/>
+                        </xhtml:td>
+                        <xhtml:td class="item-label">
+                            <xforms:output ref="$resources/name"/>
+                        </xhtml:td>
+                        <xhtml:td class="item-label">
+                            <xforms:output ref="$resources/display-name"/>
+                        </xhtml:td>
+                    </xhtml:tr>
+                    <xforms:group ref="instance('missing-codeSystems')[$editor]">
+                        <xforms:repeat nodeset="codeSystem" id="missingCodesystemsList1">
+                            <xhtml:tr class="not-selectable">
+                                <xhtml:td>
+                                    <xforms:output ref="@ref"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:input ref="@name"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:input ref="@displayName"/>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xforms:repeat>
+                    </xforms:group>
+                    <xforms:group ref="instance('missing-codeSystems')[not($editor)]">
+                        <xforms:repeat nodeset="codeSystem" id="missingCodesystemsList2">
+                            <xhtml:tr class="not-selectable">
+                                <xhtml:td>
+                                    <xforms:output ref="@ref"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:output ref="@name"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:output ref="@displayName"/>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xforms:repeat>
+                    </xforms:group>
+                </xhtml:table>
+            </fr:case>
+        </fr:accordion>
+        <!--      <fr:xforms-inspector/>-->
+    </xhtml:body>
+</xhtml:html>

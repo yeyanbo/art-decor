@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:sciphox="urn::sciphox-org/sciphox"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+  <id extension="60467,36049" root="1.2.276.0.58"/>
+  <code code="11488-4" codeSystem="2.16.840.1.113883.6.1" displayName="Consultation note"/>
+  <title>Arztbrief aus DURIA auf CDA Rel 2 Basis</title>
+  <effectiveTime value="20060924"/>
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+  <languageCode code="de"/>
+  <setId extension="D1" root="2.16.840.1.113883.3.933"/>
+  <versionNumber value="1"/>
+  <recordTarget>
+    <!--- Patienten-Daten -->
+    <patientRole>
+      <id extension="6" root="2.16.840.1.113883.3.933"/>
+      <addr>
+        <streetName>Steinstr.</streetName>
+        <houseNumber/>
+        <postalCode>52156</postalCode>
+        <city>Monschau</city>
+      </addr>
+      <patient>
+        <name>
+          <prefix>Dr.</prefix>
+          <given>Alfred</given>
+          <family>Hafer</family>
+        </name>
+        <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+        <birthTime value="19450601"/>
+      </patient>
+      <providerOrganization>
+        <telecom use="WP" value="tel:061511111111"/>
+        <telecom use="WP" value="fax:061512222222"/>
+        <addr>
+          <streetName>Musterstr.</streetName>
+          <houseNumber>1</houseNumber>
+          <postalCode>64283</postalCode>
+          <city>Darmstadt</city>
+        </addr>
+      </providerOrganization>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <!--- author -->
+    <time value="20060924"/>
+    <assignedAuthor>
+      <id extension="6319123" root="2.16.840.1.113883.3.933"/>
+      <assignedPerson>
+        <name>
+          <prefix>Dr.med. Hans</prefix>
+          <given/>
+          <family>Topp-Glücklich</family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <name>Dr.med. Hans Topp-Glücklich </name>
+        <telecom use="WP" value="tel:061511111111"/>
+        <telecom use="WP" value="fax:061512222222"/>
+        <addr>
+          <streetName>Musterstr.</streetName>
+          <houseNumber>1</houseNumber>
+          <postalCode>64283</postalCode>
+          <city>Darmstadt</city>
+        </addr>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <custodian>
+    <!--- Organisation von der das Dokument stammt -->
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id extension="M345" root="1.2.276.0.58"/>
+        <name>Dr.med. Hans Topp-Glücklich </name>
+        <telecom nullFlavor="UNK"/>
+        <addr>
+          <streetName>Musterstr.</streetName>
+          <houseNumber>1</houseNumber>
+          <postalCode>64283</postalCode>
+          <city>Darmstadt</city>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <informationRecipient typeCode="PRCP">
+    <!--- Empfaenger -->
+    <intendedRecipient>
+      <id extension="21233445" root="2.16.840.1.113883.3.933"/>
+      <informationRecipient>
+        <name>
+          <prefix>Dr.med.</prefix>
+          <given>Kai</given>
+          <family>Heitmann</family>
+        </name>
+      </informationRecipient>
+      <receivedOrganization>
+        <telecom use="WP" value="fax:02473.14233"/>
+        <addr>
+          <streetName>Mühlenweg</streetName>
+          <houseNumber>1a</houseNumber>
+          <postalCode>52152</postalCode>
+          <city>Simmerath</city>
+        </addr>
+      </receivedOrganization>
+    </intendedRecipient>
+  </informationRecipient>
+  <legalAuthenticator>
+    <!--- legalAuthenticator -->
+    <time value="20060721"/>
+    <signatureCode code="S"/>
+    <assignedEntity>
+      <id extension="6319123" root="2.16.840.1.113883.3.933"/>
+      <assignedPerson>
+        <name>
+          <prefix>Dr.med. Hans</prefix>
+          <given/>
+          <family>Topp-Glücklich</family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <name>Dr.med. Hans Topp-Glücklich </name>
+        <telecom use="WP" value="fax:061512222222"/>
+        <addr>
+          <streetName>Musterstr.</streetName>
+          <houseNumber>1</houseNumber>
+          <postalCode>64283</postalCode>
+          <city>Darmstadt</city>
+        </addr>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+  <component>
+    <structuredBody>
+      <component>
+        <!-- Medikation in CDA Level 2 -->
+        <section>
+          <code code="19009-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>24.09.2006: Jetzige Medikation</title>
+          <text>
+            <list>
+              <item>Esidrix Tabletten 25mg 1x tgl</item>
+              <item>Theophyllin AL 200 retard 2x tgl 1-2 Hartkapseln</item>
+              <item>Adalat 10mg 0-0-0-1</item>
+              <item>Prednison Hexal 20mg morgens 2 Tbl</item>
+              <item>Atemur mite 50, morgens 2x und abends 1x bei Bedarf inhalieren</item>
+            </list>
+          </text>
+
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <text>Esidrix Tabletten 25mg 1x tgl</text>
+              <effectiveTime xsi:type="PIVL_TS" institutionSpecified="true">
+                <period value="24" unit="h"/>
+              </effectiveTime>
+              <routeCode code="PO" codeSystem="2.16.840.1.113883.5.112" codeSystemName="RouteOfAdministration"/>
+              <doseQuantity>
+                <center value="25" unit="mg"/>
+              </doseQuantity>
+              <consumable>
+                <manufacturedProduct>
+                  <manufacturedLabeledDrug>
+                    <code code="2499914" codeSystem="1.2.276.0.76.4.6" codeSystemName="Pharmazentralnummer"
+                      displayName="ESIDRIX Tabl. 50 St"/>
+                  </manufacturedLabeledDrug>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <text>Theophyllin AL 200 Retard 2x tgl 1-2 Hartkapseln</text>
+              <effectiveTime xsi:type="PIVL_TS" institutionSpecified="true">
+                <period value="12" unit="h"/>
+              </effectiveTime>
+              <routeCode code="PO" codeSystem="2.16.840.1.113883.5.112" codeSystemName="RouteOfAdministration"/>
+              <doseQuantity>
+                <low value="200" unit="mg"/>
+                <high value="400" unit="mg"/>
+              </doseQuantity>
+              <consumable>
+                <manufacturedProduct>
+                  <manufacturedLabeledDrug>
+                    <code code="0345957" codeSystem="1.2.276.0.76.4.6" codeSystemName="Pharmazentralnummer"
+                      displayName="THEOPHYLLIN AL 200 retard Kapseln 20 St"/>
+                  </manufacturedLabeledDrug>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <text>Adalat retrard 20mg 1-0-1</text>
+              <effectiveTime xsi:type="SXPR_TS">
+                <comp xsi:type="IVL_TS">
+                  <low value="20061209"/>
+                  <high value="20061230"/>
+                </comp>
+                <comp xsi:type="SXPR_TS" operator="A">
+                  <comp xsi:type="PIVL_TS" institutionSpecified="true">
+                    <phase value="200612090800"/>
+                    <period value="1" unit="d"/>
+                  </comp>
+                  <comp xsi:type="PIVL_TS" institutionSpecified="true" operator="I">
+                    <phase value="200612091700"/>
+                    <period value="1" unit="d"/>
+                  </comp>
+                </comp>
+              </effectiveTime>
+              <routeCode code="PO" codeSystem="2.16.840.1.113883.5.112" codeSystemName="RouteOfAdministration"/>
+              <doseQuantity>
+                <center value="1" unit="1"/>
+              </doseQuantity>
+              <maxDoseQuantity>
+                <numerator value="80" unit="mg"/>
+                <denominator value="1" unit="d"/>
+              </maxDoseQuantity>
+              <consumable>
+                <manufacturedProduct>
+                  <manufacturedLabeledDrug>
+                    <code code="0758027" codeSystem="1.2.276.0.76.4.6" codeSystemName="Pharmazentralnummer"
+                      displayName="ADALAT retard Tabletten 42 St"/>
+                  </manufacturedLabeledDrug>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <id extension="v44285637" root="1.2.276.0.76.1210.23.27.123"/>
+              <text>Prednison Hexal 20mg morgens 2 Tbl</text>
+              <effectiveTime xsi:type="PIVL_TS" institutionSpecified="true">
+                <phase value="200612090800"/>
+                <period value="1" unit="d"/>
+              </effectiveTime>
+              <routeCode code="PO" codeSystem="2.16.840.1.113883.5.112" codeSystemName="RouteOfAdministration"/>
+              <doseQuantity>
+                <center value="40" unit="mg"/>
+              </doseQuantity>
+              <consumable>
+                <manufacturedProduct>
+                  <manufacturedLabeledDrug>
+                    <code code="2461142" codeSystem="1.2.276.0.76.4.6" codeSystemName="Pharmazentralnummer"
+                      displayName="PREDNISON HEXAL 20 mg Tabl. 20 St"/>
+                  </manufacturedLabeledDrug>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <id extension="v44285637" root="1.2.276.0.76.1210.23.27.123"/>
+              <text>Atemur mite 50, morgens 2x und abends 1x bei Bedarf inhalieren</text>
+              <priorityCode code="PRN" codeSystem="2.16.840.1.113883.5.7"/>
+              <routeCode code="IPINHL" codeSystem="2.16.840.1.113883.5.112" codeSystemName="RouteOfAdministration"
+                displayName="Inhalation, oral"/>
+              <consumable>
+                <manufacturedProduct>
+                  <manufacturedLabeledDrug>
+                    <code code="7126336" codeSystem="1.2.276.0.76.4.6" codeSystemName="Pharmazentralnummer"
+                      displayName="ATEMUR mite 50 Dos.Aerosol 120 ED 1 St"/>
+                  </manufacturedLabeledDrug>
+                </manufacturedProduct>
+              </consumable>
+              <entryRelationship typeCode="COMP">
+                <substanceAdministration classCode="SBADM" moodCode="EVN">
+                  <effectiveTime xsi:type="SXPR_TS">
+                    <comp xsi:type="IVL_TS">
+                      <low value="20061209"/>
+                    </comp>
+                    <comp xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+                      <phase value="200612090800"/>
+                      <period value="1" unit="d"/>
+                    </comp>
+                  </effectiveTime>
+                  <doseQuantity>
+                    <center value="2" unit="1"/>
+                  </doseQuantity>
+                  <consumable xsi:nil="true"/>
+                </substanceAdministration>
+              </entryRelationship>
+              <entryRelationship typeCode="COMP">
+                <substanceAdministration classCode="SBADM" moodCode="EVN">
+                  <effectiveTime xsi:type="SXPR_TS">
+                    <comp xsi:type="IVL_TS">
+                      <low value="20061209"/>
+                    </comp>
+                    <comp xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+                      <phase value="200612091800"/>
+                      <period value="1" unit="d"/>
+                    </comp>
+                  </effectiveTime>
+                  <doseQuantity>
+                    <center value="1" unit="1"/>
+                  </doseQuantity>
+                  <consumable xsi:nil="true"/>
+                </substanceAdministration>
+              </entryRelationship>
+              <precondition>
+                <criterion>
+                  <text>bei Luftnot</text>
+                </criterion>
+              </precondition>
+            </substanceAdministration>
+
+
+          </entry>
+
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

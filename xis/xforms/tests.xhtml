@@ -1,0 +1,557 @@
+<!--
+    Copyright (C) 2011-2014 ART-DECOR expert group art-decor.org
+    
+    Author: Gerrit Boers
+
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:art="http://art-decor.org/ns/art" xmlns:hl7="urn:hl7-org:v3" xmlns:atp="urn:nictiz.atp" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xis="http://art-decor.org/ns/xis" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:widget="http://orbeon.org/oxf/xml/widget" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="configuration" xsi:schemaLocation="http://www.w3.org/1999/xhtml ../../orbeon_schemas/xhtml1-transitional-orbeon.xsd">
+    <xhtml:head>
+        <xhtml:style type="text/css">
+         .xforms-select-appearance-full span { display: block; clear: both } 
+         .xforms-select1.inherited-width {
+         min-width: 15em;
+         height: inherit; }
+         .xforms-repeat-selected-item-1 {
+         font-weight: normal;
+         color: black;
+         }
+        
+      </xhtml:style>
+        <xhtml:title>
+            <xforms:output ref="$resources/tests"/>
+        </xhtml:title>
+        <xforms:model id="configuration">
+         <!-- Variable with path to art-exist for external use -->
+            <xxforms:variable name="art-external-exist" select="xxforms:property('art.external.exist.url')"/>
+         <!-- Variable with path to art-exist for use by form -->
+            <xxforms:variable name="art-exist" select="xxforms:property('art.exist.url')"/>
+         <!-- Variable with path to xis-eXist -->
+            <xxforms:variable name="xis-exist" select="xxforms:property('xis.exist.url')"/>
+         <!-- Variable with path to xis-external-exist used to pass to client as link for images -->
+            <xxforms:variable name="xis-external-exist" select="xxforms:property('xis.external.exist.url')"/>    
+         <!-- resources for internationalization -->
+            <xforms:instance id="resources-instance">
+                <dummy/>
+            </xforms:instance>
+         <!-- submission for loading resources -->
+            <xforms:submission id="get-resources-submission" serialization="none" method="get" resource="{$xis-exist}/resources/form-resources.xml" replace="instance" instance="resources-instance"/>
+         <!-- language -->
+            <xforms:instance id="language">
+                <language/>
+            </xforms:instance>
+         <!-- instance for general edit status -->
+            <xforms:instance id="data-safe">
+                <data-safe>true</data-safe>
+            </xforms:instance>
+
+
+         <!-- instance for selected test account @name (= collection name)-->
+            <xforms:instance id="selected-account">
+                <account/>
+            </xforms:instance>
+         <!-- test accounts for current user -->
+            <xforms:instance id="user-accounts">
+                <dummy/>
+            </xforms:instance>
+         <!-- get user accounts -->
+            <xforms:submission id="get-user-accounts" serialization="none" method="get" resource="{$xis-exist}/modules/get-xis-accounts-for-user.xquery" replace="instance" instance="user-accounts" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}"/>
+
+         <!-- instance for navigating tests -->
+            <xforms:instance id="test-navigation">
+                <id/>
+            </xforms:instance>
+         <!-- instance for tests -->
+            <xforms:instance id="tests">
+                <dummy/>
+            </xforms:instance>
+         <!-- submission for retrieving tests -->
+            <xforms:submission id="get-tests" serialization="none" method="get" resource="{$xis-exist}/modules/get-account-tests.xquery?account={instance('selected-account')}" replace="instance" instance="tests" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- event observer for testsuite changes -->
+            <xforms:action ev:observer="tests" ev:event="xforms-insert xforms-delete xxforms-value-changed">
+                <xforms:setvalue ref="instance('data-safe')">false</xforms:setvalue>
+            </xforms:action>
+         <!-- submission for saving tests -->
+            <xforms:submission id="save-tests" method="post" ref="instance('tests')" resource="{$xis-exist}/modules/save-account-tests.xquery" replace="none" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- submission for adding testsuite -->
+            <xforms:submission id="add-testsuite" serialization="none" method="get" resource="{$xis-exist}/modules/add-testsuite-to-tests.xquery?account={instance('selected-account')}&amp;id={instance('selected-testsuite')}" replace="none" instance="selected-testsuite" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- instance for validation result -->
+            <xforms:instance id="validation-result" xxforms:exclude-result-prefixes="#all">
+                <result/>
+            </xforms:instance>
+         <!-- submission for validation -->
+            <xforms:submission id="validate" serialization="none" method="get" resource="{$xis-exist}/modules/get-decor-testresult.xquery?account={instance('selected-account')}&amp;id={instance('tests')/xis:test[index('test')]/xis:test[index('schematronTest')]/xis:validation/@id}" replace="instance" instance="validation-result" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+
+         <!-- instance for upload -->
+            <xforms:instance id="upload">
+                <content xsi:type="xs:base64Binary" mediatype="" filename="" size=""/>
+            </xforms:instance>
+            <xforms:instance id="uploadXML">
+                <dummy/>
+            </xforms:instance>
+            <xforms:submission id="upload2exist-submission" ref="instance('uploadXML')" action="{$xis-exist}/accounts/{instance('selected-account')}/messages/{instance('upload')/@filename}" separator="&amp;" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}" method="put" replace="none">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- instance for selected file -->
+            <xforms:instance id="selected-file" xxforms:exclude-result-prefixes="#all">
+                <fileName> </fileName>
+            </xforms:instance>
+         <!-- file list -->
+            <xforms:instance id="file-list" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+         <!-- get messages submission -->
+            <xforms:submission id="get-file-list" serialization="none" method="get" resource="{$xis-exist}/modules/get-file-list.xquery?account={instance('selected-account')}" replace="instance" instance="file-list" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+
+
+         <!-- instance for selected testsuite -->
+            <xforms:instance id="selected-testsuite">
+                <id/>
+            </xforms:instance>
+         <!-- instance for testsuites -->
+            <xforms:instance id="testsuites">
+                <dummy/>
+            </xforms:instance>
+         <!-- submission for retrieving testsuites -->
+            <xforms:submission id="get-testsuites" serialization="none" method="get" resource="{$xis-exist}/modules/get-testsuites.xquery" replace="instance" instance="testsuites" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+
+         <!-- startup actions -->
+            <xforms:action ev:event="xforms-model-construct-done">
+                <xxforms:variable name="session-language" select="xxforms:get-session-attribute('language')"/>
+                <xforms:setvalue ref="instance('language')" value="if (string-length($session-language)&gt;0)       then $session-language/string() else ('nl-NL')"/>
+                <xforms:insert context="." origin="xxforms:set-session-attribute('language', instance('language'))"/>
+                <xforms:send submission="get-resources-submission"/>
+                <xforms:send submission="get-user-accounts"/>
+                <xforms:setvalue ref="instance('selected-account')" value="instance('user-accounts')/xis:testAccount[xis:members/xis:user[@id=xxforms:get-session-attribute('username')][@lastSelected='true']]/@name"/>
+                <xforms:send submission="get-tests"/>
+                <xforms:send submission="get-testsuites"/>
+                <xforms:send submission="get-test-list"/>
+            </xforms:action>
+            <xforms:action ev:event="xforms-ready">
+                <xforms:setvalue ref="instance('testsuite-navigation')" value="instance('testsuites')//testsuite[1]/@id"/>
+                <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+            </xforms:action>
+            <xxforms:script ev:event="xforms-ready">
+            window.onbeforeunload = function() {
+            if (ORBEON.xforms.Document.getValue('data-safe-input') != 'true')
+            return "Deze tekst kunnen we aanpassen.";
+            }
+         </xxforms:script>
+            <xxforms:variable name="resources" select="instance('resources-instance')//resources[@xml:lang=instance('language')]"/>
+            <xxforms:variable name="editor" select="contains(xxforms:get-session-attribute('groups'),'xis')"/>
+            <xxforms:variable name="debug" select="contains(xxforms:get-session-attribute('groups'),'debug')"/>
+            <xforms:setfocus ev:event="xforms-ready" control="text-repeat"/>
+        </xforms:model>
+    </xhtml:head>
+   <!-- Start of XForm body -->
+    <xhtml:body>
+      <!-- special output used to give warning if user leaves page -->
+        <xforms:output ref="instance('data-safe')" id="data-safe-input" style="display: none"/>
+      <!-- dialog for selecting testsuites -->
+        <xxforms:dialog id="testsuites-dialog" appearance="full" level="modal" close="true" draggable="true" visible="false">
+            <xforms:label ref="$resources/select-testsuite"/>
+            <xhtml:table width="600px" class="detail">
+                <xhtml:tr>
+                    <xhtml:td>
+                        <fr:datatable width="99%" scrollable="vertical" height="200">
+                            <xhtml:thead>
+                                <xhtml:tr>
+                                    <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                        <xforms:output ref="$resources/name"/>
+                                    </xhtml:th>
+                                    <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                        <xforms:output ref="$resources/description"/>
+                                    </xhtml:th>
+                                    <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                        <xforms:output ref="$resources/application-role"/>
+                                    </xhtml:th>
+                                </xhtml:tr>
+                            </xhtml:thead>
+                            <xhtml:tbody>
+                                <xhtml:tr repeat-nodeset="instance('testsuites')//testsuite" id="testsuites-table">
+                                    <xhtml:td>
+                                        <xforms:output ref="name[1]"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output mediatype="text/html" ref="desc[1]"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="application-role"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xhtml:tbody>
+                            <xforms:action ev:event="fr-selection-changed">
+                                <xforms:setvalue ref="instance('selected-testsuite')" value="event('selected')/@id"/>
+                            </xforms:action>
+                        </fr:datatable>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xhtml:p/>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xhtml:div class="buttons">
+                            <fr:button>
+                                <xforms:label ref="$resources/cancel"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xxforms:hide ev:event="DOMActivate" dialog="testsuites-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                            <fr:button>
+                                <xforms:label ref="$resources/select"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xforms:send submission="add-testsuite"/>
+                                    <xforms:send submission="get-tests"/>
+                                    <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                                    <xxforms:hide ev:event="DOMActivate" dialog="testsuites-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xhtml:table>
+        </xxforms:dialog>
+      <!-- dialog for selecting files -->
+        <xxforms:dialog id="fileselect-dialog" appearance="full" level="modal" close="true" draggable="true" visible="false">
+            <xforms:label ref="$resources/select-file"/>
+            <xhtml:table width="100%" class="detail">
+                <xhtml:tr>
+                    <xhtml:td>
+                        <fr:datatable width="99%" scrollable="vertical" height="200">
+                            <xhtml:thead>
+                                <xhtml:tr>
+                                    <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                        <xforms:output ref="$resources/file"/>
+                                    </xhtml:th>
+                                    <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                        <xforms:output ref="$resources/date-time"/>
+                                    </xhtml:th>
+                                    <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                        <xforms:output ref="$resources/root-name"/>
+                                    </xhtml:th>
+                                </xhtml:tr>
+                            </xhtml:thead>
+                            <xhtml:tbody>
+                                <xhtml:tr repeat-nodeset="instance('file-list')/file" id="file-table">
+                                    <xhtml:td>
+                                        <xforms:output ref="@name"/>
+                                    </xhtml:td>
+                                    <xhtml:td class="date">
+                                        <xforms:output ref="@dateTime" xxforms:format="if (. castable as xs:dateTime) then replace(format-dateTime(.,'[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]', (), (), ()),' 00:00:00','') else (.)"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="@rootName"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xhtml:tbody>
+                            <xforms:action ev:event="fr-selection-changed">
+                                <xforms:setvalue ref="instance('selected-file')" value="event('selected')/@name"/>
+                            </xforms:action>
+                        </fr:datatable>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xhtml:p/>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xhtml:div class="buttons">
+                            <fr:button>
+                                <xforms:label ref="$resources/cancel"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xxforms:hide ev:event="DOMActivate" dialog="fileselect-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                            <fr:button>
+                                <xforms:label ref="$resources/select"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xforms:setvalue ref="instance('tests')/xis:test[index('test')]/xis:test[index('schematronTest')]/xis:validation/@messageFile" value="instance('selected-file')"/>
+                                    <xforms:send submission="save-tests"/>
+                                    <xforms:send submission="validate"/>
+                                    <xforms:send submission="get-tests"/>
+                                    <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                                    <xxforms:hide ev:event="DOMActivate" dialog="fileselect-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xhtml:table>
+        </xxforms:dialog>
+        <xhtml:table width="100%" style="border:solid 1px #CCC;">
+         <!-- test account select -->
+            <xhtml:tr>
+                <xhtml:td class="item-label">
+                    <xforms:output ref="$resources/account"/>
+                </xhtml:td>
+                <xhtml:td>
+               <!-- show account selector if data-safe=true -->
+                    <xforms:group ref=".[instance('data-safe')='true']">
+                        <xforms:select1 ref="instance('selected-account')" appearance="minimal" id="account-select" class="auto-width">
+                            <xforms:itemset nodeset="instance('user-accounts')/xis:testAccount">
+                                <xforms:label ref="@displayName"/>
+                                <xforms:value ref="@name"/>
+                            </xforms:itemset>
+                            <xforms:action ev:event="xforms-value-changed">
+                                <xforms:send submission="get-tests"/>
+                                <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                            </xforms:action>
+                        </xforms:select1>
+                    </xforms:group>
+               <!-- show cancel and save buttons if data-safe=false -->
+                    <xforms:group ref=".[instance('data-safe')='false']">
+                        <xforms:output ref="instance('user-accounts')/xis:testAccount[@name=instance('selected-account')]/@displayName"/>
+                        <xhtml:div class="buttons">
+                            <fr:button>
+                                <xforms:label ref="$resources/cancel"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xforms:send submission="get-tests"/>
+                                    <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                                </xforms:action>
+                            </fr:button>
+                            <fr:button>
+                                <xforms:label ref="$resources/save"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xforms:send submission="save-tests"/>
+                                    <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                                </xforms:action>
+                            </fr:button>
+                        </xhtml:div>
+                    </xforms:group>
+                </xhtml:td>
+            </xhtml:tr>
+        </xhtml:table>
+        <xhtml:table width="100%" class="detail">
+            <xhtml:tr>
+                <xhtml:td class="heading" colspan="2">
+                    <xhtml:div class="heading">
+                        <xforms:output ref="$resources/tests"/>
+                    </xhtml:div>
+                    <xhtml:div class="buttons">
+                        <fr:button ref="$editor">
+                            <xforms:label>
+                                <xhtml:img src="/img/plus.png" alt=""/>
+                            </xforms:label>
+                            <xforms:hint>
+                                <xforms:output ref="$resources/add-testsuite"/>
+                            </xforms:hint>
+                            <xforms:action ev:event="DOMActivate">
+                                <xxforms:show dialog="testsuites-dialog"/>
+                            </xforms:action>
+                        </fr:button>
+                    </xhtml:div>
+                </xhtml:td>
+            </xhtml:tr>
+            <xhtml:tr>
+                <xhtml:td colspan="2">
+                    <xforms:repeat nodeset="instance('tests')/xis:test" id="test">
+                        <fr:accordion class="fr-accordion-lnf">
+                            <fr:case selected="true">
+                                <fr:label ref="name[1]"/>
+                                <xhtml:table width="100%" class="detail">
+                                    <xhtml:tr class="not-selectable">
+                                        <xhtml:td class="item-label">
+                                            <xforms:output ref="$resources/status"/>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:group ref=".[@statusCode='incomplete']">
+                                                <xhtml:img src="/img/node-sopen.png" alt="" style="vertical-align:middle;"/>
+                                                <xforms:output ref="$resources/incomplete"/>
+                                            </xforms:group>
+                                            <xforms:group ref=".[@statusCode='fail']">
+                                                <xhtml:img src="/img/node-spending.png" alt="" style="vertical-align:middle;"/>
+                                                <xforms:output ref="$resources/fail"/>
+                                            </xforms:group>
+                                            <xforms:group ref=".[@statusCode='pass']">
+                                                <xhtml:img src="/img/node-sfinal.png" alt="" style="vertical-align:middle;"/>
+                                                <xforms:output ref="$resources/passed"/>
+                                            </xforms:group>
+                                        </xhtml:td>
+                                        <xhtml:td class="item-label">
+                                            <xforms:output ref="$resources/application-role"/>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:output ref="application-role"/>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                    <xhtml:tr class="not-selectable">
+                                        <xhtml:td class="item-label">
+                                            <xforms:output ref="$resources/description"/>
+                                        </xhtml:td>
+                                        <xhtml:td colspan="3">
+                                            <xforms:output mediatype="text/html" ref="desc[1]"/>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                    <xhtml:tr>
+                                        <xhtml:td colspan="4">
+                                            <fr:datatable width="100%">
+                                                <xhtml:thead>
+                                                    <xhtml:tr>
+                                                        <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                                            <xforms:output ref="$resources/test"/>
+                                                        </xhtml:th>
+                                                        <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                                            <xforms:output ref="$resources/description"/>
+                                                        </xhtml:th>
+                                                        <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                                            <xforms:output ref="$resources/message"/>
+                                                        </xhtml:th>
+                                                        <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                                            <xforms:output ref="$resources/validation"/>
+                                                            <xforms:output ref="$resources/date-time"/>
+                                                        </xhtml:th>
+                                                    </xhtml:tr>
+                                                </xhtml:thead>
+                                                <xhtml:tbody>
+                                                    <xhtml:tr repeat-nodeset="xis:test" id="schematronTest">
+                                                        <xhtml:td>
+                                                            <xforms:group ref=".[xis:validation/@statusCode='invalid']">
+                                                                <xhtml:img src="/img/node-sopen.png" alt="invalid" style="vertical-align:middle;"/>
+                                                            </xforms:group>
+                                                            <xforms:group ref=".[xis:validation/@statusCode='pass']">
+                                                                <xhtml:img src="/img/node-sfinal.png" alt="passed" style="vertical-align:middle;"/>
+                                                            </xforms:group>
+                                                            <xforms:group ref=".[xis:validation/@statusCode='fail']">
+                                                                <xhtml:img src="/img/node-spending.png" alt="failed" style="vertical-align:middle;"/>
+                                                            </xforms:group>
+                                                            <xforms:output ref="@ref"/>
+                                                        </xhtml:td>
+                                                        <xhtml:td>
+                                                            <xforms:output mediatype="text/html" ref="desc[1]"/>
+                                                        </xhtml:td>
+                                                        <xhtml:td>
+                                                            <xforms:output ref="xis:validation/@messageFile" style="vertical-align:middle"/>
+                                                            <xhtml:div class="buttons">
+                                                                <xforms:group ref=".[$editor]">
+                                                                    <xforms:trigger appearance="minimal">
+                                                                        <xforms:label ref="concat('[',$resources/select,']')"/>
+                                                                        <xforms:action ev:event="DOMActivate">
+                                                                            <xforms:send submission="get-file-list"/>
+                                                                            <xxforms:show dialog="fileselect-dialog"/>
+                                                                        </xforms:action>
+                                                                    </xforms:trigger>
+                                                                </xforms:group>
+                                                            </xhtml:div>
+                                                        </xhtml:td>
+                                                        <xhtml:td class="date">
+                                                            <xforms:output ref="xis:validation/@dateTime" xxforms:format="if (. castable as xs:dateTime) then replace(format-dateTime(.,'[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]', (), (), ()),' 00:00:00','') else (.)"/>
+                                                            <xhtml:div class="buttons">
+                                                                <xforms:group ref=".[$editor]">
+                                                                    <xforms:trigger appearance="minimal">
+                                                                        <xforms:label ref="concat('[',$resources/validate,']')"/>
+                                                                        <xforms:action ev:event="DOMActivate">
+                                                                            <xforms:send submission="save-tests"/>
+                                                                            <xforms:send submission="validate"/>
+                                                                            <xforms:send submission="get-tests"/>
+                                                                            <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                                                                        </xforms:action>
+                                                                    </xforms:trigger>
+                                                                </xforms:group>
+                                                            </xhtml:div>
+                                                        </xhtml:td>
+                                                    </xhtml:tr>
+                                                </xhtml:tbody>
+                                            </fr:datatable>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                </xhtml:table>
+                            </fr:case>
+                        </fr:accordion>
+                    </xforms:repeat>
+                </xhtml:td>
+            </xhtml:tr>
+        </xhtml:table>
+        <fr:accordion class="fr-accordion-lnf">
+         <!-- errors -->
+            <fr:case selected="true" id="error-acc">
+                <fr:label ref="concat(count(instance('tests')/xis:test[index('test')]/xis:test[index('schematronTest')]/xis:validation//issue[@type='schematron']),' ',$resources/errors)"/>
+                <xforms:group ref="instance('tests')/xis:test[index('test')]/xis:test[index('schematronTest')]/xis:validation//error[@type='schematron']">
+                    <fr:datatable width="100%">
+                        <xhtml:thead>
+                            <xhtml:tr>
+                                <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                    <xforms:output ref="$resources/description"/>
+                                </xhtml:th>
+                                <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                    <xforms:output ref="$resources/path"/>
+                                </xhtml:th>
+                                <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                    <xforms:output ref="$resources/quantity"/>
+                                </xhtml:th>
+                            </xhtml:tr>
+                        </xhtml:thead>
+                        <xhtml:tbody>
+                            <xhtml:tr repeat-nodeset="issue" class="not-selectable">
+                                <xhtml:td>
+                                    <xforms:group ref=".[string-length(@see)&gt;0]">
+                                        <xhtml:a href="{@see}" style="font-weight: bold; color:white; background-color:red;margin-right: 5px; padding: 2px 4px 2px 4px; -moz-user-select: none; -khtml-user-select: none;-moz-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;">?</xhtml:a>
+                                    </xforms:group>
+                                    <xforms:output ref="description"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:group ref=".[@embed]">
+                                        <xhtml:p>
+                                            <xhtml:b>
+                                                <xforms:output ref="$resources/from"/>:</xhtml:b>
+                                            <xforms:output ref="@embed"/>
+                                        </xhtml:p>
+                                    </xforms:group>
+                                    <xforms:output ref="location/@path"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:output ref="@count"/>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xhtml:tbody>
+                    </fr:datatable>
+                </xforms:group>
+            </fr:case>
+         <!-- response -->
+            <fr:case selected="true" id="message-acc">
+                <fr:label ref="$resources/message"/>
+                <xhtml:div class="detail">
+                    <xforms:output mediatype="text/html" value="xxforms:serialize(xxforms:call-xpl('oxf:/ops/utils/formatting/format.xpl', 'data', instance('tests')/xis:test[index('test')]/xis:test[index('schematronTest')]/xis:validation/messageFile/*, 'data')/*, 'html')"/>
+                </xhtml:div>
+            </fr:case>
+        </fr:accordion>
+    </xhtml:body>
+</xhtml:html>

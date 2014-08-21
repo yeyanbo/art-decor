@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<descriptions>
+   <description count="1" length="21" conceptId="_AdministrableDrugForm" type="pref"
+                language="en-US"
+                superClasses=""
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">AdministrableDrugForm</description>
+   <description count="1" length="19" conceptId="_DispensableDrugForm" type="pref"
+                language="en-US"
+                superClasses=""
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">DispensableDrugForm</description>
+   <description count="1" length="13" conceptId="APPFUL" type="pref" language="en-US"
+                superClasses="AdministrableDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Applicatorful</description>
+   <description count="1" length="5" conceptId="DROP" type="pref" language="en-US"
+                superClasses="AdministrableDrugForm, Solution"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Drops</description>
+   <description count="1" length="4" conceptId="PUFF" type="pref" language="en-US"
+                superClasses="AdministrableDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Puff</description>
+   <description count="1" length="6" conceptId="SCOOP" type="pref" language="en-US"
+                superClasses="AdministrableDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Scoops</description>
+   <description count="1" length="6" conceptId="SPRY" type="pref" language="en-US"
+                superClasses="AdministrableDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Sprays</description>
+   <description count="1" length="11" conceptId="_GasDrugForm" type="pref" language="en-US"
+                superClasses="DispensableDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">GasDrugForm</description>
+   <description count="1" length="16" conceptId="_GasLiquidMixture" type="pref"
+                language="en-US"
+                superClasses="DispensableDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">GasLiquidMixture</description>
+   <description count="1" length="13" conceptId="_GasSolidSpray" type="pref" language="en-US"
+                superClasses="DispensableDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">GasSolidSpray</description>
+   <description count="1" length="6" conceptId="_Liquid" type="pref" language="en-US"
+                superClasses="DispensableDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Liquid</description>
+   <description count="1" length="20" conceptId="_LiquidLiquidEmulsion" type="pref"
+                language="en-US"
+                superClasses="DispensableDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">LiquidLiquidEmulsion</description>
+   <description count="1" length="21" conceptId="_LiquidSolidSuspension" type="pref"
+                language="en-US"
+                superClasses="DispensableDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">LiquidSolidSuspension</description>
+   <description count="1" length="13" conceptId="_SolidDrugForm" type="pref" language="en-US"
+                superClasses="DispensableDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">SolidDrugForm</description>
+   <description count="3" length="18" conceptId="GASINHL" type="pref" language="en-US"
+                superClasses="GasDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Gas for Inhalation</description>
+   <description count="1" length="7" conceptId="AER" type="pref" language="en-US"
+                superClasses="GasLiquidMixture"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Aerosol</description>
+   <description count="2" length="12" conceptId="DERMSPRY" type="pref" language="en-US"
+                superClasses="GasLiquidMixture"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Dermal Spray</description>
+   <description count="1" length="4" conceptId="FOAM" type="pref" language="en-US"
+                superClasses="GasLiquidMixture"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Foam</description>
+   <description count="2" length="12" conceptId="RECSPRY" type="pref" language="en-US"
+                superClasses="GasLiquidMixture"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Rectal Spray</description>
+   <description count="2" length="13" conceptId="VAGSPRY" type="pref" language="en-US"
+                superClasses="GasLiquidMixture"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Vaginal Spray</description>
+   <description count="1" length="8" conceptId="INHL" type="pref" language="en-US"
+                superClasses="GasSolidSpray"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Inhalant</description>
+   <description count="2" length="12" conceptId="PWDSPRY" type="pref" language="en-US"
+                superClasses="GasSolidSpray"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Powder Spray</description>
+   <description count="3" length="18" conceptId="SPRYADAPT" type="pref" language="en-US"
+                superClasses="GasSolidSpray"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Spray with Adaptor</description>
+   <description count="2" length="15" conceptId="LIQCLN" type="pref" language="en-US"
+                superClasses="Liquid"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Liquid Cleanser</description>
+   <description count="1" length="3" conceptId="OIL" type="pref" language="en-US"
+                superClasses="Liquid"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Oil</description>
+   <description count="1" length="8" conceptId="SOL" type="pref" language="en-US"
+                superClasses="Liquid"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Solution</description>
+   <description count="1" length="5" conceptId="CRM" type="pref" language="en-US"
+                superClasses="LiquidLiquidEmulsion"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Cream</description>
+   <description count="1" length="6" conceptId="LTN" type="pref" language="en-US"
+                superClasses="LiquidLiquidEmulsion"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Lotion</description>
+   <description count="1" length="8" conceptId="OINT" type="pref" language="en-US"
+                superClasses="LiquidLiquidEmulsion"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Ointment</description>
+   <description count="1" length="3" conceptId="GEL" type="pref" language="en-US"
+                superClasses="LiquidSolidSuspension"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Gel</description>
+   <description count="1" length="5" conceptId="PASTE" type="pref" language="en-US"
+                superClasses="LiquidSolidSuspension"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Paste</description>
+   <description count="1" length="10" conceptId="SUSP" type="pref" language="en-US"
+                superClasses="LiquidSolidSuspension"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Suspension</description>
+   <description count="1" length="3" conceptId="BAR" type="pref" language="en-US"
+                superClasses="SolidDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Bar</description>
+   <description count="1" length="5" conceptId="BEAD" type="pref" language="en-US"
+                superClasses="SolidDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Beads</description>
+   <description count="1" length="4" conceptId="CAKE" type="pref" language="en-US"
+                superClasses="SolidDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Cake</description>
+   <description count="1" length="6" conceptId="CEMENT" type="pref" language="en-US"
+                superClasses="SolidDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Cement</description>
+   <description count="1" length="8" conceptId="CRYS" type="pref" language="en-US"
+                superClasses="SolidDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Crystals</description>
+   <description count="1" length="4" conceptId="DISK" type="pref" language="en-US"
+                superClasses="SolidDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Disk</description>
+   <description count="1" length="6" conceptId="FLAKE" type="pref" language="en-US"
+                superClasses="SolidDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Flakes</description>
+   <description count="1" length="8" conceptId="GRAN" type="pref" language="en-US"
+                superClasses="SolidDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Granules</description>
+   <description count="1" length="10" conceptId="GUM" type="pref" language="en-US"
+                superClasses="SolidDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">ChewingGum</description>
+   <description count="1" length="3" conceptId="PAD" type="pref" language="en-US"
+                superClasses="SolidDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Pad</description>
+   <description count="1" length="5" conceptId="PATCH" type="pref" language="en-US"
+                superClasses="SolidDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Patch</description>
+   <description count="1" length="6" conceptId="PELLET" type="pref" language="en-US"
+                superClasses="SolidDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Pellet</description>
+   <description count="1" length="4" conceptId="PILL" type="pref" language="en-US"
+                superClasses="SolidDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Pill</description>
+   <description count="1" length="6" conceptId="POWD" type="pref" language="en-US"
+                superClasses="SolidDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Powder</description>
+   <description count="1" length="11" conceptId="SUPP" type="pref" language="en-US"
+                superClasses="SolidDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Suppository</description>
+   <description count="1" length="4" conceptId="SWAB" type="pref" language="en-US"
+                superClasses="SolidDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Swab</description>
+   <description count="1" length="5" conceptId="WAFER" type="pref" language="en-US"
+                superClasses="SolidDrugForm"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Wafer</description>
+   <description count="3" length="24" conceptId="BAINHL" type="pref" language="en-US"
+                superClasses="Aerosol"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Breath Activated Inhaler</description>
+   <description count="2" length="17" conceptId="INHLSOL" type="pref" language="en-US"
+                superClasses="Aerosol"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Inhalant Solution</description>
+   <description count="3" length="20" conceptId="MDINHL" type="pref" language="en-US"
+                superClasses="Aerosol"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Metered Dose Inhaler</description>
+   <description count="2" length="11" conceptId="NASSPRY" type="pref" language="en-US"
+                superClasses="Aerosol"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Nasal Spray</description>
+   <description count="2" length="8" conceptId="BARSOAP" type="pref" language="en-US"
+                superClasses="Bar"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Bar Soap</description>
+   <description count="2" length="12" conceptId="CHEWBAR" type="pref" language="en-US"
+                superClasses="Bar"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Chewable Bar</description>
+   <description count="3" length="18" conceptId="MEDBAR" type="pref" language="en-US"
+                superClasses="Bar Soap"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Medicated Bar Soap</description>
+   <description count="4" length="31" conceptId="SRBUCTAB" type="pref" language="en-US"
+                superClasses="Buccal Tablet"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Sustained Release Buccal Tablet</description>
+   <description count="2" length="12" conceptId="ORCAP" type="pref" language="en-US"
+                superClasses="Capsule"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Oral Capsule</description>
+   <description count="2" length="11" conceptId="NASCRM" type="pref" language="en-US"
+                superClasses="Cream"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Nasal Cream</description>
+   <description count="2" length="16" conceptId="OPCRM" type="pref" language="en-US"
+                superClasses="Cream"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Ophthalmic Cream</description>
+   <description count="2" length="10" conceptId="ORCRM" type="pref" language="en-US"
+                superClasses="Cream"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Oral Cream</description>
+   <description count="2" length="10" conceptId="OTCRM" type="pref" language="en-US"
+                superClasses="Cream"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Otic Cream</description>
+   <description count="2" length="12" conceptId="RECCRM" type="pref" language="en-US"
+                superClasses="Cream"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Rectal Cream</description>
+   <description count="2" length="13" conceptId="TOPCRM" type="pref" language="en-US"
+                superClasses="Cream"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Topical Cream</description>
+   <description count="2" length="13" conceptId="VAGCRM" type="pref" language="en-US"
+                superClasses="Cream"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Vaginal Cream</description>
+   <description count="2" length="11" conceptId="NDROP" type="pref" language="en-US"
+                superClasses="Drops"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Nasal Drops</description>
+   <description count="2" length="16" conceptId="OPDROP" type="pref" language="en-US"
+                superClasses="Drops"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Ophthalmic Drops</description>
+   <description count="2" length="10" conceptId="ORDROP" type="pref" language="en-US"
+                superClasses="Drops, Oral Solution"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Oral Drops</description>
+   <description count="2" length="10" conceptId="OTDROP" type="pref" language="en-US"
+                superClasses="Drops"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Otic Drops</description>
+   <description count="5" length="38" conceptId="ERECTAB" type="pref" language="en-US"
+                superClasses="Enteric Coated Tablet, Extended Release Tablet"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Extended Release Enteric Coated Tablet</description>
+   <description count="5" length="39" conceptId="ERENTCAP" type="pref" language="en-US"
+                superClasses="Enteric Coated Capsule, Extended Release Capsule"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Extended Release Enteric Coated Capsule</description>
+   <description count="5" length="32" conceptId="ERCAP12" type="pref" language="en-US"
+                superClasses="Extended Release Capsule"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">12 Hour Extended Release Capsule</description>
+   <description count="5" length="32" conceptId="ERCAP24" type="pref" language="en-US"
+                superClasses="Extended Release Capsule"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">24 Hour Extended Release Capsule</description>
+   <description count="4" length="35" conceptId="ERSUSP12" type="pref" language="en-US"
+                superClasses="Extended-Release Suspension"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">12 Hour Extended-Release Suspension</description>
+   <description count="5" length="35" conceptId="ERSUSP24" type="pref" language="en-US"
+                superClasses="Extended-Release Suspension"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">24 Hour Extended Release Suspension</description>
+   <description count="5" length="31" conceptId="ERTAB12" type="pref" language="en-US"
+                superClasses="Extended Release Tablet"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">12 Hour Extended Release Tablet</description>
+   <description count="5" length="31" conceptId="ERTAB24" type="pref" language="en-US"
+                superClasses="Extended Release Tablet"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">24 Hour Extended Release Tablet</description>
+   <description count="3" length="20" conceptId="FOAMAPL" type="pref" language="en-US"
+                superClasses="Foam"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Foam with Applicator</description>
+   <description count="2" length="11" conceptId="RECFORM" type="pref" language="en-US"
+                superClasses="Foam"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Rectal foam</description>
+   <description count="2" length="12" conceptId="VAGFOAM" type="pref" language="en-US"
+                superClasses="Foam"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Vaginal foam</description>
+   <description count="3" length="19" conceptId="GELAPL" type="pref" language="en-US"
+                superClasses="Gel"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Gel with Applicator</description>
+   <description count="2" length="9" conceptId="NASGEL" type="pref" language="en-US"
+                superClasses="Gel"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Nasal Gel</description>
+   <description count="2" length="14" conceptId="OPGEL" type="pref" language="en-US"
+                superClasses="Gel"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Ophthalmic Gel</description>
+   <description count="2" length="8" conceptId="OTGEL" type="pref" language="en-US"
+                superClasses="Gel"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Otic Gel</description>
+   <description count="2" length="11" conceptId="TOPGEL" type="pref" language="en-US"
+                superClasses="Gel"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Topical Gel</description>
+   <description count="2" length="12" conceptId="URETHGEL" type="pref" language="en-US"
+                superClasses="Gel"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Urethral Gel</description>
+   <description count="2" length="11" conceptId="VAGGEL" type="pref" language="en-US"
+                superClasses="Gel"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Vaginal Gel</description>
+   <description count="4" length="31" conceptId="BAINHLPWD" type="pref" language="en-US"
+                superClasses="Inhalant"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Breath Activated Powder Inhaler</description>
+   <description count="2" length="15" conceptId="INHLPWD" type="pref" language="en-US"
+                superClasses="Inhalant"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Inhalant Powder</description>
+   <description count="4" length="27" conceptId="MDINHLPWD" type="pref" language="en-US"
+                superClasses="Inhalant"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Metered Dose Powder Inhaler</description>
+   <description count="2" length="14" conceptId="NASINHL" type="pref" language="en-US"
+                superClasses="Inhalant"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Nasal Inhalant</description>
+   <description count="2" length="13" conceptId="ORINHL" type="pref" language="en-US"
+                superClasses="Inhalant"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Oral Inhalant</description>
+   <description count="1" length="6" conceptId="DOUCHE" type="pref" language="en-US"
+                superClasses="Irrigation Solution"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Douche</description>
+   <description count="1" length="5" conceptId="ENEMA" type="pref" language="en-US"
+                superClasses="Irrigation Solution"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Enema</description>
+   <description count="3" length="30" conceptId="OPIRSOL" type="pref" language="en-US"
+                superClasses="Irrigation Solution"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Ophthalmic Irrigation Solution</description>
+   <description count="3" length="21" conceptId="LIQSOAP" type="pref" language="en-US"
+                superClasses="Liquid Cleanser"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Medicated Liquid Soap</description>
+   <description count="1" length="7" conceptId="SHMP" type="pref" language="en-US"
+                superClasses="Liquid Cleanser"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Shampoo</description>
+   <description count="2" length="14" conceptId="TOPLTN" type="pref" language="en-US"
+                superClasses="Lotion"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Topical Lotion</description>
+   <description count="2" length="11" conceptId="TOPOIL" type="pref" language="en-US"
+                superClasses="Oil"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Topical Oil</description>
+   <description count="2" length="14" conceptId="NASOINT" type="pref" language="en-US"
+                superClasses="Ointment"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Nasal Ointment</description>
+   <description count="3" length="24" conceptId="OINTAPL" type="pref" language="en-US"
+                superClasses="Ointment"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Ointment with Applicator</description>
+   <description count="2" length="19" conceptId="OPOINT" type="pref" language="en-US"
+                superClasses="Ointment"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Ophthalmic Ointment</description>
+   <description count="2" length="13" conceptId="OTOINT" type="pref" language="en-US"
+                superClasses="Ointment"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Otic Ointment</description>
+   <description count="2" length="15" conceptId="RECOINT" type="pref" language="en-US"
+                superClasses="Ointment"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Rectal Ointment</description>
+   <description count="2" length="16" conceptId="TOPOINT" type="pref" language="en-US"
+                superClasses="Ointment"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Topical Ointment</description>
+   <description count="2" length="16" conceptId="VAGOINT" type="pref" language="en-US"
+                superClasses="Ointment"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Vaginal Ointment</description>
+   <description count="1" length="6" conceptId="ELIXIR" type="pref" language="en-US"
+                superClasses="Oral Solution"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Elixir</description>
+   <description count="1" length="15" conceptId="RINSE" type="pref" language="en-US"
+                superClasses="Oral Solution"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Mouthwash/Rinse</description>
+   <description count="1" length="5" conceptId="SYRUP" type="pref" language="en-US"
+                superClasses="Oral Solution"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Syrup</description>
+   <description count="3" length="22" conceptId="ENTCAP" type="pref" language="en-US"
+                superClasses="Oral Capsule"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Enteric Coated Capsule</description>
+   <description count="3" length="24" conceptId="ERCAP" type="pref" language="en-US"
+                superClasses="Oral Capsule"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Extended Release Capsule</description>
+   <description count="2" length="27" conceptId="ERSUSP" type="pref" language="en-US"
+                superClasses="Oral Suspension"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Extended-Release Suspension</description>
+   <description count="2" length="13" conceptId="BUCTAB" type="pref" language="en-US"
+                superClasses="Oral Tablet"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Buccal Tablet</description>
+   <description count="1" length="6" conceptId="CAPLET" type="pref" language="en-US"
+                superClasses="Oral Tablet"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Caplet</description>
+   <description count="2" length="15" conceptId="CHEWTAB" type="pref" language="en-US"
+                superClasses="Oral Tablet"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Chewable Tablet</description>
+   <description count="3" length="23" conceptId="CPTAB" type="pref" language="en-US"
+                superClasses="Oral Tablet"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Coated Particles Tablet</description>
+   <description count="2" length="21" conceptId="DISINTAB" type="pref" language="en-US"
+                superClasses="Oral Tablet"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Disintegrating Tablet</description>
+   <description count="3" length="22" conceptId="DRTAB" type="pref" language="en-US"
+                superClasses="Oral Tablet"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Delayed Release Tablet</description>
+   <description count="3" length="21" conceptId="ECTAB" type="pref" language="en-US"
+                superClasses="Oral Tablet"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Enteric Coated Tablet</description>
+   <description count="3" length="23" conceptId="ERTAB" type="pref" language="en-US"
+                superClasses="Oral Tablet"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Extended Release Tablet</description>
+   <description count="2" length="19" conceptId="ORTROCHE" type="pref" language="en-US"
+                superClasses="Oral Tablet"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Lozenge/Oral Troche</description>
+   <description count="2" length="17" conceptId="SLTAB" type="pref" language="en-US"
+                superClasses="Oral Tablet"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Sublingual Tablet</description>
+   <description count="2" length="13" conceptId="MEDPAD" type="pref" language="en-US"
+                superClasses="Pad"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Medicated Pad</description>
+   <description count="1" length="7" conceptId="PUD" type="pref" language="en-US"
+                superClasses="Paste"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Pudding</description>
+   <description count="1" length="10" conceptId="TPASTE" type="pref" language="en-US"
+                superClasses="Paste"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Toothpaste</description>
+   <description count="2" length="17" conceptId="TPATCH" type="pref" language="en-US"
+                superClasses="Patch"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Transdermal Patch</description>
+   <description count="1" length="7" conceptId="CAP" type="pref" language="en-US"
+                superClasses="Pill"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Capsule</description>
+   <description count="1" length="6" conceptId="TAB" type="pref" language="en-US"
+                superClasses="Pill"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Tablet</description>
+   <description count="2" length="14" conceptId="TOPPWD" type="pref" language="en-US"
+                superClasses="Powder"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Topical Powder</description>
+   <description count="2" length="24" conceptId="IPSOL" type="pref" language="en-US"
+                superClasses="Solution"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Intraperitoneal Solution</description>
+   <description count="2" length="19" conceptId="IRSOL" type="pref" language="en-US"
+                superClasses="Solution"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Irrigation Solution</description>
+   <description count="2" length="20" conceptId="IVSOL" type="pref" language="en-US"
+                superClasses="Solution"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Intravenous Solution</description>
+   <description count="2" length="13" conceptId="ORALSOL" type="pref" language="en-US"
+                superClasses="Solution"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Oral Solution</description>
+   <description count="2" length="15" conceptId="RECSOL" type="pref" language="en-US"
+                superClasses="Solution"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Rectal Solution</description>
+   <description count="2" length="16" conceptId="TOPSOL" type="pref" language="en-US"
+                superClasses="Solution"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Topical Solution</description>
+   <description count="2" length="18" conceptId="RECSUPP" type="pref" language="en-US"
+                superClasses="Suppository"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Rectal Suppository</description>
+   <description count="2" length="20" conceptId="URETHSUPP" type="pref" language="en-US"
+                superClasses="Suppository"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Urethral suppository</description>
+   <description count="2" length="19" conceptId="VAGSUPP" type="pref" language="en-US"
+                superClasses="Suppository"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Vaginal Suppository</description>
+   <description count="2" length="22" conceptId="ITSUSP" type="pref" language="en-US"
+                superClasses="Suspension"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Intrathecal Suspension</description>
+   <description count="2" length="21" conceptId="OPSUSP" type="pref" language="en-US"
+                superClasses="Suspension"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Ophthalmic Suspension</description>
+   <description count="2" length="15" conceptId="ORSUSP" type="pref" language="en-US"
+                superClasses="Suspension"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Oral Suspension</description>
+   <description count="2" length="15" conceptId="OTSUSP" type="pref" language="en-US"
+                superClasses="Suspension"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Otic Suspension</description>
+   <description count="2" length="17" conceptId="RECSUSP" type="pref" language="en-US"
+                superClasses="Suspension"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Rectal Suspension</description>
+   <description count="2" length="14" conceptId="MEDSWAB" type="pref" language="en-US"
+                superClasses="Swab"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Medicated swab</description>
+   <description count="2" length="11" conceptId="ORTAB" type="pref" language="en-US"
+                superClasses="Tablet"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Oral Tablet</description>
+   <description count="2" length="14" conceptId="VAGTAB" type="pref" language="en-US"
+                superClasses="Tablet"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Vaginal Tablet</description>
+   <description count="2" length="13" conceptId="RECPWD" type="pref" language="en-US"
+                superClasses="Topical Powder"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Rectal Powder</description>
+   <description count="2" length="14" conceptId="VAGPWD" type="pref" language="en-US"
+                superClasses="Topical Powder"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Vaginal Powder</description>
+   <description count="1" length="8" conceptId="LIN" type="pref" language="en-US"
+                superClasses="Topical Solution"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Liniment</description>
+   <description count="4" length="32" conceptId="MUCTOPSOL" type="pref" language="en-US"
+                superClasses="Topical Solution"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Mucous Membrane Topical Solution</description>
+   <description count="1" length="8" conceptId="TINC" type="pref" language="en-US"
+                superClasses="Topical Solution"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Tincture</description>
+   <description count="4" length="25" conceptId="TPATH16" type="pref" language="en-US"
+                superClasses="Transdermal Patch"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">16 Hour Transdermal Patch</description>
+   <description count="4" length="25" conceptId="TPATH24" type="pref" language="en-US"
+                superClasses="Transdermal Patch"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">24 Hour Transdermal Patch</description>
+   <description count="3" length="26" conceptId="TPATH2WK" type="pref" language="en-US"
+                superClasses="Transdermal Patch"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Biweekly Transdermal Patch</description>
+   <description count="4" length="25" conceptId="TPATH72" type="pref" language="en-US"
+                superClasses="Transdermal Patch"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">72 Hour Transdermal Patch</description>
+   <description count="3" length="24" conceptId="TPATHWK" type="pref" language="en-US"
+                superClasses="Transdermal Patch"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Weekly Transdermal Patch</description>
+   <description count="4" length="29" conceptId="VAGCRMAPL" type="pref" language="en-US"
+                superClasses="Vaginal Cream"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Vaginal Cream with Applicator</description>
+   <description count="4" length="28" conceptId="VAGFOAMAPL" type="pref" language="en-US"
+                superClasses="Vaginal foam"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Vaginal foam with applicator</description>
+   <description count="4" length="27" conceptId="VGELAPL" type="pref" language="en-US"
+                superClasses="Vaginal Gel"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Vaginal Gel with Applicator</description>
+   <description count="4" length="32" conceptId="VAGOINTAPL" type="pref" language="en-US"
+                superClasses="Vaginal Ointment"
+                classificationId="2.16.840.1.113883.5.85"
+                classificationName="orderableDrugForm">Vaginal Ointment with Applicator</description>
+</descriptions>

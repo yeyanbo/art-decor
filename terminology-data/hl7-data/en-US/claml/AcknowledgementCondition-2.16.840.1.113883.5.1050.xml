@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="29"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1050"/>
+   <Title name="AcknowledgementCondition" date="2012-08-02" version="1.000">The codes identify the conditions under which accept acknowledgements are required to be returned in response to this message. Note that accept acknowledgement address two different issues at the same time: reliable transport as well as syntactical correctness</Title>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="AL" kind="concept">
+      <Meta name="internalId" value="10126"/>
+      <Rubric id="d1e20566" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Always send an acknowledgement.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e20579" kind="short">
+         <Label xml:lang="en-US">Always</Label>
+      </Rubric>
+      <Rubric id="d1e20579" kind="preferred">
+         <Label xml:lang="en-US">Always</Label>
+      </Rubric>
+   </Class>
+   <Class code="ER" kind="concept">
+      <Meta name="internalId" value="10128"/>
+      <Rubric id="d1e20590" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Send an acknowledgement for error/reject conditions only.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e20603" kind="short">
+         <Label xml:lang="en-US">Error/reject only</Label>
+      </Rubric>
+      <Rubric id="d1e20603" kind="preferred">
+         <Label xml:lang="en-US">Error/reject only</Label>
+      </Rubric>
+   </Class>
+   <Class code="NE" kind="concept">
+      <Meta name="internalId" value="10127"/>
+      <Rubric id="d1e20614" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Never send an acknowledgement.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e20627" kind="short">
+         <Label xml:lang="en-US">Never</Label>
+      </Rubric>
+      <Rubric id="d1e20627" kind="preferred">
+         <Label xml:lang="en-US">Never</Label>
+      </Rubric>
+   </Class>
+</ClaML>

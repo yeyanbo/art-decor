@@ -1,0 +1,152 @@
+<!--
+    Copyright (C) 2011-2014 ART-DECOR expert group art-decor.org
+    
+    Author: Gerrit Boers
+    Author: Kai Heitmann
+    
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+    
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+    
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:widget="http://orbeon.org/oxf/xml/widget" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="decor-templates" xsi:schemaLocation="http://www.w3.org/1999/xhtml ../../orbeon_schemas/xhtml1-transitional-orbeon.xsd">
+    <xhtml:head>
+        <xhtml:title>
+            <xforms:output ref="if (instance('project-instance')/name[@language=$resources/@xml:lang]) then (instance('project-instance')/name[@language=$resources/@xml:lang]) else (instance('project-instance')/name[1])"/> - <xforms:output ref="$resources/valueset-ids"/>
+        </xhtml:title>
+        <xforms:model>
+            <!-- Variable with path to art-exist for use by form -->
+            <xxforms:variable name="art-exist" select="xxforms:property('art.exist.url')"/>
+            <!-- Variable with path to decor-eXist used to pass to client as link for services (Diagrams in new window) -->
+            <xxforms:variable name="decor-exist" select="xxforms:property('decor.exist.url')"/>
+            <!-- Variable with path to decor-external-exist used to pass to client as link for services (Diagrams in new window) -->
+            <xxforms:variable name="decor-external-exist" select="xxforms:property('decor.external.exist.url')"/>
+            <!-- resources for internationalization -->
+            <!-- instance for user-agent, used to check if SVG links should be available -->
+            <xforms:instance id="user-agent">
+                <agent/>
+            </xforms:instance>
+            <xforms:instance id="resources-instance">
+                <dummy/>
+            </xforms:instance>
+            <!-- submission for loading resources -->
+            <xforms:submission id="get-resources-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-form-resources.xquery" replace="instance" instance="resources-instance"/>
+            <!-- language -->
+            <xforms:instance id="language">
+                <language/>
+            </xforms:instance>
+            
+            <!-- instance for DECOR Schema enumerations -->
+            <xforms:instance id="decor-types">
+                <dummy/>
+            </xforms:instance>
+            <!-- get decor schema submission -->
+            <xforms:submission id="get-decor-schema-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-schema-types.xquery" replace="instance" instance="decor-types"/>
+            
+            <!-- instance for document name -->
+            <xforms:instance id="document">
+                <name>dsexpl1</name>
+            </xforms:instance>
+            
+            <!-- instance for project information -->
+            <xforms:instance id="project-instance">
+                <dummy/>
+            </xforms:instance>
+            <!-- get decor project submission -->
+            <xforms:submission id="get-decor-project-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-project.xq?project={instance('document')}" replace="instance" instance="project-instance" xxforms:readonly="true"/>
+            
+            <!-- *** Value Sets *** -->
+            <!-- instance for DECOR Value Sets -->
+            <xforms:instance id="decor-valuesets">
+                <dummy/>
+            </xforms:instance>
+            <!-- get decor templates submission -->
+            <xforms:submission id="get-decor-valuesets" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-valueset-list.xquery?project={instance('document')}" replace="instance" instance="decor-valuesets"/>
+            <xforms:action ev:event="xforms-model-construct-done">
+                <xforms:send submission="get-resources-submission"/>
+                <xforms:send submission="get-decor-project-submission"/>
+                <xforms:setvalue ref="instance('language')" value="if (string-length(xxforms:get-session-attribute('language'))&gt;0) then (xxforms:get-session-attribute('language')) else (instance('project-instance')/@defaultLanguage/string())"/>
+                <xforms:send submission="get-decor-schema-submission"/>
+                <xforms:send submission="get-decor-valuesets"/>
+            </xforms:action>
+            <xxforms:variable name="resources" select="instance('resources-instance')//resources[1]"/>
+        </xforms:model>
+    </xhtml:head>
+    <xhtml:body>
+        <xhtml:table class="detail zebra-table" width="100%">
+            <xhtml:tr>
+                <xhtml:td class="heading" colspan="5">
+                    <xhtml:div class="heading">
+                        <xforms:output ref="$resources/list-of-valueset-ids"/>
+                    </xhtml:div>
+                </xhtml:td>
+            </xhtml:tr>
+            <xhtml:tr>
+                <xhtml:tr class="not-selectable">
+                    <xhtml:td align="left" class="heading">
+                        <xforms:output ref="$resources/id"/>
+                    </xhtml:td>
+                    <xhtml:td align="left" class="heading">
+                        <xforms:output ref="$resources/display-name"/>
+                    </xhtml:td>
+                    <xhtml:td align="left" class="heading">
+                        <xforms:output ref="$resources/name"/>
+                    </xhtml:td>
+                    <xhtml:td align="left" class="heading">
+                        <xforms:output ref="concat($resources/versions, ' / ', $resources/status)"/>
+                    </xhtml:td>
+                    <xhtml:td align="left" class="heading">
+                        <xforms:output ref="$resources/type"/>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xhtml:tr>
+            <xforms:repeat nodeset="xxforms:sort(instance('decor-valuesets')/valueSet, replace(replace(concat(@id, @ref, '.'), '\.', '.0000000000'), '.0*([0-9]{9,})', '.$1'), 'text', 'ascending')">
+                <xxforms:variable name="ref" select="@ref"/>
+                <xhtml:tr class="not-selectable zebra-row-{if (position() mod 2 = 0) then 'even' else 'odd'}">
+                    <xhtml:td>
+                        <xforms:trigger appearance="minimal">
+                            <xforms:label>
+                                <xforms:output ref="(@id|@ref)"/>
+                            </xforms:label>
+                            <xforms:action ev:event="DOMActivate">
+                                <xforms:load resource="/decor-valuesets--{instance('project-instance')/@prefix}?valueSetRef={(@id|@ref)}" show="new"/>
+                            </xforms:action>
+                        </xforms:trigger>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:output ref="if (string-length(@displayName)&gt;0) then (@displayName) else (@name)"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:output ref="@name"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xxforms:variable name="statusCode" select="@statusCode"/>
+                        <xforms:output ref="@effectiveDate" xxforms:format="if (. castable as xs:dateTime) then replace(format-dateTime(.,'[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]', (), (), ()),' 00:00:00','') else (.)"/>
+                        <xforms:output ref="instance('decor-types')/ItemStatusCodeLifeCycle/enumeration[@value=$statusCode]/label[@language=$resources/@xml:lang]" class="node-s{$statusCode}"/>
+                        <!--
+                        <xforms:repeat nodeset="../template[position()>1]">
+                            <xhtml:br/>
+                            <xhtml:i>
+                                <xforms:output ref="@effectiveDate" xxforms:format="if (. castable as xs:dateTime) then replace(format-dateTime(.,'[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]', (), (), ()),' 00:00:00','') else (.)"/>
+                                <xxforms:variable name="statusCode" select="@statusCode"/>
+                                <xforms:output ref="instance('decor-types')/TemplateStatusCodeLifeCycle/enumeration[@value=$statusCode]/label[@language=$resources/@xml:lang]" class="node-s{$statusCode}"/>
+                            </xhtml:i>
+                        </xforms:repeat>
+                        -->
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:group ref=".[string-length(@ref)&gt;0]">
+                            <span style="padding: 0px 5px 0px 5px; text-align: center; background-color: lightgrey; color: white; font-weight: bold;">ref</span>
+                        </xforms:group>
+                        <xforms:output ref="if (string-length(@ref)&gt;0) then concat($resources/from, ' ', $resources/repository) else $resources/value-set"/>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xforms:repeat>
+        </xhtml:table>
+    </xhtml:body>
+</xhtml:html>

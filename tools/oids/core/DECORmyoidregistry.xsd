@@ -1,0 +1,74 @@
+<!-- 
+    
+    DECOR my OID registry schema
+    Copyright (C) 2013-2014 Dr. Kai U. Heitmann
+    
+    This program is free software; you can redistribute it and/or modify it under the terms 
+    of the GNU General Public License as published by the Free Software Foundation; 
+    either version 3 of the License, or (at your option) any later version.
+    
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+    See the GNU General Public License for more details.
+    
+    See http://www.gnu.org/licenses/gpl.html
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    
+    <!-- include DECOR datatype defintions -->
+    <!--<xs:include schemaLocation="../../../decor/core/DECOR-datatypes.xsd"/>-->
+    <xs:include schemaLocation="iso-13582-sor.xsd"/>
+    <xs:element name="myoidregistry">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="access"/>
+                <xs:element ref="registry"/>
+            </xs:sequence>
+            <xs:attribute name="name" use="required" type="ShortDescriptiveName"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="access">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="author"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="author">
+        <xs:complexType>
+            <xs:attribute name="rights" use="required" type="CommunityRightsType"/>
+            <xs:attribute name="username" use="required" type="NonEmptyString"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="CommunityRightsType">
+        <xs:restriction base="EnumerationToken">
+            <xs:enumeration value="r"/>
+            <xs:enumeration value="rw"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="EnumerationToken">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Used as the base class for all 'codes' which qualify or SHALL be handled as NMTOKEN</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+            <xs:maxLength value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="NonEmptyString">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Used as the base for most string datatypes. (Ensures that empty strings are not allowed.). Should never be implemented directly because it has no length
+                limits.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:token">
+            <xs:minLength value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ShortDescriptiveName">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Used when descriptions are intended to be very short</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="NonEmptyString">
+            <xs:maxLength value="80"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

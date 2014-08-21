@@ -1,0 +1,750 @@
+﻿<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:lab="urn:hl7-org:lab"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:hl7-org:v3 CDA_IHE_LAB.xsd">
+    <realmCode code="UV"/>
+    <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+    <id root="1.3.6.1.4.1.21367.2007.2.3.2" extension="A7041500006_1"/>
+    <code code="11502-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+        displayName="LABORATORY REPORT.TOTAL"/>
+    <title>Compte rendu d'analyses médicales</title>
+    <effectiveTime value="20070415144550"/>
+    <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+    <languageCode code="fr-FR"/>
+    <setId root="1.3.6.4.1.4.1.2835.1" extension="A7041500006"/>
+    <versionNumber value="1"/>
+    <recordTarget>
+        <patientRole>
+            <id root="1.3.6.1.4.1.21367.2005.3.7" extension="7008230"/>
+            <addr>
+                <country>France</country>
+                <city>Paris</city>
+                <postalCode>75020</postalCode>
+                <streetAddressLine>16, rue Montbrillant</streetAddressLine>
+            </addr>
+            <telecom use="WP" value="tel:55588822"/>
+            <patient>
+                <name>
+                    <family>Dupont</family>
+                    <given>Francois</given>
+                    <prefix>MR</prefix>
+                </name>
+                <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+                <birthTime value="19661225"/>
+                <birthplace>
+                    <place>
+                        <name/>
+                    </place>
+                </birthplace>
+            </patient>
+        </patientRole>
+    </recordTarget>
+    <author>
+        <time value="20070415144550"/>
+        <assignedAuthor>
+            <id root="1.3.6.4.1.4.1.2835.1" extension="045 3 00100 0"/>
+            <assignedAuthoringDevice>
+                <softwareName>Hexalis version: 2.2 release: 22941_0</softwareName>
+            </assignedAuthoringDevice>
+        </assignedAuthor>
+    </author>
+    <custodian>
+        <assignedCustodian>
+            <representedCustodianOrganization>
+                <id root="1.2.250.1.71" extension="045 3 00100 0"/>
+                <name>ACTIVITE LABOS s.a.r.l.</name>
+                <telecom use="WP" value="0164626965"/>
+                <addr>
+                    <country>France</country>
+                    <city>LOGNES</city>
+                    <postalCode>77185</postalCode>
+                    <streetAddressLine>22, Rue Cigalle</streetAddressLine>
+                </addr>
+            </representedCustodianOrganization>
+        </assignedCustodian>
+    </custodian>
+    <legalAuthenticator>
+        <time value="20070415"/>
+        <signatureCode code="S"/>
+        <assignedEntity>
+            <id root="1.2.250.1.71" extension="045 3 00100 0"/>
+            <assignedPerson>
+                <name>
+                    <family>MonsieurSignataire</family>
+                    <given>Jean Luc</given>
+                </name>
+            </assignedPerson>
+            <representedOrganization>
+                <name>ETALON-3 211206 ACTIVITE LABOS</name>
+            </representedOrganization>
+        </assignedEntity>
+    </legalAuthenticator>
+    <authenticator>
+        <time value="20070415144400"/>
+        <signatureCode code="S"/>
+        <assignedEntity>
+            <id root="1.1.1.1" extension="MHXL"/>
+            <assignedPerson>
+                <family>L'Auteur</family>
+                <given>Jean Luc</given>
+            </assignedPerson>
+            <representedOrganization>
+                <name>ETALON-3 211206 ACTIVITE LABOS</name>
+            </representedOrganization>
+        </assignedEntity>
+    </authenticator>
+    <participant typeCode="REF">
+        <time value="20070415"/>
+        <associatedEntity classCode="REF">
+            <id root="1.2.250.1.71" extension="15101"/>
+            <associatedPerson>
+                <name>NELL FREDERICK</name>
+            </associatedPerson>
+        </associatedEntity>
+    </participant>
+    <documentationOf>
+        <serviceEvent>
+            <lab:statusCode code="completed"/>
+            <performer typeCode="PRF">
+                <assignedEntity>
+                    <id root="1.2.250.1.71" extension="045 3 00100 0"/>
+                    <name>ACTIVITE LABOS s.a.r.l.</name>
+                    <telecom use="WP" value="0164626965"/>
+                    <addr>
+                        <country>France</country>
+                        <city>LOGNES</city>
+                        <postalCode>77185</postalCode>
+                        <streetAddressLine>22, Rue Cigalle</streetAddressLine>
+                    </addr>
+                    <representedOrganization>
+                        <name>ETALON-3 211206 ACTIVITE LABOS</name>
+                    </representedOrganization>
+                </assignedEntity>
+            </performer>
+        </serviceEvent>
+    </documentationOf>
+    <relatedDocument typeCode="RPLC">
+        <parentDocument>
+            <id root="1.3.6.4.1.4.1.2835.1" extension="A7041500006_0"/>
+        </parentDocument>
+    </relatedDocument>
+    <component>
+        <structuredBody>
+            <component>
+                <section>
+                    <code code="18719-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                        displayName="CHEMISTRY STUDIES"/>
+                    <component>
+                        <section>
+                            <code code="2951-2" codeSystem="2.16.840.1.113883.6.1"
+                                codeSystemName="LOINC" displayName="Sodium"/>
+                            <title>Sodium</title>
+                            <text>
+                                <table>
+                                    <thead align="center">
+                                        <tr>
+                                            <th align="left" colspan="3">Sodium</th>
+                                        </tr>
+                                        <tr>
+                                            <td/>
+                                            <td align="center">2007/04/15 14:45:50</td>
+                                            <td align="center">Reference range</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody align="center">
+                                        <tr>
+                                            <td align="left">Sodium (mmol/L)</td>
+                                            <td align="center">140</td>
+                                            <td align="center">134.000000 - 146.000000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </text>
+                            <entry typeCode="DRIV">
+                                <templateId root="1.3.6.1.4.1.19376.1.3.1"
+                                    extension="Lab.Report.Data.Processing.Entry"/>
+                                <act classCode="ACT" moodCode="EVN">
+                                    <code code="2951-2" codeSystem="2.16.840.1.113883.6.1"
+                                        codeSystemName="LOINC" displayName="Sodium"/>
+                                    <statusCode code="completed"/>
+                                    <specimen>
+                                        <specimenRole>
+                                            <specimenPlayingEntity>
+                                                <code code="BBL" codeSystem="2.16.840.1.113883"
+                                                  displayName="sang sur anti coagulant T&#xB0;A"
+                                                />
+                                            </specimenPlayingEntity>
+                                            <lab:productOf>
+                                                <lab:procedure>
+                                                  <lab:effectiveTime value="20070415"/>
+                                                </lab:procedure>
+                                            </lab:productOf>
+                                        </specimenRole>
+                                    </specimen>
+                                    <participant typeCode="VRF">
+                                        <participantRole>
+                                            <id root="1.1.1.1" extension="MHXL"/>
+                                        </participantRole>
+                                    </participant>
+                                    <entryRelationship typeCode="COMP">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <code code="2951-2" codeSystem="2.16.840.1.113883.6.1"
+                                                displayName="Sodium"/>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime value="20070415144550"/>
+                                            <value xsi:type="PQ" value="140" unit="mmol/L"/>
+                                            <referenceRange>
+                                                <observationRange>
+                                                  <value xsi:type="IVL_PQ">
+                                                  <low value="134.000000" unit="mmol/L"/>
+                                                  <high value="146.000000" unit="mmol/L"/>
+                                                  </value>
+                                                </observationRange>
+                                            </referenceRange>
+                                        </observation>
+                                    </entryRelationship>
+                                </act>
+                            </entry>
+                        </section>
+                    </component>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <code code="18723-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                        displayName="HEMATOLOGY STUDIES"/>
+                    <component>
+                        <section>
+                            <code code="24358-4" codeSystem="2.16.840.1.113883.6.1"
+                                codeSystemName="LOINC" displayName="H&#xE9;mogramme"/>
+                            <title>Hémogramme</title>
+                            <text>
+                                <table>
+                                    <thead align="center">
+                                        <tr>
+                                            <th align="left" colspan="3">Hémogramme</th>
+                                        </tr>
+                                        <tr>
+                                            <td/>
+                                            <td align="center">2007/04/15 14:45:50</td>
+                                            <td align="center">Reference range</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody align="center">
+                                        <tr>
+                                            <td align="left">Hématies (/l)</td>
+                                            <td align="center">5000000</td>
+                                            <td align="center">4000000.000000 - 6200000.000000</td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left">Hémoglobine (g/l)</td>
+                                            <td align="center">150.0</td>
+                                            <td align="center"> - </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left">Hématocrite (%)</td>
+                                            <td align="center">45.0</td>
+                                            <td align="center">39.000000 - 55.000000</td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left">V.G.M. (fl)</td>
+                                            <td align="center">90</td>
+                                            <td align="center">79.000000 - 96.000000</td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left">T.C.M.H (picog)</td>
+                                            <td align="center">30.0</td>
+                                            <td align="center">26.000000 - 34.000000</td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left">C.C.M.H. (%)</td>
+                                            <td align="center">33</td>
+                                            <td align="center">32.000000 - 36.000000</td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left">Leucocytes (/l)</td>
+                                            <td align="center">8000000</td>
+                                            <td align="center">3000000.000000 - 11000000.000000</td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left">Polynucléaires neutrophiles (%)</td>
+                                            <td align="center">60.0</td>
+                                            <td align="center"> - </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left">Polynucléaire neutrophiles (/l)</td>
+                                            <td align="center">4800000000.00</td>
+                                            <td align="center"> - </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left">Polynucléaires éosinophiles (%)</td>
+                                            <td align="center">10.0</td>
+                                            <td align="center"> - </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left">Polynucléaires éosinophiles (/l)</td>
+                                            <td align="center">800000000</td>
+                                            <td align="center"> - </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left">Polynucléaires basophiles (%)</td>
+                                            <td align="center">10.0</td>
+                                            <td align="center"> - </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left">Polynucléaires basophiles (/l)</td>
+                                            <td align="center">800000000.00</td>
+                                            <td align="center"> - </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left">Lymphocytes (%)</td>
+                                            <td align="center">10.0</td>
+                                            <td align="center"> - </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left">Lymphocytes (/l)</td>
+                                            <td align="center">800000000.00</td>
+                                            <td align="center"> - </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left">Monocytes (%)</td>
+                                            <td align="center">10.0</td>
+                                            <td align="center"> - </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left">Monocytes (/l)</td>
+                                            <td align="center">800000000.00</td>
+                                            <td align="center"> - </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left">Plaquettes (/mm3)</td>
+                                            <td align="center">175.00</td>
+                                            <td align="center">140.000000 - 460.000000</td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left">V.P.M. (µ3)</td>
+                                            <td align="center">9.0</td>
+                                            <td align="center">0.000000 - 11.000000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </text>
+                            <entry typeCode="DRIV">
+                                <templateId root="1.3.6.1.4.1.19376.1.3.1"
+                                    extension="Lab.Report.Data.Processing.Entry"/>
+                                <act classCode="ACT" moodCode="EVN">
+                                    <code code="24358-4" codeSystem="2.16.840.1.113883.6.1"
+                                        codeSystemName="LOINC" displayName="H&#xE9;mogramme"/>
+                                    <statusCode code="completed"/>
+                                    <specimen>
+                                        <specimenRole>
+                                            <specimenPlayingEntity>
+                                                <code code="BBL" codeSystem="2.16.840.1.113883"
+                                                  displayName="sang sur anti coagulant T&#xB0;A"
+                                                />
+                                            </specimenPlayingEntity>
+                                            <lab:productOf>
+                                                <lab:procedure>
+                                                  <lab:effectiveTime value="20070415"/>
+                                                </lab:procedure>
+                                            </lab:productOf>
+                                        </specimenRole>
+                                    </specimen>
+                                    <participant typeCode="VRF">
+                                        <participantRole>
+                                            <id root="1.1.1.1" extension="MHXL"/>
+                                        </participantRole>
+                                    </participant>
+                                    <entryRelationship typeCode="COMP">
+                                        <organizer classCode="BATTERY" moodCode="EVN">
+                                            <statusCode code="completed"/>
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                  <code code="789-8"
+                                                  codeSystem="2.16.840.1.113883.6.1"
+                                                  displayName="H&#xE9;maties"/>
+                                                  <statusCode code="completed"/>
+                                                  <effectiveTime value="20070415144550"/>
+                                                  <value xsi:type="PQ" value="5000000" unit="/l"/>
+                                                  <referenceRange>
+                                                  <observationRange>
+                                                  <value xsi:type="IVL_PQ">
+                                                  <low value="4000000.000000"
+                                                  unit="/l"/>
+                                                  <high value="6200000.000000"
+                                                  unit="/l"/>
+                                                  </value>
+                                                  </observationRange>
+                                                  </referenceRange>
+                                                </observation>
+                                            </component>
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                  <code code="718-7"
+                                                  codeSystem="2.16.840.1.113883.6.1"
+                                                  displayName="H&#xE9;moglobine"/>
+                                                  <statusCode code="completed"/>
+                                                  <effectiveTime value="20070415144550"/>
+                                                  <value xsi:type="PQ" value="150.0" unit="g/l"/>
+                                                </observation>
+                                            </component>
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                  <code code="4545-0"
+                                                  codeSystem="2.16.840.1.113883.6.1"
+                                                  displayName="H&#xE9;matocrite"/>
+                                                  <statusCode code="completed"/>
+                                                  <effectiveTime value="20070415144550"/>
+                                                  <value xsi:type="PQ" value="45.0" unit="%"/>
+                                                  <referenceRange>
+                                                  <observationRange>
+                                                  <value xsi:type="IVL_PQ">
+                                                  <low value="39.000000" unit="%"/>
+                                                  <high value="55.000000" unit="%"/>
+                                                  </value>
+                                                  </observationRange>
+                                                  </referenceRange>
+                                                </observation>
+                                            </component>
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                  <code code="787-2"
+                                                  codeSystem="2.16.840.1.113883.6.1"
+                                                  displayName="V.G.M."/>
+                                                  <statusCode code="completed"/>
+                                                  <effectiveTime value="20070415144550"/>
+                                                  <value xsi:type="PQ" value="90" unit="fl"/>
+                                                  <referenceRange>
+                                                  <observationRange>
+                                                  <value xsi:type="IVL_PQ">
+                                                  <low value="79.000000" unit="fl"/>
+                                                  <high value="96.000000" unit="fl"/>
+                                                  </value>
+                                                  </observationRange>
+                                                  </referenceRange>
+                                                </observation>
+                                            </component>
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                  <code code="785-6"
+                                                  codeSystem="2.16.840.1.113883.6.1"
+                                                  displayName="T.C.M.H"/>
+                                                  <statusCode code="completed"/>
+                                                  <effectiveTime value="20070415144550"/>
+                                                  <value xsi:type="PQ" value="30.0" unit="picog"/>
+                                                  <referenceRange>
+                                                  <observationRange>
+                                                  <value xsi:type="IVL_PQ">
+                                                  <low value="26.000000" unit="picog"/>
+                                                  <high value="34.000000" unit="picog"
+                                                  />
+                                                  </value>
+                                                  </observationRange>
+                                                  </referenceRange>
+                                                </observation>
+                                            </component>
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                  <code code="786-4"
+                                                  codeSystem="2.16.840.1.113883.6.1"
+                                                  displayName="C.C.M.H."/>
+                                                  <statusCode code="completed"/>
+                                                  <effectiveTime value="20070415144550"/>
+                                                  <value xsi:type="PQ" value="33" unit="%"/>
+                                                  <referenceRange>
+                                                  <observationRange>
+                                                  <value xsi:type="IVL_PQ">
+                                                  <low value="32.000000" unit="%"/>
+                                                  <high value="36.000000" unit="%"/>
+                                                  </value>
+                                                  </observationRange>
+                                                  </referenceRange>
+                                                </observation>
+                                            </component>
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                  <code code="6690-2"
+                                                  codeSystem="2.16.840.1.113883.6.1"
+                                                  displayName="Leucocytes"/>
+                                                  <statusCode code="completed"/>
+                                                  <effectiveTime value="20070415144550"/>
+                                                  <value xsi:type="PQ" value="8000000" unit="/l"/>
+                                                  <referenceRange>
+                                                  <observationRange>
+                                                  <value xsi:type="IVL_PQ">
+                                                  <low value="3000000.000000"
+                                                  unit="/l"/>
+                                                  <high value="11000000.000000"
+                                                  unit="/l"/>
+                                                  </value>
+                                                  </observationRange>
+                                                  </referenceRange>
+                                                </observation>
+                                            </component>
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                  <code code="763-3"
+                                                  codeSystem="2.16.840.1.113883.6.1"
+                                                  displayName="Polynucl&#xE9;aires neutrophiles"/>
+                                                  <statusCode code="completed"/>
+                                                  <effectiveTime value="20070415144550"/>
+                                                  <value xsi:type="PQ" value="60.0" unit="%"/>
+                                                </observation>
+                                            </component>
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                  <code code="764-1"
+                                                  codeSystem="2.16.840.1.113883.6.1"
+                                                  displayName="Polynucl&#xE9;aire neutrophiles"/>
+                                                  <statusCode code="completed"/>
+                                                  <effectiveTime value="20070415144550"/>
+                                                  <value xsi:type="PQ" value="4800000000.00"
+                                                  unit="/l"/>
+                                                </observation>
+                                            </component>
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                  <code code="711-2"
+                                                  codeSystem="2.16.840.1.113883.6.1"
+                                                  displayName="Polynucl&#xE9;aires &#xE9;osinophiles"/>
+                                                  <statusCode code="completed"/>
+                                                  <effectiveTime value="20070415144550"/>
+                                                  <value xsi:type="PQ" value="10.0" unit="%"/>
+                                                </observation>
+                                            </component>
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                  <code code="713-8"
+                                                  codeSystem="2.16.840.1.113883.6.1"
+                                                  displayName="Polynucl&#xE9;aires &#xE9;osinophiles"/>
+                                                  <statusCode code="completed"/>
+                                                  <effectiveTime value="20070415144550"/>
+                                                  <value xsi:type="PQ" value="800000000" unit="/l"
+                                                  />
+                                                </observation>
+                                            </component>
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                  <code code="704-7"
+                                                  codeSystem="2.16.840.1.113883.6.1"
+                                                  displayName="Polynucl&#xE9;aires basophiles"/>
+                                                  <statusCode code="completed"/>
+                                                  <effectiveTime value="20070415144550"/>
+                                                  <value xsi:type="PQ" value="10.0" unit="%"/>
+                                                </observation>
+                                            </component>
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                  <code code="706-2"
+                                                  codeSystem="2.16.840.1.113883.6.1"
+                                                  displayName="Polynucl&#xE9;aires basophiles"/>
+                                                  <statusCode code="completed"/>
+                                                  <effectiveTime value="20070415144550"/>
+                                                  <value xsi:type="PQ" value="800000000.00"
+                                                  unit="/l"/>
+                                                  <interpretationCode code="VS"
+                                                  codeSystem="2.16.840.1.113883.5.83"
+                                                  displayName="HyperPatho"/>
+                                                </observation>
+                                            </component>
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                  <code code="731-0"
+                                                  codeSystem="2.16.840.1.113883.6.1"
+                                                  displayName="Lymphocytes"/>
+                                                  <statusCode code="completed"/>
+                                                  <effectiveTime value="20070415144550"/>
+                                                  <value xsi:type="PQ" value="10.0" unit="%"/>
+                                                </observation>
+                                            </component>
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                  <code code="736-9"
+                                                  codeSystem="2.16.840.1.113883.6.1"
+                                                  displayName="Lymphocytes"/>
+                                                  <statusCode code="completed"/>
+                                                  <effectiveTime value="20070415144550"/>
+                                                  <value xsi:type="PQ" value="800000000.00"
+                                                  unit="/l"/>
+                                                </observation>
+                                            </component>
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                  <code code="742-7"
+                                                  codeSystem="2.16.840.1.113883.6.1"
+                                                  displayName="Monocytes"/>
+                                                  <statusCode code="completed"/>
+                                                  <effectiveTime value="20070415144550"/>
+                                                  <value xsi:type="PQ" value="10.0" unit="%"/>
+                                                </observation>
+                                            </component>
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                  <code code="5905-5"
+                                                  codeSystem="2.16.840.1.113883.6.1"
+                                                  displayName="Monocytes"/>
+                                                  <statusCode code="completed"/>
+                                                  <effectiveTime value="20070415144550"/>
+                                                  <value xsi:type="PQ" value="800000000.00"
+                                                  unit="/l"/>
+                                                </observation>
+                                            </component>
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                  <code code="14301-6"
+                                                  codeSystem="2.16.840.1.113883.6.1"
+                                                  displayName="Plaquettes"/>
+                                                  <statusCode code="completed"/>
+                                                  <effectiveTime value="20070415144550"/>
+                                                  <value xsi:type="PQ" value="175.00" unit="/mm3"/>
+                                                  <referenceRange>
+                                                  <observationRange>
+                                                  <value xsi:type="IVL_PQ">
+                                                  <low value="140.000000" unit="/mm3"/>
+                                                  <high value="460.000000" unit="/mm3"
+                                                  />
+                                                  </value>
+                                                  </observationRange>
+                                                  </referenceRange>
+                                                </observation>
+                                            </component>
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                  <code code="776-5"
+                                                  codeSystem="2.16.840.1.113883.6.1"
+                                                  displayName="V.P.M."/>
+                                                  <statusCode code="completed"/>
+                                                  <effectiveTime value="20070415144550"/>
+                                                  <value xsi:type="PQ" value="9.0"
+                                                  unit="&#xB5;3"/>
+                                                  <referenceRange>
+                                                  <observationRange>
+                                                  <value xsi:type="IVL_PQ">
+                                                  <low value="0.000000"
+                                                  unit="&#xB5;3"/>
+                                                  <high value="11.000000"
+                                                  unit="&#xB5;3"/>
+                                                  </value>
+                                                  </observationRange>
+                                                  </referenceRange>
+                                                </observation>
+                                            </component>
+                                        </organizer>
+                                    </entryRelationship>
+                                </act>
+                            </entry>
+                        </section>
+                    </component>
+                    <component>
+                        <section>
+                            <code code="30341-2" codeSystem="2.16.840.1.113883.6.1"
+                                codeSystemName="LOINC"
+                                displayName="Vitesse de s&#xE9;dimentation"/>
+                            <title>Vitesse de sédimentation</title>
+                            <text>
+                                <table>
+                                    <thead align="center">
+                                        <tr>
+                                            <th align="left" colspan="3">Vitesse de
+                                            sédimentation</th>
+                                        </tr>
+                                        <tr>
+                                            <td/>
+                                            <td align="center">2007/04/15 14:45:50</td>
+                                            <td align="center">Reference range</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody align="center">
+                                        <tr>
+                                            <td align="left">Vitesse de sédimentation 1ère heure
+                                                (mm)</td>
+                                            <td align="center">5</td>
+                                            <td align="center">0.000000 - 8.000000</td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left">Vitesse de sédimentation 2ème heure
+                                                (mm)</td>
+                                            <td align="center">10</td>
+                                            <td align="center">0.000000 - 15.000000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </text>
+                            <entry typeCode="DRIV">
+                                <templateId root="1.3.6.1.4.1.19376.1.3.1"
+                                    extension="Lab.Report.Data.Processing.Entry"/>
+                                <act classCode="ACT" moodCode="EVN">
+                                    <code code="30341-2" codeSystem="2.16.840.1.113883.6.1"
+                                        codeSystemName="LOINC"
+                                        displayName="Vitesse de s&#xE9;dimentation"/>
+                                    <statusCode code="completed"/>
+                                    <specimen>
+                                        <specimenRole>
+                                            <specimenPlayingEntity>
+                                                <code code="BBL" codeSystem="2.16.840.1.113883"
+                                                  displayName="sang sur anti coagulant T&#xB0;A"
+                                                />
+                                            </specimenPlayingEntity>
+                                            <lab:productOf>
+                                                <lab:procedure>
+                                                  <lab:effectiveTime value="20070415"/>
+                                                </lab:procedure>
+                                            </lab:productOf>
+                                        </specimenRole>
+                                    </specimen>
+                                    <participant typeCode="VRF">
+                                        <participantRole>
+                                            <id root="1.1.1.1" extension="MHXL"/>
+                                        </participantRole>
+                                    </participant>
+                                    <entryRelationship typeCode="COMP">
+                                        <organizer classCode="BATTERY" moodCode="EVN">
+                                            <statusCode code="completed"/>
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                  <code code="4537-7"
+                                                  codeSystem="2.16.840.1.113883.6.1"
+                                                  displayName="Vitesse de s&#xE9;dimentation 1&#xE8;re heure"/>
+                                                  <statusCode code="completed"/>
+                                                  <effectiveTime value="20070415144550"/>
+                                                  <value xsi:type="PQ" value="5" unit="mm"/>
+                                                  <referenceRange>
+                                                  <observationRange>
+                                                  <value xsi:type="IVL_PQ">
+                                                  <low value="0.000000" unit="mm"/>
+                                                  <high value="8.000000" unit="mm"/>
+                                                  </value>
+                                                  </observationRange>
+                                                  </referenceRange>
+                                                </observation>
+                                            </component>
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                  <code code="18184-2"
+                                                  codeSystem="2.16.840.1.113883.6.1"
+                                                  displayName="Vitesse de s&#xE9;dimentation 2&#xE8;me heure"/>
+                                                  <statusCode code="completed"/>
+                                                  <effectiveTime value="20070415144550"/>
+                                                  <value xsi:type="PQ" value="10" unit="mm"/>
+                                                  <referenceRange>
+                                                  <observationRange>
+                                                  <value xsi:type="IVL_PQ">
+                                                  <low value="0.000000" unit="mm"/>
+                                                  <high value="15.000000" unit="mm"/>
+                                                  </value>
+                                                  </observationRange>
+                                                  </referenceRange>
+                                                </observation>
+                                            </component>
+                                        </organizer>
+                                    </entryRelationship>
+                                </act>
+                            </entry>
+                        </section>
+                    </component>
+                </section>
+            </component>
+        </structuredBody>
+    </component>
+</ClinicalDocument>

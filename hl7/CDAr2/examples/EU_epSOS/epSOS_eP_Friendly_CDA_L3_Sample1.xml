@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:mif="urn:hl7-org:v3/mif" xmlns:sch="http://www.ascc.net/xml/schematron" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ..\..\..\..\WP3.9\3.9.1\APPEND~1\B1-GUI~1\presc_disp_0625\presc_disp_0625\CDASchema\CDA_extended.xsd">
+	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+	<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.1.1"/>
+	<id assigningAuthorityName="Regione Lombardia" displayable="true" extension="030305.CNPMMG60B01F205R.03KAAAYKJI.1" root="2.16.840.1.113883.2.9.2.30"/>
+	<code code="57833-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="ePrescription"/>
+	<title>Prescrizione Elettronica</title>
+	<effectiveTime value="20110308"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="HL7 Confidentiality" displayName="normal"/>
+	<languageCode code="it-IT"/>
+	<setId assigningAuthorityName="Regione Lombardia" displayable="true" extension="030305.CNPMMG60B01F205R.03KAAAYKJI" root="2.16.840.1.113883.2.9.2.30"/>
+	<versionNumber value="2"/>
+	<recordTarget>
+		<patientRole classCode="PAT">
+			<id assigningAuthorityName="MEF" displayable="true" extension="NTSDNN80A19D612X" root="2.16.840.1.113883.2.9.4.3.2"/>
+			<addr use="H">
+				<state>MI</state>
+				<city>MILANO</city>
+				<country>IT</country>
+				<postalCode>20100</postalCode>
+				<streetAddressLine>V. C/O LOMBARDIA INFORMATICA VIA, MINZONI 24</streetAddressLine>
+			</addr>
+			<telecom nullFlavor="NI"/>
+			<patient>
+				<name>
+					<family>INTSISS</family>
+					<given>DICIANNOVE</given>
+				</name>
+				<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="HL7 AdministrativeGender" displayName="Maschio"/>
+				<birthTime value="19800119"/>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author>
+		<functionCode code="221" codeSystem="2.16.840.1.113883.2.9.6.2.7" codeSystemName="epSOSHealthcareProfessionalRoles" displayName="Medico di Medicina Generale"/>
+		<time value="20110308"/>
+		<assignedAuthor classCode="ASSIGNED">
+			<id assigningAuthorityName="MEF" displayable="true" extension="CNPMMG60B01F205R" root="2.16.840.1.113883.2.9.4.3.2"/>
+			<telecom nullFlavor="NI"/>
+			<assignedPerson>
+				<name>
+					<family>CNIPAII</family>
+					<given>MMG</given>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id root="2.16.840.1.113883.2.9.4.1.1" extension="030305"/>
+				<name nullFlavor="NI"/>
+				<telecom nullFlavor="NI"/>
+				<addr nullFlavor="NI"/>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id root="2.16.840.1.113883.2.9.4.1.1" extension="030305"/>
+				<name nullFlavor="NI"/>
+				<telecom nullFlavor="NI"/>
+				<addr nullFlavor="NI"/>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<legalAuthenticator>
+		<time value="20110308"/>
+		<signatureCode code="S"/>
+		<assignedEntity>
+			<id assigningAuthorityName="MEF" displayable="false" extension="CNPMMG60B01F205R" root="2.16.840.1.113883.2.9.4.3.2"/>
+			<addr nullFlavor="NI"/>
+			<telecom nullFlavor="NI"/>
+			<assignedPerson>
+				<name>
+					<family>CNIPAII</family>
+					<given>MMG</given>
+				</name>
+			</assignedPerson>
+			<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<id root="2.16.840.1.113883.2.9.4.1.1" extension="030305"/>
+				<name nullFlavor="NI"/>
+				<telecom nullFlavor="NI"/>
+				<addr nullFlavor="NI"/>
+			</representedOrganization>
+		</assignedEntity>
+	</legalAuthenticator>
+	<relatedDocument typeCode="XFRM">
+		<parentDocument>
+			<id root="2.16.840.1.113883.2.9.2.30" extension="030305.CNPMMG60B01F205R.03KAAAYKJI"/>
+		</parentDocument>
+	</relatedDocument>
+	<component contextConductionInd="true" typeCode="COMP">
+		<structuredBody classCode="DOCBODY" moodCode="EVN">
+			<component contextConductionInd="true" typeCode="COMP">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.1"/>
+					<id extension="03KAAAYKJI" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+					<code code="57828-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Prescriptions"/>
+					<title>Prescrizione</title>
+					<text>
+						<list>
+							<item ID="ID03KAAAYKJI.023086061">ZIMOX*12 CPS 500 MG</item>
+						</list>
+					</text>
+					<entry contextConductionInd="true" typeCode="COMP">
+						<substanceAdministration classCode="SBADM" moodCode="INT">
+							<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.2"/>
+							<templateId root="2.16.840.1.113883.10.20.1.24"/>
+							<id extension="03KAAAYKJI" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+							<text>
+								<reference value="#ID03KAAAYKJI.023086061"/>
+							</text>
+							<statusCode code="active"/>
+							<effectiveTime xsi:type="IVL_TS">
+								<low nullFlavor="UNK"/>
+								<high nullFlavor="UNK"/>
+							</effectiveTime>
+							<effectiveTime institutionSpecified="true" operator="A" xsi:type="PIVL_TS">
+								<period nullFlavor="NI"/>
+							</effectiveTime>
+							<doseQuantity nullFlavor="NI"/>
+							<consumable>
+								<manufacturedProduct xmlns:epsos="urn:epsos-org:ep:medication" classCode="MANU">
+									<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.1"/>
+									<manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+										<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.1"/>
+										<code code="023086061" codeSystem="2.16.840.1.113883.2.9.6.1.5" codeSystemName="AIC" displayName="ZIMOX*12 CPS 500 MG">
+											<originalText>
+												<reference value="#ID03KAAAYKJI.023086061"/>
+											</originalText>
+										</code>
+										<name>ZIMOX*12 CPS 500 MG</name>
+										<epsos:formCode code="12100" codeSystem="1.3.6.1.4.1.12559.11.10.1.3.1.44.1" codeSystemName="EDQM" displayName="Capsule"/>
+										<epsos:asContent classCode="CONT">
+											<epsos:containerPackagedMedicine classCode="CONT" determinerCode="INSTANCE">
+												<epsos:name>ZIMOX*12 CPS 500 MG</epsos:name>
+												<epsos:formCode nullFlavor="NI"/>
+												<epsos:capacityQuantity unit="CPS" value="12"/>
+											</epsos:containerPackagedMedicine>
+										</epsos:asContent>
+										<epsos:ingredient classCode="ACTI">
+											<epsos:quantity>
+												<epsos:numerator unit="MG" value="500" xsi:type="epsos:PQ"/>
+												<epsos:denominator unit="CPS" value="1" xsi:type="epsos:PQ"/>
+											</epsos:quantity>
+											<epsos:ingredient classCode="MMAT" determinerCode="KIND">
+												<epsos:code code="J01CA04" codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC" displayName="AMOXICILLINA"/>
+												<epsos:name>AMOXICILLINA</epsos:name>
+											</epsos:ingredient>
+										</epsos:ingredient>
+									</manufacturedMaterial>
+								</manufacturedProduct>
+							</consumable>
+							<entryRelationship typeCode="COMP">
+								<supply classCode="SPLY" moodCode="RQO">
+									<independentInd value="false"/>
+									<quantity unit="1" value="1"/>
+								</supply>
+							</entryRelationship>
+						</substanceAdministration>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

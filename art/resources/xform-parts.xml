@@ -1,0 +1,1057 @@
+<!--
+    Copyright (C) 2011-2014 ART-DECOR expert group art-decor.org
+    
+    Authors:   Gerrit Boers
+               Kai Heitmann
+               Alexander Henket
+    
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+    
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+    
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<parts xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:widget="http://orbeon.org/oxf/xml/widget" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!-- 
+      Decor Concept readonly view
+      Used in:
+      decor-scenarios.xhtml
+      decor-issues.xhtml
+      decor-templates.xhtml
+      
+      Requires variables:
+      $decor-external-exist
+      $resources
+     
+      Requires instances:
+      decor-types
+      concept-associations
+   -->
+    <part id="concept-readonly">
+        <xhtml:table class="detail" width="100%">
+            <!-- effectiveDate and statusCode -->
+            <xhtml:tr>
+                <!-- effectiveDate -->
+                <xhtml:td class="item-label">
+                    <xforms:output ref="$resources/version"/>
+                </xhtml:td>
+                <xhtml:td>
+                    <xforms:output ref="@effectiveDate" xxforms:format="if (instance('language')='en-US' and string-length(.) &gt; 0) then format-dateTime(xs:dateTime(.),'[M01]/[D01]/[Y]') else if  (string-length(.) &gt; 0) then format-dateTime(xs:dateTime(.),'[D01]-[M01]-[Y]') else ."/>
+                </xhtml:td>
+                <!-- concept status -->
+                <xhtml:td class="item-label">
+                    <xforms:output ref="$resources/status"/>
+                </xhtml:td>
+                <xhtml:td>
+                    <xxforms:variable name="statusCode" select="@statusCode"/>
+                    <xforms:output ref="instance('decor-types')/ItemStatusCodeLifeCycle/enumeration[@value=$statusCode]/label[@language=$resources/@xml:lang]" class="node-s{$statusCode}"/>
+                </xhtml:td>
+            </xhtml:tr>
+            <!-- versionLabel and id -->
+            <xhtml:tr>
+                <!-- versionLabel -->
+                <xhtml:td class="item-label">
+                    <xforms:output ref="$resources/versionLabel"/>
+                </xhtml:td>
+                <xhtml:td>
+                    <xforms:output ref="@versionLabel"/>
+                </xhtml:td>
+                <!-- concept id -->
+                <xhtml:td class="item-label">
+                    <xforms:output ref="$resources/id"/>
+                </xhtml:td>
+                <xhtml:td>
+                    <xxforms:variable name="id" select="@id"/>
+                    <xforms:output ref="concat(instance('project-instance')/ids/baseId[@id=string-join(tokenize($id,'\.')[position()!=last()],'.') ]/@prefix,tokenize($id,'\.')[last()])"/>
+                </xhtml:td>
+            </xhtml:tr>
+            <!-- header with ref -->
+            <xforms:group ref=".[inherit]">
+                <xhtml:tr>
+                    <xhtml:td colspan="4">
+                        <xhtml:div class="h2">
+                            <xxforms:variable name="inheritedStatusCode" select="inherit/@iStatusCode"/>
+                            <xxforms:variable name="inheritedVersionLabel" select="inherit/@iVersionLabel"/>
+                            <xforms:output ref="$resources/inherited-from"/>: <xforms:trigger appearance="minimal" class="node-s{$inheritedStatusCode}">
+                                <xforms:label>
+                                    <xforms:output ref="if (string-length(inherit/@iddisplay)&gt;0) then inherit/@iddisplay else inherit/@ref"/>
+                                    <xforms:group ref="inherit[string-length(@effectiveDate)&gt;1]">
+                                        <xforms:output ref="$resources/as-of"/>
+                                        <xforms:output ref="@effectiveDate" xxforms:format="format-dateTime(.,'[D1o] [MNn] [Y]', substring(instance('language'),1,2), (), ())"/>
+                                    </xforms:group>
+                                    <xforms:output ref="if (string-length($inheritedVersionLabel)&gt;0) then concat('(',$inheritedVersionLabel,')') else ()"/>
+                                </xforms:label>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xforms:load resource="/decor-datasets--{inherit/@prefix}?datasetId={inherit/@datasetId}&amp;conceptId={inherit/@ref}" show="new"/>
+                                </xforms:action>
+                            </xforms:trigger>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xforms:group>
+            <!-- concept description -->
+            <xhtml:tr>
+                <xhtml:td class="item-label">
+                    <xforms:output ref="$resources/description"/>
+                </xhtml:td>
+                <xhtml:td colspan="3">
+                    <xforms:output mediatype="text/html" ref="inheritedDesc[@language=instance('language')]|desc[@language=instance('language')]"/>
+                </xhtml:td>
+            </xhtml:tr>
+            <!-- concept source -->
+            <xforms:group ref="source">
+                <xhtml:tr>
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/source"/>
+                    </xhtml:td>
+                    <xhtml:td colspan="3">
+                        <xforms:output mediatype="text/html" ref=".[@language=instance('language')]"/>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xforms:group>
+            <!-- concept rationale -->
+            <xforms:group ref="rationale">
+                <xhtml:tr>
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/rationale"/>
+                    </xhtml:td>
+                    <xhtml:td colspan="3">
+                        <xforms:output mediatype="text/html" ref=".[@language=instance('language')]"/>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xforms:group>
+            <!-- concept comments and inherited comments -->
+            <xforms:group ref=".[comment|inheritedComment]">
+                <xhtml:tr>
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/comment"/>
+                    </xhtml:td>
+                    <xhtml:td colspan="3">
+                        <xhtml:table width="100%">
+                            <xforms:repeat nodeset="comment|inheritedComment">
+                                <xhtml:tr class="not-selectable">
+                                    <xhtml:td>
+                                        <xforms:output mediatype="text/html" ref=".[@language=instance('language')]"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xforms:repeat>
+                        </xhtml:table>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xforms:group>
+            <!-- concept operationalization -->
+            <xforms:group ref="operationalization">
+                <xhtml:tr>
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/operationalization"/>
+                    </xhtml:td>
+                    <xhtml:td colspan="3">
+                        <xforms:output mediatype="text/html" ref=".[@language=instance('language')]"/>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xforms:group>
+            <!-- group for concept associations -->
+            <xxforms:variable name="conceptId" select="@id"/>
+            <xxforms:variable name="inhConceptId" select="inherit/@ref"/>
+            <xforms:group ref="instance('concept-associations')/association[@conceptId=($conceptId,$inhConceptId)]">
+                <xhtml:tr>
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/terminology-association"/>
+                    </xhtml:td>
+                    <xhtml:td colspan="3">
+                        <xhtml:table width="100%" class="detail zebra-table">
+                            <xhtml:tr>
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/code"/>
+                                </xhtml:td>
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/displayName"/>
+                                </xhtml:td>
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/codesystem"/>
+                                </xhtml:td>
+                            </xhtml:tr>
+                            <xforms:repeat nodeset="instance('concept-associations')/association[@conceptId=($inhConceptId,$conceptId)]">
+                                <xhtml:tr class="not-selectable zebra-row-{if (position() mod 2 = 0) then 'even' else 'odd'}">
+                                    <xhtml:td>
+                                        <xforms:output ref="@code"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="@displayName"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="if (string-length(@codeSystemName)&gt;0) then @codeSystemName else @codeSystem"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xforms:repeat>
+                        </xhtml:table>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xforms:group>
+            <!-- valueDomain -->
+            <xforms:group ref="valueDomain|inheritedValueDomain">
+                <xhtml:tr>
+                    <xhtml:td colspan="4" style="background-color : #f6f3ee;">
+                        <fr:accordion class="fr-accordion-lnf">
+                            <fr:case selected="true">
+                                <fr:label ref="$resources/value"/>
+                                <xhtml:table width="100%" class="detail">
+                                    <!-- value type select -->
+                                    <xhtml:tr>
+                                        <xhtml:td class="item-label">
+                                            <xforms:output ref="$resources/type"/>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xxforms:variable name="datatype" select="@type"/>
+                                            <xforms:output ref="instance('decor-types')/DataSetValueType/enumeration[@value=$datatype]/label[@language=$resources/@xml:lang]"/>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                    <!-- case switch for different valueDomain types -->
+                                    <xforms:group ref=".[@type=('code','ordinal')]">
+                                        <!-- group for conceptList associations -->
+                                        <xxforms:variable name="conceptListId" select="conceptList/(@id|@ref)"/>
+                                        <xforms:group ref="instance('concept-associations')/association[@conceptId=$conceptListId]">
+                                            <xhtml:tr>
+                                                <xhtml:td class="item-label">
+                                                    <xforms:output ref="$resources/valueset-association"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xhtml:table width="100%">
+                                                        <xforms:repeat nodeset="instance('concept-associations')/association[@conceptId=$conceptListId]">
+                                                            <xhtml:tr class="not-selectable">
+                                                                <xhtml:td>
+                                                                    <xxforms:variable name="valueSetName" select="if (string-length(@valueSetName)&gt;0) then (@valueSetName) else (@valueSet)"/>
+                                                                    <xxforms:variable name="flexibility" select="if (matches(@flexibility,'^\d{4}')) then (if (instance('language')='en-US' and string-length(@flexibility) &gt; 0) then format-dateTime(xs:dateTime(@flexibility),'[M01]/[D01]/[Y]',(), (), ()) else if (string-length(@flexibility) &gt; 0) then (format-dateTime(xs:dateTime(@flexibility),'[D01]-[M01]-[Y]', (), (), ())) else @flexibility) else ($resources/dynamic)"/>
+                                                                    <xforms:trigger appearance="minimal">
+                                                                        <xforms:label>
+                                                                            <xforms:output ref="concat($valueSetName,' (',$flexibility,')')"/>
+                                                                        </xforms:label>
+                                                                        <xforms:action ev:event="DOMActivate">
+                                                                            <xforms:load resource="/decor-valuesets--{instance('project-instance')/@prefix}?valueSetRef={@valueSet}&amp;valueSetEffectiveDate={@flexibility}" show="new"/>
+                                                                        </xforms:action>
+                                                                    </xforms:trigger>
+                                                                </xhtml:td>
+                                                            </xhtml:tr>
+                                                        </xforms:repeat>
+                                                    </xhtml:table>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:group>
+                                    <!-- Get terminology + associations that tie concepts into HL7(?) codes -->
+                                        <xforms:group ref=".[conceptList/concept]">
+                                            <xhtml:tr>
+                                                <xhtml:td class="heading-var" colspan="2">
+                                                    <xforms:output ref="$resources/concepts"/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                            <xhtml:tr>
+                                                <xhtml:td colspan="2">
+                                                    <xhtml:table width="100%" class="detail zebra-table">
+                                                        <xhtml:tr>
+                                                            <xhtml:td class="item-label-var">
+                                                                <xforms:output ref="$resources/concept"/>
+                                                            </xhtml:td>
+                                                            <!--<xhtml:td class="item-label-var">
+                                                                <xforms:output ref="$resources/exception"/>
+                                                            </xhtml:td>-->
+                                                            <xhtml:td class="item-label-var">
+                                                                <xforms:output ref="$resources/description"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td class="item-label-var" style="width: 10%">
+                                                                <xforms:output ref="$resources/code"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td class="item-label-var" style="width: 20%">
+                                                                <xforms:output ref="$resources/displayName"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td class="item-label-var" style="width: 20%">
+                                                                <xforms:output ref="$resources/codesystem"/>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                        <xforms:repeat nodeset="conceptList/concept" id="inheritedConceptList">
+                                                            <xxforms:variable name="conceptId" select="@id"/>
+                                                            <!--<xxforms:variable name="conceptListId" select="conceptList/@id"/>-->
+                                                            <xhtml:tr class="not-selectable zebra-row-{if (position() mod 2 = 0) then 'even' else 'odd'}">
+                                                                <xhtml:td>
+                                                                    <xforms:output ref="name[@language=instance('language')]"/>
+                                                                </xhtml:td>
+                                                                <!--<xhtml:td>
+                                                                    <xhtml:input type="checkbox" selected="{xs:boolean(@exception='true')}" disabled="disabled"/>
+                                                                </xhtml:td>-->
+                                                                <xhtml:td>
+                                                                    <xforms:output ref="desc[@language=instance('language')]"/>
+                                                                </xhtml:td>
+                                                                <xhtml:td>
+                                                                    <xforms:repeat nodeset="instance('concept-associations')//association[@conceptId=$conceptId]">
+                                                                        <xhtml:div>
+                                                                            <xforms:output ref="@code"/>
+                                                                        </xhtml:div>
+                                                                    </xforms:repeat>
+                                                                </xhtml:td>
+                                                                <xhtml:td>
+                                                                    <xforms:repeat nodeset="instance('concept-associations')//association[@conceptId=$conceptId]">
+                                                                        <xhtml:div>
+                                                                            <xforms:output ref="@displayName"/>
+                                                                        </xhtml:div>
+                                                                    </xforms:repeat>
+                                                                </xhtml:td>
+                                                                <xhtml:td>
+                                                                    <xforms:repeat nodeset="instance('concept-associations')//association[@conceptId=$conceptId]">
+                                                                        <xhtml:div>
+                                                                            <xforms:output ref="if (string-length(@codeSystemName)&gt;0) then @codeSystemName else @codeSystem"/>
+                                                                        </xhtml:div>
+                                                                    </xforms:repeat>
+                                                                </xhtml:td>
+                                                            </xhtml:tr>
+                                                        </xforms:repeat>
+                                                    </xhtml:table>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:group>
+                                    </xforms:group>
+                                    <!-- valueDomain properties -->
+                                    <xforms:repeat nodeset="property/@*">
+                                        <xhtml:tr class="not-selectable">
+                                            <xhtml:td class="item-label">
+                                                <xxforms:variable name="property" select="name(.)"/>
+                                                <xforms:output ref="instance('decor-types')/DataSetValueProperty/attribute[@name=$property]/label[@language=$resources/@xml:lang]"/>
+                                            </xhtml:td>
+                                            <xhtml:td>
+                                                <xforms:group ref=".[name()='timeStampPrecision']">
+                                                    <xxforms:variable name="timeStampPrecision" select="."/>
+                                                    <xforms:output ref="instance('decor-types')/DataSetTimeStampPrecision/enumeration[@value=$timeStampPrecision]/label[@language=$resources/@xml:lang]"/>
+                                                </xforms:group>
+                                                <xforms:group ref=".[name()!='timeStampPrecision']">
+                                                    <xforms:output ref="."/>
+                                                </xforms:group>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xforms:repeat>
+                                    <!-- valueDomain examples -->
+                                    <xforms:group ref=".[example/text()[string-length()&gt;0]|example/*]">
+                                        <xhtml:tr>
+                                            <xhtml:td class="item-label">
+                                                <xforms:output ref="if (count(example)&gt;1) then $resources/examples else($resources/example)"/>
+                                            </xhtml:td>
+                                            <xhtml:td>
+                                                <xhtml:table width="100%">
+                                                    <xforms:repeat nodeset="example">
+                                                        <xhtml:tr class="not-selectable">
+                                                            <xhtml:td>
+                                                                <xforms:output ref="."/>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                    </xforms:repeat>
+                                                </xhtml:table>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xforms:group>
+                                </xhtml:table>
+                            </fr:case>
+                        </fr:accordion>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xforms:group>
+        </xhtml:table>
+    </part>
+    <!-- 
+      Decor New Issue view
+      Used in:
+      decor-datasets.xhtml
+      decor-issues.xhtml
+      decor-scenarios.xhtml
+      decor-templates.xhtml
+      decor-template-mappings.xhtml
+      decor-terminology.xhtml
+      decor-valuesets.xhtml
+      
+      Requires variables:
+      $resources
+      
+     
+     Requires submissions:
+     save-decor-issue-submission for saving the new issue
+     get-issues-submission to retrieve latest contents from disk after saving
+     
+     Requires instances:
+     data-safe
+     project-instance (with issues/labels, if applicable)
+     decor-types
+     new-issue-instance / inssue-instance
+     
+     Requires css classes:
+     .labelouterboxitem
+     
+     Expected use:
+     <xforms:group ref="instance('new-issues-instance')/issue">
+        <xhtml:tr>
+            <xhtml:td class="heading">
+                <xhtml:div class="heading">
+                    <xforms:output ref="$resources/new-issue"/>
+                </xhtml:div>
+            </xhtml:td>
+        </xhtml:tr>
+        <xhtml:tr>
+            <xhtml:td>
+                <xi:include href="/db/apps/art/resources/xform-parts.xml" xpointer="xpointer(//part[@id='issue-new'])">
+                    <xi:fallback>
+                        <p>Included document /db/apps/art/resources/xform-parts.xml not found!</p>
+                    </xi:fallback>
+                </xi:include>
+            </xhtml:td>
+        </xhtml:tr>
+    </xforms:group>
+    -->
+    <part id="issue-new">
+        <xhtml:table width="100%">
+            <!-- issue type -->
+            <xhtml:tr>
+                <xhtml:td class="item-label">
+                    <xforms:output ref="$resources/type"/>
+                </xhtml:td>
+                <xhtml:td>
+                    <xforms:select1 ref="@type" appearance="minimal">
+                        <xforms:itemset nodeset="instance('decor-types')/IssueType/enumeration">
+                            <xforms:label ref="label[@language=$resources/@xml:lang]"/>
+                            <xforms:value ref="@value"/>
+                        </xforms:itemset>
+                    </xforms:select1>
+                </xhtml:td>
+            </xhtml:tr>
+            <!-- title -->
+            <xhtml:tr>
+                <xhtml:td class="item-label">
+                    <xforms:output ref="$resources/title"/>
+                </xhtml:td>
+                <xhtml:td>
+                    <xforms:input ref="@displayName" id="new-issue-title"/>
+                </xhtml:td>
+            </xhtml:tr>
+            <!-- issue priority -->
+            <xhtml:tr>
+                <xhtml:td class="item-label">
+                    <xforms:output ref="$resources/priority"/>
+                </xhtml:td>
+                <xhtml:td>
+                    <xforms:select1 ref="@priority" appearance="minimal">
+                        <xforms:itemset nodeset="instance('decor-types')/IssuePriority/enumeration">
+                            <xforms:label ref="label[@language=$resources/@xml:lang]"/>
+                            <xforms:value ref="@value"/>
+                        </xforms:itemset>
+                    </xforms:select1>
+                </xhtml:td>
+            </xhtml:tr>
+            <!-- issue labels -->
+            <xforms:group ref="tracking[exists(instance('project-instance')/labels/label)]">
+                <xhtml:tr>
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/label"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:select ref="@labels" appearance="full">
+                            <!-- only show labels that are actually used in the issues... -->
+                            <xforms:itemset nodeset="instance('project-instance')/labels/label">
+                                <xforms:label>
+                                    <xhtml:div class="labelouterboxitem" title="{desc[1]/text()}">
+                                        <xhtml:div style="background-color:{@color};width: 10px;display: inline;">&#160;&#160;&#160;&#160;</xhtml:div>
+                                        <xhtml:div style="background-color: white;display: inline;">
+                                            <xforms:output ref="concat('&#160;(',@code,')&#160;',@name,'&#160;')"/>
+                                        </xhtml:div>
+                                    </xhtml:div>
+                                </xforms:label>
+                                <xforms:value ref="@code"/>
+                            </xforms:itemset>
+                        </xforms:select>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xforms:group>
+            <!-- description of issue -->
+            <xhtml:tr>
+                <xhtml:td class="item-label">
+                    <xforms:output ref="$resources/description"/>
+                </xhtml:td>
+                <xhtml:td>
+                    <xforms:textarea mediatype="text/html" ref="tracking/desc"/>
+                </xhtml:td>
+            </xhtml:tr>
+            <!-- assign to -->
+            <xhtml:tr>
+                <xhtml:td class="item-label">
+                    <xforms:output ref="$resources/assign-to"/>
+                </xhtml:td>
+                <xhtml:td>
+                    <xforms:select1 ref="tracking/@to" appearance="minimal">
+                        <xforms:item>
+                            <xforms:label ref="concat('--',$resources/not-set,'--')"/>
+                            <xforms:value ref="''"/>
+                        </xforms:item>
+                        <xforms:itemset nodeset="instance('project-instance')/author">
+                            <xforms:label ref="."/>
+                            <xforms:value ref="@id"/>
+                        </xforms:itemset>
+                    </xforms:select1>
+                </xhtml:td>
+            </xhtml:tr>
+            <!-- save and cancel buttons -->
+            <xhtml:tr>
+                <xhtml:td class="item-label" colspan="2">
+                    <xhtml:div class="buttons">
+                        <fr:button>
+                            <xforms:label ref="$resources/cancel"/>
+                            <xforms:action ev:event="DOMActivate">
+                                <xforms:delete ref="context()"/>
+                            </xforms:action>
+                        </fr:button>
+                        <fr:button>
+                            <xforms:label ref="$resources/save-issue"/>
+                            <xforms:action ev:event="DOMActivate">
+                                <xforms:send submission="save-decor-issue-submission"/>
+                                <xforms:send submission="get-issues-submission"/>
+                                <xforms:send submission="get-concept-issues"/><!-- relevant to scenarios only -->
+                                <xforms:delete ref="context()"/>
+                            </xforms:action>
+                        </fr:button>
+                    </xhtml:div>
+                </xhtml:td>
+            </xhtml:tr>
+        </xhtml:table>
+    </part>
+    <!-- 
+      Decor Issue readonly view
+      Used in:
+      decor-datasets.xhtml
+      decor-scenarios.xhtml
+      decor-valuesets.xhtml
+      decor-templates.xhtml
+      
+      Requires submissions:
+      issue-navigation
+      update-decor-issue-subscription
+      
+      Requires variables:
+      $resources
+      $editor
+      $issueCreator
+     
+     Requires instances:
+     decor-types
+    -->
+    <part id="issue-readonly">
+        <xhtml:table width="100%">
+            <!-- issue type and priority -->
+            <xhtml:tr class="not-selectable">
+                <xhtml:td class="item-label">
+                    <xforms:output ref="$resources/type"/>
+                </xhtml:td>
+                <xhtml:td>
+                    <xxforms:variable name="type" select="@type"/>
+                    <xforms:output ref="instance('decor-types')/IssueType/enumeration[@value=$type]/label[@language=$resources/@xml:lang]"/>
+                </xhtml:td>
+                <xhtml:td class="item-label">
+                    <xforms:output ref="$resources/status"/>
+                </xhtml:td>
+                <xhtml:td>
+                    <xxforms:variable name="status" select="@currentStatusCode"/>
+                    <xforms:output mediatype="image/*" value="concat('/img/IssueStatusCodeLifeCycle_',$status,'.png')">
+                        <xforms:hint>
+                            <xforms:output ref="$resources/status"/> = <xforms:output ref="instance('decor-types')/IssueStatusCodeLifeCycle/enumeration[@value=$status]/label[@language=$resources/@xml:lang]"/>
+                        </xforms:hint>
+                    </xforms:output>
+                    <xforms:output ref="instance('decor-types')/IssueStatusCodeLifeCycle/enumeration[@value=$status]/label[@language=$resources/@xml:lang]"/>
+                </xhtml:td>
+                <xhtml:td class="item-label">
+                    <xforms:output ref="$resources/priority"/>
+                </xhtml:td>
+                <xhtml:td>
+                    <xxforms:variable name="priority" select="@priority"/>
+                    <xforms:output ref="instance('decor-types')/IssuePriority/enumeration[@value=$priority]/label[@language=$resources/@xml:lang]"/>
+                </xhtml:td>
+            </xhtml:tr>
+            <!-- issue labels -->
+            <xforms:group ref=".[string-length(@currentLabels)&gt;0]">
+                <xhtml:tr>
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/current-labels"/>
+                    </xhtml:td>
+                    <xhtml:td colspan="5">
+                        <xforms:repeat nodeset="tokenize(@currentLabels, '\s')" class="not-selectable">
+                            <xxforms:variable name="selectedLabelCode" select="."/>
+                            <xxforms:variable name="selectedLabelColor" select="instance('project-instance')/labels/label[@code=$selectedLabelCode]/@color"/>
+                            <xxforms:variable name="selectedLabelName" select="instance('project-instance')/labels/label[@code=$selectedLabelCode]/@name"/>
+                            <xhtml:div style="background-color: white;color: black;font-weight: bold;font-size: smaller;border: 1px solid black;margin: 0px 5px 0px 0px;padding: 0px 0px 0px 0px;float: left;" title="{$selectedLabelName}">
+                                <xhtml:div style="background-color:{$selectedLabelColor};width: 10px;float: left;">&#160;</xhtml:div>
+                                <xhtml:div style="float: left;">
+                                    <xforms:output ref="concat('&#160;(',$selectedLabelCode,')&#160;',$selectedLabelName,'&#160;')"/>
+                                </xhtml:div>
+                            </xhtml:div>
+                        </xforms:repeat>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xforms:group>
+            <!-- issue events -->
+            <xhtml:tr class="not-selectable">
+                <xhtml:td class="heading-var" colspan="6">
+                    <xforms:output ref="$resources/events"/>
+                </xhtml:td>
+            </xhtml:tr>
+            <xhtml:tr class="not-selectable">
+                <xhtml:td class="heading-var" colspan="6">
+                    <xforms:repeat nodeset="tracking|assignment">
+                        <xhtml:table width="100%" class="detail" style="border: 1px solid #AAA;">
+                            <xhtml:tr class="not-selectable">
+                                <xhtml:td class="item-label">
+                                    <xxforms:variable name="status" select="@statusCode"/>
+                                    <xforms:group ref=".[name()='assignment']">
+                                        <xforms:output mediatype="image/*" value="'/img/arrowright.png'">
+                                            <xforms:hint ref="$resources/assignment"/>
+                                        </xforms:output>
+                                    </xforms:group>
+                                    <xforms:group ref=".[name()='tracking']">
+                                        <xforms:output mediatype="image/*" value="'/img/tracking.png'">
+                                            <xforms:hint ref="$resources/tracking"/>
+                                        </xforms:output>
+                                        <xforms:output mediatype="image/*" value="concat('/img/IssueStatusCodeLifeCycle_',$status,'.png')">
+                                            <xforms:hint>
+                                                <xforms:output ref="$resources/status"/> = <xforms:output ref="instance('decor-types')/IssueStatusCodeLifeCycle/enumeration[@value=$status]/label[@language=$resources/@xml:lang]"/>
+                                            </xforms:hint>
+                                        </xforms:output>
+                                    </xforms:group>
+                                </xhtml:td>
+                                <xhtml:td class="heading-var" colspan="5">
+                                    <!-- date -->
+                                    <xforms:output ref="@effectiveDate" xxforms:format="if (. castable as xs:dateTime) then format-dateTime(.,'[Y]-[M01]-[D01]', (), (), ()) else (.)"/>
+                                    <xforms:output ref="': '"/>
+                                    <!-- assignment to: -->
+                                    <xforms:group ref=".[name()='assignment']">
+                                        <xforms:output ref="$resources/assigned-to"/>
+                                        <xforms:output ref="@name"/>
+                                    </xforms:group>
+                                    <!-- tracking -->
+                                    <xforms:group ref=".[name()='tracking']">
+                                        <xforms:output ref="$resources/tracking"/>
+                                    </xforms:group>
+                                    <xforms:output ref="lower-case($resources/by)"/>
+                                    <xforms:output ref="author"/>
+                                    <!-- labels -->
+                                    <xhtml:div style="float: right;">
+                                        <xforms:repeat nodeset="tokenize(@labels, '\s')" class="not-selectable">
+                                            <xxforms:variable name="selectedLabelCode" select="."/>
+                                            <xxforms:variable name="selectedLabelColor" select="instance('project-instance')/labels/label[@code=$selectedLabelCode]/@color"/>
+                                            <xxforms:variable name="selectedLabelName" select="instance('project-instance')/labels/label[@code=$selectedLabelCode]/@name"/>
+                                            <xhtml:div style="background-color: white;color: black;font-weight: bold;font-size: smaller;border: 1px solid black;margin: 0px 5px 0px 0px;padding: 0px 0px 0px 0px;float: right;" title="{$selectedLabelName}">
+                                                <xhtml:div style="background-color:{$selectedLabelColor};width: 10px;float: left;">&#160;</xhtml:div>
+                                                <xhtml:div style="float: left;">
+                                                    <xforms:output ref="concat('&#160;',$selectedLabelCode,'&#160;')"/>
+                                                </xhtml:div>
+                                            </xhtml:div>
+                                        </xforms:repeat>
+                                    </xhtml:div>
+                                </xhtml:td>
+                            </xhtml:tr>
+                            <xforms:repeat nodeset="desc[string-length(string-join(.//text(),''))&gt;0]">
+                                <xhtml:tr class="not-selectable">
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/description"/>
+                                    </xhtml:td>
+                                    <xhtml:td colspan="5">
+                                        <xforms:output mediatype="text/html" ref="."/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xforms:repeat>
+                        </xhtml:table>
+                    </xforms:repeat>
+                </xhtml:td>
+            </xhtml:tr>
+        </xhtml:table>
+    </part>
+    <!--
+        Decor Valueset readonly view
+        Used in:
+            art/xforms/decor-issues.xhtml
+        
+        Requires variables:
+        $resources
+        
+        Requires instances:
+        project-instance
+    -->
+    <part id="valueset-readonly">
+        <xhtml:table class="detail" width="100%">
+            <!-- Name and displayName -->
+            <xhtml:tr>
+                <!-- valueset name -->
+                <xhtml:td class="item-label">
+                    <xforms:output ref="$resources/name"/>
+                </xhtml:td>
+                <xhtml:td>
+                    <xforms:output ref="@name"/>
+                </xhtml:td>
+                <!-- valueset displayName -->
+                <xhtml:td class="item-label">
+                    <xforms:output ref="$resources/display-name"/>
+                </xhtml:td>
+                <xhtml:td>
+                    <xforms:output ref="@displayName"/>
+                </xhtml:td>
+            </xhtml:tr>
+            <!-- effectiveDate and status -->
+            <xhtml:tr>
+                <xhtml:td class="item-label">
+                    <xforms:output ref="$resources/version"/>
+                </xhtml:td>
+                <xhtml:td>
+                    <!-- We're an object reference in an issue -->
+                    <xforms:group ref=".[self::object]">
+                        <xforms:output ref="@effectiveDate" xxforms:format="if (instance('language')='en-US' and string-length(.) &gt; 0) then format-date(xs:date(.),'[M01]/[D01]/[Y]') else if  (string-length(.) &gt; 0) then format-date(xs:date(.),'[D01]-[M01]-[Y]') else ."/>
+                    </xforms:group>
+                    <!-- We have only one selected valueSet -->
+                    <xforms:group ref=".[not(self::object) and count(parent::*/valueSet)=1]">
+                        <xforms:output ref="@effectiveDate" xxforms:format="if (instance('language')='en-US' and string-length(.) &gt; 0) then format-date(xs:date(.),'[M01]/[D01]/[Y]') else if  (string-length(.) &gt; 0) then format-date(xs:date(.),'[D01]-[M01]-[Y]') else ."/>
+                    </xforms:group>
+                    <!-- We have multiple one selected valueSets. -->
+                    <xforms:group ref=".[not(self::object) and count(parent::*/valueSet)&gt;1]">
+                        <fr:select1-button ref="instance('version-navigation')" appearance="minimal">
+                            <xforms:itemset nodeset="instance('decor-valueset')/valueSet">
+                                <xforms:label ref="if (instance('language')='en-US' and string-length(@effectiveDate) &gt; 0) then format-dateTime(xs:dateTime(@effectiveDate),'[M01]/[D01]/[Y]',(), (), ()) else if (string-length(@effectiveDate) &gt; 0) then format-dateTime(xs:dateTime(@effectiveDate),'[D01]-[M01]-[Y]', (), (), ()) else ."/>
+                                <xforms:value ref="@effectiveDate"/>
+                            </xforms:itemset>
+                            <xforms:action ev:event="xforms-value-changed">
+                                <xforms:send submission="get-valueset-usage"/>
+                            </xforms:action>
+                        </fr:select1-button>
+                    </xforms:group>
+                </xhtml:td>
+                <!-- valueset status -->
+                <xhtml:td class="item-label">
+                    <xforms:output ref="$resources/status"/>
+                </xhtml:td>
+                <xhtml:td>
+                    <xxforms:variable name="statusCode" select="@statusCode"/>
+                    <xforms:output ref="instance('decor-types')/ItemStatusCodeLifeCycle/enumeration[@value=$statusCode]/label[@language=$resources/@xml:lang]" class="node-s{$statusCode}"/>
+                </xhtml:td>
+            </xhtml:tr>
+            <!-- VersionLabel and id -->
+            <xhtml:tr>
+                <!-- versionLabel -->
+                <xhtml:td class="item-label">
+                    <xforms:output ref="$resources/versionLabel"/>
+                </xhtml:td>
+                <xhtml:td>
+                    <xforms:output ref="@versionLabel"/>
+                </xhtml:td>
+                <!-- concept id -->
+                <xhtml:td class="item-label">
+                    <xforms:output ref="$resources/id"/>
+                </xhtml:td>
+                <xhtml:td>
+                    <xxforms:variable name="id" select="(@id|@ref)"/>
+                    <xforms:output ref="concat(instance('project-instance')/ids/baseId[@id=string-join(tokenize($id,'\.')[position()!=last()],'.') ]/@prefix,tokenize($id,'\.')[last()])"/>
+                </xhtml:td>
+            </xhtml:tr>
+            <!-- valueset description -->
+            <xhtml:tr>
+                <xhtml:td class="item-label">
+                    <xforms:output ref="$resources/description"/>
+                </xhtml:td>
+                <xhtml:td colspan="3">
+                    <xforms:output mediatype="text/html" ref="desc[@language=instance('language')]"/>
+                </xhtml:td>
+            </xhtml:tr>
+            <xhtml:tr>
+                <xhtml:td colspan="4" style="border-bottom:solid 1px #d7b0c6;"/>
+            </xhtml:tr>
+            <!-- valueset sourceCodeSystems -->
+            <xforms:group ref=".[sourceCodeSystem]">
+                <xhtml:tr>
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/source-codesystems"/>
+                    </xhtml:td>
+                    <xhtml:td colspan="3">
+                        <xhtml:table width="100%">
+                            <xforms:repeat nodeset="sourceCodeSystem">
+                                <xhtml:tr class="not-selectable">
+                                    <xhtml:td>
+                                        <xforms:output ref="@id"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="@identifierName"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xforms:repeat>
+                        </xhtml:table>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xforms:group>
+            <!-- valueset completeCodeSystems -->
+            <!-- <completeCodeSystem codeSystem="" codeSystemName="" codeSystemVersion="" flexibility="dynamic"/> -->
+            <xforms:group ref=".[completeCodeSystem]">
+                <!-- valueset codesystems heading -->
+                <xhtml:tr>
+                    <xhtml:td class="heading" colspan="4">
+                        <xhtml:div class="heading">
+                            <xforms:output ref="$resources/complete-codesystems"/>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td colspan="4">
+                        <fr:datatable height="300px" width="100%">
+                            <xhtml:thead>
+                                <xhtml:tr>
+                                    <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                        <xforms:output ref="$resources/codesystemname"/>
+                                    </xhtml:th>
+                                    <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                        <xforms:output ref="$resources/codesystem"/>
+                                    </xhtml:th>
+                                    <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                        <xforms:output ref="$resources/codesystemversion"/>
+                                    </xhtml:th>
+                                    <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                        <xforms:output ref="$resources/flexibility"/>
+                                    </xhtml:th>
+                                </xhtml:tr>
+                            </xhtml:thead>
+                            <xhtml:tbody>
+                                <xhtml:tr repeat-nodeset="completeCodeSystem" class="not-selectable">
+                                    <xhtml:td>
+                                        <xforms:output ref="@codeSystemName"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="@codeSystem"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="@codeSystemVersion"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="@flexibility"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xhtml:tbody>
+                        </fr:datatable>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xforms:group>
+            <!-- valueset concepts heading -->
+            <xforms:group ref=".[conceptList/(concept|exception)]">
+                <xhtml:tr>
+                    <xhtml:td class="heading" colspan="4">
+                        <xhtml:div class="heading">
+                            <xforms:output ref="$resources/values"/>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+                <!-- valueset conceptList without pages -->
+                <xforms:group ref="conceptList[count(concept)&lt;=15]">
+                    <xhtml:tr>
+                        <xhtml:td colspan="4">
+                            <fr:datatable height="300px" width="100%">
+                                <xhtml:thead>
+                                    <xhtml:tr>
+                                        <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                            <xforms:output ref="$resources/level"/>/<xforms:output ref="$resources/type"/>
+                                        </xhtml:th>
+                                        <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                            <xforms:output ref="$resources/code"/>
+                                        </xhtml:th>
+                                        <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                            <xforms:output ref="$resources/display-name"/>
+                                        </xhtml:th>
+                                        <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                            <xforms:output ref="$resources/codesystem"/>
+                                        </xhtml:th>
+                                        <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                            <xforms:output ref="$resources/codesystemversion"/>
+                                        </xhtml:th>
+                                    </xhtml:tr>
+                                </xhtml:thead>
+                                <xhtml:tbody>
+                                    <xhtml:tr repeat-nodeset="concept|exception" class="not-selectable">
+                                        <xhtml:td>
+                                            <xforms:group ref=".[name()='concept']">
+                                                <xforms:output ref="@level"/>-<xforms:output ref="@type"/>
+                                            </xforms:group>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:group ref=".[name()='concept' and @type='A']">
+                                                <xhtml:b>
+                                                    <xhtml:font color="grey">
+                                                        <xforms:output ref="@code"/>
+                                                    </xhtml:font>
+                                                </xhtml:b>
+                                            </xforms:group>
+                                            <xforms:group ref=".[name()='concept' and @type!='A']">
+                                                <xhtml:b>
+                                                    <xforms:output ref="@code"/>
+                                                </xhtml:b>
+                                            </xforms:group>
+                                            <xforms:group ref=".[name()='exception']">
+                                                <xhtml:i>
+                                                    <xforms:output ref="@code"/>
+                                                </xhtml:i>
+                                            </xforms:group>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:group ref=".[name()='concept']">
+                                                <xforms:output ref="@displayName"/>
+                                            </xforms:group>
+                                            <xforms:group ref=".[name()='exception']">
+                                                <xhtml:i>
+                                                    <xforms:output ref="@displayName"/>
+                                                </xhtml:i>
+                                            </xforms:group>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xxforms:variable name="codeSystem" select="@codeSystem"/>
+                                            <xforms:group ref=".[name()='concept']">
+                                                <xforms:output ref="../../sourceCodeSystem[@id=$codeSystem]/@identifierName"/>
+                                            </xforms:group>
+                                            <xforms:group ref=".[name()='exception']">
+                                                <xhtml:i>
+                                                    <xforms:output ref="../../sourceCodeSystem[@id=$codeSystem]/@identifierName"/>
+                                                </xhtml:i>
+                                            </xforms:group>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:output ref="@codeSystemVersion"/>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                </xhtml:tbody>
+                            </fr:datatable>
+                        </xhtml:td>
+                    </xhtml:tr>
+                </xforms:group>
+                <!-- valueset conceptList with pages -->
+                <xforms:group ref="conceptList[count(concept)&gt;15]">
+                    <xhtml:tr>
+                        <xhtml:td colspan="4">
+                            <fr:datatable paginated="true" rowsPerPage="15" maxNbPagesToDisplay="10" height="300px" width="100%">
+                                <xhtml:thead>
+                                    <xhtml:tr>
+                                        <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                            <xforms:output ref="$resources/level"/>/<xforms:output ref="$resources/type"/>
+                                        </xhtml:th>
+                                        <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                            <xforms:output ref="$resources/code"/>
+                                        </xhtml:th>
+                                        <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                            <xforms:output ref="$resources/display-name"/>
+                                        </xhtml:th>
+                                        <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                            <xforms:output ref="$resources/codesystem"/>
+                                        </xhtml:th>
+                                        <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                            <xforms:output ref="$resources/codesystemversion"/>
+                                        </xhtml:th>
+                                    </xhtml:tr>
+                                </xhtml:thead>
+                                <xhtml:tbody>
+                                    <xhtml:tr repeat-nodeset="concept|exception" class="not-selectable">
+                                        <xhtml:td>
+                                            <xforms:group ref=".[name()='concept']">
+                                                <xforms:output ref="@level"/>-<xforms:output ref="@type"/>
+                                            </xforms:group>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:group ref=".[name()='concept' and @type='A']">
+                                                <xhtml:b>
+                                                    <xhtml:font color="grey">
+                                                        <xforms:output ref="@code"/>
+                                                    </xhtml:font>
+                                                </xhtml:b>
+                                            </xforms:group>
+                                            <xforms:group ref=".[name()='concept' and @type!='A']">
+                                                <xhtml:b>
+                                                    <xforms:output ref="@code"/>
+                                                </xhtml:b>
+                                            </xforms:group>
+                                            <xforms:group ref=".[name()='exception']">
+                                                <xhtml:i>
+                                                    <xforms:output ref="@code"/>
+                                                </xhtml:i>
+                                            </xforms:group>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:group ref=".[name()='concept']">
+                                                <xforms:output ref="@displayName"/>
+                                            </xforms:group>
+                                            <xforms:group ref=".[name()='exception']">
+                                                <xhtml:i>
+                                                    <xforms:output ref="@displayName"/>
+                                                </xhtml:i>
+                                            </xforms:group>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xxforms:variable name="codeSystem" select="@codeSystem"/>
+                                            <xforms:group ref=".[name()='concept']">
+                                                <xforms:output ref="../../sourceCodeSystem[@id=$codeSystem]/@identifierName"/>
+                                            </xforms:group>
+                                            <xforms:group ref=".[name()='exception']">
+                                                <xhtml:i>
+                                                    <xforms:output ref="../../sourceCodeSystem[@id=$codeSystem]/@identifierName"/>
+                                                </xhtml:i>
+                                            </xforms:group>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:output ref="@codeSystemVersion"/>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                </xhtml:tbody>
+                            </fr:datatable>
+                        </xhtml:td>
+                    </xhtml:tr>
+                </xforms:group>
+            </xforms:group>
+        </xhtml:table>
+    </part>
+    <!--
+        Decor dataset concept info from community/communities
+        Used in:
+            art/xforms/decor-datasets.xhtml
+            art/xforms/decor-scenarios.xhtml
+            art/xforms/decor-terminology.xhtml
+        
+        Requires variables:
+        $resources
+        
+        Requires instances:
+        selected-concept
+    -->
+    <part id="concept-community-readonly">
+        <xxforms:variable name="type" select="@type"/>
+        <xhtml:table width="100%">
+            <xhtml:tr class="not-selectable">
+                <xhtml:td class="heading">
+                    <xxforms:variable name="communityName" select="if (ancestor::community/@displayName) then (ancestor::community/@displayName) else (ancestor::community/@name)"/>
+                    <xforms:output ref="ancestor::community/prototype/data[@type=$type]/@label"/>
+                    <xforms:output ref="concat(' (',$communityName,')')"/>
+                </xhtml:td>
+            </xhtml:tr>
+            <xhtml:tr class="not-selectable">
+                <xhtml:td class="paddedtd">
+                    <xxforms:variable name="datatype" select="//community/prototype/data[@type=$type]/@datatype"/>
+                    <xhtml:table width="100%" class="detail">
+                        <xhtml:tr class="not-selectable">
+                            <xforms:group ref=".[$datatype='text']">
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/text"/>
+                                </xhtml:td>
+                            </xforms:group>
+                            <xforms:group ref=".[$datatype='code']">
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/code"/>
+                                </xhtml:td>
+                            </xforms:group>
+                            <xhtml:td class="not-selectable">
+                                <xforms:output mediatype="text/html" ref="."/>
+                            </xhtml:td>
+                        </xhtml:tr>
+                    </xhtml:table>
+                </xhtml:td>
+            </xhtml:tr>
+        </xhtml:table>
+    </part>
+</parts>

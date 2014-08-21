@@ -1,0 +1,286 @@
+<?xml version="1.0"?>
+<!--
+	Header is boilerplate, body is the interesting part of the example
+Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" implementation guide, currently in a draft state. The guide, co-developed by HL7 and the College of American Pathologists, will be balloted by HL7 as an Informative Document. Recommendations in the final published guide should usurp patterns of SNOMED CT usage found in this sample instance.
+-->
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3"
+	xmlns:voc="urn:hl7-org:v3/voc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../schemas/CDA.xsd">
+	<!-- 
+********************************************************
+  CDA Header
+********************************************************
+-->
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<id root="2.16.840.1.113883.19.4" extension="e1b92e7d-7adf-439d-be92-8c24d9fd84ee"/>
+	<code code="11488-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Consultation note"/>
+	<title>Good Health Clinic Consultation Note</title>
+	<effectiveTime value="20000409"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+	<languageCode code="en-US"/>
+	<setId extension="BB35" root="2.16.840.1.113883.19.7"/>
+	<versionNumber value="2"/>
+	<recordTarget>
+		<patientRole>
+			<id extension="12345" root="2.16.840.1.113883.19.5"/>
+			<patient>
+				<name>
+					<given>Henry</given>
+					<family>Levin</family>
+					<suffix>the 7th</suffix>
+				</name>
+				<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+				<birthTime value="19320924"/>
+			</patient>
+			<providerOrganization>
+				<id root="2.16.840.1.113883.19.5"/>
+			</providerOrganization>
+		</patientRole>
+	</recordTarget>
+	<author>
+		<time value="2000040714"/>
+		<assignedAuthor>
+			<id extension="KP00017" root="2.16.840.1.113883.19.5"/>
+			<assignedPerson>
+				<name>
+					<given>Robert</given>
+					<family>Dolin</family>
+					<suffix>MD</suffix>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id root="2.16.840.1.113883.19.5"/>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id root="2.16.840.1.113883.19.5"/>
+				<name>Good Health Clinic</name>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<legalAuthenticator>
+		<time value="20000408"/>
+		<signatureCode code="S"/>
+		<assignedEntity>
+			<id extension="KP00017" root="2.16.840.1.113883.19.5"/>
+			<assignedPerson>
+				<name>
+					<given>Robert</given>
+					<family>Dolin</family>
+					<suffix>MD</suffix>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id root="2.16.840.1.113883.19.5"/>
+			</representedOrganization>
+		</assignedEntity>
+	</legalAuthenticator>
+	<relatedDocument typeCode="RPLC">
+		<parentDocument>
+			<id extension="a123" root="2.16.840.1.113883.19.4"/>
+			<setId extension="BB35" root="2.16.840.1.113883.19.7"/>
+			<versionNumber value="1"/>
+		</parentDocument>
+	</relatedDocument>
+	<componentOf>
+		<encompassingEncounter>
+			<id extension="KPENC1332" root="2.16.840.1.113883.19.6"/>
+			<effectiveTime value="20000407"/>
+			<encounterParticipant typeCode="CON">
+				<time value="20000407"/>
+				<assignedEntity>
+					<id extension="KP00017" root="2.16.840.1.113883.19.5"/>
+					<assignedPerson>
+						<name>
+							<given>Robert</given>
+							<family>Dolin</family>
+							<suffix>MD</suffix>
+						</name>
+					</assignedPerson>
+					<representedOrganization>
+						<id root="2.16.840.1.113883.19.5"/>
+					</representedOrganization>
+				</assignedEntity>
+			</encounterParticipant>
+			<location>
+				<healthCareFacility classCode="DSDLOC">
+					<code code="GIM" codeSystem="2.16.840.1.113883.5.10588" displayName="General internal medicine clinic"/>
+				</healthCareFacility>
+			</location>
+		</encompassingEncounter>
+	</componentOf>
+	<!-- 
+********************************************************
+  CDA Body
+********************************************************
+-->
+	<component>
+		<structuredBody>
+			<!-- 
+********************************************************
+  Reason For Visit section
+********************************************************
+-->
+			<component>
+				<section>
+					<code code="29299-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Reason for Visit</title>
+					<text>Rash</text>
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<id root="2.16.840.1.113883.19.2" extension="fa476acc-f648-42b5-8a08-c7eeba26b394"/>
+							<code code="271807003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Rash"/>
+							<statusCode code="completed"/>
+						</observation>
+					</entry>
+				</section>
+			</component>
+			<!-- 
+********************************************************
+  History of Present Illness section
+********************************************************
+-->
+			<component>
+				<section>
+					<code code="10164-2" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>History of Present Illness</title>
+					<text>Henry Levin, the 7<sup>th</sup> is a 67 year old male who comes in complaining of an itchy rash on the right index finger, which begain 3 days ago, and is getting worse. He recalls that he started wearing a new ring shortly before the rash began.</text>
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<id root="2.16.840.1.113883.19.2" extension="eed5bae4-9ba6-4d39-bf69-583e7290a54d"/>
+							<code code="64144002" codeSystem="2.16.840.1.113883.6.96" displayName="Pruritic rash">
+								<qualifier>
+									<name code="363698007" displayName="Finding site"/>
+									<value code="83738005" displayName="Index finger">
+										<qualifier>
+											<name code="272741003" displayName="Laterality"/>
+											<value code="24028007" displayName="Right"/>
+										</qualifier>
+									</value>
+								</qualifier>
+							</code>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low value="20000406"/>
+							</effectiveTime>
+						</observation>
+					</entry>
+				</section>
+			</component>
+			<!-- 
+********************************************************
+  Past Medical History section
+********************************************************
+-->
+			<component>
+				<section>
+					<code code="10153-2" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Past Medical History</title>
+					<text>Rash</text>
+					<entry>
+						<observation classCode="COND" moodCode="EVN">
+							<id root="2.16.840.1.113883.19.2" extension="5c19a67d-270b-4fe1-b6f2-97d62f4a01b3"/>
+							<code code="271807003" codeSystem="2.16.840.1.113883.6.96" displayName="Rash"/>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low value="20000406"/>
+							</effectiveTime>
+							<reference typeCode="XCRPT">
+								<externalObservation classCode="COND" moodCode="EVN">
+									<id root="2.16.840.1.113883.19.2" extension="ab85d3ab-bc99-44b0-9d1b-35ef415190b9"/>
+								</externalObservation>
+							</reference>			
+						</observation>
+					</entry>
+				</section>
+			</component>
+<!-- COMMENTS
+o The past medical history item of "rash" is an excerpt from the Problem List. 
+-->			
+			<!-- 
+********************************************************
+  Assessment section
+********************************************************
+-->
+			<component>
+				<section>
+					<code code="11496-7" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Assessment</title>
+					<text>Contact dermatitis due to nickel</text>
+					<entry>
+						<observation classCode="COND" moodCode="EVN">
+							<id root="2.16.840.1.113883.19.2" extension="0fab8846-4ba7-4c13-b713-e1b345fc1587"/>
+							<code code="93419003" codeSystem="2.16.840.1.113883.6.96" displayName="Contact dermatitis due to nickel">		
+								<qualifier>
+									<name code="418775008" displayName="Finding method"/>
+									<value code="39154008" displayName="Clinical diagnosis"/>
+								</qualifier>
+							</code>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low value="20000406"/>
+							</effectiveTime>
+							<reference typeCode="ELNK">
+								<externalObservation classCode="COND" moodCode="EVN">
+									<id root="2.16.840.1.113883.19.2" extension="ab85d3ab-bc99-44b0-9d1b-35ef415190b9"/>
+								</externalObservation>
+							</reference>			
+						</observation>
+					</entry>
+				</section>
+			</component>
+<!-- COMMENTS
+o ClinicianTwo's diagnosis gets a unique object identifier, and includes an episode link (ELNK) to the problem list.
+-->			
+			<!-- 
+********************************************************
+  Plan section
+********************************************************
+-->
+			<component>
+				<section>
+					<code code="18776-5" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Plan</title>
+					<text>
+						<list>
+							<item>Hydrocortisone cream to finger BID.</item>
+							<item>Stop wearing the new ring</item>
+							<item>RTC 2 weeks if rash isn't resolved.</item>
+						</list>
+					</text>
+					<entry>
+						<substanceAdministration classCode="SBADM" moodCode="RQO">
+							<id root="2.16.840.1.113883.19.3" extension="b7cc48a2-4773-4fa7-a54a-23850c12c320"/>
+							<code code="225426007" codeSystem="2.16.840.1.113883.6.96" displayName="Administration of therapeutic substance"> 
+								<qualifier>
+									<name code="410675002" displayName="Route of administration"/>
+									<value code="6064005" displayName="Topical route"/>
+								</qualifier>
+								<qualifier>
+									<name code="363704007" displayName="Procedure site"/>
+									<value code="56213003" displayName="Skin of finger"/>
+								</qualifier>
+							</code>
+							<effectiveTime xsi:type="PIVL_TS">
+								<period value="12" unit="h"/>
+							</effectiveTime>
+							<consumable>
+								<manufacturedProduct>
+									<manufacturedLabeledDrug>
+										<code code="331646005" codeSystem="2.16.840.1.113883.6.96" displayName="Hydrocortisone cream"/>
+									</manufacturedLabeledDrug>
+								</manufacturedProduct>
+							</consumable>
+						</substanceAdministration>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>
+

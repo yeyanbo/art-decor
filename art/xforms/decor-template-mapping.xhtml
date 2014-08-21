@@ -1,0 +1,1001 @@
+<!--
+    Copyright (C) 2011-2014 ART-DECOR expert group art-decor.org
+    
+    Author: Gerrit Boers
+    Author: Kai Heitmann
+
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:widget="http://orbeon.org/oxf/xml/widget" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="decor-templates" xsi:schemaLocation="http://www.w3.org/1999/xhtml ../../orbeon_schemas/xhtml1-transitional-orbeon.xsd">
+    <xhtml:head>
+        <xhtml:style type="text/css"> 
+            div.navigate-template{ padding-top:0.25em; margin-right:0em; background:white; vertical-align:top; width:inherit; height:40em; overflow-y:auto; overflow-x:auto; } 
+            div.navigate-element{ padding-top:0.25em; margin-right:0em; background:white; vertical-align:top; height:auto; max-height:25em; overflow-y:auto; overflow-x:auto; } 
+            .xforms-repeat-selected-item-1, 
+            .xforms-repeat-selected-item-2, 
+            .xforms-repeat-selected-item-3, 
+            .xforms-repeat-selected-item-4, 
+            .xforms-repeat-selected-item-5 { font-weight:normal; background-color:inherit; color:black } 
+            td.item-label{
+               width: 10px; 
+               background-color: #f0ebe4; 
+               color: #7a6e62; 
+               font-weight: bold; 
+               padding-left: 0.5em; 
+               padding-right: 0em; 
+               padding-top: 0.25em; 
+               padding-bottom: 0.25em; 
+               text-align: left; 
+               vertical-align: top; 
+            } 
+            td.conf2 { background-color:#ece9e4; padding:0.2em 0.5em; } 
+            tr.iselement { background-color:#FFEAEA !important; } 
+            tr.explabel, 
+            td.explabel { 
+               background-color: #E6E6FA !important;
+            } 
+            tr.explabelred { padding: 0.3em; background-color: #FFEEEE !important; } 
+            tr.explabelgreen { padding: 0.3em; background-color: #E0FFE0 !important; } 
+            tr.exppad { padding: 0.3em; } 
+            div.expcaption { padding: 0em 0em; margin: 0 0 0.3em 0; border-bottom: 0.1em solid #dddddd;} 
+            td.conf { border : 1px solid #C3C0B2; font-weight : normal; color : #e16e22; background-color : #ece9e4; } 
+            td.stron { font-weight : normal; border : 1px solid #c0c0c0; color: #ffffff; background-color: #ff99cc; } 
+            td.paddedtd { padding:0.2em 0.5em; }
+            .xforms-select1.width-200 { min-width: 0em; width: 200px; height: auto; }
+        </xhtml:style>
+        <xhtml:title>
+            <xforms:output ref="if (instance('project-instance')/name[@language=$resources/@xml:lang]) then (instance('project-instance')/name[@language=$resources/@xml:lang]) else (instance('project-instance')/name[1])"/> - <xforms:output ref="$resources/template-mapping"/>
+        </xhtml:title>
+        <xforms:model>
+         <!-- Variable with path to art-exist for use by form -->
+            <xxforms:variable name="art-exist" select="xxforms:property('art.exist.url')"/>
+         <!-- Variable with path to art-exist for use by form -->
+            <xxforms:variable name="art-external-exist" select="xxforms:property('art.external.exist.url')"/>
+         <!-- Variable with path to decor-eXist used to pass to client as link for services (Diagrams in new window) -->
+            <xxforms:variable name="decor-exist" select="xxforms:property('decor.exist.url')"/>
+         <!-- Variable with path to decor-external-exist used to pass to client as link for services (Diagrams in new window) -->
+            <xxforms:variable name="decor-external-exist" select="xxforms:property('decor.external.exist.url')"/>
+         <!-- Variable with path to temple-external-exist used to pass to client as link for services (Diagrams in new window) -->
+            <xxforms:variable name="temple-external-exist" select="xxforms:property('temple.external.exist.url')"/>
+         <!-- resources for internationalization -->
+         <!-- instance for user-agent, used to check if SVG links should be available -->
+            <xforms:instance id="user-agent">
+                <agent/>
+            </xforms:instance>
+            <xforms:instance id="resources-instance">
+                <dummy/>
+            </xforms:instance>
+         <!-- submission for loading resources -->
+            <xforms:submission id="get-resources-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-form-resources.xquery" replace="instance" instance="resources-instance"/>
+         <!-- language -->
+            <xforms:instance id="language">
+                <language/>
+            </xforms:instance>
+
+         <!-- instance for DECOR Schema enumerations -->
+            <xforms:instance id="decor-types">
+                <dummy/>
+            </xforms:instance>
+         <!-- get decor schema submission -->
+            <xforms:submission id="get-decor-schema-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-schema-types.xquery" replace="instance" instance="decor-types"/>
+         <!-- warning message texts -->
+            <xforms:instance id="messages" xxforms:exclude-result-prefixes="#all">
+                <messages>
+                    <edit-warning language="nl-NL">
+                        <div class="h2">De statuscode van deze template is 'Actief' of huidige template is een referentie naar een extern gedefinieerde template</div>
+                        <p>Er zijn twee mogelijkheden bij het aanmaken van een nieuwe template:</p>
+                        <ul>
+                            <li>Nieuwe versie - Er wordt een nieuwe versie gecreëerd met dezelfde Id. Als de nieuwe template de huidige gaat vervangen én u tot de governancegroep behoort achter de huidige template dan dient deze optie gebruikt te worden.</li>
+                            <li>Bewerking - Er wordt een nieuwe template gecreëerd met een nieuwe Id. Deze optie dient gebruikt te worden als er een nieuwe template wordt gemaakt op basis van de huidige.</li>
+                        </ul>
+                    </edit-warning>
+                    <edit-warning language="en-US">
+                        <div class="h2">The statuscode of this template is 'Active' or current template is a reference to an externally defined template</div>
+                        <p>There are two alternatives for creating the new template</p>
+                        <ul>
+                            <li>Version - A new version is created with the same Id. Choose this option if the new template replaces the existing template and you are part of the governance group for the current template</li>
+                            <li>Adaptation - A new template is created with a new Id. This option should be used if a new template is created based on the existing template.</li>
+                        </ul>
+                    </edit-warning>
+                    <edit-warning language="de-DE">
+                        <div class="h2">The statuscode of this template is 'Active' or current template is a reference to an externally defined template</div>
+                        <p>There are two alternatives for creating the new template</p>
+                        <ul>
+                            <li>Version - A new version is created with the same Id. Choose this option if the new template replaces the existing template and you are part of the governance group for the current template</li>
+                            <li>Adaptation - A new template is created with a new Id. This option should be used if a new template is created based on the existing template.</li>
+                        </ul>
+                    </edit-warning>
+                    <edit-warning language="pl-PL">
+                        <div class="h2">The statuscode of this template is 'Active' or current template is a reference to an externally defined template</div>
+                        <p>There are two alternatives for creating the new template</p>
+                        <ul>
+                            <li>Version - A new version is created with the same Id. Choose this option if the new template replaces the existing template and you are part of the governance group for the current template</li>
+                            <li>Adaptation - A new template is created with a new Id. This option should be used if a new template is created based on the existing template.</li>
+                        </ul>
+                    </edit-warning>
+                    <status-final language="nl-NL">
+                        <p>Let op: deze handeling kan niet ongedaan gemaakt worden!</p>
+                    </status-final>
+                    <status-final language="en-US">
+                        <p>Beware: you cannot undo this action!</p>
+                    </status-final>
+                    <status-final language="de-DE">
+                        <p>Achtung: diese Aktion kann nicht rückgängig gemacht werden!</p>
+                    </status-final>
+                    <status-final language="pl-PL">
+                        <p>Beware: you cannot undo this action!</p>
+                    </status-final>
+                </messages>
+            </xforms:instance>
+
+         <!-- instance for document name -->
+            <xforms:instance id="document">
+                <name>dsexpl1</name>
+            </xforms:instance>
+
+         <!-- *** DATASET *** -->
+         <!-- instance for dataset or transaction list -->
+            <xforms:instance id="dataset-or-transaction-navigation">
+                <type>ds</type>
+            </xforms:instance>
+            <xforms:action ev:observer="dataset-or-transaction-navigation" ev:event="xxforms-value-changed">
+                <xforms:action if="instance('dataset-or-transaction-navigation')='ds'">
+                    <xforms:send submission="get-decor-dataset-list"/>
+                </xforms:action>
+                <xforms:action if="instance('dataset-or-transaction-navigation')='tr'">
+                    <xforms:send submission="get-decor-transaction-list"/>
+                    <xforms:setvalue ref="instance('scenario-navigation')" value="instance('dataset-list-instance')/scenario[1]/@id/string()"/>
+                    <xforms:setvalue ref="instance('dataset-navigation')" value="(instance('dataset-list-instance')/scenario[@id=instance('scenario-navigation')]//transaction[not(transaction)]/@id/string())[1]"/>
+                </xforms:action>
+            </xforms:action>
+         <!-- instance for scenario navigation -->
+            <xforms:instance id="scenario-navigation">
+                <id/>
+            </xforms:instance>
+            <xforms:action ev:observer="scenario-navigation" ev:event="xxforms-value-changed">
+                <xforms:setvalue ref="instance('dataset-navigation')" value="(instance('dataset-list-instance')/scenario[@id=instance('scenario-navigation')]//transaction[not(transaction)]/@id/string())[1]"/>
+            </xforms:action>
+         <!-- instance for dataset navigation -->
+            <xforms:instance id="dataset-navigation">
+                <id/>
+            </xforms:instance>
+            <xforms:action ev:observer="dataset-navigation" ev:event="xxforms-value-changed">
+                <xforms:action if="instance('dataset-or-transaction-navigation')='ds'">
+                    <xforms:send submission="get-decor-dataset-submission"/>
+                </xforms:action>
+                <xforms:action if="instance('dataset-or-transaction-navigation')='tr' and string-length(instance('dataset-navigation'))&gt;0">
+                    <xforms:send submission="get-decor-transaction-submission"/>
+                </xforms:action>
+            </xforms:action>
+         <!-- instance for dataset list -->
+            <xforms:instance id="dataset-list-instance">
+                <dummy/>
+            </xforms:instance>
+         <!-- get dataset list submission -->
+            <xforms:submission id="get-decor-dataset-list" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-dataset-list.xq?project={instance('document')}" replace="instance" instance="dataset-list-instance">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+            <xforms:submission id="get-decor-transaction-list" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-transaction-list.xquery?project={instance('document')}&amp;type=ds" replace="instance" instance="dataset-list-instance">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+
+         <!-- instance for dataset navigation tree select -->
+            <xforms:instance id="dataset-instance">
+                <dummy/>
+            </xforms:instance>
+         <!-- get dataset list submission -->
+            <xforms:submission id="get-decor-dataset-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-dataset-tree.xquery?id={instance('dataset-navigation')}" replace="instance" instance="dataset-instance">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+                <!--<xforms:message ev:event="xforms-submit-done" level="modal">Dataset done</xforms:message>-->
+            </xforms:submission>
+            <xforms:submission id="get-decor-transaction-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-dataset-tree.xquery?transactionId={instance('dataset-navigation')}" replace="instance" instance="dataset-instance">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+                <!--<xforms:message ev:event="xforms-submit-done" level="modal">Transaction done</xforms:message>-->
+            </xforms:submission>
+         <!-- concept navigation -->
+            <xforms:instance id="concept-navigation">
+                <id/>
+            </xforms:instance>
+         <!-- selected concept -->
+            <xforms:instance id="concept">
+                <concept/>
+            </xforms:instance>
+         <!-- get concept -->
+            <xforms:submission id="get-decor-concept" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-concept.xq?id={instance('concept-navigation')}&amp;effectiveDate={instance('dataset-instance')//concept[@id=instance('concept-navigation')]/@effectiveDate}" replace="instance" instance="concept"/>
+         <!-- instance for concept terminologyAssociations -->
+            <xforms:instance id="concept-associations">
+                <dummy/>
+            </xforms:instance>
+         <!-- get concept associations submission -->
+            <xforms:submission id="get-concept-associations" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-concept-associations.xquery?id={instance('concept-navigation')}" replace="instance" instance="concept-associations"/>
+         <!--  -->
+
+         <!-- *** TEMPLATES *** -->
+         <!-- navigation -->
+            <xforms:instance id="template-navigation">
+                <id/>
+            </xforms:instance>
+         <!-- version navigation -->
+            <xforms:instance id="version-navigation">
+                <effectiveDate/>
+            </xforms:instance>
+            <xforms:instance id="element-navigation">
+                <id>1</id>
+            </xforms:instance>
+         <!-- pure name or template id paramatere -->
+            <xforms:instance id="template-in-parameter">
+                <dummy/>
+            </xforms:instance>
+            <xforms:submission id="add-decor-template-element-ids" serialization="none" method="get" resource="{$art-exist}/modules/add-decor-template-element-ids.xquery?prefix={instance('document')}&amp;id={instance('selected-template')/*/template[@id=instance('decor-template-list')//template[@uuid=instance('template-navigation')]/(@id|@ref)][@effectiveDate=instance('version-navigation')]/@id}&amp;effectiveDate={instance('version-navigation')}" replace="none" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+                <xforms:action ev:event="xforms-submit-done">
+                    <xforms:send submission="get-decor-template"/>
+                </xforms:action>
+            </xforms:submission>
+
+         <!-- *** ISSUES *** -->
+         <!-- instance for existing issues -->
+            <xforms:instance id="templates-issues">
+                <dummy/>
+            </xforms:instance>
+            <xforms:instance id="issue-navigation">
+                <issue id="" currentUserIsSubscribed=""/>
+            </xforms:instance>
+            <xforms:bind nodeset="instance('templates-issues')">
+                <xforms:bind ref="issue/@currentUserIsSubscribed" type="xs:boolean"/>
+            </xforms:bind>
+            <xforms:submission id="update-decor-issue-subscription" resource="{$art-exist}/modules/update-decor-issue-subscription.xquery?id={instance('issue-navigation')/@id}&amp;action={if (instance('issue-navigation')/@currentUserIsSubscribed='true') then 'add' else 'delete'}" method="post" replace="none" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- get issues submission -->
+            <xforms:submission id="get-issues-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-object-issues.xquery?id={instance('selected-template')/template/template/@id}&amp;effectiveDate={instance('version-navigation')}" replace="instance" instance="templates-issues">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         
+         <!-- instance for project information -->
+            <xforms:instance id="project-instance">
+                <dummy/>
+            </xforms:instance>
+         <!-- get decor project submission -->
+            <xforms:submission id="get-decor-project-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-project.xq?project={instance('document')}" replace="instance" instance="project-instance" xxforms:readonly="true"/>
+         <!-- instance for Selected DECOR Template -->
+            <xforms:instance id="selected-template">
+                <dummy/>
+            </xforms:instance>
+            <xforms:bind nodeset="instance('selected-template')">
+                <xforms:bind nodeset="//template/@expirationDate" type="xforms:date"/>
+            </xforms:bind>
+         <!-- get decor template submission -->
+            <xforms:submission id="get-decor-template" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-template.xquery?project={instance('document')}&amp;ref={instance('decor-template-list')//template[@uuid=instance('template-navigation')]/(@id|@ref)}" replace="instance" instance="selected-template">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+                <xforms:action ev:event="xforms-submit-done">
+                    <xforms:setvalue ref="instance('new-association')/concept/@elementId" value="instance('selected-template')//*[@id][name()=('element','attribute')][1]/@id"/>
+                    <xforms:setvalue ref="instance('new-association')/@templateId" value="instance('selected-template')//template[@effectiveDate=instance('version-navigation')]/@id"/>
+                    <xforms:setvalue ref="instance('new-association')/@effectiveDate" value="instance('version-navigation')"/>
+                    <xforms:send submission="get-decor-template-associations"/>
+                </xforms:action>
+            </xforms:submission>
+
+         <!-- instance for edit mode -->
+            <xforms:instance id="edit-mode">
+                <mode/>
+            </xforms:instance>
+         <!-- instance for new statusCode -->
+            <xforms:instance id="new-status">
+                <newStatus/>
+            </xforms:instance>
+         <!-- instance for statusCode change response -->
+            <xforms:instance id="status-response">
+                <dummy/>
+            </xforms:instance>
+         <!-- set template statusCode -->
+            <xforms:submission id="set-template-status" ref="instance('selected-template')//template[@effectiveDate=instance('version-navigation')]" method="post" xxforms:instance="status-response" resource="{$art-exist}/modules/set-decor-template-status.xquery" replace="instance" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal"> A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+                <xforms:action ev:event="xforms-submit-done" if="instance('status-response')//lock">
+                    <xxforms:show dialog="lock-dialog"/>
+                </xforms:action>
+            </xforms:submission>
+         <!-- instance for new association -->
+            <xforms:instance id="new-association" xxforms:exclude-result-prefixes="#all">
+                <templateAssociation projectPrefix="" templateId="" effectiveDate="">
+                    <concept ref="" effectiveDate="" elementId=""/>
+                </templateAssociation>
+            </xforms:instance>
+         <!-- create template association -->
+            <xforms:submission id="create-template-association" ref="instance('new-association')" method="post" resource="{$art-exist}/modules/create-decor-template-association.xquery" replace="none" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal"> 
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+            
+            <!-- instance for deleteion of association -->
+            <xforms:instance id="delete-association" xxforms:exclude-result-prefixes="#all">
+                <templateAssociation projectPrefix="" templateId="" effectiveDate="">
+                    <concept ref="" effectiveDate="" elementId=""/>
+                </templateAssociation>
+            </xforms:instance>
+         <!-- create template association -->
+            <xforms:submission id="delete-template-association" ref="instance('delete-association')" method="post" resource="{$art-exist}/modules/delete-decor-template-association.xquery" replace="none" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal"> 
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+                <xforms:action ev:event="xforms-submit-done">
+                    <xforms:send submission="get-decor-template-associations"/>
+                </xforms:action>
+            </xforms:submission>
+
+         <!-- instance for DECOR Templates -->
+            <xforms:instance id="decor-template-list">
+                <dummy/>
+            </xforms:instance>
+         <!-- get decor templates submission -->
+            <xforms:submission id="get-decor-template-list" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-template-list.xquery?project={instance('document')}&amp;classified=true" replace="instance" instance="decor-template-list"/>
+         <!-- instance for decor-template-associations -->
+            <xforms:instance id="decor-template-associations">
+                <dummy/>
+            </xforms:instance>
+         <!-- get decor template associations -->
+            <xforms:submission id="get-decor-template-associations" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-template-associations.xquery?project={instance('document')}" replace="instance" instance="decor-template-associations"/>
+            <xforms:action ev:event="xforms-model-construct-done">
+                <xforms:send submission="get-resources-submission"/>
+                <xforms:send submission="get-decor-project-submission"/>
+                <xforms:setvalue ref="instance('language')" value="if (string-length(xxforms:get-session-attribute('language'))&gt;0) then (xxforms:get-session-attribute('language')) else (instance('project-instance')/@defaultLanguage/string())"/>
+                <xforms:send submission="get-decor-schema-submission"/>
+                <xforms:send submission="get-decor-template-list"/>
+                <xforms:send submission="get-decor-dataset-list"/>
+                <xforms:setvalue ref="instance('dataset-navigation')" value="instance('dataset-list-instance')//dataset[1]/@id"/>
+                <xforms:setvalue ref="instance('concept-navigation')" value="instance('dataset-instance')//concept[not(@absent='true')][1]/@id"/>
+                <xforms:send submission="get-decor-concept"/>
+                <xforms:send submission="get-concept-associations"/>
+                <!-- template navigation has format name#(id|ref) -->
+                <xxforms:variable name="template-ref" select="if (string-length(xxforms:get-request-parameter('templateRef'))&gt;0) then (xxforms:get-request-parameter('templateRef')) else if (string-length(xxforms:get-request-parameter('templateId'))&gt;0) then (xxforms:get-request-parameter('templateId')) else if (string-length(xxforms:get-request-parameter('templateName'))&gt;0) then (xxforms:get-request-parameter('templateName')) else()"/>
+                <xforms:setvalue ref="instance('template-navigation')" value="if (string-length($template-ref)&gt;0) then ((instance('decor-template-list')//template[(@id|@ref|@name)=$template-ref]/ancestor-or-self::template[last()]/@uuid)[1]) else (instance('decor-template-list')//template[1]/@uuid)"/>
+                <xforms:setvalue ref="instance('version-navigation')" value="if (matches(xxforms:get-request-parameter('templateEffectiveDate'),'^\d{4}')) then (xxforms:get-request-parameter('templateEffectiveDate')) else ((instance('decor-template-list')//template[@uuid=instance('template-navigation')]/template/@effectiveDate)[1])"/>
+                <xforms:setvalue ref="instance('template-navigation')/@ref" value="if (instance('decor-template-list')//template[@uuid=instance('template-navigation')][1]/ancestor-or-self::template[@ref]) then 'true' else 'false'"/>
+                <xforms:setvalue ref="instance('template-in-parameter')" value="if (string-length(xxforms:get-request-parameter('templateRef'))&gt;0) then (xxforms:get-request-parameter('templateRef')) else if (string-length(xxforms:get-request-parameter('templateName'))&gt;0) then (xxforms:get-request-parameter('templateName')) else if (string-length(xxforms:get-request-parameter('templateId'))&gt;0) then (xxforms:get-request-parameter('templateId')) else ('')"/>
+                <xforms:send submission="get-decor-template"/>
+                <xforms:send submission="get-issues-submission"/>
+                <xforms:setvalue ref="instance('new-association')/@projectPrefix" value="instance('document')"/>
+                <xforms:setvalue ref="instance('delete-association')/@projectPrefix" value="instance('document')"/>
+                <xforms:setvalue ref="instance('user-agent')" value="xxforms:get-request-header('User-Agent')"/>
+            </xforms:action>
+
+         <!-- relevant language is returned as first node, rest should be empty -->
+            <xxforms:variable name="resources" select="instance('resources-instance')//resources[1]"/>
+            <xxforms:variable name="editor" select="contains(xxforms:get-session-attribute('groups'),'editor') and instance('project-instance')/author[@username=xxforms:get-session-attribute('username')]"/>
+            <xxforms:variable name="debug" select="contains(xxforms:get-session-attribute('groups'),'debug') and instance('project-instance')/author[@username=xxforms:get-session-attribute('username')]"/>
+            <xxforms:variable name="issueCreator" select="contains(xxforms:get-session-attribute('groups'),'issues') and instance('project-instance')/author[@username=xxforms:get-session-attribute('username')]"/>
+        </xforms:model>
+    </xhtml:head>
+    <xhtml:body>
+      <!-- dialog for lock message -->
+        <xxforms:dialog id="lock-dialog" appearance="full" level="modal" close="true" draggable="true" visible="false">
+            <xforms:label ref="$resources/template-locked"/>
+            <xhtml:table>
+                <xhtml:tr>
+                    <xhtml:td class="heading" colspan="2">
+                        <xforms:output ref="$resources/template-locked"/>
+                    </xhtml:td>
+                </xhtml:tr>
+            <!-- row with tree control-->
+                <xhtml:tr>
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/user"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:output ref="instance('status-response')//lock/@userName"/>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td colspan="2">
+                        <xhtml:div class="buttons">
+                            <fr:button>
+                                <xforms:label ref="$resources/close"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xxforms:hide dialog="lock-dialog"/>
+                                    <xxforms:script>window.close();</xxforms:script>
+                                </xforms:action>
+                            </fr:button>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xhtml:table>
+        </xxforms:dialog>
+      <!-- dialog edit warning -->
+        <xxforms:dialog id="edit-warning-dialog" appearance="full" level="modal" close="false" draggable="true" visible="false">
+            <xhtml:table width="100%">
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xforms:output mediatype="text/html" ref="xxforms:serialize(instance('messages')/edit-warning[@language=$resources[1]/@xml:lang], 'html')"/>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td colspan="2">
+                        <xhtml:div class="buttons">
+                            <fr:button>
+                                <xforms:label ref="$resources/cancel"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xxforms:hide dialog="edit-warning-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                            <fr:button>
+                                <xforms:label ref="$resources/create-new-version"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xforms:setvalue ref="instance('edit-mode')" value="'version'"/>
+                                    <xforms:load resource="/decor-template-editor--{instance('project-instance')/@prefix}?templateId={instance('selected-template')//template[@effectiveDate=instance('version-navigation')]/@id}&amp;templateEffectiveDate={instance('version-navigation')}&amp;mode={instance('edit-mode')}" show="new"/>
+                                    <xxforms:hide dialog="edit-warning-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                            <fr:button>
+                                <xforms:label ref="$resources/create-adaptation"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xforms:setvalue ref="instance('edit-mode')" value="'adapt'"/>
+                                    <xforms:load resource="/decor-template-editor--{instance('project-instance')/@prefix}?templateId={instance('selected-template')//template[@effectiveDate=instance('version-navigation')]/@id}&amp;templateEffectiveDate={instance('version-navigation')}&amp;mode={instance('edit-mode')}" show="new"/>
+                                    <xxforms:hide dialog="edit-warning-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xhtml:table>
+        </xxforms:dialog>
+      <!-- dialog for deleting a template association -->
+        <xxforms:dialog id="are-you-sure-dialog" appearance="full" level="modal" close="false" draggable="true" visible="false">
+            <xhtml:table width="450">
+                <xhtml:tr>
+                    <xhtml:td class="heading">
+                        <xhtml:div class="heading">
+                            <xforms:output ref="$resources/are-you-sure-this-action-cannot-be-undone"/>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xforms:output ref="$resources/you-are-about-to-delete-a-template-association"/>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xhtml:div class="buttons">
+                            <fr:button>
+                                <xforms:label ref="$resources/cancel"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xxforms:hide dialog="are-you-sure-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                            <fr:button>
+                                <xforms:label ref="$resources/delete"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xforms:send submission="delete-template-association"/>
+                                    <xxforms:hide dialog="are-you-sure-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xhtml:table>
+        </xxforms:dialog>
+      <!-- status change dialog -->
+        <xxforms:dialog id="status-dialog" appearance="full" level="modal" close="false" draggable="true" visible="false">
+            <xhtml:table width="100%">
+                <xhtml:tr>
+                    <xhtml:td class="heading" colspan="2">
+                        <xhtml:div class="heading">
+                            <xforms:output ref="if (instance('new-status')='active') then $resources/set-status-to-active else $resources/set-status-to-retired"/>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td colspan="2">
+                        <xforms:output mediatype="text/html" ref="xxforms:serialize(instance('messages')/status-final[@language=instance('language')], 'html')"/>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xforms:group ref="instance('selected-template')//template[@effectiveDate=instance('version-navigation')][instance('new-status')='active']">
+                    <xhtml:tr>
+                  <!-- template version label -->
+                        <xhtml:td class="item-label">
+                            <xforms:output ref="$resources/versionLabel"/>
+                        </xhtml:td>
+                        <xhtml:td>
+                            <xforms:input ref="@versionLabel"/>
+                        </xhtml:td>
+                    </xhtml:tr>
+                    <xhtml:tr>
+                  <!-- template name -->
+                        <xhtml:td class="item-label">
+                            <xforms:output ref="$resources/expiration-date"/>
+                        </xhtml:td>
+                        <xhtml:td>
+                            <xforms:input ref="@expirationDate" incremental="true">
+                        <!--         <xforms:alert>
+                           <xforms:output
+                              ref=""
+                           />
+                        </xforms:alert>-->
+                            </xforms:input>
+                        </xhtml:td>
+                    </xhtml:tr>
+                </xforms:group>
+                <xhtml:tr>
+                    <xhtml:td colspan="2">
+                        <xhtml:div class="buttons">
+                            <fr:button>
+                                <xforms:label ref="$resources/cancel"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xxforms:hide dialog="status-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                            <fr:button>
+                                <xforms:label>
+                                    <xforms:output ref="if (instance('new-status')='active') then $resources/set-status-to-active else $resources/set-status-to-retired"/>
+                                </xforms:label>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xforms:setvalue ref="instance('selected-template')//template[@effectiveDate=instance('version-navigation')]/@statusCode" value="instance('new-status')"/>
+                                    <xforms:action if="instance('new-status')='retired'">
+                                        <xforms:setvalue ref="instance('selected-template')//template[@effectiveDate=instance('version-navigation')]/@expirationDate" value="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
+                                    </xforms:action>
+                                    <xforms:send submission="set-template-status"/>
+                                    <xforms:send submission="get-decor-template-list"/>
+                                    <xforms:send submission="get-decor-template"/>
+                                    <xxforms:hide dialog="status-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xhtml:table>
+        </xxforms:dialog>
+        <xhtml:table width="100%">
+            <xhtml:tr>
+                <xhtml:td width="25%" class="heading">
+                    <xhtml:div class="heading">
+                        <xforms:output ref="$resources/datasets"/>
+                    </xhtml:div>
+                </xhtml:td>
+                <xhtml:td width="55%" class="heading">
+                    <xhtml:div class="heading">
+                        <xforms:output ref="$resources/template-associations"/>
+                    </xhtml:div>
+                </xhtml:td>
+                <xhtml:td width="20%" class="heading">
+                    <xhtml:div class="heading">
+                        <xforms:output ref="$resources/templates"/>
+                    </xhtml:div>
+                </xhtml:td>
+            </xhtml:tr>
+            <xhtml:tr>
+            <!-- DATASETS -->
+                <xhtml:td width="25%">
+                    <xhtml:table width="100%">
+                  <!-- data set selector -->
+                        <xhtml:tr>
+                     <!-- dataset selector, Save and Cancel buttons, template list-->
+                            <xhtml:td>
+                                <xhtml:table class="detail" width="100%">
+                                    <xhtml:tr>
+                                        <xhtml:td class="item-label">
+                                            <!--<xforms:output ref="$resources/dataset"/>-->
+                                            <xforms:select1 ref="instance('dataset-or-transaction-navigation')" appearance="minimal" class="auto-width">
+                                                <xforms:item>
+                                                    <xforms:label ref="$resources/dataset"/>
+                                                    <xforms:value ref="'ds'"/>
+                                                </xforms:item>
+                                                <xforms:item>
+                                                    <xforms:label ref="$resources/transaction"/>
+                                                    <xforms:value ref="'tr'"/>
+                                                </xforms:item>
+                                            </xforms:select1>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:group ref=".[instance('dataset-list-instance')/dataset]">
+                                                <xforms:select1 ref="instance('dataset-navigation')" appearance="minimal" class="width-200">
+                                                    <xforms:itemset nodeset="instance('dataset-list-instance')/dataset">
+                                                        <xforms:label>
+                                                            <xforms:output ref="if (exists(name[@language=$resources/@xml:lang]/@selectorName)) then (name[@language=$resources/@xml:lang]/@selectorName)[1] else ((name/@selectorName)[1])"/>
+                                                        </xforms:label>
+                                                        <xforms:value ref="@id"/>
+                                                    </xforms:itemset>
+                                                </xforms:select1>
+                                            </xforms:group>
+                                            <xforms:group ref=".[instance('dataset-list-instance')/scenario]">
+                                                <xforms:select1 ref="instance('scenario-navigation')" appearance="minimal" class="width-200">
+                                                    <xforms:itemset nodeset="instance('dataset-list-instance')/scenario/@id">
+                                                        <xforms:label>
+                                                            <xforms:output ref="if (exists(../name[@language=$resources/@xml:lang]/@selectorName)) then (../name[@language=$resources/@xml:lang]/@selectorName)[1] else (../name/@selectorName)[1]"/>
+                                                        </xforms:label>
+                                                        <xforms:value ref="."/>
+                                                    </xforms:itemset>
+                                                </xforms:select1>
+                                                <xforms:select1 ref="instance('dataset-navigation')" appearance="minimal" class="width-200">
+                                                    <xforms:itemset nodeset="instance('dataset-list-instance')/scenario[@id=instance('scenario-navigation')]//transaction/@id">
+                                                        <xforms:label>
+                                                            <xforms:output ref="string-join(for $i in (0 to count(../ancestor::*)-3) return '&#160;&#160;&#160;&#160;','')"/>
+                                                            <xforms:output ref="if (exists(../name[@language=$resources/@xml:lang]/@selectorName)) then (../name[@language=$resources/@xml:lang]/@selectorName)[1] else (../name/@selectorName)[1]"/>
+                                                        </xforms:label>
+                                                        <xforms:value ref="if (../transaction) then () else (.)"/>
+                                                    </xforms:itemset>
+                                                </xforms:select1>
+                                            </xforms:group>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                </xhtml:table>
+                            </xhtml:td>
+                        </xhtml:tr>
+                  <!-- table row with concept navigation -->
+                        <xhtml:tr>
+                     <!-- concept-navigation -->
+                            <xhtml:td>
+                        <!-- table for tree concept-navigation components -->
+                                <xhtml:table width="100%">
+                           <!-- variable selected concept -->
+                                    <xxforms:variable name="current-concept" select="instance('dataset-instance')//concept[@id=instance('concept-navigation')]"/>
+                           <!-- row with heading for tree control and edit buttons	-->
+                                    <xhtml:tr>
+                                        <xhtml:td class="heading">
+                                            <xhtml:div class="heading">
+                                                <xforms:output ref="$resources/concepts"/>
+                                            </xhtml:div>
+                                            <xhtml:div class="buttons">
+                                                <xforms:group ref=".[$editor]">
+                                                    <fr:button>
+                                                        <xforms:label>
+                                                            <xhtml:img src="/img/arrow_refresh.png" alt=""/>
+                                                        </xforms:label>
+                                                        <xforms:hint ref="$resources/refresh"/>
+                                                        <xforms:action ev:event="DOMActivate">
+                                                            <xforms:send submission="get-decor-template-list"/>
+                                                            <xforms:action if="instance('concept-navigation')=instance('decor-template-associations')//concept/@ref">
+                                                                <xxforms:variable name="associated-template" select="instance('decor-template-associations')//templateAssociation[concept/@ref=instance('concept-navigation')]"/>
+                                                                <xforms:setvalue ref="instance('template-navigation')" value="instance('decor-template-list')//template[template][(@id|@ref)=$associated-template/@templateId][1]/@uuid"/>
+                                                                <xforms:send submission="get-decor-template"/>
+                                                                <xforms:send submission="get-issues-submission"/>
+                                                            </xforms:action>
+                                                        </xforms:action>
+                                                    </fr:button>
+                                                </xforms:group>
+                                            </xhtml:div>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                           <!-- row with tree control-->
+                                    <xhtml:tr>
+                                        <xhtml:td>
+                                            <xhtml:div class="navigate">
+                                                <xforms:select1 ref="instance('concept-navigation')" appearance="xxforms:tree">
+                                                    <xforms:itemset nodeset="instance('dataset-instance')//concept[not(@absent='true')][not(ancestor::conceptList)][not(ancestor::history)]" class="{if (@id=instance('decor-template-associations')//concept/@ref) then 'node-template' else 'node-s'}">
+                                                        <xforms:label>
+                                                            <xforms:output ref="name[@language=instance('language')]"/>
+                                                            <xforms:output ref="if (@conformance='NP') then '' else @minimumMultiplicity"/>
+                                                            <xforms:output value="if (@conformance='NP' or string-length(concat(@minimumMultiplicity,@maximumMultiplicity))=0) then ('') else ('..')"/>
+                                                            <xforms:output ref="if (@conformance='NP') then '' else @maximumMultiplicity"/>
+                                                            <xforms:output ref="if (string(@isMandatory)='true') then ('M') else (@conformance)"/>
+                                                        </xforms:label>
+                                                        <xforms:value ref="@id"/>
+                                                    </xforms:itemset>
+                                                    <xforms:action ev:event="xforms-value-changed">
+                                                        <xforms:send submission="get-decor-concept"/>
+                                                        <xforms:send submission="get-concept-associations"/>
+                                                        <xforms:action if="not(instance('selected-template')//@id=instance('decor-template-associations')//concept[@ref=instance('concept-navigation')]/@elementId) and instance('concept-navigation')=instance('decor-template-associations')//concept/@ref">
+                                                            <xxforms:variable name="associated-template" select="instance('decor-template-associations')//templateAssociation[concept/@ref=instance('concept-navigation')]"/>
+                                                            <xforms:setvalue ref="instance('template-navigation')" value="instance('decor-template-list')//template[template][(@id|@ref)=$associated-template/@templateId][1]/@uuid"/>
+                                                            <xforms:send submission="get-decor-template"/>
+                                                            <xforms:send submission="get-issues-submission"/>
+                                                        </xforms:action>
+                                                    </xforms:action>
+                                                </xforms:select1>
+                                            </xhtml:div>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                </xhtml:table>
+                            </xhtml:td>
+                        </xhtml:tr>
+                    </xhtml:table>
+                </xhtml:td>
+            <!-- MAPPING -->
+                <xhtml:td width="55%">
+                    <xhtml:table width="100%">
+                  <!-- Dataset Concept -->
+                        <xhtml:tr>
+                            <xhtml:td>
+                                <fr:accordion class="fr-accordion-lnf">
+                                    <fr:case>
+                                        <fr:label ref="concat($resources/concept,': ',$current-concept/name[@language=instance('language')])"/>
+                              <!-- group for concept include  -->
+                                        <xforms:group ref="instance('concept')">
+                                            <xi:include href="/db/apps/art/resources/xform-parts.xml" xpointer="xpointer(//part[@id='concept-readonly'])">
+                                                <xi:fallback>
+                                                    <xhtml:p>Included document /db/apps/art/resources/xform-parts.xml not found!</xhtml:p>
+                                                </xi:fallback>
+                                            </xi:include>
+                                        </xforms:group>
+                                    </fr:case>
+                                </fr:accordion>
+                            </xhtml:td>
+                        </xhtml:tr>
+                  <!-- Template associations for concept -->
+                        <xhtml:tr>
+                            <xhtml:td class="heading">
+                                <xhtml:div class="heading">
+                                    <xforms:output ref="$resources/templates"/>
+                                </xhtml:div>
+                                <xhtml:div class="buttons">
+                           <!-- button for creating  template -->
+                                    <xforms:group ref=".[$editor]">
+                                        <fr:button>
+                                            <xforms:label ref="$resources/create-template"/>
+                                            <xforms:action ev:event="DOMActivate">
+                                                <xforms:setvalue ref="instance('edit-mode')" value="'new'"/>
+                                                <xforms:load resource="/decor-template-editor--{instance('project-instance')/@prefix}?conceptId={instance('concept')/@id}&amp;conceptEffectiveDate={instance('concept')/@effectiveDate}&amp;mode={instance('edit-mode')}" show="new"/>
+                                            </xforms:action>
+                                        </fr:button>
+                                        <fr:button ref="instance('selected-template')/*/template[@effectiveDate=instance('version-navigation')]//(element|attribute)[not(ancestor::include)][not(@id)]">
+                                            <xforms:label ref="$resources/add-element-ids"/>
+                                            <xforms:hint ref="$resources/add-element-ids-hint"/>
+                                            <xforms:action ev:event="DOMActivate">
+                                                <xforms:send submission="add-decor-template-element-ids"/>
+                                            </xforms:action>
+                                        </fr:button>
+                                    </xforms:group>
+                           <!-- button for creating template association -->
+                                    <xforms:group ref=".[$editor][not(instance('decor-template-associations')//templateAssociation[@templateId=instance('selected-template')//template[@id][1]/@id][@effectiveDate=instance('version-navigation')]/concept[@ref=instance('concept-navigation')])][string-length(instance('template-navigation'))&gt;0]">
+                                        <fr:button ref="instance('selected-template')/*/template[@effectiveDate=instance('version-navigation')]//(element|attribute)[not(ancestor::include)]/@id">
+                                            <xforms:label ref="$resources/create-template-association"/>
+                                            <xforms:action ev:event="DOMActivate">
+                                                <xforms:setvalue ref="instance('new-association')/concept/@effectiveDate" value="instance('concept')/@effectiveDate"/>
+                                                <xforms:setvalue ref="instance('new-association')/concept/@ref" value="instance('concept')/@id"/>
+                                                <xforms:send submission="create-template-association"/>
+                                                <xforms:send submission="get-decor-template-associations"/>
+                                            </xforms:action>
+                                        </fr:button>
+                                    </xforms:group>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xhtml:tr>
+                            <xhtml:td>
+                                <xhtml:table class="detail" width="100%">
+                                    <xhtml:tr>
+                                        <xhtml:td class="item-label">
+                                            <xforms:output ref="$resources/name"/>
+                                        </xhtml:td>
+                                        <xhtml:td class="item-label">
+                                            <xforms:output ref="$resources/id"/>
+                                        </xhtml:td>
+                                        <xhtml:td class="item-label">
+                                            <xforms:output ref="$resources/element"/>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                    <xforms:repeat class="selectable" nodeset="instance('decor-template-associations')//templateAssociation/concept[@ref=instance('concept-navigation')]">
+                                        <xxforms:variable name="current-association-id" select="parent::templateAssociation/@templateId"/>
+                                        <xxforms:variable name="current-element-id" select="@elementId"/>
+                                        <xhtml:tr class="selectable">
+                                            <xhtml:td>
+                                                <xforms:output ref="instance('decor-template-list')//template/template[(@id|@ref)=$current-association-id]/@name"/>
+                                            </xhtml:td>
+                                            <xhtml:td>
+                                                <xforms:output ref="$current-association-id"/>
+                                            </xhtml:td>
+                                            <xhtml:td>
+                                                <xforms:output ref="if (instance('selected-template')//*[@id=$current-element-id]/@name) then instance('selected-template')//*[@id=$current-element-id]/@name else ($current-element-id)"/>
+                                                <xhtml:div class="buttons">
+                                                    <fr:button ref=".[$editor]">
+                                                        <xforms:label>
+                                                            <xhtml:img src="/img/remove.gif" alt=""/>
+                                                        </xforms:label>
+                                                        <xforms:hint>
+                                                            <xforms:output ref="$resources/remove"/>
+                                                        </xforms:hint>
+                                                        <xforms:action ev:event="DOMActivate">
+                                                            <xforms:setvalue ref="instance('delete-association')/@templateId" value="context()/parent::*/@templateId"/>
+                                                            <xforms:setvalue ref="instance('delete-association')/@effectiveDate" value="context()/parent::*/@effectiveDate"/>
+                                                            <xforms:setvalue ref="instance('delete-association')/concept/@ref" value="context()/@ref"/>
+                                                            <xforms:setvalue ref="instance('delete-association')/concept/@effectiveDate" value="context()/@effectiveDate"/>
+                                                            <xforms:setvalue ref="instance('delete-association')/concept/@elementId" value="context()/@elementId"/>
+                                                            <xxforms:show dialog="are-you-sure-dialog"/>
+                                                        </xforms:action>
+                                                    </fr:button>
+                                                </xhtml:div>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xforms:repeat>
+                                    <xforms:group ref="instance('new-association')[$editor][not(instance('decor-template-associations')//templateAssociation[@templateId=instance('selected-template')//template[@id][1]/@id][@effectiveDate=instance('version-navigation')]/concept[@ref=instance('concept-navigation')])][string-length(instance('template-navigation'))&gt;0]">
+                                        <xhtml:tr class="selectable">
+                                            <xhtml:td>
+                                                <xforms:output ref="instance('selected-template')//template/@name"/>
+                                            </xhtml:td>
+                                            <xhtml:td>
+                                                <xforms:output ref="instance('selected-template')//template/@id"/>
+                                            </xhtml:td>
+                                            <xhtml:td>
+                                    <!-- indent the elements/attributes by prefixing non-breaking spaces, so the options appear tree-like -->
+                                                <xforms:select1 ref="concept/@elementId" appearance="minimal">
+                                                    <xforms:itemset nodeset="instance('selected-template')/*/template[@effectiveDate=instance('version-navigation')]//(element|attribute)[not(ancestor::include)]/@id">
+                                                        <xforms:label ref="concat(string-join(for $i in (0 to count(ancestor::element)-1) return '&#160;&#160;&#160;&#160;',''),if (contains(../@name,'[')) then substring-before(../@name,'[') else (../@name))"/>
+                                                        <xforms:value ref="."/>
+                                                    </xforms:itemset>
+                                                </xforms:select1>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xforms:group>
+                                </xhtml:table>
+                            </xhtml:td>
+                        </xhtml:tr>
+
+                  <!-- group for existing templates -->
+                  <!-- <xforms:group ref="instance('decor-template-associations')//templateAssociation[concept/@ref=instance('concept-navigation')]">-->
+                        <xhtml:tr>
+                            <xhtml:td>
+                                <xhtml:table class="detail" style="margin-top:2em;" width="100%">
+                                    <!-- NO TEMPLATE FOUND -->
+                                    <xforms:group ref=".[count(instance('selected-template')//template)=0]">
+                                        <xhtml:tr>
+                                            <xhtml:td class="heading" colspan="4">
+                                                <xhtml:div class="heading">
+                                                    <!-- 
+                                                    determine what to show as heading on NO TEMPLATES found
+                                                    if project is private (got <rules private=true> and not logged in then show "please log in to view details"
+                                                    if project is not private show 
+                                                    -->
+                                                    <xxforms:variable name="detailsok" select="not((instance('selected-template')/@user='guest' or instance('selected-template')/@user='') and instance('selected-template')/@private='true')"/>
+                                                    <xforms:group ref=".[$detailsok=false()]">
+                                                        <xforms:output ref="concat($resources/login-for-details, '... ')"/>
+                                                    </xforms:group>
+                                                    <xforms:group ref=".[$detailsok=true()]">
+                                                        <xforms:output ref="$resources/template-not-found"/>
+                                                    </xforms:group>
+                                                    <xforms:output ref="if (string-length(instance('template-in-parameter'))&gt;0) then instance('template-in-parameter') else instance('selected-template')/@c"/>
+                                                    <xforms:group ref="instance('version-navigation')">
+                                                        <xforms:output ref="instance('version-navigation')" xxforms:format="concat('(',if (. castable as xs:dateTime) then replace(format-dateTime(.,'[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]', (), (), ()),' 00:00:00','') else (.),')')"/>
+                                                    </xforms:group>
+                                                </xhtml:div>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xforms:group>
+                                    <xforms:group ref="instance('selected-template')//template">
+                                        <xxforms:variable name="templateId" select="template[1]/@id"/>
+                                        <!-- project could have mix of template[@ref] and template[@id]. when editing need to offer creating new version based on latest version -->
+                                        <xxforms:variable name="currentTemplateIsRef" select="template[@ref] and template[@id][1]/@url"/>
+                              <!-- template heading -->
+                                        <xhtml:tr>
+                                            <xhtml:td class="heading" colspan="4">
+                                                <xhtml:div class="heading">
+                                                    <xforms:output ref="if (string-length(template[@effectiveDate=instance('version-navigation')]/@displayName)&gt;0) then template[@effectiveDate=instance('version-navigation')]/@displayName else (template[@effectiveDate=instance('version-navigation')]/@name)"/>
+                                                </xhtml:div>
+                                                <xhtml:div class="buttons">
+                                       <!-- button for editing template -->
+                                                    <xforms:group ref=".[$editor][template[@id][@effectiveDate=instance('version-navigation')]/@statusCode=('new','draft','active')]">
+                                          <!-- button for editing template -->
+                                                        <fr:button>
+                                                            <xforms:label>
+                                                                <xhtml:img src="/img/write.png" alt=""/>
+                                                            </xforms:label>
+                                                            <xforms:hint ref="$resources/edit-template"/>
+                                                            <xforms:action ev:event="DOMActivate">
+                                                                <xforms:action if="template[$currentTemplateIsRef]">
+                                                                    <xforms:setvalue ref="instance('version-navigation')" value="template[@id][1]/@effectiveDate"/>
+                                                                    <xxforms:show dialog="edit-warning-dialog"/>
+                                                                </xforms:action>
+                                                                <xforms:action if="template[@id][not(@url)][@effectiveDate=instance('version-navigation')]/@statusCode='active'">
+                                                                    <xxforms:show dialog="edit-warning-dialog"/>
+                                                                </xforms:action>
+                                                                <xforms:action if="template[@id][not(@url)][@effectiveDate=instance('version-navigation')]/@statusCode=('new','draft')">
+                                                                    <xforms:setvalue ref="instance('edit-mode')" value="'edit'"/>
+                                                                    <xforms:load resource="/decor-template-editor--{instance('project-instance')/@prefix}?templateId={$templateId}&amp;templateEffectiveDate={instance('version-navigation')}&amp;conceptId={instance('concept')/@id}&amp;conceptEffectiveDate={instance('concept')/@effectiveDate}&amp;mode={instance('edit-mode')}" show="new"/>
+                                                                </xforms:action>
+                                                            </xforms:action>
+                                                        </fr:button>
+                                          <!-- button for setting status to 'active' -->
+                                                        <xforms:group ref=".[$editor][template[@id][not(@url)][@effectiveDate=instance('version-navigation')]/@statusCode='draft']">
+                                                            <fr:button>
+                                                                <xforms:label>
+                                                                    <xhtml:img src="/img/node-sfinal.png" alt=""/>
+                                                                </xforms:label>
+                                                                <xforms:hint>
+                                                                    <xforms:output ref="$resources/set-status-to-active"/>
+                                                                </xforms:hint>
+                                                                <xforms:action ev:event="DOMActivate">
+                                                                    <xforms:setvalue ref="instance('new-status')" value="'active'"/>
+                                                                    <xxforms:show dialog="status-dialog"/>
+                                                                </xforms:action>
+                                                            </fr:button>
+                                                        </xforms:group>
+                                          <!-- button for setting status to 'retired' -->
+                                                        <xforms:group ref=".[$editor][template[@id][not(@url)][@effectiveDate=instance('version-navigation')]/@statusCode='active']">
+                                                            <fr:button>
+                                                                <xforms:label>
+                                                                    <xhtml:img src="/img/node-sretired.png" alt=""/>
+                                                                </xforms:label>
+                                                                <xforms:hint>
+                                                                    <xforms:output ref="$resources/set-status-to-retired"/>
+                                                                </xforms:hint>
+                                                                <xforms:action ev:event="DOMActivate">
+                                                                    <xforms:setvalue ref="instance('new-status')" value="'retired'"/>
+                                                                    <xxforms:show dialog="status-dialog"/>
+                                                                </xforms:action>
+                                                            </fr:button>
+                                                        </xforms:group>
+                                                    </xforms:group>
+                                                    <!-- button Edit in Temple -->
+                                                    <xforms:group ref=".[$editor][template[@id][not(@url)][@effectiveDate=instance('version-navigation')]/@statusCode=('new','draft')]">
+                                                        <fr:button id="edit-temple">
+                                                            <xforms:label>
+                                                                <xhtml:img src="/img/temple.jpg" alt=""/>
+                                                            </xforms:label>
+                                                            <xforms:hint>
+                                                                <xforms:output ref="$resources/edit-temple"/>
+                                                            </xforms:hint>
+                                                            <xforms:action ev:event="DOMActivate">
+                                                                <xforms:load resource="{$temple-external-exist}/modules/temple.xquery?id={template[@effectiveDate=instance('version-navigation')]/@id}&amp;effectiveDate={template[@effectiveDate=instance('version-navigation')]/@effectiveDate}&amp;prefix={instance('project-instance')/@prefix}&amp;dataset={instance('dataset-navigation')}" show="new"/>
+                                                            </xforms:action>
+                                                        </fr:button>
+                                                    </xforms:group>
+                                                </xhtml:div>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xforms:group>
+                                </xhtml:table>
+                                <xforms:group ref="instance('selected-template')//template">
+                                    <xi:include href="/db/apps/art/resources/template-view.xml" xpointer="xpointer(//part[@id='template-readonly'])">
+                                        <xi:fallback>
+                                            <p>Included document /db/apps/art/resources/template-view.xml not found!</p>
+                                        </xi:fallback>
+                                    </xi:include>
+                                </xforms:group>
+                            </xhtml:td>
+                        </xhtml:tr>
+                  <!-- </xforms:group>-->
+                    </xhtml:table>
+                </xhtml:td>
+            <!-- TEMPLATES -->
+                <xhtml:td width="20%">
+               <!-- list of all templates -->
+                    <xhtml:div class="navigate-container">
+                        <xhtml:div class="navigate-template">
+                            <xforms:select1 ref="instance('template-navigation')" appearance="xxforms:tree" id="templateNavigation2">
+                                <xforms:itemset nodeset="instance('decor-template-list')/class/template[template]|instance('decor-template-list')/class" class="{if (name()='template') then concat('node-template-', template[1]/@statusCode) else ''}" xxforms:open="true">
+                                    <xforms:label>
+                                        <xforms:output ref="if (name()='template') then (if (string-length(template[1]/@displayName)&gt;0) then template[1]/@displayName else template[1]/@name) else (label[@language=instance('language')])"/>
+                                        <xforms:output ref="if (string-length(template[1]/@versionLabel)&gt;0) then concat(' (', template[1]/@versionLabel, ')') else ''"/>
+                                    </xforms:label>
+                                    <xforms:value ref="@uuid"/>
+                                </xforms:itemset>
+                                <xforms:action ev:event="xforms-value-changed">
+                                    <xforms:action if="instance('decor-template-list')//template[@uuid=instance('template-navigation')]">
+                                        <xforms:setvalue ref="instance('version-navigation')" value="(instance('decor-template-list')//template[@uuid=instance('template-navigation')]/template/@effectiveDate)[1]"/>
+                                        <xforms:setvalue ref="instance('template-navigation')/@ref" value="if (instance('decor-template-list')//template[@uuid=instance('template-navigation')][@ref]/template[@effectiveDate=instance('version-navigation')]) then 'true' else 'false'"/>
+                                        <xforms:send submission="get-decor-template"/>
+                                        <xforms:send submission="get-issues-submission"/>
+                                    </xforms:action>
+                                </xforms:action>
+                            </xforms:select1>
+                        </xhtml:div>
+                    </xhtml:div>
+                </xhtml:td>
+            </xhtml:tr>
+        </xhtml:table>
+    </xhtml:body>
+</xhtml:html>

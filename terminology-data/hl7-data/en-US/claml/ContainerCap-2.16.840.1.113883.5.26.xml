@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="50"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.26"/>
+   <Title name="ContainerCap" date="2012-08-02" version="1.000">The type of cap associated with a container</Title>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="_MedicationCap" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21052"/>
+      <SubClass code="CHILD"/>
+      <SubClass code="EASY"/>
+      <Rubric id="d1e93113" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Cap types for medication containers</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e93126" kind="short">
+         <Label xml:lang="en-US">MedicationCap</Label>
+      </Rubric>
+      <Rubric id="d1e93126" kind="preferred">
+         <Label xml:lang="en-US">MedicationCap</Label>
+      </Rubric>
+   </Class>
+   <Class code="FILM" kind="concept">
+      <Meta name="internalId" value="14053"/>
+      <Rubric id="d1e93138" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A non-reactive plastic film covering over the opening of a container.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e93151" kind="short">
+         <Label xml:lang="en-US">Film</Label>
+      </Rubric>
+      <Rubric id="d1e93151" kind="preferred">
+         <Label xml:lang="en-US">Film</Label>
+      </Rubric>
+   </Class>
+   <Class code="FOIL" kind="concept">
+      <Meta name="internalId" value="14052"/>
+      <Rubric id="d1e93162" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A foil covering (type of foil not specified) over the opening of a container</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e93175" kind="short">
+         <Label xml:lang="en-US">Foil</Label>
+      </Rubric>
+      <Rubric id="d1e93175" kind="preferred">
+         <Label xml:lang="en-US">Foil</Label>
+      </Rubric>
+   </Class>
+   <Class code="PUSH" kind="concept">
+      <Meta name="internalId" value="14051"/>
+      <Rubric id="d1e93186" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A non-threaded cap that forms a tight-fitting closure on a container by pushing the fitted end into the conatiner opening</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e93199" kind="short">
+         <Label xml:lang="en-US">Push Cap</Label>
+      </Rubric>
+      <Rubric id="d1e93199" kind="preferred">
+         <Label xml:lang="en-US">Push Cap</Label>
+      </Rubric>
+   </Class>
+   <Class code="SCR" kind="concept">
+      <Meta name="internalId" value="14050"/>
+      <Rubric id="d1e93210" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A threaded cap that is screwed onto the opening of a container</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e93223" kind="short">
+         <Label xml:lang="en-US">Screw Cap</Label>
+      </Rubric>
+      <Rubric id="d1e93223" kind="preferred">
+         <Label xml:lang="en-US">Screw Cap</Label>
+      </Rubric>
+   </Class>
+   <Class code="CHILD" kind="concept">
+      <Meta name="internalId" value="16186"/>
+      <SuperClass code="_MedicationCap"/>
+      <Rubric id="d1e93234" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A cap designed to be difficult to open for children. Generally requires multiple simultaneous actions (e.g. squeeze and twist) to open. Used for products that may be dangerous if ingested or overdosed by children.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e93252" kind="short">
+         <Label xml:lang="en-US">ChildProof</Label>
+      </Rubric>
+      <Rubric id="d1e93252" kind="preferred">
+         <Label xml:lang="en-US">ChildProof</Label>
+      </Rubric>
+   </Class>
+   <Class code="EASY" kind="concept">
+      <Meta name="internalId" value="16185"/>
+      <SuperClass code="_MedicationCap"/>
+      <Rubric id="d1e93263" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A cap designed to be easily removed. For products intended to be opened by persons with limited strength or dexterity.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e93281" kind="short">
+         <Label xml:lang="en-US">EasyOpen</Label>
+      </Rubric>
+      <Rubric id="d1e93281" kind="preferred">
+         <Label xml:lang="en-US">EasyOpen</Label>
+      </Rubric>
+   </Class>
+</ClaML>

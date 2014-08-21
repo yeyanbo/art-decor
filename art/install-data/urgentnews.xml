@@ -1,0 +1,41 @@
+<!--
+    Copyright (C) 2011-2014 ART-DECOR expert group art-decor.org
+    
+    Author: Kai U. Heitmann
+    
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+    
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+    
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+    
+    This file allows to specify multi language urgent news that are displayed on every decor home screen
+    structure is simple:
+    
+    <news showuntil="2014-04-14T16:59:30" type="alert">
+       one news item with an 
+       @showuntil attribute as an xs:dateTime until when the message shall be displayed
+       @type either "alert" to display message with red background or "hint" to show with green background
+       
+       <text language="en-US">This is a Test Message 1</text>
+         the text message in a certain lanuage to be displayed
+       
+    </news>
+    
+-->
+<urgentnews>
+    <news showuntil="2014-04-14T16:48:00">
+        <text language="en-US">This is a Test Message 1</text>
+        <text language="nl-NL">Dit is een testbericht 1</text>
+        <text language="de-DE">Dies ist eine Testnachricht 1</text>
+    </news>
+    <news showuntil="2014-05-27T18:50:30" type="alert">
+        <text language="en-US">This is a Test Message 2</text>
+        <text language="nl-NL">Dit is een testbericht 2</text>
+        <text language="de-DE">Dies ist eine Testnachricht 2</text>
+    </news>
+</urgentnews>

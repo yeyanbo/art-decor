@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="33"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.106"/>
+   <Title name="RelationshipConjunction" date="2012-08-02" version="1.000"/>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="AND" kind="concept">
+      <Meta name="internalId" value="10366"/>
+      <Rubric id="d1e200621" kind="definition">
+         <Label xml:lang="en-US">
+            <p>This condition must be true.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e200634" kind="short">
+         <Label xml:lang="en-US">and</Label>
+      </Rubric>
+      <Rubric id="d1e200634" kind="preferred">
+         <Label xml:lang="en-US">and</Label>
+      </Rubric>
+   </Class>
+   <Class code="OR" kind="concept">
+      <Meta name="internalId" value="10367"/>
+      <Rubric id="d1e200646" kind="definition">
+         <Label xml:lang="en-US">
+            <p>At least one of the condition among all OR conditions must be true.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e200659" kind="short">
+         <Label xml:lang="en-US">or</Label>
+      </Rubric>
+      <Rubric id="d1e200659" kind="preferred">
+         <Label xml:lang="en-US">or</Label>
+      </Rubric>
+   </Class>
+   <Class code="XOR" kind="concept">
+      <Meta name="internalId" value="10368"/>
+      <Rubric id="d1e200670" kind="definition">
+         <Label xml:lang="en-US">
+            <p>One and only one of the XOR conditions must be true.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e200683" kind="short">
+         <Label xml:lang="en-US">exclusive or</Label>
+      </Rubric>
+      <Rubric id="d1e200683" kind="preferred">
+         <Label xml:lang="en-US">exclusive or</Label>
+      </Rubric>
+   </Class>
+</ClaML>

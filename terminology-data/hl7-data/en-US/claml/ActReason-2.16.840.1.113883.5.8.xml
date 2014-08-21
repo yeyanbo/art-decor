@@ -1,0 +1,4029 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="139"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.8"/>
+   <Title name="ActReason" date="2012-08-02" version="1.000">A set of codes specifying the motivation, cause, or rationale of an Act, when such rationale is not reasonably represented as an ActRelationship of type "has reason" linking to another Act. Examples: Example reasons that might qualify for being coded in this field might be: "routine requirement", "infectious disease reporting requirement", "on patient request", "required by law".</Title>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="_ActAccommodationReason" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="20937"/>
+      <SubClass code="ACCREQNA"/>
+      <SubClass code="FLRCNV"/>
+      <SubClass code="MEDNEC"/>
+      <SubClass code="PAT"/>
+      <Rubric id="d1e61710" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Identifies the reason the patient is assigned to this accommodation type</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61723" kind="short">
+         <Label xml:lang="en-US">ActAccommodationReason</Label>
+      </Rubric>
+      <Rubric id="d1e61723" kind="preferred">
+         <Label xml:lang="en-US">ActAccommodationReason</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActCoverageReason" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22164"/>
+      <SubClass code="_EligibilityActReasonCode"/>
+      <Rubric id="d1e61734" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Codes used to specify reasons or criteria relating to coverage provided under a policy or program. May be used to convey reasons pertaining to coverage contractual provisions, including criteria for eligibility, coverage limitations, coverage maximums, or financial participation required of covered parties.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61750" kind="short">
+         <Label xml:lang="en-US">ActCoverageReason</Label>
+      </Rubric>
+      <Rubric id="d1e61750" kind="preferred">
+         <Label xml:lang="en-US">ActCoverageReason</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActInformationManagementReason" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22675"/>
+      <SubClass code="_ActHealthInformationManagementReason"/>
+      <SubClass code="_ActInformationPrivacyReason"/>
+      <Rubric id="d1e61761" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The rationale or purpose for an act relating to information management, such as archiving information for the purpose of complying with an enterprise data retention policy.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61777" kind="short">
+         <Label xml:lang="en-US">ActInformationManagementReason</Label>
+      </Rubric>
+      <Rubric id="d1e61777" kind="preferred">
+         <Label xml:lang="en-US">ActInformationManagementReason</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActInvalidReason" kind="concept">
+      <Meta name="internalId" value="23235"/>
+      <SubClass code="ADVSTORAGE"/>
+      <SubClass code="EXPLOT"/>
+      <SubClass code="OUTSIDESCHED"/>
+      <SubClass code="PRODRECALL"/>
+      <Rubric id="d1e61788" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Types of reasons why a substance is invalid for use.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61804" kind="short">
+         <Label xml:lang="en-US">ActInvalidReason</Label>
+      </Rubric>
+      <Rubric id="d1e61804" kind="preferred">
+         <Label xml:lang="en-US">ActInvalidReason</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActInvoiceCancelReason" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="20941"/>
+      <SubClass code="INCCOVPTY"/>
+      <SubClass code="INCINVOICE"/>
+      <SubClass code="INCPOLICY"/>
+      <SubClass code="INCPROV"/>
+      <Rubric id="d1e61815" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Domain specifies the codes used to describe reasons why a Provider is cancelling an Invoice or Invoice Grouping.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61828" kind="short">
+         <Label xml:lang="en-US">ActInvoiceCancelReason</Label>
+      </Rubric>
+      <Rubric id="d1e61828" kind="preferred">
+         <Label xml:lang="en-US">ActInvoiceCancelReason</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActNoImmunizationReason" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21529"/>
+      <SubClass code="IMMUNE"/>
+      <SubClass code="MEDPREC"/>
+      <SubClass code="OSTOCK"/>
+      <SubClass code="PATOBJ"/>
+      <SubClass code="PHILISOP"/>
+      <SubClass code="RELIG"/>
+      <SubClass code="VACEFF"/>
+      <SubClass code="VACSAF"/>
+      <Rubric id="d1e61839" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A coded description of the reason for why a patient did not receive a scheduled immunization.</p>
+            <p>(important for public health strategy</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61855" kind="short">
+         <Label xml:lang="en-US">ActNoImmunizationReason</Label>
+      </Rubric>
+      <Rubric id="d1e61855" kind="preferred">
+         <Label xml:lang="en-US">ActNoImmunizationReason</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActSupplyFulfillmentRefusalReason" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21530"/>
+      <SubClass code="FRR01"/>
+      <SubClass code="FRR02"/>
+      <SubClass code="FRR03"/>
+      <SubClass code="FRR04"/>
+      <SubClass code="FRR05"/>
+      <SubClass code="FRR06"/>
+      <Rubric id="d1e61867" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicates why a fulfiller refused to fulfill a supply order, and considered it important to notify other providers of their decision. E.g. "Suspect fraud", "Possible abuse", "Contraindicated".</p>
+            <p>(used when capturing 'refusal to fill' annotations)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61883" kind="short">
+         <Label xml:lang="en-US">ActSupplyFulfillmentRefusalReason</Label>
+      </Rubric>
+      <Rubric id="d1e61883" kind="preferred">
+         <Label xml:lang="en-US">ActSupplyFulfillmentRefusalReason</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ClinicalResearchEventReason" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22391"/>
+      <SubClass code="RET"/>
+      <SubClass code="SCH"/>
+      <SubClass code="TRM"/>
+      <SubClass code="UNS"/>
+      <Rubric id="d1e61894" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Specifies the reason that an event occurred in a clinical research study.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61910" kind="short">
+         <Label xml:lang="en-US">ClinicalResearchEventReason</Label>
+      </Rubric>
+      <Rubric id="d1e61910" kind="preferred">
+         <Label xml:lang="en-US">ClinicalResearchEventReason</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ClinicalResearchObservationReason" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22392"/>
+      <SubClass code="NPT"/>
+      <SubClass code="PPT"/>
+      <SubClass code="UPT"/>
+      <Rubric id="d1e61921" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>SSpecifies the reason that a test was performed or observation collected in a clinical research study.</p>
+            <p>
+               <b>Note:</b>This set of codes are not strictly reasons, but are used in the currently Normative standard. Future revisions of the specification will model these as ActRelationships and thes codes may subsequently be retired. Thus, these codes should not be used for new specifications.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61943" kind="short">
+         <Label xml:lang="en-US">ClinicalResearchObservationReason</Label>
+      </Rubric>
+      <Rubric id="d1e61943" kind="preferred">
+         <Label xml:lang="en-US">ClinicalResearchObservationReason</Label>
+      </Rubric>
+   </Class>
+   <Class code="_CombinedPharmacyOrderSuspendReasonCode" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22393"/>
+      <SubClass code="ALTCHOICE"/>
+      <SubClass code="CLARIF"/>
+      <SubClass code="DRUGHIGH"/>
+      <SubClass code="HOSPADM"/>
+      <SubClass code="LABINT"/>
+      <SubClass code="NON-AVAIL"/>
+      <SubClass code="PREG"/>
+      <SubClass code="SALG"/>
+      <SubClass code="SDDI"/>
+      <SubClass code="SDUPTHER"/>
+      <SubClass code="SINTOL"/>
+      <SubClass code="SURG"/>
+      <SubClass code="WASHOUT"/>
+      <Rubric id="d1e61954" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Indicates why the prescription should be suspended.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61970" kind="short">
+         <Label xml:lang="en-US">CombinedPharmacyOrderSuspendReasonCode</Label>
+      </Rubric>
+      <Rubric id="d1e61970" kind="preferred">
+         <Label xml:lang="en-US">CombinedPharmacyOrderSuspendReasonCode</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ControlActNullificationReasonCode" kind="concept">
+      <Meta name="internalId" value="22809"/>
+      <SubClass code="ALTD"/>
+      <SubClass code="EIE"/>
+      <SubClass code="NORECMTCH"/>
+      <Rubric id="d1e61981" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Identifies reasons for nullifying (retracting) a particular control act.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61997" kind="short">
+         <Label xml:lang="en-US">ControlActNullificationReasonCode</Label>
+      </Rubric>
+      <Rubric id="d1e61997" kind="preferred">
+         <Label xml:lang="en-US">ControlActNullificationReasonCode</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ControlActNullificationRefusalReasonType" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="23277"/>
+      <SubClass code="INRQSTATE"/>
+      <SubClass code="NOMATCH"/>
+      <SubClass code="NOPERM"/>
+      <SubClass code="WRNGVER"/>
+      <Rubric id="d1e62008" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Reasons to refuse a transaction to be undone.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e62024" kind="short">
+         <Label xml:lang="en-US">ControlActNullificationRefusalReasonType</Label>
+      </Rubric>
+      <Rubric id="d1e62024" kind="preferred">
+         <Label xml:lang="en-US">ControlActNullificationRefusalReasonType</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ControlActReason" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21491"/>
+      <SubClass code="_MedicationOrderAbortReasonCode"/>
+      <SubClass code="_MedicationOrderReleaseReasonCode"/>
+      <SubClass code="_PharmacySupplyEventAbortReason"/>
+      <SubClass code="_PharmacySupplyEventStockReasonCode"/>
+      <SubClass code="_PharmacySupplyRequestRenewalRefusalReasonCode"/>
+      <SubClass code="_SupplyOrderAbortReasonCode"/>
+      <Rubric id="d1e62036" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Identifies why a specific query, request, or other trigger event occurred.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e62049" kind="short">
+         <Label xml:lang="en-US">ControlActReason</Label>
+      </Rubric>
+      <Rubric id="d1e62049" kind="preferred">
+         <Label xml:lang="en-US">ControlActReason</Label>
+      </Rubric>
+   </Class>
+   <Class code="_GenericUpdateReasonCode" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22395"/>
+      <SubClass code="CHGDATA"/>
+      <SubClass code="FIXDATA"/>
+      <SubClass code="NEWDATA"/>
+      <Rubric id="d1e62060" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Identifies why a change is being made to a record.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e62076" kind="short">
+         <Label xml:lang="en-US">GenericUpdateReasonCode</Label>
+      </Rubric>
+      <Rubric id="d1e62076" kind="preferred">
+         <Label xml:lang="en-US">GenericUpdateReasonCode</Label>
+      </Rubric>
+   </Class>
+   <Class code="_PatientProfileQueryReasonCode" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21715"/>
+      <SubClass code="ADMREV"/>
+      <SubClass code="LEGAL"/>
+      <SubClass code="PATCAR"/>
+      <SubClass code="PATREQ"/>
+      <SubClass code="PRCREV"/>
+      <SubClass code="REGUL"/>
+      <SubClass code="RSRCH"/>
+      <SubClass code="VALIDATION"/>
+      <Rubric id="d1e62087" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>A collection of concepts identifying why the patient's profile is being queried.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e62103" kind="short">
+         <Label xml:lang="en-US">patient profile query reason</Label>
+      </Rubric>
+      <Rubric id="d1e62103" kind="preferred">
+         <Label xml:lang="en-US">patient profile query reason</Label>
+      </Rubric>
+   </Class>
+   <Class code="_PharmacySupplyRequestFulfillerRevisionRefusalReasonCode" kind="concept">
+      <Meta name="internalId" value="22863"/>
+      <SubClass code="LOCKED"/>
+      <SubClass code="NOUSERPERM"/>
+      <SubClass code="UNKWNTARGET"/>
+      <Rubric id="d1e62114" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Indicates why the request to transfer a prescription from one dispensing facility to another has been refused.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e62130" kind="short">
+         <Label xml:lang="en-US">PharmacySupplyRequestFulfillerRevisionRefusalReasonCode</Label>
+      </Rubric>
+      <Rubric id="d1e62130" kind="preferred">
+         <Label xml:lang="en-US">PharmacySupplyRequestFulfillerRevisionRefusalReasonCode</Label>
+      </Rubric>
+   </Class>
+   <Class code="_RefusalReasonCode" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22906"/>
+      <SubClass code="NOMATCH"/>
+      <SubClass code="NOPERM"/>
+      <Rubric id="d1e62141" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Identifies why a request to add (or activate) a record is being refused. Examples include the receiving system not able to match the identifier and find that record in the receiving system, having no permission, or a detected issue exists which precludes the requested action.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e62157" kind="short">
+         <Label xml:lang="en-US">RefusalReasonCode</Label>
+      </Rubric>
+      <Rubric id="d1e62157" kind="preferred">
+         <Label xml:lang="en-US">RefusalReasonCode</Label>
+      </Rubric>
+   </Class>
+   <Class code="_SchedulingActReason" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="20942"/>
+      <SubClass code="PAT"/>
+      <SubClass code="BLK"/>
+      <SubClass code="DEC"/>
+      <SubClass code="FIN"/>
+      <SubClass code="MED"/>
+      <SubClass code="MTG"/>
+      <SubClass code="PHY"/>
+      <Rubric id="d1e62168" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Reasons for cancelling or rescheduling an Appointment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e62181" kind="short">
+         <Label xml:lang="en-US">SchedulingActReason</Label>
+      </Rubric>
+      <Rubric id="d1e62181" kind="preferred">
+         <Label xml:lang="en-US">SchedulingActReason</Label>
+      </Rubric>
+   </Class>
+   <Class code="_StatusRevisionRefusalReasonCode" kind="concept">
+      <Meta name="internalId" value="23014"/>
+      <SubClass code="NORECMTCH"/>
+      <SubClass code="INRQSTATE"/>
+      <SubClass code="NOUSERPERM"/>
+      <SubClass code="FILLED"/>
+      <Rubric id="d1e62193" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicates why the act revision (status update) is being refused.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e62206" kind="short">
+         <Label xml:lang="en-US">StatusRevisionRefusalReasonCode</Label>
+      </Rubric>
+      <Rubric id="d1e62206" kind="preferred">
+         <Label xml:lang="en-US">StatusRevisionRefusalReasonCode</Label>
+      </Rubric>
+   </Class>
+   <Class code="_SubstanceAdministrationPermissionRefusalReasonCode" kind="concept">
+      <Meta name="internalId" value="22856"/>
+      <SubClass code="NOUSERPERM"/>
+      <SubClass code="PATINELIG"/>
+      <SubClass code="PROTUNMET"/>
+      <SubClass code="PROVUNAUTH"/>
+      <Rubric id="d1e62217" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Indicates why the requested authorization to prescribe or dispense a medication has been refused.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e62233" kind="short">
+         <Label xml:lang="en-US">SubstanceAdministrationPermissionRefusalReasonCode</Label>
+      </Rubric>
+      <Rubric id="d1e62233" kind="preferred">
+         <Label xml:lang="en-US">SubstanceAdministrationPermissionRefusalReasonCode</Label>
+      </Rubric>
+   </Class>
+   <Class code="_SubstanceAdminSubstitutionNotAllowedReason" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21531"/>
+      <SubClass code="PAT"/>
+      <SubClass code="ALGINT"/>
+      <SubClass code="COMPCON"/>
+      <SubClass code="THERCHAR"/>
+      <SubClass code="TRIAL"/>
+      <Rubric id="d1e62244" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Reasons why substitution of a substance administration request is not permitted.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e62257" kind="short">
+         <Label xml:lang="en-US">SubstanceAdminSubstitutionNotAllowedReason</Label>
+      </Rubric>
+      <Rubric id="d1e62257" kind="preferred">
+         <Label xml:lang="en-US">SubstanceAdminSubstitutionNotAllowedReason</Label>
+      </Rubric>
+   </Class>
+   <Class code="_SubstanceAdminSubstitutionReason" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="20943"/>
+      <SubClass code="CT"/>
+      <SubClass code="FP"/>
+      <SubClass code="OS"/>
+      <SubClass code="RR"/>
+      <Rubric id="d1e62266" kind="short">
+         <Label xml:lang="en-US">SubstanceAdminSubstitutionReason</Label>
+      </Rubric>
+      <Rubric id="d1e62266" kind="preferred">
+         <Label xml:lang="en-US">SubstanceAdminSubstitutionReason</Label>
+      </Rubric>
+   </Class>
+   <Class code="_TransferActReason" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="20944"/>
+      <SubClass code="ER"/>
+      <SubClass code="RQ"/>
+      <Rubric id="d1e62277" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The explanation for why a patient is moved from one location to another within the organization</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e62290" kind="short">
+         <Label xml:lang="en-US">TransferActReason</Label>
+      </Rubric>
+      <Rubric id="d1e62290" kind="preferred">
+         <Label xml:lang="en-US">TransferActReason</Label>
+      </Rubric>
+   </Class>
+   <Class code="ACCREQNA" kind="concept">
+      <Meta name="internalId" value="17429"/>
+      <SuperClass code="_ActAccommodationReason"/>
+      <Rubric id="d1e62885" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Accommodation requested is not available.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e62903" kind="short">
+         <Label xml:lang="en-US">Accommodation Requested Not Available</Label>
+      </Rubric>
+      <Rubric id="d1e62903" kind="preferred">
+         <Label xml:lang="en-US">Accommodation Requested Not Available</Label>
+      </Rubric>
+   </Class>
+   <Class code="FLRCNV" kind="concept">
+      <Meta name="internalId" value="17430"/>
+      <SuperClass code="_ActAccommodationReason"/>
+      <Rubric id="d1e62915" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Accommodation is assigned for floor convenience.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e62933" kind="short">
+         <Label xml:lang="en-US">Floor Convenience</Label>
+      </Rubric>
+      <Rubric id="d1e62933" kind="preferred">
+         <Label xml:lang="en-US">Floor Convenience</Label>
+      </Rubric>
+   </Class>
+   <Class code="MEDNEC" kind="concept">
+      <Meta name="internalId" value="17428"/>
+      <SuperClass code="_ActAccommodationReason"/>
+      <Rubric id="d1e62944" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Required for medical reasons(s).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e62962" kind="short">
+         <Label xml:lang="en-US">Medical Necessity</Label>
+      </Rubric>
+      <Rubric id="d1e62962" kind="preferred">
+         <Label xml:lang="en-US">Medical Necessity</Label>
+      </Rubric>
+   </Class>
+   <Class code="PAT" kind="concept">
+      <Meta name="internalId" value="14880"/>
+      <SuperClass code="_ActAccommodationReason"/>
+      <SuperClass code="_SchedulingActReason"/>
+      <SuperClass code="_SubstanceAdminSubstitutionNotAllowedReason"/>
+      <Rubric id="d1e62973" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The Patient requested the action</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e63002" kind="short">
+         <Label xml:lang="en-US">Patient request</Label>
+      </Rubric>
+      <Rubric id="d1e63002" kind="preferred">
+         <Label xml:lang="en-US">Patient request</Label>
+      </Rubric>
+   </Class>
+   <Class code="OVRER" kind="concept">
+      <Meta name="internalId" value="22194"/>
+      <SuperClass code="_ActConsentInformationAccessOverrideReason"/>
+      <Rubric id="d1e63092" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information to which the patient has not consented by authorized entities for treating a condition which poses an immediate threat to the patient's health and which requires immediate medical intervention.</p>
+            <p>
+               <i>Usage Notes:</i>The patient is unable to provide consent, but the provider determines they have an urgent healthcare related reason to access the record.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e63116" kind="short">
+         <Label xml:lang="en-US">emergency treatment override</Label>
+      </Rubric>
+      <Rubric id="d1e63116" kind="preferred">
+         <Label xml:lang="en-US">emergency treatment override</Label>
+      </Rubric>
+   </Class>
+   <Class code="OVRPJ" kind="concept">
+      <Meta name="internalId" value="22197"/>
+      <SuperClass code="_ActConsentInformationAccessOverrideReason"/>
+      <Rubric id="d1e63128" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information to which the patient declined to consent for providing health care.</p>
+            <p>
+               <i>Usage Notes:</i>The patient, while able to give consent, has not. However the provider believes it is in the patient's interest to access the record without patient consent.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e63152" kind="short">
+         <Label xml:lang="en-US">professional judgment override</Label>
+      </Rubric>
+      <Rubric id="d1e63152" kind="preferred">
+         <Label xml:lang="en-US">professional judgment override</Label>
+      </Rubric>
+   </Class>
+   <Class code="OVRPS" kind="concept">
+      <Meta name="internalId" value="22195"/>
+      <SuperClass code="_ActConsentInformationAccessOverrideReason"/>
+      <Rubric id="d1e63163" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information to which the patient has not consented for public safety reasons.</p>
+            <p>
+               <i>Usage Notes:</i>The patient, while able to give consent, has not. However, the provider believes that access to masked patient information is justified because of concerns related to public safety.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e63187" kind="short">
+         <Label xml:lang="en-US">public safety override</Label>
+      </Rubric>
+      <Rubric id="d1e63187" kind="preferred">
+         <Label xml:lang="en-US">public safety override</Label>
+      </Rubric>
+   </Class>
+   <Class code="OVRTPS" kind="concept">
+      <Meta name="internalId" value="22196"/>
+      <SuperClass code="_ActConsentInformationAccessOverrideReason"/>
+      <Rubric id="d1e63198" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information to which the patient has not consented for third party safety.</p>
+            <p>
+               <i>Usage Notes:</i>The patient, while able to give consent, has not. However, the provider believes that access to masked patient information is justified because of concerns related to the health and safety of one or more third parties.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e63222" kind="short">
+         <Label xml:lang="en-US">third party safety override</Label>
+      </Rubric>
+      <Rubric id="d1e63222" kind="preferred">
+         <Label xml:lang="en-US">third party safety override</Label>
+      </Rubric>
+   </Class>
+   <Class code="_EligibilityActReasonCode" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21493"/>
+      <SuperClass code="_ActCoverageReason"/>
+      <SubClass code="_ActIneligibilityReason"/>
+      <SubClass code="_CoverageEligibilityReason"/>
+      <Rubric id="d1e63233" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Identifies the reason or rational for why a person is eligibile for benefits under an insurance policy or progam.</p>
+            <p>
+               <i>Examples:</i>A person is a claimant under an automobile insurance policy are client deceased &amp; adopted client has been given a new policy identifier. A new employee is eligible for health insurance as an employment benefit. A person meets a government program eligibility criteria for financial, age or health status.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e63257" kind="short">
+         <Label xml:lang="en-US">EligibilityActReasonCode</Label>
+      </Rubric>
+      <Rubric id="d1e63257" kind="preferred">
+         <Label xml:lang="en-US">EligibilityActReasonCode</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActConsentInformationAccessOverrideReason" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22198"/>
+      <SuperClass code="_ActHealthInformationManagementReason"/>
+      <SubClass code="OVRER"/>
+      <SubClass code="OVRPJ"/>
+      <SubClass code="OVRPS"/>
+      <SubClass code="OVRTPS"/>
+      <Rubric id="d1e63456" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information to which the patient has not consented as deemed necessary by authorized entities for providing care in the best interest of the patient; providing immediately needed health care for an emergent condition; or for protecting public or third party safety.</p>
+            <p>
+               <i>Usage Notes:</i>Used to convey the reason that a provider or other entity may or has accessed personal healthcare information. Typically, this involves overriding the subject's consent directives.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e63480" kind="short">
+         <Label xml:lang="en-US">ActConsentInformationAccessOverrideReason</Label>
+      </Rubric>
+      <Rubric id="d1e63480" kind="preferred">
+         <Label xml:lang="en-US">ActConsentInformationAccessOverrideReason</Label>
+      </Rubric>
+   </Class>
+   <Class code="PurposeOfUse" kind="concept">
+      <Meta name="internalId" value="23408"/>
+      <SuperClass code="_ActHealthInformationManagementReason"/>
+      <SubClass code="HMARKT"/>
+      <SubClass code="HOPERAT"/>
+      <SubClass code="HPAYMT"/>
+      <SubClass code="HRESCH"/>
+      <SubClass code="PATRQT"/>
+      <SubClass code="PUBHLTH"/>
+      <SubClass code="TREAT"/>
+      <Rubric id="d1e63491" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Reason for performing one or more operations on information, which may be permitted by source system's security policy in accordance with one or more privacy policies and consent directives.</p>
+            <p>
+               <i>Usage Notes:</i>The rationale or purpose for an act relating to the management of personal health information, such as collecting personal health information for research or public health purposes.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e63515" kind="short">
+         <Label xml:lang="en-US">purpose of use</Label>
+      </Rubric>
+      <Rubric id="d1e63515" kind="preferred">
+         <Label xml:lang="en-US">purpose of use</Label>
+      </Rubric>
+   </Class>
+   <Class code="COVSUS" kind="concept">
+      <Meta name="internalId" value="19731"/>
+      <SuperClass code="_ActIneligibilityReason"/>
+      <Rubric id="d1e63562" kind="definition">
+         <Label xml:lang="en-US">
+            <p>When a client has no contact with the health system for an extended period, coverage is suspended. Client will be reinstated to original start date upon proof of identification, residency etc.</p>
+            <p>Example: Coverage may be suspended during a strike situation, when employer benefits for employees are not covered (i.e. not in effect).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e63592" kind="short">
+         <Label xml:lang="en-US">coverage suspended</Label>
+      </Rubric>
+      <Rubric id="d1e63592" kind="preferred">
+         <Label xml:lang="en-US">coverage suspended</Label>
+      </Rubric>
+   </Class>
+   <Class code="DECSD" kind="concept">
+      <Meta name="internalId" value="19729"/>
+      <SuperClass code="_ActIneligibilityReason"/>
+      <Rubric id="d1e63603" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Client deceased.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e63621" kind="short">
+         <Label xml:lang="en-US">deceased</Label>
+      </Rubric>
+      <Rubric id="d1e63621" kind="preferred">
+         <Label xml:lang="en-US">deceased</Label>
+      </Rubric>
+   </Class>
+   <Class code="REGERR" kind="concept">
+      <Meta name="internalId" value="19730"/>
+      <SuperClass code="_ActIneligibilityReason"/>
+      <Rubric id="d1e63632" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Client was registered in error.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e63650" kind="short">
+         <Label xml:lang="en-US">registered in error</Label>
+      </Rubric>
+      <Rubric id="d1e63650" kind="preferred">
+         <Label xml:lang="en-US">registered in error</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActHealthInformationManagementReason" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22676"/>
+      <SuperClass code="_ActInformationManagementReason"/>
+      <SubClass code="_ActConsentInformationAccessOverrideReason"/>
+      <SubClass code="PurposeOfUse"/>
+      <Rubric id="d1e63661" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The rationale or purpose for an act relating to health information management, such as archiving information for the purpose of complying with an organization policy or jurisdictional law relating to data retention.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e63682" kind="short">
+         <Label xml:lang="en-US">ActHealthInformationManagementReason</Label>
+      </Rubric>
+      <Rubric id="d1e63682" kind="preferred">
+         <Label xml:lang="en-US">ActHealthInformationManagementReason</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActInformationPrivacyReason" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22697"/>
+      <SuperClass code="_ActInformationManagementReason"/>
+      <SubClass code="MARKT"/>
+      <SubClass code="OPERAT"/>
+      <SubClass code="PAYMT"/>
+      <SubClass code="RESCH"/>
+      <SubClass code="SRVC"/>
+      <Rubric id="d1e63693" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The rationale or purpose for an act relating to the management of personal information, such as disclosing personal tax information for the purpose of complying with a court order.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e63714" kind="short">
+         <Label xml:lang="en-US">ActInformationPrivacyReason</Label>
+      </Rubric>
+      <Rubric id="d1e63714" kind="preferred">
+         <Label xml:lang="en-US">ActInformationPrivacyReason</Label>
+      </Rubric>
+   </Class>
+   <Class code="MARKT" kind="concept">
+      <Meta name="internalId" value="22708"/>
+      <SuperClass code="_ActInformationPrivacyReason"/>
+      <Rubric id="d1e63725" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>
+            </p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e63746" kind="short">
+         <Label xml:lang="en-US">marketing</Label>
+      </Rubric>
+      <Rubric id="d1e63746" kind="preferred">
+         <Label xml:lang="en-US">marketing</Label>
+      </Rubric>
+   </Class>
+   <Class code="OPERAT" kind="concept">
+      <Meta name="internalId" value="22699"/>
+      <SuperClass code="_ActInformationPrivacyReason"/>
+      <SubClass code="LEGAL"/>
+      <SubClass code="ACCRED"/>
+      <SubClass code="COMPL"/>
+      <SubClass code="ENADMIN"/>
+      <SubClass code="OUTCOMS"/>
+      <SubClass code="PRGRPT"/>
+      <SubClass code="QUALIMP"/>
+      <SubClass code="SYSADMN"/>
+      <Rubric id="d1e63758" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Administrative and contractual processes required to support an activity, product, or service</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e63779" kind="short">
+         <Label xml:lang="en-US">operations</Label>
+      </Rubric>
+      <Rubric id="d1e63779" kind="preferred">
+         <Label xml:lang="en-US">operations</Label>
+      </Rubric>
+   </Class>
+   <Class code="PAYMT" kind="concept">
+      <Meta name="internalId" value="22698"/>
+      <SuperClass code="_ActInformationPrivacyReason"/>
+      <Rubric id="d1e63790" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Administrative, financial, and contractual processes related to payment for an activity, product, or service</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e63811" kind="short">
+         <Label xml:lang="en-US">payment</Label>
+      </Rubric>
+      <Rubric id="d1e63811" kind="preferred">
+         <Label xml:lang="en-US">payment</Label>
+      </Rubric>
+   </Class>
+   <Class code="RESCH" kind="concept">
+      <Meta name="internalId" value="22707"/>
+      <SuperClass code="_ActInformationPrivacyReason"/>
+      <Rubric id="d1e63822" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Investigative activities conducted for the purposes of obtaining knowledge</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e63843" kind="short">
+         <Label xml:lang="en-US">research</Label>
+      </Rubric>
+      <Rubric id="d1e63843" kind="preferred">
+         <Label xml:lang="en-US">research</Label>
+      </Rubric>
+   </Class>
+   <Class code="SRVC" kind="concept">
+      <Meta name="internalId" value="22709"/>
+      <SuperClass code="_ActInformationPrivacyReason"/>
+      <Rubric id="d1e63854" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Provision of a service, product, or capability to an individual or organization</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e63875" kind="short">
+         <Label xml:lang="en-US">service</Label>
+      </Rubric>
+      <Rubric id="d1e63875" kind="preferred">
+         <Label xml:lang="en-US">service</Label>
+      </Rubric>
+   </Class>
+   <Class code="ADVSTORAGE" kind="concept">
+      <Meta name="internalId" value="23238"/>
+      <SuperClass code="_ActInvalidReason"/>
+      <SubClass code="COLDCHNBRK"/>
+      <Rubric id="d1e63886" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Storage conditions caused the substance to be ineffective.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e63907" kind="short">
+         <Label xml:lang="en-US">adverse storage condition</Label>
+      </Rubric>
+      <Rubric id="d1e63907" kind="preferred">
+         <Label xml:lang="en-US">adverse storage condition</Label>
+      </Rubric>
+   </Class>
+   <Class code="EXPLOT" kind="concept">
+      <Meta name="internalId" value="23236"/>
+      <SuperClass code="_ActInvalidReason"/>
+      <Rubric id="d1e63918" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The lot from which the substance was drawn was expired.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e63939" kind="short">
+         <Label xml:lang="en-US">expired lot</Label>
+      </Rubric>
+      <Rubric id="d1e63939" kind="preferred">
+         <Label xml:lang="en-US">expired lot</Label>
+      </Rubric>
+   </Class>
+   <Class code="OUTSIDESCHED" kind="concept">
+      <Meta name="internalId" value="23240"/>
+      <SuperClass code="_ActInvalidReason"/>
+      <Rubric id="d1e63951" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The substance was administered outside of the recommended schedule.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e63972" kind="short">
+         <Label xml:lang="en-US">administered outside recommended schedule</Label>
+      </Rubric>
+      <Rubric id="d1e63972" kind="preferred">
+         <Label xml:lang="en-US">administered outside recommended schedule</Label>
+      </Rubric>
+   </Class>
+   <Class code="PRODRECALL" kind="concept">
+      <Meta name="internalId" value="23237"/>
+      <SuperClass code="_ActInvalidReason"/>
+      <Rubric id="d1e63983" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The substance was recalled by the manufacturer.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64004" kind="short">
+         <Label xml:lang="en-US">product recall</Label>
+      </Rubric>
+      <Rubric id="d1e64004" kind="preferred">
+         <Label xml:lang="en-US">product recall</Label>
+      </Rubric>
+   </Class>
+   <Class code="INCCOVPTY" kind="concept">
+      <Meta name="internalId" value="19733"/>
+      <SuperClass code="_ActInvoiceCancelReason"/>
+      <Rubric id="d1e64015" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The covered party (patient) specified with the Invoice is not correct.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64033" kind="short">
+         <Label xml:lang="en-US">incorrect covered party as patient</Label>
+      </Rubric>
+      <Rubric id="d1e64033" kind="preferred">
+         <Label xml:lang="en-US">incorrect covered party as patient</Label>
+      </Rubric>
+   </Class>
+   <Class code="INCINVOICE" kind="concept">
+      <Meta name="internalId" value="19735"/>
+      <SuperClass code="_ActInvoiceCancelReason"/>
+      <Rubric id="d1e64044" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The billing information, specified in the Invoice Elements, is not correct. This could include incorrect costing for items included in the Invoice.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64062" kind="short">
+         <Label xml:lang="en-US">incorrect billing</Label>
+      </Rubric>
+      <Rubric id="d1e64062" kind="preferred">
+         <Label xml:lang="en-US">incorrect billing</Label>
+      </Rubric>
+   </Class>
+   <Class code="INCPOLICY" kind="concept">
+      <Meta name="internalId" value="19734"/>
+      <SuperClass code="_ActInvoiceCancelReason"/>
+      <Rubric id="d1e64073" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The policy specified with the Invoice is not correct. For example, it may belong to another Adjudicator or Covered Party.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64091" kind="short">
+         <Label xml:lang="en-US">incorrect policy</Label>
+      </Rubric>
+      <Rubric id="d1e64091" kind="preferred">
+         <Label xml:lang="en-US">incorrect policy</Label>
+      </Rubric>
+   </Class>
+   <Class code="INCPROV" kind="concept">
+      <Meta name="internalId" value="19736"/>
+      <SuperClass code="_ActInvoiceCancelReason"/>
+      <Rubric id="d1e64102" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The provider specified with the Invoice is not correct.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64120" kind="short">
+         <Label xml:lang="en-US">incorrect provider</Label>
+      </Rubric>
+      <Rubric id="d1e64120" kind="preferred">
+         <Label xml:lang="en-US">incorrect provider</Label>
+      </Rubric>
+   </Class>
+   <Class code="IMMUNE" kind="concept">
+      <Meta name="internalId" value="21745"/>
+      <SuperClass code="_ActNoImmunizationReason"/>
+      <Rubric id="d1e64132" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Testing has shown that the patient already has immunity to the agent targeted by the immunization.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64153" kind="short">
+         <Label xml:lang="en-US">immunity</Label>
+      </Rubric>
+      <Rubric id="d1e64153" kind="preferred">
+         <Label xml:lang="en-US">immunity</Label>
+      </Rubric>
+   </Class>
+   <Class code="MEDPREC" kind="concept">
+      <Meta name="internalId" value="21747"/>
+      <SuperClass code="_ActNoImmunizationReason"/>
+      <Rubric id="d1e64164" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The patient currently has a medical condition for which the vaccine is contraindicated or for which precaution is warranted.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64185" kind="short">
+         <Label xml:lang="en-US">medical precaution</Label>
+      </Rubric>
+      <Rubric id="d1e64185" kind="preferred">
+         <Label xml:lang="en-US">medical precaution</Label>
+      </Rubric>
+   </Class>
+   <Class code="OSTOCK" kind="concept">
+      <Meta name="internalId" value="21744"/>
+      <SuperClass code="_ActNoImmunizationReason"/>
+      <Rubric id="d1e64196" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>There was no supply of the product on hand to perform the service.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64217" kind="short">
+         <Label xml:lang="en-US">product out of stock</Label>
+      </Rubric>
+      <Rubric id="d1e64217" kind="preferred">
+         <Label xml:lang="en-US">product out of stock</Label>
+      </Rubric>
+   </Class>
+   <Class code="PATOBJ" kind="concept">
+      <Meta name="internalId" value="21740"/>
+      <SuperClass code="_ActNoImmunizationReason"/>
+      <Rubric id="d1e64228" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The patient or their guardian objects to receiving the vaccine.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64249" kind="short">
+         <Label xml:lang="en-US">patient objection</Label>
+      </Rubric>
+      <Rubric id="d1e64249" kind="preferred">
+         <Label xml:lang="en-US">patient objection</Label>
+      </Rubric>
+   </Class>
+   <Class code="PHILISOP" kind="concept">
+      <Meta name="internalId" value="21742"/>
+      <SuperClass code="_ActNoImmunizationReason"/>
+      <Rubric id="d1e64260" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The patient or their guardian objects to receiving the vaccine because of philosophical beliefs.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64281" kind="short">
+         <Label xml:lang="en-US">philosophical objection</Label>
+      </Rubric>
+      <Rubric id="d1e64281" kind="preferred">
+         <Label xml:lang="en-US">philosophical objection</Label>
+      </Rubric>
+   </Class>
+   <Class code="RELIG" kind="concept">
+      <Meta name="internalId" value="21741"/>
+      <SuperClass code="_ActNoImmunizationReason"/>
+      <Rubric id="d1e64292" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The patient or their guardian objects to receiving the vaccine on religious grounds.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64313" kind="short">
+         <Label xml:lang="en-US">religious objection</Label>
+      </Rubric>
+      <Rubric id="d1e64313" kind="preferred">
+         <Label xml:lang="en-US">religious objection</Label>
+      </Rubric>
+   </Class>
+   <Class code="VACEFF" kind="concept">
+      <Meta name="internalId" value="21746"/>
+      <SuperClass code="_ActNoImmunizationReason"/>
+      <Rubric id="d1e64325" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The intended vaccine has expired or is otherwise believed to no longer be effective.</p>
+            <p>
+               <b>Example:</b>Due to temperature exposure.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64352" kind="short">
+         <Label xml:lang="en-US">vaccine efficacy concerns</Label>
+      </Rubric>
+      <Rubric id="d1e64352" kind="preferred">
+         <Label xml:lang="en-US">vaccine efficacy concerns</Label>
+      </Rubric>
+   </Class>
+   <Class code="VACSAF" kind="concept">
+      <Meta name="internalId" value="21743"/>
+      <SuperClass code="_ActNoImmunizationReason"/>
+      <Rubric id="d1e64363" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The patient or their guardian objects to receiving the vaccine because of concerns over its safety.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64384" kind="short">
+         <Label xml:lang="en-US">vaccine safety concerns</Label>
+      </Rubric>
+      <Rubric id="d1e64384" kind="preferred">
+         <Label xml:lang="en-US">vaccine safety concerns</Label>
+      </Rubric>
+   </Class>
+   <Class code="FRR01" kind="concept">
+      <Meta name="internalId" value="21748"/>
+      <SuperClass code="_ActSupplyFulfillmentRefusalReason"/>
+      <Rubric id="d1e64395" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The order has been stopped by the prescriber but this fact has not necessarily captured electronically.</p>
+            <p>
+               <b>Example:</b>A verbal stop, a fax, etc.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64422" kind="short">
+         <Label xml:lang="en-US">order stopped</Label>
+      </Rubric>
+      <Rubric id="d1e64422" kind="preferred">
+         <Label xml:lang="en-US">order stopped</Label>
+      </Rubric>
+   </Class>
+   <Class code="FRR02" kind="concept">
+      <Meta name="internalId" value="21749"/>
+      <SuperClass code="_ActSupplyFulfillmentRefusalReason"/>
+      <Rubric id="d1e64433" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Order has not been fulfilled within a reasonable amount of time, and may not be current.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64454" kind="short">
+         <Label xml:lang="en-US">stale-dated order</Label>
+      </Rubric>
+      <Rubric id="d1e64454" kind="preferred">
+         <Label xml:lang="en-US">stale-dated order</Label>
+      </Rubric>
+   </Class>
+   <Class code="FRR03" kind="concept">
+      <Meta name="internalId" value="21750"/>
+      <SuperClass code="_ActSupplyFulfillmentRefusalReason"/>
+      <Rubric id="d1e64465" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Data needed to safely act on the order which was expected to become available independent of the order is not yet available</p>
+            <p>
+               <b>Example:</b>Lab results, diagnostic imaging, etc.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64492" kind="short">
+         <Label xml:lang="en-US">incomplete data</Label>
+      </Rubric>
+      <Rubric id="d1e64492" kind="preferred">
+         <Label xml:lang="en-US">incomplete data</Label>
+      </Rubric>
+   </Class>
+   <Class code="FRR04" kind="concept">
+      <Meta name="internalId" value="21751"/>
+      <SuperClass code="_ActSupplyFulfillmentRefusalReason"/>
+      <Rubric id="d1e64503" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Product not available or manufactured. Cannot supply.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64524" kind="short">
+         <Label xml:lang="en-US">product unavailable</Label>
+      </Rubric>
+      <Rubric id="d1e64524" kind="preferred">
+         <Label xml:lang="en-US">product unavailable</Label>
+      </Rubric>
+   </Class>
+   <Class code="FRR05" kind="concept">
+      <Meta name="internalId" value="21752"/>
+      <SuperClass code="_ActSupplyFulfillmentRefusalReason"/>
+      <Rubric id="d1e64536" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The dispenser has ethical, religious or moral objections to fulfilling the order/dispensing the product.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64557" kind="short">
+         <Label xml:lang="en-US">ethical/religious</Label>
+      </Rubric>
+      <Rubric id="d1e64557" kind="preferred">
+         <Label xml:lang="en-US">ethical/religious</Label>
+      </Rubric>
+   </Class>
+   <Class code="FRR06" kind="concept">
+      <Meta name="internalId" value="21753"/>
+      <SuperClass code="_ActSupplyFulfillmentRefusalReason"/>
+      <Rubric id="d1e64568" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Fulfiller not able to provide appropriate care associated with fulfilling the order.</p>
+            <p>
+               <b>Example:</b>Therapy requires ongoing monitoring by fulfiller and fulfiller will be ending practice, leaving town, unable to schedule necessary time, etc.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64595" kind="short">
+         <Label xml:lang="en-US">unable to provide care</Label>
+      </Rubric>
+      <Rubric id="d1e64595" kind="preferred">
+         <Label xml:lang="en-US">unable to provide care</Label>
+      </Rubric>
+   </Class>
+   <Class code="RET" kind="concept">
+      <Meta name="internalId" value="21623"/>
+      <SuperClass code="_ClinicalResearchEventReason"/>
+      <Rubric id="d1e64606" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The event occurred so that a test or observation performed at a prior event could be performed again due to conditions set forth in the protocol.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64627" kind="short">
+         <Label xml:lang="en-US">retest</Label>
+      </Rubric>
+      <Rubric id="d1e64627" kind="preferred">
+         <Label xml:lang="en-US">retest</Label>
+      </Rubric>
+   </Class>
+   <Class code="SCH" kind="concept">
+      <Meta name="internalId" value="21622"/>
+      <SuperClass code="_ClinicalResearchEventReason"/>
+      <Rubric id="d1e64638" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The event occurred due to it being scheduled in the research protocol.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64659" kind="short">
+         <Label xml:lang="en-US">scheduled</Label>
+      </Rubric>
+      <Rubric id="d1e64659" kind="preferred">
+         <Label xml:lang="en-US">scheduled</Label>
+      </Rubric>
+   </Class>
+   <Class code="TRM" kind="concept">
+      <Meta name="internalId" value="21624"/>
+      <SuperClass code="_ClinicalResearchEventReason"/>
+      <Rubric id="d1e64670" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The event occurred in order to terminate the subject's participation in the study.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64691" kind="short">
+         <Label xml:lang="en-US">termination</Label>
+      </Rubric>
+      <Rubric id="d1e64691" kind="preferred">
+         <Label xml:lang="en-US">termination</Label>
+      </Rubric>
+   </Class>
+   <Class code="UNS" kind="concept">
+      <Meta name="internalId" value="21625"/>
+      <SuperClass code="_ClinicalResearchEventReason"/>
+      <Rubric id="d1e64702" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The event that occurred was initiated by a study participant (e.g. the subject or the investigator), and did not occur for protocol reasons.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64723" kind="short">
+         <Label xml:lang="en-US">unscheduled</Label>
+      </Rubric>
+      <Rubric id="d1e64723" kind="preferred">
+         <Label xml:lang="en-US">unscheduled</Label>
+      </Rubric>
+   </Class>
+   <Class code="NPT" kind="concept">
+      <Meta name="internalId" value="21628"/>
+      <SuperClass code="_ClinicalResearchObservationReason"/>
+      <Rubric id="d1e64735" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The observation or test was neither defined or scheduled in the study protocol.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64756" kind="short">
+         <Label xml:lang="en-US">non-protocol</Label>
+      </Rubric>
+      <Rubric id="d1e64756" kind="preferred">
+         <Label xml:lang="en-US">non-protocol</Label>
+      </Rubric>
+   </Class>
+   <Class code="PPT" kind="concept">
+      <Meta name="internalId" value="21626"/>
+      <SuperClass code="_ClinicalResearchObservationReason"/>
+      <Rubric id="d1e64767" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The observation or test occurred due to it being defined in the research protocol, and during an activity or event that was scheduled in the protocol.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64788" kind="short">
+         <Label xml:lang="en-US">per protocol</Label>
+      </Rubric>
+      <Rubric id="d1e64788" kind="preferred">
+         <Label xml:lang="en-US">per protocol</Label>
+      </Rubric>
+   </Class>
+   <Class code="UPT" kind="concept">
+      <Meta name="internalId" value="21627"/>
+      <SuperClass code="_ClinicalResearchObservationReason"/>
+      <Rubric id="d1e64799" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>:</b>The observation or test occurred as defined in the research protocol, but at a point in time not specified in the study protocol.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64820" kind="short">
+         <Label xml:lang="en-US">per definition</Label>
+      </Rubric>
+      <Rubric id="d1e64820" kind="preferred">
+         <Label xml:lang="en-US">per definition</Label>
+      </Rubric>
+   </Class>
+   <Class code="ALTCHOICE" kind="concept">
+      <Meta name="internalId" value="21691"/>
+      <SuperClass code="_CombinedPharmacyOrderSuspendReasonCode"/>
+      <Rubric id="d1e64831" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>This therapy has been ordered as a backup to a preferred therapy. This order will be released when and if the preferred therapy is unsuccessful.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64852" kind="short">
+         <Label xml:lang="en-US">try another treatment first</Label>
+      </Rubric>
+      <Rubric id="d1e64852" kind="preferred">
+         <Label xml:lang="en-US">try another treatment first</Label>
+      </Rubric>
+   </Class>
+   <Class code="CLARIF" kind="concept">
+      <Meta name="internalId" value="21689"/>
+      <SuperClass code="_CombinedPharmacyOrderSuspendReasonCode"/>
+      <Rubric id="d1e64863" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Clarification is required before the order can be acted upon.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64884" kind="short">
+         <Label xml:lang="en-US">prescription requires clarification</Label>
+      </Rubric>
+      <Rubric id="d1e64884" kind="preferred">
+         <Label xml:lang="en-US">prescription requires clarification</Label>
+      </Rubric>
+   </Class>
+   <Class code="DRUGHIGH" kind="concept">
+      <Meta name="internalId" value="21694"/>
+      <SuperClass code="_CombinedPharmacyOrderSuspendReasonCode"/>
+      <Rubric id="d1e64895" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The current level of the medication in the patient's system is too high. The medication is suspended to allow the level to subside to a safer level.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64916" kind="short">
+         <Label xml:lang="en-US">drug level too high</Label>
+      </Rubric>
+      <Rubric id="d1e64916" kind="preferred">
+         <Label xml:lang="en-US">drug level too high</Label>
+      </Rubric>
+   </Class>
+   <Class code="HOSPADM" kind="concept">
+      <Meta name="internalId" value="21684"/>
+      <SuperClass code="_CombinedPharmacyOrderSuspendReasonCode"/>
+      <Rubric id="d1e64928" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The patient has been admitted to a care facility and their community medications are suspended until hospital discharge.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64949" kind="short">
+         <Label xml:lang="en-US">admission to hospital</Label>
+      </Rubric>
+      <Rubric id="d1e64949" kind="preferred">
+         <Label xml:lang="en-US">admission to hospital</Label>
+      </Rubric>
+   </Class>
+   <Class code="LABINT" kind="concept">
+      <Meta name="internalId" value="21687"/>
+      <SuperClass code="_CombinedPharmacyOrderSuspendReasonCode"/>
+      <Rubric id="d1e64960" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The therapy would interfere with a planned lab test and the therapy is being withdrawn until the test is completed.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e64981" kind="short">
+         <Label xml:lang="en-US">lab interference issues</Label>
+      </Rubric>
+      <Rubric id="d1e64981" kind="preferred">
+         <Label xml:lang="en-US">lab interference issues</Label>
+      </Rubric>
+   </Class>
+   <Class code="NON-AVAIL" kind="concept">
+      <Meta name="internalId" value="21695"/>
+      <SuperClass code="_CombinedPharmacyOrderSuspendReasonCode"/>
+      <Rubric id="d1e64992" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Patient not available for a period of time due to a scheduled therapy, leave of absence or other reason.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65013" kind="short">
+         <Label xml:lang="en-US">patient not-available</Label>
+      </Rubric>
+      <Rubric id="d1e65013" kind="preferred">
+         <Label xml:lang="en-US">patient not-available</Label>
+      </Rubric>
+   </Class>
+   <Class code="PREG" kind="concept">
+      <Meta name="internalId" value="21692"/>
+      <SuperClass code="_CombinedPharmacyOrderSuspendReasonCode"/>
+      <Rubric id="d1e65024" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The patient is pregnant or breast feeding. The therapy will be resumed when the pregnancy is complete and the patient is no longer breastfeeding.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65045" kind="short">
+         <Label xml:lang="en-US">parent is pregnant/breast feeding</Label>
+      </Rubric>
+      <Rubric id="d1e65045" kind="preferred">
+         <Label xml:lang="en-US">parent is pregnant/breast feeding</Label>
+      </Rubric>
+   </Class>
+   <Class code="SALG" kind="concept">
+      <Meta name="internalId" value="21685"/>
+      <SuperClass code="_CombinedPharmacyOrderSuspendReasonCode"/>
+      <Rubric id="d1e65056" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The patient is believed to be allergic to a substance that is part of the therapy and the therapy is being temporarily withdrawn to confirm.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65077" kind="short">
+         <Label xml:lang="en-US">allergy</Label>
+      </Rubric>
+      <Rubric id="d1e65077" kind="preferred">
+         <Label xml:lang="en-US">allergy</Label>
+      </Rubric>
+   </Class>
+   <Class code="SDDI" kind="concept">
+      <Meta name="internalId" value="21690"/>
+      <SuperClass code="_CombinedPharmacyOrderSuspendReasonCode"/>
+      <Rubric id="d1e65088" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The drug interacts with a short-term treatment that is more urgently required. This order will be resumed when the short-term treatment is complete.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65109" kind="short">
+         <Label xml:lang="en-US">drug interacts with another drug</Label>
+      </Rubric>
+      <Rubric id="d1e65109" kind="preferred">
+         <Label xml:lang="en-US">drug interacts with another drug</Label>
+      </Rubric>
+   </Class>
+   <Class code="SDUPTHER" kind="concept">
+      <Meta name="internalId" value="21688"/>
+      <SuperClass code="_CombinedPharmacyOrderSuspendReasonCode"/>
+      <Rubric id="d1e65121" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Another short-term co-occurring therapy fulfills the same purpose as this therapy. This therapy will be resumed when the co-occuring therapy is complete.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65142" kind="short">
+         <Label xml:lang="en-US">duplicate therapy</Label>
+      </Rubric>
+      <Rubric id="d1e65142" kind="preferred">
+         <Label xml:lang="en-US">duplicate therapy</Label>
+      </Rubric>
+   </Class>
+   <Class code="SINTOL" kind="concept">
+      <Meta name="internalId" value="21686"/>
+      <SuperClass code="_CombinedPharmacyOrderSuspendReasonCode"/>
+      <Rubric id="d1e65153" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The patient is believed to have an intolerance to a substance that is part of the therapy and the therapy is being temporarily withdrawn to confirm.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65174" kind="short">
+         <Label xml:lang="en-US">suspected intolerance</Label>
+      </Rubric>
+      <Rubric id="d1e65174" kind="preferred">
+         <Label xml:lang="en-US">suspected intolerance</Label>
+      </Rubric>
+   </Class>
+   <Class code="SURG" kind="concept">
+      <Meta name="internalId" value="21696"/>
+      <SuperClass code="_CombinedPharmacyOrderSuspendReasonCode"/>
+      <Rubric id="d1e65185" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The drug is contraindicated for patients receiving surgery and the patient is scheduled to be admitted for surgery in the near future. The drug will be resumed when the patient has sufficiently recovered from the surgery.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65206" kind="short">
+         <Label xml:lang="en-US">patient scheduled for surgery</Label>
+      </Rubric>
+      <Rubric id="d1e65206" kind="preferred">
+         <Label xml:lang="en-US">patient scheduled for surgery</Label>
+      </Rubric>
+   </Class>
+   <Class code="WASHOUT" kind="concept">
+      <Meta name="internalId" value="21693"/>
+      <SuperClass code="_CombinedPharmacyOrderSuspendReasonCode"/>
+      <Rubric id="d1e65217" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The patient was previously receiving a medication contraindicated with the current medication. The current medication will remain on hold until the prior medication has been cleansed from their system.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65238" kind="short">
+         <Label xml:lang="en-US">waiting for old drug to wash out</Label>
+      </Rubric>
+      <Rubric id="d1e65238" kind="preferred">
+         <Label xml:lang="en-US">waiting for old drug to wash out</Label>
+      </Rubric>
+   </Class>
+   <Class code="ALTD" kind="concept">
+      <Meta name="internalId" value="22024"/>
+      <SuperClass code="_ControlActNullificationReasonCode"/>
+      <Rubric id="d1e65249" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The decision on which the recorded information was based was changed before the decision had an effect.</p>
+            <p>
+               <b>Example:</b>Aborted prescription before patient left office, released prescription before suspend took effect.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65276" kind="short">
+         <Label xml:lang="en-US">altered decision</Label>
+      </Rubric>
+      <Rubric id="d1e65276" kind="preferred">
+         <Label xml:lang="en-US">altered decision</Label>
+      </Rubric>
+   </Class>
+   <Class code="EIE" kind="concept">
+      <Meta name="internalId" value="22023"/>
+      <SuperClass code="_ControlActNullificationReasonCode"/>
+      <Rubric id="d1e65287" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The information was recorded incorrectly or was recorded in the wrong record.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65308" kind="short">
+         <Label xml:lang="en-US">entered in error</Label>
+      </Rubric>
+      <Rubric id="d1e65308" kind="preferred">
+         <Label xml:lang="en-US">entered in error</Label>
+      </Rubric>
+   </Class>
+   <Class code="NORECMTCH" kind="concept">
+      <Meta name="internalId" value="22908"/>
+      <SuperClass code="_ControlActNullificationReasonCode"/>
+      <SuperClass code="_StatusRevisionRefusalReasonCode"/>
+      <SuperClass code="NOMATCH"/>
+      <Rubric id="d1e65320" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>There is no match for the record in the database.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65352" kind="short">
+         <Label xml:lang="en-US">no record match</Label>
+      </Rubric>
+      <Rubric id="d1e65352" kind="preferred">
+         <Label xml:lang="en-US">no record match</Label>
+      </Rubric>
+   </Class>
+   <Class code="INRQSTATE" kind="concept">
+      <Meta name="internalId" value="23015"/>
+      <SuperClass code="_ControlActNullificationRefusalReasonType"/>
+      <SuperClass code="_StatusRevisionRefusalReasonCode"/>
+      <Rubric id="d1e65363" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The record is already in the requested state.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65386" kind="short">
+         <Label xml:lang="en-US">in requested state</Label>
+      </Rubric>
+      <Rubric id="d1e65386" kind="preferred">
+         <Label xml:lang="en-US">in requested state</Label>
+      </Rubric>
+   </Class>
+   <Class code="NOMATCH" kind="concept">
+      <Meta name="internalId" value="22907"/>
+      <SuperClass code="_ControlActNullificationRefusalReasonType"/>
+      <SuperClass code="_RefusalReasonCode"/>
+      <SubClass code="NORECMTCH"/>
+      <SubClass code="NOPRODMTCH"/>
+      <SubClass code="NOSERMTCH"/>
+      <SubClass code="NOVERMTCH"/>
+      <Rubric id="d1e65398" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>There is no match.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65424" kind="short">
+         <Label xml:lang="en-US">no match</Label>
+      </Rubric>
+      <Rubric id="d1e65424" kind="preferred">
+         <Label xml:lang="en-US">no match</Label>
+      </Rubric>
+   </Class>
+   <Class code="NOPERM" kind="concept">
+      <Meta name="internalId" value="22911"/>
+      <SuperClass code="_ControlActNullificationRefusalReasonType"/>
+      <SuperClass code="_RefusalReasonCode"/>
+      <SubClass code="NOUSERPERM"/>
+      <SubClass code="NOAGNTPERM"/>
+      <Rubric id="d1e65436" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>There is no permission.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65462" kind="short">
+         <Label xml:lang="en-US">no permission</Label>
+      </Rubric>
+      <Rubric id="d1e65462" kind="preferred">
+         <Label xml:lang="en-US">no permission</Label>
+      </Rubric>
+   </Class>
+   <Class code="WRNGVER" kind="concept">
+      <Meta name="internalId" value="23278"/>
+      <SuperClass code="_ControlActNullificationRefusalReasonType"/>
+      <Rubric id="d1e65474" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The record and version requested to update is not the current version.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65495" kind="short">
+         <Label xml:lang="en-US">wrong version</Label>
+      </Rubric>
+      <Rubric id="d1e65495" kind="preferred">
+         <Label xml:lang="en-US">wrong version</Label>
+      </Rubric>
+   </Class>
+   <Class code="_MedicationOrderAbortReasonCode" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21701"/>
+      <SuperClass code="_ControlActReason"/>
+      <SubClass code="DISCONT"/>
+      <SubClass code="INEFFECT"/>
+      <SubClass code="MONIT"/>
+      <SubClass code="NOREQ"/>
+      <SubClass code="NOTCOVER"/>
+      <SubClass code="PREFUS"/>
+      <SubClass code="RECALL"/>
+      <SubClass code="REPLACE"/>
+      <SubClass code="REPLACEFIX"/>
+      <SubClass code="UNABLE"/>
+      <Rubric id="d1e65506" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Indicates the reason the medication order should be aborted.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65527" kind="short">
+         <Label xml:lang="en-US">medication order abort reason</Label>
+      </Rubric>
+      <Rubric id="d1e65527" kind="preferred">
+         <Label xml:lang="en-US">medication order abort reason</Label>
+      </Rubric>
+   </Class>
+   <Class code="_MedicationOrderReleaseReasonCode" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21711"/>
+      <SuperClass code="_ControlActReason"/>
+      <SubClass code="HOLDDONE"/>
+      <SubClass code="HOLDINAP"/>
+      <Rubric id="d1e65539" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>A collection of concepts that indicate why the prescription should be released from suspended state.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65560" kind="short">
+         <Label xml:lang="en-US">medication order release reason</Label>
+      </Rubric>
+      <Rubric id="d1e65560" kind="preferred">
+         <Label xml:lang="en-US">medication order release reason</Label>
+      </Rubric>
+   </Class>
+   <Class code="_PharmacySupplyEventAbortReason" kind="concept">
+      <Meta name="internalId" value="22849"/>
+      <SuperClass code="_ControlActReason"/>
+      <SubClass code="CONTRA"/>
+      <SubClass code="FOABORT"/>
+      <SubClass code="FOSUSP"/>
+      <SubClass code="NOPICK"/>
+      <SubClass code="PATDEC"/>
+      <SubClass code="QUANTCHG"/>
+      <Rubric id="d1e65571" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Identifies why the dispense event was not completed.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65592" kind="short">
+         <Label xml:lang="en-US">PharmacySupplyEventAbortReason</Label>
+      </Rubric>
+      <Rubric id="d1e65592" kind="preferred">
+         <Label xml:lang="en-US">PharmacySupplyEventAbortReason</Label>
+      </Rubric>
+   </Class>
+   <Class code="_PharmacySupplyEventStockReasonCode" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21721"/>
+      <SuperClass code="_ControlActReason"/>
+      <SubClass code="FLRSTCK"/>
+      <SubClass code="LTC"/>
+      <SubClass code="OFFICE"/>
+      <SubClass code="PHARM"/>
+      <SubClass code="PROG"/>
+      <Rubric id="d1e65603" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>A collection of concepts that indicates the reason for a "bulk supply" of medication.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65624" kind="short">
+         <Label xml:lang="en-US">pharmacy supply event stock reason</Label>
+      </Rubric>
+      <Rubric id="d1e65624" kind="preferred">
+         <Label xml:lang="en-US">pharmacy supply event stock reason</Label>
+      </Rubric>
+   </Class>
+   <Class code="_PharmacySupplyRequestRenewalRefusalReasonCode" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21727"/>
+      <SuperClass code="_ControlActReason"/>
+      <SubClass code="DISCONT"/>
+      <SubClass code="ALREADYRX"/>
+      <SubClass code="FAMPHYS"/>
+      <SubClass code="MODIFY"/>
+      <SubClass code="NEEDAPMT"/>
+      <SubClass code="NOTAVAIL"/>
+      <SubClass code="NOTPAT"/>
+      <SubClass code="ONHOLD"/>
+      <SubClass code="PRNA"/>
+      <SubClass code="TOOEARLY"/>
+      <Rubric id="d1e65635" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>A collection of concepts that identifies why a renewal prescription has been refused.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65656" kind="short">
+         <Label xml:lang="en-US">pharmacy supply request renewal refusal reason</Label>
+      </Rubric>
+      <Rubric id="d1e65656" kind="preferred">
+         <Label xml:lang="en-US">pharmacy supply request renewal refusal reason</Label>
+      </Rubric>
+   </Class>
+   <Class code="_SupplyOrderAbortReasonCode" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21736"/>
+      <SuperClass code="_ControlActReason"/>
+      <SubClass code="IMPROV"/>
+      <SubClass code="INTOL"/>
+      <SubClass code="NEWSTR"/>
+      <SubClass code="NEWTHER"/>
+      <Rubric id="d1e65667" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>A collection of concepts that indicates why the prescription should no longer be allowed to be dispensed (but can still administer what is already being dispensed).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65688" kind="short">
+         <Label xml:lang="en-US">supply order abort reason</Label>
+      </Rubric>
+      <Rubric id="d1e65688" kind="preferred">
+         <Label xml:lang="en-US">supply order abort reason</Label>
+      </Rubric>
+   </Class>
+   <Class code="AGE" kind="concept">
+      <Meta name="internalId" value="21565"/>
+      <SuperClass code="_CoverageEligibilityReason"/>
+      <Rubric id="d1e65735" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A person becomes eligible for a program based on age.</p>
+            <p>
+               <i>Example:</i>In the U.S., a person who is 65 years of age or older is eligible for Medicare.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65759" kind="short">
+         <Label xml:lang="en-US">age eligibility</Label>
+      </Rubric>
+      <Rubric id="d1e65759" kind="preferred">
+         <Label xml:lang="en-US">age eligibility</Label>
+      </Rubric>
+   </Class>
+   <Class code="CRIME" kind="concept">
+      <Meta name="internalId" value="21558"/>
+      <SuperClass code="_CoverageEligibilityReason"/>
+      <Rubric id="d1e65770" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A person becomes eligible for insurance or a program because of crime related health condition or injury.</p>
+            <p>
+               <i>Example:</i>A person is a claimant under the U.S. Crime Victims Compensation program.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65794" kind="short">
+         <Label xml:lang="en-US">crime victim</Label>
+      </Rubric>
+      <Rubric id="d1e65794" kind="preferred">
+         <Label xml:lang="en-US">crime victim</Label>
+      </Rubric>
+   </Class>
+   <Class code="DIS" kind="concept">
+      <Meta name="internalId" value="21560"/>
+      <SuperClass code="_CoverageEligibilityReason"/>
+      <Rubric id="d1e65805" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A person becomes a claimant under a disability income insurance policy or a disability rehabilitation program because of a health condition or injury which limits the person's ability to earn an income or function without institutionalization.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65823" kind="short">
+         <Label xml:lang="en-US">disability</Label>
+      </Rubric>
+      <Rubric id="d1e65823" kind="preferred">
+         <Label xml:lang="en-US">disability</Label>
+      </Rubric>
+   </Class>
+   <Class code="EMPLOY" kind="concept">
+      <Meta name="internalId" value="21556"/>
+      <SuperClass code="_CoverageEligibilityReason"/>
+      <Rubric id="d1e65834" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A person becomes eligible for insurance provided as an employment benefit based on employment status.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65852" kind="short">
+         <Label xml:lang="en-US">employment benefit</Label>
+      </Rubric>
+      <Rubric id="d1e65852" kind="preferred">
+         <Label xml:lang="en-US">employment benefit</Label>
+      </Rubric>
+   </Class>
+   <Class code="FINAN" kind="concept">
+      <Meta name="internalId" value="21564"/>
+      <SuperClass code="_CoverageEligibilityReason"/>
+      <Rubric id="d1e65863" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A person becomes eligible for a program based on financial criteria.</p>
+            <p>
+               <i>Example:</i>A person whose family income is below a financial threshold for eligibility for Medicaid or SCHIP.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65887" kind="short">
+         <Label xml:lang="en-US">financial eligibility</Label>
+      </Rubric>
+      <Rubric id="d1e65887" kind="preferred">
+         <Label xml:lang="en-US">financial eligibility</Label>
+      </Rubric>
+   </Class>
+   <Class code="HEALTH" kind="concept">
+      <Meta name="internalId" value="21562"/>
+      <SuperClass code="_CoverageEligibilityReason"/>
+      <Rubric id="d1e65898" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A person becomes eligible for a program because of a qualifying health condition or injury.</p>
+            <p>
+               <i>Examples:</i>A person is determined to have a qualifying health conditions include pregnancy, HIV/AIDs, tuberculosis, end stage renal disease, breast or cervical cancer, or other condition requiring specialized health services, hospice, institutional or community based care provided under a program</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65922" kind="short">
+         <Label xml:lang="en-US">health status</Label>
+      </Rubric>
+      <Rubric id="d1e65922" kind="preferred">
+         <Label xml:lang="en-US">health status</Label>
+      </Rubric>
+   </Class>
+   <Class code="MULTI" kind="concept">
+      <Meta name="internalId" value="21566"/>
+      <SuperClass code="_CoverageEligibilityReason"/>
+      <Rubric id="d1e65934" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A person becomes eligible for a program based on more than one criterion.</p>
+            <p>
+               <i>Examples:</i>In the U.S., a child whose familiy income meets Medicaid financial thresholds and whose age is less than 18 is eligible for the Early and Periodic Screening, Diagnostic, and Treatment program (EPSDT). A person whose family income meets Medicaid financial thresholds and whose age is 65 years or older is eligible for Medicaid and Medicare, and are referred to as dual eligibles.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65958" kind="short">
+         <Label xml:lang="en-US">multiple criteria eligibility</Label>
+      </Rubric>
+      <Rubric id="d1e65958" kind="preferred">
+         <Label xml:lang="en-US">multiple criteria eligibility</Label>
+      </Rubric>
+   </Class>
+   <Class code="PNC" kind="concept">
+      <Meta name="internalId" value="21561"/>
+      <SuperClass code="_CoverageEligibilityReason"/>
+      <Rubric id="d1e65969" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A person becomes a claimant under a property and casualty insurance policy because of a related health condition or injury resulting from a circumstance covered under the terms of the policy.</p>
+            <p>
+               <i>Example:</i>A person is a claimant under a homeowners insurance policy because of an injury sustained on the policyholderaTMs premises.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e65993" kind="short">
+         <Label xml:lang="en-US">property and casualty condition</Label>
+      </Rubric>
+      <Rubric id="d1e65993" kind="preferred">
+         <Label xml:lang="en-US">property and casualty condition</Label>
+      </Rubric>
+   </Class>
+   <Class code="STATUTORY" kind="concept">
+      <Meta name="internalId" value="21563"/>
+      <SuperClass code="_CoverageEligibilityReason"/>
+      <Rubric id="d1e66004" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A person becomes eligible for a program based on statutory criteria.</p>
+            <p>
+               <i>Examples:</i>A person is a member of an indigenous group, a veteran of military service, or in the U.S., a recipient of adoption assistance and foster care under Title IV-E of the Social Security.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66028" kind="short">
+         <Label xml:lang="en-US">statutory eligibility</Label>
+      </Rubric>
+      <Rubric id="d1e66028" kind="preferred">
+         <Label xml:lang="en-US">statutory eligibility</Label>
+      </Rubric>
+   </Class>
+   <Class code="VEHIC" kind="concept">
+      <Meta name="internalId" value="21559"/>
+      <SuperClass code="_CoverageEligibilityReason"/>
+      <Rubric id="d1e66039" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A person becomes a claimant under a motor vehicle accident insurance because of a motor vehicle accident related health condition or injury.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66057" kind="short">
+         <Label xml:lang="en-US">motor vehicle accident victim</Label>
+      </Rubric>
+      <Rubric id="d1e66057" kind="preferred">
+         <Label xml:lang="en-US">motor vehicle accident victim</Label>
+      </Rubric>
+   </Class>
+   <Class code="WORK" kind="concept">
+      <Meta name="internalId" value="21557"/>
+      <SuperClass code="_CoverageEligibilityReason"/>
+      <Rubric id="d1e66068" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A person becomes eligible for insurance or a program because of a work related health condition or injury.</p>
+            <p>
+               <i>Example:</i>A person is a claimant under the U.S. Black Lung Program.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66092" kind="short">
+         <Label xml:lang="en-US">work related</Label>
+      </Rubric>
+      <Rubric id="d1e66092" kind="preferred">
+         <Label xml:lang="en-US">work related</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActIneligibilityReason" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="20940"/>
+      <SuperClass code="_EligibilityActReasonCode"/>
+      <SubClass code="COVSUS"/>
+      <SubClass code="DECSD"/>
+      <SubClass code="REGERR"/>
+      <Rubric id="d1e66103" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Identifies the reason or rational for why a person is not eligibile for benefits under an insurance policy.</p>
+            <p>Examples are client deceased &amp; adopted client has been given a new policy identifier.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66124" kind="short">
+         <Label xml:lang="en-US">ActIneligibilityReason</Label>
+      </Rubric>
+      <Rubric id="d1e66124" kind="preferred">
+         <Label xml:lang="en-US">ActIneligibilityReason</Label>
+      </Rubric>
+   </Class>
+   <Class code="_CoverageEligibilityReason" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21555"/>
+      <SuperClass code="_EligibilityActReasonCode"/>
+      <SubClass code="AGE"/>
+      <SubClass code="CRIME"/>
+      <SubClass code="DIS"/>
+      <SubClass code="EMPLOY"/>
+      <SubClass code="FINAN"/>
+      <SubClass code="HEALTH"/>
+      <SubClass code="MULTI"/>
+      <SubClass code="PNC"/>
+      <SubClass code="STATUTORY"/>
+      <SubClass code="VEHIC"/>
+      <SubClass code="WORK"/>
+      <Rubric id="d1e66136" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Definition: Identifies the reason or rational for why a person is eligibile for benefits under an insurance policy or progam.</p>
+            <p>
+               <i>Examples:</i>A person is a claimant under an automobile insurance policy are client deceased &amp; adopted client has been given a new policy identifier. A new employee is eligible for health insurance as an employment benefit. A person meets a government program eligibility criteria for financial, age or health status.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66160" kind="short">
+         <Label xml:lang="en-US">CoverageEligibilityReason</Label>
+      </Rubric>
+      <Rubric id="d1e66160" kind="preferred">
+         <Label xml:lang="en-US">CoverageEligibilityReason</Label>
+      </Rubric>
+   </Class>
+   <Class code="CHGDATA" kind="concept">
+      <Meta name="internalId" value="21673"/>
+      <SuperClass code="_GenericUpdateReasonCode"/>
+      <Rubric id="d1e66171" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Information has changed since the record was created.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66192" kind="short">
+         <Label xml:lang="en-US">information change</Label>
+      </Rubric>
+      <Rubric id="d1e66192" kind="preferred">
+         <Label xml:lang="en-US">information change</Label>
+      </Rubric>
+   </Class>
+   <Class code="FIXDATA" kind="concept">
+      <Meta name="internalId" value="21674"/>
+      <SuperClass code="_GenericUpdateReasonCode"/>
+      <Rubric id="d1e66203" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Previously recorded information was erroneous and is being corrected.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66224" kind="short">
+         <Label xml:lang="en-US">error correction</Label>
+      </Rubric>
+      <Rubric id="d1e66224" kind="preferred">
+         <Label xml:lang="en-US">error correction</Label>
+      </Rubric>
+   </Class>
+   <Class code="NEWDATA" kind="concept">
+      <Meta name="internalId" value="21672"/>
+      <SuperClass code="_GenericUpdateReasonCode"/>
+      <Rubric id="d1e66235" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>New information has become available to supplement the record.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66256" kind="short">
+         <Label xml:lang="en-US">new information</Label>
+      </Rubric>
+      <Rubric id="d1e66256" kind="preferred">
+         <Label xml:lang="en-US">new information</Label>
+      </Rubric>
+   </Class>
+   <Class code="DISCONT" kind="concept">
+      <Meta name="internalId" value="21706"/>
+      <SuperClass code="_MedicationOrderAbortReasonCode"/>
+      <SuperClass code="_PharmacySupplyRequestRenewalRefusalReasonCode"/>
+      <Rubric id="d1e66267" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The medication is no longer being manufactured or is otherwise no longer available.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66293" kind="short">
+         <Label xml:lang="en-US">product discontinued</Label>
+      </Rubric>
+      <Rubric id="d1e66293" kind="preferred">
+         <Label xml:lang="en-US">product discontinued</Label>
+      </Rubric>
+   </Class>
+   <Class code="INEFFECT" kind="concept">
+      <Meta name="internalId" value="21703"/>
+      <SuperClass code="_MedicationOrderAbortReasonCode"/>
+      <Rubric id="d1e66305" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The therapy has been found to not have the desired therapeutic benefit on the patient.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66326" kind="short">
+         <Label xml:lang="en-US">ineffective</Label>
+      </Rubric>
+      <Rubric id="d1e66326" kind="preferred">
+         <Label xml:lang="en-US">ineffective</Label>
+      </Rubric>
+   </Class>
+   <Class code="MONIT" kind="concept">
+      <Meta name="internalId" value="21702"/>
+      <SuperClass code="_MedicationOrderAbortReasonCode"/>
+      <Rubric id="d1e66338" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Monitoring the patient while taking the medication, the decision has been made that the therapy is no longer appropriate.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66359" kind="short">
+         <Label xml:lang="en-US">response to monitoring</Label>
+      </Rubric>
+      <Rubric id="d1e66359" kind="preferred">
+         <Label xml:lang="en-US">response to monitoring</Label>
+      </Rubric>
+   </Class>
+   <Class code="NOREQ" kind="concept">
+      <Meta name="internalId" value="21704"/>
+      <SuperClass code="_MedicationOrderAbortReasonCode"/>
+      <Rubric id="d1e66370" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The underlying condition has been resolved or has evolved such that a different treatment is no longer needed.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66391" kind="short">
+         <Label xml:lang="en-US">no longer required for treatment</Label>
+      </Rubric>
+      <Rubric id="d1e66391" kind="preferred">
+         <Label xml:lang="en-US">no longer required for treatment</Label>
+      </Rubric>
+   </Class>
+   <Class code="NOTCOVER" kind="concept">
+      <Meta name="internalId" value="21709"/>
+      <SuperClass code="_MedicationOrderAbortReasonCode"/>
+      <Rubric id="d1e66402" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The product does not have (or no longer has) coverage under the patientaTMs insurance policy.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66423" kind="short">
+         <Label xml:lang="en-US">not covered</Label>
+      </Rubric>
+      <Rubric id="d1e66423" kind="preferred">
+         <Label xml:lang="en-US">not covered</Label>
+      </Rubric>
+   </Class>
+   <Class code="PREFUS" kind="concept">
+      <Meta name="internalId" value="21710"/>
+      <SuperClass code="_MedicationOrderAbortReasonCode"/>
+      <Rubric id="d1e66434" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The patient refused to take the product.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66455" kind="short">
+         <Label xml:lang="en-US">patient refuse</Label>
+      </Rubric>
+      <Rubric id="d1e66455" kind="preferred">
+         <Label xml:lang="en-US">patient refuse</Label>
+      </Rubric>
+   </Class>
+   <Class code="RECALL" kind="concept">
+      <Meta name="internalId" value="21707"/>
+      <SuperClass code="_MedicationOrderAbortReasonCode"/>
+      <Rubric id="d1e66466" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The manufacturer or other agency has requested that stocks of a medication be removed from circulation.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66487" kind="short">
+         <Label xml:lang="en-US">product recalled</Label>
+      </Rubric>
+      <Rubric id="d1e66487" kind="preferred">
+         <Label xml:lang="en-US">product recalled</Label>
+      </Rubric>
+   </Class>
+   <Class code="REPLACE" kind="concept">
+      <Meta name="internalId" value="23262"/>
+      <SuperClass code="_MedicationOrderAbortReasonCode"/>
+      <SubClass code="DOSECHG"/>
+      <Rubric id="d1e66498" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Item in current order is no longer in use as requested and a new one has/will be created to replace it.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66519" kind="short">
+         <Label xml:lang="en-US">change in order</Label>
+      </Rubric>
+      <Rubric id="d1e66519" kind="preferred">
+         <Label xml:lang="en-US">change in order</Label>
+      </Rubric>
+   </Class>
+   <Class code="REPLACEFIX" kind="concept">
+      <Meta name="internalId" value="23263"/>
+      <SuperClass code="_MedicationOrderAbortReasonCode"/>
+      <Rubric id="d1e66531" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Current order was issued with incorrect data and a new order has/will be created to replace it.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66552" kind="short">
+         <Label xml:lang="en-US">error in order</Label>
+      </Rubric>
+      <Rubric id="d1e66552" kind="preferred">
+         <Label xml:lang="en-US">error in order</Label>
+      </Rubric>
+   </Class>
+   <Class code="UNABLE" kind="concept">
+      <Meta name="internalId" value="21708"/>
+      <SuperClass code="_MedicationOrderAbortReasonCode"/>
+      <Rubric id="d1e66563" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>&lt;The patient is not (or is no longer) able to use the medication in a manner prescribed.</p>
+            <p>
+               <b>Example:</b>CanaTMt swallow.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66590" kind="short">
+         <Label xml:lang="en-US">unable to use</Label>
+      </Rubric>
+      <Rubric id="d1e66590" kind="preferred">
+         <Label xml:lang="en-US">unable to use</Label>
+      </Rubric>
+   </Class>
+   <Class code="HOLDDONE" kind="concept">
+      <Meta name="internalId" value="21713"/>
+      <SuperClass code="_MedicationOrderReleaseReasonCode"/>
+      <Rubric id="d1e66601" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The original reason for suspending the medication has ended.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66622" kind="short">
+         <Label xml:lang="en-US">suspend reason no longer applies</Label>
+      </Rubric>
+      <Rubric id="d1e66622" kind="preferred">
+         <Label xml:lang="en-US">suspend reason no longer applies</Label>
+      </Rubric>
+   </Class>
+   <Class code="HOLDINAP" kind="concept">
+      <Meta name="internalId" value="21712"/>
+      <SuperClass code="_MedicationOrderReleaseReasonCode"/>
+      <Rubric id="d1e66633" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>
+            </p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66654" kind="short">
+         <Label xml:lang="en-US">suspend reason inappropriate</Label>
+      </Rubric>
+      <Rubric id="d1e66654" kind="preferred">
+         <Label xml:lang="en-US">suspend reason inappropriate</Label>
+      </Rubric>
+   </Class>
+   <Class code="ADMREV" kind="concept">
+      <Meta name="internalId" value="22221"/>
+      <SuperClass code="_PatientProfileQueryReasonCode"/>
+      <Rubric id="d1e66665" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>To evaluate for service authorization, payment, reporting, or performance/outcome measures.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66686" kind="short">
+         <Label xml:lang="en-US">administrative review</Label>
+      </Rubric>
+      <Rubric id="d1e66686" kind="preferred">
+         <Label xml:lang="en-US">administrative review</Label>
+      </Rubric>
+   </Class>
+   <Class code="LEGAL" kind="concept">
+      <Meta name="internalId" value="21719"/>
+      <SuperClass code="_PatientProfileQueryReasonCode"/>
+      <SuperClass code="OPERAT"/>
+      <Rubric id="d1e66697" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>To provide information as a result of a subpoena.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66723" kind="short">
+         <Label xml:lang="en-US">subpoena</Label>
+      </Rubric>
+      <Rubric id="d1e66723" kind="preferred">
+         <Label xml:lang="en-US">subpoena</Label>
+      </Rubric>
+   </Class>
+   <Class code="PATCAR" kind="concept">
+      <Meta name="internalId" value="21717"/>
+      <SuperClass code="_PatientProfileQueryReasonCode"/>
+      <Rubric id="d1e66736" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>To obtain records as part of patient care.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66757" kind="short">
+         <Label xml:lang="en-US">patient care</Label>
+      </Rubric>
+      <Rubric id="d1e66757" kind="preferred">
+         <Label xml:lang="en-US">patient care</Label>
+      </Rubric>
+   </Class>
+   <Class code="PATREQ" kind="concept">
+      <Meta name="internalId" value="21716"/>
+      <SuperClass code="_PatientProfileQueryReasonCode"/>
+      <Rubric id="d1e66768" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Patient requests information from their profile.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66789" kind="short">
+         <Label xml:lang="en-US">patient request query</Label>
+      </Rubric>
+      <Rubric id="d1e66789" kind="preferred">
+         <Label xml:lang="en-US">patient request query</Label>
+      </Rubric>
+   </Class>
+   <Class code="PRCREV" kind="concept">
+      <Meta name="internalId" value="21720"/>
+      <SuperClass code="_PatientProfileQueryReasonCode"/>
+      <Rubric id="d1e66800" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>To evaluate the provider's current practice for professional-improvement reasons.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66821" kind="short">
+         <Label xml:lang="en-US">practice review</Label>
+      </Rubric>
+      <Rubric id="d1e66821" kind="preferred">
+         <Label xml:lang="en-US">practice review</Label>
+      </Rubric>
+   </Class>
+   <Class code="REGUL" kind="concept">
+      <Meta name="internalId" value="21991"/>
+      <SuperClass code="_PatientProfileQueryReasonCode"/>
+      <Rubric id="d1e66832" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Review for the purpose of regulatory compliance.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66853" kind="short">
+         <Label xml:lang="en-US">regulatory review</Label>
+      </Rubric>
+      <Rubric id="d1e66853" kind="preferred">
+         <Label xml:lang="en-US">regulatory review</Label>
+      </Rubric>
+   </Class>
+   <Class code="RSRCH" kind="concept">
+      <Meta name="internalId" value="21718"/>
+      <SuperClass code="_PatientProfileQueryReasonCode"/>
+      <Rubric id="d1e66864" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>To provide research data, as authorized by the patient.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66885" kind="short">
+         <Label xml:lang="en-US">research</Label>
+      </Rubric>
+      <Rubric id="d1e66885" kind="preferred">
+         <Label xml:lang="en-US">research</Label>
+      </Rubric>
+   </Class>
+   <Class code="VALIDATION" kind="concept">
+      <Meta name="internalId" value="21992"/>
+      <SuperClass code="_PatientProfileQueryReasonCode"/>
+      <Rubric id="d1e66896" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>To validate the patient's record.</p>
+            <p>
+               <b>Example:</b>Merging or unmerging records.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66923" kind="short">
+         <Label xml:lang="en-US">validation review</Label>
+      </Rubric>
+      <Rubric id="d1e66923" kind="preferred">
+         <Label xml:lang="en-US">validation review</Label>
+      </Rubric>
+   </Class>
+   <Class code="CONTRA" kind="concept">
+      <Meta name="internalId" value="22855"/>
+      <SuperClass code="_PharmacySupplyEventAbortReason"/>
+      <Rubric id="d1e66935" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Contraindication identified</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66956" kind="short">
+         <Label xml:lang="en-US">contraindication</Label>
+      </Rubric>
+      <Rubric id="d1e66956" kind="preferred">
+         <Label xml:lang="en-US">contraindication</Label>
+      </Rubric>
+   </Class>
+   <Class code="FOABORT" kind="concept">
+      <Meta name="internalId" value="22852"/>
+      <SuperClass code="_PharmacySupplyEventAbortReason"/>
+      <Rubric id="d1e66967" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Order to be fulfilled was aborted</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e66988" kind="short">
+         <Label xml:lang="en-US">order aborted</Label>
+      </Rubric>
+      <Rubric id="d1e66988" kind="preferred">
+         <Label xml:lang="en-US">order aborted</Label>
+      </Rubric>
+   </Class>
+   <Class code="FOSUSP" kind="concept">
+      <Meta name="internalId" value="22853"/>
+      <SuperClass code="_PharmacySupplyEventAbortReason"/>
+      <Rubric id="d1e66999" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Order to be fulfilled was suspended</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67020" kind="short">
+         <Label xml:lang="en-US">order suspended</Label>
+      </Rubric>
+      <Rubric id="d1e67020" kind="preferred">
+         <Label xml:lang="en-US">order suspended</Label>
+      </Rubric>
+   </Class>
+   <Class code="NOPICK" kind="concept">
+      <Meta name="internalId" value="22850"/>
+      <SuperClass code="_PharmacySupplyEventAbortReason"/>
+      <Rubric id="d1e67031" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Patient did not come to get medication</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67052" kind="short">
+         <Label xml:lang="en-US">not picked up</Label>
+      </Rubric>
+      <Rubric id="d1e67052" kind="preferred">
+         <Label xml:lang="en-US">not picked up</Label>
+      </Rubric>
+   </Class>
+   <Class code="PATDEC" kind="concept">
+      <Meta name="internalId" value="22851"/>
+      <SuperClass code="_PharmacySupplyEventAbortReason"/>
+      <Rubric id="d1e67063" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Patient changed their mind regarding obtaining medication</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67084" kind="short">
+         <Label xml:lang="en-US">patient changed mind</Label>
+      </Rubric>
+      <Rubric id="d1e67084" kind="preferred">
+         <Label xml:lang="en-US">patient changed mind</Label>
+      </Rubric>
+   </Class>
+   <Class code="QUANTCHG" kind="concept">
+      <Meta name="internalId" value="22854"/>
+      <SuperClass code="_PharmacySupplyEventAbortReason"/>
+      <Rubric id="d1e67095" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Patient requested a revised quantity of medication</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67116" kind="short">
+         <Label xml:lang="en-US">change supply quantity</Label>
+      </Rubric>
+      <Rubric id="d1e67116" kind="preferred">
+         <Label xml:lang="en-US">change supply quantity</Label>
+      </Rubric>
+   </Class>
+   <Class code="FLRSTCK" kind="concept">
+      <Meta name="internalId" value="21722"/>
+      <SuperClass code="_PharmacySupplyEventStockReasonCode"/>
+      <Rubric id="d1e67128" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The bulk supply is issued to replenish a ward for local dispensing. (Includes both mobile and fixed-location ward stocks.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67149" kind="short">
+         <Label xml:lang="en-US">floor stock</Label>
+      </Rubric>
+      <Rubric id="d1e67149" kind="preferred">
+         <Label xml:lang="en-US">floor stock</Label>
+      </Rubric>
+   </Class>
+   <Class code="LTC" kind="concept">
+      <Meta name="internalId" value="21725"/>
+      <SuperClass code="_PharmacySupplyEventStockReasonCode"/>
+      <Rubric id="d1e67160" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The bulk supply will be administered within a long term care facility.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67181" kind="short">
+         <Label xml:lang="en-US">long term care use</Label>
+      </Rubric>
+      <Rubric id="d1e67181" kind="preferred">
+         <Label xml:lang="en-US">long term care use</Label>
+      </Rubric>
+   </Class>
+   <Class code="OFFICE" kind="concept">
+      <Meta name="internalId" value="21724"/>
+      <SuperClass code="_PharmacySupplyEventStockReasonCode"/>
+      <Rubric id="d1e67192" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The bulk supply is intended for general clinician office use.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67213" kind="short">
+         <Label xml:lang="en-US">office use</Label>
+      </Rubric>
+      <Rubric id="d1e67213" kind="preferred">
+         <Label xml:lang="en-US">office use</Label>
+      </Rubric>
+   </Class>
+   <Class code="PHARM" kind="concept">
+      <Meta name="internalId" value="21726"/>
+      <SuperClass code="_PharmacySupplyEventStockReasonCode"/>
+      <Rubric id="d1e67224" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The bulk supply is being transferred to another dispensing facility to.</p>
+            <p>
+               <b>Example:</b>Alleviate a temporary shortage.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67251" kind="short">
+         <Label xml:lang="en-US">pharmacy transfer</Label>
+      </Rubric>
+      <Rubric id="d1e67251" kind="preferred">
+         <Label xml:lang="en-US">pharmacy transfer</Label>
+      </Rubric>
+   </Class>
+   <Class code="PROG" kind="concept">
+      <Meta name="internalId" value="21723"/>
+      <SuperClass code="_PharmacySupplyEventStockReasonCode"/>
+      <Rubric id="d1e67262" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The bulk supply is intended for dispensing according to a specific program.</p>
+            <p>
+               <b>Example:</b>Mass immunization.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67289" kind="short">
+         <Label xml:lang="en-US">program use</Label>
+      </Rubric>
+      <Rubric id="d1e67289" kind="preferred">
+         <Label xml:lang="en-US">program use</Label>
+      </Rubric>
+   </Class>
+   <Class code="LOCKED" kind="concept">
+      <Meta name="internalId" value="22864"/>
+      <SuperClass code="_PharmacySupplyRequestFulfillerRevisionRefusalReasonCode"/>
+      <Rubric id="d1e67300" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The prescription may not be reassigned from the original pharmacy.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67321" kind="short">
+         <Label xml:lang="en-US">locked</Label>
+      </Rubric>
+      <Rubric id="d1e67321" kind="preferred">
+         <Label xml:lang="en-US">locked</Label>
+      </Rubric>
+   </Class>
+   <Class code="NOUSERPERM" kind="concept">
+      <Meta name="internalId" value="22865"/>
+      <SuperClass code="_PharmacySupplyRequestFulfillerRevisionRefusalReasonCode"/>
+      <SuperClass code="_StatusRevisionRefusalReasonCode"/>
+      <SuperClass code="_SubstanceAdministrationPermissionRefusalReasonCode"/>
+      <SuperClass code="NOPERM"/>
+      <Rubric id="d1e67333" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The user does not have permission</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67370" kind="short">
+         <Label xml:lang="en-US">no user permission</Label>
+      </Rubric>
+      <Rubric id="d1e67370" kind="preferred">
+         <Label xml:lang="en-US">no user permission</Label>
+      </Rubric>
+   </Class>
+   <Class code="UNKWNTARGET" kind="concept">
+      <Meta name="internalId" value="22866"/>
+      <SuperClass code="_PharmacySupplyRequestFulfillerRevisionRefusalReasonCode"/>
+      <Rubric id="d1e67381" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The target facility does not recognize the dispensing facility.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67402" kind="short">
+         <Label xml:lang="en-US">unknown target</Label>
+      </Rubric>
+      <Rubric id="d1e67402" kind="preferred">
+         <Label xml:lang="en-US">unknown target</Label>
+      </Rubric>
+   </Class>
+   <Class code="ALREADYRX" kind="concept">
+      <Meta name="internalId" value="21732"/>
+      <SuperClass code="_PharmacySupplyRequestRenewalRefusalReasonCode"/>
+      <Rubric id="d1e67413" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Patient has already been given a new (renewal) prescription.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67434" kind="short">
+         <Label xml:lang="en-US">new prescription exists</Label>
+      </Rubric>
+      <Rubric id="d1e67434" kind="preferred">
+         <Label xml:lang="en-US">new prescription exists</Label>
+      </Rubric>
+   </Class>
+   <Class code="FAMPHYS" kind="concept">
+      <Meta name="internalId" value="21731"/>
+      <SuperClass code="_PharmacySupplyRequestRenewalRefusalReasonCode"/>
+      <Rubric id="d1e67445" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Request for further authorization must be done through patient's family physician.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67466" kind="short">
+         <Label xml:lang="en-US">family physician must authorize further fills</Label>
+      </Rubric>
+      <Rubric id="d1e67466" kind="preferred">
+         <Label xml:lang="en-US">family physician must authorize further fills</Label>
+      </Rubric>
+   </Class>
+   <Class code="MODIFY" kind="concept">
+      <Meta name="internalId" value="21733"/>
+      <SuperClass code="_PharmacySupplyRequestRenewalRefusalReasonCode"/>
+      <Rubric id="d1e67477" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Therapy has been changed and new prescription issued</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67498" kind="short">
+         <Label xml:lang="en-US">modified prescription exists</Label>
+      </Rubric>
+      <Rubric id="d1e67498" kind="preferred">
+         <Label xml:lang="en-US">modified prescription exists</Label>
+      </Rubric>
+   </Class>
+   <Class code="NEEDAPMT" kind="concept">
+      <Meta name="internalId" value="21728"/>
+      <SuperClass code="_PharmacySupplyRequestRenewalRefusalReasonCode"/>
+      <Rubric id="d1e67509" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Patient must see prescriber prior to further fills.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67530" kind="short">
+         <Label xml:lang="en-US">patient must make appointment</Label>
+      </Rubric>
+      <Rubric id="d1e67530" kind="preferred">
+         <Label xml:lang="en-US">patient must make appointment</Label>
+      </Rubric>
+   </Class>
+   <Class code="NOTAVAIL" kind="concept">
+      <Meta name="internalId" value="21730"/>
+      <SuperClass code="_PharmacySupplyRequestRenewalRefusalReasonCode"/>
+      <Rubric id="d1e67542" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Original prescriber is no longer available to prescribe and no other prescriber has taken responsibility for the patient.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67563" kind="short">
+         <Label xml:lang="en-US">prescriber not available</Label>
+      </Rubric>
+      <Rubric id="d1e67563" kind="preferred">
+         <Label xml:lang="en-US">prescriber not available</Label>
+      </Rubric>
+   </Class>
+   <Class code="NOTPAT" kind="concept">
+      <Meta name="internalId" value="21729"/>
+      <SuperClass code="_PharmacySupplyRequestRenewalRefusalReasonCode"/>
+      <Rubric id="d1e67574" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Patient no longer or has never been under this prescribers care.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67595" kind="short">
+         <Label xml:lang="en-US">patient no longer in this practice</Label>
+      </Rubric>
+      <Rubric id="d1e67595" kind="preferred">
+         <Label xml:lang="en-US">patient no longer in this practice</Label>
+      </Rubric>
+   </Class>
+   <Class code="ONHOLD" kind="concept">
+      <Meta name="internalId" value="21734"/>
+      <SuperClass code="_PharmacySupplyRequestRenewalRefusalReasonCode"/>
+      <Rubric id="d1e67606" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>This medication is on hold.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67627" kind="short">
+         <Label xml:lang="en-US">medication on hold</Label>
+      </Rubric>
+      <Rubric id="d1e67627" kind="preferred">
+         <Label xml:lang="en-US">medication on hold</Label>
+      </Rubric>
+   </Class>
+   <Class code="PRNA" kind="concept">
+      <Meta name="internalId" value="22867"/>
+      <SuperClass code="_PharmacySupplyRequestRenewalRefusalReasonCode"/>
+      <Rubric id="d1e67638" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>This product is not available or manufactured.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67659" kind="short">
+         <Label xml:lang="en-US">product not available</Label>
+      </Rubric>
+      <Rubric id="d1e67659" kind="preferred">
+         <Label xml:lang="en-US">product not available</Label>
+      </Rubric>
+   </Class>
+   <Class code="TOOEARLY" kind="concept">
+      <Meta name="internalId" value="21735"/>
+      <SuperClass code="_PharmacySupplyRequestRenewalRefusalReasonCode"/>
+      <Rubric id="d1e67670" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The patient should have medication remaining.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67691" kind="short">
+         <Label xml:lang="en-US">too early</Label>
+      </Rubric>
+      <Rubric id="d1e67691" kind="preferred">
+         <Label xml:lang="en-US">too early</Label>
+      </Rubric>
+   </Class>
+   <Class code="BLK" kind="concept">
+      <Meta name="internalId" value="14885"/>
+      <SuperClass code="_SchedulingActReason"/>
+      <Rubric id="d1e67702" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The time slots previously allocated are now blocked and no longer available for booking Appointments</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67720" kind="short">
+         <Label xml:lang="en-US">Unexpected Block (of Schedule)</Label>
+      </Rubric>
+      <Rubric id="d1e67720" kind="preferred">
+         <Label xml:lang="en-US">Unexpected Block (of Schedule)</Label>
+      </Rubric>
+   </Class>
+   <Class code="DEC" kind="concept">
+      <Meta name="internalId" value="14884"/>
+      <SuperClass code="_SchedulingActReason"/>
+      <Rubric id="d1e67732" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The Patient is deceased</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67750" kind="short">
+         <Label xml:lang="en-US">Patient Deceased</Label>
+      </Rubric>
+      <Rubric id="d1e67750" kind="preferred">
+         <Label xml:lang="en-US">Patient Deceased</Label>
+      </Rubric>
+   </Class>
+   <Class code="FIN" kind="concept">
+      <Meta name="internalId" value="14882"/>
+      <SuperClass code="_SchedulingActReason"/>
+      <Rubric id="d1e67761" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Patient unable to pay and not covered by insurance</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67779" kind="short">
+         <Label xml:lang="en-US">No Financial Backing</Label>
+      </Rubric>
+      <Rubric id="d1e67779" kind="preferred">
+         <Label xml:lang="en-US">No Financial Backing</Label>
+      </Rubric>
+   </Class>
+   <Class code="MED" kind="concept">
+      <Meta name="internalId" value="14883"/>
+      <SuperClass code="_SchedulingActReason"/>
+      <Rubric id="d1e67790" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The medical condition of the Patient has changed</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67808" kind="short">
+         <Label xml:lang="en-US">Medical Status Altered</Label>
+      </Rubric>
+      <Rubric id="d1e67808" kind="preferred">
+         <Label xml:lang="en-US">Medical Status Altered</Label>
+      </Rubric>
+   </Class>
+   <Class code="MTG" kind="concept">
+      <Meta name="internalId" value="14886"/>
+      <SuperClass code="_SchedulingActReason"/>
+      <Rubric id="d1e67819" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The Physician is in a meeting. For example, he/she may request administrative time to talk to family after appointment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67837" kind="short">
+         <Label xml:lang="en-US">In an outside meeting</Label>
+      </Rubric>
+      <Rubric id="d1e67837" kind="preferred">
+         <Label xml:lang="en-US">In an outside meeting</Label>
+      </Rubric>
+   </Class>
+   <Class code="PHY" kind="concept">
+      <Meta name="internalId" value="14881"/>
+      <SuperClass code="_SchedulingActReason"/>
+      <Rubric id="d1e67848" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The Physician requested the action</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67866" kind="short">
+         <Label xml:lang="en-US">Physician request</Label>
+      </Rubric>
+      <Rubric id="d1e67866" kind="preferred">
+         <Label xml:lang="en-US">Physician request</Label>
+      </Rubric>
+   </Class>
+   <Class code="FILLED" kind="concept">
+      <Meta name="internalId" value="23016"/>
+      <SuperClass code="_StatusRevisionRefusalReasonCode"/>
+      <Rubric id="d1e67877" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Ordered quantity has already been completely fulfilled.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67895" kind="short">
+         <Label xml:lang="en-US">fully filled</Label>
+      </Rubric>
+      <Rubric id="d1e67895" kind="preferred">
+         <Label xml:lang="en-US">fully filled</Label>
+      </Rubric>
+   </Class>
+   <Class code="PATINELIG" kind="concept">
+      <Meta name="internalId" value="22858"/>
+      <SuperClass code="_SubstanceAdministrationPermissionRefusalReasonCode"/>
+      <Rubric id="d1e67907" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Patient not eligible for drug</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67928" kind="short">
+         <Label xml:lang="en-US">patient not eligible</Label>
+      </Rubric>
+      <Rubric id="d1e67928" kind="preferred">
+         <Label xml:lang="en-US">patient not eligible</Label>
+      </Rubric>
+   </Class>
+   <Class code="PROTUNMET" kind="concept">
+      <Meta name="internalId" value="22857"/>
+      <SuperClass code="_SubstanceAdministrationPermissionRefusalReasonCode"/>
+      <Rubric id="d1e67939" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Patient does not meet required protocol</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67960" kind="short">
+         <Label xml:lang="en-US">protocol not met</Label>
+      </Rubric>
+      <Rubric id="d1e67960" kind="preferred">
+         <Label xml:lang="en-US">protocol not met</Label>
+      </Rubric>
+   </Class>
+   <Class code="PROVUNAUTH" kind="concept">
+      <Meta name="internalId" value="22859"/>
+      <SuperClass code="_SubstanceAdministrationPermissionRefusalReasonCode"/>
+      <Rubric id="d1e67971" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Provider is not authorized to prescribe or dispense</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e67992" kind="short">
+         <Label xml:lang="en-US">provider not authorized</Label>
+      </Rubric>
+      <Rubric id="d1e67992" kind="preferred">
+         <Label xml:lang="en-US">provider not authorized</Label>
+      </Rubric>
+   </Class>
+   <Class code="ALGINT" kind="concept">
+      <Meta name="internalId" value="22259"/>
+      <SuperClass code="_SubstanceAdminSubstitutionNotAllowedReason"/>
+      <Rubric id="d1e68003" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Patient has had a prior allergic intolerance response to alternate product or one of its components.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68024" kind="short">
+         <Label xml:lang="en-US">allergy intolerance</Label>
+      </Rubric>
+      <Rubric id="d1e68024" kind="preferred">
+         <Label xml:lang="en-US">allergy intolerance</Label>
+      </Rubric>
+   </Class>
+   <Class code="COMPCON" kind="concept">
+      <Meta name="internalId" value="22260"/>
+      <SuperClass code="_SubstanceAdminSubstitutionNotAllowedReason"/>
+      <Rubric id="d1e68035" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Patient has compliance issues with medication such as differing appearance, flavor, size, shape or consistency.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68056" kind="short">
+         <Label xml:lang="en-US">compliance concern</Label>
+      </Rubric>
+      <Rubric id="d1e68056" kind="preferred">
+         <Label xml:lang="en-US">compliance concern</Label>
+      </Rubric>
+   </Class>
+   <Class code="THERCHAR" kind="concept">
+      <Meta name="internalId" value="21815"/>
+      <SuperClass code="_SubstanceAdminSubstitutionNotAllowedReason"/>
+      <Rubric id="d1e68067" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The prescribed product has specific clinical release or other therapeutic characteristics not shared by other substitutable medications.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68085" kind="short">
+         <Label xml:lang="en-US">therapeutic characteristics</Label>
+      </Rubric>
+      <Rubric id="d1e68085" kind="preferred">
+         <Label xml:lang="en-US">therapeutic characteristics</Label>
+      </Rubric>
+   </Class>
+   <Class code="TRIAL" kind="concept">
+      <Meta name="internalId" value="22261"/>
+      <SuperClass code="_SubstanceAdminSubstitutionNotAllowedReason"/>
+      <Rubric id="d1e68097" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The specific manufactured drug is part of a clinical trial.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68118" kind="short">
+         <Label xml:lang="en-US">clinical trial drug</Label>
+      </Rubric>
+      <Rubric id="d1e68118" kind="preferred">
+         <Label xml:lang="en-US">clinical trial drug</Label>
+      </Rubric>
+   </Class>
+   <Class code="CT" kind="concept">
+      <Meta name="internalId" value="19989"/>
+      <SuperClass code="_SubstanceAdminSubstitutionReason"/>
+      <Rubric id="d1e68129" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicates that the decision to substitute or to not substitute was driven by a desire to maintain consistency with a pre-existing therapy. I.e. The performer provided the same item/service as had been previously provided rather than providing exactly what was ordered, or rather than substituting with a lower-cost equivalent.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68147" kind="short">
+         <Label xml:lang="en-US">continuing therapy</Label>
+      </Rubric>
+      <Rubric id="d1e68147" kind="preferred">
+         <Label xml:lang="en-US">continuing therapy</Label>
+      </Rubric>
+   </Class>
+   <Class code="FP" kind="concept">
+      <Meta name="internalId" value="19990"/>
+      <SuperClass code="_SubstanceAdminSubstitutionReason"/>
+      <Rubric id="d1e68158" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicates that the decision to substitute or to not substitute was driven by a policy expressed within the formulary.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68176" kind="short">
+         <Label xml:lang="en-US">formulary policy</Label>
+      </Rubric>
+      <Rubric id="d1e68176" kind="preferred">
+         <Label xml:lang="en-US">formulary policy</Label>
+      </Rubric>
+   </Class>
+   <Class code="OS" kind="concept">
+      <Meta name="internalId" value="19987"/>
+      <SuperClass code="_SubstanceAdminSubstitutionReason"/>
+      <Rubric id="d1e68187" kind="definition">
+         <Label xml:lang="en-US">
+            <p>In the case of 'substitution', indicates that the substitution occurred because the ordered item was not in stock. In the case of 'no substitution', indicates that a cheaper equivalent was not substituted because it was not in stock.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68205" kind="short">
+         <Label xml:lang="en-US">out of stock</Label>
+      </Rubric>
+      <Rubric id="d1e68205" kind="preferred">
+         <Label xml:lang="en-US">out of stock</Label>
+      </Rubric>
+   </Class>
+   <Class code="RR" kind="concept">
+      <Meta name="internalId" value="19988"/>
+      <SuperClass code="_SubstanceAdminSubstitutionReason"/>
+      <Rubric id="d1e68216" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicates that the decision to substitute or to not substitute was driven by a jurisdictional regulatory requirement mandating or prohibiting substitution.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68234" kind="short">
+         <Label xml:lang="en-US">regulatory requirement</Label>
+      </Rubric>
+      <Rubric id="d1e68234" kind="preferred">
+         <Label xml:lang="en-US">regulatory requirement</Label>
+      </Rubric>
+   </Class>
+   <Class code="IMPROV" kind="concept">
+      <Meta name="internalId" value="21737"/>
+      <SuperClass code="_SupplyOrderAbortReasonCode"/>
+      <Rubric id="d1e68245" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The patient's medical condition has nearly abated.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68266" kind="short">
+         <Label xml:lang="en-US">condition improved</Label>
+      </Rubric>
+      <Rubric id="d1e68266" kind="preferred">
+         <Label xml:lang="en-US">condition improved</Label>
+      </Rubric>
+   </Class>
+   <Class code="INTOL" kind="concept">
+      <Meta name="internalId" value="21990"/>
+      <SuperClass code="_SupplyOrderAbortReasonCode"/>
+      <Rubric id="d1e68278" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The patient has an intolerance to the medication.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68299" kind="short">
+         <Label xml:lang="en-US">intolerance</Label>
+      </Rubric>
+      <Rubric id="d1e68299" kind="preferred">
+         <Label xml:lang="en-US">intolerance</Label>
+      </Rubric>
+   </Class>
+   <Class code="NEWSTR" kind="concept">
+      <Meta name="internalId" value="21739"/>
+      <SuperClass code="_SupplyOrderAbortReasonCode"/>
+      <Rubric id="d1e68310" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The current medication will be replaced by a new strength of the same medication.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68331" kind="short">
+         <Label xml:lang="en-US">new strength</Label>
+      </Rubric>
+      <Rubric id="d1e68331" kind="preferred">
+         <Label xml:lang="en-US">new strength</Label>
+      </Rubric>
+   </Class>
+   <Class code="NEWTHER" kind="concept">
+      <Meta name="internalId" value="21738"/>
+      <SuperClass code="_SupplyOrderAbortReasonCode"/>
+      <Rubric id="d1e68342" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>A new therapy will be commenced when current supply exhausted.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68363" kind="short">
+         <Label xml:lang="en-US">new therapy</Label>
+      </Rubric>
+      <Rubric id="d1e68363" kind="preferred">
+         <Label xml:lang="en-US">new therapy</Label>
+      </Rubric>
+   </Class>
+   <Class code="ER" kind="concept">
+      <Meta name="internalId" value="15984"/>
+      <SuperClass code="_TransferActReason"/>
+      <Rubric id="d1e68374" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Moved to an error in placing the patient in the original location.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68392" kind="short">
+         <Label xml:lang="en-US">Error</Label>
+      </Rubric>
+      <Rubric id="d1e68392" kind="preferred">
+         <Label xml:lang="en-US">Error</Label>
+      </Rubric>
+   </Class>
+   <Class code="RQ" kind="concept">
+      <Meta name="internalId" value="15985"/>
+      <SuperClass code="_TransferActReason"/>
+      <Rubric id="d1e68403" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Moved at the request of the patient.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68421" kind="short">
+         <Label xml:lang="en-US">Request</Label>
+      </Rubric>
+      <Rubric id="d1e68421" kind="preferred">
+         <Label xml:lang="en-US">Request</Label>
+      </Rubric>
+   </Class>
+   <Class code="COLDCHNBRK" kind="concept">
+      <Meta name="internalId" value="23239"/>
+      <SuperClass code="ADVSTORAGE"/>
+      <Rubric id="d1e68432" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Cold chain was not maintained for the substance.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68453" kind="short">
+         <Label xml:lang="en-US">cold chain break</Label>
+      </Rubric>
+      <Rubric id="d1e68453" kind="preferred">
+         <Label xml:lang="en-US">cold chain break</Label>
+      </Rubric>
+   </Class>
+   <Class code="ELIGDTRM" kind="concept">
+      <Meta name="internalId" value="23420"/>
+      <SuperClass code="COVERAGE"/>
+      <Rubric id="d1e68465" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information used for conducting eligibility determination for coverage in a program or policy. May entail review of financial status or disability assessment.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68483" kind="short">
+         <Label xml:lang="en-US">eligibility determination</Label>
+      </Rubric>
+      <Rubric id="d1e68483" kind="preferred">
+         <Label xml:lang="en-US">eligibility determination</Label>
+      </Rubric>
+   </Class>
+   <Class code="ELIGVER" kind="concept">
+      <Meta name="internalId" value="23457"/>
+      <SuperClass code="COVERAGE"/>
+      <Rubric id="d1e68494" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information used for conducting eligibility verification of coverage in a program or policy. May entail provider contacting coverage source (e.g., government health program such as workers compensation or health plan) for confirmation of enrollment, eligibility for specific services, and any applicable copays.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68512" kind="short">
+         <Label xml:lang="en-US">eligibility verification</Label>
+      </Rubric>
+      <Rubric id="d1e68512" kind="preferred">
+         <Label xml:lang="en-US">eligibility verification</Label>
+      </Rubric>
+   </Class>
+   <Class code="ENROLLM" kind="concept">
+      <Meta name="internalId" value="23458"/>
+      <SuperClass code="COVERAGE"/>
+      <Rubric id="d1e68523" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information used for enrolling a covered party in a program or policy. May entail recording of covered party's and any dependent's demographic information and benefit choices.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68541" kind="short">
+         <Label xml:lang="en-US">enrollment</Label>
+      </Rubric>
+      <Rubric id="d1e68541" kind="preferred">
+         <Label xml:lang="en-US">enrollment</Label>
+      </Rubric>
+   </Class>
+   <Class code="DONAT" kind="concept">
+      <Meta name="internalId" value="23412"/>
+      <SuperClass code="HOPERAT"/>
+      <Rubric id="d1e68552" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information used for cadaveric organ, eye or tissue donation.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68570" kind="short">
+         <Label xml:lang="en-US">donation</Label>
+      </Rubric>
+      <Rubric id="d1e68570" kind="preferred">
+         <Label xml:lang="en-US">donation</Label>
+      </Rubric>
+   </Class>
+   <Class code="FRAUD" kind="concept">
+      <Meta name="internalId" value="23413"/>
+      <SuperClass code="HOPERAT"/>
+      <Rubric id="d1e68581" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information used for fraud detection and prevention processes.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68599" kind="short">
+         <Label xml:lang="en-US">fraud</Label>
+      </Rubric>
+      <Rubric id="d1e68599" kind="preferred">
+         <Label xml:lang="en-US">fraud</Label>
+      </Rubric>
+   </Class>
+   <Class code="GOV" kind="concept">
+      <Meta name="internalId" value="23414"/>
+      <SuperClass code="HOPERAT"/>
+      <Rubric id="d1e68610" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information used within government processes.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68628" kind="short">
+         <Label xml:lang="en-US">government</Label>
+      </Rubric>
+      <Rubric id="d1e68628" kind="preferred">
+         <Label xml:lang="en-US">government</Label>
+      </Rubric>
+   </Class>
+   <Class code="HACCRED" kind="concept">
+      <Meta name="internalId" value="22692"/>
+      <SuperClass code="HOPERAT"/>
+      <Rubric id="d1e68640" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information for conducting activities related to meeting accreditation criteria.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68658" kind="short">
+         <Label xml:lang="en-US">health accreditation</Label>
+      </Rubric>
+      <Rubric id="d1e68658" kind="preferred">
+         <Label xml:lang="en-US">health accreditation</Label>
+      </Rubric>
+   </Class>
+   <Class code="HCOMPL" kind="concept">
+      <Meta name="internalId" value="22689"/>
+      <SuperClass code="HOPERAT"/>
+      <Rubric id="d1e68669" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information used for conducting activities required to meet a mandate.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68687" kind="short">
+         <Label xml:lang="en-US">health compliance</Label>
+      </Rubric>
+      <Rubric id="d1e68687" kind="preferred">
+         <Label xml:lang="en-US">health compliance</Label>
+      </Rubric>
+   </Class>
+   <Class code="HDECD" kind="concept">
+      <Meta name="internalId" value="23415"/>
+      <SuperClass code="HOPERAT"/>
+      <Rubric id="d1e68698" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information used for handling deceased patient matters.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68716" kind="short">
+         <Label xml:lang="en-US">decedent</Label>
+      </Rubric>
+      <Rubric id="d1e68716" kind="preferred">
+         <Label xml:lang="en-US">decedent</Label>
+      </Rubric>
+   </Class>
+   <Class code="HDIRECT" kind="concept">
+      <Meta name="internalId" value="23416"/>
+      <SuperClass code="HOPERAT"/>
+      <Rubric id="d1e68727" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operation operations on information used to manage a patient directory.</p>
+            <p>
+               <b>Examples:</b>
+            </p>
+            <ul>
+               <li>facility</li>
+               <li>enterprise</li>
+               <li>payer</li>
+               <li>health information exchange patient directory</li>
+            </ul>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68766" kind="short">
+         <Label xml:lang="en-US">directory</Label>
+      </Rubric>
+      <Rubric id="d1e68766" kind="preferred">
+         <Label xml:lang="en-US">directory</Label>
+      </Rubric>
+   </Class>
+   <Class code="HLEGAL" kind="concept">
+      <Meta name="internalId" value="22690"/>
+      <SuperClass code="HOPERAT"/>
+      <Rubric id="d1e68777" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information for conducting activities required by legal proceeding.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68795" kind="short">
+         <Label xml:lang="en-US">legal</Label>
+      </Rubric>
+      <Rubric id="d1e68795" kind="preferred">
+         <Label xml:lang="en-US">legal</Label>
+      </Rubric>
+   </Class>
+   <Class code="HOUTCOMS" kind="concept">
+      <Meta name="internalId" value="22688"/>
+      <SuperClass code="HOPERAT"/>
+      <Rubric id="d1e68806" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information used for assessing results and comparative effectiveness achieved by health care practices and interventions.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68824" kind="short">
+         <Label xml:lang="en-US">health outcome measure</Label>
+      </Rubric>
+      <Rubric id="d1e68824" kind="preferred">
+         <Label xml:lang="en-US">health outcome measure</Label>
+      </Rubric>
+   </Class>
+   <Class code="HPRGRP" kind="concept">
+      <Meta name="internalId" value="22691"/>
+      <SuperClass code="HOPERAT"/>
+      <Rubric id="d1e68836" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information used for conducting activities to meet program accounting requirements.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68854" kind="short">
+         <Label xml:lang="en-US">health program reporting</Label>
+      </Rubric>
+      <Rubric id="d1e68854" kind="preferred">
+         <Label xml:lang="en-US">health program reporting</Label>
+      </Rubric>
+   </Class>
+   <Class code="HQUALIMP" kind="concept">
+      <Meta name="internalId" value="22687"/>
+      <SuperClass code="HOPERAT"/>
+      <Rubric id="d1e68865" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information used for conducting administrative activities to improve health care quality.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68883" kind="short">
+         <Label xml:lang="en-US">health quality improvement</Label>
+      </Rubric>
+      <Rubric id="d1e68883" kind="preferred">
+         <Label xml:lang="en-US">health quality improvement</Label>
+      </Rubric>
+   </Class>
+   <Class code="HSYSADMIN" kind="concept">
+      <Meta name="internalId" value="22695"/>
+      <SuperClass code="HOPERAT"/>
+      <Rubric id="d1e68894" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information to administer the electronic systems used for the delivery of health care.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68912" kind="short">
+         <Label xml:lang="en-US">health system administration</Label>
+      </Rubric>
+      <Rubric id="d1e68912" kind="preferred">
+         <Label xml:lang="en-US">health system administration</Label>
+      </Rubric>
+   </Class>
+   <Class code="MEMADMIN" kind="concept">
+      <Meta name="internalId" value="22694"/>
+      <SuperClass code="HOPERAT"/>
+      <Rubric id="d1e68923" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information to administer health care coverage to an enrollee under a policy or program.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68941" kind="short">
+         <Label xml:lang="en-US">member administration</Label>
+      </Rubric>
+      <Rubric id="d1e68941" kind="preferred">
+         <Label xml:lang="en-US">member administration</Label>
+      </Rubric>
+   </Class>
+   <Class code="PATADMIN" kind="concept">
+      <Meta name="internalId" value="22693"/>
+      <SuperClass code="HOPERAT"/>
+      <Rubric id="d1e68952" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information used for operational activities conducted to administer the delivery of health care to a patient.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68970" kind="short">
+         <Label xml:lang="en-US">patient administration</Label>
+      </Rubric>
+      <Rubric id="d1e68970" kind="preferred">
+         <Label xml:lang="en-US">patient administration</Label>
+      </Rubric>
+   </Class>
+   <Class code="PATSFTY" kind="concept">
+      <Meta name="internalId" value="22696"/>
+      <SuperClass code="HOPERAT"/>
+      <Rubric id="d1e68981" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information in processes related to ensuring the safety of health care.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e68999" kind="short">
+         <Label xml:lang="en-US">patient safety</Label>
+      </Rubric>
+      <Rubric id="d1e68999" kind="preferred">
+         <Label xml:lang="en-US">patient safety</Label>
+      </Rubric>
+   </Class>
+   <Class code="PERFMSR" kind="concept">
+      <Meta name="internalId" value="23417"/>
+      <SuperClass code="HOPERAT"/>
+      <Rubric id="d1e69011" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information used for monitoring performance of recommended health care practices and interventions.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69029" kind="short">
+         <Label xml:lang="en-US">performance measure</Label>
+      </Rubric>
+      <Rubric id="d1e69029" kind="preferred">
+         <Label xml:lang="en-US">performance measure</Label>
+      </Rubric>
+   </Class>
+   <Class code="RECORDMGT" kind="concept">
+      <Meta name="internalId" value="23418"/>
+      <SuperClass code="HOPERAT"/>
+      <Rubric id="d1e69040" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information used within the health records management process.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69058" kind="short">
+         <Label xml:lang="en-US">records management</Label>
+      </Rubric>
+      <Rubric id="d1e69058" kind="preferred">
+         <Label xml:lang="en-US">records management</Label>
+      </Rubric>
+   </Class>
+   <Class code="TRAIN" kind="concept">
+      <Meta name="internalId" value="23419"/>
+      <SuperClass code="HOPERAT"/>
+      <Rubric id="d1e69069" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information used in training and education.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69087" kind="short">
+         <Label xml:lang="en-US">training</Label>
+      </Rubric>
+      <Rubric id="d1e69087" kind="preferred">
+         <Label xml:lang="en-US">training</Label>
+      </Rubric>
+   </Class>
+   <Class code="CLMATTCH" kind="concept">
+      <Meta name="internalId" value="23421"/>
+      <SuperClass code="HPAYMT"/>
+      <Rubric id="d1e69098" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information for provision of additional clinical evidence in support of a request for coverage or payment for health services.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69116" kind="short">
+         <Label xml:lang="en-US">claim attachment</Label>
+      </Rubric>
+      <Rubric id="d1e69116" kind="preferred">
+         <Label xml:lang="en-US">claim attachment</Label>
+      </Rubric>
+   </Class>
+   <Class code="COVAUTH" kind="concept">
+      <Meta name="internalId" value="23422"/>
+      <SuperClass code="HPAYMT"/>
+      <Rubric id="d1e69127" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information for conducting prior authorization or predetermination of coverage for services.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69145" kind="short">
+         <Label xml:lang="en-US">coverage authorization</Label>
+      </Rubric>
+      <Rubric id="d1e69145" kind="preferred">
+         <Label xml:lang="en-US">coverage authorization</Label>
+      </Rubric>
+   </Class>
+   <Class code="COVERAGE" kind="concept">
+      <Meta name="internalId" value="23456"/>
+      <SuperClass code="HPAYMT"/>
+      <SubClass code="ELIGDTRM"/>
+      <SubClass code="ELIGVER"/>
+      <SubClass code="ENROLLM"/>
+      <Rubric id="d1e69156" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information for conducting activities related to coverage under a program or policy.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69174" kind="short">
+         <Label xml:lang="en-US">coverage under policy or program</Label>
+      </Rubric>
+      <Rubric id="d1e69174" kind="preferred">
+         <Label xml:lang="en-US">coverage under policy or program</Label>
+      </Rubric>
+   </Class>
+   <Class code="REMITADV" kind="concept">
+      <Meta name="internalId" value="23423"/>
+      <SuperClass code="HPAYMT"/>
+      <Rubric id="d1e69186" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information about the amount remitted for a health care claim.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69204" kind="short">
+         <Label xml:lang="en-US">remittance advice</Label>
+      </Rubric>
+      <Rubric id="d1e69204" kind="preferred">
+         <Label xml:lang="en-US">remittance advice</Label>
+      </Rubric>
+   </Class>
+   <Class code="CLINTRCH" kind="concept">
+      <Meta name="internalId" value="23424"/>
+      <SuperClass code="HRESCH"/>
+      <Rubric id="d1e69215" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information for conducting scientific investigations in accordance with clinical trial protocols to obtain health care knowledge.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69233" kind="short">
+         <Label xml:lang="en-US">clinical trial research</Label>
+      </Rubric>
+      <Rubric id="d1e69233" kind="preferred">
+         <Label xml:lang="en-US">clinical trial research</Label>
+      </Rubric>
+   </Class>
+   <Class code="NOPRODMTCH" kind="concept">
+      <Meta name="internalId" value="22909"/>
+      <SuperClass code="NOMATCH"/>
+      <Rubric id="d1e69244" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>There is no match for the product in the master file repository.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69265" kind="short">
+         <Label xml:lang="en-US">no product match</Label>
+      </Rubric>
+      <Rubric id="d1e69265" kind="preferred">
+         <Label xml:lang="en-US">no product match</Label>
+      </Rubric>
+   </Class>
+   <Class code="NOSERMTCH" kind="concept">
+      <Meta name="internalId" value="22910"/>
+      <SuperClass code="NOMATCH"/>
+      <Rubric id="d1e69276" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>There is no match for the service in the master file repository.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69297" kind="short">
+         <Label xml:lang="en-US">no service match</Label>
+      </Rubric>
+      <Rubric id="d1e69297" kind="preferred">
+         <Label xml:lang="en-US">no service match</Label>
+      </Rubric>
+   </Class>
+   <Class code="NOVERMTCH" kind="concept">
+      <Meta name="internalId" value="23279"/>
+      <SuperClass code="NOMATCH"/>
+      <Rubric id="d1e69308" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>There is no match for the record and version.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69329" kind="short">
+         <Label xml:lang="en-US">no version match</Label>
+      </Rubric>
+      <Rubric id="d1e69329" kind="preferred">
+         <Label xml:lang="en-US">no version match</Label>
+      </Rubric>
+   </Class>
+   <Class code="NOAGNTPERM" kind="concept">
+      <Meta name="internalId" value="22913"/>
+      <SuperClass code="NOPERM"/>
+      <Rubric id="d1e69340" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The agent does not have permission.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69361" kind="short">
+         <Label xml:lang="en-US">no agent permission</Label>
+      </Rubric>
+      <Rubric id="d1e69361" kind="preferred">
+         <Label xml:lang="en-US">no agent permission</Label>
+      </Rubric>
+   </Class>
+   <Class code="ACCRED" kind="concept">
+      <Meta name="internalId" value="22704"/>
+      <SuperClass code="OPERAT"/>
+      <Rubric id="d1e69408" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Operational activities conducted for the purposes of meeting of criteria defined by an accrediting entity for an activity, product, or service</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69429" kind="short">
+         <Label xml:lang="en-US">accreditation</Label>
+      </Rubric>
+      <Rubric id="d1e69429" kind="preferred">
+         <Label xml:lang="en-US">accreditation</Label>
+      </Rubric>
+   </Class>
+   <Class code="COMPL" kind="concept">
+      <Meta name="internalId" value="22702"/>
+      <SuperClass code="OPERAT"/>
+      <Rubric id="d1e69440" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Operational activities required to meet a mandate related to an activity, product, or service</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69461" kind="short">
+         <Label xml:lang="en-US">compliance</Label>
+      </Rubric>
+      <Rubric id="d1e69461" kind="preferred">
+         <Label xml:lang="en-US">compliance</Label>
+      </Rubric>
+   </Class>
+   <Class code="ENADMIN" kind="concept">
+      <Meta name="internalId" value="22705"/>
+      <SuperClass code="OPERAT"/>
+      <Rubric id="d1e69472" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Operational activities conducted to administer information relating to entities involves with an activity, product, or service</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69493" kind="short">
+         <Label xml:lang="en-US">entity administration</Label>
+      </Rubric>
+      <Rubric id="d1e69493" kind="preferred">
+         <Label xml:lang="en-US">entity administration</Label>
+      </Rubric>
+   </Class>
+   <Class code="OUTCOMS" kind="concept">
+      <Meta name="internalId" value="22701"/>
+      <SuperClass code="OPERAT"/>
+      <Rubric id="d1e69504" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Operational activities conducted for the purposes of assessing the results of an activity, product, or service</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69525" kind="short">
+         <Label xml:lang="en-US">outcome measure</Label>
+      </Rubric>
+      <Rubric id="d1e69525" kind="preferred">
+         <Label xml:lang="en-US">outcome measure</Label>
+      </Rubric>
+   </Class>
+   <Class code="PRGRPT" kind="concept">
+      <Meta name="internalId" value="22703"/>
+      <SuperClass code="OPERAT"/>
+      <Rubric id="d1e69536" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Operational activities conducted to meet program accounting requirements related to an activity, product, or service</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69557" kind="short">
+         <Label xml:lang="en-US">program reporting</Label>
+      </Rubric>
+      <Rubric id="d1e69557" kind="preferred">
+         <Label xml:lang="en-US">program reporting</Label>
+      </Rubric>
+   </Class>
+   <Class code="QUALIMP" kind="concept">
+      <Meta name="internalId" value="22700"/>
+      <SuperClass code="OPERAT"/>
+      <Rubric id="d1e69569" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Operational activities conducted for the purposes of improving the quality of an activity, product, or service</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69590" kind="short">
+         <Label xml:lang="en-US">quality improvement</Label>
+      </Rubric>
+      <Rubric id="d1e69590" kind="preferred">
+         <Label xml:lang="en-US">quality improvement</Label>
+      </Rubric>
+   </Class>
+   <Class code="SYSADMN" kind="concept">
+      <Meta name="internalId" value="22706"/>
+      <SuperClass code="OPERAT"/>
+      <Rubric id="d1e69601" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Operational activities conducted to administer the electronic systems used for an activity, product, or service</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69622" kind="short">
+         <Label xml:lang="en-US">system administration</Label>
+      </Rubric>
+      <Rubric id="d1e69622" kind="preferred">
+         <Label xml:lang="en-US">system administration</Label>
+      </Rubric>
+   </Class>
+   <Class code="FAMRQT" kind="concept">
+      <Meta name="internalId" value="23426"/>
+      <SuperClass code="PATRQT"/>
+      <Rubric id="d1e69633" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information in response to a request by a family member authorized by the patient.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69651" kind="short">
+         <Label xml:lang="en-US">family requested</Label>
+      </Rubric>
+      <Rubric id="d1e69651" kind="preferred">
+         <Label xml:lang="en-US">family requested</Label>
+      </Rubric>
+   </Class>
+   <Class code="PWATRNY" kind="concept">
+      <Meta name="internalId" value="23427"/>
+      <SuperClass code="PATRQT"/>
+      <Rubric id="d1e69662" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information in response to a request by a person appointed as the patient's legal representative.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69680" kind="short">
+         <Label xml:lang="en-US">power of attorney</Label>
+      </Rubric>
+      <Rubric id="d1e69680" kind="preferred">
+         <Label xml:lang="en-US">power of attorney</Label>
+      </Rubric>
+   </Class>
+   <Class code="SUPNWK" kind="concept">
+      <Meta name="internalId" value="23428"/>
+      <SuperClass code="PATRQT"/>
+      <Rubric id="d1e69691" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information in response to a request by a person authorized by the patient.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69709" kind="short">
+         <Label xml:lang="en-US">support network</Label>
+      </Rubric>
+      <Rubric id="d1e69709" kind="preferred">
+         <Label xml:lang="en-US">support network</Label>
+      </Rubric>
+   </Class>
+   <Class code="DISASTER" kind="concept">
+      <Meta name="internalId" value="23410"/>
+      <SuperClass code="PUBHLTH"/>
+      <Rubric id="d1e69720" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information used for provision of immediately needed health care to a population of living subjects located in a disaster zone.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69738" kind="short">
+         <Label xml:lang="en-US">disaster</Label>
+      </Rubric>
+      <Rubric id="d1e69738" kind="preferred">
+         <Label xml:lang="en-US">disaster</Label>
+      </Rubric>
+   </Class>
+   <Class code="THREAT" kind="concept">
+      <Meta name="internalId" value="23411"/>
+      <SuperClass code="PUBHLTH"/>
+      <Rubric id="d1e69750" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information used to prevent injury or disease to living subjects who may be the target of violence.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69768" kind="short">
+         <Label xml:lang="en-US">threat</Label>
+      </Rubric>
+      <Rubric id="d1e69768" kind="preferred">
+         <Label xml:lang="en-US">threat</Label>
+      </Rubric>
+   </Class>
+   <Class code="HMARKT" kind="concept">
+      <Meta name="internalId" value="22678"/>
+      <SuperClass code="PurposeOfUse"/>
+      <Rubric id="d1e69779" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information for marketing services and products related to health care.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69797" kind="short">
+         <Label xml:lang="en-US">healthcare marketing</Label>
+      </Rubric>
+      <Rubric id="d1e69797" kind="preferred">
+         <Label xml:lang="en-US">healthcare marketing</Label>
+      </Rubric>
+   </Class>
+   <Class code="HOPERAT" kind="concept">
+      <Meta name="internalId" value="22686"/>
+      <SuperClass code="PurposeOfUse"/>
+      <SubClass code="DONAT"/>
+      <SubClass code="FRAUD"/>
+      <SubClass code="GOV"/>
+      <SubClass code="HACCRED"/>
+      <SubClass code="HCOMPL"/>
+      <SubClass code="HDECD"/>
+      <SubClass code="HDIRECT"/>
+      <SubClass code="HLEGAL"/>
+      <SubClass code="HOUTCOMS"/>
+      <SubClass code="HPRGRP"/>
+      <SubClass code="HQUALIMP"/>
+      <SubClass code="HSYSADMIN"/>
+      <SubClass code="MEMADMIN"/>
+      <SubClass code="PATADMIN"/>
+      <SubClass code="PATSFTY"/>
+      <SubClass code="PERFMSR"/>
+      <SubClass code="RECORDMGT"/>
+      <SubClass code="TRAIN"/>
+      <Rubric id="d1e69808" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information used for conducting administrative and contractual activities related to the provision of health care.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69826" kind="short">
+         <Label xml:lang="en-US">healthcare operations</Label>
+      </Rubric>
+      <Rubric id="d1e69826" kind="preferred">
+         <Label xml:lang="en-US">healthcare operations</Label>
+      </Rubric>
+   </Class>
+   <Class code="HPAYMT" kind="concept">
+      <Meta name="internalId" value="22685"/>
+      <SuperClass code="PurposeOfUse"/>
+      <SubClass code="CLMATTCH"/>
+      <SubClass code="COVAUTH"/>
+      <SubClass code="COVERAGE"/>
+      <SubClass code="REMITADV"/>
+      <Rubric id="d1e69837" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information for conducting financial or contractual activities related to payment for provision of health care.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69855" kind="short">
+         <Label xml:lang="en-US">healthcare payment</Label>
+      </Rubric>
+      <Rubric id="d1e69855" kind="preferred">
+         <Label xml:lang="en-US">healthcare payment</Label>
+      </Rubric>
+   </Class>
+   <Class code="HRESCH" kind="concept">
+      <Meta name="internalId" value="22679"/>
+      <SuperClass code="PurposeOfUse"/>
+      <SubClass code="CLINTRCH"/>
+      <Rubric id="d1e69866" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information for conducting scientific investigations to obtain health care knowledge.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69884" kind="short">
+         <Label xml:lang="en-US">healthcare research</Label>
+      </Rubric>
+      <Rubric id="d1e69884" kind="preferred">
+         <Label xml:lang="en-US">healthcare research</Label>
+      </Rubric>
+   </Class>
+   <Class code="PATRQT" kind="concept">
+      <Meta name="internalId" value="23425"/>
+      <SuperClass code="PurposeOfUse"/>
+      <SubClass code="FAMRQT"/>
+      <SubClass code="PWATRNY"/>
+      <SubClass code="SUPNWK"/>
+      <Rubric id="d1e69895" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information in response to a patient's request.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69913" kind="short">
+         <Label xml:lang="en-US">patient requested</Label>
+      </Rubric>
+      <Rubric id="d1e69913" kind="preferred">
+         <Label xml:lang="en-US">patient requested</Label>
+      </Rubric>
+   </Class>
+   <Class code="PUBHLTH" kind="concept">
+      <Meta name="internalId" value="23409"/>
+      <SuperClass code="PurposeOfUse"/>
+      <SubClass code="DISASTER"/>
+      <SubClass code="THREAT"/>
+      <Rubric id="d1e69925" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information for conducting public health activities, such as the reporting of notifiable conditions.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69943" kind="short">
+         <Label xml:lang="en-US">public health</Label>
+      </Rubric>
+      <Rubric id="d1e69943" kind="preferred">
+         <Label xml:lang="en-US">public health</Label>
+      </Rubric>
+   </Class>
+   <Class code="TREAT" kind="concept">
+      <Meta name="internalId" value="22680"/>
+      <SuperClass code="PurposeOfUse"/>
+      <SubClass code="CAREMGT"/>
+      <SubClass code="CLINTRL"/>
+      <SubClass code="ETREAT"/>
+      <SubClass code="POPHLTH"/>
+      <Rubric id="d1e69954" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information for provision of health care.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e69972" kind="short">
+         <Label xml:lang="en-US">treatment</Label>
+      </Rubric>
+      <Rubric id="d1e69972" kind="preferred">
+         <Label xml:lang="en-US">treatment</Label>
+      </Rubric>
+   </Class>
+   <Class code="DOSECHG" kind="concept">
+      <Meta name="internalId" value="21705"/>
+      <SuperClass code="REPLACE"/>
+      <Rubric id="d1e69983" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The medication is being re-prescribed at a different dosage.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70004" kind="short">
+         <Label xml:lang="en-US">change in medication/dose</Label>
+      </Rubric>
+      <Rubric id="d1e70004" kind="preferred">
+         <Label xml:lang="en-US">change in medication/dose</Label>
+      </Rubric>
+   </Class>
+   <Class code="CAREMGT" kind="concept">
+      <Meta name="internalId" value="22683"/>
+      <SuperClass code="TREAT"/>
+      <Rubric id="d1e70015" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information for provision of health care coordination.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70033" kind="short">
+         <Label xml:lang="en-US">Care Management</Label>
+      </Rubric>
+      <Rubric id="d1e70033" kind="preferred">
+         <Label xml:lang="en-US">Care Management</Label>
+      </Rubric>
+   </Class>
+   <Class code="CLINTRL" kind="concept">
+      <Meta name="internalId" value="22684"/>
+      <SuperClass code="TREAT"/>
+      <Rubric id="d1e70044" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform health care as part of the clinical trial protocol.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70062" kind="short">
+         <Label xml:lang="en-US">clinical trial</Label>
+      </Rubric>
+      <Rubric id="d1e70062" kind="preferred">
+         <Label xml:lang="en-US">clinical trial</Label>
+      </Rubric>
+   </Class>
+   <Class code="ETREAT" kind="concept">
+      <Meta name="internalId" value="22682"/>
+      <SuperClass code="TREAT"/>
+      <Rubric id="d1e70073" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information for provision of immediately needed health care for an emergent condition.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70091" kind="short">
+         <Label xml:lang="en-US">Emergency Treatment</Label>
+      </Rubric>
+      <Rubric id="d1e70091" kind="preferred">
+         <Label xml:lang="en-US">Emergency Treatment</Label>
+      </Rubric>
+   </Class>
+   <Class code="POPHLTH" kind="concept">
+      <Meta name="internalId" value="22681"/>
+      <SuperClass code="TREAT"/>
+      <Rubric id="d1e70103" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To perform one or more operations on information for provision of health care to a population of living subjects, e.g., needle exchange program.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70121" kind="short">
+         <Label xml:lang="en-US">population health</Label>
+      </Rubric>
+      <Rubric id="d1e70121" kind="preferred">
+         <Label xml:lang="en-US">population health</Label>
+      </Rubric>
+   </Class>
+</ClaML>

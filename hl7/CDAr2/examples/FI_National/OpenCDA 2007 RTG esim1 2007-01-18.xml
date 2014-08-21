@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hl7fi="urn:hl7finland" xsi:schemaLocation="urn:hl7-org:v3 CDA_fi.xsd">
+	<!-- 
+********************************************************
+HL7 CDA R2 header tiedot
+********************************************************
+-->
+	<!-- 1. Asiakirjan aluekoodi pakollinen -->
+	<realmCode code="fi"/>
+	<!-- 2. Asiakirjan tyyppi pakollinen -->
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<!-- 3. Asiakirjan määrittelyt -->
+	<templateId extension="2006.2" root="1.2.246.777.11"/>
+	<!-- 4. Asiakirjan OID-tunnus pakollinen -->
+	<id extension="123" root="1.2.246.10.8259156.11005"/>
+	<!-- 5. Asiakirjan rekisteritunnus pakollinen -->
+	<code code="1" codeSystem="1.2.246.777.5.99901.2006" codeSystemName="Rekisteri" displayName="Potilasasiakirja"/>
+	<!-- 6. Asiakirjan otsikko -->
+	<title>Viiteaihio_malli_CDA_R2_2006-09-29</title>
+	<!-- 7. Asiakirjan luontiaika pakollinen-->
+	<effectiveTime value="20061106"/>
+	<!-- 8. Asiakirjan luottamuksellisuus -->
+	<confidentialityCode code="5" codeSystem="1.2.246.777.5.99902.2006" codeSystemName="Luottamuksellisuus" displayName="Salassapidettävä"/>
+	<!-- 9. Asiakirjan kieli pakollinen-->
+	<languageCode code="fi"/>
+	<!-- 10. Alkuperäisen asiakirjan OID-tunnus pakollinen-->
+	<setId extension="123" root="1.2.246.10.8259156.11005"/>
+	<!-- 11. Asiakirjan versio -->
+	<versionNumber value="1"/>
+	<!-- 12. Asiakirjan kopionti - ei käytössä viitesovelluksissa -->
+	<!-- 13. Potilaan tiedot pakollinen -->
+	<recordTarget>
+		<!-- Potilaan tiedot -->
+		<patientRole>
+			<!-- Potilaan henkilötunnus -->
+			<id extension="010144-123X" root="1.2.246.537.21.1"/>
+			<patient>
+				<!-- Potilaan nimi -->
+				<name>
+					<given>Erkki</given>
+					<given qualifier="CL">Matti</given>
+					<family>Meikäläinen</family>
+					<family qualifier="BR">Entinen</family>
+				</name>
+				<!-- Potilaan sukupuoli -->
+				<administrativeGenderCode code="1" codeSystem="1.2.246.777.5.1"/>
+				<!-- Potilaan syntymäaika -->
+				<birthTime value="19440101"/>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<!-- 14. Asiakirjan laatija -->
+	<author>
+		<time/>
+		<assignedAuthor>
+			<id/>
+		</assignedAuthor>
+	</author>
+	<!-- 15. dataEnterer ei käytössä Suomessa  -->
+	<!-- 16. informant ei käytössä Suomessa  -->
+	<!-- 17. custodian: Asiakirjan rekisterinpitäjä -->
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<!-- Rekisterinpitäjä/toimintayksikkö -->
+				<id extension="1" root="1.2.246.10.8259156.19"/>
+				<name>Satakunnan sairaanhoitopiiri</name>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<!-- 18. informationRecipient ei käytössä Suomessa -->
+	<!-- 19. legalAuthenticator  ei käytössä Suomessa  -->
+	<!-- 20. authenticator Asiakirjan  aitouden varmistaja ei käytössä Suomessa  -->
+	<!-- 21. participant Hoitoon osallistujat ei käytössä Suomessa -->
+	<!-- 22. inFufillmentOf ei käytössä Suomessa  -->
+	<!-- 23. documentationOf - Palvelut -->
+	<documentationOf>
+		<serviceEvent>
+			<code code="10" codeSystem="1.2.246.537.18.2003" codeSystemName="Palveluluokitus" displayName="Satshp röntgen"/>
+			<!-- Palvelun antoaika-->
+			<effectiveTime>
+				<low value="20061106"/>
+				<high value="20061106"/>
+			</effectiveTime>
+		</serviceEvent>
+	</documentationOf>
+	<!-- 24. relatedDocument  ei käytössä Suomessa  -->
+	<!-- 25. authorization ei käytössä Suomessa  -->
+	<!-- 26. componentOf Hoitoaika- ja hoitopaikkatiedot pakollinen -->
+	<componentOf>
+		<encompassingEncounter>
+			<effectiveTime>
+				<!-- Hoitojakson hoitoaika -->
+				<low value="20061106"/>
+				<high value="20061106"/>
+			</effectiveTime>
+			<encounterParticipant typeCode="CON">
+				<!-- Toimipaikan hoitoaika -->
+				<time>
+					<low value="20061106"/>
+					<high value="20061106"/>
+				</time>
+				<assignedEntity>
+					<id/>
+					<representedOrganization>
+						<!-- Toimipaikan OID-tunnus -->
+						<id extension="19" root="1.2.246.10.8259156.10"/>
+						<name>Kuvantaminen</name>
+					</representedOrganization>
+				</assignedEntity>
+			</encounterParticipant>
+			<encounterParticipant typeCode="CON">
+				<time>
+					<!-- Toimipaikan hoitoaika -->
+					<low value="20040422"/>
+					<high value="20040507"/>
+				</time>
+				<assignedEntity>
+					<id/>
+					<representedOrganization>
+						<!-- Toimipaikan OID-tunnus -->
+						<id extension="19" root="1.2.246.10.8259156.10"/>
+						<name>Kuvantaminen</name>
+					</representedOrganization>
+				</assignedEntity>
+			</encounterParticipant>
+		</encompassingEncounter>
+	</componentOf>
+	<!--
+********************************************************
+27 any HL7 CDA R2 Local Header
+********************************************************
+-->
+	<hl7fi:localHeader>
+		<!-- FI 1 hl7fi:description - asiakirjan kuvaus -->
+		<hl7fi:description>Kuvantaminen</hl7fi:description>
+		<!-- FI 2 hl7fi:tableOfContents - asiakirjan sisällysluettelo -->
+		<hl7fi:tableOfContents>
+			<hl7fi:contentsCode displayName="RTG" code="102" codeSystem="1.2.246.537.6.12.2002" codeSystemName="Lomake"/>
+		</hl7fi:tableOfContents>
+		<!-- FI 21 hl7fi:sender - viitteen lähettäjän osapuolitunniste ja nimi -->
+		<hl7fi:sender>
+			<hl7fi:senderCode codeSystem="1.2.246.10.8259156.18006" code="1" codeSystemName="Osapuolitunnukset organisaatiossa 8259156"/>
+			<hl7fi:senderName>satshpradutuotanto</hl7fi:senderName>
+		</hl7fi:sender>
+	</hl7fi:localHeader>
+	<!--  End of local Header -->
+	<!-- 
+********************************************************
+  CDA Body
+********************************************************
+-->
+	<!-- Kuvantamisen viite -->
+	<component>
+		<structuredBody>
+			<component>
+				<!-- Määrittelydokumentin tunniste-->
+				<templateId root="1.2.246.777.11.2006.16"/>
+				<section>
+					<id root="1.2.246.10.8259156.11005.123.1"/>
+					<code code="102" codeSystem="1.2.246.537.6.12.2002" codeSystemName="Lomake" displayName="RTG"/>
+					<!--Lomaketaso-->
+					<title>RTG</title>
+					<!-- Hoitoprosessin vaihe: Suunnittelu eli Pyyntö eli Lähete-->
+					<component>
+						<section>
+							<id root="1.2.246.10.8259156.11005.123.2"/>
+							<code code="14" codeSystem="1.2.246.537.6.13.2006" codeSystemName="Hoitoprosessin vaihe" displayName="Hoidon suunnittelu"/>
+							<title>Hoidon suunnittelu</title>
+							<!-- Potilaan tiedot -->
+							<subject typeCode="SBJ">
+								<relatedSubject classCode="PAT">
+									<!-- Potilaan henkilötunnus -->
+									<code code="010144-123X" codeSystem="1.2.246.537.21.1"/>
+									<subject>
+										<!-- Potilaan nimi -->
+										<name>
+											<given>Erkki</given>
+											<given qualifier="CL">Matti</given>
+											<family>Meikäläinen</family>
+											<family qualifier="BR">Entinen</family>
+										</name>
+										<!-- Potilaan sukupuoli -->
+										<administrativeGenderCode code="1" codeSystem="1.2.246.777.5.1"/>
+										<!-- Potilaan syntymäaika -->
+										<birthTime value="19440101"/>
+									</subject>
+								</relatedSubject>
+							</subject>
+							<!-- Varsinaiset pyynnön tiedot -->
+							<component>
+								<section>
+									<id root="1.2.246.10.8259156.11005.123.3"/>
+									<code code="53" codeSystem="1.2.246.537.6.14.2006" codeSystemName="Otsikko" displayName="Tutkimukset"/>
+									<title>Pyyntö</title>
+									<!-- Pyyntö eli lähete näyttömuodossa -->
+									<text>
+										<paragraph>
+											<content>Harjavallan terveyskeskus</content>
+										</paragraph>
+										<paragraph>
+											<content>1.11.2006</content>
+										</paragraph>
+										<paragraph>
+											<content>LL Pekka Ponteva</content>
+										</paragraph>
+										<br/>
+										<paragraph ID="OID1.2.246.10.8259156.11005.123.4">
+											<caption>Tutkimus</caption>
+											<content>GD1QA Thoraxin natiiviröntgen makuuasennossa</content>
+										</paragraph>
+										<paragraph>
+											<content>Thoraxin natiiviröntgen makuuasennossa selällään ja vatsallaan, epäillään keuhkoveritulppaa</content>
+										</paragraph>
+										<br/>
+									</text>
+									<!-- Tilaajan tiedot rakenteisessa muodossa: pyynnön tekijä ja yksikkö -->
+									<author>
+										<!-- time kenttä ilmoittaa kuvantamisen pyyntöasiakirjan laatimisen ajankohdan -->
+										<time value="200411010800"/>
+										<assignedAuthor>
+											<!-- pyynnön tehneen lääkärin SV-numero -->
+											<id extension="12345" root="1.2.246.537.25"/>
+											<!-- pyynnön tehneen lääkärin erikoisala -->
+											<code code="1" codeSystem="1.2.246.537.6.24" codeSystemName="Hilmo - Terveydenhuollon erikoisalat" displayName="Sisätaudit"/>
+											<!-- pyynnön tehneen lääkärin henkilötiedot -->
+											<assignedPerson>
+												<name>
+													<prefix>LL</prefix>
+													<given>Pekka </given>
+													<family>Ponteva</family>
+												</name>
+											</assignedPerson>
+											<representedOrganization>
+												<!--pyynnön tehneen lääkärin toimipaikan OID tunnus -->
+												<id extension="2" root="1.2.246.10.2037384.10"/>
+												<name>Harjavallan terveyskeskus</name>
+											</representedOrganization>
+										</assignedAuthor>
+									</author>
+									<entry>
+										<!-- Mood code RQO = ilmaisee että kyseessä on pyyntö -->
+										<observation classCode="OBS" moodCode="RQO">
+											<id extension="2233" root="1.2.246.10.2037384.20.2006.123"/>
+											<!-- Tilattu tutkimus -->
+											<code code="GD1QA" codeSystem="1.2.246.537.6.4.2005" codeSystemName="Radiologinen tutkimus- ja toimenpideluokitus 2005" displayName=" Thoraxin natiiviröntgen makuuasennossa"/>
+											<subject typeCode="SBJ">
+												<relatedSubject classCode="PAT">
+													<code code="010144-123X" codeSystem="1.2.246.537.21.1"/>
+												</relatedSubject>
+											</subject>
+										</observation>
+									</entry>
+								</section>
+							</component>
+						</section>
+					</component>
+					<!-- Hoitoprosessin vaihe: Toteutus -->
+					<component>
+						<section>
+							<id root="1.2.246.10.8259156.11005.123.5"/>
+							<code code="15" codeSystem="1.2.246.537.6.13.2006" codeSystemName="Hoitoprosessin vaihe" displayName="Hoidon toteutus"/>
+							<title>Hoidon toteutus</title>
+							<!-- Tehdyn tutkimuksen tiedot -->
+							<component>
+								<section>
+									<id root="1.2.246.10.8259156.11005.123.6"/>
+									<code code="53" codeSystem="1.2.246.537.6.14.2006" codeSystemName="Otsikko" displayName="Tutkimukset"/>
+									<title>Tehdyt tutkimukset</title>
+									<text>
+										<paragraph>
+											<content>Satshp kuvantaminen</content>
+										</paragraph>
+										<paragraph>
+											<content>2.11.2006</content>
+										</paragraph>
+										<paragraph>
+											<content>Röntgenhoitaja Säde Vaara</content>
+										</paragraph>
+										<br/>
+										<paragraph ID="OID1.2.246.10.8259156.11005.123.7">
+											<caption>Tutkimus</caption>
+											<content>GD1QA Thoraxin natiiviröntgen makuuasennossa</content>
+										</paragraph>
+										<!-- Kuvalinkki, viitataan AC-numeroon -->
+										<paragraph>
+											<content>Diagnostinen kuva<renderMultiMedia referencedObject="OID1.2.246.10.8259156.11005.123.8"/></content>
+										</paragraph>
+									</text>
+									<!-- Tutkimuksen tiedot rakenteisessa muodossa -->
+									<entry>
+										<observation classCode="OBS" moodCode="EVN">
+											<!-- Näytenumero eli tutkimukseen liittyvien kuvien OID-tunnus-->
+											<!-- Kuva-arkiston OID + AC numero -->
+											<id root="1.2.246.10.8259156.12005.1" extension="5007"/>
+											<!-- Tutkimuksen koodi (Kuntaliiton tutkimusnimikkeistö ja selväkielinen nimi displayname attribuutissa -->
+											<code code="GD1QA" codeSystem="1.2.246.537.6.4.2005" codeSystemName="Radiologinen tutkimus- ja toimenpideluokitus 2005" displayName=" Thoraxin natiiviröntgen makuuasennossa">
+												<!--Viittaus näyttömuodossa olevaan tutkimuskoodiin-->
+												<originalText>
+													<reference value="#OID1.2.246.537.10.15675350.11.2004.1235.7"/>
+												</originalText>
+												<!-- Tarkenne tutkimuskoodiin: puolisuus -->
+												<qualifier>
+													<name codeSystemName="Radiologian toimenpiteen tarkenteet">
+														<originalText>puolisuus</originalText>
+													</name>
+													<value codeSystemName="Radiologinen tutkimus- ja toimenpideluokitus 2005">
+														<originalText>vasen</originalText>
+													</value>
+												</qualifier>
+												<!-- Tarkenne tutkimuskoodiin: anatominen alue -->
+												<qualifier>
+													<name codeSystemName="Radiologian toimenpiteen tarkenteet">
+														<originalText>anatominen alue</originalText>
+													</name>
+													<value codeSystemName="Anatominen alue -koodisto">
+														<originalText>keuhkot</originalText>
+													</value>
+												</qualifier>
+											</code>
+											<!-- Tutkimuksen tekohetki -->
+											<effectiveTime value="200611021430"/>
+											<!-- Tutkimuksen tekijä ja organisaatio-->
+											<performer>
+												<assignedEntity>
+													<!-- Henkilön tunniste, esim. henkilönumero -->
+													<id/>
+													<assignedPerson>
+														<name>
+															<given>Säde</given>
+															<family>Vaara</family>
+															<prefix>Röntgenhoitaja</prefix>
+														</name>
+													</assignedPerson>
+													<representedOrganization>
+														<!-- toimipaikan OID tunnus -->
+														<id extension="19" root="1.2.246.10.8259156.10"/>
+														<name>Satshp kuvantaminen</name>
+													</representedOrganization>
+												</assignedEntity>
+											</performer>
+											<!-- Viittaus alkuperäiseen pyyntöön -->
+											<reference typeCode="REFR">
+												<externalObservation classCode="OBS" moodCode="EVN">
+													<id extension="2233" root="1.2.246.10.2037384.20.2006.123"/>
+												</externalObservation>
+											</reference>
+										</observation>
+									</entry>
+									<!-- Kuvalinkki tai -linkit -->
+									<entry>
+										<observationMedia classCode="OBS" moodCode="EVN" ID="OID1.2.246.10.8259156.11005.123.8">
+											<!--Kuvan OID-tunnus, AC-numero-->
+											<id root="1.2.246.10.8259156.12005.1" extension="5007"/>
+											<!-- Arkiston tunnus -->
+											<value xsi:type="ED">
+												<reference value="TYKSPACS"/>
+											</value>
+										</observationMedia>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<id root="1.2.246.10.8259156.11005.123.7"/>
+									<!-- Kyse on lausunnosta -->
+									<code code="62" codeSystem="1.2.246.537.6.14.2006" codeSystemName="Otsikko" displayName="Lausunnot"/>
+									<title>Lausunto</title>
+									<text>
+										<paragraph>
+											<content>Satshp kuvantaminen</content>
+										</paragraph>
+										<paragraph>
+											<content>2.11.2006</content>
+										</paragraph>
+										<paragraph>
+											<content>LL Reino Radiologi</content>
+										</paragraph>
+										<br/>
+										<!-- Varsinainen lausuntoteksti -->
+										<paragraph ID="OID1.2.246.537.10.15675350.11.2004.1235.9">
+											<content>Näyttää kovasti merkilliseltä ja kummalliselta. En ole ikinä ennen nähnyt mitään vastaavaa.</content>
+										</paragraph>
+									</text>
+									<!-- Lausujan tiedot -->
+									<author>
+										<!-- tutkimuksen tekoaika, tässä tapauksessa lausunnon tekoaika  -->
+										<time value="200611031530"/>
+										<assignedAuthor>
+											<!-- lääkärin SV-numero -->
+											<id extension="123456" root="1.2.246.537.25"/>
+											<assignedPerson>
+												<name>
+													<prefix>LL</prefix>
+													<given>Reino</given>
+													<family>Radiologi</family>
+												</name>
+											</assignedPerson>
+											<representedOrganization>
+												<!-- toimipaikan OID tunnus -->
+												<id extension="19" root="1.2.246.537.10.15675350.10"/>
+												<name>Satshp kuvantaminen</name>
+											</representedOrganization>
+										</assignedAuthor>
+									</author>
+									<!-- Tähän kohtaan lausunnon rakenteiset tiedot -->
+									<entry>
+										<observation classCode="OBS" moodCode="EVN">
+											<!-- Lausunnon yksikäsitteinen tunniste -->
+											<id extension="lausunnon nro" root="1.2.246.537.10.15675350.11.2004.999"/>
+											<code code="1" codeSystem="1.1" displayName=" "/>
+											<!-- potilaan tiedot -->
+											<subject typeCode="SBJ">
+												<relatedSubject classCode="PAT">
+													<!-- Potilaan henkilötunnus -->
+													<code code="010144-123X" codeSystem="1.2.246.537.21.1"/>
+												</relatedSubject>
+											</subject>
+											<!-- Linkki tutkimuksiin, jotka tässä on lausututtu. Toistuma toistamalla reference -elementtiä. -->
+											<reference typeCode="REFR">
+												<externalObservation classCode="OBS" moodCode="EVN">
+													<!-- Näytenumero eli kuvan OID-tunnus, esimerkiksi AC-numero-->
+													<id root="1.2.246.10.8259156.94.1" extension="5007"/>
+												</externalObservation>
+											</reference>
+										</observation>
+									</entry>
+								</section>
+							</component>
+						</section>
+					</component>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

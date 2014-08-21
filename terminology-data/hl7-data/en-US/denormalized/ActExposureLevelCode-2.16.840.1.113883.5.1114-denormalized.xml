@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="487"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1114"/>
+   <Title name="ActExposureLevelCode" date="2012-08-02" version="1.000">A qualitative measure of the degree of exposure to the causative agent. This includes concepts such as "low", "medium" and "high". This quantifies how the quantity that was available to be administered to the target differs from typical or background levels of the substance.</Title>
+   <Class code="rootClass">
+      <SubClass subCount="3" code="_ActExposureLevelCode" kind="abstract">
+         <Rubric id="d1e59783" kind="preferred">
+            <Label xml:lang="en-US">ActExposureLevelCode</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">ActExposureLevelCode</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">A qualitative measure of the degree of exposure to the causative agent. This includes concepts such as "low", "medium" and "high". This quantifies how the quantity that was available to be administered to the target differs from typical or background levels of the substance.</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActExposureLevelCode" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22372"/>
+      <SubClass code="HIGH" subCount="0">
+         <Rubric id="d1e59816" kind="preferred">
+            <Label xml:lang="en-US">high</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LOW" subCount="0">
+         <Rubric id="d1e59848" kind="preferred">
+            <Label xml:lang="en-US">low</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="MEDIUM" subCount="0">
+         <Rubric id="d1e59880" kind="preferred">
+            <Label xml:lang="en-US">medium</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e59770" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A qualitative measure of the degree of exposure to the causative agent. This includes concepts such as "low", "medium" and "high". This quantifies how the quantity that was available to be administered to the target differs from typical or background levels of the substance.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e59783" kind="short">
+         <Label xml:lang="en-US">ActExposureLevelCode</Label>
+      </Rubric>
+      <Rubric id="d1e59783" kind="preferred">
+         <Label xml:lang="en-US">ActExposureLevelCode</Label>
+      </Rubric>
+   </Class>
+   <Class code="HIGH" kind="concept">
+      <Meta name="internalId" value="22373"/>
+      <SuperClass code="_ActExposureLevelCode">
+         <Rubric id="d1e59783" kind="preferred">
+            <Label xml:lang="en-US">ActExposureLevelCode</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e59795" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Exposure to an agent at a relatively high level above background.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e59816" kind="short">
+         <Label xml:lang="en-US">high</Label>
+      </Rubric>
+      <Rubric id="d1e59816" kind="preferred">
+         <Label xml:lang="en-US">high</Label>
+      </Rubric>
+   </Class>
+   <Class code="LOW" kind="concept">
+      <Meta name="internalId" value="22374"/>
+      <SuperClass code="_ActExposureLevelCode">
+         <Rubric id="d1e59783" kind="preferred">
+            <Label xml:lang="en-US">ActExposureLevelCode</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e59827" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Exposure to an agent at a relatively low level above background.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e59848" kind="short">
+         <Label xml:lang="en-US">low</Label>
+      </Rubric>
+      <Rubric id="d1e59848" kind="preferred">
+         <Label xml:lang="en-US">low</Label>
+      </Rubric>
+   </Class>
+   <Class code="MEDIUM" kind="concept">
+      <Meta name="internalId" value="22375"/>
+      <SuperClass code="_ActExposureLevelCode">
+         <Rubric id="d1e59783" kind="preferred">
+            <Label xml:lang="en-US">ActExposureLevelCode</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e59859" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Exposure to an agent at a relatively moderate level above background.A</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e59880" kind="short">
+         <Label xml:lang="en-US">medium</Label>
+      </Rubric>
+      <Rubric id="d1e59880" kind="preferred">
+         <Label xml:lang="en-US">medium</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

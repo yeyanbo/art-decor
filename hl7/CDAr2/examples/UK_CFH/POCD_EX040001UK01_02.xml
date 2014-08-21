@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	This example message is provided for illustrative purposes only. It has had no clinical validation. Whilst every effort has been taken to ensure that the examples are consistent with the
+	message specification contained within the MiM, where there are conflicts with the written message specification or schema, the specification or schema shall be considered to take
+	precedence
+-->
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xsi:schemaLocation="urn:hl7-org:v3 ../../schemas/POCD_MT000001UK04.xsd" classCode="DOCCLIN" moodCode="EVN" xmlns:npfitlc="NPFIT:HL7:Localisation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3">
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040" />
+	<npfitlc:messageType root="2.16.840.1.113883.2.1.3.2.4.18.17" extension="POCD_MT040001UK01" />
+	<id root="94EAB991-3147-4354-861C-26C1E2848FD0" />
+	<code code="xxx" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" />
+	<title>Admission to Inpatient Care</title>
+	<effectiveTime value="200602181145" />
+	<confidentialityCode code="V" displayName="very restricted" codeSystem="2.16.840.1.113883.5.25" />
+	<setId root="A6536CBF-04C1-43CF-8222-5C717A08E9A6" />
+	<versionNumber value="1" />
+	<recordTarget typeCode="RCT" contextControlCode="OP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145020UK03#PatientRole" />
+		<patientRole classCode="PAT">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145020UK03#PatientRole" />
+			<id root="2.16.840.1.113883.2.1.4.1" extension="9413946396" />
+		</patientRole>
+	</recordTarget>
+	<author typeCode="AUT" contextControlCode="OP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145001UK03#AssignedAuthorSDS" />
+		<functionCode code="OA" displayName="Originating Author" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.178" />
+		<time value="200602181145" />
+		<assignedAuthor classCode="ASSIGNED">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#AssignedAuthorSDS" />
+			<id root="1.2.826.0.1285.0.2.0.67" extension="102022428982" />
+			<id root="1.2.826.0.1285.0.2.0.65" extension="102022426986" />
+			<code code="R8010" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Clerical Access Role" />
+			<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#assignedPerson" />
+				<name>
+					<given>Kirby</given>
+					<family>McLennan</family>
+				</name>
+			</assignedPerson>
+			<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#representedOrganization" />
+				<id root="2.16.840.1.113883.2.1.3.2.4.19.2" extension="RFM" />
+				<name>Hebburn NHS Trust</name>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian typeCode="CST">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145018UK03#representedCustodianOrganization" />
+		<assignedCustodian classCode="ASSIGNED">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145018UK03#AssignedCustodian" />
+			<representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145018UK03#representedCustodianOrganization" />
+				<id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="RFM" />
+				<name>Hebburn NHS Trust</name>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<informationRecipient typeCode="PRCP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145017UK03#IntendedRecipient" />
+		<intendedRecipient classCode="ASSIGNED">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145017UK03#IntendedRecipient" />
+			<receivedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145017UK03#representedOrganization" />
+				<id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="YEA" />
+				<name>NATIONAL CARE RECORDS SERVICE SPINE</name>
+			</receivedOrganization>
+		</intendedRecipient>
+	</informationRecipient>
+	<informationRecipient typeCode="PRCP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145021UK03#AssignedEntitySDS" />
+		<intendedRecipient classCode="ASSIGNED">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145021UK03#AssignedEntitySDS" />
+			<npfitlc:recipientRoleCode code="GP" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="General Practitioner" />
+			<id root="1.2.826.0.1285.0.2.0.67" extension="102018565981" />
+			<id root="1.2.826.0.1285.0.2.0.65" extension="102018563985" />
+			<informationRecipient classCode="PSN" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145021UK03#assignedPerson" />
+				<name>
+					<given>Karrie</given>
+					<family>Gillespie</family>
+				</name>
+			</informationRecipient>
+		</intendedRecipient>
+	</informationRecipient>
+	<componentOf typeCode="COMP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146060UK01#EncompassingEncounter" />
+		<encompassingEncounter classCode="ENC" moodCode="EVN">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146060UK01#EncompassingEncounter" />
+			<id root="F8071552-962E-4A32-BAB9-A74FFF7E3520" />
+			<code code="11429006" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Consultation" />
+			<effectiveTime>
+				<center value="200602181000" />
+			</effectiveTime>
+			<dischargeDispositionCode />
+			<responsibleParty typeCode="RESP">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146060UK01#responsibleParty" />
+				<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145022UK02#AssignedEntitySDS" />
+				<assignedEntity classCode="ASSIGNED">
+					<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145022UK02#AssignedEntitySDS" />
+					<id root="1.2.826.0.1285.0.2.0.67" extension="102022458984" />
+					<id root="1.2.826.0.1285.0.2.0.65" extension="102022456988" />
+					<code code="R8000" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Clinical Practitioner Access Role" />
+					<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+						<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145022UK02#assignedPerson" />
+						<name>
+							<given>Davey</given>
+							<family>Leahy</family>
+						</name>
+					</assignedPerson>
+				</assignedEntity>
+			</responsibleParty>
+			<location typeCode="LOC">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146060UK01#location" />
+				<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145024UK01#HealthCareFacility" />
+				<healthCareFacility classCode="SDLOC">
+					<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145024UK01#HealthCareFacility" />
+					<id nullFlavor="NA" />
+					<code code="309984004" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="General surgical department" />
+				</healthCareFacility>
+			</location>
+		</encompassingEncounter>
+	</componentOf>
+	<component typeCode="COMP" contextConductionInd="true">
+		<structuredBody classCode="DOCBODY" moodCode="EVN">
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<id root="347C2E2C-118C-4566-9F37-88A547507D8C" />
+					<!--Here are the coded entries-->
+					<entry typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146027UK04#Treatment" />
+						<procedure classCode="PROC" moodCode="INT">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146027UK04#Treatment" />
+							<id root="11F50B1D-00E4-4891-8AD4-DE7D94F73B7A" />
+							<code code="405613005" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Planned procedure">
+								<originalText>
+									<reference value="#a5" />
+								</originalText>
+								<qualifier>
+									<name code="363589002" displayName="Associated procedure" />
+									<value code="44558001" displayName="Repair of inguinal hernia">
+										<qualifier>
+											<name code="272741003" displayName="Laterality" />
+											<value code="24028007" displayName="Right" />
+										</qualifier>
+									</value>
+								</qualifier>
+							</code>
+							<statusCode code="active" />
+							<effectiveTime value="200602181200" />
+						</procedure>
+					</entry>
+					<!--Here are the coded entries-->
+					<entry typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146057UK01#AdmissionProcedure" />
+						<procedure classCode="PROC" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146057UK01#AdmissionProcedure" />
+							<id root="08B7BF2A-97D7-4B49-9C65-D70500B860A7" />
+							<code code="305056002" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Admission procedure">
+								<originalText>
+									<reference value="#a1" />
+								</originalText>
+							</code>
+							<statusCode code="completed" />
+							<effectiveTime value="200602181000" />
+							<entryRelationship typeCode="COMP" contextConductionInd="true">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146057UK01#entryRelationship" />
+								<seperatableInd value="false" />
+								<observation classCode="OBS" moodCode="EVN">
+									<code code="12" codeSystem="2.16.840.1.113883.2.1.3.2.4.16.51" displayName="Elective Admission - Booked" />
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="COMP" contextConductionInd="true">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146057UK01#entryRelationship2" />
+								<seperatableInd value="false" />
+								<observation classCode="OBS" moodCode="EVN">
+									<code code="EDD" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.220" displayName="Estimated Discharge Date">
+										<originalText>
+											<reference value="#a3" />
+										</originalText>
+									</code>
+									<value xsi:type="TS" value="20060220" />
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="COMP" contextConductionInd="true">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146057UK01#entryRelationship3" />
+								<seperatableInd value="false" />
+								<observation classCode="OBS" moodCode="EVN">
+									<code code="19" codeSystem="2.16.840.1.113883.2.1.3.2.4.16.56" displayName="Usual Place of Residence">
+										<originalText>
+											<reference value="#a2" />
+										</originalText>
+									</code>
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="COMP" contextConductionInd="true">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146057UK01#entryRelationship4" />
+								<seperatableInd value="false" />
+								<observation classCode="OBS" moodCode="EVN">
+									<code code="RAF" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.220" displayName="Readmission Flag">
+										<originalText>
+											<reference value="#a4" />
+										</originalText>
+									</code>
+									<value xsi:type="BL" value="false" />
+								</observation>
+							</entryRelationship>
+						</procedure>
+					</entry>
+					<component typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146061UK01#Section1" />
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#Section1" />
+							<id root="320469B0-D7EB-450F-BE5D-B4DDCF9DE476" />
+							<title>Admission</title>
+							<text>
+								<content styleCode="Bold">Method of Admission: </content>
+								<content ID="a1">Elective Admission – Booked</content>
+								<br />
+								<content styleCode="Bold">Source of Admission: </content>
+								<content ID="a2">Usual Place of Residence</content>
+								<br />
+								<content styleCode="Bold">Estimated Discharge Date: </content>
+								<content ID="a3">20-Feb-2006</content>
+								<br />
+								<content styleCode="Bold">Readmission: </content>
+								<content ID="a4">No</content>
+							</text>
+							<component typeCode="COMP" contextConductionInd="true">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#component1" />
+								<section classCode="DOCSECT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#section2" />
+									<id root="7BE2857A-892B-4374-BFA0-ACDA8F190AB1" />
+									<title>Reason for Admission</title>
+									<text>
+										<list listType="unordered">
+											<item>
+												<content ID="a5">Planned inguinal hernia repair, right. .</content>
+											</item>
+										</list>
+									</text>
+								</section>
+							</component>
+						</section>
+					</component>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

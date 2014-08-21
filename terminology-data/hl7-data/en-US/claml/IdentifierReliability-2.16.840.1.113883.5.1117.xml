@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="508"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1117"/>
+   <Title name="IdentifierReliability" date="2012-08-02" version="1.000">Specifies the reliability with which the identifier is known. This attribute MAY be used to assist with identifier matching algorithms.</Title>
+   <Authors>
+      <Author name="Responsible"/>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="ISS" kind="concept">
+      <Meta name="internalId" value="22614"/>
+      <Rubric id="d1e141111" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The identifier was issued by the system responsible for constructing the instance.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e141127" kind="short">
+         <Label xml:lang="en-US">Issued by System</Label>
+      </Rubric>
+      <Rubric id="d1e141127" kind="preferred">
+         <Label xml:lang="en-US">Issued by System</Label>
+      </Rubric>
+   </Class>
+   <Class code="UNV" kind="concept">
+      <Meta name="internalId" value="22653"/>
+      <Rubric id="d1e141139" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The identifier was provided to the system that constructed the instance, but has not been verified. e.g. a Drivers license entered manually into a system by a user.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e141155" kind="short">
+         <Label xml:lang="en-US">Unverified by system</Label>
+      </Rubric>
+      <Rubric id="d1e141155" kind="preferred">
+         <Label xml:lang="en-US">Unverified by system</Label>
+      </Rubric>
+   </Class>
+   <Class code="VER" kind="concept">
+      <Meta name="internalId" value="22652"/>
+      <Rubric id="d1e141166" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The identifier was not issued by the system responsible for constructing the instance, but the system that captured the id has verified the identifier with the issuing authority, or with another system that has verified the identifier.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e141182" kind="short">
+         <Label xml:lang="en-US">Verified by system</Label>
+      </Rubric>
+      <Rubric id="d1e141182" kind="preferred">
+         <Label xml:lang="en-US">Verified by system</Label>
+      </Rubric>
+   </Class>
+</ClaML>

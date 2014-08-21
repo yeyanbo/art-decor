@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="134"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1001"/>
+   <Title name="ActMood" date="2012-08-02" version="1.000">OpenIssue: In Ballot 2009May, a strong Negative vote was lodged against several of the concept definitions in the vocabulary used for Act.moodCode. The vote was found "Persuasive With Mod", with the understanding that M and M would undertake a detailed review of these concept definitions for a future release of the RIM.</Title>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="_ActMoodCompletionTrack" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="20935"/>
+      <Meta name="Name:Class" value="Process"/>
+      <SubClass code="_ActMoodPotential"/>
+      <SubClass code="EVN"/>
+      <SubClass code="INT"/>
+      <Rubric id="d1e60123" kind="definition">
+         <Label xml:lang="en-US">
+            <p>These are moods describing activities as they progress in the business cycle, from defined, through planned and ordered to completed.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e60138" kind="short">
+         <Label xml:lang="en-US">ActMoodCompletionTrack</Label>
+      </Rubric>
+      <Rubric id="d1e60138" kind="preferred">
+         <Label xml:lang="en-US">ActMoodCompletionTrack</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActMoodPredicate" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="20936"/>
+      <Meta name="Name:Class" value="Predicate"/>
+      <SubClass code="CRT"/>
+      <SubClass code="EXPEC"/>
+      <SubClass code="OPT"/>
+      <Rubric id="d1e60149" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>An act that expresses condition statements for other acts.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e60167" kind="short">
+         <Label xml:lang="en-US">ActMoodPredicate</Label>
+      </Rubric>
+      <Rubric id="d1e60167" kind="preferred">
+         <Label xml:lang="en-US">ActMoodPredicate</Label>
+      </Rubric>
+   </Class>
+   <Class code="ARQ" kind="concept">
+      <Meta name="internalId" value="11625"/>
+      <Meta name="Name:Class" value="AppointmentRequest"/>
+      <SuperClass code="_ActMoodActRequest"/>
+      <Rubric id="d1e60178" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>A request act that is specialized for the appointment scheduling request/fulfillment cycle. An appointment request is fulfilled only and completely by an appointment (APT), i.e., all that the appointment request intends is to create an appointment <i>(the actual act may well not happen if that is the professional decision during the appointment)</i>.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e60204" kind="short">
+         <Label xml:lang="en-US">appointment request</Label>
+      </Rubric>
+      <Rubric id="d1e60204" kind="preferred">
+         <Label xml:lang="en-US">appointment request</Label>
+      </Rubric>
+   </Class>
+   <Class code="PERMRQ" kind="concept">
+      <Meta name="internalId" value="21382"/>
+      <Meta name="Name:Class" value="PermissionRequest"/>
+      <SuperClass code="_ActMoodActRequest"/>
+      <Rubric id="d1e60216" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>A request for a permission to perform the act. Typically a payer (or possibly a supervisor) is being requested to give permission to perform the act. As opposed to the RQO, the requestee is not asked to perform or cause to perform the act but only to give the permission.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e60239" kind="short">
+         <Label xml:lang="en-US">permission request</Label>
+      </Rubric>
+      <Rubric id="d1e60239" kind="preferred">
+         <Label xml:lang="en-US">permission request</Label>
+      </Rubric>
+   </Class>
+   <Class code="RQO" kind="concept">
+      <Meta name="internalId" value="19973"/>
+      <Meta name="Name:Class" value="Request"/>
+      <Meta name="code-retired" value="ORD"/>
+      <SuperClass code="_ActMoodActRequest"/>
+      <Rubric id="d1e60251" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>A request act that is specialized for an event request/fulfillment cycle.</p>
+            <p>
+               <b>UsageNotes:</b>The fulfillment cycle may involve intermediary fulfilling acts in moods such as PRMS, APT, or even another RQO before being fulfilled by the final event.</p>
+            <p>
+               <b>UsageNotes:</b>The concepts of a "request" and an "order" are viewed as different, because there is an implication of a mandate associated with order. In practice, however, this distinction has no general functional value in the inter-operation of health care computing. "Orders" are commonly refused for a variety of clinical and business reasons, and the notion of a "request" obligates the recipient (the fulfiller) to respond to the sender (the author). Indeed, in many regions, including Australia and Europe, the common term used is "request."</p>
+            <p>Thus, the concept embodies both notions, as there is no useful distinction to be made. If a mandate is to be associated with a request, this will be embodied in the "local" business rules applied to the transactions. Should HL7 desire to provide a distinction between these in the future, the individual concepts could be added as specializations of this concept.</p>
+            <p>The critical distinction here, is the difference between this concept and an "intent", of which it is a specialization. An intent involves decisions by a single party, the author. A request, however, involves decisions by two parties, the author and the fulfiller, with an obligation on the part of the fulfiller to respond to the request indicating that the fulfiller will indeed fulfill the request.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e60292" kind="short">
+         <Label xml:lang="en-US">request</Label>
+      </Rubric>
+      <Rubric id="d1e60292" kind="preferred">
+         <Label xml:lang="en-US">request</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActMoodPotential" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="23087"/>
+      <Meta name="Name:Class" value="Potential"/>
+      <SuperClass code="_ActMoodCompletionTrack"/>
+      <SubClass code="DEF"/>
+      <SubClass code="PERM"/>
+      <SubClass code="SLOT"/>
+      <Rubric id="d1e60307" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>A possible act.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e60330" kind="short">
+         <Label xml:lang="en-US">potential</Label>
+      </Rubric>
+      <Rubric id="d1e60330" kind="preferred">
+         <Label xml:lang="en-US">potential</Label>
+      </Rubric>
+   </Class>
+   <Class code="EVN" kind="concept">
+      <Meta name="internalId" value="10201"/>
+      <Meta name="Name:Class" value="Event"/>
+      <SuperClass code="_ActMoodCompletionTrack"/>
+      <Rubric id="d1e60342" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>An act that actually happens (may be an ongoing act or a documentation of a past act).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e60365" kind="short">
+         <Label xml:lang="en-US">event (occurrence)</Label>
+      </Rubric>
+      <Rubric id="d1e60365" kind="preferred">
+         <Label xml:lang="en-US">event (occurrence)</Label>
+      </Rubric>
+   </Class>
+   <Class code="INT" kind="concept">
+      <Meta name="internalId" value="10199"/>
+      <Meta name="Name:Class" value="Intent"/>
+      <SuperClass code="_ActMoodCompletionTrack"/>
+      <SubClass code="_ActMoodDesire"/>
+      <SubClass code="PRMS"/>
+      <Rubric id="d1e60377" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>An intention or plan for an act.</p>
+            <p>
+               <b>&gt;UsageNotes:</b>The final outcome of the intent, the act that is intended to occur, is always an event. However the final outcome may be reached indirectly via steps through other intents, such as promise, permission request, or an appointment that may lead to an actual event to occur. Alternatively, the intended act may never occur.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e60406" kind="short">
+         <Label xml:lang="en-US">intent</Label>
+      </Rubric>
+      <Rubric id="d1e60406" kind="preferred">
+         <Label xml:lang="en-US">intent</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActMoodActRequest" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="23089"/>
+      <Meta name="Name:Class" value="ActRequest"/>
+      <SuperClass code="_ActMoodDesire"/>
+      <SubClass code="ARQ"/>
+      <SubClass code="PERMRQ"/>
+      <SubClass code="RQO"/>
+      <Rubric id="d1e60418" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>A request (or order) for an act that is part of a defined request/fulfillment cycle.</p>
+            <p>
+               <b>UsageNotes:</b>Use of an HL7 defined request/fulfillment framework is not required to use this mood code.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e60447" kind="short">
+         <Label xml:lang="en-US">act request</Label>
+      </Rubric>
+      <Rubric id="d1e60447" kind="preferred">
+         <Label xml:lang="en-US">act request</Label>
+      </Rubric>
+   </Class>
+   <Class code="PRP" kind="concept">
+      <Meta name="internalId" value="16726"/>
+      <Meta name="Name:Class" value="Proposal"/>
+      <SuperClass code="_ActMoodDesire"/>
+      <SubClass code="RMD"/>
+      <Rubric id="d1e60459" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>A suggestion that an act might be performed. Not an explicit request, and professional responsibility may or may not be present.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e60482" kind="short">
+         <Label xml:lang="en-US">proposal</Label>
+      </Rubric>
+      <Rubric id="d1e60482" kind="preferred">
+         <Label xml:lang="en-US">proposal</Label>
+      </Rubric>
+   </Class>
+   <Class code="DEF" kind="concept">
+      <Meta name="internalId" value="10198"/>
+      <Meta name="Name:Class" value="Definition"/>
+      <SuperClass code="_ActMoodPotential"/>
+      <Rubric id="d1e60494" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>A definition of a kind of act that can occur .</p>
+            <p>
+               <b>OpenIssue:</b>The semantic constructs embodied in DEF and CRT moods seem indistinguishable, and their uses can readily be determined by the context in which these are used. Therefore, this OpenIssue has been created to declare that it is likely that ActMood.DEF will be "retired" in the future in favor of the more general ActMood.CRT.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e60523" kind="short">
+         <Label xml:lang="en-US">definition</Label>
+      </Rubric>
+      <Rubric id="d1e60523" kind="preferred">
+         <Label xml:lang="en-US">definition</Label>
+      </Rubric>
+   </Class>
+   <Class code="PERM" kind="concept">
+      <Meta name="internalId" value="21381"/>
+      <Meta name="Name:Class" value="Permission"/>
+      <SuperClass code="_ActMoodPotential"/>
+      <Rubric id="d1e60536" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>A kind of act that defines a permission that has been granted.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e60559" kind="short">
+         <Label xml:lang="en-US">permission</Label>
+      </Rubric>
+      <Rubric id="d1e60559" kind="preferred">
+         <Label xml:lang="en-US">permission</Label>
+      </Rubric>
+   </Class>
+   <Class code="SLOT" kind="concept">
+      <Meta name="internalId" value="19168"/>
+      <Meta name="Name:Class" value="ResourceSlot"/>
+      <SuperClass code="_ActMoodPotential"/>
+      <Rubric id="d1e60571" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>A kind of act that may occur during the specified time period.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e60594" kind="short">
+         <Label xml:lang="en-US">resource slot</Label>
+      </Rubric>
+      <Rubric id="d1e60594" kind="preferred">
+         <Label xml:lang="en-US">resource slot</Label>
+      </Rubric>
+   </Class>
+   <Class code="CRT" kind="concept">
+      <Meta name="internalId" value="22042"/>
+      <Meta name="Name:Class" value="Criterion"/>
+      <SuperClass code="_ActMoodPredicate"/>
+      <SubClass code="EVN.CRT"/>
+      <Rubric id="d1e60606" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>
+                  <i>Deprecation Comment:</i>
+               </b>This concept This codes should no longer be used. Instead, set attribute Act.isCriterionInd to "true" and use the desired mood for your criterion.</p>
+            <p>
+               <b>Definition:</b>A condition that must be true for the source act to be considered.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e60647" kind="short">
+         <Label xml:lang="en-US">criterion</Label>
+      </Rubric>
+      <Rubric id="d1e60647" kind="preferred">
+         <Label xml:lang="en-US">criterion</Label>
+      </Rubric>
+   </Class>
+   <Class code="EXPEC" kind="concept">
+      <Meta name="internalId" value="21574"/>
+      <Meta name="Name:Class" value="Expectation"/>
+      <SuperClass code="_ActMoodPredicate"/>
+      <SubClass code="GOL"/>
+      <SubClass code="RSK"/>
+      <Rubric id="d1e60659" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>An act that is considered to have some noteworthy likelihood of occurring in the future (has_match = event).</p>
+            <p>
+               <b>Examples:</b>Prognosis of a condition, Expected date of discharge from hospital, patient will likely need an emergency decompression of the intracranial pressure by morning.</p>
+            <p>
+               <b>UsageNotes:</b>INT (intent) reflects a plan for the future, which is a declaration to do something. This contrasts with expectation, which is a prediction that something will happen in the future. GOL (goal) reflects a hope rather than a prediction. RSK (risk) reflects a potential negative event that may or may not be expected to happen.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e60694" kind="short">
+         <Label xml:lang="en-US">expectation</Label>
+      </Rubric>
+      <Rubric id="d1e60694" kind="preferred">
+         <Label xml:lang="en-US">expectation</Label>
+      </Rubric>
+   </Class>
+   <Class code="OPT" kind="concept">
+      <Meta name="internalId" value="10204"/>
+      <Meta name="Name:Class" value="Option"/>
+      <SuperClass code="_ActMoodPredicate"/>
+      <Rubric id="d1e60706" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>One of a set of acts that specify an option for the property values that the parent act may have. Typically used in definitions or orders to describe alternatives. An option can only be used as a group, that is, all assigned values must be used together. The actual mood of the act is the same as the parent act, and they must be linked by an actrelationship with type = OPTN.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e60729" kind="short">
+         <Label xml:lang="en-US">option</Label>
+      </Rubric>
+      <Rubric id="d1e60729" kind="preferred">
+         <Label xml:lang="en-US">option</Label>
+      </Rubric>
+   </Class>
+   <Class code="EVN.CRT" kind="concept">
+      <Meta name="internalId" value="10203"/>
+      <Meta name="Name:Class" value="EventCriterion"/>
+      <SuperClass code="CRT"/>
+      <Rubric id="d1e60741" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>
+                  <i>Deprecation Comment:</i>
+               </b>This concept This codes should no longer be used. Instead, set attribute Act.isCriterionInd to "true" and use the desired mood for your criterion.</p>
+            <p>
+               <b>Definition:</b>A criterion (CRT) that has_match = an event (EVN).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e60782" kind="short">
+         <Label xml:lang="en-US">event criterion</Label>
+      </Rubric>
+      <Rubric id="d1e60782" kind="preferred">
+         <Label xml:lang="en-US">event criterion</Label>
+      </Rubric>
+   </Class>
+   <Class code="GOL" kind="concept">
+      <Meta name="internalId" value="18864"/>
+      <Meta name="Name:Class" value="Goal"/>
+      <SuperClass code="EXPEC"/>
+      <Rubric id="d1e60891" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>An expectation that is considered to be desirable to occur in the future</p>
+            <p>
+               <b>Examples:</b>Target weight below 80Kg, Stop smoking, Regain ability to walk, goal is to administer thrombolytics to candidate patients presenting with acute myocardial infarction.</p>
+            <p>
+               <b>UsageNotes:</b>INT (intent) reflects a plan for the future, which is a declaration to do something. This contrasts with goal which doesn't represent an intention to act, merely a hope for an eventual result. A goal is distinct from the intended actions to reach that goal. "I will reduce the dose of drug x to 20mg" is an intent. "I hope to be able to get the patient to the point where I can reduce the dose of drug x to 20mg" is a goal. EXPEC (expectation) reflects a prediction rather than a hope. RSK (risk) reflects a potential negative event rather than a hope.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e60926" kind="short">
+         <Label xml:lang="en-US">Goal</Label>
+      </Rubric>
+      <Rubric id="d1e60926" kind="preferred">
+         <Label xml:lang="en-US">Goal</Label>
+      </Rubric>
+   </Class>
+   <Class code="RSK" kind="concept">
+      <Meta name="internalId" value="21575"/>
+      <Meta name="Name:Class" value="Risk"/>
+      <SuperClass code="EXPEC"/>
+      <Rubric id="d1e60938" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>An act that may occur in the future and which is regarded as undesirable</p>
+            <p>
+               <b>Examples:</b>Increased risk of DVT, at risk for sub-acute bacterial endocarditis.</p>
+            <p>
+               <b>UsageNotes:</b>Note: An observation in RSK mood expresses the undesirable act, and not the underlying risk factor. A risk factor that is present (e.g. obesity, smoking, etc) should be expressed in event mood. INT (intent) reflects a plan for the future, which is a declaration to do something. This contrasts with RSK (risk), which is the potential that something negative will occur that may or may not ever happen. GOL (goal) reflects a hope to achieve something. EXPEC (expectation) is the prediction of a positive or negative event. This contrasts with RSK (risk), which is the potential that something negative will occur that may or may not ever happen, and may not be expected to happen.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e60973" kind="short">
+         <Label xml:lang="en-US">risk</Label>
+      </Rubric>
+      <Rubric id="d1e60973" kind="preferred">
+         <Label xml:lang="en-US">risk</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActMoodDesire" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="23088"/>
+      <Meta name="Name:Class" value="Desire"/>
+      <SuperClass code="INT"/>
+      <SubClass code="_ActMoodActRequest"/>
+      <SubClass code="PRP"/>
+      <Rubric id="d1e60985" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>A desire to have an act occur.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61008" kind="short">
+         <Label xml:lang="en-US">desire</Label>
+      </Rubric>
+      <Rubric id="d1e61008" kind="preferred">
+         <Label xml:lang="en-US">desire</Label>
+      </Rubric>
+   </Class>
+   <Class code="PRMS" kind="concept">
+      <Meta name="internalId" value="16728"/>
+      <Meta name="Name:Class" value="Promise"/>
+      <SuperClass code="INT"/>
+      <SubClass code="APT"/>
+      <Rubric id="d1e61021" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>A commitment to perform an act (may be either solicited or unsolicited). The committer becomes responsible to the other party for executing the act, and, as a consequence, the other party may rely on the first party to perform or cause to perform the act.</p>
+            <p>
+               <b>UsageNotes:</b>Commitments may be retracted or cancelled.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61050" kind="short">
+         <Label xml:lang="en-US">promise</Label>
+      </Rubric>
+      <Rubric id="d1e61050" kind="preferred">
+         <Label xml:lang="en-US">promise</Label>
+      </Rubric>
+   </Class>
+   <Class code="APT" kind="concept">
+      <Meta name="internalId" value="11626"/>
+      <Meta name="Name:Class" value="Appointment"/>
+      <SuperClass code="PRMS"/>
+      <Rubric id="d1e61126" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>An act that has been scheduled to be performed at a specific place and time.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61149" kind="short">
+         <Label xml:lang="en-US">appointment</Label>
+      </Rubric>
+      <Rubric id="d1e61149" kind="preferred">
+         <Label xml:lang="en-US">appointment</Label>
+      </Rubric>
+   </Class>
+   <Class code="RMD" kind="concept">
+      <Meta name="internalId" value="21571"/>
+      <Meta name="Name:Class" value="Recommendation"/>
+      <SuperClass code="PRP"/>
+      <Rubric id="d1e61161" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>A suggestion that an act should be performed with an acceptance of some degree of professional responsibility for the resulting act. Not an explicit request. .</p>
+            <p>
+               <b>UsageNotes:</b>Where there is no clear definition or applicable concept of "professional responsibilityâ€?, RMD becomes indistinguishable from PRP. .</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e61190" kind="short">
+         <Label xml:lang="en-US">recommendation</Label>
+      </Rubric>
+      <Rubric id="d1e61190" kind="preferred">
+         <Label xml:lang="en-US">recommendation</Label>
+      </Rubric>
+   </Class>
+</ClaML>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../schemas/CDA.xsd">
+	<!-- OID für HL7 registrierte Modelle und Identifikator der CDA Release 2 Hierarchical Description -->
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<!-- Dokumenten-ID -->
+	<id extension="0987654321" root="1.2.3.4.5.6.7.8.9.0"/>
+	<!-- Rezepttyp -->
+	<code code="01" codeSystem="1.2.276.0.76.5.100" displayName="Standard-Rezept, apothekenpflichtige Produkte"/>
+	<!-- Erstellungsdatum des Dokuments -->
+	<effectiveTime value="200605100913"/>
+	<!-- Grad der Offenlegung der Informationen -->
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+	<!-- Versicherter -->
+	<recordTarget>
+		<patientRole>
+			<!-- Versicherten ID -->
+			<id extension="1234567890" root="1.2.276.0.76.4.8"/>
+		</patientRole>
+	</recordTarget>
+	<!-- Daten des Dispensierenden -->
+	<author>
+		<!-- Einlösedatum / Einlöseuhrzeit -->
+		<time value="200605100911"/>
+		<assignedAuthor>
+			<id nullFlavor="NASK"/>
+			<!-- Hauptapotheke (= dispensierende Apotheke) -->
+			<representedOrganization>
+				<!-- IK -->
+				<id extension="336267100" root="1.2.3.4.5.6.7.8.9.0" assigningAuthorityName="SVI"/>
+				<!-- Name -->
+				<name>Löwenapotheke</name>
+				<addr>
+					<!-- Straße -->
+					<streetName>Kochstraße</streetName>
+					<!-- Hausnummer -->
+					<houseNumber>3</houseNumber>
+					<!-- Stadt -->
+					<city>Trier</city>
+					<!-- PLZ -->
+					<postalCode>54290</postalCode>
+					<!-- Wohnsitzländercode -->
+					<country>DE</country>
+				</addr>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<!-- 'Aufseher' -->
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<!-- IK der Hauptapotheke -->
+				<id extension="336267100" root="1.2.3.4.5.6.7.8.9.0"/>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<!-- Verlinkung zu Verordnungsdatensatz -->
+	<relatedDocument typeCode="APND">
+		<parentDocument>
+			<id extension="1234567890" root="1.2.3.4.5.6.7.8.9.0"/>
+		</parentDocument>
+	</relatedDocument>	
+	<component>
+		<structuredBody>
+			<component>
+				<section>
+					<code code="29304-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<text>
+						<table>
+							<thead>
+								<!-- Überschriften -->
+								<tr>
+									<th>Art der Dispensierung</th>
+									<th>Abgabetag</th>
+									<th>Name der Rezeptur</th>
+									<th>Rezepturkennzeichen</th>
+									<th>Darreichungsform</th>
+									<th>Name oder PZN des Bestandteils</th>
+									<th>Menge und Einheit des Bestandteils</th>
+									<th>Name oder PZN des Bestandteils</th>
+									<th>Menge und Einheit des Bestandteils</th>
+									<th>Name oder PZN des Bestandteils</th>
+									<th>Menge und Einheit des Bestandteils</th>
+									<th>Kommentar der Apotheke</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- Inhalt -->
+								<tr>
+									<td>Rezeptur</td>
+									<td>10.05.2006</td>
+									<td>Clotrimazol-Waschkonzentrat mit 18 Prozent Anteil an waschaktiven Substanzen</td>
+									<td>9999011</td>
+									<td>Seife</td>
+									<td>900387227</td>
+									<td>2 g</td>
+									<td>Cocamidopropylbetain-Lösung 30 Prozent</td>
+									<td>14 g</td>
+									<td>Propylenglycol</td>
+									<td>10 g</td>
+									<td>nach Rücksprache mit Arzt nur 40g dispensiert</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<!-- Art der Dispensierung: Rezeptur -->
+							<code code="X-DISP" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+							<!-- Abgabetag -->
+							<effectiveTime value="20060510"/>
+							<!-- Darreichungsform -->
+							<administrationUnitCode code="SEI" codeSystem="1.2.276.0.76.5.118" displayName="Seife"/>
+							<consumable>
+								<manufacturedProduct>
+									<manufacturedLabeledDrug>
+										<!-- Rezepturkennzeichen -->
+										<code code="9999011" codeSystem="1.2.3.4.5.6.7.8.9.0"/>
+										<!-- Name der Rezeptur -->
+										<name>Clotrimazol-Waschkonzentrat mit 18 Prozent Anteil an waschaktiven Substanzen</name>
+									</manufacturedLabeledDrug>
+								</manufacturedProduct>
+							</consumable>
+							<entryRelationship typeCode="COMP">
+								<supply classCode="SPLY" moodCode="EVN">
+									<!-- Gesamtmenge und -einheit der Rezeptur -->
+									<quantity value="40" unit="g"/>
+									<!-- 1. Bestandteil der Rezeptur -->
+									<entryRelationship typeCode="COMP">
+										<supply moodCode="EVN" classCode="SPLY">
+											<!-- Menge und Einheit des Bestandteils -->
+											<quantity value="2.0" unit="g"/>
+											<product>
+												<manufacturedProduct>
+													<manufacturedLabeledDrug>
+														<!-- PZN der Bestandteils -->
+														<code code="900387227" codeSystem="1.2.276.0.76.4.6"/>
+														<!-- Name des Bestandteils -->
+														<name>Clotrimazol</name>
+													</manufacturedLabeledDrug>
+												</manufacturedProduct>
+											</product>
+										</supply>
+									</entryRelationship>
+									<!-- 2. Bestandteil der Rezeptur -->
+									<entryRelationship typeCode="COMP">
+										<supply moodCode="EVN" classCode="SPLY">
+											<!-- Menge und Einheit des Bestandteils -->
+											<quantity value="14.0" unit="g"/>
+											<product>
+												<manufacturedProduct>
+													<manufacturedLabeledDrug>
+														<!-- Name des Bestandteils -->
+														<name>Cocamidopropylbetain-Lösung 30 Prozent</name>
+													</manufacturedLabeledDrug>
+												</manufacturedProduct>
+											</product>
+										</supply>
+									</entryRelationship>
+									<!-- 3. Bestandteil der Rezeptur -->
+									<entryRelationship typeCode="COMP">
+										<supply moodCode="EVN" classCode="SPLY">
+											<!-- Menge und Einheit des Bestandteils -->
+											<quantity value="10.0" unit="g"/>
+											<product>
+												<manufacturedProduct>
+													<manufacturedLabeledDrug>
+														<!-- Name des Bestandteils -->
+														<name>Propylenglycol</name>
+													</manufacturedLabeledDrug>
+												</manufacturedProduct>
+											</product>
+										</supply>
+									</entryRelationship>
+									<!-- analog: weitere Bestandteile -->
+								</supply>
+							</entryRelationship>
+						</substanceAdministration>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="xar" name="DECOR-services">
+    <property name="project.title" value="DECOR services"/>
+    <property name="project.version" value="1.1.3"/>
+    <property name="project.abbrev" value="DECOR-services"/>
+    <property name="project.app" value="DECOR-services"/>
+    <property name="project.uri" value="http://art-decor.org/ns/decor/services"/>
+    <property name="build.dir" value="build"/>
+    <target name="xar">
+        <mkdir dir="${build.dir}"/>
+        <copy file="expath-pkg.xml.tmpl" tofile="expath-pkg.xml" filtering="true" overwrite="true">
+            <filterset>
+                <filter token="project.title" value="${project.title}"/>
+                <filter token="project.version" value="${project.version}"/>
+                <filter token="project.abbrev" value="${project.abbrev}"/>
+                <filter token="project.uri" value="${project.uri}"/>
+            </filterset>
+        </copy>
+        <zip basedir="." destfile="${build.dir}/${project.app}-${project.version}.xar" excludes="${build.dir}/* expath-pkg.xml.tmpl"/>
+    </target>
+</project>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="130"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.143"/>
+   <Title name="URLScheme" date="2012-08-02" version="1.000">A Universal Resource Locator (URL) is a type of telecommunications address specified as Internet standard RFC 1738 [http://www.isi.edu/in-notes/rfc1738.txt]. The URL specifies the protocol and the contact point defined by that protocol for the resource.</Title>
+   <Class code="rootClass">
+      <SubClass subCount="0" code="cid" kind="concept">
+         <Rubric id="d1e255593" kind="preferred">
+            <Label xml:lang="en-US">Content ID</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="file" kind="concept">
+         <Rubric id="d1e255617" kind="preferred">
+            <Label xml:lang="en-US">File</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="ftp" kind="concept">
+         <Rubric id="d1e255641" kind="preferred">
+            <Label xml:lang="en-US">FTP</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="hl7-att" kind="concept">
+         <Rubric id="d1e255668" kind="preferred">
+            <Label xml:lang="en-US">HL7 Attachment</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="http" kind="concept">
+         <Rubric id="d1e255695" kind="preferred">
+            <Label xml:lang="en-US">HTTP</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="mailto" kind="concept">
+         <Rubric id="d1e255722" kind="preferred">
+            <Label xml:lang="en-US">Mailto</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="mllp" kind="concept">
+         <Rubric id="d1e255750" kind="preferred">
+            <Label xml:lang="en-US">MLLP</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="nfs" kind="concept">
+         <Rubric id="d1e255777" kind="preferred">
+            <Label xml:lang="en-US">NFS</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="tel" kind="concept">
+         <Rubric id="d1e255801" kind="preferred">
+            <Label xml:lang="en-US">Telephone</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="telnet" kind="concept">
+         <Rubric id="d1e255828" kind="preferred">
+            <Label xml:lang="en-US">Telnet</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">URLScheme</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">A Universal Resource Locator (URL) is a type of telecommunications address specified as Internet standard RFC 1738 [http://www.isi.edu/in-notes/rfc1738.txt]. The URL specifies the protocol and the contact point defined by that protocol for the resource.</Label>
+      </Rubric>
+   </Class>
+   <Class code="cid" kind="concept">
+      <Meta name="internalId" value="22603"/>
+      <Rubric id="d1e255568" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>cid: is the most common mechanism used in webservices. A cid: reference points from the SOAP body to other content in the mime package in which the SOAP envelope is wrapped</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e255593" kind="short">
+         <Label xml:lang="en-US">Content ID</Label>
+      </Rubric>
+      <Rubric id="d1e255593" kind="preferred">
+         <Label xml:lang="en-US">Content ID</Label>
+      </Rubric>
+   </Class>
+   <Class code="file" kind="concept">
+      <Meta name="internalId" value="14872"/>
+      <Rubric id="d1e255604" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Host-specific local file names [RCF 1738]. Note that the file scheme works only for local files. There is little use for exchanging local file names between systems, since the receiving system likely will not be able to access the file.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e255617" kind="short">
+         <Label xml:lang="en-US">File</Label>
+      </Rubric>
+      <Rubric id="d1e255617" kind="preferred">
+         <Label xml:lang="en-US">File</Label>
+      </Rubric>
+   </Class>
+   <Class code="ftp" kind="concept">
+      <Meta name="internalId" value="14871"/>
+      <Rubric id="d1e255628" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The File Transfer Protocol (FTP) [RFC 1738].</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e255641" kind="short">
+         <Label xml:lang="en-US">FTP</Label>
+      </Rubric>
+      <Rubric id="d1e255641" kind="preferred">
+         <Label xml:lang="en-US">FTP</Label>
+      </Rubric>
+   </Class>
+   <Class code="hl7-att" kind="concept">
+      <Meta name="internalId" value="22604"/>
+      <Rubric id="d1e255652" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A reference to an HL7 attachment by it's identifier, which takes the form hl7-att:[II.literal], such as hl7-att:2.1.16.3.9.12345.2.39.3:ABC123</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e255668" kind="short">
+         <Label xml:lang="en-US">HL7 Attachment</Label>
+      </Rubric>
+      <Rubric id="d1e255668" kind="preferred">
+         <Label xml:lang="en-US">HL7 Attachment</Label>
+      </Rubric>
+   </Class>
+   <Class code="http" kind="concept">
+      <Meta name="internalId" value="14870"/>
+      <Rubric id="d1e255679" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Hypertext Transfer Protocol [RFC 2068].</p>
+            <p>http://www.ietf.org/rfc/rfc2068.txt</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e255695" kind="short">
+         <Label xml:lang="en-US">HTTP</Label>
+      </Rubric>
+      <Rubric id="d1e255695" kind="preferred">
+         <Label xml:lang="en-US">HTTP</Label>
+      </Rubric>
+   </Class>
+   <Class code="mailto" kind="concept">
+      <Meta name="internalId" value="14869"/>
+      <Rubric id="d1e255706" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Electronic mail address [RFC 2368]</p>
+            <p>http://www.ietf.org/rfc/rfc2368.txt</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e255722" kind="short">
+         <Label xml:lang="en-US">Mailto</Label>
+      </Rubric>
+      <Rubric id="d1e255722" kind="preferred">
+         <Label xml:lang="en-US">Mailto</Label>
+      </Rubric>
+   </Class>
+   <Class code="mllp" kind="concept">
+      <Meta name="internalId" value="21461"/>
+      <Rubric id="d1e255734" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Mimimal Lower Layer Protocol. See Transport Specification: MLLP, Release 2 (HL7 V3 Transport specification).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e255750" kind="short">
+         <Label xml:lang="en-US">MLLP</Label>
+      </Rubric>
+      <Rubric id="d1e255750" kind="preferred">
+         <Label xml:lang="en-US">MLLP</Label>
+      </Rubric>
+   </Class>
+   <Class code="nfs" kind="concept">
+      <Meta name="internalId" value="14873"/>
+      <Rubric id="d1e255761" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Network File System protocol [RFC 2224]. Some sites use NFS servers to share data files.</p>
+            <p>http://www.ietf.org/rfc/rfc2224.txt</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e255777" kind="short">
+         <Label xml:lang="en-US">NFS</Label>
+      </Rubric>
+      <Rubric id="d1e255777" kind="preferred">
+         <Label xml:lang="en-US">NFS</Label>
+      </Rubric>
+   </Class>
+   <Class code="tel" kind="concept">
+      <Meta name="internalId" value="14867"/>
+      <Rubric id="d1e255788" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A voice telephone number [http://www.ietf.org/rfc/rfc3966.txt and http://www.ietf.org/rfc/rfc2806.txt].</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e255801" kind="short">
+         <Label xml:lang="en-US">Telephone</Label>
+      </Rubric>
+      <Rubric id="d1e255801" kind="preferred">
+         <Label xml:lang="en-US">Telephone</Label>
+      </Rubric>
+   </Class>
+   <Class code="telnet" kind="concept">
+      <Meta name="internalId" value="14874"/>
+      <Rubric id="d1e255812" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Reference to interactive sessions [RFC 1738]. Some sites, (e.g., laboratories) have TTY based remote query sessions that can be accessed through telnet.</p>
+            <p>http://www.ietf.org/rfc/rfc1738.txt</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e255828" kind="short">
+         <Label xml:lang="en-US">Telnet</Label>
+      </Rubric>
+      <Rubric id="d1e255828" kind="preferred">
+         <Label xml:lang="en-US">Telnet</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

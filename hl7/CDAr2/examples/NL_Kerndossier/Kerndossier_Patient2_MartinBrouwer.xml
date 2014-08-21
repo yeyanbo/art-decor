@@ -1,0 +1,703 @@
+<?xml version="1.0"?>
+<!-- Voorbeeld Kerndossier, "Patient 2" -->
+<!-- Gebruikte voorbeeld OIDs:
+	2.16.840.1.113883.19.3.1 ID mechanisme voor concerns 
+	2.16.840.1.113883.19.3.2 ID mechanisme voor concern-gerelateerde observaties
+	2.16.840.1.113883.19.4  ID Mechanisme voor documenten IDs
+	2.16.840.1.113883.19.5  ID mechanisme voor patienten
+	2.16.840.1.113883.19.6  ID mechanisme voor organisaties en organisatiedelen
+	2.16.840.1.113883.19.7  ID mechanisme voor software applicaties
+	2.16.840.1.113883.19.8  ID mechanisme voor medewerkers
+-->
+<?xml-stylesheet type="text/xsl" href="xsl/cda-kerndossier.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ./schemas/CDA.xsd">
+	<!-- 
+********************************************************
+  CDA Header
+********************************************************
+	-->
+	<!-- eis H01 -->
+	<realmCode code="NL"/>
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<!-- eis H02 ; Kerndossier CDA Implementatiehandleiding -->
+	<templateId root="2.16.840.1.113883.2.4.3.11.15"/>
+	<!-- eis H03 ; HL7 Nederland header implementatiehandleiding -->
+	<templateId root="2.16.840.1.113883.2.4.6.10.100001"/>
+	<id extension="110567" root="2.16.840.1.113883.19.4"/>
+	<!-- eis H04 ; document type -->
+	<code code="34133-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+		displayName="Summarizaion of Episode note"/>
+	<title>Kerndossier Martin Bouwman 28-02-2011</title>
+	<!-- eis H05; tijd moet tot op seconden precies -->
+	<effectiveTime value="20110228160000"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+	<!-- eis H06; taal van document -->
+	<languageCode code="nl-NL"/>
+	<!-- eis H10 - 1 recordtarget/patient -->
+	<recordTarget>
+		<patientRole>
+			<!-- eis H11 ; tenminste 1 patient ID (hier: organisatie interne patient ID)-->
+			<id extension="8899901" root="2.16.840.1.113883.19.5"/>
+			<!-- eis H12 ; BSN is verplicht INDIEN bekend bij zender -->
+			<!-- eis H13; indien kerndossier te gebruiken buiten eigen organisatie, dan BSN verplicht -->
+			<id extension="3456654321" root="2.16.840.1.113883.2.4.6.3"/>
+			<telecom value="tel:020 5555 8090"/>
+			<patient>
+				<!-- eis H14: naam van patient verplicht -->
+				<name>
+					<given>Martin</given>
+					<family>Bouwman</family>
+				</name>
+				<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+				<!-- eis H15: geboortedatum verplicht -->
+				<birthTime value="19630821"/>
+			</patient>
+			<providerOrganization>
+				<id root="2.16.840.1.113883.19.6" extension="110444"/>
+			</providerOrganization>
+		</patientRole>
+	</recordTarget>
+	<!-- eis H20 ; 1 auteur, of een persoon, of een device: hier: device. Plus verplicht de verantwoordelijke organisatie-->
+	<author>
+		<time value="20110228160000"/>
+		<assignedAuthor>
+			<id extension="600355" root="2.16.840.1.113883.19.7"/>
+			<assignedAuthoringDevice>
+				<!-- eis H25 ; naam van de software applicatie -->
+				<softwareName>ABC-ZIS Kerndossier Applicatie v1.2</softwareName>
+			</assignedAuthoringDevice>
+			<representedOrganization>
+				<!-- eis H27 ; tenminste 1 ID ; URA verplicht indien bekend -->
+				<id root="2.16.840.1.113883.19.5" extension="454544"/>
+				<id root="2.16.528.1.1007.3.3" extension="282828282"/>
+				<!-- eis H28: naam van organisatie verplicht -->
+				<name>Maasstad Ziekenhuis</name>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<!-- eis H30 ; 1 of meer IDs verplicht ; URA verplicht indien bekend -->
+				<id root="2.16.840.1.113883.19.6" extension="454544"/>
+				<id root="2.16.528.1.1007.3.3" extension="282828282"/>
+				<!-- eis H31: naam custodian verplicht -->
+				<name>Maasstad Ziekenhuis</name>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<!-- eis H60: 1 service event -->
+	<documentationOf typeCode="DOC">
+		<serviceEvent classCode="PCPR" moodCode="EVN">
+			<!-- eis H60: begin en eindtijd van de zorgrelatie -->
+			<effectiveTime>
+				<low value="20110204000000"/>
+				<high value="20110228160000"/>
+			</effectiveTime>
+		</serviceEvent>
+	</documentationOf>
+
+	<!-- 
+********************************************************
+  CDA Body
+********************************************************
+-->
+	<component>
+		<structuredBody>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.2.4.6.10.80.2"/>
+					<title>Laatst toegevoegde gegevens</title>
+					<text>
+						<list>
+							<item>Diagnose: Ulnaropathie, 05-03-2010</item>
+							<item>Behandeling: Ulnaris neurolyse, 05-06-2010</item>
+							<item>Afspraak: Interne geneeskunde 07-05-2011</item>
+						</list>
+					</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<code code="48765-2" codeSystem="2.16.840.1.113883.6.1"
+						codeSystemName="LOINC"/>
+					<title>Waarschuwingen</title>
+					<text>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Soort waarschuwing</th>
+									<th>Waarschuwing</th>
+									<th>Datum van registratie</th>
+									<th>Bron</th>
+									<th>ernst van de reactie</th>
+									<th>Opmerking</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Allergie</td>
+									<td>Huisstofmijt</td>
+									<td>24-03-2010</td>
+									<td/>
+									<td/>
+									<td/>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<!-- CCD section template -->
+					<templateId root="2.16.840.1.113883.10.20.1.11"/>
+					<code code="11450-4" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Diagnosen</title>
+					<text>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Actief<br/>Ja/Nee</th>
+									<th>Diagnose<br/>/Klacht</th>
+									<th>Specialisme</th>
+									<th>Datum</th>
+									<th>Type</th>
+									<th>Opmerkingen</th>
+									<th>Bron</th>
+									<th>Zorgverlener</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Ja</td>
+									<td>Ulnaropathie</td>
+									<td>Plastische chirurgie</td>
+									<td>05-03-2010</td>
+									<td/>
+									<td>Links</td>
+									<td>Plastische chirurgie</td>
+									<td>A. Baas, plastisch chrurg, Maasstad ziekenhuis</td>
+								</tr>
+								<tr>
+									<td>Ja</td>
+									<td>DM</td>
+									<td/>
+									<td/>
+									<td/>
+									<td/>
+									<td>Patient</td>
+									<td/>
+								</tr>
+								<tr>
+									<td>Ja</td>
+									<td>COPD</td>
+									<td/>
+									<td/>
+									<td/>
+									<td/>
+									<td>Patient</td>
+									<td/>
+								</tr>
+								<tr>
+									<td>Ja</td>
+									<td>Psychische klachten</td>
+									<td/>
+									<td/>
+									<td/>
+									<td/>
+									<td>Patient</td>
+									<td/>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<!-- CCD entry template voor CCD Problem Act -->
+							<!-- zie http://cdatools.org/infocenter/index.jsp?topic=/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html -->
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<!-- id verplicht -->
+							<id root="2.16.840.1.113883.19.3.1" extension="1107261"/>
+							<code nullFlavor="NA"/>
+							<effectiveTime>
+								<low value="20110204"/>
+							</effectiveTime>							
+							<entryRelationship typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- TemplateId van CCD Problem Observation -->
+									<!-- zie http://cdatools.org/infocenter/index.jsp?topic=/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html -->
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<!-- TemplateId van de Kerndossier Problem Observation -->
+									<templateId root="2.16.840.1.113883.2.4.6.10.80.100"/>
+									<id root="2.16.840.1.113883.19.3.2"
+										extension="1107278"/>
+									<code code="282291009" codeSystem="2.16.840.1.113883.6.96"
+										displayName="Diagnosis"/>
+									<text>Ulnaropathie</text>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="20100305"/>
+									</effectiveTime>
+									<value xsi:type="CD" code="230631009"
+										codeSystem="2.16.840.1.113883.6.96">
+									</value>
+									<informant>
+										<assignedEntity>
+											<id root="2.16.840.1.113883.19.8" extension="28283728"/>
+											<!-- CIBG code voor plastisch chirurg -->
+											<code codeSystem="2.16.840.1.113883.2.4.15.111" code="01.034"/>
+											<assignedPerson>
+												<name>
+													<given qualifier="IN">A.</given>
+													<family>Baas</family>
+												</name>
+											</assignedPerson>
+											<representedOrganization>
+												<name>Plastische Chirurgie, Maasstad Ziekenhuis</name>
+											</representedOrganization>
+										</assignedEntity>
+									</informant>
+									<entryRelationship typeCode="REFR">
+										<observation classCode="OBS" moodCode="EVN">
+											<!-- CCD Problem Status Observation template -->
+											<!-- Zie http://cdatools.org/infocenter/index.jsp?topic=/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html -->
+											<templateId root="2.16.840.1.113883.10.20.1.50"/>
+											<code code="33999-4" codeSystem="2.16.840.1.113883.6.1"
+												displayName="Status"/>
+											<statusCode code="completed"/>
+											<value xsi:type="CE" code="55561003"
+												codeSystem="2.16.840.1.113883.6.96"
+												displayName="Active"/>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+					
+					
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<!-- CCD entry template voor CCD Problem Act -->
+							<!-- zie http://cdatools.org/infocenter/index.jsp?topic=/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html -->
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<!-- id verplicht -->
+							<id root="2.16.840.1.113883.19.3.1" extension="1107262"/>
+							<code nullFlavor="NA"/>						
+							<entryRelationship typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- TemplateId van CCD Problem Observation -->
+									<!-- zie http://cdatools.org/infocenter/index.jsp?topic=/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html -->
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<!-- TemplateId van de Kerndossier Problem Observation -->
+									<templateId root="2.16.840.1.113883.2.4.6.10.80.100"/>
+									<id root="2.16.840.1.113883.19.3.2"
+										extension="1107279"/>
+									<code code="282291009" codeSystem="2.16.840.1.113883.6.96"
+										displayName="Diagnosis"/>
+									<text>DM</text>
+									<statusCode code="completed"/>
+									<value xsi:type="CD" code="73211009"
+										codeSystem="2.16.840.1.113883.6.96">
+									</value>
+									<informant>
+										<!-- Bron is de patient, aangeduid met Id en naam -->
+										<assignedEntity>
+											<!-- eis H11 ; tenminste 1 patient ID (hier: organisatie interne patient ID)-->
+											<id extension="8899901" root="2.16.840.1.113883.19.5"/>
+											<!-- eis H12 ; BSN is verplicht INDIEN bekend bij zender -->
+											<!-- eis H13; indien kerndossier te gebruiken buiten eigen organisatie, dan BSN verplicht -->
+											<id extension="3456654321" root="2.16.840.1.113883.2.4.6.3"/>
+											<assignedPerson><name>
+												<given>Martin</given>
+												<family>Bouwman</family>
+											</name>
+											</assignedPerson>
+										</assignedEntity>
+									</informant>
+									<entryRelationship typeCode="REFR">
+										<observation classCode="OBS" moodCode="EVN">
+											<!-- CCD Problem Status Observation template -->
+											<!-- Zie http://cdatools.org/infocenter/index.jsp?topic=/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html -->
+											<templateId root="2.16.840.1.113883.10.20.1.50"/>
+											<code code="33999-4" codeSystem="2.16.840.1.113883.6.1"
+												displayName="Status"/>
+											<statusCode code="completed"/>
+											<value xsi:type="CE" code="55561003"
+												codeSystem="2.16.840.1.113883.6.96"
+												displayName="Active"/>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<!-- CCD entry template voor CCD Problem Act -->
+							<!-- zie http://cdatools.org/infocenter/index.jsp?topic=/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html -->
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<!-- id verplicht -->
+							<id root="2.16.840.1.113883.19.3.1" extension="1107263"/>
+							<code nullFlavor="NA"/>						
+							<entryRelationship typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- TemplateId van CCD Problem Observation -->
+									<!-- zie http://cdatools.org/infocenter/index.jsp?topic=/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html -->
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<!-- TemplateId van de Kerndossier Problem Observation -->
+									<templateId root="2.16.840.1.113883.2.4.6.10.80.100"/>
+									<id root="2.16.840.1.113883.19.3.2"
+										extension="1107280"/>
+									<code code="282291009" codeSystem="2.16.840.1.113883.6.96"
+										displayName="Diagnosis"/>
+									<text>COPD</text>
+									<statusCode code="completed"/>
+									<value xsi:type="CD" code="13645005"
+										codeSystem="2.16.840.1.113883.6.96">
+									</value>
+									<informant>
+										<!-- Bron is de patient, aangeduid met Id en naam -->
+										<assignedEntity>
+											<!-- eis H11 ; tenminste 1 patient ID (hier: organisatie interne patient ID)-->
+											<id extension="8899901" root="2.16.840.1.113883.19.5"/>
+											<!-- eis H12 ; BSN is verplicht INDIEN bekend bij zender -->
+											<!-- eis H13; indien kerndossier te gebruiken buiten eigen organisatie, dan BSN verplicht -->
+											<id extension="3456654321" root="2.16.840.1.113883.2.4.6.3"/>
+											<assignedPerson><name>
+												<given>Martin</given>
+												<family>Bouwman</family>
+											</name>
+											</assignedPerson>
+										</assignedEntity>
+									</informant>
+									<entryRelationship typeCode="REFR">
+										<observation classCode="OBS" moodCode="EVN">
+											<!-- CCD Problem Status Observation template -->
+											<!-- Zie http://cdatools.org/infocenter/index.jsp?topic=/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html -->
+											<templateId root="2.16.840.1.113883.10.20.1.50"/>
+											<code code="33999-4" codeSystem="2.16.840.1.113883.6.1"
+												displayName="Status"/>
+											<statusCode code="completed"/>
+											<value xsi:type="CE" code="55561003"
+												codeSystem="2.16.840.1.113883.6.96"
+												displayName="Active"/>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<!-- CCD entry template voor CCD Problem Act -->
+							<!-- zie http://cdatools.org/infocenter/index.jsp?topic=/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html -->
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<!-- id verplicht -->
+							<id root="2.16.840.1.113883.19.3.1" extension="1107268"/>
+							<code nullFlavor="NA"/>						
+							<entryRelationship typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- TemplateId van CCD Problem Observation -->
+									<!-- zie http://cdatools.org/infocenter/index.jsp?topic=/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html -->
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<!-- TemplateId van de Kerndossier Problem Observation -->
+									<templateId root="2.16.840.1.113883.2.4.6.10.80.100"/>
+									<id root="2.16.840.1.113883.19.3.2"
+										extension="1107285"/>
+									<code code="282291009" codeSystem="2.16.840.1.113883.6.96"
+										displayName="Diagnosis"/>
+									<text>Psychische klachten</text>
+									<statusCode code="completed"/>
+									<value xsi:type="CD" code="25618008"
+										codeSystem="2.16.840.1.113883.6.96">
+									</value>
+									<informant>
+										<!-- Bron is de patient, aangeduid met Id en naam -->
+										<assignedEntity>
+											<!-- eis H11 ; tenminste 1 patient ID (hier: organisatie interne patient ID)-->
+											<id extension="8899901" root="2.16.840.1.113883.19.5"/>
+											<!-- eis H12 ; BSN is verplicht INDIEN bekend bij zender -->
+											<!-- eis H13; indien kerndossier te gebruiken buiten eigen organisatie, dan BSN verplicht -->
+											<id extension="3456654321" root="2.16.840.1.113883.2.4.6.3"/>
+											<assignedPerson><name>
+												<given>Martin</given>
+												<family>Bouwman</family>
+											</name>
+											</assignedPerson>
+										</assignedEntity>
+									</informant>
+									<entryRelationship typeCode="REFR">
+										<observation classCode="OBS" moodCode="EVN">
+											<!-- CCD Problem Status Observation template -->
+											<!-- Zie http://cdatools.org/infocenter/index.jsp?topic=/org.openhealthtools.mdht.uml.cda.ccd.doc/classes/ProblemSection.html -->
+											<templateId root="2.16.840.1.113883.10.20.1.50"/>
+											<code code="33999-4" codeSystem="2.16.840.1.113883.6.1"
+												displayName="Status"/>
+											<statusCode code="completed"/>
+											<value xsi:type="CE" code="73425007"
+												codeSystem="2.16.840.1.113883.6.96"
+												displayName="Inactive"/>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<code code="47519-4" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Behandelingen</title>
+					<text>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Behandeling</th>
+									<th>Specialisme</th>
+									<th>Datum</th>
+									<th>Opmerking</th>
+									<th>Zorgverlener</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>ulnaris neurolyse</td>
+									<td>Plastische chirurgie</td>
+									<td>05-06-2010</td>
+									<td/>
+									<td>A. Baas, plastisch chrurg, Maasstad ziekenhuis</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<code code="10160-0" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Medicatie</title>
+					<text>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Actief<br/>Ja/Nee</th>
+									<th>Geneesmiddel</th>
+									<th>Dosering</th>
+									<th>Startdatum</th>
+									<th>Stopdatum</th>
+									<th>Stopreden</th>
+									<th>Opmerkingen</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Ja</td>
+									<td>Cetomacrogol crème/vaseline/glycerine 80/10/10, cutaan</td>
+									<td>2x per dag hand- en</td>
+									<td>30-09-2010</td>
+									<td/>
+									<td/>
+									<td/>
+								</tr>
+								<tr>
+									<td>Ja</td>
+									<td>Actief	Efexor 75 tablet 75MG, oraal</td>
+									<td/>
+									<td>23-03-2010</td>
+									<td/>
+									<td/>
+									<td/>
+								</tr>
+								<tr>
+									<td>Ja</td>
+									<td>Montelukastalsnazout: sungulair 10MG tablet, oraal</td>
+									<td>1x per dag 1 stuk</td>
+									<td>23-03-2010</td>
+									<td/>
+									<td/>
+									<td/>
+								</tr>
+								<tr>
+									<td>Ja</td>
+									<td>Mirtazapine tablet 30MG, oral</td>
+									<td>1x per dag 1 stuk</td>
+									<td>23-03-2010</td>
+									<td/>
+									<td/>
+									<td/>
+								</tr>
+								<tr>
+									<td>Ja</td>
+									<td>Metformine tablet 850 MG, oraal</td>
+									<td>3x per dag 1 stuk</td>
+									<td>23-03-2010</td>
+									<td/>
+									<td/>
+									<td/>
+								</tr>
+								<tr>
+									<td>Nee</td>
+									<td>Paracetamol / codeïne tablet 500</td>
+									<td/>
+									<td>09-11-2010</td>
+									<td>13-11-2010</td>
+									<td></td>
+									<td/>
+								</tr>
+								<tr>
+									<td>Nee</td>
+									<td>Itraconazol capsule 100MG</td>
+									<td/>
+									<td>05-11-2010</td>
+									<td>03-12-2010</td>
+									<td></td>
+									<td/>
+								</tr>
+								<tr>
+									<td>Nee</td>
+									<td>Diclofenac-natrium zetpil 50MG</td>
+									<td/>
+									<td>24-03-2010</td>
+									<td>28-03-2010</td>
+									<td></td>
+									<td/>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+				</section>
+			</component>
+			
+			<component>
+				<section>
+					<code code="46240-8" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Afspraken</title>
+					<text>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Specialisme</th>
+									<th>Datum laatst geplande afspraak</th>
+									<th>Zorgverlener</th>
+									<th>Data eerdere afspraken</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Interne geneeskunde</td>
+									<td>17-05-2011</td>
+									<td>J.P. de Groot</td>
+									<td>29-01-2011, 09-01-2011, 11-09-2010, 01-04-2010</td>
+								</tr>
+								<tr>
+									<td>Plastisch chirurgie</td>
+									<td>10-02-2011</td>
+									<td>L.S. van de Velde</td>
+									<td>13-02-2011, 26-11-2010, 13-11-2010, 23-08-2010</td>
+								</tr>
+								<tr>
+									<td>Dermatologie</td>
+									<td>08-02-2011</td>
+									<td>G. Hoender</td>
+									<td>05-11-2010, 29-09-2010</td>
+								</tr>
+								<tr>
+									<td>MDL</td>
+									<td>19-01-2011</td>
+									<td>B. Rademan</td>
+									<td/>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+				</section>
+			</component>
+			
+			<component>
+				<section>
+					<code code="42348-3" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Behandelaanwijzingen</title>
+					<text>Er zijn geen behandelrestricties.
+					</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<code code="30954-2" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Uitslagen</title>
+					<text>Geen Lab uitslagen in de laatste 30 dagen.
+					</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<code code="29762-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Sociale anamnese</title>
+					<text><list>
+						<item>bekendBurgerlijke staat: gehuwd</item>
+						<item>Gezinssamenstelling: meerpersoonshuishouden</item>
+						<item>Woonsituatie: bovenwoning</item>
+						<item>Beroep: loodgieter</item>
+						<item>Dieet: diabeet</item>
+					</list>
+					</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<code code="18663-5" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Intoxicaties</title>
+					<text>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Intoxicatie</th>
+									<th>Actief<br/>Ja/Nee</th>
+									<th>Frequentie</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Roken</td>
+									<td>ja</td>
+									<td>Aantal per dag: 10</td>
+								</tr>
+								<tr>
+									<td>Alcohol</td>
+									<td>Gestopt</td>
+									<td>8 per dag, gestopt sinds 2000</td>
+								</tr>
+								<tr>
+									<td>Drugs</td>
+									<td>nee</td>	
+									<td/>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<code code="11369-6" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Inentingen</title>
+					<text>Niet bekend.
+					</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<code code="46264-8" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Medische hulpmiddelen</title>
+					<text>Niet bekend.</text>
+				</section>
+			</component>
+
+		</structuredBody>
+	</component>
+</ClinicalDocument>

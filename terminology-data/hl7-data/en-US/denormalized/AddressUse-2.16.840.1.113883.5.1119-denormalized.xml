@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="598"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1119"/>
+   <Title name="AddressUse" date="2012-08-02" version="1.000">Description: Uses of Addresses. Lloyd to supply more complete description.</Title>
+   <Class code="rootClass">
+      <SubClass subCount="5" code="_GeneralAddressUse" kind="abstract">
+         <Rubric id="d1e78024" kind="preferred">
+            <Label xml:lang="en-US">_GeneralAddressUse</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="2" code="_PostalAddressUse" kind="abstract">
+         <Rubric id="d1e78052" kind="preferred">
+            <Label xml:lang="en-US">_PostalAddressUse</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="4" code="_TelecommunicationAddressUse" kind="abstract">
+         <Rubric id="d1e78079" kind="preferred">
+            <Label xml:lang="en-US">_TelecommunicationAddressUse</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">AddressUse</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">Description: Uses of Addresses. Lloyd to supply more complete description.</Label>
+      </Rubric>
+   </Class>
+   <Class code="_GeneralAddressUse" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22729"/>
+      <SubClass code="BAD" subCount="0">
+         <Rubric id="d1e78111" kind="preferred">
+            <Label xml:lang="en-US">bad address</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="CONF" subCount="0">
+         <Rubric id="d1e78143" kind="preferred">
+            <Label xml:lang="en-US">confidential address</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="H" subCount="2">
+         <Rubric id="d1e78175" kind="preferred">
+            <Label xml:lang="en-US">home address</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="TMP" subCount="0">
+         <Rubric id="d1e78207" kind="preferred">
+            <Label xml:lang="en-US">temporary address</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="WP" subCount="2">
+         <Rubric id="d1e78240" kind="preferred">
+            <Label xml:lang="en-US">work place</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e78008" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Address uses that can apply to both postal and telecommunication addresses.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e78024" kind="short">
+         <Label xml:lang="en-US">_GeneralAddressUse</Label>
+      </Rubric>
+      <Rubric id="d1e78024" kind="preferred">
+         <Label xml:lang="en-US">_GeneralAddressUse</Label>
+      </Rubric>
+   </Class>
+   <Class code="_PostalAddressUse" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22739"/>
+      <SubClass code="PHYS" subCount="0">
+         <Rubric id="d1e78272" kind="preferred">
+            <Label xml:lang="en-US">physical visit address</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PST" subCount="0">
+         <Rubric id="d1e78304" kind="preferred">
+            <Label xml:lang="en-US">postal address</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e78036" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Address uses that only apply to postal addresses, not telecommunication addresses.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e78052" kind="short">
+         <Label xml:lang="en-US">_PostalAddressUse</Label>
+      </Rubric>
+      <Rubric id="d1e78052" kind="preferred">
+         <Label xml:lang="en-US">_PostalAddressUse</Label>
+      </Rubric>
+   </Class>
+   <Class code="_TelecommunicationAddressUse" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22742"/>
+      <SubClass code="AS" subCount="0">
+         <Rubric id="d1e78336" kind="preferred">
+            <Label xml:lang="en-US">answering service</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="EC" subCount="0">
+         <Rubric id="d1e78368" kind="preferred">
+            <Label xml:lang="en-US">emergency contact</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="MC" subCount="0">
+         <Rubric id="d1e78400" kind="preferred">
+            <Label xml:lang="en-US">mobile contact)</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PG" subCount="0">
+         <Rubric id="d1e78433" kind="preferred">
+            <Label xml:lang="en-US">pager</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e78063" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Address uses that only apply to telecommunication addresses, not postal addresses.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e78079" kind="short">
+         <Label xml:lang="en-US">_TelecommunicationAddressUse</Label>
+      </Rubric>
+      <Rubric id="d1e78079" kind="preferred">
+         <Label xml:lang="en-US">_TelecommunicationAddressUse</Label>
+      </Rubric>
+   </Class>
+   <Class code="BAD" kind="concept">
+      <Meta name="internalId" value="22730"/>
+      <SuperClass code="_GeneralAddressUse">
+         <Rubric id="d1e78024" kind="preferred">
+            <Label xml:lang="en-US">_GeneralAddressUse</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e78090" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A flag indicating that the address is bad, in fact, useless.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e78111" kind="short">
+         <Label xml:lang="en-US">bad address</Label>
+      </Rubric>
+      <Rubric id="d1e78111" kind="preferred">
+         <Label xml:lang="en-US">bad address</Label>
+      </Rubric>
+   </Class>
+   <Class code="CONF" kind="concept">
+      <Meta name="internalId" value="22731"/>
+      <SuperClass code="_GeneralAddressUse">
+         <Rubric id="d1e78024" kind="preferred">
+            <Label xml:lang="en-US">_GeneralAddressUse</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e78122" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Indicates that the address is considered sensitive and should only be shared or published in accordance with organizational controls governing patient demographic information with increased sensitivity. Uses of Addresses. Lloyd to supply more complete description.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e78143" kind="short">
+         <Label xml:lang="en-US">confidential address</Label>
+      </Rubric>
+      <Rubric id="d1e78143" kind="preferred">
+         <Label xml:lang="en-US">confidential address</Label>
+      </Rubric>
+   </Class>
+   <Class code="H" kind="concept">
+      <Meta name="internalId" value="22732"/>
+      <SuperClass code="_GeneralAddressUse">
+         <Rubric id="d1e78024" kind="preferred">
+            <Label xml:lang="en-US">_GeneralAddressUse</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="HP" subCount="0">
+         <Rubric id="d1e78465" kind="preferred">
+            <Label xml:lang="en-US">primary home</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="HV" subCount="0">
+         <Rubric id="d1e78497" kind="preferred">
+            <Label xml:lang="en-US">vacation home</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e78154" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A communication address at a home, attempted contacts for business purposes might intrude privacy and chances are one will contact family or other household members instead of the person one wishes to call. Typically used with urgent cases, or if no other contacts are available.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e78175" kind="short">
+         <Label xml:lang="en-US">home address</Label>
+      </Rubric>
+      <Rubric id="d1e78175" kind="preferred">
+         <Label xml:lang="en-US">home address</Label>
+      </Rubric>
+   </Class>
+   <Class code="TMP" kind="concept">
+      <Meta name="internalId" value="22735"/>
+      <SuperClass code="_GeneralAddressUse">
+         <Rubric id="d1e78024" kind="preferred">
+            <Label xml:lang="en-US">_GeneralAddressUse</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e78186" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A temporary address, may be good for visit or mailing. Note that an address history can provide more detailed information.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e78207" kind="short">
+         <Label xml:lang="en-US">temporary address</Label>
+      </Rubric>
+      <Rubric id="d1e78207" kind="preferred">
+         <Label xml:lang="en-US">temporary address</Label>
+      </Rubric>
+   </Class>
+   <Class code="WP" kind="concept">
+      <Meta name="internalId" value="22736"/>
+      <SuperClass code="_GeneralAddressUse">
+         <Rubric id="d1e78024" kind="preferred">
+            <Label xml:lang="en-US">_GeneralAddressUse</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="DIR" subCount="0">
+         <Rubric id="d1e78529" kind="preferred">
+            <Label xml:lang="en-US">direct</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PUB" subCount="0">
+         <Rubric id="d1e78561" kind="preferred">
+            <Label xml:lang="en-US">public</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e78219" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>An office address. First choice for business related contacts during business hours.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e78240" kind="short">
+         <Label xml:lang="en-US">work place</Label>
+      </Rubric>
+      <Rubric id="d1e78240" kind="preferred">
+         <Label xml:lang="en-US">work place</Label>
+      </Rubric>
+   </Class>
+   <Class code="PHYS" kind="concept">
+      <Meta name="internalId" value="22740"/>
+      <SuperClass code="_PostalAddressUse">
+         <Rubric id="d1e78052" kind="preferred">
+            <Label xml:lang="en-US">_PostalAddressUse</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e78251" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Used primarily to visit an address.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e78272" kind="short">
+         <Label xml:lang="en-US">physical visit address</Label>
+      </Rubric>
+      <Rubric id="d1e78272" kind="preferred">
+         <Label xml:lang="en-US">physical visit address</Label>
+      </Rubric>
+   </Class>
+   <Class code="PST" kind="concept">
+      <Meta name="internalId" value="22741"/>
+      <SuperClass code="_PostalAddressUse">
+         <Rubric id="d1e78052" kind="preferred">
+            <Label xml:lang="en-US">_PostalAddressUse</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e78283" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Used to send mail.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e78304" kind="short">
+         <Label xml:lang="en-US">postal address</Label>
+      </Rubric>
+      <Rubric id="d1e78304" kind="preferred">
+         <Label xml:lang="en-US">postal address</Label>
+      </Rubric>
+   </Class>
+   <Class code="AS" kind="concept">
+      <Meta name="internalId" value="22743"/>
+      <SuperClass code="_TelecommunicationAddressUse">
+         <Rubric id="d1e78079" kind="preferred">
+            <Label xml:lang="en-US">_TelecommunicationAddressUse</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e78315" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>An automated answering machine used for less urgent cases and if the main purpose of contact is to leave a message or access an automated announcement.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e78336" kind="short">
+         <Label xml:lang="en-US">answering service</Label>
+      </Rubric>
+      <Rubric id="d1e78336" kind="preferred">
+         <Label xml:lang="en-US">answering service</Label>
+      </Rubric>
+   </Class>
+   <Class code="EC" kind="concept">
+      <Meta name="internalId" value="22744"/>
+      <SuperClass code="_TelecommunicationAddressUse">
+         <Rubric id="d1e78079" kind="preferred">
+            <Label xml:lang="en-US">_TelecommunicationAddressUse</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e78347" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A contact specifically designated to be used for emergencies. This is the first choice in emergencies, independent of any other use codes.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e78368" kind="short">
+         <Label xml:lang="en-US">emergency contact</Label>
+      </Rubric>
+      <Rubric id="d1e78368" kind="preferred">
+         <Label xml:lang="en-US">emergency contact</Label>
+      </Rubric>
+   </Class>
+   <Class code="MC" kind="concept">
+      <Meta name="internalId" value="22745"/>
+      <SuperClass code="_TelecommunicationAddressUse">
+         <Rubric id="d1e78079" kind="preferred">
+            <Label xml:lang="en-US">_TelecommunicationAddressUse</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e78379" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A telecommunication device that moves and stays with its owner. May have characteristics of all other use codes, suitable for urgent matters, not the first choice for routine business.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e78400" kind="short">
+         <Label xml:lang="en-US">mobile contact)</Label>
+      </Rubric>
+      <Rubric id="d1e78400" kind="preferred">
+         <Label xml:lang="en-US">mobile contact)</Label>
+      </Rubric>
+   </Class>
+   <Class code="PG" kind="concept">
+      <Meta name="internalId" value="22746"/>
+      <SuperClass code="_TelecommunicationAddressUse">
+         <Rubric id="d1e78079" kind="preferred">
+            <Label xml:lang="en-US">_TelecommunicationAddressUse</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e78412" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A paging device suitable to solicit a callback or to leave a very short message.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e78433" kind="short">
+         <Label xml:lang="en-US">pager</Label>
+      </Rubric>
+      <Rubric id="d1e78433" kind="preferred">
+         <Label xml:lang="en-US">pager</Label>
+      </Rubric>
+   </Class>
+   <Class code="HP" kind="concept">
+      <Meta name="internalId" value="22733"/>
+      <SuperClass code="H">
+         <Rubric id="d1e78175" kind="preferred">
+            <Label xml:lang="en-US">home address</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e78444" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The primary home, to reach a person after business hours.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e78465" kind="short">
+         <Label xml:lang="en-US">primary home</Label>
+      </Rubric>
+      <Rubric id="d1e78465" kind="preferred">
+         <Label xml:lang="en-US">primary home</Label>
+      </Rubric>
+   </Class>
+   <Class code="HV" kind="concept">
+      <Meta name="internalId" value="22734"/>
+      <SuperClass code="H">
+         <Rubric id="d1e78175" kind="preferred">
+            <Label xml:lang="en-US">home address</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e78476" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A vacation home, to reach a person while on vacation.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e78497" kind="short">
+         <Label xml:lang="en-US">vacation home</Label>
+      </Rubric>
+      <Rubric id="d1e78497" kind="preferred">
+         <Label xml:lang="en-US">vacation home</Label>
+      </Rubric>
+   </Class>
+   <Class code="DIR" kind="concept">
+      <Meta name="internalId" value="22737"/>
+      <SuperClass code="WP">
+         <Rubric id="d1e78240" kind="preferred">
+            <Label xml:lang="en-US">work place</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e78508" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Indicates a work place address or telecommunication address that reaches the individual or organization directly without intermediaries. For phones, often referred to as a 'private line'.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e78529" kind="short">
+         <Label xml:lang="en-US">direct</Label>
+      </Rubric>
+      <Rubric id="d1e78529" kind="preferred">
+         <Label xml:lang="en-US">direct</Label>
+      </Rubric>
+   </Class>
+   <Class code="PUB" kind="concept">
+      <Meta name="internalId" value="22738"/>
+      <SuperClass code="WP">
+         <Rubric id="d1e78240" kind="preferred">
+            <Label xml:lang="en-US">work place</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e78540" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Indicates a work place address or telecommunication address that is a 'standard' address which may reach a reception service, mail-room, or other intermediary prior to the target entity.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e78561" kind="short">
+         <Label xml:lang="en-US">public</Label>
+      </Rubric>
+      <Rubric id="d1e78561" kind="preferred">
+         <Label xml:lang="en-US">public</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

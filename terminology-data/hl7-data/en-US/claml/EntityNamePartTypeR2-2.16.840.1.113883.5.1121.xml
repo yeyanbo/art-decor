@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="602"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1121"/>
+   <Title name="EntityNamePartTypeR2" date="2012-08-02" version="1.000">Description:Indicates whether the name part is a given name, family name, prefix, suffix, etc.</Title>
+   <Authors>
+      <Author name="Responsible"/>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="DEL" kind="concept">
+      <Meta name="internalId" value="22786"/>
+      <Rubric id="d1e116307" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A delimiter has no meaning other than being literally printed in this name representation. A delimiter has no implicit leading and trailing white space.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e116323" kind="short">
+         <Label xml:lang="en-US">delimiter</Label>
+      </Rubric>
+      <Rubric id="d1e116323" kind="preferred">
+         <Label xml:lang="en-US">delimiter</Label>
+      </Rubric>
+   </Class>
+   <Class code="FAM" kind="concept">
+      <Meta name="internalId" value="22784"/>
+      <Rubric id="d1e116334" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Family name, this is the name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e116386" kind="short">
+         <Label xml:lang="en-US">family</Label>
+      </Rubric>
+      <Rubric id="d1e116386" kind="preferred">
+         <Label xml:lang="en-US">family</Label>
+      </Rubric>
+   </Class>
+   <Class code="GIV" kind="concept">
+      <Meta name="internalId" value="22785"/>
+      <Rubric id="d1e116397" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Given name. Note: don't call it "first name" since the given names do not always come first.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e116449" kind="short">
+         <Label xml:lang="en-US">given</Label>
+      </Rubric>
+      <Rubric id="d1e116449" kind="preferred">
+         <Label xml:lang="en-US">given</Label>
+      </Rubric>
+   </Class>
+   <Class code="TITLE" kind="concept">
+      <Meta name="internalId" value="22787"/>
+      <Rubric id="d1e116460" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Part of the name that is acquired as a title due to academic, legal, employment or nobility status etc.</p>
+            <p>
+               <b>Note:</b>Title name parts include name parts that come after the name such as qualifications, even if they are not always considered to be titles.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e116513" kind="short">
+         <Label xml:lang="en-US">title</Label>
+      </Rubric>
+      <Rubric id="d1e116513" kind="preferred">
+         <Label xml:lang="en-US">title</Label>
+      </Rubric>
+   </Class>
+</ClaML>

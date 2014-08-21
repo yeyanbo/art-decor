@@ -1,0 +1,1268 @@
+<!--
+    Copyright (C) 2011-2014 ART-DECOR expert group art-decor.org
+    
+    Author: Kai Heitmann
+    
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+    
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+    
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<parts xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:widget="http://orbeon.org/oxf/xml/widget" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!-- 
+      Decor Template readonly view
+      Used in:
+      decor-templates.xhtml
+      
+      Requires variables:
+      $decor-exist
+      $resources
+     
+      Requires instances:
+      language
+      decor-types
+      concept-associations
+      version-navigation
+      decor-template-list
+      project-instance
+      dataset-list-instance
+      selected-template
+      concept
+   -->
+    <part id="template-readonly">
+        <xhtml:table class="detail" width="100%">
+            
+            <!-- version display/selection -->
+            <xhtml:tr>
+                <xhtml:td class="item-label">
+                    <xforms:output ref="$resources/version"/>
+                </xhtml:td>
+                <xhtml:td>
+                    <xforms:group ref=".[count(template)=1 or count(template[@id])=1]">
+                        <!--xforms:output ref="template/@effectiveDate" xxforms:format="format-dateTime(.,'[D1o] [MNn] [Y]', substring(instance('language'),1,2), (), ())"/-->
+                        <xforms:output ref="if (template/@effectiveDate castable as xs:dateTime) then (format-dateTime(xs:dateTime(template/@effectiveDate),'[Y]-[M01]-[D01]', substring(instance('language'),1,2), (), ())) else (template/@effectiveDate)"/>
+                        <xforms:output ref="if (template[@id][@url]) then concat(' (', $resources/repository, ': ', template[@id]/@ident, ')') else ()"/>
+                    </xforms:group>
+                    <xforms:group ref=".[count(template[@id])&gt;1]">
+                        <xforms:select1 ref="instance('version-navigation')" appearance="minimal">
+                            <xforms:itemset nodeset="instance('decor-template-list')/template[(@id|@ref)=substring-before(instance('template-navigation'),'#')]/template[@effectiveDate]">
+                                <xforms:label ref="concat(if (@effectiveDate castable as xs:dateTime) then (format-dateTime(@effectiveDate,'[Y]-[M01]-[D01]',(), (), ())) else (@effectiveDate), if (@url) then concat(' (', $resources/repository, ': ', @ident, ')') else ())"/>
+                                <xforms:value ref="@effectiveDate"/>
+                            </xforms:itemset>
+                        </xforms:select1>
+                    </xforms:group>
+                </xhtml:td>
+                <!-- template status -->
+                <xhtml:td class="item-label">
+                    <xforms:output ref="$resources/status"/>
+                </xhtml:td>
+                <xhtml:td>
+                    <xxforms:variable name="statusCode" select="template[@effectiveDate=instance('version-navigation')]/@statusCode"/>
+                    <xforms:output ref="instance('decor-types')/TemplateStatusCodeLifeCycle/enumeration[@value=$statusCode]/label[@language=$resources/@xml:lang]" class="node-s{$statusCode}"/>
+                </xhtml:td>
+            </xhtml:tr>
+            <!-- group for template version -->
+            <xforms:group ref="template[@effectiveDate=instance('version-navigation')]">
+                <xxforms:variable name="templateId" select="@id|@ref"/>
+                <xxforms:variable name="templateEd" select="@effectiveDate"/>
+                
+                <!-- template versionLabel / id -->
+                <xhtml:tr>
+                    <!-- template version label -->
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/versionLabel"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:output ref="@versionLabel"/>
+                    </xhtml:td>
+                    <!-- template id -->
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/id"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xxforms:variable name="id" select="@id|@ref"/>
+                        <xxforms:variable name="bid" select="instance('project-instance')/ids/baseId[@id=string-join(tokenize($id,'\.')[position()!=last()],'.') ]/@prefix"/>
+                        <xforms:output ref="if (string-length($bid)&gt;0) then concat($bid,tokenize($id,'\.')[last()]) else $id"/>
+                    </xhtml:td>
+                </xhtml:tr>
+                
+                <!-- template name / displayName -->
+                <xhtml:tr>
+                    <!-- template name -->
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/name"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:output ref="@name"/>
+                    </xhtml:td>
+                    <!-- template displayName -->
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/display-name"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:output ref="@displayName"/>
+                    </xhtml:td>
+                </xhtml:tr>
+                
+                <!-- group for new issues -->
+                <xforms:group ref="instance('issues-instance')/issue[object/@id=$templateId]">
+                    <xhtml:tr>
+                        <xhtml:td class="heading" colspan="4">
+                            <xhtml:div class="heading">
+                                <xforms:output ref="$resources/new-issue"/>
+                            </xhtml:div>
+                        </xhtml:td>
+                    </xhtml:tr>
+                    <xhtml:tr>
+                        <xhtml:td colspan="4">
+                            <xi:include href="/db/apps/art/resources/xform-parts.xml" xpointer="xpointer(//part[@id='issue-new'])">
+                                <xi:fallback>
+                                    <xhtml:p>Included document /db/apps/art/resources/xform-parts.xml not found!</xhtml:p>
+                                </xi:fallback>
+                            </xi:include>
+                        </xhtml:td>
+                    </xhtml:tr>
+                </xforms:group>
+                
+                <!-- template meta data group -->
+                <xhtml:tr>
+                    <xhtml:td colspan="4">
+                        <fr:accordion class="fr-accordion-lnf">
+                            <fr:case selected="true">
+                                <fr:label ref="$resources/templatemeta"/>
+                                <xhtml:table class="detail" width="100%">
+                                    
+                                    <!-- template description -->
+                                    <xhtml:tr>
+                                        <xhtml:td class="item-label">
+                                            <xforms:output ref="$resources/description"/>
+                                        </xhtml:td>
+                                        <xhtml:td colspan="3">
+                                            <xforms:output mediatype="text/html" ref="desc[@language=instance('language')]"/>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                    
+                                    <!-- context -->
+                                    <xforms:group ref=".[context]">
+                                        <xhtml:tr>
+                                            <xhtml:td class="item-label">
+                                                <xforms:output ref="$resources/context"/>
+                                            </xhtml:td>
+                                            <xhtml:td colspan="3">
+                                                <xforms:group ref=".[context/@path]">
+                                                    <xforms:output ref="$resources/pathname"/>
+                                                    <xforms:output ref="' '"/>
+                                                    <xforms:output ref="context/@path"/>
+                                                </xforms:group>
+                                                <xforms:group ref=".[context/@id='*']">
+                                                    <xforms:output ref="$resources/siblingcontext"/>
+                                                    <xforms:output ref="' '"/>
+                                                    <xforms:output ref="$id"/>
+                                                </xforms:group>
+                                                <xforms:group ref=".[context/@id='**']">
+                                                    <xforms:output ref="$resources/parentcontext"/>
+                                                    <xforms:output ref="' '"/>
+                                                    <xforms:output ref="$id"/>
+                                                </xforms:group>
+                                                <xforms:group ref=".[context/@id and not(context/@id='*' or context/@id='**')]">
+                                                    <xforms:output ref="$resources/siblingcontext"/>
+                                                    <xforms:output ref="' '"/>
+                                                    <xforms:output ref="context/@id"/>
+                                                </xforms:group>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xforms:group>
+                                    
+                                    <!-- classification -->
+                                    <xforms:group ref=".[classification]">
+                                        <xhtml:tr>
+                                            <xhtml:td class="item-label">
+                                                <xforms:output ref="$resources/classification"/>
+                                            </xhtml:td>
+                                            <xhtml:td colspan="3">
+                                                <xforms:output ref="classification/@type"/>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xforms:group>
+                                    
+                                    <!-- closed or not-->
+                                    <xforms:group ref=".[@isClosed]">
+                                        <xhtml:tr>
+                                            <xhtml:td class="item-label">
+                                                <xforms:output ref="$resources/openorclosed"/>
+                                            </xhtml:td>
+                                            <xhtml:td colspan="3">
+                                                <xforms:output ref="if (string-length(@isClosed)=0 or @isClosed='true') then $resources/isclosed else if (@isClosed='false') then $resources/isopen else ''"/>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xforms:group>
+                                    
+                                    <!-- if this is a document or message level template should underlying model and schematron file name identifier -->
+                                    <xforms:repeat nodeset=".[representingTemplate]">
+                                        <xhtml:tr class="not-selectable">
+                                            <xhtml:td class="item-label">
+                                                <xforms:output ref="$resources/models"/>
+                                            </xhtml:td>
+                                            <xhtml:td colspan="3">
+                                                <xhtml:table width="100%">
+                                                    <xhtml:tr>
+                                                        <xhtml:td class="heading">
+                                                            <xforms:output ref="$resources/underlyingmodel"/>
+                                                        </xhtml:td>
+                                                        <xhtml:td class="heading">
+                                                            <xforms:output ref="$resources/source-dataset"/>
+                                                        </xhtml:td>
+                                                        <xhtml:td class="heading">
+                                                            <xforms:output ref="$resources/schematronid"/>
+                                                        </xhtml:td>
+                                                    </xhtml:tr>
+                                                    <xforms:repeat nodeset="representingTemplate">
+                                                        <xhtml:tr class="not-selectable">
+                                                            <xhtml:td>
+                                                                <xforms:output ref="@model"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td>
+                                                                <xforms:trigger appearance="minimal">
+                                                                    <xforms:label ref="@sourceDataset"/>
+                                                                    <xforms:action ev:event="DOMActivate">
+                                                                        <xforms:load resource="/decor-datasets--{instance('project-instance')/@prefix}?datasetId={@sourceDataset}" show="new"/>
+                                                                    </xforms:action>
+                                                                </xforms:trigger>
+                                                                <xxforms:variable name="sourceDataset" select="@sourceDataset"/>
+                                                                <xforms:output ref="instance('dataset-list-instance')//dataset[@id=$sourceDataset]/name[@language=instance('language')]"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td>
+                                                                <xforms:output ref="@schematron"/>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                    </xforms:repeat>
+                                                </xhtml:table>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xforms:repeat>
+                                    
+                                    <!-- if this template is referenced somewhere show it -->
+                                    <xforms:group ref=".[uses | ref[@type = ('include', 'contains', 'dependency')]]">
+                                        <xhtml:tr class="not-selectable">
+                                            <xhtml:td class="item-label">
+                                                <xforms:output ref="$resources/usedby"/>
+                                                <xforms:output ref="'/'"/>
+                                                <xforms:output ref="$resources/uses"/>
+                                            </xhtml:td>
+                                            <xhtml:td colspan="3">
+                                                <xhtml:table width="100%">
+                                                    <xforms:group ref=".[ref/@type = ('include', 'contains', 'dependency')]">
+                                                        <xhtml:tr class="not-selectable">
+                                                            <xhtml:td class="heading" width="1%">
+                                                                <xforms:output ref="$resources/usedby"/>
+                                                                <xforms:output ref="$resources/template"/>
+                                                                <xforms:output ref="$resources/id"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td class="heading" width="1%">
+                                                                <xforms:output ref="$resources/as"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td class="heading" width="77%">
+                                                                <xforms:output ref="$resources/name"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td class="heading" width="20%">
+                                                                <xforms:output ref="$resources/as-of"/>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                    </xforms:group>
+                                                    <xforms:repeat nodeset="ref[@type = ('include', 'contains', 'dependency')]">
+                                                        <xhtml:tr class="not-selectable">
+                                                            <xhtml:td>
+                                                                <xforms:output ref="@id"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td>
+                                                                <xforms:output ref="if (@type='include') then $resources/inclusion else if (@type='contains') then $resources/containment else if (@type='version') then $resources/version else ''"/>
+                                                                <xforms:group ref=".[@type='dependency']">
+                                                                    <xhtml:img src="/img/link.png" alt="" width="16px"/>
+                                                                </xforms:group>
+                                                            </xhtml:td>
+                                                            <xhtml:td>
+                                                                <xforms:trigger appearance="minimal">
+                                                                    <xforms:output ref="' '"/>
+                                                                    <xforms:label>
+                                                                        <xforms:output ref="@name"/>
+                                                                    </xforms:label>
+                                                                    <xforms:action ev:event="DOMActivate">
+                                                                        <xforms:load resource="/decor-templates--{instance('project-instance')/@prefix}?templateRef={@name}&amp;templateEffectiveDate={@effectiveDate}" show="new"/>
+                                                                    </xforms:action>
+                                                                </xforms:trigger>
+                                                                <xforms:output ref="' '"/>
+                                                                <xhtml:i>
+                                                                    <xforms:output ref="@displayName"/>
+                                                                </xhtml:i>
+                                                            </xhtml:td>
+                                                            <xhtml:td>
+                                                                <xforms:output ref="@effectiveDate" xxforms:format="if (string-length(.) &gt; 0) then format-dateTime(xs:dateTime(.),'[Y]-[M01]-[D01]', substring(instance('language'),1,2), (), ()) else ."/>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                    </xforms:repeat>
+                                                    <!-- this template uses the following templates -->
+                                                    <xforms:group ref=".[uses]">
+                                                        <xhtml:tr class="not-selectable">
+                                                            <xhtml:td class="heading" width="1%">
+                                                                <xforms:output ref="$resources/uses"/>
+                                                                <xforms:output ref="$resources/template"/>
+                                                                <xforms:output ref="$resources/id"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td class="heading" width="1%">
+                                                                <xforms:output ref="$resources/as"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td class="heading" width="77%">
+                                                                <xforms:output ref="$resources/name"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td class="heading" width="20%">
+                                                                <xforms:output ref="$resources/as-of"/>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                    </xforms:group>
+                                                    <xforms:repeat nodeset="uses">
+                                                        <xhtml:tr class="not-selectable">
+                                                            <xhtml:td>
+                                                                <xforms:output ref="@id"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td>
+                                                                <xforms:output ref="if (@type='include') then $resources/inclusion else if (@type='contains') then $resources/containment else ''"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td>
+                                                                <xforms:trigger appearance="minimal">
+                                                                    <xforms:output ref="' '"/>
+                                                                    <xforms:label>
+                                                                        <xforms:output ref="@name"/>
+                                                                    </xforms:label>
+                                                                    <xforms:action ev:event="DOMActivate">
+                                                                        <xforms:load resource="/decor-templates--{instance('project-instance')/@prefix}?templateRef={@name}&amp;templateEffectiveDate={@effectiveDate}" show="new"/>
+                                                                    </xforms:action>
+                                                                </xforms:trigger>
+                                                                <xforms:output ref="' '"/>
+                                                                <xhtml:i>
+                                                                    <xforms:output ref="@displayName"/>
+                                                                </xhtml:i>
+                                                            </xhtml:td>
+                                                            <xhtml:td>
+                                                                <xforms:output ref="@effectiveDate" xxforms:format="if (string-length(.) &gt; 0) then format-dateTime(xs:dateTime(.),'[Y]-[M01]-[D01]', substring(instance('language'),1,2), (), ()) else ."/>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                    </xforms:repeat>
+                                                </xhtml:table>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xforms:group>
+                                    
+                                    <!-- show relationships to other templates -->
+                                    <xforms:repeat nodeset=".[relationship | ref[@type = ('version', 'replaces')]]">
+                                        <xhtml:tr class="not-selectable">
+                                            <xhtml:td class="item-label">
+                                                <xforms:output ref="$resources/relations"/>
+                                            </xhtml:td>
+                                            <xhtml:td colspan="3">
+                                                <xhtml:table width="100%">
+                                                    <xhtml:tr class="not-selectable">
+                                                        <xhtml:td class="heading" width="1%">
+                                                            <xforms:output ref="$resources/type"/>
+                                                        </xhtml:td>
+                                                        <xhtml:td class="heading" width="79%">
+                                                            <xforms:output ref="$resources/model"/>
+                                                            <xforms:output ref="'/'"/>
+                                                            <xforms:output ref="$resources/template"/>
+                                                        </xhtml:td>
+                                                        <xhtml:td class="heading" width="20%">
+                                                            <xforms:output ref="$resources/as-of"/>
+                                                        </xhtml:td>
+                                                    </xhtml:tr>
+                                                    <xforms:repeat nodeset="relationship">
+                                                        <xhtml:tr class="not-selectable">
+                                                            <xhtml:td>
+                                                                <xxforms:variable name="type" select="@type"/>
+                                                                <xforms:output ref="instance('decor-types')/RelationshipTypes/enumeration[@value=$type]/label[@language=$resources/@xml:lang]"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td>
+                                                                <xforms:output ref="@template"/>
+                                                                <xforms:output ref="@model"/>
+                                                                <xforms:group ref=".[@templateName]">
+                                                                    <xhtml:i>
+                                                                        <xforms:output ref="@templateName"/>
+                                                                    </xhtml:i>
+                                                                    <xforms:output ref="if (string-length(@templateFrom)&gt;0) then concat(' (', $resources/repository, ': ', @templateFrom, ')') else ''"/>
+                                                                </xforms:group>
+                                                            </xhtml:td>
+                                                            <xhtml:td>
+                                                                <xforms:group ref=".[@flexibility]">
+                                                                    <!-- show date, don't display time = 00:00:00  -->
+                                                                    <xforms:output ref="replace(@flexibility, 'T00:00:00', '')"/>
+                                                                </xforms:group>
+                                                                <xforms:group ref=".[not(@flexibility)]">
+                                                                    <!-- show date, don't display time = 00:00:00  -->
+                                                                    <xforms:output ref="'dynamic'"/>
+                                                                </xforms:group>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                    </xforms:repeat>
+                                                    <xforms:repeat nodeset="ref[@type = ('version', 'replaces')]">
+                                                        <xhtml:tr class="not-selectable">
+                                                            <xhtml:td>
+                                                                <xforms:output ref="if (@type='version') then $resources/version else if (@type='replaces') then $resources/replaces else ''"/>
+                                                                <xforms:group ref=".[@type='dependency']">
+                                                                    <xhtml:img src="/img/link.png" alt="" width="16px"/>
+                                                                </xforms:group>
+                                                            </xhtml:td>
+                                                            <xhtml:td>
+                                                                <xforms:output ref="@id"/>
+                                                                <xforms:trigger appearance="minimal">
+                                                                    <xforms:output ref="' '"/>
+                                                                    <xforms:label>
+                                                                        <xforms:output ref="@name"/>
+                                                                    </xforms:label>
+                                                                    <xforms:action ev:event="DOMActivate">
+                                                                        <xforms:load resource="/decor-templates--{instance('project-instance')/@prefix}?templateRef={@name}&amp;templateEffectiveDate={@effectiveDate}" show="new"/>
+                                                                    </xforms:action>
+                                                                </xforms:trigger>
+                                                                <xforms:output ref="' '"/>
+                                                                <xhtml:i>
+                                                                    <xforms:output ref="@displayName"/>
+                                                                </xhtml:i>
+                                                            </xhtml:td>
+                                                            <xhtml:td>
+                                                                <xforms:output ref="@effectiveDate" xxforms:format="if (string-length(.) &gt; 0) then format-dateTime(xs:dateTime(.),'[Y]-[M01]-[D01]', substring(instance('language'),1,2), (), ()) else ."/>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                    </xforms:repeat>
+                                                </xhtml:table>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xforms:repeat>
+
+                                    <!-- item ref/label -->
+                                    <xforms:repeat nodeset=".[item]">
+                                        <xhtml:tr class="not-selectable">
+                                            <xhtml:td class="item-label">
+                                                <xforms:output ref="$resources/reference"/>
+                                            </xhtml:td>
+                                            <xhtml:td colspan="3">
+                                                <xforms:output ref="item/@label"/>
+                                                <xforms:output mediatype="text/html" ref="item/desc[@language=instance('language')]"/>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xforms:repeat>
+                                    
+                                    <!-- example -->
+                                    <xforms:repeat nodeset="example">
+                                        <xhtml:tr class=" {if (@type='error') then 'explabelred' else if (@type='valid') then 'explabelgreen' else 'explabel'} not-selectable">
+                                            <xhtml:td class="exppad">
+                                                <xforms:output ref="$resources/example"/>
+                                            </xhtml:td>
+                                            <xhtml:td colspan="4" class="exppad">
+                                                <xforms:group ref=".[@caption]">
+                                                    <xhtml:div class="expcaption">
+                                                        <xforms:output ref="@caption"/>
+                                                    </xhtml:div>
+                                                </xforms:group>
+                                                <xhtml:tt>
+                                                    <xforms:output mediatype="text/html" value="xxforms:serialize(xxforms:call-xpl('oxf:/ops/utils/formatting/format.xpl', 'data', ./*, 'data')/*, 'html')"/>
+                                                </xhtml:tt>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xforms:repeat>
+                                </xhtml:table>
+                            </fr:case>
+                        </fr:accordion>
+                    </xhtml:td>
+                </xhtml:tr>
+                
+                <!-- group for existing issues -->
+                <xforms:group ref="instance('templates-issues')/issue">
+                    <xhtml:tr>
+                        <xhtml:td colspan="4">
+                            <fr:accordion class="fr-accordion-lnf">
+                                <fr:case>
+                                    <fr:label ref="concat($resources/issues,' (',count(instance('templates-issues')/issue),')')"/>
+                                    <xhtml:div class="detail">
+                                        <fr:accordion class="fr-accordion-lnf">
+                                            <xforms:repeat nodeset="instance('templates-issues')/issue">
+                                                <fr:case>
+                                                    <fr:label>
+                                                        <xxforms:variable name="id" select="@id"/>
+                                                        <xxforms:variable name="type" select="@type"/>
+                                                        <xxforms:variable name="status" select="@currentStatusCode"/>
+                                                        <xforms:output mediatype="image/*" value="concat('/img/IssueStatusCodeLifeCycle_',$status,'.png')">
+                                                            <xforms:hint>
+                                                                <xforms:output ref="$resources/status"/> = 
+                                                                <xforms:output ref="instance('decor-types')/IssueStatusCodeLifeCycle/enumeration[@value=$status]/label[@language=$resources/@xml:lang]"/>
+                                                            </xforms:hint>
+                                                        </xforms:output>
+                                                        <xforms:output ref="instance('decor-types')/IssueType/enumeration[@value=$type]/label[@language=$resources/@xml:lang]"/> (
+                                                        <xforms:trigger appearance="minimal">
+                                                            <xforms:label ref="concat(instance('project-instance')/ids/baseId[@id=string-join(tokenize($id,'\.')[position()!=last()],'.') ]/@prefix,tokenize($id,'\.')[last()])"/>
+                                                            <xforms:action ev:event="DOMActivate">
+                                                                <xforms:load resource="/decor-issues--{instance('project-instance')/@prefix}?issueId={$id}" show="new"/>
+                                                            </xforms:action>
+                                                        </xforms:trigger>
+                                                        ): <xforms:output ref="@displayName"/>
+                                                    </fr:label>
+                                                    <xi:include href="/db/apps/art/resources/xform-parts.xml" xpointer="xpointer(//part[@id='issue-readonly'])">
+                                                        <xi:fallback>
+                                                            <p>Included document /db/apps/art/resources/xform-parts.xml not found!</p>
+                                                        </xi:fallback>
+                                                    </xi:include>
+                                                </fr:case>
+                                            </xforms:repeat>
+                                        </fr:accordion>
+                                    </xhtml:div>
+                                </fr:case>
+                            </fr:accordion>
+                        </xhtml:td>
+                    </xhtml:tr>
+                </xforms:group>
+                
+                <!-- template contents -->
+                <xhtml:tr>
+                    <xhtml:td colspan="4">
+                        <xhtml:table width="100%">
+                            <xhtml:thead>
+                                <xhtml:tr>
+                                    <xhtml:td class="heading" width="10%">
+                                        <xforms:output ref="'Item'"/>
+                                    </xhtml:td>
+                                    <xhtml:td class="heading" width="1%">
+                                        <xforms:output ref="'DT'"/>
+                                    </xhtml:td>
+                                    <xhtml:td class="heading" width="1%">
+                                        <xforms:output ref="'Card'"/>
+                                    </xhtml:td>
+                                    <xhtml:td class="heading" width="1%">
+                                        <xforms:output ref="'Conf'"/>
+                                    </xhtml:td>
+                                    <xhtml:td class="heading">
+                                        <xforms:output ref="$resources/description"/>
+                                    </xhtml:td>
+                                    <xhtml:td class="heading" width="1%">
+                                        <xforms:output ref="'Label'"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xhtml:thead>
+                            <xhtml:tbody>
+                                <!-- Note: we're expecting that get-decor-template.xquery normalized all attributes into name/value pairs, hence we do not have to switch between shorthand classCode="XXX" -->
+                                <xforms:repeat nodeset="instance('selected-template')/template/template[@effectiveDate=instance('version-navigation')]//(element|attribute|include|choice|assert|report|let|defineVariable|constraint[@language=instance('language')]|property[not(parent::valueDomain)]|example[not(parent::template)][not(parent::valueDomain)])">
+
+                                    <!-- some variables to cache -->
+                                    <xxforms:variable name="attValue" select="if (self::attribute/@value) then (self::attribute/@value) else if (self::attribute[@name='xsi:type']) then (parent::element/@datatype) else ()"/>
+                                    
+                                    <!-- table format for templates to show everything -->
+                                    <!-- elements / attributes -->
+                                    <xforms:repeat nodeset="self::element|self::attribute">
+                                        <xhtml:tr class="{if (self::element) then 'iselement' else ''} not-selectable">
+                                            <!-- item -->
+                                            <xhtml:td>
+                                                <xhtml:table>
+                                                    <xhtml:tr class="not-selectable">
+                                                        <xforms:repeat nodeset="./ancestor::element">
+                                                            <xhtml:td>
+                                                                <xhtml:img src="/img/treeblank.png" width="20px" height="1px"/>
+                                                            </xhtml:td>
+                                                        </xforms:repeat>
+                                                        <xforms:repeat nodeset="./ancestor::element[last()]">
+                                                            <xhtml:td>
+                                                                <xhtml:img src="/img/treetree.png" width="20px"/>
+                                                            </xhtml:td>
+                                                        </xforms:repeat>
+
+                                                        <!-- show element / attribute name -->
+                                                        <xhtml:td class="{if (@type ='entity') then 'node-folder' else if (self::element) then 'node-element' else if (self::attribute) then 'node-attribute' else ''}">
+                                                            <xhtml:tt>
+                                                                <xhtml:strong>
+                                                                    <xforms:output ref="if (contains(@name,'[')) then substring-before(@name,'[') else if (@name) then @name else '?'"/>
+                                                                </xhtml:strong>
+                                                            </xhtml:tt>
+                                                            <!-- show predicate of elements, if any -->
+                                                            <xforms:group ref=".[contains(@name,'[')]">
+                                                                <xhtml:table>
+                                                                    <xhtml:tr class="not-selectable">
+                                                                        <xhtml:td>
+                                                                            <xforms:output ref="$resources/where" style="font-weight:normal;"/>
+                                                                        </xhtml:td>
+                                                                    </xhtml:tr>
+                                                                    <xhtml:tr class="not-selectable">
+                                                                        <xhtml:td>
+                                                                            <xforms:output ref="concat('[', replace(substring-after(@name,'['), '\[', ' ['))" style="font-weight:normal;"/>
+                                                                        </xhtml:td>
+                                                                    </xhtml:tr>
+                                                                </xhtml:table>
+                                                            </xforms:group>
+                                                        </xhtml:td>
+                                                        <xhtml:td>
+                                                            <xhtml:img src="/img/treeblank.png" width="20px" height="1px"/>
+                                                        </xhtml:td>
+                                                    </xhtml:tr>
+                                                </xhtml:table>
+                                            </xhtml:td>
+                                            <!-- data type -->
+                                            <xhtml:td>
+                                                <xhtml:strong>
+                                                    <xforms:output ref="@datatype"/>
+                                                </xhtml:strong>
+                                            </xhtml:td>
+                                            <!-- min..max card -->
+                                            <xhtml:td>
+                                                <!-- for elements -->
+                                                <xforms:group ref=".[@minimumMultiplicity or @maximumMultiplicity or @isMandatory='true']">
+                                                    <xhtml:strong>
+                                                        <xforms:output ref="concat(@minimumMultiplicity, '..', @maximumMultiplicity)"/>
+                                                    </xhtml:strong>
+                                                </xforms:group>
+                                                <!-- for attributes -->
+                                                <xforms:repeat nodeset=".[self::attribute]">
+                                                    <xforms:output ref="if (@prohibited) then '0' else if (@isOptional='true') then ('0..1') else ('1..1')"/>
+                                                </xforms:repeat>
+                                            </xhtml:td>
+                                            <!-- conformance -->
+                                            <xhtml:td>
+                                                <!-- element is mandatory? -->
+                                                <!-- conformance of an element? -->
+                                                <xforms:repeat nodeset="self::element">
+                                                    <xhtml:strong>
+                                                        <xforms:output ref="if (@isMandatory='true') then 'M' else if (@conformance and not(@isMandatory!='false')) then @conformance else if (@minimumMultiplicity='0' and not(@conformance)) then 'O' else ()"/>
+                                                    </xhtml:strong>
+                                                </xforms:repeat>
+                                                <!-- for attributes, if not a choice this is a fixed thing -->
+                                                <xforms:repeat nodeset="self::attribute">
+                                                    <xforms:output ref="if (contains($attValue, '|')) then '' else if (string-length($attValue)=0) then '' else 'F'"/>
+                                                </xforms:repeat>
+                                            </xhtml:td>
+                                            <!-- description, fixed vocabulary -->
+                                            <xhtml:td>
+                                                <xforms:repeat nodeset="self::attribute[@name='value'][../property/(@minInclude|@maxInclude|@fractionDigits|@minLength|@maxLength)]">
+                                                    <xhtml:div class="not-selectable">
+                                                        <xforms:output ref="$resources/seeconfvalue"/>
+                                                    </xhtml:div>
+                                                </xforms:repeat>
+                                                <xforms:repeat nodeset="self::attribute[@name='unit'][../property/@unit]">
+                                                    <xhtml:div class="not-selectable">
+                                                        <xforms:output ref="$resources/seeconfunit"/>
+                                                    </xhtml:div>
+                                                </xforms:repeat>
+                                                <xforms:repeat nodeset="self::attribute[@name='currency'][../property/@currency]">
+                                                    <xhtml:div class="not-selectable">
+                                                        <xforms:output ref="$resources/seeconfcurrency"/>
+                                                    </xhtml:div>
+                                                </xforms:repeat>
+
+                                                <!-- description element -->
+                                                <xforms:repeat nodeset="desc[@language=instance('language')]">
+                                                    <xhtml:div class="not-selectable">
+                                                        <xforms:output mediatype="text/html" ref="."/>
+                                                    </xhtml:div>
+                                                </xforms:repeat>
+                                                <!-- value name pair, emit the att value -->
+                                                <xforms:repeat nodeset="self::attribute[$attValue]">
+                                                    <xhtml:div class="not-selectable">
+                                                        <xforms:output ref="if (contains($attValue, '|')) then 'choice out of:' else $attValue"/>
+                                                        <xforms:group ref=".[contains($attValue, '|')]">
+                                                            <xhtml:ul>
+                                                                <xforms:repeat nodeset="tokenize($attValue, '\|')">
+                                                                    <xhtml:li>
+                                                                        <xforms:output ref="."/>
+                                                                    </xhtml:li>
+                                                                </xforms:repeat>
+                                                            </xhtml:ul>
+                                                        </xforms:group>
+                                                    </xhtml:div>
+                                                </xforms:repeat>
+                                                <!-- contains statements -->
+                                                <xforms:repeat nodeset=".[@contains]">
+                                                    <xhtml:div class="not-selectable">
+                                                        <xforms:output ref="concat($resources/contains,': ')"/>
+                                                        <xxforms:variable name="contains" select="@contains"/>
+                                                        <xxforms:variable name="flexibility" select="if (matches(@flexibility,'^\d{4}')) then (@flexibility) else ($resources/dynamic)"/>
+                                                        <xforms:group ref=".[@linkedartefactmissing=true()]">
+                                                            <xforms:output mediatype="image/*" value="'/img/exclamation.png'">
+                                                                <xforms:hint ref="$resources/artefactmissing"/>
+                                                            </xforms:output>
+                                                            <xforms:output ref="' '"/>
+                                                        </xforms:group>
+                                                        <xforms:trigger appearance="minimal">
+                                                            <xforms:label>
+                                                                <xforms:output ref="if (string-length(@tmid)&gt;0) then @tmid else $contains"/>
+                                                            </xforms:label>
+                                                            <xforms:action ev:event="DOMActivate">
+                                                                <xforms:load resource="/decor-templates--{instance('project-instance')/@prefix}?templateRef={$contains}&amp;templateEffectiveDate={@flexibility}" show="new"/>
+                                                            </xforms:action>
+                                                        </xforms:trigger>
+                                                        <xforms:output ref="' '"/>
+                                                        <xhtml:i>
+                                                            <xforms:output ref="if (string-length(@tmdisplayName)&gt;0) then @tmdisplayName else @tmname"/>
+                                                            <xforms:output ref="concat(' (', $flexibility, ')')"/>
+                                                        </xhtml:i>
+                                                    </xhtml:div>
+                                                </xforms:repeat>
+                                            </xhtml:td>
+                                            <!-- labels -->
+                                            <xhtml:td>
+                                                <!-- item label for elements... -->
+                                                <!-- ...or for attributes -->
+                                                <xforms:output ref="replace((item/@label)[1], '-', '‑')"/>
+                                                <xforms:output mediatype="text/html" ref="item/desc[@language=instance('language')]"/>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                        <xforms:repeat nodeset=".[count(vocabulary)=1][not(vocabulary/@valueSet)]">
+                                            <xforms:repeat nodeset="x/vocabulary/@*[name(.)!='flexibility']">
+                                                <!-- this branch is temporarily commented out /by spoiling the x path with "x/" -->
+                                                <xhtml:tr class="not-selectable">
+                                                    <!-- vocabulary -->
+                                                    <xhtml:td>
+                                                        <xhtml:table>
+                                                            <xhtml:tr>
+                                                                <xforms:repeat nodeset="./ancestor::element">
+                                                                    <xhtml:td>
+                                                                        <xhtml:img src="/img/treeblank.png" width="20px" height="1px"/>
+                                                                    </xhtml:td>
+                                                                </xforms:repeat>
+                                                                <xforms:repeat nodeset="./ancestor::element[last()]">
+                                                                    <xhtml:td>
+                                                                        <xhtml:img src="/img/treetree.png" width="20px"/>
+                                                                    </xhtml:td>
+                                                                </xforms:repeat>
+                                                                <!-- show attribute name -->
+                                                                <xhtml:td class="node-attribute">
+                                                                    <xhtml:tt>
+                                                                        <xhtml:strong>
+                                                                            <!-- name -->
+                                                                            <xforms:output ref="name()"/>
+                                                                        </xhtml:strong>
+                                                                    </xhtml:tt>
+                                                                </xhtml:td>
+                                                            </xhtml:tr>
+                                                        </xhtml:table>
+                                                    </xhtml:td>
+                                                    <xhtml:td> </xhtml:td>
+                                                    <xhtml:td>
+                                                        <xhtml:table>
+                                                            <xhtml:tr class="not-selectable">
+                                                                <xhtml:td>
+                                                                    <xforms:output ref="'1..1'"/>
+                                                                </xhtml:td>
+                                                            </xhtml:tr>
+                                                        </xhtml:table>
+                                                    </xhtml:td>
+                                                    <xhtml:td>
+                                                        <xhtml:table>
+                                                            <xhtml:tr class="not-selectable">
+                                                                <xhtml:td>
+                                                                    <xforms:output ref="if (contains (., '|')) then '' else if (string-length(.)&gt;0) then 'F' else ''"/>
+                                                                </xhtml:td>
+                                                            </xhtml:tr>
+                                                        </xhtml:table>
+                                                    </xhtml:td>
+                                                    <xhtml:td>
+                                                        <xhtml:table>
+                                                            <xhtml:tr class="not-selectable">
+                                                                <xhtml:td>
+                                                                    <xforms:group ref=".[name()='code' or name()='codeSystem' or name()='codeSystemName' or name()='displayName']">
+                                                                        <xforms:output ref="."/>
+                                                                    </xforms:group>
+                                                                    <xxforms:variable name="flexibility" select="parent::vocabulary/@flexibility"/>
+                                                                    <!--xforms:output ref="if ($flexibility='dynamic')
+                                                                                                        then ' dynamic' else if (string-length($flexibility)>0) then 
+                                                                                                        concat(' static ', $flexibility) else ''"/-->
+                                                                </xhtml:td>
+                                                            </xhtml:tr>
+                                                        </xhtml:table>
+                                                    </xhtml:td>
+                                                </xhtml:tr>
+                                            </xforms:repeat>
+                                        </xforms:repeat>
+                                        <xforms:repeat nodeset=".[count(vocabulary)&gt;0 or vocabulary[@valueSet]]">
+                                            <xhtml:tr class="not-selectable">
+                                                <xhtml:td/>
+                                                <xhtml:td class="conf">
+                                                    <xforms:output ref="'CONF'"/>
+                                                </xhtml:td>
+                                                <xhtml:td colspan="4">
+                                                    <!-- vocabulary -->
+                                                    <xforms:repeat nodeset="vocabulary">
+                                                        <xforms:group ref=".[preceding-sibling::vocabulary]">
+                                                            <xhtml:div class="not-selectable">
+                                                                <xforms:output ref="concat ('-', $resources/or, '-')"/>
+                                                            </xhtml:div>
+                                                        </xforms:group>
+                                                        <xxforms:variable name="id" select="@vsid"/>
+                                                        <xxforms:variable name="name" select="@vsname"/>
+                                                        <xxforms:variable name="displayName" select="@vsdisplayName"/>
+                                                        <xxforms:variable name="missing" select="@linkedartefactmissing"/>
+                                                        <xforms:repeat nodeset="@*">
+                                                            <xhtml:div class="not-selectable">
+                                                                <!-- value sets -->
+                                                                <xforms:group ref=".[name()='valueSet']">
+                                                                    <xforms:output ref="concat($resources/codefromvalueset,': ')"/>
+                                                                    <xforms:group ref=".[$missing=true()]">
+                                                                        <xforms:output mediatype="image/*" value="'/img/exclamation.png'">
+                                                                            <xforms:hint ref="$resources/artefactmissing"/>
+                                                                        </xforms:output>
+                                                                    </xforms:group>
+                                                                    <xforms:trigger appearance="minimal">
+                                                                        <xforms:label>
+                                                                            <xforms:output ref="if (string-length($id)&gt;0) then $id else (.)"/>
+                                                                        </xforms:label>
+                                                                        <xforms:action ev:event="DOMActivate">
+                                                                            <xforms:load resource="/decor-valuesets--{instance('project-instance')/@prefix}?valueSetRef={.}&amp;valueSetEffectiveDate={../@flexibility}" show="new"/>
+                                                                        </xforms:action>
+                                                                    </xforms:trigger>
+                                                                    <xforms:output ref="' '"/>
+                                                                    <xhtml:i>
+                                                                        <xforms:output ref="if (string-length($displayName)&gt;0) then $displayName else $name"/>
+                                                                        <xxforms:variable name="flexibility" select="if (matches(../@flexibility,'^\d{4}')) then (../@flexibility) else ($resources/dynamic)"/>
+                                                                        <xforms:output ref="concat('(', $flexibility, ')')"/>
+                                                                    </xhtml:i>
+                                                                </xforms:group>
+                                                                <!-- code, code system etc. -->
+                                                                <xforms:group ref=".[name()='code' or name()='codeSystem' or name()='codeSystemName' or name()='displayName']">
+                                                                    <xforms:output ref="concat('@', name(), ' = ')"/>
+                                                                    <xforms:output ref="."/>
+                                                                </xforms:group>
+                                                                <xforms:group ref=".[name()='domain']">
+                                                                    <xforms:output ref="$resources/codefromdomain"/>
+                                                                    <xforms:output ref="': '"/>
+                                                                    <xforms:output ref="."/>
+                                                                </xforms:group>
+                                                            </xhtml:div>
+                                                        </xforms:repeat>
+                                                    </xforms:repeat>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:repeat>
+                                        <xforms:repeat nodeset=".[templateerror]">
+                                            <xhtml:tr class="not-selectable">
+                                                <xhtml:td/>
+                                                <xhtml:td class="conf">
+                                                    <xhtml:table>
+                                                        <xhtml:tr class="not-selectable">
+                                                            <xhtml:td>
+                                                                <xforms:output ref="'ERROR'"/>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                    </xhtml:table>
+                                                </xhtml:td>
+                                                <xhtml:td colspan="4">
+                                                    <xforms:output ref="templateerror/@type"/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:repeat>
+                                        <xforms:repeat nodeset=".[text]">
+                                            <xhtml:tr class="not-selectable">
+                                                <xhtml:td/>
+                                                <xhtml:td class="conf">
+                                                    <xforms:output ref="'CONF'"/>
+                                                </xhtml:td>
+                                                <xhtml:td colspan="4">
+                                                    <xforms:output ref="concat($resources/elementcontent, '&#34;', normalize-space(text), '&#34;')"/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:repeat>
+                                    </xforms:repeat>
+                                    <!-- properties -->
+                                    <xforms:repeat nodeset="self::property">
+                                        <xhtml:tr class="not-selectable">
+                                            <!-- vocabulary, property as constraint -->
+                                            <xhtml:td style="background-color:white;"/>
+                                            <xhtml:td class="conf">
+                                                <xforms:output ref="'CONF'"/>
+                                            </xhtml:td>
+                                            <xhtml:td colspan="4">
+                                                <xforms:group ref=".[preceding-sibling::property]">
+                                                    <xhtml:div class="not-selectable">
+                                                        <xforms:output ref="concat ('-', $resources/or, '-')"/>
+                                                    </xhtml:div>
+                                                </xforms:group>
+                                                <xforms:repeat nodeset="@*">
+                                                    <xhtml:div class="not-selectable">
+                                                        <xforms:group ref=".[matches(name(), 'minInclude|maxInclude|fractionDigits|minLength|maxLength')]">
+                                                            <xforms:output ref="'@value '"/>
+                                                            <xforms:output ref="name()"/>
+                                                        </xforms:group>
+                                                        <xforms:group ref=".[matches(name(), 'unit|currency')]">
+                                                            <xforms:output ref="concat('@', name())"/>
+                                                        </xforms:group>
+                                                        <xforms:group ref=".[matches(name(), 'value')]">
+                                                            <xforms:output ref="'@value fixed'"/>
+                                                        </xforms:group>
+                                                        <xforms:output ref="' = '"/>
+                                                        <xforms:output ref="."/>
+                                                    </xhtml:div>
+                                                </xforms:repeat>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xforms:repeat>
+                                    <!-- constraints -->
+                                    <xforms:repeat nodeset="self::constraint">
+                                        <xhtml:tr class="not-selectable">
+                                            <xhtml:td style="background-color:white;"/>
+                                            <xhtml:td class="conf">
+                                                <xforms:output ref="'Constraint'"/>
+                                            </xhtml:td>
+                                            <xhtml:td colspan="4">
+                                                <xforms:output mediatype="text/html" ref="."/>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xforms:repeat>
+                                    <!-- examples -->
+                                    <xforms:repeat nodeset="self::example">
+                                        <xhtml:tr class=" {if (@type='error') then 'explabelred' else if (@type='valid') then 'explabelgreen' else 'explabel'} not-selectable">
+                                            <xhtml:td style="background-color:white;"/>
+                                            <xhtml:td class="exppad">
+                                                <xforms:output ref="$resources/example"/>
+                                            </xhtml:td>
+                                            <xhtml:td colspan="4" class="exppad">
+                                                <xforms:group ref=".[@caption]">
+                                                    <xhtml:div class="expcaption">
+                                                        <xforms:output ref="@caption"/>
+                                                    </xhtml:div>
+                                                </xforms:group>
+                                                <xhtml:tt>
+                                                    <xforms:output mediatype="text/html" value="xxforms:serialize(xxforms:call-xpl('oxf:/ops/utils/formatting/format.xpl', 'data', ./*, 'data')/*, 'html')"/>
+                                                </xhtml:tt>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xforms:repeat>
+                                    <!-- includes -->
+                                    <xforms:repeat nodeset="self::include">
+                                        <xhtml:tr class="not-selectable">
+                                            <xhtml:td colspan="6">
+                                                <xforms:output ref="concat($resources/includedhere,': ')"/>
+                                                <xxforms:variable name="ref" select="@ref"/>
+                                                <xxforms:variable name="flexibility" select="if (matches(@flexibility,'^\d{4}')) then (@flexibility) else ($resources/dynamic)"/>
+                                                <xforms:group ref=".[@linkedartefactmissing=true()]">
+                                                    <xforms:output mediatype="image/*" value="'/img/exclamation.png'">
+                                                        <xforms:hint ref="$resources/artefactmissing"/>
+                                                    </xforms:output>
+                                                    <xforms:output ref="' '"/>
+                                                </xforms:group>
+                                                <xforms:trigger appearance="minimal">
+                                                    <xforms:output ref="' '"/>
+                                                    <xforms:label>
+                                                        <xforms:output ref="if (string-length(@tmid)&gt;0) then @tmid else $ref"/>
+                                                    </xforms:label>
+                                                    <xforms:action ev:event="DOMActivate">
+                                                        <xforms:load resource="/decor-templates--{instance('project-instance')/@prefix}?templateRef={$ref}&amp;templateEffectiveDate={@flexibility}" show="new"/>
+                                                    </xforms:action>
+                                                </xforms:trigger>
+                                                <xforms:output ref="' '"/>
+                                                <xhtml:i>
+                                                    <xforms:output ref="if (string-length(@tmdisplayName)&gt;0) then @tmdisplayName else @tmname"/>
+                                                    <xforms:output ref="concat('(', $flexibility, ')')"/>
+                                                </xhtml:i>
+                                                <xforms:output ref="' '"/>
+                                                <xforms:group ref=".[@minimumMultiplicity or @maximumMultiplicity]">
+                                                    <xforms:output ref="@minimumMultiplicity"/>
+                                                    <xforms:output ref="' .. '"/>
+                                                    <xforms:output ref="@maximumMultiplicity"/>
+                                                </xforms:group>
+                                                <xforms:group ref=".[@isMandatory='true']">
+                                                    <xforms:output ref="'M'"/>
+                                                </xforms:group>
+                                                <!-- conformance of an element? -->
+                                                <xforms:group ref=".[string-length(@conformance)&gt;0 and (@isMandatory!='true' or not(@isMandatory))]">
+                                                    <xforms:output ref="@conformance"/>
+                                                </xforms:group>
+                                                <!-- conformance of an element? -->
+                                                <xforms:group ref=".[@minimumMultiplicity='0' and not(@conformance)]">
+                                                    <xforms:output ref="'O'"/>
+                                                </xforms:group>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                        <!-- desc under include or choice -->
+                                        <xforms:repeat nodeset=".[desc]">
+                                            <xhtml:tr class="not-selectable">
+                                                <!-- item -->
+                                                <xhtml:td/>
+                                                <!-- data type -->
+                                                <xhtml:td/>
+                                                <!-- min..max card -->
+                                                <xhtml:td/>
+                                                <!-- conformance -->
+                                                <xhtml:td/>
+                                                <!-- description, fixed vocabulary -->
+                                                <xhtml:td>
+                                                    <!-- description element -->
+                                                    <xforms:repeat nodeset="desc[@language=instance('language')]">
+                                                        <xhtml:div class="not-selectable">
+                                                            <xforms:output mediatype="text/html" ref="."/>
+                                                        </xhtml:div>
+                                                    </xforms:repeat>
+                                                </xhtml:td>
+                                                <!-- labels -->
+                                                <xhtml:td>
+                                                    <!-- item label for elements... -->
+                                                    <!-- ...or for attributes -->
+                                                    <xforms:output ref="replace((item/@label)[1], '-', '‑')"/>
+                                                    <xforms:output mediatype="text/html" ref="item/desc[@language=instance('language')]"/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:repeat>
+                                    </xforms:repeat>
+                                    <!-- choices -->
+                                    <xforms:repeat nodeset="self::choice">
+                                        <xhtml:tr class="not-selectable">
+                                            <xhtml:td colspan="6">
+                                                <xforms:output ref="$resources/choices"/>
+                                                <xforms:output ref="':'"/>
+                                                <xhtml:ul>
+                                                    <xforms:repeat nodeset="element|include/element">
+                                                        <xhtml:li>
+                                                            <xhtml:strong>
+                                                                <xhtml:tt>
+                                                                    <xforms:output ref="if (contains(@name,'[')) then substring-before(@name,'[') else if (name(.)='element' and @name) then @name else if (name(.)='name') then . else if (name(.)) then name(.) else '?'"/>
+                                                                </xhtml:tt>
+                                                            </xhtml:strong>
+                                                            <xforms:group ref=".[contains(@name,'[')]">
+                                                                <xforms:output ref="$resources/where" style="font-weight:normal;"/>
+                                                                <xforms:output ref="concat('[', replace(substring-after(@name,'['), '\[', ' ['))" style="font-weight:normal;"/>
+                                                            </xforms:group>
+                                                            <xforms:group ref=".[@contains]">
+                                                                <xhtml:i>
+                                                                    <xforms:output ref="$resources/contains"/>
+                                                                </xhtml:i>
+                                                                <xxforms:variable name="contains" select="@contains"/>
+                                                                <xxforms:variable name="flexibility" select="if (matches(@flexibility,'^\d{4}')) then (@flexibility) else ($resources/dynamic)"/>
+                                                                <xforms:group ref=".[@linkedartefactmissing=true()]">
+                                                                    <xforms:output mediatype="image/*" value="'/img/exclamation.png'">
+                                                                        <xforms:hint ref="$resources/artefactmissing"/>
+                                                                    </xforms:output>
+                                                                    <xforms:output ref="' '"/>
+                                                                </xforms:group>
+                                                                <xforms:trigger appearance="minimal">
+                                                                    <xforms:label>
+                                                                        <xforms:output ref="if (string-length(@tmid)&gt;0) then @tmid else $contains"/>
+                                                                    </xforms:label>
+                                                                    <xforms:action ev:event="DOMActivate">
+                                                                        <xforms:load resource="/decor-templates--{instance('project-instance')/@prefix}?templateRef={$contains}&amp;templateEffectiveDate={@flexibility}" show="new"/>
+                                                                    </xforms:action>
+                                                                </xforms:trigger>
+                                                                <xforms:output ref="' '"/>
+                                                                <xhtml:i>
+                                                                    <xforms:output ref="if (string-length(@tmdisplayName)&gt;0) then @tmdisplayName else @tmname"/>
+                                                                    <xforms:output ref="concat('(', $flexibility, ')')"/>
+                                                                </xhtml:i>
+                                                            </xforms:group>
+                                                        </xhtml:li>
+                                                    </xforms:repeat>
+                                                </xhtml:ul>
+                                                <xforms:group ref=".[@minimumMultiplicity]">
+                                                    <xforms:output ref="'min '"/>
+                                                    <xforms:output ref="@minimumMultiplicity"/>
+                                                    <xforms:output ref="' '"/>
+                                                    <xforms:output ref="$resources/elements"/>
+                                                    <xforms:output ref="' '"/>
+                                                </xforms:group>
+                                                <xforms:group ref=".[@minimumMultiplicity and @maximumMultiplicity]">
+                                                    <xforms:output ref="', '"/>
+                                                </xforms:group>
+                                                <xforms:group ref=".[@maximumMultiplicity]">
+                                                    <xforms:output ref="'max '"/>
+                                                    <xforms:output ref="@maximumMultiplicity"/>
+                                                    <xforms:output ref="' '"/>
+                                                    <xforms:output ref="$resources/elements"/>
+                                                    <xforms:output ref="' '"/>
+                                                </xforms:group>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                        <!-- desc under include or choice -->
+                                        <xforms:repeat nodeset=".[desc]">
+                                            <xhtml:tr class="not-selectable">
+                                                <!-- item -->
+                                                <xhtml:td/>
+                                                <!-- data type -->
+                                                <xhtml:td/>
+                                                <!-- min..max card -->
+                                                <xhtml:td/>
+                                                <!-- conformance -->
+                                                <xhtml:td/>
+                                                <!-- description, fixed vocabulary -->
+                                                <xhtml:td>
+                                                    <!-- description element -->
+                                                    <xforms:repeat nodeset="desc[@language=instance('language')]">
+                                                        <xhtml:div class="not-selectable">
+                                                            <xforms:output mediatype="text/html" ref="."/>
+                                                        </xhtml:div>
+                                                    </xforms:repeat>
+                                                </xhtml:td>
+                                                <!-- labels -->
+                                                <xhtml:td>
+                                                    <!-- item label for elements... -->
+                                                    <!-- ...or for attributes -->
+                                                    <xforms:output ref="replace((item/@label)[1], '-', '‑')"/>
+                                                    <xforms:output mediatype="text/html" ref="item/desc[@language=instance('language')]"/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:repeat>
+                                    </xforms:repeat>
+                                    <!-- schematrons -->
+                                    <xforms:repeat nodeset="self::assert|self::report|self::let">
+                                        <xhtml:tr class="not-selectable">
+                                            <xhtml:td style="background-color:white;"/>
+                                            <xhtml:td class="stron">
+                                                <xforms:output ref="'Schematron '"/>
+                                                <xforms:output ref="name(.)"/>
+                                            </xhtml:td>
+                                            <xhtml:td colspan="4">
+                                                <xforms:group ref=".[self::assert|self::report]">
+                                                    <xhtml:table>
+                                                        <xhtml:tr class="not-selectable">
+                                                            <xhtml:td>
+                                                                <xforms:output ref="'Role'"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td>
+                                                                <xforms:output ref="@role"/>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                        <xhtml:tr class="not-selectable">
+                                                            <xhtml:td>
+                                                                <xforms:output ref="'Test'"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td>
+                                                                <xforms:output ref="@test"/>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                        <xhtml:tr class="not-selectable">
+                                                            <xhtml:td>
+                                                                <xforms:output ref="'Message '"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td>
+                                                                <xforms:output ref="text()"/>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                    </xhtml:table>
+                                                </xforms:group>
+                                                <xforms:group ref=".[self::let]">
+                                                    <xhtml:table>
+                                                        <xhtml:tr class="not-selectable">
+                                                            <xhtml:td>
+                                                                <xforms:output ref="'Name'"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td>
+                                                                <xforms:output ref="@name"/>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                        <xhtml:tr class="not-selectable">
+                                                            <xhtml:td>
+                                                                <xforms:output ref="$resources/value"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td>
+                                                                <xforms:output ref="@value"/>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                    </xhtml:table>
+                                                </xforms:group>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xforms:repeat>
+                                    <!-- defineVariable -->
+                                    <xforms:repeat nodeset="self::defineVariable">
+                                        <xhtml:tr class="not-selectable">
+                                            <xhtml:td style="background-color:white;"/>
+                                            <xhtml:td class="stron">
+                                                <xforms:output ref="name(.)"/>
+                                            </xhtml:td>
+                                            <xhtml:td colspan="4">
+                                                <xhtml:table>
+                                                    <xhtml:tr class="not-selectable">
+                                                        <xhtml:td>
+                                                            <xforms:output ref="'Name'"/>
+                                                        </xhtml:td>
+                                                        <xhtml:td>
+                                                            <xforms:output ref="@name"/>
+                                                        </xhtml:td>
+                                                    </xhtml:tr>
+                                                    <xhtml:tr class="not-selectable">
+                                                        <xhtml:td>
+                                                            <xforms:output ref="$resources/path"/>
+                                                        </xhtml:td>
+                                                        <xhtml:td>
+                                                            <xforms:output ref="@path"/>
+                                                        </xhtml:td>
+                                                    </xhtml:tr>
+                                                </xhtml:table>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xforms:repeat>
+                                    <!-- element has an id :: show related concept or tell at least that this element may act as a concept target -->
+                                    <xforms:repeat nodeset="self::element[@id]">
+                                        <xxforms:variable name="targid" select="@id"/>
+                                        <!--
+                                                    if number of template associations for this id is zero this is a potential concept target (show target logo and concept target text)
+                                                    if there is a template association for this id just show the target logo with hint, concept comes later
+                                                -->
+                                        <xxforms:variable name="rtaelm" select="ancestor::template/staticAssociations/origconcept[@elementId=$targid]|ancestor::include/staticAssociations/origconcept[@elementId=$targid]"/>
+                                        <xxforms:variable name="nooftemplassocs" select="count($rtaelm)"/>
+                                        <xforms:group ref=".[$nooftemplassocs&gt;0]">
+                                            <xhtml:tr class="not-selectable">
+                                                <xhtml:td style="background-color:white;" colspan="2"/>
+                                                <xhtml:td style="text-align: center;">
+                                                    <xforms:output mediatype="image/*" value="'/img/target.png'" width="16px">
+                                                        <xforms:hint ref="$resources/target-concept"/>
+                                                    </xforms:output>
+                                                </xhtml:td>
+                                                <xhtml:td colspan="3">
+                                                    <xforms:group ref=".[$nooftemplassocs=0]">
+                                                        <xforms:output ref="$resources/concept-target"/>
+                                                    </xforms:group>
+                                                    <xforms:group ref=".[$nooftemplassocs&gt;0]">
+                                                        <xhtml:table width="100%">
+                                                            <!-- table of associated concepts -->
+                                                            <xforms:repeat nodeset="$rtaelm">
+                                                                <xxforms:variable name="concid" select="@ref"/>
+                                                                <xxforms:variable name="conced" select="@effectiveDate"/>
+                                                                <xxforms:variable name="concds" select="@datasetId"/>
+                                                                <xhtml:tr class="not-selectable">
+                                                                    <xhtml:td width="30%">
+                                                                        <!-- prefix and concept id with deep link to concept-->
+                                                                        <xforms:trigger appearance="minimal">
+                                                                            <xforms:label>
+                                                                                <xforms:output ref="concat(instance('project-instance')/ids/baseId[@id=string-join(tokenize($concid,'\.')[position()!=last()],'.') ]/@prefix,tokenize($concid,'\.')[last()])"/>
+                                                                            </xforms:label>
+                                                                            <xforms:action ev:event="DOMActivate">
+                                                                                <xforms:load resource="/decor-datasets--{instance('project-instance')/@prefix}?datasetId={$concds}&amp;conceptId={$concid}" show="new"/>
+                                                                            </xforms:action>
+                                                                        </xforms:trigger>
+                                                                    </xhtml:td>
+                                                                    <xhtml:td>
+                                                                        <xforms:output ref=".//concept[@id]//name[@language=instance('language')]"/>
+                                                                        <xforms:group ref=".[count(.//concept[@id]//name[@language=instance('language')])=0]">
+                                                                            <xhtml:font color="grey">
+                                                                                <xhtml:i>
+                                                                                    <xforms:output ref="concat('(', (.//concept[@id]//name)[1], ')')"/>
+                                                                                </xhtml:i>
+                                                                            </xhtml:font>
+                                                                        </xforms:group>
+                                                                        <!-- -->
+                                                                        <xforms:group ref=".[count(.//concept[@id]//name)=0]">
+                                                                            <xforms:output ref="' '"/>
+                                                                            <xforms:output mediatype="image/*" value="'/img/exclamation.png'">
+                                                                                <xforms:hint ref="$resources/artefactmissing"/>
+                                                                            </xforms:output>
+                                                                        </xforms:group>
+                                                                        <!-- -->
+                                                                    </xhtml:td>
+                                                                </xhtml:tr>
+                                                            </xforms:repeat>
+                                                        </xhtml:table>
+                                                    </xforms:group>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:group>
+                                    </xforms:repeat>
+                                </xforms:repeat>
+                            </xhtml:tbody>
+                        </xhtml:table>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xforms:group>
+        </xhtml:table>
+    </part>
+</parts>

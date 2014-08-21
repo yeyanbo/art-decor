@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="83"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1068"/>
+   <Title name="RoleStatus" date="2012-08-02" version="1.000">Codes representing the defined possible states of an Role, as defined by the Role class state machine.</Title>
+   <Class code="rootClass">
+      <SubClass subCount="5" code="normal" kind="concept">
+         <Rubric id="d1e217835" kind="preferred">
+            <Label xml:lang="en-US">normal</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="nullified" kind="concept">
+         <Rubric id="d1e217860" kind="preferred">
+            <Label xml:lang="en-US">nullified</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">RoleStatus</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">Codes representing the defined possible states of an Role, as defined by the Role class state machine.</Label>
+      </Rubric>
+   </Class>
+   <Class code="normal" kind="concept">
+      <Meta name="internalId" value="16000"/>
+      <SubClass code="active" subCount="0">
+         <Rubric id="d1e217889" kind="preferred">
+            <Label xml:lang="en-US">active</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="cancelled" subCount="0">
+         <Rubric id="d1e217918" kind="preferred">
+            <Label xml:lang="en-US">cancelled</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="pending" subCount="0">
+         <Rubric id="d1e217947" kind="preferred">
+            <Label xml:lang="en-US">pending</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="suspended" subCount="0">
+         <Rubric id="d1e217976" kind="preferred">
+            <Label xml:lang="en-US">suspended</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="terminated" subCount="0">
+         <Rubric id="d1e218005" kind="preferred">
+            <Label xml:lang="en-US">terminated</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e217822" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The 'typical' state. Excludes "nullified" which represents the termination state of a Role instance that was created in error.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e217835" kind="short">
+         <Label xml:lang="en-US">normal</Label>
+      </Rubric>
+      <Rubric id="d1e217835" kind="preferred">
+         <Label xml:lang="en-US">normal</Label>
+      </Rubric>
+   </Class>
+   <Class code="nullified" kind="concept">
+      <Meta name="internalId" value="16004"/>
+      <Rubric id="d1e217847" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The state representing the termination of a Role instance that was created in error.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e217860" kind="short">
+         <Label xml:lang="en-US">nullified</Label>
+      </Rubric>
+      <Rubric id="d1e217860" kind="preferred">
+         <Label xml:lang="en-US">nullified</Label>
+      </Rubric>
+   </Class>
+   <Class code="active" kind="concept">
+      <Meta name="internalId" value="16001"/>
+      <SuperClass code="normal">
+         <Rubric id="d1e217835" kind="preferred">
+            <Label xml:lang="en-US">normal</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e217871" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The state representing the fact that the Entity is currently active in the Role.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e217889" kind="short">
+         <Label xml:lang="en-US">active</Label>
+      </Rubric>
+      <Rubric id="d1e217889" kind="preferred">
+         <Label xml:lang="en-US">active</Label>
+      </Rubric>
+   </Class>
+   <Class code="cancelled" kind="concept">
+      <Meta name="internalId" value="21306"/>
+      <SuperClass code="normal">
+         <Rubric id="d1e217835" kind="preferred">
+            <Label xml:lang="en-US">normal</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e217900" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The terminal state resulting from cancellation of the role prior to activation.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e217918" kind="short">
+         <Label xml:lang="en-US">cancelled</Label>
+      </Rubric>
+      <Rubric id="d1e217918" kind="preferred">
+         <Label xml:lang="en-US">cancelled</Label>
+      </Rubric>
+   </Class>
+   <Class code="pending" kind="concept">
+      <Meta name="internalId" value="21305"/>
+      <SuperClass code="normal">
+         <Rubric id="d1e217835" kind="preferred">
+            <Label xml:lang="en-US">normal</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e217929" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The state representing that fact that the role has not yet become active.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e217947" kind="short">
+         <Label xml:lang="en-US">pending</Label>
+      </Rubric>
+      <Rubric id="d1e217947" kind="preferred">
+         <Label xml:lang="en-US">pending</Label>
+      </Rubric>
+   </Class>
+   <Class code="suspended" kind="concept">
+      <Meta name="internalId" value="16002"/>
+      <SuperClass code="normal">
+         <Rubric id="d1e217835" kind="preferred">
+            <Label xml:lang="en-US">normal</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e217958" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The state that represents a suspension of the Entity playing the Role. This state is arrived at from the "active" state.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e217976" kind="short">
+         <Label xml:lang="en-US">suspended</Label>
+      </Rubric>
+      <Rubric id="d1e217976" kind="preferred">
+         <Label xml:lang="en-US">suspended</Label>
+      </Rubric>
+   </Class>
+   <Class code="terminated" kind="concept">
+      <Meta name="internalId" value="16003"/>
+      <SuperClass code="normal">
+         <Rubric id="d1e217835" kind="preferred">
+            <Label xml:lang="en-US">normal</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e217987" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The state representing the successful termination of the Role.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e218005" kind="short">
+         <Label xml:lang="en-US">terminated</Label>
+      </Rubric>
+      <Rubric id="d1e218005" kind="preferred">
+         <Label xml:lang="en-US">terminated</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

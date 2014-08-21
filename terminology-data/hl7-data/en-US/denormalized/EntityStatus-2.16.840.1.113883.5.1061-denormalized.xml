@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="83"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1061"/>
+   <Title name="EntityStatus" date="2012-08-02" version="1.000">Codes representing the defined possible states of an Entity, as defined by the Entity class state machine.</Title>
+   <Class code="rootClass">
+      <SubClass subCount="2" code="normal" kind="concept">
+         <Rubric id="d1e118047" kind="preferred">
+            <Label xml:lang="en-US">normal</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="nullified" kind="concept">
+         <Rubric id="d1e118071" kind="preferred">
+            <Label xml:lang="en-US">nullified</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">EntityStatus</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">Codes representing the defined possible states of an Entity, as defined by the Entity class state machine.</Label>
+      </Rubric>
+   </Class>
+   <Class code="normal" kind="concept">
+      <Meta name="internalId" value="16006"/>
+      <SubClass code="active" subCount="0">
+         <Rubric id="d1e118100" kind="preferred">
+            <Label xml:lang="en-US">active</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="inactive" subCount="0">
+         <Rubric id="d1e118132" kind="preferred">
+            <Label xml:lang="en-US">inactive</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e118034" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The 'typical' state. Excludes "nullified" which represents the termination state of an Entity record instance that was created in error.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e118047" kind="short">
+         <Label xml:lang="en-US">normal</Label>
+      </Rubric>
+      <Rubric id="d1e118047" kind="preferred">
+         <Label xml:lang="en-US">normal</Label>
+      </Rubric>
+   </Class>
+   <Class code="nullified" kind="concept">
+      <Meta name="internalId" value="16009"/>
+      <Rubric id="d1e118058" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The state representing the termination of an Entity record instance that was created in error.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e118071" kind="short">
+         <Label xml:lang="en-US">nullified</Label>
+      </Rubric>
+      <Rubric id="d1e118071" kind="preferred">
+         <Label xml:lang="en-US">nullified</Label>
+      </Rubric>
+   </Class>
+   <Class code="active" kind="concept">
+      <Meta name="internalId" value="16007"/>
+      <SuperClass code="normal">
+         <Rubric id="d1e118047" kind="preferred">
+            <Label xml:lang="en-US">normal</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118082" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The state representing the fact that the Entity record is currently active.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e118100" kind="short">
+         <Label xml:lang="en-US">active</Label>
+      </Rubric>
+      <Rubric id="d1e118100" kind="preferred">
+         <Label xml:lang="en-US">active</Label>
+      </Rubric>
+   </Class>
+   <Class code="inactive" kind="concept">
+      <Meta name="internalId" value="22187"/>
+      <SuperClass code="normal">
+         <Rubric id="d1e118047" kind="preferred">
+            <Label xml:lang="en-US">normal</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e118111" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The state representing the fact that the entity is inactive.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e118132" kind="short">
+         <Label xml:lang="en-US">inactive</Label>
+      </Rubric>
+      <Rubric id="d1e118132" kind="preferred">
+         <Label xml:lang="en-US">inactive</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

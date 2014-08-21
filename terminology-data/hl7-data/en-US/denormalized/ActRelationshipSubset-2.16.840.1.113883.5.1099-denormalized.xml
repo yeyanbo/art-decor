@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="259"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1099"/>
+   <Title name="ActRelationshipSubset" date="2012-08-02" version="1.000">&lt;ns1:p&gt;Used to indicate that the target of the relationship will be a filtered subset of the total related set of targets.&lt;/ns1:p&gt;&lt;ns1:p&gt;Used when there is a need to limit the number of components to the first, the last, the next, the total, the average or some other filtered or calculated subset.&lt;/ns1:p&gt;</Title>
+   <Class code="rootClass">
+      <SubClass subCount="3" code="_ParticipationSubset" kind="abstract">
+         <Rubric id="d1e70644" kind="preferred">
+            <Label xml:lang="en-US">ParticipationSubset</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="ActRelationshipExpectedSubset" kind="concept">
+         <Rubric id="d1e70654" kind="preferred">
+            <Label xml:lang="en-US">ActRelationshipExpectedSubset</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="ActRelationshipPastSubset" kind="concept">
+         <Rubric id="d1e70663" kind="preferred">
+            <Label xml:lang="en-US">ActRelationshipPastSubset</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="MAX" kind="concept">
+         <Rubric id="d1e70687" kind="preferred">
+            <Label xml:lang="en-US">maximum</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="MIN" kind="concept">
+         <Rubric id="d1e70711" kind="preferred">
+            <Label xml:lang="en-US">minimum</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">ActRelationshipSubset</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">&lt;ns1:p&gt;Used to indicate that the target of the relationship will be a filtered subset of the total related set of targets.&lt;/ns1:p&gt;&lt;ns1:p&gt;Used when there is a need to limit the number of components to the first, the last, the next, the total, the average or some other filtered or calculated subset.&lt;/ns1:p&gt;</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ParticipationSubset" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21567"/>
+      <SubClass code="FUTURE" subCount="3">
+         <Rubric id="d1e70740" kind="preferred">
+            <Label xml:lang="en-US">expected future</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PAST" subCount="3">
+         <Rubric id="d1e70769" kind="preferred">
+            <Label xml:lang="en-US">previous</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SUM" subCount="0">
+         <Rubric id="d1e70799" kind="preferred">
+            <Label xml:lang="en-US">summary</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e70628" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Used to indicate that the participation is a filtered subset of the total participations of the same type owned by the Act.</p>
+            <p>Used when there is a need to limit the participations to the first, the last, the next or some other filtered subset.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70644" kind="short">
+         <Label xml:lang="en-US">ParticipationSubset</Label>
+      </Rubric>
+      <Rubric id="d1e70644" kind="preferred">
+         <Label xml:lang="en-US">ParticipationSubset</Label>
+      </Rubric>
+   </Class>
+   <Class code="ActRelationshipExpectedSubset" kind="concept">
+      <Meta name="internalId" value="21376"/>
+      <Rubric id="d1e70654" kind="short">
+         <Label xml:lang="en-US">ActRelationshipExpectedSubset</Label>
+      </Rubric>
+      <Rubric id="d1e70654" kind="preferred">
+         <Label xml:lang="en-US">ActRelationshipExpectedSubset</Label>
+      </Rubric>
+   </Class>
+   <Class code="ActRelationshipPastSubset" kind="concept">
+      <Meta name="internalId" value="21372"/>
+      <Rubric id="d1e70663" kind="short">
+         <Label xml:lang="en-US">ActRelationshipPastSubset</Label>
+      </Rubric>
+      <Rubric id="d1e70663" kind="preferred">
+         <Label xml:lang="en-US">ActRelationshipPastSubset</Label>
+      </Rubric>
+   </Class>
+   <Class code="MAX" kind="concept">
+      <Meta name="internalId" value="21370"/>
+      <Rubric id="d1e70674" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The occurrence whose value attribute is greater than all other occurrences at the time the instance is created.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70687" kind="short">
+         <Label xml:lang="en-US">maximum</Label>
+      </Rubric>
+      <Rubric id="d1e70687" kind="preferred">
+         <Label xml:lang="en-US">maximum</Label>
+      </Rubric>
+   </Class>
+   <Class code="MIN" kind="concept">
+      <Meta name="internalId" value="21369"/>
+      <Rubric id="d1e70698" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The occurrence whose value attribute is less than all other occurrences at the time the instance is created.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70711" kind="short">
+         <Label xml:lang="en-US">minimum</Label>
+      </Rubric>
+      <Rubric id="d1e70711" kind="preferred">
+         <Label xml:lang="en-US">minimum</Label>
+      </Rubric>
+   </Class>
+   <Class code="FUTURE" kind="concept">
+      <Meta name="internalId" value="21368"/>
+      <SuperClass code="_ParticipationSubset">
+         <Rubric id="d1e70644" kind="preferred">
+            <Label xml:lang="en-US">ParticipationSubset</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="FUTSUM" subCount="0">
+         <Rubric id="d1e70828" kind="preferred">
+            <Label xml:lang="en-US">future summary</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LAST" subCount="0">
+         <Rubric id="d1e70857" kind="preferred">
+            <Label xml:lang="en-US">expected last</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NEXT" subCount="0">
+         <Rubric id="d1e70886" kind="preferred">
+            <Label xml:lang="en-US">expected next</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e70722" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An occurrence that is scheduled to occur in the future. An Act whose effective time is greater than 'now', where 'now' is the time the instance is authored.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70740" kind="short">
+         <Label xml:lang="en-US">expected future</Label>
+      </Rubric>
+      <Rubric id="d1e70740" kind="preferred">
+         <Label xml:lang="en-US">expected future</Label>
+      </Rubric>
+   </Class>
+   <Class code="PAST" kind="concept">
+      <Meta name="internalId" value="21367"/>
+      <SuperClass code="_ParticipationSubset">
+         <Rubric id="d1e70644" kind="preferred">
+            <Label xml:lang="en-US">ParticipationSubset</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="FIRST" subCount="0">
+         <Rubric id="d1e70915" kind="preferred">
+            <Label xml:lang="en-US">first known</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PREVSUM" subCount="0">
+         <Rubric id="d1e70944" kind="preferred">
+            <Label xml:lang="en-US">previous summary</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RECENT" subCount="0">
+         <Rubric id="d1e70974" kind="preferred">
+            <Label xml:lang="en-US">most recent</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e70751" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An occurrence that occurred or was scheduled to occur in the past. An Act whose effective time is less than 'now'. ('now' is the time the instance is authored.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70769" kind="short">
+         <Label xml:lang="en-US">previous</Label>
+      </Rubric>
+      <Rubric id="d1e70769" kind="preferred">
+         <Label xml:lang="en-US">previous</Label>
+      </Rubric>
+   </Class>
+   <Class code="SUM" kind="concept">
+      <Meta name="internalId" value="21371"/>
+      <SuperClass code="_ParticipationSubset">
+         <Rubric id="d1e70644" kind="preferred">
+            <Label xml:lang="en-US">ParticipationSubset</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e70781" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Represents a 'summary' of all acts that have occurred or were scheduled to occur and which are scheduled to occur in the future. The effectiveTime represents the outer boundary of all occurrences, repeatNumber represents the total number of repetitions, etc.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70799" kind="short">
+         <Label xml:lang="en-US">summary</Label>
+      </Rubric>
+      <Rubric id="d1e70799" kind="preferred">
+         <Label xml:lang="en-US">summary</Label>
+      </Rubric>
+   </Class>
+   <Class code="FUTSUM" kind="concept">
+      <Meta name="internalId" value="21379"/>
+      <SuperClass code="FUTURE">
+         <Rubric id="d1e70740" kind="preferred">
+            <Label xml:lang="en-US">expected future</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e70810" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Represents a 'summary' of all acts that are scheduled to occur in the future (whose effective time is greater than 'now' where is the time the instance is authored.). The effectiveTime represents the outer boundary of all occurrences, repeatNumber represents the total number of repetitions, etc.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70828" kind="short">
+         <Label xml:lang="en-US">future summary</Label>
+      </Rubric>
+      <Rubric id="d1e70828" kind="preferred">
+         <Label xml:lang="en-US">future summary</Label>
+      </Rubric>
+   </Class>
+   <Class code="LAST" kind="concept">
+      <Meta name="internalId" value="21378"/>
+      <SuperClass code="FUTURE">
+         <Rubric id="d1e70740" kind="preferred">
+            <Label xml:lang="en-US">expected future</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e70839" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Restricted to the latest known occurrence that is scheduled to occur. The Act with the highest known effective time.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70857" kind="short">
+         <Label xml:lang="en-US">expected last</Label>
+      </Rubric>
+      <Rubric id="d1e70857" kind="preferred">
+         <Label xml:lang="en-US">expected last</Label>
+      </Rubric>
+   </Class>
+   <Class code="NEXT" kind="concept">
+      <Meta name="internalId" value="21377"/>
+      <SuperClass code="FUTURE">
+         <Rubric id="d1e70740" kind="preferred">
+            <Label xml:lang="en-US">expected future</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e70868" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Restricted to the nearest recent known occurrence scheduled to occur in the future. The Act with the lowest effective time, still greater than 'now'. ('now' is the time the instance is authored.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70886" kind="short">
+         <Label xml:lang="en-US">expected next</Label>
+      </Rubric>
+      <Rubric id="d1e70886" kind="preferred">
+         <Label xml:lang="en-US">expected next</Label>
+      </Rubric>
+   </Class>
+   <Class code="FIRST" kind="concept">
+      <Meta name="internalId" value="21373"/>
+      <SuperClass code="PAST">
+         <Rubric id="d1e70769" kind="preferred">
+            <Label xml:lang="en-US">previous</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e70897" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Restricted to the earliest known occurrence that occurred or was scheduled to occur in the past. The Act with the lowest effective time. ('now' is the time the instance is authored.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70915" kind="short">
+         <Label xml:lang="en-US">first known</Label>
+      </Rubric>
+      <Rubric id="d1e70915" kind="preferred">
+         <Label xml:lang="en-US">first known</Label>
+      </Rubric>
+   </Class>
+   <Class code="PREVSUM" kind="concept">
+      <Meta name="internalId" value="21375"/>
+      <SuperClass code="PAST">
+         <Rubric id="d1e70769" kind="preferred">
+            <Label xml:lang="en-US">previous</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e70926" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Represents a 'summary' of all acts that previously occurred or were scheduled to occur. The effectiveTime represents the outer boundary of all occurrences, repeatNumber represents the total number of repetitions, etc. ('now' is the time the instance is authored.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70944" kind="short">
+         <Label xml:lang="en-US">previous summary</Label>
+      </Rubric>
+      <Rubric id="d1e70944" kind="preferred">
+         <Label xml:lang="en-US">previous summary</Label>
+      </Rubric>
+   </Class>
+   <Class code="RECENT" kind="concept">
+      <Meta name="internalId" value="21374"/>
+      <SuperClass code="PAST">
+         <Rubric id="d1e70769" kind="preferred">
+            <Label xml:lang="en-US">previous</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e70956" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Restricted to the most recent known occurrence that occurred or was scheduled to occur in the past. The Act with the most recent effective time, still less than 'now'. ('now' is the time the instance is authored.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70974" kind="short">
+         <Label xml:lang="en-US">most recent</Label>
+      </Rubric>
+      <Rubric id="d1e70974" kind="preferred">
+         <Label xml:lang="en-US">most recent</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

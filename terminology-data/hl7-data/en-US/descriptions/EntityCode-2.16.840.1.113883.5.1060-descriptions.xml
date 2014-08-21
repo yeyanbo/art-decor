@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<descriptions>
+   <description count="2" length="10" conceptId="_MaterialEntityAdditive" type="pref"
+                language="en-US"
+                superClasses=""
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Content ID</description>
+   <description count="1" length="23" conceptId="_MaterialEntityClassType" type="pref"
+                language="en-US"
+                superClasses=""
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">MaterialEntityClassType</description>
+   <description count="1" length="18" conceptId="_NonDrugAgentEntity" type="pref"
+                language="en-US"
+                superClasses=""
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">NonDrugAgentEntity</description>
+   <description count="1" length="22" conceptId="_OrganizationEntityType" type="pref"
+                language="en-US"
+                superClasses=""
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">OrganizationEntityType</description>
+   <description count="1" length="15" conceptId="_PlaceEntityType" type="pref" language="en-US"
+                superClasses=""
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">PlaceEntityType</description>
+   <description count="1" length="23" conceptId="_ResourceGroupEntityType" type="pref"
+                language="en-US"
+                superClasses=""
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">ResourceGroupEntityType</description>
+   <description count="1" length="4" conceptId="LINE" type="pref" language="en-US"
+                superClasses="AccessMedicalDevice"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Line</description>
+   <description count="1" length="22" conceptId="_InjectionMedicalDevice" type="pref"
+                language="en-US"
+                superClasses="AdministrationMedicalDevice"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">InjectionMedicalDevice</description>
+   <description count="1" length="10" conceptId="APLCTR" type="pref" language="en-US"
+                superClasses="AdministrationMedicalDevice"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Applicator</description>
+   <description count="1" length="7" conceptId="INH" type="pref" language="en-US"
+                superClasses="AdministrationMedicalDevice"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Inhaler</description>
+   <description count="1" length="4" conceptId="PMP" type="pref" language="en-US"
+                superClasses="AdministrationMedicalDevice"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Pump</description>
+   <description count="1" length="7" conceptId="PKG" type="pref" language="en-US"
+                superClasses="ContainerEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Package</description>
+   <description count="1" length="6" conceptId="AMP" type="pref" language="en-US"
+                superClasses="IndividualPackageEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Ampule</description>
+   <description count="1" length="5" conceptId="MINIM" type="pref" language="en-US"
+                superClasses="IndividualPackageEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Minim</description>
+   <description count="1" length="7" conceptId="NEBAMP" type="pref" language="en-US"
+                superClasses="IndividualPackageEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Nebuamp</description>
+   <description count="1" length="5" conceptId="OVUL" type="pref" language="en-US"
+                superClasses="IndividualPackageEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Ovule</description>
+   <description count="1" length="12" conceptId="AINJ" type="pref" language="en-US"
+                superClasses="InjectionMedicalDevice"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">AutoInjector</description>
+   <description count="1" length="3" conceptId="PEN" type="pref" language="en-US"
+                superClasses="InjectionMedicalDevice"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Pen</description>
+   <description count="1" length="7" conceptId="SYR" type="pref" language="en-US"
+                superClasses="InjectionMedicalDevice"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Syringe</description>
+   <description count="1" length="19" conceptId="_ContainerEntityType" type="pref"
+                language="en-US"
+                superClasses="MaterialEntityClassType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">ContainerEntityType</description>
+   <description count="1" length="13" conceptId="_MedicalDevice" type="pref" language="en-US"
+                superClasses="MaterialEntityClassType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">MedicalDevice</description>
+   <description count="1" length="22" conceptId="_SpecimenAdditiveEntity" type="pref"
+                language="en-US"
+                superClasses="MaterialEntityClassType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">SpecimenAdditiveEntity</description>
+   <description count="2" length="13" conceptId="BLDPRD" type="pref" language="en-US"
+                superClasses="MaterialEntityClassType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Blood Product</description>
+   <description count="1" length="7" conceptId="VCCNE" type="pref" language="en-US"
+                superClasses="MaterialEntityClassType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Vaccine</description>
+   <description count="1" length="19" conceptId="_AccessMedicalDevice" type="pref"
+                language="en-US"
+                superClasses="MedicalDevice"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">AccessMedicalDevice</description>
+   <description count="1" length="27" conceptId="_AdministrationMedicalDevice" type="pref"
+                language="en-US"
+                superClasses="MedicalDevice"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">AdministrationMedicalDevice</description>
+   <description count="1" length="6" conceptId="BOT" type="pref" language="en-US"
+                superClasses="MultiUseContainerEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Bottle</description>
+   <description count="1" length="3" conceptId="BOX" type="pref" language="en-US"
+                superClasses="MultiUseContainerEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Box</description>
+   <description count="1" length="3" conceptId="CAN" type="pref" language="en-US"
+                superClasses="MultiUseContainerEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Can</description>
+   <description count="1" length="9" conceptId="CART" type="pref" language="en-US"
+                superClasses="MultiUseContainerEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Cartridge</description>
+   <description count="1" length="8" conceptId="CNSTR" type="pref" language="en-US"
+                superClasses="MultiUseContainerEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Canister</description>
+   <description count="1" length="3" conceptId="JAR" type="pref" language="en-US"
+                superClasses="MultiUseContainerEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Jar</description>
+   <description count="1" length="3" conceptId="JUG" type="pref" language="en-US"
+                superClasses="MultiUseContainerEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Jug</description>
+   <description count="1" length="3" conceptId="TIN" type="pref" language="en-US"
+                superClasses="MultiUseContainerEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Tin</description>
+   <description count="1" length="3" conceptId="TUB" type="pref" language="en-US"
+                superClasses="MultiUseContainerEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Tub</description>
+   <description count="1" length="4" conceptId="TUBE" type="pref" language="en-US"
+                superClasses="MultiUseContainerEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Tube</description>
+   <description count="1" length="4" conceptId="VIAL" type="pref" language="en-US"
+                superClasses="MultiUseContainerEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Vial</description>
+   <description count="1" length="3" conceptId="NDA01" type="pref" language="en-US"
+                superClasses="NonDrugAgentEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">egg</description>
+   <description count="1" length="4" conceptId="NDA02" type="pref" language="en-US"
+                superClasses="NonDrugAgentEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">fish</description>
+   <description count="1" length="7" conceptId="NDA03" type="pref" language="en-US"
+                superClasses="NonDrugAgentEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">lactose</description>
+   <description count="1" length="6" conceptId="NDA04" type="pref" language="en-US"
+                superClasses="NonDrugAgentEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">peanut</description>
+   <description count="1" length="3" conceptId="NDA05" type="pref" language="en-US"
+                superClasses="NonDrugAgentEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">soy</description>
+   <description count="1" length="8" conceptId="NDA06" type="pref" language="en-US"
+                superClasses="NonDrugAgentEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">sulfites</description>
+   <description count="3" length="15" conceptId="NDA07" type="pref" language="en-US"
+                superClasses="NonDrugAgentEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">wheat or gluten</description>
+   <description count="1" length="11" conceptId="NDA08" type="pref" language="en-US"
+                superClasses="NonDrugAgentEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">isocyanates</description>
+   <description count="1" length="8" conceptId="NDA09" type="pref" language="en-US"
+                superClasses="NonDrugAgentEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">solvents</description>
+   <description count="1" length="4" conceptId="NDA10" type="pref" language="en-US"
+                superClasses="NonDrugAgentEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">oils</description>
+   <description count="1" length="6" conceptId="NDA11" type="pref" language="en-US"
+                superClasses="NonDrugAgentEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">venoms</description>
+   <description count="1" length="5" conceptId="NDA12" type="pref" language="en-US"
+                superClasses="NonDrugAgentEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">latex</description>
+   <description count="1" length="9" conceptId="NDA13" type="pref" language="en-US"
+                superClasses="NonDrugAgentEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">shellfish</description>
+   <description count="1" length="12" conceptId="NDA14" type="pref" language="en-US"
+                superClasses="NonDrugAgentEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">strawberries</description>
+   <description count="1" length="8" conceptId="NDA15" type="pref" language="en-US"
+                superClasses="NonDrugAgentEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">tomatoes</description>
+   <description count="1" length="4" conceptId="NDA16" type="pref" language="en-US"
+                superClasses="NonDrugAgentEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">dust</description>
+   <description count="2" length="10" conceptId="NDA17" type="pref" language="en-US"
+                superClasses="NonDrugAgentEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">dust mites</description>
+   <description count="1" length="3" conceptId="BAG" type="pref" language="en-US"
+                superClasses="NonRigidContainerEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Bag</description>
+   <description count="1" length="6" conceptId="PACKT" type="pref" language="en-US"
+                superClasses="NonRigidContainerEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Packet</description>
+   <description count="1" length="5" conceptId="PCH" type="pref" language="en-US"
+                superClasses="NonRigidContainerEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Pouch</description>
+   <description count="1" length="6" conceptId="SACH" type="pref" language="en-US"
+                superClasses="NonRigidContainerEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Sachet</description>
+   <description count="1" length="9" conceptId="HHOLD" type="pref" language="en-US"
+                superClasses="OrganizationEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">household</description>
+   <description count="1" length="16" conceptId="NAT" type="pref" language="en-US"
+                superClasses="OrganizationEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">NationEntityType</description>
+   <description count="2" length="21" conceptId="RELIG" type="pref" language="en-US"
+                superClasses="OrganizationEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">religious institution</description>
+   <description count="2" length="12" conceptId="BED" type="pref" language="en-US"
+                superClasses="PlaceEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Bed Location</description>
+   <description count="2" length="17" conceptId="BLDG" type="pref" language="en-US"
+                superClasses="PlaceEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Building Location</description>
+   <description count="2" length="14" conceptId="FLOOR" type="pref" language="en-US"
+                superClasses="PlaceEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Floor Location</description>
+   <description count="2" length="13" conceptId="ROOM" type="pref" language="en-US"
+                superClasses="PlaceEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Room Location</description>
+   <description count="2" length="13" conceptId="WING" type="pref" language="en-US"
+                superClasses="PlaceEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Wing Location</description>
+   <description count="1" length="17" conceptId="PRAC" type="pref" language="en-US"
+                superClasses="ResourceGroupEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">PractitionerGroup</description>
+   <description count="1" length="27" conceptId="_IndividualPackageEntityType" type="pref"
+                language="en-US"
+                superClasses="RigidContainerEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">IndividualPackageEntityType</description>
+   <description count="1" length="27" conceptId="_MultiUseContainerEntityType" type="pref"
+                language="en-US"
+                superClasses="RigidContainerEntityType"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">MultiUseContainerEntityType</description>
+   <description count="2" length="12" conceptId="BLSTRPK" type="pref" language="en-US"
+                superClasses="RigidContainerEntityType, Compliance Package"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Blister Pack</description>
+   <description count="3" length="14" conceptId="ACDA" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">ACD Solution A</description>
+   <description count="3" length="14" conceptId="ACDB" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">ACD Solution B</description>
+   <description count="2" length="11" conceptId="ACET" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Acetic Acid</description>
+   <description count="3" length="22" conceptId="AMIES" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Amies transport medium</description>
+   <description count="3" length="26" conceptId="BACTM" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Bacterial Transport medium</description>
+   <description count="3" length="21" conceptId="BF10" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Buffered 10% formalin</description>
+   <description count="2" length="10" conceptId="BOR" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Boric Acid</description>
+   <description count="2" length="16" conceptId="BOUIN" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Bouin's solution</description>
+   <description count="3" length="18" conceptId="BSKM" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Buffered skim milk</description>
+   <description count="2" length="12" conceptId="C32" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">3.2% Citrate</description>
+   <description count="2" length="12" conceptId="C38" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">3.8% Citrate</description>
+   <description count="4" length="30" conceptId="CARS" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Carson's Modified 10% formalin</description>
+   <description count="3" length="17" conceptId="CARY" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Cary Blair Medium</description>
+   <description count="3" length="26" conceptId="CHLTM" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Chlamydia transport medium</description>
+   <description count="1" length="4" conceptId="CTAD" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">CTAD</description>
+   <description count="3" length="20" conceptId="EDTK15" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Potassium/K EDTA 15%</description>
+   <description count="3" length="21" conceptId="EDTK75" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Potassium/K EDTA 7.5%</description>
+   <description count="2" length="14" conceptId="EDTN" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Sodium/Na EDTA</description>
+   <description count="4" length="33" conceptId="ENT" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Enteric bacteria transport medium</description>
+   <description count="2" length="12" conceptId="F10" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">10% Formalin</description>
+   <description count="5" length="39" conceptId="FDP" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Thrombin NIH; soybean trypsin inhibitor</description>
+   <description count="3" length="21" conceptId="FL10" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Sodium Fluoride, 10mg</description>
+   <description count="3" length="22" conceptId="FL100" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Sodium Fluoride, 100mg</description>
+   <description count="2" length="6" conceptId="HCL6" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">6N HCL</description>
+   <description count="2" length="16" conceptId="HEPA" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Ammonium heparin</description>
+   <description count="2" length="18" conceptId="HEPL" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Lithium/Li Heparin</description>
+   <description count="2" length="17" conceptId="HEPN" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Sodium/Na Heparin</description>
+   <description count="2" length="11" conceptId="HNO3" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Nitric Acid</description>
+   <description count="3" length="21" conceptId="JKM" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Jones Kendrick Medium</description>
+   <description count="2" length="20" conceptId="KARN" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Karnovsky's fixative</description>
+   <description count="2" length="17" conceptId="KOX" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Potassium Oxalate</description>
+   <description count="2" length="19" conceptId="LIA" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Lithium iodoacetate</description>
+   <description count="1" length="2" conceptId="M4" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">M4</description>
+   <description count="1" length="5" conceptId="M4RT" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">M4-RT</description>
+   <description count="1" length="2" conceptId="M5" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">M5</description>
+   <description count="3" length="25" conceptId="MICHTM" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Michel's transport medium</description>
+   <description count="3" length="20" conceptId="MMDTM" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">MMD transport medium</description>
+   <description count="2" length="15" conceptId="NAF" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Sodium Fluoride</description>
+   <description count="1" length="4" conceptId="NONE" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">None</description>
+   <description count="2" length="13" conceptId="PAGE" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Page's Saline</description>
+   <description count="1" length="6" conceptId="PHENOL" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Phenol</description>
+   <description count="1" length="16" conceptId="PVA" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Polyvinylalcohol</description>
+   <description count="3" length="18" conceptId="RLM" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Reagan Lowe Medium</description>
+   <description count="2" length="15" conceptId="SILICA" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Siliceous earth</description>
+   <description count="8" length="59" conceptId="SPS" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Sodium polyanethol sulfonate 0.35% in 0.85% sodium chloride</description>
+   <description count="3" length="20" conceptId="SST" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Serum Separator Tube</description>
+   <description count="3" length="23" conceptId="STUTM" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Stuart transport medium</description>
+   <description count="1" length="8" conceptId="THROM" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Thrombin</description>
+   <description count="1" length="6" conceptId="THYMOL" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Thymol</description>
+   <description count="2" length="19" conceptId="THYO" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Thyoglycolate broth</description>
+   <description count="1" length="7" conceptId="TOLU" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Toluene</description>
+   <description count="3" length="27" conceptId="URETM" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Ureaplasma transport medium</description>
+   <description count="3" length="22" conceptId="VIRTM" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Viral Transport medium</description>
+   <description count="2" length="16" conceptId="WEST" type="pref" language="en-US"
+                superClasses="SpecimenAdditiveEntity"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Buffered Citrate</description>
+   <description count="1" length="4" conceptId="CARD" type="pref" language="en-US"
+                superClasses="Blister Pack"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Card</description>
+   <description count="2" length="12" conceptId="BOTA" type="pref" language="en-US"
+                superClasses="Bottle"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Amber Bottle</description>
+   <description count="2" length="14" conceptId="BOTD" type="pref" language="en-US"
+                superClasses="Bottle"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Dropper Bottle</description>
+   <description count="2" length="12" conceptId="BOTG" type="pref" language="en-US"
+                superClasses="Bottle"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Glass Bottle</description>
+   <description count="2" length="14" conceptId="BOTP" type="pref" language="en-US"
+                superClasses="Bottle"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Plastic Bottle</description>
+   <description count="2" length="19" conceptId="BOTPLY" type="pref" language="en-US"
+                superClasses="Plastic Bottle"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Polyethylene Bottle</description>
+   <description count="2" length="9" conceptId="DIALPK" type="pref" language="en-US"
+                superClasses="Compliance Package"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Dial Pack</description>
+   <description count="1" length="4" conceptId="DISK" type="pref" language="en-US"
+                superClasses="Compliance Package"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Disk</description>
+   <description count="1" length="7" conceptId="DOSET" type="pref" language="en-US"
+                superClasses="Compliance Package"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Dosette</description>
+   <description count="1" length="5" conceptId="STRIP" type="pref" language="en-US"
+                superClasses="Compliance Package"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Strip</description>
+   <description count="1" length="6" conceptId="DSKS" type="pref" language="en-US"
+                superClasses="Inhaler"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Diskus</description>
+   <description count="1" length="9" conceptId="DSKUNH" type="pref" language="en-US"
+                superClasses="Inhaler"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Diskhaler</description>
+   <description count="1" length="10" conceptId="TRBINH" type="pref" language="en-US"
+                superClasses="Inhaler"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Turbuhaler</description>
+   <description count="1" length="6" conceptId="SYSTM" type="pref" language="en-US"
+                superClasses="Kit"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">System</description>
+   <description count="2" length="19" conceptId="IALINE" type="pref" language="en-US"
+                superClasses="Line"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Intra-arterial Line</description>
+   <description count="2" length="17" conceptId="IVLINE" type="pref" language="en-US"
+                superClasses="Line"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Intraveneous Line</description>
+   <description count="1" length="27" conceptId="_NonRigidContainerEntityType" type="pref"
+                language="en-US"
+                superClasses="Package"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">NonRigidContainerEntityType</description>
+   <description count="1" length="24" conceptId="_RigidContainerEntityType" type="pref"
+                language="en-US"
+                superClasses="Package"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">RigidContainerEntityType</description>
+   <description count="2" length="18" conceptId="COMPPKG" type="pref" language="en-US"
+                superClasses="Package"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Compliance Package</description>
+   <description count="1" length="3" conceptId="KIT" type="pref" language="en-US"
+                superClasses="Package"
+                classificationId="2.16.840.1.113883.5.1060"
+                classificationName="EntityCode">Kit</description>
+</descriptions>

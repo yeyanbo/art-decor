@@ -1,0 +1,597 @@
+<!--
+    Original file name: OID_root.xsd
+    Original location: http://www.hl7.org/oid/OID_root.xsd
+    
+    2013-09-12 Alexander Henket: this schema was out of sync with the current export format. It was changed to match the export format and the result
+               was sent back to Ted Klein the current maintainer of the HL7 International OID Registry
+               - simpleType timeInstant definition was missing
+               - multiple instance where the casing of the element was different
+-->
+<xsd:schema xmlns:od="urn:schemas-microsoft-com:officedata" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="dataroot">
+        <xsd:complexType>
+            <xsd:choice maxOccurs="unbounded">
+                <xsd:element ref="OID_root"/>
+            </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="OID_root">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <od:index index-name="Comp_OID" index-key="Comp_OID" primary="no" unique="yes" clustered="no"/>
+                <od:index index-name="AA_OID" index-key="AA_OID " primary="no" unique="no" clustered="no"/>
+                <od:index index-name="Resp_body_oid" index-key="Resp_body_oid" primary="no" unique="no" clustered="no"/>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Comp_OID" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:pattern value="[0-2](\.(0|[1-9][0-9]*))*"/>
+                            <xsd:maxLength value="255"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="Symbolic_name" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">This is the short name for this object, as an ISO-compliant secondary identifier or arc-name, formatted as specified in the ISO OID standards. See the FAQ for more information.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <!--<xsd:pattern value="[a-z]([a-z]|[A-Z]|[0-9]|[\-][^-])*([^-])?"/>-->
+                            <xsd:maxLength value="255"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="CodingSystemName" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">This is the full name or title of the object being identified by this OID.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="128"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="SubmitterFirst" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">The Given (First) name of the person submitting this request for the OID</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="50"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="SubmitterLast" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">The surname (family or last name) of the person submitting this request for the OID.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="50"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="Submitter_Email" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">The email address of the person submitting this request for the OID. This is be used if there is a problem with the submission.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="128"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="Submitter2" minOccurs="0" od:jetType="memo" od:sqlSType="ntext">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">The name of a secondary submitter. If the OID registration is being submitted by proxy (someone other than the person wanting the OID to be registered, such as an HL7 cochair) then this is the name of the person needed the registration (rather than the person actually doing the registration).</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="536870910"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="Contact_person_desc" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">The full name of the person responsible for the collection of data associated with this entry in the OID registry.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="255"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="Contact_person_address" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">The postal address of the person to be contacted by anyone wishing information about this OID registry entry.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="300"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="Contact_person_phone" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">The telephone number of the person to be contacted by anyone wishing information about this OID registry entry.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="128"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="Contact_person_email" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">The email address of the person to be contacted by anyone wishing information about this OID registry entry.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="128"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="Contact_person_info" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">Any additional information about the title or company or responsibilities of the person to be contacted by anyone wishing information about this OID registry entry.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="255"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="Resp_body_name" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">This is the name of the organization responsible for the maintenance, curation, and/or publication of the object being identified by this OID.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="150"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="Resp_body_address" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">The mailing address of the organization responsible for the OID entry and the object identified by the OID.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="255"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="Resp_body_address_unpublished" minOccurs="0" od:jetType="text" od:sqlSType="boolean">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">Should this address be published or not</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:boolean"/>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="Resp_body_phone" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">The main telephone number of the organization responsible for the OID entry and the object identified by the OID.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="128"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="Resp_body_phone_unpublished" minOccurs="0" od:jetType="text" od:sqlSType="boolean">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">Should this phone be published or not</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:boolean"/>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="Resp_body_email" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">The main email address of the organization responsible for the OID entry and the object identified by the OID.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="255"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="Resp_body_URL" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">The web address (URL) of the organization responsible for the OID entry and the object identified by the OID.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="255"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="Resp_body_Type" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">A type for the organization responsible for the OID entry and the object identified by the OID. This is used to help filter when searching for organizations having registered OIDs.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:enumeration value="Academic">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">Academic</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="Govt body">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">Government body</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="HL7 body">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">HL7 body</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="Prof Soc">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">Professional Society</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="Provider">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">Provider</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="SDO">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">Standards Development Org.</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="Vendor">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">Vendor</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="Payor">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">Payor</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="Exchange">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">Exchange</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:maxLength value="30"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="Resp_body_oid" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">The OID for the responsible body, if it has one</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:pattern value="([0-2](\.(0|[1-9][0-9]*))*)?"/>
+                            <xsd:maxLength value="255"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="External_OID_flag" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">When you select 'Internal', HL7 will generate an OID automatically in the HL7 tree for you. When you select 'External', you must have an OID already assigned from another Registration Authority (which may be yourself if you are one) and you enter it into the form field. This OID will be registered in the HL7 registry with the descriptive metadata you are entering on these pages. Note that a GUID may alternatively be registered. Has values like 'EXT', 'Ext', 'INT', 'Int', 'Pxy', 'int'</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="8"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="externalOIDsubType" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">This is used only when an externally created OID in a tree of OIDs maintained by a Registration Authority outside of HL7 has a branch node that serves to help organize the tree, but does not itself identify any object. If the node is used to help organize objects of a specific type, like a sub-tree of identifier namespaces or local coding systems, then this should be set to the type of object being organized.. See Oid_Type for semantics</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:pattern value="[0-9]*"/>
+                            <xsd:maxLength value="16"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="replacedBy" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="255"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="Oid_Type" minOccurs="0" od:jetType="longinteger" od:sqlSType="int">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">This is the type of OID being requested. Type '3' is a request for delegation of OID registration authority, whereby the grantee may subsequently assign OIDs underneath this node. Note that an OID cannot be both a Type 3 Registration Authority node and a node for other types of HL7 OID-registered OIDs.<br/>1 - OID for an HL7 Internal Object<br/>2 - OID for an HL7 Body or Group<br/>3 - Root to be a Registration Authority<br/>4 - OID for a Registered Namespace<br/>5 - OID for an HL7 Internal Code System<br/>6 - OID for an External Code
+                            System<br/>7 - OID for an HL7 Document<br/>8 - OID for an HL7 Document Artifact<br/>9 - OID for an HL7 Conformance Profile<br/>10 - OID for an HL7 Template<br/>11 - OID for an HL7 Internal Value Set<br/>12 - OID for an Version 2.x Table<br/>13 - OID for an External Value Set<br/>14 - branch node subtype<br/>15 - Defined external codesets<br/>17 - Other Type OID<br/>18 - OID for a Version 2.x Coding System<br/>19 - OID for a published HL7 Example</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer"/>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="assignment_status" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">Has values like (case sensitive)<br/><b>Complete</b> - OID review is complete<br/><b>Deprecated</b> / <b>deprecated</b> - OID is being retired<br/><b>Edited</b> - OID entry has been edited<br/><b>Obsolete</b> - Object Identified has been superceded<br/><b>Pending</b> - OID request is pending review<br/><b>Proposed</b> - Entry proposed for discussion<br/><b>Rejected</b> - Entry has been rejected<br/><b>Retired</b> / <b>retired</b> - OID entry has been retired; do not use<br/><b>Unknown</b> - Do not use; unknown error in entry<br/>
+                            "Entry entering process" exists but is not exported</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="32"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="AA_OID" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">This is the string value of the OID or GUID being registered, if it was issued by someone other than HL7.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:pattern value="([0-2](\.(0|[1-9][0-9]*))*)?"/>
+                            <xsd:maxLength value="255"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="AA_description" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">This is a name and/or textual description of the Assigning Authority for the OID. If this is an External OID, this describes or names the Registration Authority that created the OID. If this is a Type 4 OID (registered identifier namespaces), this describes the body that manages the namespace identified by the OID, and assigns the identifiers in that namespace.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="255"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="Object_description" minOccurs="0" od:jetType="memo" od:sqlSType="ntext">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">A comprehensive description of the object being identified by the OID, including how the OID is intended to be used in the HL7 models.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="536870910"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="Date_begun" minOccurs="0" od:jetType="datetime" od:sqlSType="datetime" type="timeInstant"/>
+                <xsd:element name="Date_finalized" minOccurs="0" od:jetType="datetime" od:sqlSType="datetime" type="timeInstant"/>
+                <xsd:element name="Entry_Timestamp" minOccurs="0" od:jetType="datetime" od:sqlSType="datetime" type="timeInstant"/>
+                <xsd:element name="T396mnemonic" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">The name for Version 2.x Table 0396 for this code system (if registering a type 5 or type 6 OID) if codes from this terminology will be used in Version 2 messaging.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="20"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="Preferred_Realm" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en-US">The default Realm for all registered objects is UV (Universal). However, some registrations are intended to be used in a particular HL7 Binding Realm. If this is the case for this object, select the HL7 Binding Realm here.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:enumeration value="AR">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(AR) Argentina</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="AU">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(AU) Australia</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="AT">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(AT) Austria</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="BR">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(BR) Brazil</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="CA">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(CA) Canada</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="CL">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(CL) Chile</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="CN">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(CN) China</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="CO">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(CO) Columbia</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="HR">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(HR) Croatia</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="CZ">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(CZ) Czech Republic</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="DK">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(DK) Denmark</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="FI">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(FI) Finland</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="FR">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(FR) France</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="DE">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(DE) Germany</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="GB">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(GB) Great Britain</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="GR">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(GR) Greece</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="IN">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(IN) India</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="IE">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(IE) Ireland</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="IT">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(IT) Italy</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="JP">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(JP) Japan</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="KR">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(KR) Korea</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="LT">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(LT) Lithuania</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="MX">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(MX) Mexico</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="NZ">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(NZ) New Zealand</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="RO">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(RO) Romania</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="RU">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(RU) Russian Federation</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="SG">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(SG) Singapore</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="SOA">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(SOA) Southern Africa</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="ES">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(ES) Spain</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="SE">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(SE) Sweden</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="CH">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(CH) Switzerland</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="TW">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(TW) Taiwan</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="NL">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(NL) The Netherlands</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="TR">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(TR) Turkey</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="UK">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(UK) United Kingdom</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="US">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(US) United States of America</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="UV">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(UV) Universal</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="UY">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(UY) Uruguay</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="NO">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(NO) Norway</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="PR">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(PR) Puerto Rico</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:enumeration value="HK">
+                                <xsd:annotation>
+                                    <xsd:documentation xml:lang="en-US">(HK) Hong Kong</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:enumeration>
+                            <xsd:maxLength value="3"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:simpleType name="timeInstant">
+        <xsd:restriction base="xsd:string">
+            <xsd:annotation>
+                <xsd:documentation xml:lang="en-US">yyyy/mm/dd HH:mm:ss</xsd:documentation>
+            </xsd:annotation>
+            <xsd:pattern value="(\d{4}/\d{2}/\d{2} \d{2}:\d{2}:\d{2})|\s*"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

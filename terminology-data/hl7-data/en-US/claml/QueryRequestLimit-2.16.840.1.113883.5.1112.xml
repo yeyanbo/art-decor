@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="466"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1112"/>
+   <Title name="QueryRequestLimit" date="2012-08-02" version="1.000">Definition: Defines the units associated with the magnitude of the maximum size limit of a query response that can be accepted by the requesting application.</Title>
+   <Authors>
+      <Author name="Responsible"/>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="_QueryRequestLimit" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22258"/>
+      <SubClass code="RD"/>
+      <Rubric id="d1e186656" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The number of matching instances (number of focal classes). The document header class is the focal class of a document, a record would therefore be equal to a document.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e186672" kind="short">
+         <Label xml:lang="en-US">QueryRequestLimit</Label>
+      </Rubric>
+      <Rubric id="d1e186672" kind="preferred">
+         <Label xml:lang="en-US">QueryRequestLimit</Label>
+      </Rubric>
+   </Class>
+   <Class code="RD" kind="concept">
+      <Meta name="internalId" value="22257"/>
+      <SuperClass code="_QueryRequestLimit"/>
+      <Rubric id="d1e186684" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The number of matching instances (number of focal classes). The document header class is the focal class of a document, a record would therefore be equal to a document.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e186705" kind="short">
+         <Label xml:lang="en-US">record</Label>
+      </Rubric>
+      <Rubric id="d1e186705" kind="preferred">
+         <Label xml:lang="en-US">record</Label>
+      </Rubric>
+   </Class>
+</ClaML>

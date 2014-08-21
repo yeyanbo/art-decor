@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="vhitg-cda-v3.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3"
+xmlns:sciphox="urn::sciphox-org/sciphox"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="urn:hl7-org:v3 d:/archiv/xml/schemas/20040420/CDA.xsd"
+>
+<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+<id extension="60878,34539" root="1.2.276.0.58"/>
+<code code="11488-4" codeSystem="2.16.840.1.113883.6.1" displayName="Consultation note"/>
+<title>Klinisches Dokument</title>
+<effectiveTime value="20070905"/>
+<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+<languageCode code="de" />
+<setId extension="D1" root="2.16.840.1.113883.3.933"/>
+<versionNumber value="1"/>
+<recordTarget>     <!--- Patienten-Daten -->
+<patientRole>
+<id extension="65" root="2.16.840.1.113883.3.933"/>
+<addr>
+<streetName>Riedemannweg</streetName>
+<houseNumber></houseNumber>
+<postalCode>13627</postalCode>
+<city>Berlin</city>
+</addr>
+<patient>
+<name>
+<given>Paul</given>
+<family>Pappel</family>
+</name>
+<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+<birthTime value="19551217"/>
+</patient>
+<providerOrganization>
+<telecom use="WP" value="tel:(02421)27070"/>
+<telecom use="WP" value="fax:(02421)2707120"/>
+<addr>
+<streetName>Kölner Landstr.</streetName>
+<houseNumber>240</houseNumber>
+<postalCode>52351</postalCode>
+<city>Düren</city>
+</addr>
+</providerOrganization>
+</patientRole>
+</recordTarget>
+<author>    <!--- author -->
+<time value="20070905"/>
+<assignedAuthor>
+<id extension="2112345" root="2.16.840.1.113883.3.933"/>
+<assignedPerson>
+<name>
+<prefix>Dr. med.</prefix>
+<given>Theo</given>
+<family>DURIA</family>
+</name>
+</assignedPerson>
+<representedOrganization>
+<name>Dr. med. Theo DURIA </name>
+<telecom use="WP" value="tel:(02421)27070"/>
+<telecom use="WP" value="fax:(02421)2707120"/>
+<addr>
+<streetName>Kölner Landstr.</streetName>
+<houseNumber>240</houseNumber>
+<postalCode>52351</postalCode>
+<city>Düren</city>
+</addr>
+</representedOrganization>
+</assignedAuthor>
+</author>
+<custodian>     <!--- Organisation von der das Dokument stammt -->
+<assignedCustodian>
+<representedCustodianOrganization>
+<id extension="M345" root="1.2.276.0.58"/>
+<name>Dr. med. Theo DURIA </name>
+<telecom nullFlavor="UNK"/>
+<addr>
+<streetName>Kölner Landstr.</streetName>
+<houseNumber>240</houseNumber>
+<postalCode>52351</postalCode>
+<city>Düren</city>
+</addr>
+</representedCustodianOrganization>
+</assignedCustodian>
+</custodian>
+<informationRecipient typeCode="PRCP">       <!--- Empfaenger -->
+<intendedRecipient>
+<informationRecipient>
+<name>
+<prefix>Dr.med.</prefix>
+<given>Erich</given>
+<family>Gehlen</family>
+</name>
+</informationRecipient>
+<receivedOrganization>
+<telecom nullFlavor="UNK"/>
+<addr>
+<streetName>Kölner Landstr.</streetName>
+<houseNumber>231</houseNumber>
+<postalCode>52351</postalCode>
+<city>Düren</city>
+</addr>
+</receivedOrganization>
+</intendedRecipient>
+</informationRecipient>
+<legalAuthenticator>    <!--- legalAuthenticator -->
+<time value="20070905"/>
+<signatureCode code="S"/>
+<assignedEntity>
+<id extension="2112345" root="2.16.840.1.113883.3.933"/>
+<assignedPerson>
+<name>
+<prefix>Dr. med.</prefix>
+<given>Theo</given>
+<family>DURIA</family>
+</name>
+</assignedPerson>
+<representedOrganization>
+<name>Dr. med. Theo DURIA </name>
+<telecom use="WP" value="tel:(02421)27070"/>
+<telecom use="WP" value="fax:(02421)2707120"/>
+<addr>
+<streetName>Kölner Landstr.</streetName>
+<houseNumber>240</houseNumber>
+<postalCode>52351</postalCode>
+<city>Düren</city>
+</addr>
+</representedOrganization>
+</assignedEntity>
+</legalAuthenticator>
+<participant typeCode="HLD">    <!--- Versicherungsangaben participant -->
+<time>
+<low value="20051001"/>
+<high value="20051231" inclusive="true"/>
+</time>
+<associatedEntity classCode="POLHOLD">
+<id extension="13241324" root="2.16.840.1.113883.2.6.234.93345"/>
+<code code="self" codeSystem="2.16.840.1.113883.5.1095"/>
+<addr>
+<streetName>Riedemannweg</streetName>
+<houseNumber></houseNumber>
+<postalCode>13627</postalCode>
+<city>Berlin</city>
+</addr>
+<associatedPerson>
+<name>
+<given>Paul</given>
+<family>Pappel</family>
+</name>
+</associatedPerson>
+<scopingOrganization>
+<id extension="0177504" root="2.16.840.1.113883.2.6.234"/>
+<name>TK Techniker Krankenkasse Mecklenburg-Vorpommern</name>
+<telecom nullFlavor="UNK"/>
+<addr>
+<streetName>Bramfelder Str.</streetName>
+<houseNumber>140</houseNumber>
+<postalCode>22305</postalCode>
+<city>Hamburg</city>
+</addr>
+</scopingOrganization>
+</associatedEntity>
+</participant>
+<component>
+<structuredBody>
+<component>                     <!-- Anamnese Komponente --> 
+<section>
+<code code="10164-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+<title>29.08.2005: Anamnese</title>
+<text>
+Sei Jahren wiederholt chronische Bronchitiden besonders bei
+kalter Luft. Bei Anstrengung expiratorische Atemnot.
+Kontakt mit Haustieren.
+</text>
+</section>
+</component>
+<component>                     <!-- Befund Komponente --> 
+<section>
+<code code="10210-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+<title>29.08.2005: Befund</title>
+<text>
+Pulmo: Basal diskrete RGs,
+
+Cor: oB
+
+Abdomen: weich,
+
+Peri:+++,
+
+Muskulatur: atrophisch,
+
+Mundhöhle: Soor,Haarleukoplakie,Haut blass,seborrhoisches Ekzem,
+Schleimhäute blass,Hauttrurgor herabgesetzt
+
+Neuro: herabgesetztes Vibrationsempfinden der Beine, distal
+betont,Parästesien der Beine, PSR, AST oB und seitengleich.
+</text>
+</section>
+</component>
+<component>                     <!-- Roentgenbefund Komponente --> 
+<section>
+<code code="11522-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+<title>26.05.2005: Roentgenbefund</title>
+<text>
+Rö-Thorax: o.B.
+</text>
+</section>
+</component>
+<component>                     <!-- Entlassbefund Komponente --> 
+<section>
+<code code="29554-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+<title>29.08.2005: Entlassbefund</title>
+<text>
+Intensiviert behandlungsbedürftiges Bronchialasthma. Ich
+habe mit dem Pat. besprochen, zunächst die Peakflowwerte zu
+optimieren und das Beschwerdebild zu beobachten.
+</text>
+</section>
+</component>
+<component>                     <!-- Therapien Komponente --> 
+<section>
+<code code="11111-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+<title>29.08.2005: Therapien</title>
+<text>
+Atemur morgens 2x und abends 2x
+</text>
+</section>
+</component>
+<component>                     <!-- Empfehlung Komponente --> 
+<section>
+<code code="18776-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+<title>29.08.2005: Empfehlung</title>
+<text>
+Sollten nach der empfohlenen Medikation mit Atemur die
+klinischen Zeichen weiterhin bestehen, halte ich bei dem
+umfangreichen Risikoprofil einen Kuraufenthalt für zwingend
+erforderlich. Ich bitte dann um Wiedervorstellung des
+Patienten.
+</text>
+</section>
+</component>
+</structuredBody>
+</component>
+</ClinicalDocument>

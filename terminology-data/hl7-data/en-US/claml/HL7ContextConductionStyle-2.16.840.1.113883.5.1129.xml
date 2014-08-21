@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="1009"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1129"/>
+   <Title name="HL7ContextConductionStyle" date="2012-08-02" version="1.000">The styles of context conduction usable by relationships within a static model derived from tyhe HL7 Reference Information Model.</Title>
+   <Authors>
+      <Author name="Responsible"/>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="C" kind="concept">
+      <Meta name="internalId" value="23085"/>
+      <Rubric id="d1e132304" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <i>Definition:</i>Context conduction is defined using the contextConductionCode and contextConductionInd attributes on ActRelationship and Participation.</p>
+            <p>
+               <i>UsageNotes:</i>This approach is deprecated as of March, 2010.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e132326" kind="short">
+         <Label xml:lang="en-US">conduction-indicator-based</Label>
+      </Rubric>
+      <Rubric id="d1e132326" kind="preferred">
+         <Label xml:lang="en-US">conduction-indicator-based</Label>
+      </Rubric>
+   </Class>
+   <Class code="I" kind="concept">
+      <Meta name="internalId" value="23084"/>
+      <Rubric id="d1e132338" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <i>Definition:</i>Context conduction is not explicitly defined. The recipient of an instance must infer conduction based on the semantics of the model and what is deemed "reasonable".</p>
+            <p>
+               <i>UsageNotes:</i>Because this approach can lead to variation in instance interpretation, its use is discouraged.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e132360" kind="short">
+         <Label xml:lang="en-US">inferred</Label>
+      </Rubric>
+      <Rubric id="d1e132360" kind="preferred">
+         <Label xml:lang="en-US">inferred</Label>
+      </Rubric>
+   </Class>
+   <Class code="V" kind="concept">
+      <Meta name="internalId" value="23086"/>
+      <Rubric id="d1e132371" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <i>Definition:</i>Context conduction is defined using the ActRelationship.blockedContextActRelationshipType and blockedContextParticipationType attributes and the "conductible" property on the ActRelationshipType and ParticipationType code systems.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e132387" kind="short">
+         <Label xml:lang="en-US">vocabulary-based</Label>
+      </Rubric>
+      <Rubric id="d1e132387" kind="preferred">
+         <Label xml:lang="en-US">vocabulary-based</Label>
+      </Rubric>
+   </Class>
+</ClaML>

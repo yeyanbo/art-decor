@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href='CDA.xsl' type='text/xsl'?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument classCode="DOCCLIN" moodCode="EVN" xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../schemas/CDA.xsd">
+  <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+  <id extension="ambhdv" root="2.16.840.1.113883.19.2744.1.1"/>
+  <code code="18682-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="AMBULANCE SERVICE ATTACHMENT"/>
+  <title>Ambulance Services Claims Attachment</title>
+  <effectiveTime value="20030812"/>
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality" displayName="Normal"/>
+
+  <!-- Patient Identification includes name, date of birth and gender. -->
+  <recordTarget contextControlCode="OP" typeCode="RCT">
+    <patientRole classCode="PAT">
+      <id extension="STHHL12345" root="2.16.840.1.113883.19.2744.1.2.1"/>
+      <id extension="JACKSON12" root="2.16.840.1.113883.19.2744.1.2.2"/>
+      <addr>
+        <streetAddressLine>125 City Avenue</streetAddressLine>
+        <city>Miami</city>
+        <state>FL</state>
+        <postalCode>33132-3111</postalCode>
+      </addr>
+      <patient>
+        <name>
+          <given>Jack</given>
+          <given>J</given>
+          <family>Jackson</family>
+        </name>
+        <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" displayName="Male"/>
+        <birthTime value="19320924"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+
+  <!-- author of the document -->
+  <author contextControlCode="OP" typeCode="AUT">
+    <time value="20061025"/>
+    <assignedAuthor classCode="ASSIGNED">
+      <id extension="298379" root="2.16.840.1.113883.19.2744.1.3"/>
+      <representedOrganization>
+        <id extension="3999000B" root="2.16.840.1.113883.4.6"/>
+        <name>St. Holy Hills Hospital</name>
+        <addr>
+          <streetAddressLine>2345 Winter Blvd</streetAddressLine>
+          <city>Miami</city>
+          <state>FL</state>
+          <postalCode>33132-3111</postalCode>
+        </addr>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+
+  <!-- organization maintaining the document -->
+  <custodian typeCode="CST">
+    <assignedCustodian classCode="ASSIGNED">
+      <representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+        <id extension="3999000B" root="2.16.840.1.113883.4.6"/>
+        <name>St. Holy Hills Hospital</name>
+        <addr>
+          <streetAddressLine>2345 Winter Blvd</streetAddressLine>
+          <city>Miami</city>
+          <state>FL</state>
+          <postalCode>33132-3111</postalCode>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+
+  <!-- Attachment control number -->
+  <inFulfillmentOf>
+    <order>
+      <id extension="987654323" root="2.16.840.1.113883.19.2744.1.5"/>
+    </order>
+  </inFulfillmentOf>
+
+  <component contextConductionInd="true" typeCode="COMP">
+    <structuredBody>
+      <component>
+        <section>
+
+          <title> BODY WEIGHT AT TRANSPORT (COMPOSITE) </title>
+          <text>
+            <paragraph>275 lb</paragraph>
+          </text>
+
+        </section>
+      </component>
+      <component>
+        <section>
+
+          <title>TRANSPORT DIRECTION</title>
+          <text>
+            <paragraph>Initial Trip</paragraph>
+          </text>
+
+        </section>
+      </component>
+      <component>
+        <section>
+
+          <title>RATIONALE FOR CHOICE OF DESTINATION </title>
+          <text>
+            <paragraph>Patient was transported to nearest facility for care of symptoms, complaints or both.</paragraph>
+          </text>
+
+        </section>
+      </component>
+      <component>
+        <section>
+
+          <title>DISTANCE TRANSPORTED</title>
+          <text>
+            <paragraph>7 miles</paragraph>
+          </text>
+
+        </section>
+      </component>
+      <component>
+        <section>
+
+          <title>ORIGINATION SITE INFORMATION</title>
+          <text>
+            <paragraph>HOME<br/> 1254 City Avenue<br/> Miami FL 33132-3111 </paragraph>
+          </text>
+
+        </section>
+      </component>
+      <component>
+        <section>
+
+          <title>DESTINATION SITE INFORMATION</title>
+          <text>
+            <paragraph> St. Holy Hills Hospital<br/> 2345 Winter Blvd<br/> Miami FL 33132-3111 </paragraph>
+          </text>
+
+        </section>
+      </component>
+      <component>
+        <section>
+
+          <title>ADMITTED AT DESTINATION FACILITY ON TRANSFER</title>
+          <text>
+            <paragraph>Admitted</paragraph>
+          </text>
+
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (C) 2012-2014 ART-DECOR expert group art-decor.org
+    
+    Author: Gerrit Boers
+    
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+    
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+    
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:xxi="http://orbeon.org/oxf/xml/xinclude" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xi="http://www.w3.org/2001/XInclude-doc" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:widget="http://orbeon.org/oxf/xml/widget" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="snomed-ct" xsi:schemaLocation="http://www.w3.org/1999/xhtml ../../orbeon_schemas/xhtml1-transitional-orbeon.xsd">
+    <xhtml:head>
+        <xhtml:script type="text/javascript">
+         function getDocHeight(doc) {
+         doc = doc || document;
+         // stackoverflow.com/questions/...
+         var body = doc.body, html = doc.documentElement;
+         var height = Math.max( body.scrollHeight, body.offsetHeight, 
+         html.clientHeight, html.scrollHeight, html.offsetHeight );
+         return height;
+         }
+         function setIframeHeight(id) {
+         var ifrm = document.getElementById(id);
+         var doc = ifrm.contentDocument? ifrm.contentDocument: 
+         ifrm.contentWindow.document;
+         ifrm.style.visibility = 'hidden';
+         ifrm.style.height = "10px"; // reset to minimal height ...
+         ifrm.style.height = getDocHeight( doc ) + "px";
+         ifrm.style.visibility = 'visible';
+         }
+      </xhtml:script>
+        <xhtml:title>
+            <xforms:output ref="$resources/prescription-demo"/>
+        </xhtml:title>
+        <xforms:model>
+         <!-- Variable with path to art-exist for use by form -->
+         <!-- Variable with path to terminology-eXist used to pass to client as link for services (SNOMED, LOINC) -->
+            <xxforms:variable name="xis-exist" select="xxforms:property('xis.exist.url')"/>
+         <!-- resources for internationalization -->
+            <xforms:instance id="resources-instance">
+                <dummy/>
+            </xforms:instance>
+         <!-- submission for loading resources -->
+            <xforms:submission id="get-resources-submission" serialization="none" method="get" resource="{$xis-exist}/resources/form-resources.xml" replace="instance" instance="resources-instance" xxforms:readonly="true"/>
+         <!-- language -->
+            <xforms:instance id="language">
+                <language/>
+            </xforms:instance>
+
+         <!-- product navigation -->
+            <xforms:instance id="product-navigation">
+                <id/>
+            </xforms:instance>
+         <!-- instance for description search string -->
+            <xforms:instance id="description-search-instance">
+                <root>
+                    <search/>
+                </root>
+            </xforms:instance>
+         <!-- instance for empty product for refresh -->
+            <xforms:instance id="empty-product">
+                <result current="0" count="0">
+                    <product gpkode="" atcode="">
+                        <naam>
+                            <etiket/>
+                            <kort/>
+                            <volledig/>
+                        </naam>
+                        <stofNaam>
+                            <etiket/>
+                            <kort/>
+                            <volledig/>
+                        </stofNaam>
+                        <vorm>
+                            <nm15/>
+                            <nm25/>
+                            <nm50/>
+                        </vorm>
+                        <toedieningsweg>
+                            <nm15/>
+                            <nm25/>
+                            <nm50/>
+                        </toedieningsweg>
+                        <atc>
+                            <omschrijving/>
+                        </atc>
+                        <prk prkode="">
+                            <naamstoevoeging/>
+                            <hpk hpkode="">
+                                <naam>
+                                    <etiket/>
+                                    <kort/>
+                                    <volledig/>
+                                </naam>
+                                <artikel atkode="">
+                                    <naam>
+                                        <etiket/>
+                                        <kort/>
+                                        <volledig/>
+                                    </naam>
+                                </artikel>
+                            </hpk>
+                        </prk>
+                    </product>
+                </result>
+            </xforms:instance>
+         <!-- instance for products -->
+            <xforms:instance id="products">
+                <result current="0" count="0">
+                    <product gpkode="" atcode="">
+                        <naam>
+                            <etiket/>
+                            <kort/>
+                            <volledig/>
+                        </naam>
+                        <stofNaam>
+                            <etiket/>
+                            <kort/>
+                            <volledig/>
+                        </stofNaam>
+                        <vorm>
+                            <nm15/>
+                            <nm25/>
+                            <nm50/>
+                        </vorm>
+                        <toedieningsweg>
+                            <nm15/>
+                            <nm25/>
+                            <nm50/>
+                        </toedieningsweg>
+                        <atc>
+                            <omschrijving/>
+                        </atc>
+                        <prk prkode="">
+                            <naamstoevoeging/>
+                            <hpk hpkode="">
+                                <naam>
+                                    <etiket/>
+                                    <kort/>
+                                    <volledig/>
+                                </naam>
+                                <artikel atkode="">
+                                    <naam>
+                                        <etiket/>
+                                        <kort/>
+                                        <volledig/>
+                                    </naam>
+                                </artikel>
+                            </hpk>
+                        </prk>
+                    </product>
+                </result>
+            </xforms:instance>
+         <!-- submission for updating resultset -->
+            <xforms:submission id="update-descriptions" ref="instance('description-search-instance')" action="{$xis-exist}/modules/search-gpk.xquery?string={instance('description-search-instance')/search}" method="get" instance="products" replace="instance"/>
+            <xforms:setfocus ev:event="xforms-ready" control="search-description" xxforms:readonly="true"/>
+            <xforms:action ev:event="xforms-model-construct-done">
+                <xforms:setvalue ref="instance('concept-navigation')" value="if (string-length(xxforms:get-request-parameter('conceptId'))&gt;0)       then xxforms:get-request-parameter('conceptId') else ('138875005')"/>
+                <xxforms:variable name="session-language" select="xxforms:get-session-attribute('language')"/>
+                <xforms:setvalue ref="instance('language')" value="if (string-length($session-language)&gt;0)       then $session-language/string() else ('nl-NL')"/>
+                <xforms:insert context="." origin="xxforms:set-session-attribute('language', instance('language'))"/>
+                <xforms:send submission="get-resources-submission"/>
+                <xforms:send submission="get-concept-description"/>
+                <xforms:send submission="get-concept-submission"/>
+            <!--				<xforms:send submission="get-closure-submission"/>-->
+            </xforms:action>
+            <xxforms:variable name="resources" select="instance('resources-instance')//resources[@xml:lang=instance('language')]"/>
+        </xforms:model>
+    </xhtml:head>
+    <xhtml:body>
+        <xxforms:dialog id="help-dialog" appearance="full" level="modeless" close="true" draggable="true" visible="false">
+            <xforms:label ref="$resources/help"/>
+            <xhtml:table width="100%">
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xforms:output mediatype="text/html" ref="xxforms:serialize(instance('help-instance')/search[@language=instance('language')], 'html')"/>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xhtml:div style="float:right">
+                            <fr:button>
+                                <xforms:label ref="$resources/close"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xxforms:hide ev:event="DOMActivate" dialog="help-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xhtml:table>
+        </xxforms:dialog>
+        <xhtml:table width="100%">
+            <xhtml:tr>
+                <xhtml:td class="item-label">
+                    <xforms:output ref="$resources/searchterms"/>
+                    <xforms:trigger appearance="minimal" id="refresh">
+                        <xforms:label class="control-label">
+                            <xhtml:img src="/img/arrow_refresh.png" alt="" align="right"/>
+                        </xforms:label>
+                        <xforms:hint ref="$resources/refresh"/>
+                        <xforms:action ev:event="DOMActivate">
+                            <xforms:setvalue ref="instance('description-search-instance')/search" value="''"/>
+                            <xforms:delete nodeset="instance('products')/product"/>
+                            <xforms:insert context="instance('products')" origin="instance('empty-product')/product"/>
+                            <xforms:setvalue ref="instance('products')/@current" value="'0'"/>
+                            <xforms:setvalue ref="instance('products')/@count" value="'0'"/>
+                            <xforms:setvalue ref="instance('product-navigation')" value="''"/>
+                        </xforms:action>
+                    </xforms:trigger>
+                </xhtml:td>
+                <xhtml:td>
+                    <xforms:input class="top" ref="instance('description-search-instance')/search" id="search-description" incremental="true">
+                        <xforms:action ev:event="xforms-value-changed">
+                            <xxforms:variable name="search-value" select="."/>
+                            <xxforms:variable name="make-suggestion" select="(string-length($search-value) &gt;= 3 and not(matches($search-value,'^[A-Z]|\s$|\s[a-z|0-9]$'))) or (string-length($search-value) &gt;= 1 and not(matches($search-value,'^[a-z]|\s$')))  or matches($search-value,'^[0-9]+')"/>
+                            <xforms:action if="$make-suggestion">
+                                <xforms:send submission="update-descriptions"/>
+                                <xforms:setvalue ref="instance('product-navigation')" value="instance('products')/product[1]/@gpkode"/>
+                        <!--                        <xforms:setfocus control="productNavigation"/>-->
+                            </xforms:action>
+                        </xforms:action>
+                    </xforms:input>
+                </xhtml:td>
+            </xhtml:tr>
+        </xhtml:table>
+        <xhtml:table class="detail">
+            <xhtml:tr>
+                <xhtml:td class="heading">
+                    <xhtml:div class="navigate-container">
+                        <xhtml:div class="heading">
+                            <xforms:output ref="$resources/results"/>
+                      (
+                      <xforms:group ref="instance('products')">
+                                <xforms:output ref="@current"/>
+                                <xforms:output ref="$resources/of"/>
+                                <xforms:output ref="@count"/>
+                            </xforms:group>
+                      )
+                   </xhtml:div>
+                    </xhtml:div>
+                </xhtml:td>
+            </xhtml:tr>
+            <xhtml:tr>
+                <xhtml:td>
+                    <xhtml:div style="height:10em;">
+                        <xforms:select1 ref="instance('product-navigation')" appearance="compact" style="width:60em;" id="productNavigation">
+                            <xforms:itemset nodeset="instance('products')/product">
+                                <xforms:label>
+                                    <xforms:output ref="naam/volledig"/>
+                                </xforms:label>
+                                <xforms:value ref="@gpkode"/>
+                            </xforms:itemset>
+                        </xforms:select1>
+                    </xhtml:div>
+                </xhtml:td>
+            </xhtml:tr>
+        </xhtml:table>
+        <xhtml:table class="detail" width="100%">
+            <xforms:group ref="instance('products')/product[@gpkode=instance('product-navigation')]">
+                <xhtml:tr>
+                    <xhtml:td class="heading" colspan="4">
+                        <xhtml:div class="heading">
+                            <xforms:output ref="naam/volledig"/>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/generic-product-code"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:output ref="@gpkode"/>
+                    </xhtml:td>
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/label-name"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:output ref="naam/etiket"/>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/atc-code"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:output ref="@atcode"/>
+                    </xhtml:td>
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/atc-name"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:output ref="atc/omschrijving"/>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/vorm"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:output ref="vorm/nm50"/>
+                    </xhtml:td>
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/route-of-administration"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:output ref="toedieningsweg/nm50"/>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xforms:group>
+        </xhtml:table>
+        <xhtml:table width="100%" class="detail">
+            <xhtml:tr>
+                <xhtml:td class="item-label" style="font-weight:bold;" colspan="3">
+                    <xforms:output ref="$resources/prescription-products"/>
+                </xhtml:td>
+            </xhtml:tr>
+            <xforms:repeat nodeset="instance('products')/product[@gpkode=instance('product-navigation')]/prk">
+                <xhtml:tr class="not-selectable">
+                    <xhtml:td width="5%">
+                        <xforms:output ref="@prkode"/>
+                    </xhtml:td>
+                    <xhtml:td width="10%">
+                        <xforms:output ref="naamstoevoeging"/>
+                    </xhtml:td>
+                    <xhtml:td width="85%">
+                        <xhtml:table width="100%" class="detail">
+                            <xhtml:tr>
+                                <xhtml:td class="item-label" style="font-weight:bold;" colspan="3">
+                                    <xforms:output ref="$resources/trade-products"/>
+                                </xhtml:td>
+                            </xhtml:tr>
+                            <xforms:repeat nodeset="hpk">
+                                <xhtml:tr class="not-selectable">
+                                    <xhtml:td width="5%">
+                                        <xforms:output ref="@hpkode"/>
+                                    </xhtml:td>
+                                    <xhtml:td width="40%">
+                                        <xforms:output ref="naam/volledig"/>
+                                    </xhtml:td>
+                                    <xhtml:td width="55%">
+                                        <xhtml:table width="100%" class="detail">
+                                            <xhtml:tr>
+                                                <xhtml:td class="item-label" style="font-weight:bold;" colspan="2">
+                                                    <xforms:output ref="$resources/articles"/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                            <xforms:repeat nodeset="artikel">
+                                                <xhtml:tr class="not-selectable">
+                                                    <xhtml:td width="10%">
+                                                        <xforms:output ref="@atkode"/>
+                                                    </xhtml:td>
+                                                    <xhtml:td width="90%">
+                                                        <xforms:output ref="naam/volledig"/>
+                                                    </xhtml:td>
+                                                </xhtml:tr>
+                                            </xforms:repeat>
+                                        </xhtml:table>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xforms:repeat>
+                        </xhtml:table>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xforms:repeat>
+        </xhtml:table>
+    </xhtml:body>
+</xhtml:html>

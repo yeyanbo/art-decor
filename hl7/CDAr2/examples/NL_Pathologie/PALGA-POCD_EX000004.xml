@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  PALGA voorbeeld Cervix cytologie (B)
+  POCD_SN970004NL
+-->
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:sciphox="urn::sciphox-org/sciphox"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+  <id extension="B0783924A" root="2.16.840.1.113883.2.4.3.23.3.20"/>
+  <code code="47527-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+  <title>Cervix cytologie (B), patient: Anneke den Ouden-Hartman</title>
+  <effectiveTime value="200709291233"/>
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+  <languageCode code="nl-NL"/>
+  <setId extension="B0783924" root="2.16.840.1.113883.2.4.3.23.3.20"/>
+  <versionNumber value="1"/>
+  <recordTarget>
+    <!-- patiënt gegevens -->
+    <patientRole>
+      <id extension="100010003" root="2.16.840.1.113883.2.4.6.3"/>
+      <patient>
+        <name>
+          <given>Anneke</given>
+          <prefix qualifier="VV">den</prefix>
+          <family qualifier="SP">Ouden</family>
+          <delimiter>-</delimiter>
+          <family qualifier="BR">Hartman</family>
+        </name>
+        <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1"/>
+        <birthTime value="19560424"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <!--- author -->
+    <time value="20070929"/>
+    <assignedAuthor>
+      <id extension="1298546" root="2.16.528.1.1007.3.1"/>
+      <assignedPerson>
+        <name>
+          <given>Theo</given>
+          <family>Driessen</family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <name>Academisch Medisch Centrum, Amsterdam</name>
+        <addr>
+          <streetName>Meibergdreef</streetName>
+          <houseNumber>9</houseNumber>
+          <postalCode>1100 DD</postalCode>
+          <city>Amsterdam</city>
+        </addr>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id extension="20" root="2.16.840.1.113883.2.4.3.23.3"/>
+        <name>Academisch Medisch Centrum, Amsterdam</name>
+        <addr>
+          <streetName>Meibergdreef</streetName>
+          <houseNumber>9</houseNumber>
+          <postalCode>1100 DD</postalCode>
+          <city>Amsterdam</city>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <legalAuthenticator>
+    <!--- legalAuthenticator -->
+    <time value="20070929"/>
+    <signatureCode code="S"/>
+    <assignedEntity>
+      <id extension="1298546" root="2.16.528.1.1007.3.1"/>
+      <assignedPerson>
+        <name>
+          <given>Theo</given>
+          <family>Driessen</family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id extension="20" root="2.16.840.1.113883.2.4.3.23.3"/>
+        <name>Academisch Medisch Centrum, Amsterdam</name>
+        <addr>
+          <streetName>Meibergdreef</streetName>
+          <houseNumber>9</houseNumber>
+          <postalCode>1100 DD</postalCode>
+          <city>Amsterdam</city>
+        </addr>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+  <documentationOf>
+    <serviceEvent>
+      <code code="B" codeSystem="2.16.840.1.113883.2.4.3.23.5.1" codeSystemName="PALGA service types"/>
+    </serviceEvent>
+  </documentationOf>
+  <componentOf>
+    <encompassingEncounter classCode="ENC" moodCode="EVN">
+      <code code="VR" codeSystem="2.16.840.1.113883.5.4"/>
+      <effectiveTime>
+        <low value="200709271022"/>
+        <high value="200709291233"/>
+      </effectiveTime>
+    </encompassingEncounter>
+  </componentOf>
+  <component>
+    <structuredBody>
+      <component>
+        <!-- Klinische gegevens -->
+        <section>
+          <code code="22636-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Klinische gegevens</title>
+          <text>
+            Datum strijk: 27-09-07 <br/>
+            Aanleiding: vervolgonderzoek<br/>
+            Uitstrijk door: huisarts <br/>
+            Instrument: cervexbrush <br/>
+            Klachten: geen <br/>
+            Datum LM: ZZ-ZZ-ZZ <br/>
+            Toestand preparaat: normaal <br/>
+            Aantal glaasjes: 1 <br/>
+            Menstruatiepatroon: menopauze <br/>
+            Anticonceptie: geen <br/>
+            Hormoongebruik: geen <br/>
+            Opmerking: geen <br/>
+            Ingrepen: conisatie, lisexcisie, biopt <br/>
+            Aspect cervix: normaal <br/>
+            Zwangerschap: geen <br/>
+            Prioriteit: routine <br/>
+          </text>
+        </section>
+      </component>
+       <component>
+        <!-- Microscopie -->
+        <section>
+          <code code="22635-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Microscopie</title>
+          <text>
+            K 4: Endocerv. cyl. en squameus metapl. cellen aangetroffen <br/>
+            O 6: Geen teken van ontsteking <br/>
+            P 1: Geen afwijkende plaveiselepitheelcellen <br/>
+            A 2: Epitheelatrofie <br/>
+            C 1: Geen afwijkingen van endocerv. cyl.cellen aangetroffen <br/>
+            B 1: Goed beoordeelbaar <br/>
+          </text>
+        </section>
+      </component>
+      <component>
+        <!-- Conclusie -->
+        <section>
+          <code code="22034-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Conclusie</title>
+          <text>Pap 1. Epitheelatrofie.</text>
+        </section>
+      </component>
+      <component>
+        <!-- Diagnosen -->
+        <section>
+          <code code="22637-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Diagnosen</title>
+          <text>
+            <paragraph>
+              Diagtekst1: Cervix*uitstrijk*systeem*ec+sqm*g.ont*g.a.*ep.atr*g.a.*pap1<br/>
+              Palga-codes1: <content ID="d1-1">T83000</content>*<content ID="d1-2">P31100</content>*
+              <content ID="d1-3">E99999</content>*<content ID="d1-4">T83300M73220</content>*
+              <content ID="d1-5">M09380</content>*<content ID="d1-6">M58001</content>*
+              <content ID="d1-7">M00100</content>*<content ID="d1-8">M69152</content>
+            </paragraph>
+          </text>
+          <entry typeCode="DRIV">
+            <organizer classCode="CLUSTER" moodCode="EVN">
+              <statusCode code="completed"/>
+              <component typeCode="COMP">
+                <sequenceNumber value="1"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20070929"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="T83000" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d1-1"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <sequenceNumber value="2"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20070929"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="P31100" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d1-2"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <sequenceNumber value="3"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20070929"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="E99999" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d1-3"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <sequenceNumber value="4"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20070929"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="T83300M73220" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d1-4"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <sequenceNumber value="4"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20070929"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="M09380" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d1-5"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <sequenceNumber value="4"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20070929"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="M58001" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d1-6"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <sequenceNumber value="4"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20070929"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="M00100" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d1-7"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <sequenceNumber value="4"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20070929"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="M69152" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d1-8"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+            </organizer>
+            </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

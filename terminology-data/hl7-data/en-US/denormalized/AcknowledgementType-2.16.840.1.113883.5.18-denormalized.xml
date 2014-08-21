@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="134"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.18"/>
+   <Title name="AcknowledgementType" date="2012-08-02" version="1.000">This attribute contains an acknowledgement code as described in the HL7 message processing rules. OpenIssue: Description was copied from attribute and needs to be improved to be appropriate for a code system.</Title>
+   <Class code="rootClass">
+      <SubClass subCount="0" code="AA" kind="concept">
+         <Rubric id="d1e21826" kind="preferred">
+            <Label xml:lang="en-US">Application Acknowledgement Accept</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="AE" kind="concept">
+         <Rubric id="d1e21851" kind="preferred">
+            <Label xml:lang="en-US">Application Acknowledgement Error</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="AR" kind="concept">
+         <Rubric id="d1e21875" kind="preferred">
+            <Label xml:lang="en-US">Application Acknowledgement Reject</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="CA" kind="concept">
+         <Rubric id="d1e21899" kind="preferred">
+            <Label xml:lang="en-US">Accept Acknowledgement Commit Accept</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="CE" kind="concept">
+         <Rubric id="d1e21923" kind="preferred">
+            <Label xml:lang="en-US">Accept Acknowledgement Commit Error</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="CR" kind="concept">
+         <Rubric id="d1e21947" kind="preferred">
+            <Label xml:lang="en-US">Accept Acknowledgement Commit Reject</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">AcknowledgementType</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">This attribute contains an acknowledgement code as described in the HL7 message processing rules. OpenIssue: Description was copied from attribute and needs to be improved to be appropriate for a code system.</Label>
+      </Rubric>
+   </Class>
+   <Class code="AA" kind="concept">
+      <Meta name="internalId" value="16022"/>
+      <Rubric id="d1e21813" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Receiving application successfully processed message.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21826" kind="short">
+         <Label xml:lang="en-US">Application Acknowledgement Accept</Label>
+      </Rubric>
+      <Rubric id="d1e21826" kind="preferred">
+         <Label xml:lang="en-US">Application Acknowledgement Accept</Label>
+      </Rubric>
+   </Class>
+   <Class code="AE" kind="concept">
+      <Meta name="internalId" value="16023"/>
+      <Rubric id="d1e21838" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Receiving application found error in processing message. Sending error response with additional error detail information.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21851" kind="short">
+         <Label xml:lang="en-US">Application Acknowledgement Error</Label>
+      </Rubric>
+      <Rubric id="d1e21851" kind="preferred">
+         <Label xml:lang="en-US">Application Acknowledgement Error</Label>
+      </Rubric>
+   </Class>
+   <Class code="AR" kind="concept">
+      <Meta name="internalId" value="16024"/>
+      <Rubric id="d1e21862" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Receiving application failed to process message for reason unrelated to content or format. Original message sender must decide on whether to automatically send message again.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21875" kind="short">
+         <Label xml:lang="en-US">Application Acknowledgement Reject</Label>
+      </Rubric>
+      <Rubric id="d1e21875" kind="preferred">
+         <Label xml:lang="en-US">Application Acknowledgement Reject</Label>
+      </Rubric>
+   </Class>
+   <Class code="CA" kind="concept">
+      <Meta name="internalId" value="16025"/>
+      <Rubric id="d1e21886" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Receiving message handling service accepts responsibility for passing message onto receiving application.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21899" kind="short">
+         <Label xml:lang="en-US">Accept Acknowledgement Commit Accept</Label>
+      </Rubric>
+      <Rubric id="d1e21899" kind="preferred">
+         <Label xml:lang="en-US">Accept Acknowledgement Commit Accept</Label>
+      </Rubric>
+   </Class>
+   <Class code="CE" kind="concept">
+      <Meta name="internalId" value="16027"/>
+      <Rubric id="d1e21910" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Receiving message handling service cannot accept message for any other reason (e.g. message sequence number, etc.).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21923" kind="short">
+         <Label xml:lang="en-US">Accept Acknowledgement Commit Error</Label>
+      </Rubric>
+      <Rubric id="d1e21923" kind="preferred">
+         <Label xml:lang="en-US">Accept Acknowledgement Commit Error</Label>
+      </Rubric>
+   </Class>
+   <Class code="CR" kind="concept">
+      <Meta name="internalId" value="16026"/>
+      <Rubric id="d1e21934" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Receiving message handling service rejects message if interaction identifier, version or processing mode is incompatible with known receiving application role information.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21947" kind="short">
+         <Label xml:lang="en-US">Accept Acknowledgement Commit Reject</Label>
+      </Rubric>
+      <Rubric id="d1e21947" kind="preferred">
+         <Label xml:lang="en-US">Accept Acknowledgement Commit Reject</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

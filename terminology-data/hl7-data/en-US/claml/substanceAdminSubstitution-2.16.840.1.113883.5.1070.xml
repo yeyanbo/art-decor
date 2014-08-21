@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="60"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1070"/>
+   <Title name="substanceAdminSubstitution" date="2012-08-02" version="1.000">Identifies what sort of change is permitted or has occurred between the therapy that was ordered and the therapy that was/will be provided.</Title>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="_ActSubstanceAdminSubstitutionCode" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21284"/>
+      <SubClass code="E"/>
+      <SubClass code="F"/>
+      <SubClass code="N"/>
+      <Rubric id="d1e233968" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Substitution occurred or is permitted with another product that may potentially have different ingredients, but having the same biological and therapeutic effects.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e233984" kind="short">
+         <Label xml:lang="en-US">ActSubstanceAdminSubstitutionCode</Label>
+      </Rubric>
+      <Rubric id="d1e233984" kind="preferred">
+         <Label xml:lang="en-US">ActSubstanceAdminSubstitutionCode</Label>
+      </Rubric>
+   </Class>
+   <Class code="E" kind="concept">
+      <Meta name="internalId" value="23107"/>
+      <SuperClass code="_ActSubstanceAdminSubstitutionCode"/>
+      <SubClass code="EC"/>
+      <SubClass code="TE"/>
+      <Rubric id="d1e233996" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Substitution occurred or is permitted with another bioequivalent and therapeutically equivalent product.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e234017" kind="short">
+         <Label xml:lang="en-US">equivalent</Label>
+      </Rubric>
+      <Rubric id="d1e234017" kind="preferred">
+         <Label xml:lang="en-US">equivalent</Label>
+      </Rubric>
+   </Class>
+   <Class code="F" kind="concept">
+      <Meta name="internalId" value="16625"/>
+      <SuperClass code="_ActSubstanceAdminSubstitutionCode"/>
+      <Rubric id="d1e234028" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>This substitution was performed or is permitted based on formulary guidelines.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e234049" kind="short">
+         <Label xml:lang="en-US">formulary</Label>
+      </Rubric>
+      <Rubric id="d1e234049" kind="preferred">
+         <Label xml:lang="en-US">formulary</Label>
+      </Rubric>
+   </Class>
+   <Class code="N" kind="concept">
+      <Meta name="internalId" value="16622"/>
+      <SuperClass code="_ActSubstanceAdminSubstitutionCode"/>
+      <Rubric id="d1e234060" kind="definition">
+         <Label xml:lang="en-US">
+            <p>No substitution occurred or is permitted.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e234078" kind="short">
+         <Label xml:lang="en-US">none</Label>
+      </Rubric>
+      <Rubric id="d1e234078" kind="preferred">
+         <Label xml:lang="en-US">none</Label>
+      </Rubric>
+   </Class>
+   <Class code="EC" kind="concept">
+      <Meta name="internalId" value="23108"/>
+      <SuperClass code="E"/>
+      <SubClass code="BC"/>
+      <SubClass code="G"/>
+      <Rubric id="d1e234089" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>
+            </p>
+            <p>Substitution occurred or is permitted with another product that is a:</p>
+            <ul>
+               <li>pharmaceutical alternative containing the same active ingredient but is formulated with different salt, ester</li>
+               <li>pharmaceutical equivalent that has the same active ingredient, strength, dosage form and route of administration</li>
+            </ul>
+            <p>
+               <i>Examples:</i>
+            </p>
+            <ul>
+               <li>
+                  <i>Pharmaceutical alternative:</i>Erythromycin Ethylsuccinate for Erythromycin Stearate</li>
+               <li>
+                  <i>Pharmaceutical equivalent:</i>Lisonpril for Zestril</li>
+            </ul>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e234143" kind="short">
+         <Label xml:lang="en-US">equivalent composition</Label>
+      </Rubric>
+      <Rubric id="d1e234143" kind="preferred">
+         <Label xml:lang="en-US">equivalent composition</Label>
+      </Rubric>
+   </Class>
+   <Class code="TE" kind="concept">
+      <Meta name="internalId" value="16624"/>
+      <SuperClass code="E"/>
+      <SubClass code="TB"/>
+      <SubClass code="TG"/>
+      <Rubric id="d1e234154" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Substitution occurred or is permitted with another product having the same therapeutic objective and safety profile.</p>
+            <p>
+               <i>Examples:</i>
+            </p>
+            <ul>
+               <li>ranitidine for Tagamet</li>
+            </ul>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e234187" kind="short">
+         <Label xml:lang="en-US">therapeutic alternative</Label>
+      </Rubric>
+      <Rubric id="d1e234187" kind="preferred">
+         <Label xml:lang="en-US">therapeutic alternative</Label>
+      </Rubric>
+   </Class>
+   <Class code="BC" kind="concept">
+      <Meta name="internalId" value="23109"/>
+      <SuperClass code="EC"/>
+      <Rubric id="d1e234198" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>
+            </p>
+            <p>Substitution occurred or is permitted between equivalent Brands but not Generics</p>
+            <p>
+               <i>Examples:</i>
+            </p>
+            <ul>
+               <li>Zestril for Prinivil</li>
+               <li>Coumadin for Jantoven</li>
+            </ul>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e234237" kind="short">
+         <Label xml:lang="en-US">brand composition</Label>
+      </Rubric>
+      <Rubric id="d1e234237" kind="preferred">
+         <Label xml:lang="en-US">brand composition</Label>
+      </Rubric>
+   </Class>
+   <Class code="G" kind="concept">
+      <Meta name="internalId" value="16623"/>
+      <SuperClass code="EC"/>
+      <Rubric id="d1e234249" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Substitution occurred or is permitted between equivalent Generics but not Brands</p>
+            <p>
+               <i>Examples:</i>
+            </p>
+            <ul>
+               <li>Lisnopril (Lupin Corp) for Lisnopril (Wockhardt Corp)</li>
+            </ul>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e234282" kind="short">
+         <Label xml:lang="en-US">generic composition</Label>
+      </Rubric>
+      <Rubric id="d1e234282" kind="preferred">
+         <Label xml:lang="en-US">generic composition</Label>
+      </Rubric>
+   </Class>
+   <Class code="TB" kind="concept">
+      <Meta name="internalId" value="23105"/>
+      <SuperClass code="TE"/>
+      <Rubric id="d1e234293" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Substitution occurred or is permitted between therapeutically equivalent Brands but not Generics</p>&gt; <p>
+               <i>Examples:</i>
+            </p>
+            <ul>
+               <li>Zantac for Tagamet</li>
+            </ul>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e234326" kind="short">
+         <Label xml:lang="en-US">therapeutic brand</Label>
+      </Rubric>
+      <Rubric id="d1e234326" kind="preferred">
+         <Label xml:lang="en-US">therapeutic brand</Label>
+      </Rubric>
+   </Class>
+   <Class code="TG" kind="concept">
+      <Meta name="internalId" value="23106"/>
+      <SuperClass code="TE"/>
+      <Rubric id="d1e234337" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Substitution occurred or is permitted between therapeutically equivalent Generics but not Brands</p>&gt; <p>
+               <i>Examples:</i>
+            </p>
+            <ul>
+               <li>Ranitidine for cimetidine</li>
+            </ul>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e234370" kind="short">
+         <Label xml:lang="en-US">therapeutic generic</Label>
+      </Rubric>
+      <Rubric id="d1e234370" kind="preferred">
+         <Label xml:lang="en-US">therapeutic generic</Label>
+      </Rubric>
+   </Class>
+</ClaML>

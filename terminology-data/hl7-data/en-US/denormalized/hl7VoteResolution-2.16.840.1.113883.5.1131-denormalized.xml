@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="1042"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1131"/>
+   <Title name="hl7VoteResolution" date="2012-08-02" version="1.000">Description: Based on concepts for resolutions from HL7 ballot spreadsheet according to HL7's Governance &amp; Operations Manual (GOM).</Title>
+   <Class code="rootClass">
+      <SubClass subCount="3" code="affirmativeResolution" kind="abstract">
+         <Rubric id="d1e138862" kind="preferred">
+            <Label xml:lang="en-US">affirmative resolution</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="8" code="negativeResolution" kind="abstract">
+         <Rubric id="d1e138890" kind="preferred">
+            <Label xml:lang="en-US">negative resolution</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">hl7VoteResolution</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">Description: Based on concepts for resolutions from HL7 ballot spreadsheet according to HL7's Governance &amp; Operations Manual (GOM).</Label>
+      </Rubric>
+   </Class>
+   <Class code="affirmativeResolution" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="23133"/>
+      <SubClass code="affdef" subCount="0">
+         <Rubric id="d1e138922" kind="preferred">
+            <Label xml:lang="en-US">affirmative-deferred</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="affi" subCount="0">
+         <Rubric id="d1e138954" kind="preferred">
+            <Label xml:lang="en-US">affirmative-incorporated</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="affr" subCount="0">
+         <Rubric id="d1e138986" kind="preferred">
+            <Label xml:lang="en-US">affirmative-rejected</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e138846" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>An abstract concept grouping resolutions that can be applied to affirmative ballot comments.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e138862" kind="short">
+         <Label xml:lang="en-US">affirmative resolution</Label>
+      </Rubric>
+      <Rubric id="d1e138862" kind="preferred">
+         <Label xml:lang="en-US">affirmative resolution</Label>
+      </Rubric>
+   </Class>
+   <Class code="negativeResolution" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="23137"/>
+      <SubClass code="nonsubp" subCount="0">
+         <Rubric id="d1e139018" kind="preferred">
+            <Label xml:lang="en-US">non-substantive proposed</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="nonsubv" subCount="0">
+         <Rubric id="d1e139050" kind="preferred">
+            <Label xml:lang="en-US">non-substantive voted</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="notrelp" subCount="0">
+         <Rubric id="d1e139083" kind="preferred">
+            <Label xml:lang="en-US">not related proposed</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="notrelv" subCount="0">
+         <Rubric id="d1e139115" kind="preferred">
+            <Label xml:lang="en-US">not related voted</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="prevcons" subCount="0">
+         <Rubric id="d1e139147" kind="preferred">
+            <Label xml:lang="en-US">previously considered</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="retract" subCount="0">
+         <Rubric id="d1e139179" kind="preferred">
+            <Label xml:lang="en-US">retracted</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="unresolved" subCount="0">
+         <Rubric id="d1e139211" kind="preferred">
+            <Label xml:lang="en-US">unresolved</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="withdraw" subCount="0">
+         <Rubric id="d1e139243" kind="preferred">
+            <Label xml:lang="en-US">withdrawn</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e138874" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>An abstract concept grouping resolutions that can be applied to negative ballot comments.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e138890" kind="short">
+         <Label xml:lang="en-US">negative resolution</Label>
+      </Rubric>
+      <Rubric id="d1e138890" kind="preferred">
+         <Label xml:lang="en-US">negative resolution</Label>
+      </Rubric>
+   </Class>
+   <Class code="affdef" kind="concept">
+      <Meta name="internalId" value="23136"/>
+      <SuperClass code="affirmativeResolution">
+         <Rubric id="d1e138862" kind="preferred">
+            <Label xml:lang="en-US">affirmative resolution</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e138901" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The recommended change has been deferred to consideration for a future release.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e138922" kind="short">
+         <Label xml:lang="en-US">affirmative-deferred</Label>
+      </Rubric>
+      <Rubric id="d1e138922" kind="preferred">
+         <Label xml:lang="en-US">affirmative-deferred</Label>
+      </Rubric>
+   </Class>
+   <Class code="affi" kind="concept">
+      <Meta name="internalId" value="23134"/>
+      <SuperClass code="affirmativeResolution">
+         <Rubric id="d1e138862" kind="preferred">
+            <Label xml:lang="en-US">affirmative resolution</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e138933" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The recommended change has been incorporated or identified issue has been answered.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e138954" kind="short">
+         <Label xml:lang="en-US">affirmative-incorporated</Label>
+      </Rubric>
+      <Rubric id="d1e138954" kind="preferred">
+         <Label xml:lang="en-US">affirmative-incorporated</Label>
+      </Rubric>
+   </Class>
+   <Class code="affr" kind="concept">
+      <Meta name="internalId" value="23135"/>
+      <SuperClass code="affirmativeResolution">
+         <Rubric id="d1e138862" kind="preferred">
+            <Label xml:lang="en-US">affirmative resolution</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e138965" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The recommended change has been refused and is not expected to be incorporated.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e138986" kind="short">
+         <Label xml:lang="en-US">affirmative-rejected</Label>
+      </Rubric>
+      <Rubric id="d1e138986" kind="preferred">
+         <Label xml:lang="en-US">affirmative-rejected</Label>
+      </Rubric>
+   </Class>
+   <Class code="nonsubp" kind="concept">
+      <Meta name="internalId" value="23139"/>
+      <SuperClass code="negativeResolution">
+         <Rubric id="d1e138890" kind="preferred">
+            <Label xml:lang="en-US">negative resolution</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e138997" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Responsible group has recommended that the negative vote be considered non-substantive. (Issue raised does not provide sufficiently convincing reason to make changes to the item under ballot, or otherwise impede its adoption.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e139018" kind="short">
+         <Label xml:lang="en-US">non-substantive proposed</Label>
+      </Rubric>
+      <Rubric id="d1e139018" kind="preferred">
+         <Label xml:lang="en-US">non-substantive proposed</Label>
+      </Rubric>
+   </Class>
+   <Class code="nonsubv" kind="concept">
+      <Meta name="internalId" value="23140"/>
+      <SuperClass code="negativeResolution">
+         <Rubric id="d1e138890" kind="preferred">
+            <Label xml:lang="en-US">negative resolution</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e139029" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Ballot group has voted and declared the negative vote non-substantive.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e139050" kind="short">
+         <Label xml:lang="en-US">non-substantive voted</Label>
+      </Rubric>
+      <Rubric id="d1e139050" kind="preferred">
+         <Label xml:lang="en-US">non-substantive voted</Label>
+      </Rubric>
+   </Class>
+   <Class code="notrelp" kind="concept">
+      <Meta name="internalId" value="23141"/>
+      <SuperClass code="negativeResolution">
+         <Rubric id="d1e138890" kind="preferred">
+            <Label xml:lang="en-US">negative resolution</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e139062" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Responsible group has recommended that the negative vote be considered not-related. (Issue raised is not related to the current scope of the item under ballot, or does not prevent the item under ballot for being used for its defined intent. Recommended changes may be considered as part of future versions.) (Perhaps after further reading or explanation).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e139083" kind="short">
+         <Label xml:lang="en-US">not related proposed</Label>
+      </Rubric>
+      <Rubric id="d1e139083" kind="preferred">
+         <Label xml:lang="en-US">not related proposed</Label>
+      </Rubric>
+   </Class>
+   <Class code="notrelv" kind="concept">
+      <Meta name="internalId" value="23142"/>
+      <SuperClass code="negativeResolution">
+         <Rubric id="d1e138890" kind="preferred">
+            <Label xml:lang="en-US">negative resolution</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e139094" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Ballot group has voted and declared the negative vote non-related.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e139115" kind="short">
+         <Label xml:lang="en-US">not related voted</Label>
+      </Rubric>
+      <Rubric id="d1e139115" kind="preferred">
+         <Label xml:lang="en-US">not related voted</Label>
+      </Rubric>
+   </Class>
+   <Class code="prevcons" kind="concept">
+      <Meta name="internalId" value="23143"/>
+      <SuperClass code="negativeResolution">
+         <Rubric id="d1e138890" kind="preferred">
+            <Label xml:lang="en-US">negative resolution</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e139126" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Committee identifies that the same issue has been raised as part of a previous ballot on the same element version and was found by the ballot group to be non-substantive or not related.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e139147" kind="short">
+         <Label xml:lang="en-US">previously considered</Label>
+      </Rubric>
+      <Rubric id="d1e139147" kind="preferred">
+         <Label xml:lang="en-US">previously considered</Label>
+      </Rubric>
+   </Class>
+   <Class code="retract" kind="concept">
+      <Meta name="internalId" value="23144"/>
+      <SuperClass code="negativeResolution">
+         <Rubric id="d1e138890" kind="preferred">
+            <Label xml:lang="en-US">negative resolution</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e139158" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Voter has formally withdrawn their vote or comment as having been in error. (Perhaps after further reading or explanation).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e139179" kind="short">
+         <Label xml:lang="en-US">retracted</Label>
+      </Rubric>
+      <Rubric id="d1e139179" kind="preferred">
+         <Label xml:lang="en-US">retracted</Label>
+      </Rubric>
+   </Class>
+   <Class code="unresolved" kind="concept">
+      <Meta name="internalId" value="23138"/>
+      <SuperClass code="negativeResolution">
+         <Rubric id="d1e138890" kind="preferred">
+            <Label xml:lang="en-US">negative resolution</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e139190" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Vote has not yet gone through resolution.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e139211" kind="short">
+         <Label xml:lang="en-US">unresolved</Label>
+      </Rubric>
+      <Rubric id="d1e139211" kind="preferred">
+         <Label xml:lang="en-US">unresolved</Label>
+      </Rubric>
+   </Class>
+   <Class code="withdraw" kind="concept">
+      <Meta name="internalId" value="23145"/>
+      <SuperClass code="negativeResolution">
+         <Rubric id="d1e138890" kind="preferred">
+            <Label xml:lang="en-US">negative resolution</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e139222" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Voter has formally withdrawn their vote or comment on the basis of agreed changes or proposed future changes.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e139243" kind="short">
+         <Label xml:lang="en-US">withdrawn</Label>
+      </Rubric>
+      <Rubric id="d1e139243" kind="preferred">
+         <Label xml:lang="en-US">withdrawn</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

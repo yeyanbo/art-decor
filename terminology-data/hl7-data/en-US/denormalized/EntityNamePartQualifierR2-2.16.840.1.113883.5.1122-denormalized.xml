@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="602"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1122"/>
+   <Title name="EntityNamePartQualifierR2" date="2012-08-02" version="1.000">Description:The qualifier is a set of codes each of which specifies a certain subcategory of the name part in addition to the main name part type. For example, a given name may be flagged as a nickname, a family name may be a pseudonym or a name of public records.</Title>
+   <Class code="rootClass">
+      <SubClass subCount="1" code="AD" kind="concept">
+         <Rubric id="d1e115066" kind="preferred">
+            <Label xml:lang="en-US">acquired</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="BR" kind="concept">
+         <Rubric id="d1e115100" kind="preferred">
+            <Label xml:lang="en-US">birth</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="CL" kind="concept">
+         <Rubric id="d1e115127" kind="preferred">
+            <Label xml:lang="en-US">callme</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="IN" kind="concept">
+         <Rubric id="d1e115154" kind="preferred">
+            <Label xml:lang="en-US">initial</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="LS" kind="concept">
+         <Rubric id="d1e115181" kind="preferred">
+            <Label xml:lang="en-US">legal status</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="MID" kind="concept">
+         <Rubric id="d1e115214" kind="preferred">
+            <Label xml:lang="en-US">middle name</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="PFX" kind="concept">
+         <Rubric id="d1e115241" kind="preferred">
+            <Label xml:lang="en-US">prefix</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="12" code="PharmaceuticalEntityNamePartQualifiers" kind="abstract">
+         <Rubric id="d1e115269" kind="preferred">
+            <Label xml:lang="en-US">PharmaceuticalEntityNamePartQualifiers</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="SFX" kind="concept">
+         <Rubric id="d1e115296" kind="preferred">
+            <Label xml:lang="en-US">suffix</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="4" code="TitleStyles" kind="abstract">
+         <Rubric id="d1e115323" kind="preferred">
+            <Label xml:lang="en-US">TitleStyles</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">EntityNamePartQualifierR2</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">Description:The qualifier is a set of codes each of which specifies a certain subcategory of the name part in addition to the main name part type. For example, a given name may be flagged as a nickname, a family name may be a pseudonym or a name of public records.</Label>
+      </Rubric>
+   </Class>
+   <Class code="AD" kind="concept">
+      <Meta name="internalId" value="22791"/>
+      <SubClass code="SP" subCount="0">
+         <Rubric id="d1e115355" kind="preferred">
+            <Label xml:lang="en-US">spouse</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e115044" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A name part a person acquired. The name part may be acquired by adoption, or the person may have chosen to use the name part for some other reason.</p>
+            <p>
+               <b>Note:</b>this differs from an Other/Psuedonym/Alias in that an acquired name part is acquired on a formal basis rather than an informal one (e.g. registered as part of the official name).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e115066" kind="short">
+         <Label xml:lang="en-US">acquired</Label>
+      </Rubric>
+      <Rubric id="d1e115066" kind="preferred">
+         <Label xml:lang="en-US">acquired</Label>
+      </Rubric>
+   </Class>
+   <Class code="BR" kind="concept">
+      <Meta name="internalId" value="22790"/>
+      <Rubric id="d1e115078" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A name that a person was given at birth or established as a consequence of adoption.</p>
+            <p>
+               <b>Note:</b>This is not used for temporary names assigned at birth such as "Baby of Smith" a" which is just a name with a use code of "TEMP".</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e115100" kind="short">
+         <Label xml:lang="en-US">birth</Label>
+      </Rubric>
+      <Rubric id="d1e115100" kind="preferred">
+         <Label xml:lang="en-US">birth</Label>
+      </Rubric>
+   </Class>
+   <Class code="CL" kind="concept">
+      <Meta name="internalId" value="22794"/>
+      <Rubric id="d1e115111" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Used to indicate which of the various name parts is used when interacting with the person.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e115127" kind="short">
+         <Label xml:lang="en-US">callme</Label>
+      </Rubric>
+      <Rubric id="d1e115127" kind="preferred">
+         <Label xml:lang="en-US">callme</Label>
+      </Rubric>
+   </Class>
+   <Class code="IN" kind="concept">
+      <Meta name="internalId" value="22795"/>
+      <Rubric id="d1e115138" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Indicates that a name part is just an initial. Initials do not imply a trailing period since this would not work with non-Latin scripts. In some languages, initials may consist of more than one letter, e.g., "Ph" could stand for "Philippe" or "Th" For "Thomas".</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e115154" kind="short">
+         <Label xml:lang="en-US">initial</Label>
+      </Rubric>
+      <Rubric id="d1e115154" kind="preferred">
+         <Label xml:lang="en-US">initial</Label>
+      </Rubric>
+   </Class>
+   <Class code="LS" kind="concept">
+      <Meta name="internalId" value="22789"/>
+      <Rubric id="d1e115165" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>For organizations a suffix indicating the legal status, e.g., "Inc.", "Co.", "AG", "GmbH", "B.V." "S.A.", "Ltd." etc.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e115181" kind="short">
+         <Label xml:lang="en-US">legal status</Label>
+      </Rubric>
+      <Rubric id="d1e115181" kind="preferred">
+         <Label xml:lang="en-US">legal status</Label>
+      </Rubric>
+   </Class>
+   <Class code="MID" kind="concept">
+      <Meta name="internalId" value="22793"/>
+      <Rubric id="d1e115192" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Indicates that the name part is a middle name.</p>
+            <p>
+               <b>Usage Notes:</b>In general, the english "middle name" concept is all of the given names after the first. This qualifier may be used to explicitly indicate which given names are considered to be middle names. The middle name qualifier may also be used with family names. This is a Scandinavian use case, matching the concept of "mellomnavn","mellannamn". Note that there are specific rules that indicate what names may be taken as a mellannamn in different Scandinavian countries.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e115214" kind="short">
+         <Label xml:lang="en-US">middle name</Label>
+      </Rubric>
+      <Rubric id="d1e115214" kind="preferred">
+         <Label xml:lang="en-US">middle name</Label>
+      </Rubric>
+   </Class>
+   <Class code="PFX" kind="concept">
+      <Meta name="internalId" value="22796"/>
+      <Rubric id="d1e115225" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A prefix has a strong association to the immediately following name part. A prefix has no implicit trailing white space (it has implicit leading white space though).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e115241" kind="short">
+         <Label xml:lang="en-US">prefix</Label>
+      </Rubric>
+      <Rubric id="d1e115241" kind="preferred">
+         <Label xml:lang="en-US">prefix</Label>
+      </Rubric>
+   </Class>
+   <Class code="PharmaceuticalEntityNamePartQualifiers" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22988"/>
+      <SubClass code="CON" subCount="0">
+         <Rubric id="d1e115399" kind="preferred">
+            <Label xml:lang="en-US">container name</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="DEV" subCount="0">
+         <Rubric id="d1e115443" kind="preferred">
+            <Label xml:lang="en-US">device name</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="FLAV" subCount="0">
+         <Rubric id="d1e115491" kind="preferred">
+            <Label xml:lang="en-US">FlavorName</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="FORMUL" subCount="0">
+         <Rubric id="d1e115538" kind="preferred">
+            <Label xml:lang="en-US">FormulationPartName</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="FRM" subCount="0">
+         <Rubric id="d1e115594" kind="preferred">
+            <Label xml:lang="en-US">form name</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="INV" subCount="0">
+         <Rubric id="d1e115650" kind="preferred">
+            <Label xml:lang="en-US">invented name</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="POPUL" subCount="0">
+         <Rubric id="d1e115697" kind="preferred">
+            <Label xml:lang="en-US">TargetPopulationName</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SCI" subCount="0">
+         <Rubric id="d1e115753" kind="preferred">
+            <Label xml:lang="en-US">scientific name</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="STR" subCount="0">
+         <Rubric id="d1e115810" kind="preferred">
+            <Label xml:lang="en-US">strength name</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="TIME" subCount="0">
+         <Rubric id="d1e115854" kind="preferred">
+            <Label xml:lang="en-US">TimeOrPeriodName</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="TMK" subCount="0">
+         <Rubric id="d1e115898" kind="preferred">
+            <Label xml:lang="en-US">trademark name</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="USE" subCount="0">
+         <Rubric id="d1e115945" kind="preferred">
+            <Label xml:lang="en-US">intended use name</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e115253" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Medication Name Parts are a means of specifying a range of acceptable "official" forms of the name of a product. They are used as patterns against which input name strings may be matched for automatic identification of products from input text reports. While they cover the concepts held under "doseForm" or "route" or "strength" the name parts are not the same and do not fit into a controlled vocabulary in the same way. By specifying up to 8 name parts a much larger range of possible names can be generated.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e115269" kind="short">
+         <Label xml:lang="en-US">PharmaceuticalEntityNamePartQualifiers</Label>
+      </Rubric>
+      <Rubric id="d1e115269" kind="preferred">
+         <Label xml:lang="en-US">PharmaceuticalEntityNamePartQualifiers</Label>
+      </Rubric>
+   </Class>
+   <Class code="SFX" kind="concept">
+      <Meta name="internalId" value="22797"/>
+      <Rubric id="d1e115280" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A suffix has a strong association to the immediately preceding name part. A suffix has no implicit leading white space (it has implicit trailing white space though).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e115296" kind="short">
+         <Label xml:lang="en-US">suffix</Label>
+      </Rubric>
+      <Rubric id="d1e115296" kind="preferred">
+         <Label xml:lang="en-US">suffix</Label>
+      </Rubric>
+   </Class>
+   <Class code="TitleStyles" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22798"/>
+      <SubClass code="AC" subCount="0">
+         <Rubric id="d1e115977" kind="preferred">
+            <Label xml:lang="en-US">academic</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="HOM" subCount="0">
+         <Rubric id="d1e116009" kind="preferred">
+            <Label xml:lang="en-US">honorific</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NB" subCount="0">
+         <Rubric id="d1e116042" kind="preferred">
+            <Label xml:lang="en-US">nobility</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PR" subCount="0">
+         <Rubric id="d1e116074" kind="preferred">
+            <Label xml:lang="en-US">professional</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e115307" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Extra information about the style of a title</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e115323" kind="short">
+         <Label xml:lang="en-US">TitleStyles</Label>
+      </Rubric>
+      <Rubric id="d1e115323" kind="preferred">
+         <Label xml:lang="en-US">TitleStyles</Label>
+      </Rubric>
+   </Class>
+   <Class code="SP" kind="concept">
+      <Meta name="internalId" value="22792"/>
+      <SuperClass code="AD">
+         <Rubric id="d1e115066" kind="preferred">
+            <Label xml:lang="en-US">acquired</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e115334" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The name assumed from the partner in a marital relationship. Usually the spouse's family name. Note that no inference about gender can be made from the existence of spouse names.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e115355" kind="short">
+         <Label xml:lang="en-US">spouse</Label>
+      </Rubric>
+      <Rubric id="d1e115355" kind="preferred">
+         <Label xml:lang="en-US">spouse</Label>
+      </Rubric>
+   </Class>
+   <Class code="CON" kind="concept">
+      <Meta name="internalId" value="22994"/>
+      <SuperClass code="PharmaceuticalEntityNamePartQualifiers">
+         <Rubric id="d1e115269" kind="preferred">
+            <Label xml:lang="en-US">PharmaceuticalEntityNamePartQualifiers</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e115366" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>This refers to the container if present in the medicinal product name.</p>
+            <p>EXAMPLES:</p>
+            <ul>
+               <li>
+                  <p>For Optaflu suspension for injection in pre-filled syringe Influenza vaccine (surface antigen, inactivated, prepared in cell culture) (2007/2008 season): pre-filled syringe</p>
+               </li>
+            </ul>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e115399" kind="short">
+         <Label xml:lang="en-US">container name</Label>
+      </Rubric>
+      <Rubric id="d1e115399" kind="preferred">
+         <Label xml:lang="en-US">container name</Label>
+      </Rubric>
+   </Class>
+   <Class code="DEV" kind="concept">
+      <Meta name="internalId" value="22995"/>
+      <SuperClass code="PharmaceuticalEntityNamePartQualifiers">
+         <Rubric id="d1e115269" kind="preferred">
+            <Label xml:lang="en-US">PharmaceuticalEntityNamePartQualifiers</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e115410" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>This refers to the qualifiers in the name for devices and is at the moment mainly applicable to insulins and inhalation products.</p>
+            <p>EXAMPLES:</p>
+            <ul>
+               <li>
+                  <p>For the medicinal product Actrapid FlexPen 100 IU/ml Solution for injection Subcutaneous use: FlexPen.</p>
+               </li>
+            </ul>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e115443" kind="short">
+         <Label xml:lang="en-US">device name</Label>
+      </Rubric>
+      <Rubric id="d1e115443" kind="preferred">
+         <Label xml:lang="en-US">device name</Label>
+      </Rubric>
+   </Class>
+   <Class code="FLAV" kind="concept">
+      <Meta name="internalId" value="23318"/>
+      <SuperClass code="PharmaceuticalEntityNamePartQualifiers">
+         <Rubric id="d1e115269" kind="preferred">
+            <Label xml:lang="en-US">PharmaceuticalEntityNamePartQualifiers</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e115455" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>This refers to a flavor of the medicinal product if present in the medicinal product name.</p>
+            <p>
+               <b>Examples:</b>
+            </p>
+            <ul>
+               <li>For 'CoughCure Linctus Orange Flavor', the flavor part is "Orange"</li>
+               <li>For 'Wonderdrug Syrup Cherry Flavor', the flavor part is "Cherry"</li>
+            </ul>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e115491" kind="short">
+         <Label xml:lang="en-US">FlavorName</Label>
+      </Rubric>
+      <Rubric id="d1e115491" kind="preferred">
+         <Label xml:lang="en-US">FlavorName</Label>
+      </Rubric>
+   </Class>
+   <Class code="FORMUL" kind="concept">
+      <Meta name="internalId" value="23316"/>
+      <SuperClass code="PharmaceuticalEntityNamePartQualifiers">
+         <Rubric id="d1e115269" kind="preferred">
+            <Label xml:lang="en-US">PharmaceuticalEntityNamePartQualifiers</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e115502" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>This refers to the formulation of the medicinal product if present in the medicinal product name.</p>
+            <p>
+               <b>Examples:</b>
+            </p>
+            <ul>
+               <li>For 'SpecialMed Sugar Free Cough Syrup', the formulation name part is "Sugar Free"</li>
+               <li>For 'QuickCure Gluten-free Bulk Fibre', the formulation name part is "gluten-free"</li>
+            </ul>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e115538" kind="short">
+         <Label xml:lang="en-US">FormulationPartName</Label>
+      </Rubric>
+      <Rubric id="d1e115538" kind="preferred">
+         <Label xml:lang="en-US">FormulationPartName</Label>
+      </Rubric>
+   </Class>
+   <Class code="FRM" kind="concept">
+      <Meta name="internalId" value="22992"/>
+      <SuperClass code="PharmaceuticalEntityNamePartQualifiers">
+         <Rubric id="d1e115269" kind="preferred">
+            <Label xml:lang="en-US">PharmaceuticalEntityNamePartQualifiers</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e115549" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>This refers to the pharmaceutical form/ if present in the medicinal product name.</p>
+            <p>EXAMPLES:</p>
+            <ul>
+               <li>
+                  <p>For Agenerase 50 mg soft capsules: Soft Capsules</p>
+               </li>
+               <li>
+                  <p>For Ludiomil 25mg-Filmtabletten: Filmtabletten</p>
+               </li>
+               <li>
+                  <p>For Optaflu suspension for injection in pre-filled syringe Influenza vaccine (surface antigen, inactivated, prepared in cell culture) (2007/2008 season): suspension for injection</p>
+               </li>
+            </ul>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e115594" kind="short">
+         <Label xml:lang="en-US">form name</Label>
+      </Rubric>
+      <Rubric id="d1e115594" kind="preferred">
+         <Label xml:lang="en-US">form name</Label>
+      </Rubric>
+   </Class>
+   <Class code="INV" kind="concept">
+      <Meta name="internalId" value="22989"/>
+      <SuperClass code="PharmaceuticalEntityNamePartQualifiers">
+         <Rubric id="d1e115269" kind="preferred">
+            <Label xml:lang="en-US">PharmaceuticalEntityNamePartQualifiers</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e115605" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>This refers to the product name without the trademark or the name of the marketing authorization holder or any other descriptor reflected in the product name and, if appropriate, whether it is intended e.g. for babies, children or adults.</p>
+            <p>EXAMPLES:</p>
+            <ul>
+               <li>
+                  <p>Agenerase</p>
+               </li>
+               <li>
+                  <p>Optaflu</p>
+               </li>
+               <li>
+                  <p>Ludiomil</p>
+               </li>
+            </ul>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e115650" kind="short">
+         <Label xml:lang="en-US">invented name</Label>
+      </Rubric>
+      <Rubric id="d1e115650" kind="preferred">
+         <Label xml:lang="en-US">invented name</Label>
+      </Rubric>
+   </Class>
+   <Class code="POPUL" kind="concept">
+      <Meta name="internalId" value="23315"/>
+      <SuperClass code="PharmaceuticalEntityNamePartQualifiers">
+         <Rubric id="d1e115269" kind="preferred">
+            <Label xml:lang="en-US">PharmaceuticalEntityNamePartQualifiers</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e115661" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>This refers to the target population for the medicinal product if present in the medicinal product name</p>
+            <p>
+               <b>Examples:</b>
+            </p>
+            <ul>
+               <li>For 'Broncho-Drug 3.5 mg-capsules for children', the target population part is "children"</li>
+               <li>For 'Adult Chesty Cough Syrup', the target population part is "adult"</li>
+            </ul>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e115697" kind="short">
+         <Label xml:lang="en-US">TargetPopulationName</Label>
+      </Rubric>
+      <Rubric id="d1e115697" kind="preferred">
+         <Label xml:lang="en-US">TargetPopulationName</Label>
+      </Rubric>
+   </Class>
+   <Class code="SCI" kind="concept">
+      <Meta name="internalId" value="22990"/>
+      <SuperClass code="PharmaceuticalEntityNamePartQualifiers">
+         <Rubric id="d1e115269" kind="preferred">
+            <Label xml:lang="en-US">PharmaceuticalEntityNamePartQualifiers</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e115708" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>This refers to the product common or scientific name without the trademark or the name of the marketing authorization holder or any other descriptor reflected in the product name.</p>
+            <p>EXAMPLES:</p>
+            <ul>
+               <li>
+                  <p>For Agenerase: N/A</p>
+               </li>
+               <li>
+                  <p>For Optaflu: Influenza vaccine (surface antigen, inactivated, prepared in cell culture) (2007/2008 season)</p>
+               </li>
+               <li>
+                  <p>For Ludiomil: N/A</p>
+               </li>
+            </ul>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e115753" kind="short">
+         <Label xml:lang="en-US">scientific name</Label>
+      </Rubric>
+      <Rubric id="d1e115753" kind="preferred">
+         <Label xml:lang="en-US">scientific name</Label>
+      </Rubric>
+   </Class>
+   <Class code="STR" kind="concept">
+      <Meta name="internalId" value="22991"/>
+      <SuperClass code="PharmaceuticalEntityNamePartQualifiers">
+         <Rubric id="d1e115269" kind="preferred">
+            <Label xml:lang="en-US">PharmaceuticalEntityNamePartQualifiers</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e115765" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>This refers to the strength if present in the medicinal product name. The use of decimal points should be accommodated if required.</p>
+            <p>EXAMPLES:</p>
+            <ul>
+               <li>
+                  <p>For Agenerase 50 mg soft capsules: 50mg</p>
+               </li>
+               <li>
+                  <p>For Ludiomil 25mg-Filmtabletten: 25 mg</p>
+               </li>
+               <li>
+                  <p>For Optaflu suspension for injection in pre-filled syringe Influenza vaccine (surface antigen, inactivated, prepared in cell culture) (2007/2008 season): N/A</p>
+               </li>
+            </ul>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e115810" kind="short">
+         <Label xml:lang="en-US">strength name</Label>
+      </Rubric>
+      <Rubric id="d1e115810" kind="preferred">
+         <Label xml:lang="en-US">strength name</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIME" kind="concept">
+      <Meta name="internalId" value="23317"/>
+      <SuperClass code="PharmaceuticalEntityNamePartQualifiers">
+         <Rubric id="d1e115269" kind="preferred">
+            <Label xml:lang="en-US">PharmaceuticalEntityNamePartQualifiers</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e115821" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>This refers to a time or time period that may be specified in the text of the medicinal product name</p>
+            <p>
+               <b>Example:</b>
+            </p>
+            <ul>
+               <li>For an influenza vaccine 'Drug-FLU season 2008/2009', the time/period part is "2008/2009 season"</li>
+            </ul>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e115854" kind="short">
+         <Label xml:lang="en-US">TimeOrPeriodName</Label>
+      </Rubric>
+      <Rubric id="d1e115854" kind="preferred">
+         <Label xml:lang="en-US">TimeOrPeriodName</Label>
+      </Rubric>
+   </Class>
+   <Class code="TMK" kind="concept">
+      <Meta name="internalId" value="22996"/>
+      <SuperClass code="PharmaceuticalEntityNamePartQualifiers">
+         <Rubric id="d1e115269" kind="preferred">
+            <Label xml:lang="en-US">PharmaceuticalEntityNamePartQualifiers</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e115865" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>This refers to trademark/company element if present in the medicinal product name.</p>
+            <p>EXAMPLES:</p>
+            <ul>
+               <li>
+                  <p>for Insulin Human Winthrop Comb 15: Winthrop</p>
+               </li>
+            </ul>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e115898" kind="short">
+         <Label xml:lang="en-US">trademark name</Label>
+      </Rubric>
+      <Rubric id="d1e115898" kind="preferred">
+         <Label xml:lang="en-US">trademark name</Label>
+      </Rubric>
+   </Class>
+   <Class code="USE" kind="concept">
+      <Meta name="internalId" value="22993"/>
+      <SuperClass code="PharmaceuticalEntityNamePartQualifiers">
+         <Rubric id="d1e115269" kind="preferred">
+            <Label xml:lang="en-US">PharmaceuticalEntityNamePartQualifiers</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e115909" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>This refers to the intended use if present in the medicinal product name without the trademark or the name of the marketing authorization holder or any other descriptor reflected in the product name.</p>
+            <p>
+               <b>Examples:</b>
+            </p>
+            <ul>
+               <li>For 'Drug-BI Caplets - Heartburn Relief', the intended use part is: "Heartburn Relief"</li>
+               <li>For 'Medicine Honey Syrup for Soothing Coughs' the intended use part is "Soothing Coughs"</li>
+            </ul>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e115945" kind="short">
+         <Label xml:lang="en-US">intended use name</Label>
+      </Rubric>
+      <Rubric id="d1e115945" kind="preferred">
+         <Label xml:lang="en-US">intended use name</Label>
+      </Rubric>
+   </Class>
+   <Class code="AC" kind="concept">
+      <Meta name="internalId" value="22799"/>
+      <SuperClass code="TitleStyles">
+         <Rubric id="d1e115323" kind="preferred">
+            <Label xml:lang="en-US">TitleStyles</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e115956" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Indicates that a title like "Dr.", "M.D." or "Ph.D." is an academic title.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e115977" kind="short">
+         <Label xml:lang="en-US">academic</Label>
+      </Rubric>
+      <Rubric id="d1e115977" kind="preferred">
+         <Label xml:lang="en-US">academic</Label>
+      </Rubric>
+   </Class>
+   <Class code="HOM" kind="concept">
+      <Meta name="internalId" value="22802"/>
+      <SuperClass code="TitleStyles">
+         <Rubric id="d1e115323" kind="preferred">
+            <Label xml:lang="en-US">TitleStyles</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e115988" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A honorific such as "The Right Honourable" or "Weledelgeleerde Heer".</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e116009" kind="short">
+         <Label xml:lang="en-US">honorific</Label>
+      </Rubric>
+      <Rubric id="d1e116009" kind="preferred">
+         <Label xml:lang="en-US">honorific</Label>
+      </Rubric>
+   </Class>
+   <Class code="NB" kind="concept">
+      <Meta name="internalId" value="22801"/>
+      <SuperClass code="TitleStyles">
+         <Rubric id="d1e115323" kind="preferred">
+            <Label xml:lang="en-US">TitleStyles</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e116021" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A nobility title such as Sir, Count, Grafin.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e116042" kind="short">
+         <Label xml:lang="en-US">nobility</Label>
+      </Rubric>
+      <Rubric id="d1e116042" kind="preferred">
+         <Label xml:lang="en-US">nobility</Label>
+      </Rubric>
+   </Class>
+   <Class code="PR" kind="concept">
+      <Meta name="internalId" value="22800"/>
+      <SuperClass code="TitleStyles">
+         <Rubric id="d1e115323" kind="preferred">
+            <Label xml:lang="en-US">TitleStyles</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e116053" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Primarily in the British Imperial culture people tend to have an abbreviation of their professional organization as part of their credential titles.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e116074" kind="short">
+         <Label xml:lang="en-US">professional</Label>
+      </Rubric>
+      <Rubric id="d1e116074" kind="preferred">
+         <Label xml:lang="en-US">professional</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

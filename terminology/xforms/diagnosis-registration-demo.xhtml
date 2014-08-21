@@ -1,0 +1,778 @@
+<!--
+    Copyright (C) 2011-2013 Art Decor Expert Group
+    
+    Author: Gerrit Boers
+
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+   xmlns:hl7="urn:hl7-org:v3" xmlns:atp="urn:nictiz.atp" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xis="http://art-decor.org/ns/xis"
+   xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:widget="http://orbeon.org/oxf/xml/widget" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="xis"
+   xsi:schemaLocation="http://www.w3.org/1999/xhtml ../../orbeon_schemas/xhtml1-transitional-orbeon.xsd">
+   <xhtml:head>
+      <xhtml:script type="text/javascript">
+         function getDocHeight(doc) {
+         doc = doc || document;
+         // stackoverflow.com/questions/...
+         var body = doc.body, html = doc.documentElement;
+         var height = Math.max( body.scrollHeight, body.offsetHeight, 
+         html.clientHeight, html.scrollHeight, html.offsetHeight );
+         return height;
+         }
+         function setIframeHeight(name) {
+         var ifrm = document.getElementByName(name);
+         var doc = ifrm.contentDocument? ifrm.contentDocument: 
+         ifrm.contentWindow.document;
+         ifrm.style.visibility = 'hidden';
+         ifrm.style.height = "10px"; // reset to minimal height ...
+         ifrm.style.height = getDocHeight( doc ) + "px";
+         ifrm.style.visibility = 'visible';
+         }
+      </xhtml:script>
+      <xhtml:style type="text/css">
+         table.patient-demographics{
+         width:100%;
+         border-spacing:0px;
+         background-color:white;
+         border-bottom:1px solid lavender;
+         font-family:Verdana;
+         font-size:11px;
+         }
+         td.patient-demographics{
+         border-spacing:0px;
+         border-bottom:1px solid lavender;
+         }
+         th{
+         background-color:lightgrey;
+         font-size:14px;
+         font-weight:bold;
+         text-align:left;
+         }
+         .xforms-select1-appearance-full span
+         {
+         display: block;
+         clear: both 
+         } 
+         .xforms-select-appearance-full span { display: block; clear: both } 
+      </xhtml:style>
+      <xhtml:title>
+         <xforms:output ref="$resources/diagnosis-registration-demo"/>
+      </xhtml:title>
+      <xforms:model>
+         <!-- Variable with path to art-exist for use by form -->
+         <xxforms:variable name="art-exist" select="xxforms:property('art.exist.url')"/>
+         <!-- Variable with path to decor-eXist used to pass to client as link for services (Diagrams in new window) -->
+         <xxforms:variable name="decor-exist" select="xxforms:property('decor.exist.url')"/>
+         <!-- Variable with path to xis-eXist for content -->
+         <xxforms:variable name="terminology-exist" select="xxforms:property('terminology.exist.url')"/>
+         <!-- Variable with path to xis-external-exist used to pass to client as link for images -->
+         <xxforms:variable name="terminology-external-exist" select="xxforms:property('terminology.external.exist.url')"/>
+         <!-- resources for internationalization -->
+         <xforms:instance id="resources-instance">
+            <dummy/>
+         </xforms:instance>
+         <!-- submission for loading resources -->
+         <xforms:submission id="get-resources-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-form-resources.xquery?packageRoot=terminology" replace="instance" instance="resources-instance" xxforms:readonly="true">
+            <xforms:message ev:event="xforms-submit-error" level="modal">
+               A submission error occurred:<xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+            </xforms:message>
+         </xforms:submission>
+         <!-- language -->
+         <xforms:instance id="language">
+            <language/>
+         </xforms:instance>
+         <!-- **** PATIENT SELECTION **** -->
+         <!-- instance for patient list -->
+         <xforms:instance id="patient-list">
+            <patients>
+               <Patient xmlns="urn:hl7-org:v3">
+                  <!-- BSN -->
+                  <id root="2.16.840.1.113883.2.4.6.3" extension="999999011"/>
+                  <addr use="HP">
+                     <streetName>Alderstraat</streetName>
+                     <houseNumber>1A</houseNumber>
+                     <postalCode>1234 AB</postalCode>
+                     <city>Jipsinghuizen</city>
+                  </addr>
+                  <telecom use="HP" value="tel:+31195531519"/>
+                  <statusCode code="active"/>
+                  <Person>
+                     <name>
+                        <given qualifier="IN">A</given>
+                        <family qualifier="BR">Adelaar</family>
+                        <delimiter>, </delimiter>
+                        <given qualifier="CL">Aaltje</given>
+                     </name>
+                     <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1"/>
+                     <birthTime value="19500101"/>
+                     <birthplace>
+                        <addr>
+                           <city>Aalst</city>
+                           <country code="NL" codeSystem="2.16.1">Nederland</country>
+                        </addr>
+                     </birthplace>
+                  </Person>
+               </Patient>
+               <Patient xmlns="urn:hl7-org:v3">
+                  <id root="2.16.840.1.113883.2.4.6.3" extension="789123459"/>
+                  <addr use="HP">
+                     <streetName>Dorpstraat</streetName>
+                     <houseNumber>54</houseNumber>
+                     <postalCode>1924 BB</postalCode>
+                     <city>Hoogkarspel</city>
+                  </addr>
+                  <telecom use="HP" value="tel:0229-955555"/>
+                  <statusCode code="active"/>
+                  <Person>
+                     <name>
+                        <given qualifier="BR">Johannes</given>
+                        <given qualifier="BR">Maria</given>
+                        <given qualifier="CL">Hans</given>
+                        <family qualifier="BR">Breed</family>
+                        <delimiter>-</delimiter>
+                        <prefix qualifier="VV">van der </prefix>
+                        <family qualifier="SP">Wiel</family>
+                     </name>
+                     <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+                     <birthTime value="19680816"/>
+                  </Person>
+               </Patient>
+               <Patient xmlns="urn:hl7-org:v3">
+                  <!-- BSN -->
+                  <id root="2.16.840.1.113883.2.4.6.3" extension="555555719"/>
+                  <addr use="HP">
+                     <streetName>Groentetuin</streetName>
+                     <houseNumber>4</houseNumber>
+                     <postalCode>1237 DC</postalCode>
+                     <city>Assen</city>
+                     <country code="NL">Nederland</country>
+                  </addr>
+                  <telecom use="HP" value="tel:+31195531519"/>
+                  <statusCode code="active"/>
+                  <Person>
+                     <name>
+                        <given qualifier="IN">M</given>
+                        <prefix qualifier="VV">van den </prefix>
+                        <family qualifier="BR">Crommen</family>
+                        <delimiter>, </delimiter>
+                        <given qualifier="CL">Merel</given>
+                     </name>
+                     <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1"/>
+                     <birthTime value="19500420"/>
+                     <birthplace>
+                        <addr>
+                           <city>Assen</city>
+                           <country code="NL">Nederland</country>
+                        </addr>
+                     </birthplace>
+                  </Person>
+               </Patient>
+               <Patient xmlns="urn:hl7-org:v3">
+                  <!-- BSN -->
+                  <id root="2.16.840.1.113883.2.4.6.3" extension="555555112"/>
+                  <addr use="HP">
+                     <streetName>Maasstraat</streetName>
+                     <houseNumber>2</houseNumber>
+                     <postalCode>1235 DB</postalCode>
+                     <city>Roermond</city>
+                     <country code="NL">Nederland</country>
+                  </addr>
+                  <telecom use="HP" value="tel:+31190531770"/>
+                  <statusCode code="active"/>
+                  <Person>
+                     <name>
+                        <given qualifier="IN">R</given>
+                        <prefix qualifier="VV">van </prefix>
+                        <family qualifier="BR">Henegouwen</family>
+                        <delimiter>, </delimiter>
+                        <given qualifier="CL">Richard</given>
+                     </name>
+                     <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+                     <birthTime value="19500220"/>
+                     <birthplace>
+                        <addr>
+                           <city>Maastricht</city>
+                           <country code="NL">Nederland</country>
+                        </addr>
+                     </birthplace>
+                  </Person>
+               </Patient>
+               <Patient xmlns="urn:hl7-org:v3">
+                  <!-- BSN -->
+                  <id root="2.16.840.1.113883.2.4.6.3" extension="999999175"/>
+                  <addr use="HP">
+                     <streetName>Grisbeek</streetName>
+                     <houseNumber>20</houseNumber>
+                     <postalCode>1249 ZZ</postalCode>
+                     <city>Goes</city>
+                     <country code="NL">Nederland</country>
+                  </addr>
+                  <statusCode code="active"/>
+                  <Person>
+                     <name>
+                        <given qualifier="CL">Rogér</given>
+                        <family qualifier="BR">Sabanoðlu</family>
+                     </name>
+                     <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+                     <birthTime value="19500402"/>
+                     <birthplace>
+                        <addr>
+                           <city>Egmond</city>
+                           <country code="NL">Nederland</country>
+                        </addr>
+                     </birthplace>
+                  </Person>
+               </Patient>
+            </patients>
+         </xforms:instance>
+         <!-- instance for selected patient -->
+         <xforms:instance id="selected-patient">
+            <id>999999011</id>
+         </xforms:instance>
+         <xforms:instance id="dhd-concept-navigation" xxforms:exclude-result-prefixes="#all">
+            <id/>
+         </xforms:instance>
+         <!-- dhd concept -->
+         <xforms:instance id="dhd-concept" xxforms:exclude-result-prefixes="#all">
+            <concept/>
+         </xforms:instance>
+         <!-- get dhd concept -->
+         <xforms:submission id="get-dhd-concept" serialization="none" resource="{$terminology-exist}/dhd/modules/get-dhd-concept.xquery?thesaurusId={instance('dhd-concept-navigation')}" method="get"
+            instance="dhd-concept" replace="instance"/>
+
+         <!-- **** THESAURUS AND SNOMED SEARCH **** -->
+         <!-- search mode -->
+         <xforms:instance id="search-mode">
+            <mode>specialism</mode>
+         </xforms:instance>
+         <!-- search mode -->
+         <xforms:instance id="search-mode-list">
+            <modes>
+               <mode id="specialism">
+                  <desc language="nl-NL">Eigen specialisme</desc>
+                  <desc language="en-US">Selected specialism</desc>
+                  <desc language="de-DE">Specialism</desc>
+               </mode>
+               <mode id="thesaurus">
+                  <desc language="nl-NL">Nederland</desc>
+                  <desc language="en-US">Netherlands</desc>
+                  <desc language="de-DE">Niederlande</desc>
+               </mode>
+               <mode id="snomed">
+                  <desc language="nl-NL">Internationaal</desc>
+                  <desc language="en-US">International</desc>
+                  <desc language="de-DE">International</desc>
+               </mode>
+               <hint language="nl-NL"
+                  >Bij de opties ‘Eigen specialisme’ en ‘Nederland’ is de bron de DHD thesaurus, bij de optie ‘Internationaal’ is de bron de internationale versie van SNOMED-CT</hint>
+               <hint language="nl-NL"
+                  >The source for the options 'Selected specialism' and 'Netherlands' is the DHD thesaurus, the source for the option ‘Internationaal’ is the international version of SNOMED-CT</hint>
+            </modes>
+         </xforms:instance>
+         <!-- member status filter -->
+         <xforms:instance id="member-status-filter">
+            <filter/>
+         </xforms:instance>
+         <xforms:bind nodeset="instance('member-status-filter')" readonly="instance('search-thesaurus-only')='false'"/>
+         <!-- member-status filters -->
+         <xforms:instance id="status-filters">
+            <filters>
+               <filter statusCodes="">
+                  <name language="nl-NL">Alle</name>
+                  <name language="en-US">All</name>
+                  <name language="de-DE">Alle</name>
+               </filter>
+               <filter statusCodes="draft active update">
+                  <name language="nl-NL">Actueel</name>
+                  <name language="en-US">Current</name>
+                  <name language="de-DE">Actuell</name>
+               </filter>
+               <filter statusCodes="draft">
+                  <name language="nl-NL">Ontwerp</name>
+                  <name language="en-US">Draft</name>
+                  <name language="de-DE">Entwurf</name>
+               </filter>
+               <filter statusCodes="active">
+                  <name language="nl-NL">Actief</name>
+                  <name language="en-US">Active</name>
+                  <name language="de-DE">Aktiv</name>
+               </filter>
+               <filter statusCodes="update">
+                  <name language="nl-NL">In bewerking</name>
+                  <name language="en-US">Under update</name>
+                  <name language="de-DE">In Bearbeitung</name>
+               </filter>
+               <filter statusCodes="retired">
+                  <name language="nl-NL">Obsoleet</name>
+                  <name language="en-US">Retired</name>
+                  <name language="de-DE">Obsolet</name>
+               </filter>
+            </filters>
+         </xforms:instance>
+         <!-- toplevel filter -->
+         <xforms:instance id="selected-toplevels">
+            <ids/>
+         </xforms:instance>
+         <!-- refsets filter -->
+         <xforms:instance id="selected-refsets">
+            <ids/>
+         </xforms:instance>
+         <!-- filter list -->
+         <xforms:instance id="filters">
+            <filters/>
+         </xforms:instance>
+         <!-- submission for loading toplevel filter list -->
+         <xforms:submission id="get-filters" serialization="none" method="get" resource="{$terminology-exist}/snomed/modules/get-search-filters.xquery" replace="instance" instance="filters"
+            xxforms:readonly="true"/>
+         <xforms:instance id="snomed-concept-instance">
+            <result current="1" count="1">
+               <description count="3" length="17" effectiveTime="20030731" conceptId="138875005" caseSignificanceId="900000000000017005" type="pref" fullName="SNOMED CT Concept (SNOMED RT+CTV3)"
+                  >SNOMED CT Concept</description>
+            </result>
+         </xforms:instance>
+         <!-- instance for selected concept -->
+         <xforms:instance id="snomed-concept-navigation">
+            <id>138875005</id>
+         </xforms:instance>
+         <!-- instance for description search string -->
+         <xforms:instance id="snomed-description-search">
+            <search/>
+         </xforms:instance>
+         <!-- instance for description itemset -->
+         <xforms:instance id="snomed-description-itemset">
+            <result current="0" count="0"/>
+         </xforms:instance>
+         <!-- instance for selected concept -->
+         <xforms:instance id="selected-snomed-concept">
+            <dummy/>
+         </xforms:instance>
+         <!-- instance for concept -->
+         <xforms:instance id="snomed-concept">
+            <dummy/>
+         </xforms:instance>
+         <!-- submission for loading concept -->
+         <xforms:submission id="get-snomed-concept" serialization="none" method="get"
+            resource="{$terminology-exist}/snomed/getConcept/{instance('snomed-concept-hierarchy')//*[@id=instance('snomed-hierarchy-navigation')]/@conceptId}" replace="instance"
+            instance="snomed-concept"/>
+         <!-- instance for selected concept in hierarchy -->
+         <xforms:instance id="snomed-hierarchy-navigation">
+            <id/>
+         </xforms:instance>
+         <!-- instance for concept hierarchy -->
+         <xforms:instance id="snomed-concept-hierarchy">
+            <dummy/>
+         </xforms:instance>
+
+         <!-- submission for loading subconcept hierarchy -->
+         <xforms:submission id="get-snomed-subconcept-hierarchy" serialization="none" method="get"
+            resource="{$terminology-exist}/snomed/modules/get-subconcepts.xquery?id={instance('snomed-concept-navigation')}" replace="instance" instance="snomed-concept-hierarchy">
+            <xforms:action ev:event="xforms-submit-done">
+               <xforms:action xxforms:iterate="instance('snomed-concept-hierarchy')/concept|instance('snomed-concept-hierarchy')//dest">
+                  <xforms:insert nodeset="context()/@*" origin="xxforms:attribute('id',random())"/>
+               </xforms:action>
+            </xforms:action>
+         </xforms:submission>
+         <!-- instance for concept hierarchy -->
+         <xforms:instance id="snomed-subconcepts">
+            <dummy/>
+         </xforms:instance>
+         <!-- submission for loading concept -->
+         <xforms:submission id="get-snomed-subconcepts" serialization="none" method="get"
+            resource="{$terminology-exist}/snomed/modules/get-subconcepts.xquery?id={instance('snomed-concept-hierarchy')//*[@id=instance('snomed-hierarchy-navigation')]/@conceptId}"
+            replace="instance" instance="snomed-subconcepts"/>
+
+         <!-- instance for thesaurus only search mode -->
+         <xforms:instance id="search-thesaurus-only">
+            <mode>true</mode>
+         </xforms:instance>
+         <xforms:bind nodeset="instance('search-thesaurus-only')" type="xforms:boolean"/>
+         <!-- instance for select mode (search or select) -->
+         <xforms:instance id="snomed-select-mode">
+            <mode>false</mode>
+         </xforms:instance>
+         <!-- instance for select mode (search or select) -->
+         <xforms:instance id="snomed-subconcept">
+            <dummy/>
+         </xforms:instance>
+         <!-- submission for loading subconcept -->
+         <xforms:submission id="get-snomed-subconcept" serialization="none" method="get"
+            resource="{$terminology-exist}/snomed/getConcept/{instance('snomed-concept-hierarchy')//*[@id=instance('snomed-hierarchy-navigation')]/@conceptId}" replace="instance"
+            instance="snomed-subconcept"/>
+         <!-- submission for updating resultset -->
+         <xforms:submission id="update-snomed-descriptions" ref="instance('snomed-description-search')"
+            action="{$terminology-exist}/dhd/modules/search-diagnosis-demo.xquery?searchString={instance('snomed-description-search')}&amp;toplevels={instance('selected-toplevels')}&amp;refsets={instance('selected-refsets')}&amp;mode={instance('search-mode')}&amp;specialism={instance('specialism-filter')}"
+            method="get" instance="snomed-description-itemset" replace="instance"/>
+
+         <!-- specialism filter -->
+         <xforms:instance id="specialism-filter" xxforms:exclude-result-prefixes="#all">
+            <filter>0313</filter>
+         </xforms:instance>
+         <!-- specialism filter list -->
+         <xforms:instance id="specialism-list">
+            <list/>
+         </xforms:instance>
+         <!-- get specialism select list -->
+         <xforms:submission id="get-specialism-list" serialization="none" method="get" resource="{$terminology-exist}/dhd/modules/get-specialism-reference.xquery" replace="instance"
+            instance="specialism-list"/>
+         <xforms:action ev:event="xforms-model-construct-done">
+            <xforms:send submission="get-resources-submission"/>
+            <xforms:setvalue ref="instance('language')" value="if (string-length(xxforms:get-session-attribute('language'))&gt;0) then (xxforms:get-session-attribute('language')) else (instance('resources-instance')//resources[1]/@xml:lang/string())"/>
+            <xforms:insert context="." origin="xxforms:set-session-attribute('language', instance('language'))"/>
+            <xforms:send submission="get-filters"/>
+            <xforms:send submission="get-specialism-list"/>
+         </xforms:action>
+         <!-- form ready actions -->
+         <xforms:action ev:event="xforms-ready"/>
+         <xxforms:variable name="resources" select="instance('resources-instance')//resources[1]"/>
+      </xforms:model>
+   </xhtml:head>
+   <xhtml:body>
+      <!-- Filter dialog -->
+      <xxforms:dialog id="filter-dialog" appearance="minimal" neighbor="search-snomed-description" visible="false">
+         <xhtml:table>
+            <xhtml:tr>
+               <xhtml:td>
+                  <xforms:select ref="instance('selected-toplevels')" appearance="full" id="filterList">
+                     <xforms:itemset nodeset="instance('filters')/topLevels/concept">
+                        <xforms:label ref="."/>
+                        <xforms:value ref="@id"/>
+                     </xforms:itemset>
+                     <xforms:action ev:event="xforms-value-changed">
+                        <xforms:send submission="update-snomed-descriptions"/>
+                        <xforms:action if="xxforms:index('descriptions')&gt;1">
+                           <xforms:setindex repeat="descriptions" index="1"/>
+                        </xforms:action>
+                     </xforms:action>
+                  </xforms:select>
+               </xhtml:td>
+               <xhtml:td>
+                  <xforms:select ref="instance('selected-refsets')" appearance="full" id="refsetFilterList">
+                     <xforms:itemset nodeset="instance('filters')/refsets/refset">
+                        <xforms:label ref="."/>
+                        <xforms:value ref="@id"/>
+                     </xforms:itemset>
+                     <xforms:action ev:event="xforms-value-changed">
+                        <xforms:send submission="update-snomed-descriptions"/>
+                        <xforms:action if="xxforms:index('descriptions')&gt;1">
+                           <xforms:setindex repeat="descriptions" index="1"/>
+                        </xforms:action>
+                     </xforms:action>
+                  </xforms:select>
+               </xhtml:td>
+            </xhtml:tr>
+         </xhtml:table>
+      </xxforms:dialog>
+      <!-- patient and treating physician -->
+      <xhtml:table width="100%">
+         <xhtml:tr>
+            <xhtml:td>
+               <!-- Patient selection and demographics -->
+               <xhtml:table class="detail" width="100%" style="border:2px solid #CCC;">
+                  <xhtml:tr>
+                     <xhtml:td class="heading" colspan="4">
+                        <div class="heading">
+                           <xforms:output ref="$resources/patient"/>
+                        </div>
+                     </xhtml:td>
+                  </xhtml:tr>
+                  <xforms:group ref="instance('patient-list')//hl7:Patient[hl7:id/@extension=instance('selected-patient')]">
+                     <xhtml:tr>
+                        <xhtml:td width="25%" class="item-label">
+                           <xforms:output ref="$resources/name"/>
+                        </xhtml:td>
+                        <xhtml:td width="45%">
+                           <xforms:select1 ref="instance('selected-patient')" appearance="minimal" class="auto-width">
+                              <xforms:itemset nodeset="instance('patient-list')/hl7:Patient">
+                                 <xforms:label ref="hl7:Person/hl7:name"/>
+                                 <xforms:value ref="hl7:id[@root='2.16.840.1.113883.2.4.6.3']/@extension"/>
+                              </xforms:itemset>
+                           </xforms:select1>
+                        </xhtml:td>
+                        <xhtml:td width="10%" class="item-label">
+                           <xforms:output ref="$resources/bsn"/>
+                        </xhtml:td>
+                        <xhtml:td width="20%">
+                           <xforms:output ref="hl7:id[@root='2.16.840.1.113883.2.4.6.3']/@extension"/>
+                        </xhtml:td>
+                     </xhtml:tr>
+                     <xhtml:tr>
+                        <xhtml:td class="item-label">
+                           <xforms:output ref="$resources/adres"/>
+                        </xhtml:td>
+                        <xhtml:td>
+                           <xforms:output ref="hl7:addr/hl7:streetName"/>
+                           <xforms:output ref="hl7:addr/hl7:houseNumber"/>
+                        </xhtml:td>
+                        <xhtml:td class="item-label">
+                           <xforms:output ref="$resources/birthdate"/>
+                        </xhtml:td>
+                        <xhtml:td>
+                           <xxforms:variable name="hl7-birthdate" select="hl7:Person/hl7:birthTime/@value"/>
+                           <xxforms:variable name="birthdate" select="xs:date(concat(substring($hl7-birthdate,1,4),'-',substring($hl7-birthdate,5,2),'-',substring($hl7-birthdate,7,2)))"/>
+                           <xforms:output ref="$birthdate"
+                              xxforms:format="if (instance('language')='en-US') then format-date($birthdate,'[M01]/[D01]/[Y]') else format-date($birthdate,'[D01]-[M01]-[Y]')"/>
+                        </xhtml:td>
+                     </xhtml:tr>
+                     <xhtml:tr>
+                        <xhtml:td class="item-label">
+                           <xforms:output ref="$resources/postalcode-city"/>
+                        </xhtml:td>
+                        <xhtml:td>
+                           <xforms:output ref="hl7:addr/hl7:postalCode"/>
+                           <xforms:output ref="hl7:addr/hl7:city"/>
+                        </xhtml:td>
+                        <xhtml:td class="item-label">
+                           <xforms:output ref="$resources/gender"/>
+                        </xhtml:td>
+                        <xhtml:td>
+                           <xforms:output ref="if (hl7:Person/hl7:administrativeGenderCode/@code='F') then 'V' else if (hl7:Person/hl7:administrativeGenderCode/@code='M') then 'M' else ('')"/>
+                        </xhtml:td>
+                     </xhtml:tr>
+                  </xforms:group>
+               </xhtml:table>
+            </xhtml:td>
+            <xhtml:td>
+               <!-- treating physician -->
+               <xhtml:table class="detail" width="100%" style="border:2px solid #CCC;">
+                  <xhtml:tr>
+                     <xhtml:td class="heading" colspan="2">
+                        <div class="heading">
+                           <xforms:output ref="$resources/physician"/>
+                        </div>
+                     </xhtml:td>
+                  </xhtml:tr>
+                  <xhtml:tr>
+                     <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/specialism"/>
+                     </xhtml:td>
+                     <xhtml:td>
+                        <xforms:select1 ref="instance('specialism-filter')" appearance="minimal" class="auto-width">
+                           <xforms:itemset nodeset="instance('specialism-list')/specialism">
+                              <xforms:label ref="concat(@agbCode,' ',desc)"/>
+                              <xforms:value ref="@agbCode"/>
+                           </xforms:itemset>
+                           <xforms:action ev:event="xforms-value-changed">
+                              <xforms:send submission="update-snomed-descriptions"/>
+                           </xforms:action>
+                        </xforms:select1>
+                     </xhtml:td>
+                  </xhtml:tr>
+                  <xhtml:tr>
+                     <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/search"/>
+                     </xhtml:td>
+                     <xhtml:td>
+                        <xforms:select1 ref="instance('search-mode')" appearance="full" class="auto-width">
+                           <xforms:itemset nodeset="instance('search-mode-list')/mode">
+                              <xforms:label ref="desc[@language=instance('language')]"> </xforms:label>
+                              <xforms:value ref="@id"/>
+                           </xforms:itemset>
+                           <xforms:hint ref="instance('search-mode-list')/hint[@language=instance('language')]"/>
+                           <xforms:action ev:event="xforms-value-changed">
+                              <xforms:send submission="update-snomed-descriptions"/>
+                           </xforms:action>
+                        </xforms:select1>
+                     </xhtml:td>
+                  </xhtml:tr>
+               </xhtml:table>
+            </xhtml:td>
+         </xhtml:tr>
+      </xhtml:table>
+
+      <!--diagnosis and search -->
+      <xhtml:table width="100%">
+         <xhtml:tr>
+            <xhtml:td>
+               <xhtml:table width="100%" style="border:2px solid #CCC;">
+                  <xhtml:tr>
+                     <xhtml:td class="heading">
+                        <div class="heading">
+                           <xforms:output ref="$resources/diagnosis"/>
+                        </div>
+                     </xhtml:td>
+                  </xhtml:tr>
+                  <xxforms:variable name="current-concept" select="instance('snomed-concept-hierarchy')//concept[@id=instance('snomed-hierarchy-navigation')]"/>
+                  <xhtml:tr>
+                     <!--                <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/diagnosis"/>
+                     </xhtml:td>
+                     <xhtml:td width="45%">
+                     </xhtml:td>-->
+                     <xhtml:td>
+                        <!-- SEARCH -->
+                        <xhtml:table width="100%">
+                           <xhtml:tr>
+                              <!-- Search field and filters -->
+                              <xhtml:td class="item-label">
+                                 <xforms:output ref="$resources/search"/>
+                              </xhtml:td>
+                              <xhtml:td>
+                                 <xforms:input class="top" ref="instance('snomed-description-search')" id="search-snomed-description" incremental="true">
+                                    <xforms:action ev:event="xforms-value-changed">
+                                       <xxforms:variable name="search-value" select="."/>
+                                       <xxforms:variable name="make-suggestion"
+                                          select="(string-length($search-value) &gt;= 3 and not(matches($search-value,'^[A-Z]|\s$|\s[a-z|0-9]$'))) or (string-length($search-value) &gt;= 2 and not(matches($search-value,'^[a-z]|\s$')))  or matches($search-value,'^[0-9]+')"/>
+                                       <xforms:action if="$make-suggestion">
+                                          <xforms:send submission="update-snomed-descriptions"/>
+                                          <xforms:action if="xxforms:index('descriptions')&gt;1">
+                                             <xforms:setindex repeat="descriptions" index="1"/>
+                                          </xforms:action>
+                                       </xforms:action>
+                                    </xforms:action>
+                                 </xforms:input>
+                                 <!-- Snomed filter -->
+                                 <xforms:trigger ref=".[instance('search-mode')='snomed']" appearance="minimal" id="filter">
+                                    <xforms:label class="control-label">
+                                       <xhtml:img src="/img/filter.png" alt=""/>
+                                    </xforms:label>
+                                    <xforms:hint ref="$resources/filter"/>
+                                    <xforms:action ev:event="DOMActivate">
+                                       <xxforms:show dialog="filter-dialog"/>
+                                    </xforms:action>
+                                 </xforms:trigger>
+                                 <!-- Clear Snomed filter -->
+                                 <xforms:trigger ref=".[string-length(instance('selected-toplevels'))&gt;0]" appearance="minimal">
+                                    <xforms:label class="control-label">
+                                       <xhtml:img src="/img/node-s.png" alt=""/>
+                                    </xforms:label>
+                                    <xforms:hint ref="$resources/clear-filter"/>
+                                    <xforms:action ev:event="DOMActivate">
+                                       <xforms:setvalue ref="instance('selected-toplevels')" value="''"/>
+                                    </xforms:action>
+                                 </xforms:trigger>
+                              </xhtml:td>
+                           </xhtml:tr>
+                           <xhtml:tr>
+                              <xhtml:td class="item-label" colspan="2">
+                                 <xforms:output ref="$resources/results"/>
+                                 (
+                                 <xforms:output
+                                    ref="instance('snomed-description-itemset')/@current"/>
+                                 <xforms:output ref="$resources/of"/>
+                                 <xforms:output ref="instance('snomed-description-itemset')/@count"/>
+                                 )
+                              </xhtml:td>
+                           </xhtml:tr>
+                           <xhtml:tr>
+                              <xhtml:td colspan="2">
+                                 <xhtml:div class="navigate-seven">
+                                    <xhtml:table width="100%">
+                                       <xforms:repeat nodeset="instance('snomed-description-itemset')/description" id="descriptions">
+                                          <xhtml:tr>
+                                             <xhtml:td>
+                                                <xforms:output ref=".">
+                                                   <xforms:hint>
+                                                      <xforms:output ref="@fullName"/>
+                                                   </xforms:hint>
+                                                </xforms:output>
+                                             </xhtml:td>
+                                          </xhtml:tr>
+                                          <xforms:action ev:event="xxforms-index-changed">
+                                             <xforms:setvalue ref="instance('dhd-concept-navigation')" value="instance('snomed-description-itemset')/description[index('descriptions')]/@thesaurusId"/>
+                                             <xforms:send submission="get-dhd-concept"/>
+                                          </xforms:action>
+                                          <xforms:action ev:event="xxforms-nodeset-changed">
+                                             <xforms:setvalue ref="instance('dhd-concept-navigation')" value="instance('snomed-description-itemset')/description[index('descriptions')]/@thesaurusId"/>
+                                             <xforms:send submission="get-dhd-concept"/>
+                                          </xforms:action>
+                                       </xforms:repeat>
+                                    </xhtml:table>
+                                 </xhtml:div>
+                              </xhtml:td>
+                           </xhtml:tr>
+                        </xhtml:table>
+                     </xhtml:td>
+                  </xhtml:tr>
+               </xhtml:table>
+            </xhtml:td>
+         </xhtml:tr>
+      </xhtml:table>
+      <xhtml:table width="100%">
+         <xhtml:tr>
+            <xhtml:td>
+               <xforms:group ref="instance('dhd-concept')[instance('search-mode')=('specialism','thesaurus')]">
+                  <xhtml:table width="100%" style="border:2px solid #CCC;margin-top:0.5em;">
+                     <xhtml:tr>
+                        <!-- ICD10 -->
+                        <xhtml:td>
+                           <xhtml:table width="100%" class="detail">
+                              <xhtml:tr>
+                                 <xhtml:td colspan="2" class="heading">
+                                    <xforms:output ref="$resources/icd10"/>
+                                 </xhtml:td>
+                              </xhtml:tr>
+                              <xforms:repeat nodeset="icd10">
+                                 <xhtml:tr class="not-selectable">
+                                    <xhtml:td>
+                                       <xforms:output ref="@code"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                       <xforms:output ref="@term"/>
+                                    </xhtml:td>
+                                 </xhtml:tr>
+                              </xforms:repeat>
+                           </xhtml:table>
+                        </xhtml:td>
+                        <!-- DBC -->
+                        <xhtml:td>
+                           <xforms:group ref=".[instance('search-mode')='specialism']">
+                              <xhtml:table width="100%" class="detail">
+                                 <xhtml:tr>
+                                    <xhtml:td colspan="4" class="heading">
+                                       <xforms:output ref="$resources/dbc"/>
+                                    </xhtml:td>
+                                 </xhtml:tr>
+                                 <xforms:repeat nodeset="dbc[@agbCode=instance('specialism-filter')]">
+                                    <xhtml:tr class="not-selectable">
+                                       <xhtml:td>
+                                          <xforms:output ref="@agbCode"/>
+                                       </xhtml:td>
+                                       <xhtml:td>
+                                          <xforms:output ref="@code"/>
+                                       </xhtml:td>
+                                       <xhtml:td>
+                                          <xforms:output ref="@desc"/>
+                                       </xhtml:td>
+                                    </xhtml:tr>
+                                 </xforms:repeat>
+                              </xhtml:table>
+                           </xforms:group>
+                           <xforms:group ref=".[instance('search-mode')='thesaurus']">
+                              <xhtml:table width="100%" class="detail">
+                                 <xhtml:tr>
+                                    <xhtml:td colspan="4" class="heading">
+                                       <xforms:output ref="$resources/dbc"/>
+                                    </xhtml:td>
+                                 </xhtml:tr>
+                                 <xforms:repeat nodeset="dbc">
+                                    <xhtml:tr class="not-selectable">
+                                       <xhtml:td>
+                                          <xforms:output ref="@agbCode"/>
+                                       </xhtml:td>
+                                       <xhtml:td>
+                                          <xforms:output ref="@code"/>
+                                       </xhtml:td>
+                                       <xhtml:td>
+                                          <xforms:output ref="@desc"/>
+                                       </xhtml:td>
+                                    </xhtml:tr>
+                                 </xforms:repeat>
+                              </xhtml:table>
+                           </xforms:group>
+                        </xhtml:td>
+                     </xhtml:tr>
+                  </xhtml:table>
+               </xforms:group>
+            </xhtml:td>
+         </xhtml:tr>
+      </xhtml:table>
+   </xhtml:body>
+</xhtml:html>

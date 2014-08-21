@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="142"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1082"/>
+   <Title name="AcknowledgementDetailType" date="2012-08-02" version="1.000">A code identifying the specific message to be provided. Discussion: A textual value may be specified as the print name, or for non-coded messages, as the original text. Examples: 'Required attribute xxx is missing', 'System will be unavailable March 19 from 0100 to 0300'</Title>
+   <Class code="rootClass">
+      <SubClass subCount="0" code="E" kind="concept">
+         <Rubric id="d1e21639" kind="preferred">
+            <Label xml:lang="en-US">Error</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="I" kind="concept">
+         <Rubric id="d1e21672" kind="preferred">
+            <Label xml:lang="en-US">Information</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="W" kind="concept">
+         <Rubric id="d1e21708" kind="preferred">
+            <Label xml:lang="en-US">Warning</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">AcknowledgementDetailType</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">A code identifying the specific message to be provided. Discussion: A textual value may be specified as the print name, or for non-coded messages, as the original text. Examples: 'Required attribute xxx is missing', 'System will be unavailable March 19 from 0100 to 0300'</Label>
+      </Rubric>
+   </Class>
+   <Class code="E" kind="concept">
+      <Meta name="internalId" value="19786"/>
+      <Rubric id="d1e21617" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>An issue which has prevented, or will prevent (unless a management is provided for the issue by the sender), the successful processing of an interaction. Response interactions which include an issue which is an Error are a 'rejection', indicating that the request was not successfully processed.</p>
+            <p>
+               <b>Example:</b>Unable to find specified patient.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21639" kind="short">
+         <Label xml:lang="en-US">Error</Label>
+      </Rubric>
+      <Rubric id="d1e21639" kind="preferred">
+         <Label xml:lang="en-US">Error</Label>
+      </Rubric>
+   </Class>
+   <Class code="I" kind="concept">
+      <Meta name="internalId" value="19788"/>
+      <Rubric id="d1e21650" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The message relates to an issue which has no bearing on the successful processing of the request. Information issues cannot be overridden by specifying a management.</p>
+            <p>
+               <b>Example:</b>A Patient's coverage will expire in 5 days.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21672" kind="short">
+         <Label xml:lang="en-US">Information</Label>
+      </Rubric>
+      <Rubric id="d1e21672" kind="preferred">
+         <Label xml:lang="en-US">Information</Label>
+      </Rubric>
+   </Class>
+   <Class code="W" kind="concept">
+      <Meta name="internalId" value="19787"/>
+      <Rubric id="d1e21683" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The message relates to an issue which cannot prevent the successful processing of a request, but which could result in the processing not having the ideal or intended effect. Managing a warning issue is not required for successful processing, but will suppress the warning from being raised.</p>
+            <p>
+               <b>Example:</b>
+            </p>
+            <p>Unexpected additional repetitions of phone number have been ignored.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21708" kind="short">
+         <Label xml:lang="en-US">Warning</Label>
+      </Rubric>
+      <Rubric id="d1e21708" kind="preferred">
+         <Label xml:lang="en-US">Warning</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

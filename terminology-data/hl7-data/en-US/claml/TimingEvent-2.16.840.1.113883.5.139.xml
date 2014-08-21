@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="5"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.139"/>
+   <Title name="TimingEvent" date="2012-08-02" version="1.000"/>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="AC" kind="concept">
+      <Meta name="internalId" value="10708"/>
+      <Rubric id="d1e235723" kind="definition">
+         <Label xml:lang="en-US">
+            <p>before meal (from lat. ante cibus)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e235736" kind="short">
+         <Label xml:lang="en-US">AC</Label>
+      </Rubric>
+      <Rubric id="d1e235736" kind="preferred">
+         <Label xml:lang="en-US">AC</Label>
+      </Rubric>
+   </Class>
+   <Class code="ACD" kind="concept">
+      <Meta name="internalId" value="10712"/>
+      <Rubric id="d1e235748" kind="definition">
+         <Label xml:lang="en-US">
+            <p>before lunch (from lat. ante cibus diurnus)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e235761" kind="short">
+         <Label xml:lang="en-US">ACD</Label>
+      </Rubric>
+      <Rubric id="d1e235761" kind="preferred">
+         <Label xml:lang="en-US">ACD</Label>
+      </Rubric>
+   </Class>
+   <Class code="ACM" kind="concept">
+      <Meta name="internalId" value="10711"/>
+      <Rubric id="d1e235772" kind="definition">
+         <Label xml:lang="en-US">
+            <p>before breakfast (from lat. ante cibus matutinus)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e235785" kind="short">
+         <Label xml:lang="en-US">ACM</Label>
+      </Rubric>
+      <Rubric id="d1e235785" kind="preferred">
+         <Label xml:lang="en-US">ACM</Label>
+      </Rubric>
+   </Class>
+   <Class code="ACV" kind="concept">
+      <Meta name="internalId" value="10713"/>
+      <Rubric id="d1e235796" kind="definition">
+         <Label xml:lang="en-US">
+            <p>before dinner (from lat. ante cibus vespertinus)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e235809" kind="short">
+         <Label xml:lang="en-US">ACV</Label>
+      </Rubric>
+      <Rubric id="d1e235809" kind="preferred">
+         <Label xml:lang="en-US">ACV</Label>
+      </Rubric>
+   </Class>
+   <Class code="C" kind="concept">
+      <Meta name="internalId" value="22717"/>
+      <SubClass code="CD"/>
+      <SubClass code="CM"/>
+      <SubClass code="CV"/>
+      <Rubric id="d1e235820" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>meal (from lat. ante cibus)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e235836" kind="short">
+         <Label xml:lang="en-US">C</Label>
+      </Rubric>
+      <Rubric id="d1e235836" kind="preferred">
+         <Label xml:lang="en-US">C</Label>
+      </Rubric>
+   </Class>
+   <Class code="HS" kind="concept">
+      <Meta name="internalId" value="10707"/>
+      <Rubric id="d1e235847" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Prior to beginning a regular period of extended sleep (this would exclude naps). Note that this might occur at different times of day depending on a person's regular sleep schedule.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e235863" kind="short">
+         <Label xml:lang="en-US">HS</Label>
+      </Rubric>
+      <Rubric id="d1e235863" kind="preferred">
+         <Label xml:lang="en-US">HS</Label>
+      </Rubric>
+   </Class>
+   <Class code="IC" kind="concept">
+      <Meta name="internalId" value="10710"/>
+      <Rubric id="d1e235874" kind="definition">
+         <Label xml:lang="en-US">
+            <p>between meals (from lat. inter cibus)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e235887" kind="short">
+         <Label xml:lang="en-US">IC</Label>
+      </Rubric>
+      <Rubric id="d1e235887" kind="preferred">
+         <Label xml:lang="en-US">IC</Label>
+      </Rubric>
+   </Class>
+   <Class code="ICD" kind="concept">
+      <Meta name="internalId" value="10718"/>
+      <Rubric id="d1e235899" kind="definition">
+         <Label xml:lang="en-US">
+            <p>between lunch and dinner</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e235912" kind="short">
+         <Label xml:lang="en-US">ICD</Label>
+      </Rubric>
+      <Rubric id="d1e235912" kind="preferred">
+         <Label xml:lang="en-US">ICD</Label>
+      </Rubric>
+   </Class>
+   <Class code="ICM" kind="concept">
+      <Meta name="internalId" value="10717"/>
+      <Rubric id="d1e235923" kind="definition">
+         <Label xml:lang="en-US">
+            <p>between breakfast and lunch</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e235936" kind="short">
+         <Label xml:lang="en-US">ICM</Label>
+      </Rubric>
+      <Rubric id="d1e235936" kind="preferred">
+         <Label xml:lang="en-US">ICM</Label>
+      </Rubric>
+   </Class>
+   <Class code="ICV" kind="concept">
+      <Meta name="internalId" value="10719"/>
+      <Rubric id="d1e235947" kind="definition">
+         <Label xml:lang="en-US">
+            <p>between dinner and the hour of sleep</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e235960" kind="short">
+         <Label xml:lang="en-US">ICV</Label>
+      </Rubric>
+      <Rubric id="d1e235960" kind="preferred">
+         <Label xml:lang="en-US">ICV</Label>
+      </Rubric>
+   </Class>
+   <Class code="PC" kind="concept">
+      <Meta name="internalId" value="10709"/>
+      <Rubric id="d1e235971" kind="definition">
+         <Label xml:lang="en-US">
+            <p>after meal (from lat. post cibus)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e235984" kind="short">
+         <Label xml:lang="en-US">PC</Label>
+      </Rubric>
+      <Rubric id="d1e235984" kind="preferred">
+         <Label xml:lang="en-US">PC</Label>
+      </Rubric>
+   </Class>
+   <Class code="PCD" kind="concept">
+      <Meta name="internalId" value="10715"/>
+      <Rubric id="d1e235995" kind="definition">
+         <Label xml:lang="en-US">
+            <p>after lunch (from lat. post cibus diurnus)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e236008" kind="short">
+         <Label xml:lang="en-US">PCD</Label>
+      </Rubric>
+      <Rubric id="d1e236008" kind="preferred">
+         <Label xml:lang="en-US">PCD</Label>
+      </Rubric>
+   </Class>
+   <Class code="PCM" kind="concept">
+      <Meta name="internalId" value="10714"/>
+      <Rubric id="d1e236019" kind="definition">
+         <Label xml:lang="en-US">
+            <p>after breakfast (from lat. post cibus matutinus)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e236032" kind="short">
+         <Label xml:lang="en-US">PCM</Label>
+      </Rubric>
+      <Rubric id="d1e236032" kind="preferred">
+         <Label xml:lang="en-US">PCM</Label>
+      </Rubric>
+   </Class>
+   <Class code="PCV" kind="concept">
+      <Meta name="internalId" value="10716"/>
+      <Rubric id="d1e236044" kind="definition">
+         <Label xml:lang="en-US">
+            <p>after dinner (from lat. post cibus vespertinus)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e236057" kind="short">
+         <Label xml:lang="en-US">PCV</Label>
+      </Rubric>
+      <Rubric id="d1e236057" kind="preferred">
+         <Label xml:lang="en-US">PCV</Label>
+      </Rubric>
+   </Class>
+   <Class code="WAKE" kind="concept">
+      <Meta name="internalId" value="22721"/>
+      <Rubric id="d1e236068" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Upon waking up from a regular period of sleep, in order to start regular activities (this would exclude waking up from a nap or temporarily waking up during a period of sleep)</p>
+            <p>
+               <b>Usage Notes:</b>e.g.</p>
+            <p>Take pulse rate on waking in management of thyrotoxicosis.</p>
+            <p>Take BP on waking in management of hypertension</p>
+            <p>Take basal body temperature on waking in establishing date of ovulation</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e236099" kind="short">
+         <Label xml:lang="en-US">WAKE</Label>
+      </Rubric>
+      <Rubric id="d1e236099" kind="preferred">
+         <Label xml:lang="en-US">WAKE</Label>
+      </Rubric>
+   </Class>
+   <Class code="CD" kind="concept">
+      <Meta name="internalId" value="22719"/>
+      <SuperClass code="C"/>
+      <Rubric id="d1e236110" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>lunch (from lat. cibus diurnus)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e236131" kind="short">
+         <Label xml:lang="en-US">CD</Label>
+      </Rubric>
+      <Rubric id="d1e236131" kind="preferred">
+         <Label xml:lang="en-US">CD</Label>
+      </Rubric>
+   </Class>
+   <Class code="CM" kind="concept">
+      <Meta name="internalId" value="22718"/>
+      <SuperClass code="C"/>
+      <Rubric id="d1e236142" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>breakfast (from lat. cibus matutinus)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e236163" kind="short">
+         <Label xml:lang="en-US">CM</Label>
+      </Rubric>
+      <Rubric id="d1e236163" kind="preferred">
+         <Label xml:lang="en-US">CM</Label>
+      </Rubric>
+   </Class>
+   <Class code="CV" kind="concept">
+      <Meta name="internalId" value="22720"/>
+      <SuperClass code="C"/>
+      <Rubric id="d1e236174" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>dinner (from lat. cibus vespertinus)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e236195" kind="short">
+         <Label xml:lang="en-US">CV</Label>
+      </Rubric>
+      <Rubric id="d1e236195" kind="preferred">
+         <Label xml:lang="en-US">CV</Label>
+      </Rubric>
+   </Class>
+</ClaML>

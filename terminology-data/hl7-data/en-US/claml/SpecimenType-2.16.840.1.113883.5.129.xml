@@ -1,0 +1,1400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="29"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.129"/>
+   <Title name="SpecimenType" date="2012-08-02" version="1.000"/>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="_SpecimenEntityType" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21283"/>
+      <SubClass code="ABS"/>
+      <SubClass code="AMN"/>
+      <SubClass code="ASP"/>
+      <SubClass code="BBL"/>
+      <SubClass code="BDY"/>
+      <SubClass code="BIFL"/>
+      <SubClass code="BLD"/>
+      <SubClass code="BLDA"/>
+      <SubClass code="BLDC"/>
+      <SubClass code="BLDCO"/>
+      <SubClass code="BLDV"/>
+      <SubClass code="BON"/>
+      <SubClass code="BPH"/>
+      <SubClass code="BPU"/>
+      <SubClass code="BRN"/>
+      <SubClass code="BRO"/>
+      <SubClass code="BRTH"/>
+      <SubClass code="EXG"/>
+      <SubClass code="CALC"/>
+      <SubClass code="STON"/>
+      <SubClass code="CDM"/>
+      <SubClass code="CNJT"/>
+      <SubClass code="CNL"/>
+      <SubClass code="COL"/>
+      <SubClass code="CRN"/>
+      <SubClass code="CSF"/>
+      <SubClass code="CTP"/>
+      <SubClass code="CUR"/>
+      <SubClass code="CVM"/>
+      <SubClass code="CVX"/>
+      <SubClass code="CYST"/>
+      <SubClass code="DIAF"/>
+      <SubClass code="DOSE"/>
+      <SubClass code="DRN"/>
+      <SubClass code="DUFL"/>
+      <SubClass code="EAR"/>
+      <SubClass code="EARW"/>
+      <SubClass code="ELT"/>
+      <SubClass code="ENDC"/>
+      <SubClass code="ENDM"/>
+      <SubClass code="EOS"/>
+      <SubClass code="EYE"/>
+      <SubClass code="FIB"/>
+      <SubClass code="FIST"/>
+      <SubClass code="FLT"/>
+      <SubClass code="FLU"/>
+      <SubClass code="FOOD"/>
+      <SubClass code="GAS"/>
+      <SubClass code="GAST"/>
+      <SubClass code="GEN"/>
+      <SubClass code="GENC"/>
+      <SubClass code="GENF"/>
+      <SubClass code="GENL"/>
+      <SubClass code="GENV"/>
+      <SubClass code="HAR"/>
+      <SubClass code="IHG"/>
+      <SubClass code="ISLT"/>
+      <SubClass code="IT"/>
+      <SubClass code="LAM"/>
+      <SubClass code="LIQ"/>
+      <SubClass code="LN"/>
+      <SubClass code="LNA"/>
+      <SubClass code="LNV"/>
+      <SubClass code="LYM"/>
+      <SubClass code="MAC"/>
+      <SubClass code="MAR"/>
+      <SubClass code="MBLD"/>
+      <SubClass code="MEC"/>
+      <SubClass code="MILK"/>
+      <SubClass code="MLK"/>
+      <SubClass code="NAIL"/>
+      <SubClass code="NOS"/>
+      <SubClass code="PAFL"/>
+      <SubClass code="PAT"/>
+      <SubClass code="PLAS"/>
+      <SubClass code="PLB"/>
+      <SubClass code="PLC"/>
+      <SubClass code="PLR"/>
+      <SubClass code="PMN"/>
+      <SubClass code="PPP"/>
+      <SubClass code="PRP"/>
+      <SubClass code="PRT"/>
+      <SubClass code="PUS"/>
+      <SubClass code="RBC"/>
+      <SubClass code="SAL"/>
+      <SubClass code="SER"/>
+      <SubClass code="SKM"/>
+      <SubClass code="SKN"/>
+      <SubClass code="SMN"/>
+      <SubClass code="SMPLS"/>
+      <SubClass code="SNV"/>
+      <SubClass code="SPRM"/>
+      <SubClass code="SPT"/>
+      <SubClass code="SPTC"/>
+      <SubClass code="SPTT"/>
+      <SubClass code="STL"/>
+      <SubClass code="SWT"/>
+      <SubClass code="TEAR"/>
+      <SubClass code="THRB"/>
+      <SubClass code="THRT"/>
+      <SubClass code="TISG"/>
+      <SubClass code="TISPL"/>
+      <SubClass code="TISS"/>
+      <SubClass code="TISU"/>
+      <SubClass code="TLGI"/>
+      <SubClass code="TLNG"/>
+      <SubClass code="TSMI"/>
+      <SubClass code="TUB"/>
+      <SubClass code="ULC"/>
+      <SubClass code="UMB"/>
+      <SubClass code="UMED"/>
+      <SubClass code="UR"/>
+      <SubClass code="URC"/>
+      <SubClass code="URNS"/>
+      <SubClass code="URT"/>
+      <SubClass code="URTH"/>
+      <SubClass code="USUB"/>
+      <SubClass code="VOM"/>
+      <SubClass code="WAT"/>
+      <SubClass code="WBC"/>
+      <SubClass code="WICK"/>
+      <SubClass code="WND"/>
+      <SubClass code="WNDA"/>
+      <SubClass code="WNDD"/>
+      <SubClass code="WNDE"/>
+      <Rubric id="d1e231464" kind="short">
+         <Label xml:lang="en-US">SpecimenEntityType</Label>
+      </Rubric>
+      <Rubric id="d1e231464" kind="preferred">
+         <Label xml:lang="en-US">SpecimenEntityType</Label>
+      </Rubric>
+   </Class>
+   <Class code="ABS" kind="concept">
+      <Meta name="internalId" value="10446"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231479" kind="short">
+         <Label xml:lang="en-US">Abcess</Label>
+      </Rubric>
+      <Rubric id="d1e231479" kind="preferred">
+         <Label xml:lang="en-US">Abcess</Label>
+      </Rubric>
+   </Class>
+   <Class code="AMN" kind="concept">
+      <Meta name="internalId" value="10447"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231493" kind="short">
+         <Label xml:lang="en-US">Amniotic fluid</Label>
+      </Rubric>
+      <Rubric id="d1e231493" kind="preferred">
+         <Label xml:lang="en-US">Amniotic fluid</Label>
+      </Rubric>
+   </Class>
+   <Class code="ASP" kind="concept">
+      <Meta name="internalId" value="10448"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231507" kind="short">
+         <Label xml:lang="en-US">Aspirate</Label>
+      </Rubric>
+      <Rubric id="d1e231507" kind="preferred">
+         <Label xml:lang="en-US">Aspirate</Label>
+      </Rubric>
+   </Class>
+   <Class code="BBL" kind="concept">
+      <Meta name="internalId" value="10452"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231521" kind="short">
+         <Label xml:lang="en-US">Blood bag</Label>
+      </Rubric>
+      <Rubric id="d1e231521" kind="preferred">
+         <Label xml:lang="en-US">Blood bag</Label>
+      </Rubric>
+   </Class>
+   <Class code="BDY" kind="concept">
+      <Meta name="internalId" value="10562"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231535" kind="short">
+         <Label xml:lang="en-US">Whole body</Label>
+      </Rubric>
+      <Rubric id="d1e231535" kind="preferred">
+         <Label xml:lang="en-US">Whole body</Label>
+      </Rubric>
+   </Class>
+   <Class code="BIFL" kind="concept">
+      <Meta name="internalId" value="10450"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231549" kind="short">
+         <Label xml:lang="en-US">Bile fluid</Label>
+      </Rubric>
+      <Rubric id="d1e231549" kind="preferred">
+         <Label xml:lang="en-US">Bile fluid</Label>
+      </Rubric>
+   </Class>
+   <Class code="BLD" kind="concept">
+      <Meta name="internalId" value="10561"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231564" kind="short">
+         <Label xml:lang="en-US">Whole blood</Label>
+      </Rubric>
+      <Rubric id="d1e231564" kind="preferred">
+         <Label xml:lang="en-US">Whole blood</Label>
+      </Rubric>
+   </Class>
+   <Class code="BLDA" kind="concept">
+      <Meta name="internalId" value="10451"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231578" kind="short">
+         <Label xml:lang="en-US">Blood arterial</Label>
+      </Rubric>
+      <Rubric id="d1e231578" kind="preferred">
+         <Label xml:lang="en-US">Blood arterial</Label>
+      </Rubric>
+   </Class>
+   <Class code="BLDC" kind="concept">
+      <Meta name="internalId" value="10453"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231592" kind="short">
+         <Label xml:lang="en-US">Blood capillary</Label>
+      </Rubric>
+      <Rubric id="d1e231592" kind="preferred">
+         <Label xml:lang="en-US">Blood capillary</Label>
+      </Rubric>
+   </Class>
+   <Class code="BLDCO" kind="concept">
+      <Meta name="internalId" value="10454"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231606" kind="short">
+         <Label xml:lang="en-US">Blood - cord</Label>
+      </Rubric>
+      <Rubric id="d1e231606" kind="preferred">
+         <Label xml:lang="en-US">Blood - cord</Label>
+      </Rubric>
+   </Class>
+   <Class code="BLDV" kind="concept">
+      <Meta name="internalId" value="10456"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231620" kind="short">
+         <Label xml:lang="en-US">Blood venous</Label>
+      </Rubric>
+      <Rubric id="d1e231620" kind="preferred">
+         <Label xml:lang="en-US">Blood venous</Label>
+      </Rubric>
+   </Class>
+   <Class code="BON" kind="concept">
+      <Meta name="internalId" value="10457"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231634" kind="short">
+         <Label xml:lang="en-US">Bone</Label>
+      </Rubric>
+      <Rubric id="d1e231634" kind="preferred">
+         <Label xml:lang="en-US">Bone</Label>
+      </Rubric>
+   </Class>
+   <Class code="BPH" kind="concept">
+      <Meta name="internalId" value="10449"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231649" kind="short">
+         <Label xml:lang="en-US">Basophils</Label>
+      </Rubric>
+      <Rubric id="d1e231649" kind="preferred">
+         <Label xml:lang="en-US">Basophils</Label>
+      </Rubric>
+   </Class>
+   <Class code="BPU" kind="concept">
+      <Meta name="internalId" value="10455"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231663" kind="short">
+         <Label xml:lang="en-US">Blood product unit</Label>
+      </Rubric>
+      <Rubric id="d1e231663" kind="preferred">
+         <Label xml:lang="en-US">Blood product unit</Label>
+      </Rubric>
+   </Class>
+   <Class code="BRN" kind="concept">
+      <Meta name="internalId" value="10460"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231677" kind="short">
+         <Label xml:lang="en-US">Burn</Label>
+      </Rubric>
+      <Rubric id="d1e231677" kind="preferred">
+         <Label xml:lang="en-US">Burn</Label>
+      </Rubric>
+   </Class>
+   <Class code="BRO" kind="concept">
+      <Meta name="internalId" value="10459"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231691" kind="short">
+         <Label xml:lang="en-US">Bronchial</Label>
+      </Rubric>
+      <Rubric id="d1e231691" kind="preferred">
+         <Label xml:lang="en-US">Bronchial</Label>
+      </Rubric>
+   </Class>
+   <Class code="BRTH EXG" kind="concept">
+      <Meta name="internalId" value="10458"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231705" kind="short">
+         <Label xml:lang="en-US">Exhaled gas (=breath)</Label>
+      </Rubric>
+      <Rubric id="d1e231705" kind="preferred">
+         <Label xml:lang="en-US">Exhaled gas (=breath)</Label>
+      </Rubric>
+      <Rubric id="d1e231707" kind="short">
+         <Label xml:lang="en-US">Breath (use EXG)</Label>
+      </Rubric>
+   </Class>
+   <Class code="CALC STON" kind="concept">
+      <Meta name="internalId" value="10461"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231724" kind="short">
+         <Label xml:lang="en-US">Calculus (=Stone)</Label>
+      </Rubric>
+      <Rubric id="d1e231724" kind="preferred">
+         <Label xml:lang="en-US">Calculus (=Stone)</Label>
+      </Rubric>
+      <Rubric id="d1e231726" kind="short">
+         <Label xml:lang="en-US">Stone (use CALC)</Label>
+      </Rubric>
+   </Class>
+   <Class code="CDM" kind="concept">
+      <Meta name="internalId" value="10462"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231744" kind="short">
+         <Label xml:lang="en-US">Cardiac muscle</Label>
+      </Rubric>
+      <Rubric id="d1e231744" kind="preferred">
+         <Label xml:lang="en-US">Cardiac muscle</Label>
+      </Rubric>
+   </Class>
+   <Class code="CNJT" kind="concept">
+      <Meta name="internalId" value="10469"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231758" kind="short">
+         <Label xml:lang="en-US">Conjunctiva</Label>
+      </Rubric>
+      <Rubric id="d1e231758" kind="preferred">
+         <Label xml:lang="en-US">Conjunctiva</Label>
+      </Rubric>
+   </Class>
+   <Class code="CNL" kind="concept">
+      <Meta name="internalId" value="10463"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231772" kind="short">
+         <Label xml:lang="en-US">Cannula</Label>
+      </Rubric>
+      <Rubric id="d1e231772" kind="preferred">
+         <Label xml:lang="en-US">Cannula</Label>
+      </Rubric>
+   </Class>
+   <Class code="COL" kind="concept">
+      <Meta name="internalId" value="10468"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231786" kind="short">
+         <Label xml:lang="en-US">Colostrum</Label>
+      </Rubric>
+      <Rubric id="d1e231786" kind="preferred">
+         <Label xml:lang="en-US">Colostrum</Label>
+      </Rubric>
+   </Class>
+   <Class code="CRN" kind="concept">
+      <Meta name="internalId" value="10471"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231800" kind="short">
+         <Label xml:lang="en-US">Cornea</Label>
+      </Rubric>
+      <Rubric id="d1e231800" kind="preferred">
+         <Label xml:lang="en-US">Cornea</Label>
+      </Rubric>
+   </Class>
+   <Class code="CSF" kind="concept">
+      <Meta name="internalId" value="10465"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231814" kind="short">
+         <Label xml:lang="en-US">Cerebral spinal fluid</Label>
+      </Rubric>
+      <Rubric id="d1e231814" kind="preferred">
+         <Label xml:lang="en-US">Cerebral spinal fluid</Label>
+      </Rubric>
+   </Class>
+   <Class code="CTP" kind="concept">
+      <Meta name="internalId" value="10464"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231829" kind="short">
+         <Label xml:lang="en-US">Catheter tip</Label>
+      </Rubric>
+      <Rubric id="d1e231829" kind="preferred">
+         <Label xml:lang="en-US">Catheter tip</Label>
+      </Rubric>
+   </Class>
+   <Class code="CUR" kind="concept">
+      <Meta name="internalId" value="10470"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231843" kind="short">
+         <Label xml:lang="en-US">Curettage</Label>
+      </Rubric>
+      <Rubric id="d1e231843" kind="preferred">
+         <Label xml:lang="en-US">Curettage</Label>
+      </Rubric>
+   </Class>
+   <Class code="CVM" kind="concept">
+      <Meta name="internalId" value="10466"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231857" kind="short">
+         <Label xml:lang="en-US">Cervical mucus</Label>
+      </Rubric>
+      <Rubric id="d1e231857" kind="preferred">
+         <Label xml:lang="en-US">Cervical mucus</Label>
+      </Rubric>
+   </Class>
+   <Class code="CVX" kind="concept">
+      <Meta name="internalId" value="10467"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231871" kind="short">
+         <Label xml:lang="en-US">Cervix</Label>
+      </Rubric>
+      <Rubric id="d1e231871" kind="preferred">
+         <Label xml:lang="en-US">Cervix</Label>
+      </Rubric>
+   </Class>
+   <Class code="CYST" kind="concept">
+      <Meta name="internalId" value="10472"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231885" kind="short">
+         <Label xml:lang="en-US">Cyst</Label>
+      </Rubric>
+      <Rubric id="d1e231885" kind="preferred">
+         <Label xml:lang="en-US">Cyst</Label>
+      </Rubric>
+   </Class>
+   <Class code="DIAF" kind="concept">
+      <Meta name="internalId" value="10473"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231899" kind="short">
+         <Label xml:lang="en-US">Dialysis fluid</Label>
+      </Rubric>
+      <Rubric id="d1e231899" kind="preferred">
+         <Label xml:lang="en-US">Dialysis fluid</Label>
+      </Rubric>
+   </Class>
+   <Class code="DOSE" kind="concept">
+      <Meta name="internalId" value="10474"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231914" kind="short">
+         <Label xml:lang="en-US">Dose med or substance</Label>
+      </Rubric>
+      <Rubric id="d1e231914" kind="preferred">
+         <Label xml:lang="en-US">Dose med or substance</Label>
+      </Rubric>
+   </Class>
+   <Class code="DRN" kind="concept">
+      <Meta name="internalId" value="10475"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231928" kind="short">
+         <Label xml:lang="en-US">Drain</Label>
+      </Rubric>
+      <Rubric id="d1e231928" kind="preferred">
+         <Label xml:lang="en-US">Drain</Label>
+      </Rubric>
+   </Class>
+   <Class code="DUFL" kind="concept">
+      <Meta name="internalId" value="10476"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231942" kind="short">
+         <Label xml:lang="en-US">Duodenal fluid</Label>
+      </Rubric>
+      <Rubric id="d1e231942" kind="preferred">
+         <Label xml:lang="en-US">Duodenal fluid</Label>
+      </Rubric>
+   </Class>
+   <Class code="EAR" kind="concept">
+      <Meta name="internalId" value="10477"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231956" kind="short">
+         <Label xml:lang="en-US">Ear</Label>
+      </Rubric>
+      <Rubric id="d1e231956" kind="preferred">
+         <Label xml:lang="en-US">Ear</Label>
+      </Rubric>
+   </Class>
+   <Class code="EARW" kind="concept">
+      <Meta name="internalId" value="10478"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231970" kind="short">
+         <Label xml:lang="en-US">Ear wax (cerumen)</Label>
+      </Rubric>
+      <Rubric id="d1e231970" kind="preferred">
+         <Label xml:lang="en-US">Ear wax (cerumen)</Label>
+      </Rubric>
+   </Class>
+   <Class code="ELT" kind="concept">
+      <Meta name="internalId" value="10479"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231984" kind="short">
+         <Label xml:lang="en-US">Electrode</Label>
+      </Rubric>
+      <Rubric id="d1e231984" kind="preferred">
+         <Label xml:lang="en-US">Electrode</Label>
+      </Rubric>
+   </Class>
+   <Class code="ENDC" kind="concept">
+      <Meta name="internalId" value="10480"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e231999" kind="short">
+         <Label xml:lang="en-US">Endocardium</Label>
+      </Rubric>
+      <Rubric id="d1e231999" kind="preferred">
+         <Label xml:lang="en-US">Endocardium</Label>
+      </Rubric>
+   </Class>
+   <Class code="ENDM" kind="concept">
+      <Meta name="internalId" value="10481"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232013" kind="short">
+         <Label xml:lang="en-US">Endometrium</Label>
+      </Rubric>
+      <Rubric id="d1e232013" kind="preferred">
+         <Label xml:lang="en-US">Endometrium</Label>
+      </Rubric>
+   </Class>
+   <Class code="EOS" kind="concept">
+      <Meta name="internalId" value="10482"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232027" kind="short">
+         <Label xml:lang="en-US">Eosinophils</Label>
+      </Rubric>
+      <Rubric id="d1e232027" kind="preferred">
+         <Label xml:lang="en-US">Eosinophils</Label>
+      </Rubric>
+   </Class>
+   <Class code="EYE" kind="concept">
+      <Meta name="internalId" value="10484"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232041" kind="short">
+         <Label xml:lang="en-US">Eye</Label>
+      </Rubric>
+      <Rubric id="d1e232041" kind="preferred">
+         <Label xml:lang="en-US">Eye</Label>
+      </Rubric>
+   </Class>
+   <Class code="FIB" kind="concept">
+      <Meta name="internalId" value="10485"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232055" kind="short">
+         <Label xml:lang="en-US">Fibroblasts</Label>
+      </Rubric>
+      <Rubric id="d1e232055" kind="preferred">
+         <Label xml:lang="en-US">Fibroblasts</Label>
+      </Rubric>
+   </Class>
+   <Class code="FIST" kind="concept">
+      <Meta name="internalId" value="10487"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232069" kind="short">
+         <Label xml:lang="en-US">Fistula</Label>
+      </Rubric>
+      <Rubric id="d1e232069" kind="preferred">
+         <Label xml:lang="en-US">Fistula</Label>
+      </Rubric>
+   </Class>
+   <Class code="FLT" kind="concept">
+      <Meta name="internalId" value="10486"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232084" kind="short">
+         <Label xml:lang="en-US">Filter</Label>
+      </Rubric>
+      <Rubric id="d1e232084" kind="preferred">
+         <Label xml:lang="en-US">Filter</Label>
+      </Rubric>
+   </Class>
+   <Class code="FLU" kind="concept">
+      <Meta name="internalId" value="10488"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232098" kind="short">
+         <Label xml:lang="en-US">Body fluid, unsp</Label>
+      </Rubric>
+      <Rubric id="d1e232098" kind="preferred">
+         <Label xml:lang="en-US">Body fluid, unsp</Label>
+      </Rubric>
+   </Class>
+   <Class code="FOOD" kind="concept">
+      <Meta name="internalId" value="10489"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232112" kind="short">
+         <Label xml:lang="en-US">Food sample</Label>
+      </Rubric>
+      <Rubric id="d1e232112" kind="preferred">
+         <Label xml:lang="en-US">Food sample</Label>
+      </Rubric>
+   </Class>
+   <Class code="GAS" kind="concept">
+      <Meta name="internalId" value="10490"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232126" kind="short">
+         <Label xml:lang="en-US">Gas</Label>
+      </Rubric>
+      <Rubric id="d1e232126" kind="preferred">
+         <Label xml:lang="en-US">Gas</Label>
+      </Rubric>
+   </Class>
+   <Class code="GAST" kind="concept">
+      <Meta name="internalId" value="10491"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232140" kind="short">
+         <Label xml:lang="en-US">Gastric fluid/contents</Label>
+      </Rubric>
+      <Rubric id="d1e232140" kind="preferred">
+         <Label xml:lang="en-US">Gastric fluid/contents</Label>
+      </Rubric>
+   </Class>
+   <Class code="GEN" kind="concept">
+      <Meta name="internalId" value="10492"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232154" kind="short">
+         <Label xml:lang="en-US">Genital</Label>
+      </Rubric>
+      <Rubric id="d1e232154" kind="preferred">
+         <Label xml:lang="en-US">Genital</Label>
+      </Rubric>
+   </Class>
+   <Class code="GENC" kind="concept">
+      <Meta name="internalId" value="10493"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232169" kind="short">
+         <Label xml:lang="en-US">Genital cervix</Label>
+      </Rubric>
+      <Rubric id="d1e232169" kind="preferred">
+         <Label xml:lang="en-US">Genital cervix</Label>
+      </Rubric>
+   </Class>
+   <Class code="GENF" kind="concept">
+      <Meta name="internalId" value="10494"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232183" kind="short">
+         <Label xml:lang="en-US">Genital fluid</Label>
+      </Rubric>
+      <Rubric id="d1e232183" kind="preferred">
+         <Label xml:lang="en-US">Genital fluid</Label>
+      </Rubric>
+   </Class>
+   <Class code="GENL" kind="concept">
+      <Meta name="internalId" value="10495"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232197" kind="short">
+         <Label xml:lang="en-US">Genital lochia</Label>
+      </Rubric>
+      <Rubric id="d1e232197" kind="preferred">
+         <Label xml:lang="en-US">Genital lochia</Label>
+      </Rubric>
+   </Class>
+   <Class code="GENV" kind="concept">
+      <Meta name="internalId" value="10496"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232211" kind="short">
+         <Label xml:lang="en-US">Genital vaginal</Label>
+      </Rubric>
+      <Rubric id="d1e232211" kind="preferred">
+         <Label xml:lang="en-US">Genital vaginal</Label>
+      </Rubric>
+   </Class>
+   <Class code="HAR" kind="concept">
+      <Meta name="internalId" value="10497"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232225" kind="short">
+         <Label xml:lang="en-US">Hair</Label>
+      </Rubric>
+      <Rubric id="d1e232225" kind="preferred">
+         <Label xml:lang="en-US">Hair</Label>
+      </Rubric>
+   </Class>
+   <Class code="IHG" kind="concept">
+      <Meta name="internalId" value="10498"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232239" kind="short">
+         <Label xml:lang="en-US">Inhaled Gas</Label>
+      </Rubric>
+      <Rubric id="d1e232239" kind="preferred">
+         <Label xml:lang="en-US">Inhaled Gas</Label>
+      </Rubric>
+   </Class>
+   <Class code="ISLT" kind="concept">
+      <Meta name="internalId" value="10500"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232254" kind="short">
+         <Label xml:lang="en-US">Isolate</Label>
+      </Rubric>
+      <Rubric id="d1e232254" kind="preferred">
+         <Label xml:lang="en-US">Isolate</Label>
+      </Rubric>
+   </Class>
+   <Class code="IT" kind="concept">
+      <Meta name="internalId" value="10499"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232268" kind="short">
+         <Label xml:lang="en-US">Intubation tube</Label>
+      </Rubric>
+      <Rubric id="d1e232268" kind="preferred">
+         <Label xml:lang="en-US">Intubation tube</Label>
+      </Rubric>
+   </Class>
+   <Class code="LAM" kind="concept">
+      <Meta name="internalId" value="10501"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232282" kind="short">
+         <Label xml:lang="en-US">Lamella</Label>
+      </Rubric>
+      <Rubric id="d1e232282" kind="preferred">
+         <Label xml:lang="en-US">Lamella</Label>
+      </Rubric>
+   </Class>
+   <Class code="LIQ" kind="concept">
+      <Meta name="internalId" value="10506"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232296" kind="short">
+         <Label xml:lang="en-US">Liquid NOS</Label>
+      </Rubric>
+      <Rubric id="d1e232296" kind="preferred">
+         <Label xml:lang="en-US">Liquid NOS</Label>
+      </Rubric>
+   </Class>
+   <Class code="LN" kind="concept">
+      <Meta name="internalId" value="10503"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232310" kind="short">
+         <Label xml:lang="en-US">Line</Label>
+      </Rubric>
+      <Rubric id="d1e232310" kind="preferred">
+         <Label xml:lang="en-US">Line</Label>
+      </Rubric>
+   </Class>
+   <Class code="LNA" kind="concept">
+      <Meta name="internalId" value="10504"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232324" kind="short">
+         <Label xml:lang="en-US">Line arterial</Label>
+      </Rubric>
+      <Rubric id="d1e232324" kind="preferred">
+         <Label xml:lang="en-US">Line arterial</Label>
+      </Rubric>
+   </Class>
+   <Class code="LNV" kind="concept">
+      <Meta name="internalId" value="10505"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232339" kind="short">
+         <Label xml:lang="en-US">Line venous</Label>
+      </Rubric>
+      <Rubric id="d1e232339" kind="preferred">
+         <Label xml:lang="en-US">Line venous</Label>
+      </Rubric>
+   </Class>
+   <Class code="LYM" kind="concept">
+      <Meta name="internalId" value="10507"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232353" kind="short">
+         <Label xml:lang="en-US">Lymphocytes</Label>
+      </Rubric>
+      <Rubric id="d1e232353" kind="preferred">
+         <Label xml:lang="en-US">Lymphocytes</Label>
+      </Rubric>
+   </Class>
+   <Class code="MAC" kind="concept">
+      <Meta name="internalId" value="10508"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232367" kind="short">
+         <Label xml:lang="en-US">Macrophages</Label>
+      </Rubric>
+      <Rubric id="d1e232367" kind="preferred">
+         <Label xml:lang="en-US">Macrophages</Label>
+      </Rubric>
+   </Class>
+   <Class code="MAR" kind="concept">
+      <Meta name="internalId" value="10509"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232381" kind="short">
+         <Label xml:lang="en-US">Marrow (bone)</Label>
+      </Rubric>
+      <Rubric id="d1e232381" kind="preferred">
+         <Label xml:lang="en-US">Marrow (bone)</Label>
+      </Rubric>
+   </Class>
+   <Class code="MBLD" kind="concept">
+      <Meta name="internalId" value="10511"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232395" kind="short">
+         <Label xml:lang="en-US">Menstrual blood</Label>
+      </Rubric>
+      <Rubric id="d1e232395" kind="preferred">
+         <Label xml:lang="en-US">Menstrual blood</Label>
+      </Rubric>
+   </Class>
+   <Class code="MEC" kind="concept">
+      <Meta name="internalId" value="10510"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232409" kind="short">
+         <Label xml:lang="en-US">Meconium</Label>
+      </Rubric>
+      <Rubric id="d1e232409" kind="preferred">
+         <Label xml:lang="en-US">Meconium</Label>
+      </Rubric>
+   </Class>
+   <Class code="MILK" kind="concept">
+      <Meta name="internalId" value="10513"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232424" kind="short">
+         <Label xml:lang="en-US">Breast milk</Label>
+      </Rubric>
+      <Rubric id="d1e232424" kind="preferred">
+         <Label xml:lang="en-US">Breast milk</Label>
+      </Rubric>
+   </Class>
+   <Class code="MLK" kind="concept">
+      <Meta name="internalId" value="10512"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232438" kind="short">
+         <Label xml:lang="en-US">Milk</Label>
+      </Rubric>
+      <Rubric id="d1e232438" kind="preferred">
+         <Label xml:lang="en-US">Milk</Label>
+      </Rubric>
+   </Class>
+   <Class code="NAIL" kind="concept">
+      <Meta name="internalId" value="10514"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232452" kind="short">
+         <Label xml:lang="en-US">Nail</Label>
+      </Rubric>
+      <Rubric id="d1e232452" kind="preferred">
+         <Label xml:lang="en-US">Nail</Label>
+      </Rubric>
+   </Class>
+   <Class code="NOS" kind="concept">
+      <Meta name="internalId" value="10515"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232466" kind="short">
+         <Label xml:lang="en-US">Nose (nasal passage)</Label>
+      </Rubric>
+      <Rubric id="d1e232466" kind="preferred">
+         <Label xml:lang="en-US">Nose (nasal passage)</Label>
+      </Rubric>
+   </Class>
+   <Class code="PAFL" kind="concept">
+      <Meta name="internalId" value="10516"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232480" kind="short">
+         <Label xml:lang="en-US">Pancreatic fluid</Label>
+      </Rubric>
+      <Rubric id="d1e232480" kind="preferred">
+         <Label xml:lang="en-US">Pancreatic fluid</Label>
+      </Rubric>
+   </Class>
+   <Class code="PAT" kind="concept">
+      <Meta name="internalId" value="10517"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232494" kind="short">
+         <Label xml:lang="en-US">Patient</Label>
+      </Rubric>
+      <Rubric id="d1e232494" kind="preferred">
+         <Label xml:lang="en-US">Patient</Label>
+      </Rubric>
+   </Class>
+   <Class code="PLAS" kind="concept">
+      <Meta name="internalId" value="10520"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232509" kind="short">
+         <Label xml:lang="en-US">Plasma</Label>
+      </Rubric>
+      <Rubric id="d1e232509" kind="preferred">
+         <Label xml:lang="en-US">Plasma</Label>
+      </Rubric>
+   </Class>
+   <Class code="PLB" kind="concept">
+      <Meta name="internalId" value="10521"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232523" kind="short">
+         <Label xml:lang="en-US">Plasma bag</Label>
+      </Rubric>
+      <Rubric id="d1e232523" kind="preferred">
+         <Label xml:lang="en-US">Plasma bag</Label>
+      </Rubric>
+   </Class>
+   <Class code="PLC" kind="concept">
+      <Meta name="internalId" value="10519"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232537" kind="short">
+         <Label xml:lang="en-US">Placenta</Label>
+      </Rubric>
+      <Rubric id="d1e232537" kind="preferred">
+         <Label xml:lang="en-US">Placenta</Label>
+      </Rubric>
+   </Class>
+   <Class code="PLR" kind="concept">
+      <Meta name="internalId" value="10522"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232551" kind="short">
+         <Label xml:lang="en-US">Pleural fluid (thoracentesis fld)</Label>
+      </Rubric>
+      <Rubric id="d1e232551" kind="preferred">
+         <Label xml:lang="en-US">Pleural fluid (thoracentesis fld)</Label>
+      </Rubric>
+   </Class>
+   <Class code="PMN" kind="concept">
+      <Meta name="internalId" value="10523"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232565" kind="short">
+         <Label xml:lang="en-US">Polymorphonuclear neutrophils</Label>
+      </Rubric>
+      <Rubric id="d1e232565" kind="preferred">
+         <Label xml:lang="en-US">Polymorphonuclear neutrophils</Label>
+      </Rubric>
+   </Class>
+   <Class code="PPP" kind="concept">
+      <Meta name="internalId" value="10524"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232579" kind="short">
+         <Label xml:lang="en-US">Platelet poor plasma</Label>
+      </Rubric>
+      <Rubric id="d1e232579" kind="preferred">
+         <Label xml:lang="en-US">Platelet poor plasma</Label>
+      </Rubric>
+   </Class>
+   <Class code="PRP" kind="concept">
+      <Meta name="internalId" value="10525"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232594" kind="short">
+         <Label xml:lang="en-US">Platelet rich plasma</Label>
+      </Rubric>
+      <Rubric id="d1e232594" kind="preferred">
+         <Label xml:lang="en-US">Platelet rich plasma</Label>
+      </Rubric>
+   </Class>
+   <Class code="PRT" kind="concept">
+      <Meta name="internalId" value="10518"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232608" kind="short">
+         <Label xml:lang="en-US">Peritoneal fluid /ascites</Label>
+      </Rubric>
+      <Rubric id="d1e232608" kind="preferred">
+         <Label xml:lang="en-US">Peritoneal fluid /ascites</Label>
+      </Rubric>
+   </Class>
+   <Class code="PUS" kind="concept">
+      <Meta name="internalId" value="10526"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232622" kind="short">
+         <Label xml:lang="en-US">Pus</Label>
+      </Rubric>
+      <Rubric id="d1e232622" kind="preferred">
+         <Label xml:lang="en-US">Pus</Label>
+      </Rubric>
+   </Class>
+   <Class code="RBC" kind="concept">
+      <Meta name="internalId" value="10483"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232636" kind="short">
+         <Label xml:lang="en-US">Erythrocytes</Label>
+      </Rubric>
+      <Rubric id="d1e232636" kind="preferred">
+         <Label xml:lang="en-US">Erythrocytes</Label>
+      </Rubric>
+   </Class>
+   <Class code="SAL" kind="concept">
+      <Meta name="internalId" value="10527"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232650" kind="short">
+         <Label xml:lang="en-US">Saliva</Label>
+      </Rubric>
+      <Rubric id="d1e232650" kind="preferred">
+         <Label xml:lang="en-US">Saliva</Label>
+      </Rubric>
+   </Class>
+   <Class code="SER" kind="concept">
+      <Meta name="internalId" value="10530"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232664" kind="short">
+         <Label xml:lang="en-US">Serum</Label>
+      </Rubric>
+      <Rubric id="d1e232664" kind="preferred">
+         <Label xml:lang="en-US">Serum</Label>
+      </Rubric>
+   </Class>
+   <Class code="SKM" kind="concept">
+      <Meta name="internalId" value="10532"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232679" kind="short">
+         <Label xml:lang="en-US">Skeletal muscle</Label>
+      </Rubric>
+      <Rubric id="d1e232679" kind="preferred">
+         <Label xml:lang="en-US">Skeletal muscle</Label>
+      </Rubric>
+   </Class>
+   <Class code="SKN" kind="concept">
+      <Meta name="internalId" value="10531"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232693" kind="short">
+         <Label xml:lang="en-US">Skin</Label>
+      </Rubric>
+      <Rubric id="d1e232693" kind="preferred">
+         <Label xml:lang="en-US">Skin</Label>
+      </Rubric>
+   </Class>
+   <Class code="SMN" kind="concept">
+      <Meta name="internalId" value="10528"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232707" kind="short">
+         <Label xml:lang="en-US">Seminal fluid</Label>
+      </Rubric>
+      <Rubric id="d1e232707" kind="preferred">
+         <Label xml:lang="en-US">Seminal fluid</Label>
+      </Rubric>
+   </Class>
+   <Class code="SMPLS" kind="concept">
+      <Meta name="internalId" value="10529"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232721" kind="short">
+         <Label xml:lang="en-US">Seminal plasma</Label>
+      </Rubric>
+      <Rubric id="d1e232721" kind="preferred">
+         <Label xml:lang="en-US">Seminal plasma</Label>
+      </Rubric>
+   </Class>
+   <Class code="SNV" kind="concept">
+      <Meta name="internalId" value="10539"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232735" kind="short">
+         <Label xml:lang="en-US">Synovial fluid (Joint fluid)</Label>
+      </Rubric>
+      <Rubric id="d1e232735" kind="preferred">
+         <Label xml:lang="en-US">Synovial fluid (Joint fluid)</Label>
+      </Rubric>
+   </Class>
+   <Class code="SPRM" kind="concept">
+      <Meta name="internalId" value="10533"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232749" kind="short">
+         <Label xml:lang="en-US">Spermatozoa</Label>
+      </Rubric>
+      <Rubric id="d1e232749" kind="preferred">
+         <Label xml:lang="en-US">Spermatozoa</Label>
+      </Rubric>
+   </Class>
+   <Class code="SPT" kind="concept">
+      <Meta name="internalId" value="10534"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232764" kind="short">
+         <Label xml:lang="en-US">Sputum</Label>
+      </Rubric>
+      <Rubric id="d1e232764" kind="preferred">
+         <Label xml:lang="en-US">Sputum</Label>
+      </Rubric>
+   </Class>
+   <Class code="SPTC" kind="concept">
+      <Meta name="internalId" value="10535"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232778" kind="short">
+         <Label xml:lang="en-US">Sputum - coughed</Label>
+      </Rubric>
+      <Rubric id="d1e232778" kind="preferred">
+         <Label xml:lang="en-US">Sputum - coughed</Label>
+      </Rubric>
+   </Class>
+   <Class code="SPTT" kind="concept">
+      <Meta name="internalId" value="10536"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232792" kind="short">
+         <Label xml:lang="en-US">Sputum - tracheal aspirate</Label>
+      </Rubric>
+      <Rubric id="d1e232792" kind="preferred">
+         <Label xml:lang="en-US">Sputum - tracheal aspirate</Label>
+      </Rubric>
+   </Class>
+   <Class code="STL" kind="concept">
+      <Meta name="internalId" value="10537"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232806" kind="short">
+         <Label xml:lang="en-US">Stool = Fecal</Label>
+      </Rubric>
+      <Rubric id="d1e232806" kind="preferred">
+         <Label xml:lang="en-US">Stool = Fecal</Label>
+      </Rubric>
+   </Class>
+   <Class code="SWT" kind="concept">
+      <Meta name="internalId" value="10538"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232820" kind="short">
+         <Label xml:lang="en-US">Sweat</Label>
+      </Rubric>
+      <Rubric id="d1e232820" kind="preferred">
+         <Label xml:lang="en-US">Sweat</Label>
+      </Rubric>
+   </Class>
+   <Class code="TEAR" kind="concept">
+      <Meta name="internalId" value="10540"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232834" kind="short">
+         <Label xml:lang="en-US">Tears</Label>
+      </Rubric>
+      <Rubric id="d1e232834" kind="preferred">
+         <Label xml:lang="en-US">Tears</Label>
+      </Rubric>
+   </Class>
+   <Class code="THRB" kind="concept">
+      <Meta name="internalId" value="10542"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232849" kind="short">
+         <Label xml:lang="en-US">Thrombocyte (platelet)</Label>
+      </Rubric>
+      <Rubric id="d1e232849" kind="preferred">
+         <Label xml:lang="en-US">Thrombocyte (platelet)</Label>
+      </Rubric>
+   </Class>
+   <Class code="THRT" kind="concept">
+      <Meta name="internalId" value="10541"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232863" kind="short">
+         <Label xml:lang="en-US">Throat</Label>
+      </Rubric>
+      <Rubric id="d1e232863" kind="preferred">
+         <Label xml:lang="en-US">Throat</Label>
+      </Rubric>
+   </Class>
+   <Class code="TISG" kind="concept">
+      <Meta name="internalId" value="10544"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232877" kind="short">
+         <Label xml:lang="en-US">Tissue gall bladder</Label>
+      </Rubric>
+      <Rubric id="d1e232877" kind="preferred">
+         <Label xml:lang="en-US">Tissue gall bladder</Label>
+      </Rubric>
+   </Class>
+   <Class code="TISPL" kind="concept">
+      <Meta name="internalId" value="10547"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232891" kind="short">
+         <Label xml:lang="en-US">Tissue placenta</Label>
+      </Rubric>
+      <Rubric id="d1e232891" kind="preferred">
+         <Label xml:lang="en-US">Tissue placenta</Label>
+      </Rubric>
+   </Class>
+   <Class code="TISS" kind="concept">
+      <Meta name="internalId" value="10543"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232905" kind="short">
+         <Label xml:lang="en-US">Tissue, unspecified</Label>
+      </Rubric>
+      <Rubric id="d1e232905" kind="preferred">
+         <Label xml:lang="en-US">Tissue, unspecified</Label>
+      </Rubric>
+   </Class>
+   <Class code="TISU" kind="concept">
+      <Meta name="internalId" value="10549"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232919" kind="short">
+         <Label xml:lang="en-US">Tissue ulcer</Label>
+      </Rubric>
+      <Rubric id="d1e232919" kind="preferred">
+         <Label xml:lang="en-US">Tissue ulcer</Label>
+      </Rubric>
+   </Class>
+   <Class code="TLGI" kind="concept">
+      <Meta name="internalId" value="10545"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232934" kind="short">
+         <Label xml:lang="en-US">Tissue large intestine</Label>
+      </Rubric>
+      <Rubric id="d1e232934" kind="preferred">
+         <Label xml:lang="en-US">Tissue large intestine</Label>
+      </Rubric>
+   </Class>
+   <Class code="TLNG" kind="concept">
+      <Meta name="internalId" value="10546"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232948" kind="short">
+         <Label xml:lang="en-US">Tissue lung</Label>
+      </Rubric>
+      <Rubric id="d1e232948" kind="preferred">
+         <Label xml:lang="en-US">Tissue lung</Label>
+      </Rubric>
+   </Class>
+   <Class code="TSMI" kind="concept">
+      <Meta name="internalId" value="10548"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232962" kind="short">
+         <Label xml:lang="en-US">Tissue small intestine Tissue ulcer</Label>
+      </Rubric>
+      <Rubric id="d1e232962" kind="preferred">
+         <Label xml:lang="en-US">Tissue small intestine Tissue ulcer</Label>
+      </Rubric>
+   </Class>
+   <Class code="TUB" kind="concept">
+      <Meta name="internalId" value="10550"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232976" kind="short">
+         <Label xml:lang="en-US">Tube, unspecified</Label>
+      </Rubric>
+      <Rubric id="d1e232976" kind="preferred">
+         <Label xml:lang="en-US">Tube, unspecified</Label>
+      </Rubric>
+   </Class>
+   <Class code="ULC" kind="concept">
+      <Meta name="internalId" value="10551"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e232990" kind="short">
+         <Label xml:lang="en-US">Ulcer</Label>
+      </Rubric>
+      <Rubric id="d1e232990" kind="preferred">
+         <Label xml:lang="en-US">Ulcer</Label>
+      </Rubric>
+   </Class>
+   <Class code="UMB" kind="concept">
+      <Meta name="internalId" value="10552"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e233004" kind="short">
+         <Label xml:lang="en-US">Umbilical blood</Label>
+      </Rubric>
+      <Rubric id="d1e233004" kind="preferred">
+         <Label xml:lang="en-US">Umbilical blood</Label>
+      </Rubric>
+   </Class>
+   <Class code="UMED" kind="concept">
+      <Meta name="internalId" value="10553"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e233019" kind="short">
+         <Label xml:lang="en-US">Unknown medicine</Label>
+      </Rubric>
+      <Rubric id="d1e233019" kind="preferred">
+         <Label xml:lang="en-US">Unknown medicine</Label>
+      </Rubric>
+   </Class>
+   <Class code="UR" kind="concept">
+      <Meta name="internalId" value="10555"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e233033" kind="short">
+         <Label xml:lang="en-US">Urine</Label>
+      </Rubric>
+      <Rubric id="d1e233033" kind="preferred">
+         <Label xml:lang="en-US">Urine</Label>
+      </Rubric>
+   </Class>
+   <Class code="URC" kind="concept">
+      <Meta name="internalId" value="10556"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e233047" kind="short">
+         <Label xml:lang="en-US">Urine clean catch</Label>
+      </Rubric>
+      <Rubric id="d1e233047" kind="preferred">
+         <Label xml:lang="en-US">Urine clean catch</Label>
+      </Rubric>
+   </Class>
+   <Class code="URNS" kind="concept">
+      <Meta name="internalId" value="10558"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e233061" kind="short">
+         <Label xml:lang="en-US">Urine sediment</Label>
+      </Rubric>
+      <Rubric id="d1e233061" kind="preferred">
+         <Label xml:lang="en-US">Urine sediment</Label>
+      </Rubric>
+   </Class>
+   <Class code="URT" kind="concept">
+      <Meta name="internalId" value="10557"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e233075" kind="short">
+         <Label xml:lang="en-US">Urine catheter</Label>
+      </Rubric>
+      <Rubric id="d1e233075" kind="preferred">
+         <Label xml:lang="en-US">Urine catheter</Label>
+      </Rubric>
+   </Class>
+   <Class code="URTH" kind="concept">
+      <Meta name="internalId" value="10554"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e233089" kind="short">
+         <Label xml:lang="en-US">Urethra</Label>
+      </Rubric>
+      <Rubric id="d1e233089" kind="preferred">
+         <Label xml:lang="en-US">Urethra</Label>
+      </Rubric>
+   </Class>
+   <Class code="USUB" kind="concept">
+      <Meta name="internalId" value="10559"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e233104" kind="short">
+         <Label xml:lang="en-US">Unknown substance</Label>
+      </Rubric>
+      <Rubric id="d1e233104" kind="preferred">
+         <Label xml:lang="en-US">Unknown substance</Label>
+      </Rubric>
+   </Class>
+   <Class code="VOM" kind="concept">
+      <Meta name="internalId" value="10560"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e233118" kind="short">
+         <Label xml:lang="en-US">Vomitus</Label>
+      </Rubric>
+      <Rubric id="d1e233118" kind="preferred">
+         <Label xml:lang="en-US">Vomitus</Label>
+      </Rubric>
+   </Class>
+   <Class code="WAT" kind="concept">
+      <Meta name="internalId" value="10563"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e233132" kind="short">
+         <Label xml:lang="en-US">Water</Label>
+      </Rubric>
+      <Rubric id="d1e233132" kind="preferred">
+         <Label xml:lang="en-US">Water</Label>
+      </Rubric>
+   </Class>
+   <Class code="WBC" kind="concept">
+      <Meta name="internalId" value="10502"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e233146" kind="short">
+         <Label xml:lang="en-US">Leukocytes</Label>
+      </Rubric>
+      <Rubric id="d1e233146" kind="preferred">
+         <Label xml:lang="en-US">Leukocytes</Label>
+      </Rubric>
+   </Class>
+   <Class code="WICK" kind="concept">
+      <Meta name="internalId" value="10564"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e233160" kind="short">
+         <Label xml:lang="en-US">Wick</Label>
+      </Rubric>
+      <Rubric id="d1e233160" kind="preferred">
+         <Label xml:lang="en-US">Wick</Label>
+      </Rubric>
+   </Class>
+   <Class code="WND" kind="concept">
+      <Meta name="internalId" value="10565"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e233174" kind="short">
+         <Label xml:lang="en-US">Wound</Label>
+      </Rubric>
+      <Rubric id="d1e233174" kind="preferred">
+         <Label xml:lang="en-US">Wound</Label>
+      </Rubric>
+   </Class>
+   <Class code="WNDA" kind="concept">
+      <Meta name="internalId" value="10566"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e233189" kind="short">
+         <Label xml:lang="en-US">Wound abscess</Label>
+      </Rubric>
+      <Rubric id="d1e233189" kind="preferred">
+         <Label xml:lang="en-US">Wound abscess</Label>
+      </Rubric>
+   </Class>
+   <Class code="WNDD" kind="concept">
+      <Meta name="internalId" value="10568"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e233203" kind="short">
+         <Label xml:lang="en-US">Wound drainage</Label>
+      </Rubric>
+      <Rubric id="d1e233203" kind="preferred">
+         <Label xml:lang="en-US">Wound drainage</Label>
+      </Rubric>
+   </Class>
+   <Class code="WNDE" kind="concept">
+      <Meta name="internalId" value="10567"/>
+      <SuperClass code="_SpecimenEntityType"/>
+      <Rubric id="d1e233217" kind="short">
+         <Label xml:lang="en-US">Wound exudate</Label>
+      </Rubric>
+      <Rubric id="d1e233217" kind="preferred">
+         <Label xml:lang="en-US">Wound exudate</Label>
+      </Rubric>
+   </Class>
+</ClaML>

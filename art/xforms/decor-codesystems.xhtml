@@ -1,0 +1,1289 @@
+<!--
+    Copyright (C) 2011-2014 ART-DECOR expert group art-decor.org
+    
+    Author: Gerrit Boers
+
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:widget="http://orbeon.org/oxf/xml/widget" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="decor-codesystems" xsi:schemaLocation="http://www.w3.org/1999/xhtml https://raw.github.com/orbeon/orbeon-forms/master/src/main/resources/org/orbeon/oxf/xml/schemas/xhtml1-transitional-orbeon.xsd">
+    <xhtml:head>
+        <xhtml:style type="text/css">
+            .xforms-select1-appearance-full span { display: block; clear: both; }
+            .labelouterboxitem {
+                background-color: white;
+                color: black;
+                font-weight: bold;
+                font-size: smaller;
+                border: 1px solid grey;
+                margin: 0px;
+                padding: 0px;
+                display: inline;
+            }
+        </xhtml:style>
+        <xhtml:title>
+            <xforms:output ref="if (instance('project-instance')/name[@language=$resources/@xml:lang]) then (instance('project-instance')/name[@language=$resources/@xml:lang]) else (instance('project-instance')/name[1])"/> - <xforms:output ref="$resources/codesystems"/>
+        </xhtml:title>
+        <xforms:model>
+         <!-- Variable with path to art-external-exist for use by html -->
+            <xxforms:variable name="art-external-exist" select="xxforms:property('art.external.exist.url')"/>
+         <!-- Variable with path to art-exist for use by form -->
+            <xxforms:variable name="art-exist" select="xxforms:property('art.exist.url')"/>
+         <!-- Variable with path to decor-eXist used to pass to client as link for services (Diagrams in new window) -->
+            <xxforms:variable name="decor-exist" select="xxforms:property('decor.exist.url')"/>
+            <xxforms:variable name="decor-external-exist" select="xxforms:property('decor.external.exist.url')"/>
+         <!-- Variable with path to terminology-eXist used to pass to client as link for services (SNOMED, LOINC) -->
+            <xxforms:variable name="terminology-exist" select="xxforms:property('terminology.exist.url')"/>
+         <!-- resources for internationalization -->
+            <xforms:instance id="resources-instance" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+         <!-- submission for loading resources -->
+            <xforms:submission id="get-resources-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-form-resources.xquery" replace="instance" instance="resources-instance"/>
+         <!-- language -->
+            <xforms:instance id="language" xxforms:exclude-result-prefixes="#all">
+                <language/>
+            </xforms:instance>
+
+         <!-- instance for DECOR Schema types -->
+            <xforms:instance id="decor-types" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+         <!-- get decor submission -->
+            <xforms:submission id="get-decor-types" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-schema-types.xquery" replace="instance" instance="decor-types" xxforms:readonly="true"/>
+         <!-- warning message texts -->
+            <xforms:instance id="messages" xxforms:exclude-result-prefixes="#all">
+                <messages>
+                    <edit-warning language="nl-NL">
+                        <div class="h2">De statuscode van dit codestelsel is 'Definitief'</div>
+                        <p>Er zijn twee mogelijkheden bij het aanmaken van een nieuw codestelsel:</p>
+                        <ul>
+                            <li> Nieuwe versie - Er wordt een nieuwe versie gecreëerd met dezelfde Id. Als het nieuwe codestelsel de huidige gaat vervangen dan dient deze optie gebruikt te worden. </li>
+                            <li> Bewerking - Er wordt een nieuw codestelsel gecreëerd met een nieuw Id. Deze optie dient gebruikt te worden als er een nieuw codestelsel wordt gemaakt op basis van de huidige. </li>
+                        </ul>
+                    </edit-warning>
+                    <edit-warning language="en-US">
+                        <div class="h2">The statuscode of this code system is 'Final'</div>
+                        <p>There are two alternatives for creating the new code system: </p>
+                        <ul>
+                            <li> Version - A new version is created with the same Id. Choose this option if the new code system replaces the existing one. </li>
+                            <li> Adaptation - A new code system is created with a new Id. This option should be used if a new code system is created based on the existing code system. </li>
+                        </ul>
+                    </edit-warning>
+                    <edit-warning language="de-DE">
+                        <div class="h2">The statuscode of this code system is 'Final'</div>
+                        <p>There are two alternatives for creating the new code system: </p>
+                        <ul>
+                            <li> Version - A new version is created with the same Id. Choose this option if the new code system replaces the existing one. </li>
+                            <li> Adaptation - A new code system is created with a new Id. This option should be used if a new code system is created based on the existing code system. </li>
+                        </ul>
+                    </edit-warning>
+                    <edit-warning language="pl-PL">
+                        <div class="h2">The statuscode of this code system is 'Final'</div>
+                        <p>There are two alternatives for creating the new code system: </p>
+                        <ul>
+                            <li> Version - A new version is created with the same Id. Choose this option if the new code system replaces the existing one. </li>
+                            <li> Adaptation - A new code system is created with a new Id. This option should be used if a new code system is created based on the existing code system. </li>
+                        </ul>
+                    </edit-warning>
+                    <status-final language="nl-NL">
+                        <p>Let op: deze handeling kan niet ongedaan gemaakt worden!</p>
+                    </status-final>
+                    <status-final language="en-US">
+                        <p>Beware: this action cannot be undone!</p>
+                    </status-final>
+                    <status-final language="de-DE">
+                        <p>Achtung: diese Aktion kann nicht rückgängig gemacht werden!</p>
+                    </status-final>
+                    <status-final language="pl-PL">
+                        <p>Beware: this action cannot be undone!</p>
+                    </status-final>
+                </messages>
+            </xforms:instance>
+         <!-- instance for project prefix -->
+            <xforms:instance id="document" xxforms:exclude-result-prefixes="#all">
+                <name/>
+            </xforms:instance>
+         <!-- navigation -->
+            <xforms:instance id="codesystem-navigation" xxforms:exclude-result-prefixes="#all">
+                <id-hash-name/>
+            </xforms:instance>
+         <!-- navigation -->
+            <xforms:instance id="version-navigation" xxforms:exclude-result-prefixes="#all">
+                <effectiveDate/>
+            </xforms:instance>
+         <!-- navigation -->
+            <xforms:instance id="codesystemcode-navigation" xxforms:exclude-result-prefixes="#all">
+                <codedConcept code="" codeSystem="" codeSystemVersion=""/>
+            </xforms:instance>
+            
+         <!-- instance for project information -->
+            <xforms:instance id="project-instance" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+         <!-- get decor project submission -->
+            <xforms:submission id="get-decor-project-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-project.xq?project={instance('document')}" replace="instance" instance="project-instance"/>
+
+         <!-- instance for DECOR codesystem list -->
+            <xforms:instance id="decor-codesystem-list" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+         <!-- get decor codesystems submission -->
+            <xforms:submission id="get-decor-codesystem-list" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-codesystem-list.xquery?project={instance('document')}" replace="instance" instance="decor-codesystem-list" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}"/>
+
+         <!-- instance for edit mode -->
+            <xforms:instance id="edit-mode" xxforms:exclude-result-prefixes="#all">
+                <mode/>
+            </xforms:instance>
+         <!-- instance for DECOR codesystem -->
+            <xforms:instance id="decor-codesystem" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+         <!-- get decor codesystem -->
+            <xforms:submission id="get-decor-codesystem" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-codesystem.xquery?project={instance('document')}&amp;ref={substring-before(instance('codesystem-navigation'),'#')}&amp;name={substring-after(instance('codesystem-navigation'),'#')}" replace="instance" instance="decor-codesystem" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- instance for setting statusCode -->
+            <xforms:instance id="status-change" xxforms:exclude-result-prefixes="#all">
+                <statusChange ref="" effectiveDate="" statusCode="" versionLabel="" expirationDate="" actionText=""/>
+            </xforms:instance>
+            <xforms:bind nodeset="instance('status-change')/@expirationDate" type="xforms:date"/>
+         <!-- instance for statusCode change response -->
+            <xforms:instance id="status-response" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+         <!-- set codesystem statusCode -->
+            <xforms:submission id="set-decor-object-status" ref="instance('status-change')" method="post" xxforms:instance="status-response" resource="{$art-exist}/modules/set-decor-object-status.xquery" replace="instance" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+                <xforms:action ev:event="xforms-submit-done" if="instance('status-response')//lock">
+                    <xxforms:show dialog="lock-dialog"/>
+                </xforms:action>
+            </xforms:submission>
+
+         <!-- SEARCH REPO CODESYSTEM -->
+         <!-- instance for selected codesystem in search resultset -->
+            <xforms:instance id="codesystem-ref" xxforms:exclude-result-prefixes="#all">
+                <codeSystem projectPrefix="" ref="" name="" displayName=""/>
+            </xforms:instance>
+         <!-- instance for search string -->
+            <xforms:instance id="repo-search" xxforms:exclude-result-prefixes="#all">
+                <search/>
+            </xforms:instance>
+         <!-- instance for  itemset -->
+            <xforms:instance id="repo-search-result" xxforms:exclude-result-prefixes="#all">
+                <result>
+                    <concept/>
+                </result>
+            </xforms:instance>
+            <xforms:submission id="search-repo-codesystems" ref="instance('repo-search')" resource="{$art-exist}/modules/search-repo-codesystems.xquery?project={instance('document')}&amp;searchString={instance('repo-search')}" method="get" instance="repo-search-result" replace="instance">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- create codesystem ref -->
+            <xforms:submission id="create-codesystem-ref" ref="instance('codesystem-ref')" method="post" resource="{$art-exist}/modules/create-decor-codesystem-ref.xquery" replace="none" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- delete codesystem ref -->
+            <xforms:submission id="delete-codesystem-ref" serialization="none" method="get" resource="{$art-exist}/modules/delete-decor-codesystem-ref.xquery?prefix={instance('document')}&amp;ref={substring-before(instance('codesystem-navigation'),'#')}" replace="none" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+
+
+         <!-- instance for codesystem usage -->
+            <xforms:instance id="codesystem-usage">
+                <dummy/>
+            </xforms:instance>
+         <!-- get codesystem-usage submission -->
+            <xforms:submission id="get-codesystem-usage" serialization="none" method="get" ref="instance('decor-codesystem')" resource="{$art-exist}/modules/get-decor-codesystem-usage.xquery?prefix={instance('document')}&amp;id={substring-before(instance('codesystem-navigation'),'#')}&amp;name={substring-after(instance('codesystem-navigation'),'#')}&amp;effectiveDate={instance('version-navigation')}" replace="instance" instance="codesystem-usage"/>
+
+         <!-- *** ISSUES *** -->
+         <!-- instance for existing issues -->
+            <xforms:instance id="codesystem-issues">
+                <dummy/>
+            </xforms:instance>
+            <xforms:instance id="issue-navigation">
+                <issue id="" currentUserIsSubscribed=""/>
+            </xforms:instance>
+            <xforms:bind nodeset="instance('codesystem-issues')">
+                <xforms:bind ref="issue/@currentUserIsSubscribed" type="xs:boolean"/>
+            </xforms:bind>
+            <xforms:submission id="update-decor-issue-subscription" resource="{$art-exist}/modules/update-decor-issue-subscription.xquery?id={instance('issue-navigation')/@id}&amp;action={if (instance('issue-navigation')/@currentUserIsSubscribed='true') then 'add' else 'delete'}" method="post" replace="none" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- get issues submission -->
+            <xforms:submission id="get-issues-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-object-issues.xquery?id={substring-before(instance('codesystem-navigation'),'#')}&amp;effectiveDate={instance('version-navigation')}" replace="instance" instance="codesystem-issues">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- instance for creating issue -->
+            <xforms:instance id="issue-instance" xxforms:exclude-result-prefixes="#all">
+                <issues>
+                    <issue id="" priority="N" displayName="" type="RFC" project="">
+                        <object id="" type="" effectiveDate=""/>
+                        <tracking effectiveDate="" statusCode="new" labels="" to="">
+                            <author id=""/>
+                            <desc language=""/>
+                        </tracking>
+                    </issue>
+                </issues>
+            </xforms:instance>
+         <!-- instance for holding newly created issues -->
+            <xforms:instance id="issues-instance" xxforms:exclude-result-prefixes="#all">
+                <issues>
+                    <issue/>
+                </issues>
+            </xforms:instance>
+         <!-- save issue submission -->
+            <xforms:submission id="save-decor-issue-submission" ref="instance('issues-instance')/issue[object/@id=instance('decor-codesystem')/codeSystem[not(@effectiveDate) or @effectiveDate=instance('version-navigation')]/(@id|@ref)]" action="{$art-exist}/modules/save-decor-issue.xq" method="post" replace="none" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+
+         <!-- SEARCH CODESYSTEM -->
+         <!-- instance for selected codesystem in search resultset -->
+            <xforms:instance id="selected-codesystem" xxforms:exclude-result-prefixes="#all">
+                <id/>
+            </xforms:instance>
+         <!-- instance forsearch string -->
+            <xforms:instance id="codesystem-search-instance" xxforms:exclude-result-prefixes="#all">
+                <search/>
+            </xforms:instance>
+         <!-- instance for  itemset -->
+            <xforms:instance id="codesystem-itemset-instance" xxforms:exclude-result-prefixes="#all">
+                <result>
+                    <concept/>
+                </result>
+            </xforms:instance>
+            <xforms:submission id="update-codesystem-search" ref="instance('codesystem-search-instance')" resource="{$art-exist}/modules/search-decor-codesystem.xquery?project={instance('document')}&amp;searchString={instance('codesystem-search-instance')}" method="get" instance="codesystem-itemset-instance" replace="instance"/>
+            <xforms:action ev:event="xforms-model-construct-done">
+                <xforms:send submission="get-resources-submission"/>
+                <xforms:send submission="get-decor-project-submission"/>
+                <xforms:setvalue ref="instance('language')" value="if (string-length(xxforms:get-session-attribute('language'))&gt;0) then (xxforms:get-session-attribute('language')) else (instance('project-instance')/@defaultLanguage/string())"/>
+                <xforms:send submission="get-decor-types"/>
+                <xforms:send submission="get-decor-codesystem-list"/>
+                <xxforms:variable name="codesystem-ref" select="if (string-length(xxforms:get-request-parameter('codeSystemRef'))&gt;0) then (xxforms:get-request-parameter('codeSystemRef')) else if (string-length(xxforms:get-request-parameter('codeSystemId'))&gt;0) then (xxforms:get-request-parameter('codeSystemId')) else if (string-length(xxforms:get-request-parameter('codeSystemName'))&gt;0) then (xxforms:get-request-parameter('codeSystemName')) else()"/>
+                <xforms:setvalue ref="instance('codesystem-navigation')" value="if (matches($codesystem-ref,'^[0-9\.]+$')) then (concat($codesystem-ref,'#',instance('decor-codesystem-list')/codeSystem[(@id|@ref)=$codesystem-ref][1]/@name)) else if (string-length($codesystem-ref)&gt;0) then (concat(instance('decor-codesystem-list')/codeSystem[@name=$codesystem-ref][1]/(@id|@ref),'#',$codesystem-ref)) else (instance('decor-codesystem-list')/codeSystem[1]/concat((@id|@ref),'#',@name))"/>
+                <xforms:send submission="get-decor-codesystem"/>
+                <xforms:setvalue ref="instance('version-navigation')" value="if (matches(xxforms:get-request-parameter('codeSystemEffectiveDate'),'^\d{4}')) then xxforms:get-request-parameter('codeSystemEffectiveDate') else (instance('decor-codesystem')/codeSystem[@id][1]/@effectiveDate)"/>
+                <xforms:send submission="get-issues-submission"/>
+                <xforms:send submission="get-codesystem-usage"/>
+            </xforms:action>
+            <xforms:action ev:event="xforms-ready"/>
+         <!-- relevant language is returned as first node, rest should be empty -->
+            <xxforms:variable name="resources" select="instance('resources-instance')//resources[1]"/>
+            <xxforms:variable name="editor" select="contains(xxforms:get-session-attribute('groups'),'editor') and instance('project-instance')/author[@username=xxforms:get-session-attribute('username')]"/>
+            <xxforms:variable name="admin" select="contains(xxforms:get-session-attribute('groups'),'decor-admin') and instance('project-instance')/author[@username=xxforms:get-session-attribute('username')]"/>
+            <xxforms:variable name="issueCreator" select="contains(xxforms:get-session-attribute('groups'),'issues') and instance('project-instance')/author[@username=xxforms:get-session-attribute('username')]"/>
+            <xxforms:variable name="isGroup" select="instance('classification-list')/group[@collection=instance('selected-group')]/@isGroup='true'"/>
+        </xforms:model>
+    </xhtml:head>
+    <xhtml:body>
+      <!-- dialog for lock message -->
+        <xxforms:dialog id="lock-dialog" appearance="full" level="modeless" close="true" draggable="true" visible="false">
+            <xforms:label ref="$resources/codesystem-locked"/>
+            <xhtml:table>
+                <xhtml:tr>
+                    <xhtml:td class="heading" colspan="2">
+                        <xforms:output ref="$resources/codesystem-locked"/>
+                    </xhtml:td>
+                </xhtml:tr>
+                <!-- row with tree control-->
+                <xhtml:tr>
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/user"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:output ref="instance('status-response')//lock/@userName"/>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/starting-from"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:output ref="instance('status-response')//lock/@since"/>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td colspan="2">
+                        <xhtml:div class="buttons">
+                            <fr:button>
+                                <xforms:label ref="$resources/close"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xforms:send submission="get-decor-codesystem"/>
+                                    <xxforms:hide ev:event="DOMActivate" dialog="lock-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xhtml:table>
+        </xxforms:dialog>
+      <!-- codesystem select dialog -->
+        <xxforms:dialog id="repo-codesystem-dialog" appearance="full" level="modal" close="false" resizable="true" draggable="true" visible="false">
+            <xforms:label ref="concat($resources/codesystems, ' (', $resources/server-external-bbrs, ')')"/>
+            <xhtml:table width="800">
+            <!-- search field and refresh -->
+                <xhtml:tr>
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/searchterms"/>
+                        <xforms:trigger appearance="minimal">
+                            <xforms:label class="control-label">
+                                <xhtml:img src="/img/arrow_refresh.png" alt="" align="right"/>
+                            </xforms:label>
+                            <xforms:hint ref="$resources/refresh"/>
+                            <xforms:action ev:event="DOMActivate">
+                                <xforms:setvalue ref="instance('repo-search')" value="''"/>
+                                <xforms:setfocus control="search-repo"/>
+                            </xforms:action>
+                        </xforms:trigger>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:input class="top" ref="instance('repo-search')" id="search-repo" incremental="true">
+                            <xforms:action ev:event="xforms-value-changed">
+                                <xxforms:variable name="search-value" select="."/>
+                                <xxforms:variable name="make-suggestion" select="string-length($search-value) &gt;= 1"/>
+                                <xforms:action if="$make-suggestion">
+                                    <xforms:send submission="search-repo-codesystems"/>
+                                    <xforms:action if="xxforms:index('repoCodeSystems')&gt;1">
+                                        <xforms:setindex repeat="repoCodeSystems" index="1"/>
+                                    </xforms:action>
+                                </xforms:action>
+                            </xforms:action>
+                        </xforms:input>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xhtml:table>
+            <xhtml:div class="h2">
+                <xforms:output ref="$resources/results"/> (<xforms:output ref="if (instance('repo-search-result')/@count) then instance('repo-search-result')/@count else '0'"/>) 
+            </xhtml:div>
+         <!-- search result -->
+            <xhtml:div class="navigate-seven">
+                <xhtml:table width="100%">
+                    <xforms:repeat nodeset="instance('repo-search-result')/codeSystem" id="repoCodeSystems">
+                        <xxforms:variable name="statusCode" select="@statusCode"/>
+                        <xhtml:tr>
+                            <xhtml:td>
+                                <xforms:output ref="@displayName" class="node-s{$statusCode}"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:output ref="@effectiveDate" xxforms:format="if (. castable as xs:dateTime) then replace(format-dateTime(.,'[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]', (), (), ()),' 00:00:00','') else (.)"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:output ref="instance('decor-types')/ItemStatusCodeLifeCycle/enumeration[@value=$statusCode]/label[@language=$resources/@xml:lang]"/>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xforms:action ev:event="xxforms-index-changed">
+                            <xforms:action if="instance('concept-navigation')!=instance('description-itemset-instance')/description[index('repoCodeSystems')]/@conceptId">
+                                <xforms:setvalue ref="instance('concept-navigation')" value="instance('description-itemset-instance')/description[index('repoCodeSystems')]/@conceptId"/>
+                                <xforms:send submission="get-concept-submission"/>
+                        <!--											<xforms:send submission="get-closure-submission"/>-->
+                            </xforms:action>
+                        </xforms:action>
+                        <xforms:action ev:event="xxforms-nodeset-changed">
+                            <xforms:action if="instance('concept-navigation')!=instance('description-itemset-instance')/description[index('repoCodeSystems')]/@conceptId">
+                                <xforms:setvalue ref="instance('concept-navigation')" value="instance('description-itemset-instance')/description[index('repoCodeSystems')]/@conceptId"/>
+                                <xforms:send submission="get-concept-submission"/>
+                        <!--											<xforms:send submission="get-closure-submission"/>-->
+                            </xforms:action>
+                        </xforms:action>
+                    </xforms:repeat>
+                </xhtml:table>
+            </xhtml:div>
+            <xhtml:div class="detail" style="margin-top:3em;">
+                <xforms:group ref="instance('repo-search-result')/codeSystem">
+                    <xxforms:variable name="selected-result" select="instance('repo-search-result')/codeSystem[index('repoCodeSystems')]"/>
+                    <xhtml:iframe id="detailframe" frameborder="0" src="{$selected-result/@url}/RetrieveCodeSystem?id={$selected-result/@id}&amp;effectiveDate={$selected-result/@effectiveDate}&amp;prefix={$selected-result/@ident}&amp;language={instance('language')}&amp;inline=true" width="100%" height="400"/>
+                </xforms:group>
+            </xhtml:div>
+         <!-- buttons -->
+            <xhtml:table width="100%" style="margin-top:1em;">
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xhtml:div class="buttons">
+                            <fr:button>
+                                <xforms:label ref="$resources/cancel"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xxforms:hide dialog="repo-codesystem-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                            <fr:button ref="instance('repo-search-result')/codeSystem">
+                                <xforms:label ref="$resources/select"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xxforms:variable name="selected" select="instance('repo-search-result')/codeSystem[index('repoCodeSystems')]"/>
+                                    <xforms:setvalue ref="instance('codesystem-ref')/@ref" value="$selected/@id"/>
+                                    <xforms:setvalue ref="instance('codesystem-ref')/@name" value="$selected/@name"/>
+                                    <xforms:setvalue ref="instance('codesystem-ref')/@displayName" value="$selected/@displayName"/>
+                                    <xforms:setvalue ref="instance('codesystem-ref')/@projectPrefix" value="instance('document')"/>
+                                    <xforms:send submission="create-codesystem-ref"/>
+                                    <xforms:send submission="get-decor-codesystem-list"/>
+                                    <xforms:send submission="get-codesystem-usage"/>
+                                    <xforms:send submission="get-issues-submission"/>
+                                    <xxforms:hide dialog="repo-codesystem-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xhtml:table>
+        </xxforms:dialog>
+      <!-- dialog edit warning -->
+        <xxforms:dialog id="edit-warning-dialog" appearance="full" level="modal" close="false" draggable="true" visible="false">
+            <xhtml:table width="100%">
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xforms:output mediatype="text/html" ref="xxforms:serialize(instance('messages')/edit-warning[@language=instance('language')], 'html')"/>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td colspan="2">
+                        <xhtml:div class="buttons">
+                            <fr:button>
+                                <xforms:label ref="$resources/cancel"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xxforms:hide dialog="edit-warning-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                            <fr:button>
+                                <xforms:label ref="$resources/create-new-version"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xforms:setvalue ref="instance('edit-mode')" value="'version'"/>
+                                    <xforms:load resource="/decor-codesystem-editor--{instance('project-instance')/@prefix}?id={instance('decor-codesystem')/codeSystem[@effectiveDate=instance('version-navigation')]/@id}&amp;effectiveDate={instance('version-navigation')}&amp;mode={instance('edit-mode')}" show="new"/>
+                                    <xxforms:hide dialog="edit-warning-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                            <fr:button>
+                                <xforms:label ref="$resources/create-adaptation"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xforms:setvalue ref="instance('edit-mode')" value="'adapt'"/>
+                                    <xforms:load resource="/decor-codesystem-editor--{instance('project-instance')/@prefix}?id={instance('decor-codesystem')/codeSystem[@effectiveDate=instance('version-navigation')]/@id}&amp;effectiveDate={instance('version-navigation')}&amp;mode={instance('edit-mode')}" show="new"/>
+                                    <xxforms:hide dialog="edit-warning-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xhtml:table>
+        </xxforms:dialog>
+      <!-- status change dialog -->
+        <xxforms:dialog id="status-dialog" appearance="full" level="modal" close="false" draggable="true" visible="false">
+            <xhtml:table width="100%">
+                <xhtml:tr>
+                    <xhtml:td class="heading" colspan="2">
+                        <xhtml:div class="heading">
+                            <xforms:output ref="instance('status-change')/@actionText"/>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td colspan="2">
+                        <xforms:output mediatype="text/html" ref="xxforms:serialize(instance('messages')/status-final[@language=instance('language')], 'html')"/>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xforms:group ref="instance('status-change')[@statusCode='final']">
+                    <xhtml:tr>
+                  <!-- version label -->
+                        <xhtml:td class="item-label">
+                            <xforms:output ref="$resources/versionLabel"/>
+                        </xhtml:td>
+                        <xhtml:td>
+                            <xforms:input ref="@versionLabel"/>
+                        </xhtml:td>
+                    </xhtml:tr>
+                    <xhtml:tr>
+                  <!-- expirationDate -->
+                        <xhtml:td class="item-label">
+                            <xforms:output ref="$resources/expiration-date"/>
+                        </xhtml:td>
+                        <xhtml:td>
+                            <xforms:input ref="@expirationDate"/>
+                        </xhtml:td>
+                    </xhtml:tr>
+                </xforms:group>
+                <xhtml:tr>
+                    <xhtml:td colspan="2">
+                        <xhtml:div class="buttons">
+                            <fr:button>
+                                <xforms:label ref="$resources/cancel"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xxforms:hide dialog="status-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                            <fr:button>
+                                <xforms:label>
+                                    <xforms:output ref="instance('status-change')/@actionText"/>
+                                </xforms:label>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xforms:setvalue ref="instance('status-change')/@ref" value="instance('decor-codesystem')/codeSystem[@effectiveDate=instance('version-navigation')]/@id"/>
+                                    <xforms:setvalue ref="instance('status-change')/@effectiveDate" value="instance('version-navigation')"/>
+                                    <xforms:send submission="set-decor-object-status"/>
+                                    <xforms:send submission="get-decor-codesystem-list"/>
+                                    <xforms:send submission="get-decor-codesystem"/>
+                                    <xforms:send submission="get-codesystem-usage"/>
+                                    <xforms:send submission="get-issues-submission"/>
+                                    <xxforms:hide dialog="status-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xhtml:table>
+        </xxforms:dialog>
+      <!-- form content -->
+        <xhtml:table width="100%">
+            <xhtml:tr>
+                <xhtml:td colspan="2" class="heading">
+                    <xforms:output ref="$resources/codesystems-temp-solution-warning"/>
+                </xhtml:td>
+            </xhtml:tr>
+            <xhtml:tr>
+            <!-- codesystem navigation -->
+                <xhtml:td width="10%">
+                    <xhtml:table width="100%">
+                  <!-- row with heading  and edit buttons	-->
+                        <xhtml:tr>
+                            <xhtml:td class="heading" colspan="2">
+                                <xhtml:div class="heading">
+                                    <xforms:output ref="$resources/codesystems"/>
+                                </xhtml:div>
+                                <xhtml:div class="buttons">
+                                    <xforms:group ref=".[$admin]">
+                              <!-- refresh -->
+                                        <fr:button>
+                                            <xforms:label>
+                                                <xhtml:img src="/img/arrow_refresh.png" alt=""/>
+                                            </xforms:label>
+                                            <xforms:hint ref="$resources/refresh"/>
+                                            <xforms:action ev:event="DOMActivate">
+                                                <xforms:send submission="get-decor-codesystem-list"/>
+                                                <xforms:send submission="get-decor-codesystem"/>
+                                                <xforms:send submission="get-codesystem-usage"/>
+                                                <xforms:send submission="get-issues-submission"/>
+                                            </xforms:action>
+                                        </fr:button>
+                              <!-- new codesystem ref -->
+                                        <fr:button>
+                                            <xforms:label>
+                                                <xhtml:img src="/img/link16.png" alt=""/>
+                                            </xforms:label>
+                                            <xforms:hint ref="$resources/new-codesystem-ref"/>
+                                            <xforms:action ev:event="DOMActivate">
+                                                <xxforms:show dialog="repo-codesystem-dialog"/>
+                                                <xforms:setfocus control="search-repo"/>
+                                            </xforms:action>
+                                        </fr:button>
+                              <!-- new codesystem -->
+                                        <!--<fr:button>
+                                            <xforms:label>
+                                                <xhtml:img src="/img/plus.png" alt="" align="right"/>
+                                            </xforms:label>
+                                            <xforms:hint ref="$resources/new-codesystem"/>
+                                            <xforms:action ev:event="DOMActivate">
+                                                <xforms:setvalue ref="instance('edit-mode')" value="'new'"/>
+                                                <xforms:load resource="/decor-codesystem-editor-\-{instance('project-instance')/@prefix}?mode={instance('edit-mode')}" show="new"/>
+                                            </xforms:action>
+                                        </fr:button>-->
+                                    </xforms:group>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                  <!-- row with codesystem search -->
+                        <xhtml:tr>
+                            <xhtml:td class="item-label">
+                                <xforms:output ref="$resources/search"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <fr:autocomplete ref="instance('selected-codesystem')" id="codesystemSearch" dynamic-itemset="true" max-results-displayed="50">
+                                    <xforms:action ev:event="xforms-value-changed">
+                                        <xforms:setvalue ref="instance('codesystem-navigation')" value="instance('selected-codesystem')"/>
+                                    </xforms:action>
+                           <!-- React to user searching -->
+                           <!-- add additional info to the label and strip it here -->
+                                    <xforms:action ev:event="fr-search-changed">
+                                 <!-- set as default value when the user wants new ref based on this search -->
+                                        <xforms:setvalue ref="instance('repo-search')" value="event('fr-search-value')"/>
+                                 <!-- add additional info to the label and strip it here !!! -->
+                                        <xxforms:variable name="search-value" select="event('fr-search-value')"/>
+                                        <xxforms:variable name="make-suggestion" select="string-length($search-value) &gt;= 1 and not(instance('codesystem-itemset-instance')//@name[.=$search-value]) and not(instance('codesystem-itemset-instance')//@displayName[.=$search-value])"/>
+                                        <xforms:action if="$make-suggestion">
+                                 <!-- Update itemset -->
+                                            <xforms:setvalue ref="instance('codesystem-search-instance')" value="$search-value"/>
+                                            <xforms:send submission="update-codesystem-search"/>
+                                        </xforms:action>
+                                        <xforms:action if="not($make-suggestion)  and not(instance('codesystem-itemset-instance')//@name[.=$search-value]) and not(instance('codesystem-itemset-instance')//@displayName[.=$search-value])">
+                                 <!-- Delete itemset -->
+                                            <xforms:delete nodeset="instance('codesystem-itemset-instance')/codeSystem"/>
+                                        </xforms:action>
+                                    </xforms:action>
+                                    <xforms:itemset nodeset="instance('codesystem-itemset-instance')//codeSystem">
+                              <!-- add additional info to the label, see above -->
+                                        <xforms:label ref="if (string-length(@displayName)&gt;0) then @displayName else @name"/>
+                                        <xforms:value ref="concat((@id|@ref),'#',@name)"/>
+                                    </xforms:itemset>
+                                </fr:autocomplete>
+                            </xhtml:td>
+                        </xhtml:tr>
+                  <!-- row with codesystem list-->
+                        <xhtml:tr>
+                            <xhtml:td colspan="2">
+                                <xhtml:div class="navigate">
+                                    <xforms:select1 ref="instance('codesystem-navigation')" appearance="xxforms:tree" id="codeSystemNavigation">
+                                        <xforms:itemset nodeset="instance('decor-codesystem-list')/codeSystem" class="node-s{@statusCode} {if (@ref) then 'node-codesystem-ref' else ('test')}">
+                                            <xforms:label ref="@displayName"/>
+                                            <xforms:value ref="concat((@id|@ref),'#',@name)"/>
+                                        </xforms:itemset>
+                                        <xforms:action ev:event="xforms-value-changed">
+                                            <xforms:send submission="get-decor-codesystem"/>
+                                            <xforms:setvalue ref="instance('version-navigation')" value="instance('decor-codesystem')/codeSystem[@id][1]/@effectiveDate"/>
+                                            <xforms:send submission="get-codesystem-usage"/>
+                                            <xforms:send submission="get-issues-submission"/>
+                                        </xforms:action>
+                                    </xforms:select1>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                    </xhtml:table>
+                </xhtml:td>
+            <!-- codesystem details -->
+                <xhtml:td width="90%">
+                    <xhtml:table class="detail" width="100%">
+                  <!-- VALUSET MISSING. Add it? -->
+                        <xxforms:variable name="lookingfor" select="tokenize(instance('codesystem-navigation'),'#')[string-length()&gt;0][1]"/>
+                        <xforms:group ref=".[not(instance('decor-codesystem-list')/codeSystem[(@id|@ref|@name)=$lookingfor]) or instance('decor-codesystem')[not(codeSystem)]]">
+                            <xhtml:tr>
+                                <xhtml:td class="heading" colspan="4">
+                                    <xhtml:div class="heading">
+                                        <xforms:output ref="$resources/codesystem-not-found"/>
+                                    </xhtml:div>
+                                    <xforms:group ref=".[$admin]">
+                                        <xhtml:div class="buttons">
+                                            <fr:button>
+                                                <xforms:label ref="concat($resources/new-codesystem-ref-for,' ''',$lookingfor,'''')"/>
+                                                <xforms:action ev:event="DOMActivate">
+                                                    <xforms:setvalue ref="instance('repo-search')" value="$lookingfor"/>
+                                                    <xxforms:show dialog="repo-codesystem-dialog"/>
+                                                    <xforms:setfocus control="search-repo"/>
+                                                </xforms:action>
+                                            </fr:button>
+                                        </xhtml:div>
+                                    </xforms:group>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xforms:group>
+                  <!-- CODESYSTEM DETAILS -->
+                        <xforms:group ref="instance('decor-codesystem')[codeSystem]">
+                            <xxforms:variable name="codeSystemId" select="(codeSystem/@id|codeSystem/@ref)[1]"/>
+                     <!-- heading with buttons -->
+                            <xhtml:tr>
+                                <xhtml:td class="heading" colspan="4">
+                                    <xhtml:div class="heading {if (codeSystem/@ref) then 'node-codesystem-ref' else ()}">
+                                        <xforms:output ref="codeSystem[1]/@displayName"/>
+                                        <xforms:output ref="if (codeSystem/@ref) then concat(' (', $resources/repository, ')') else ()"/>
+                                    </xhtml:div>
+                           <!-- div with buttons -->
+                                    <xhtml:div class="buttons">
+                              <!-- buttons for editing and changing status -->
+                                        <xforms:group ref=".[$admin][not(codeSystem[@ref])]">
+                                 <!-- button for editing codesystem -->
+                                            <xforms:group ref=".[codeSystem[@effectiveDate=instance('version-navigation')]/@statusCode=('new','draft','final')]">
+                                                <!--<fr:button>
+                                                    <xforms:label>
+                                                        <xhtml:img src="/img/write.png" alt=""/>
+                                                    </xforms:label>
+                                                    <xforms:hint>
+                                                        <xforms:output ref="$resources/edit-codesystem"/>
+                                                    </xforms:hint>
+                                                    <xforms:action ev:event="DOMActivate">
+                                                        <xforms:action if="codeSystem[@effectiveDate=instance('version-navigation')]/@statusCode='final'">
+                                                            <xxforms:show dialog="edit-warning-dialog"/>
+                                                        </xforms:action>
+                                                        <xforms:action if="codeSystem[@effectiveDate=instance('version-navigation')]/@statusCode!='final'">
+                                                            <xforms:setvalue ref="instance('edit-mode')" value="'edit'"/>
+                                                            <xforms:load resource="/decor-codesystem-editor-\-{instance('project-instance')/@prefix}?id={$codeSystemId}&effectiveDate={instance('version-navigation')}&mode={instance('edit-mode')}" show="new"/>
+                                                        </xforms:action>
+                                                    </xforms:action>
+                                                </fr:button>-->
+                                                <xforms:group ref=".[$admin][not(codeSystem[@ref])][codeSystem[not(@url)][@ident=instance('document')][@effectiveDate=instance('version-navigation')]/@statusCode='draft']">
+                                       <!-- button for setting status to 'final' -->
+                                                    <fr:button>
+                                                        <xforms:label>
+                                                            <xhtml:img src="/img/node-sfinal.png" alt=""/>
+                                                        </xforms:label>
+                                                        <xforms:hint>
+                                                            <xforms:output ref="$resources/set-status-to-final"/>
+                                                        </xforms:hint>
+                                                        <xforms:action ev:event="DOMActivate">
+                                                            <xforms:action xxforms:iterate="instance('status-change')/@*">
+                                                                <xforms:setvalue ref="context()" value="''"/>
+                                                            </xforms:action>
+                                                            <xforms:setvalue ref="instance('status-change')/@statusCode" value="'final'"/>
+                                                            <xforms:setvalue ref="instance('status-change')/@actionText" value="$resources/set-status-to-final"/>
+                                                            <xforms:setvalue ref="instance('status-change')/@versionLabel" value="instance('decor-codesystem')/codeSystem[@effectiveDate=instance('version-navigation')]/@versionLabel"/>
+                                                            <xforms:setvalue ref="instance('status-change')/@expirationDate" value="instance('decor-codesystem')/codeSystem[@effectiveDate=instance('version-navigation')]/@expirationDate"/>
+                                                            <xxforms:show dialog="status-dialog"/>
+                                                        </xforms:action>
+                                                    </fr:button>
+                                       <!-- button for setting status to 'rejected' -->
+                                                    <fr:button>
+                                                        <xforms:label>
+                                                            <xhtml:img src="/img/node-srejected.png" alt=""/>
+                                                        </xforms:label>
+                                                        <xforms:hint>
+                                                            <xforms:output ref="$resources/set-status-to-rejected"/>
+                                                        </xforms:hint>
+                                                        <xforms:action ev:event="DOMActivate">
+                                                            <xforms:action xxforms:iterate="instance('status-change')/@*">
+                                                                <xforms:setvalue ref="context()" value="''"/>
+                                                            </xforms:action>
+                                                            <xforms:setvalue ref="instance('status-change')/@statusCode" value="'rejected'"/>
+                                                            <xforms:setvalue ref="instance('status-change')/@actionText" value="$resources/set-status-to-rejected"/>
+                                                            <xxforms:show dialog="status-dialog"/>
+                                                        </xforms:action>
+                                                    </fr:button>
+                                       <!-- button for setting status to 'cancelled' -->
+                                                    <fr:button>
+                                                        <xforms:label>
+                                                            <xhtml:img src="/img/node-scancelled.png" alt=""/>
+                                                        </xforms:label>
+                                                        <xforms:hint>
+                                                            <xforms:output ref="$resources/set-status-to-cancelled"/>
+                                                        </xforms:hint>
+                                                        <xforms:action ev:event="DOMActivate">
+                                                            <xforms:action xxforms:iterate="instance('status-change')/@*">
+                                                                <xforms:setvalue ref="context()" value="''"/>
+                                                            </xforms:action>
+                                                            <xforms:setvalue ref="instance('status-change')/@statusCode" value="'cancelled'"/>
+                                                            <xforms:setvalue ref="instance('status-change')/@actionText" value="$resources/set-status-to-cancelled"/>
+                                                            <xxforms:show dialog="status-dialog"/>
+                                                        </xforms:action>
+                                                    </fr:button>
+                                                </xforms:group>
+                                            </xforms:group>
+                                 <!-- button for setting status to 'deprecated' -->
+                                            <fr:button ref=".[codeSystem[not(@url)][@ident=instance('document')][@effectiveDate=instance('version-navigation')]/@statusCode='final']">
+                                                <xforms:label>
+                                                    <xhtml:img src="/img/node-sdeprecated.png" alt=""/>
+                                                </xforms:label>
+                                                <xforms:hint>
+                                                    <xforms:output ref="$resources/set-status-to-deprecated"/>
+                                                </xforms:hint>
+                                                <xforms:action ev:event="DOMActivate">
+                                                    <xforms:action xxforms:iterate="instance('status-change')/@*">
+                                                        <xforms:setvalue ref="context()" value="''"/>
+                                                    </xforms:action>
+                                                    <xforms:setvalue ref="instance('status-change')/@statusCode" value="'deprecated'"/>
+                                                    <xforms:setvalue ref="instance('status-change')/@actionText" value="$resources/set-status-to-deprecated"/>
+                                                    <xxforms:show dialog="status-dialog"/>
+                                                </xforms:action>
+                                            </fr:button>
+                                        </xforms:group>
+                              <!-- button for deleting codesystem ref -->
+                                        <fr:button ref=".[$admin][codeSystem/@ref][count(instance('codesystem-usage')/*)=0]">
+                                            <xforms:label>
+                                                <xhtml:img src="/img/remove.gif" alt=""/>
+                                            </xforms:label>
+                                            <xforms:hint>
+                                                <xforms:output ref="$resources/remove"/>
+                                            </xforms:hint>
+                                            <xforms:action ev:event="DOMActivate">
+                                                <xforms:send submission="delete-codesystem-ref"/>
+                                                <xforms:send submission="get-decor-codesystem-list"/>
+                                                <xforms:setvalue ref="instance('codesystem-navigation')" value="instance('decor-codesystem-list')/codeSystem[1]/concat((@id|@ref),'#',@name)"/>
+                                                <xforms:send submission="get-decor-codesystem"/>
+                                                <xforms:send submission="get-codesystem-usage"/>
+                                            </xforms:action>
+                                        </fr:button>
+                              <!-- icon for creating issue -->
+                                        <xxforms:variable name="noIssue" select="empty(instance('issues-instance')/issue[object/@id=$codeSystemId])"/>
+                                        <xforms:group ref=".[$noIssue][$issueCreator]">
+                                            <fr:button id="add-issue">
+                                                <xforms:label>
+                                                    <xhtml:img src="/img/flag.png" alt=""/>
+                                                </xforms:label>
+                                                <xforms:hint>
+                                                    <xforms:output ref="$resources/add-issue"/>
+                                                </xforms:hint>
+                                                <xforms:action ev:event="DOMActivate">
+                                                    <xxforms:variable name="user" select="xxforms:get-session-attribute('username')"/>
+                                                    <xforms:insert nodeset="instance('issues-instance')/issue" at="1" position="before" origin="instance('issue-instance')/issue"/>
+                                                    <xforms:setvalue ref="instance('issues-instance')/issue[1]/object/@id" value="instance('decor-codesystem')/codeSystem[not(@effectiveDate) or @effectiveDate=instance('version-navigation')]/(@id|@ref)"/>
+                                                    <xforms:setvalue ref="instance('issues-instance')/issue[1]/object/@type" value="'CS'"/>
+                                                    <xforms:setvalue ref="instance('issues-instance')/issue[1]/object/@effectiveDate" value="instance('decor-codesystem')/codeSystem[@effectiveDate=instance('version-navigation')]/@effectiveDate"/>
+                                                    <xforms:setvalue ref="instance('issues-instance')/issue[1]/tracking/author/@id" value="instance('project-instance')//author[@username=$user]/@id"/>
+                                                    <xforms:setvalue ref="instance('issues-instance')/issue[1]/tracking/author" value="if (string-length(string-join(instance('project-instance')//author[@username=$user],''))&gt;0) then (instance('project-instance')//author[@username=$user]) else ($user)"/>
+                                                    <xforms:setvalue ref="instance('issues-instance')/issue[1]/tracking/desc/@language" value="instance('language')"/>
+                                                    <xforms:setvalue ref="instance('issues-instance')/issue[1]/tracking/desc" value="if (instance('language')='nl-NL') then '&lt;b&gt;Bevinding: &lt;/b&gt;&lt;p&gt;-&lt;/p&gt;&lt;b&gt;Voorstel: &lt;/b&gt;&lt;p&gt;-&lt;/p&gt;&lt;b&gt;Nadere toelichting: &lt;/b&gt;&lt;p&gt;-&lt;/p&gt;'                                                            else if (instance('language')='de-DE') then '&lt;b&gt;Befund: &lt;/b&gt;&lt;p&gt;-&lt;/p&gt;&lt;b&gt;Vorschlag: &lt;/b&gt;&lt;p&gt;-&lt;/p&gt;&lt;b&gt;Nähere Erläuterung: &lt;/b&gt;&lt;p&gt;-&lt;/p&gt;'                                                            else '&lt;b&gt;Finding: &lt;/b&gt;&lt;p&gt;-&lt;/p&gt;&lt;b&gt;Suggestion: &lt;/b&gt;&lt;p&gt;-&lt;/p&gt;&lt;b&gt;Further explanation: &lt;/b&gt;&lt;p&gt;-&lt;/p&gt;'"/>
+                                                    <xforms:setvalue ref="instance('issues-instance')/issue[1]/@project" value="instance('document')"/>
+                                                    <xforms:setfocus control="new-issue-title"/>
+                                                </xforms:action>
+                                            </fr:button>
+                                        </xforms:group>
+                                    </xhtml:div>
+                                </xhtml:td>
+                            </xhtml:tr>
+                            <xhtml:tr>
+                        <!-- codesystem effectiveDate -->
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/version"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:group ref=".[count(codeSystem)=1 or count(codeSystem[@id])=1]">
+                                        <xforms:output ref="codeSystem/@effectiveDate" xxforms:format="if (. castable as xs:dateTime) then replace(format-dateTime(.,'[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]', (), (), ()),' 00:00:00','') else (.)"/>
+                                        <xforms:output ref="if (codeSystem[@id][@url]) then concat(' (', $resources/repository, ': ', codeSystem[@id]/@ident, ')') else ()"/>
+                                    </xforms:group>
+                                    <xforms:group ref=".[count(codeSystem[@id])&gt;1]">
+                                        <xforms:select1 ref="instance('version-navigation')" appearance="minimal" class="auto-width">
+                                            <xforms:itemset nodeset="instance('decor-codesystem')/codeSystem[@id]">
+                                                <xforms:label>
+                                                    <xforms:output ref="@effectiveDate" xxforms:format="if (. castable as xs:dateTime) then replace(format-dateTime(.,'[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]', (), (), ()),' 00:00:00','') else (.)"/>
+                                                    <xforms:output ref="if (@url) then concat(' (', $resources/repository, ': ', @ident, ')') else ()"/>
+                                                </xforms:label> 
+                                                <xforms:value ref="@effectiveDate"/>
+                                            </xforms:itemset>
+                                            <xforms:action ev:event="xforms-value-changed">
+                                                <xforms:send submission="get-codesystem-usage"/>
+                                            </xforms:action>
+                                        </xforms:select1>
+                                    </xforms:group>
+                                </xhtml:td>
+                        <!-- codesystem status -->
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/status"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xxforms:variable name="statusCode" select="codeSystem[not(@effectiveDate) or @effectiveDate=instance('version-navigation')]/@statusCode"/>
+                                    <xforms:output ref="instance('decor-types')/ItemStatusCodeLifeCycle/enumeration[@value=$statusCode]/label[@language=$resources/@xml:lang]" class="node-s{$statusCode}"/>
+                                </xhtml:td>
+                            </xhtml:tr>
+                     <!-- group for codesystem version -->
+                            <xforms:group ref="codeSystem[@effectiveDate=instance('version-navigation')]">
+                                <xxforms:variable name="editCodeSystem" select="$admin and (@statusCode='new' or @statusCode='draft') and not(@ref)"/>
+                                <xhtml:tr>
+                           <!-- codesystem version label -->
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/versionLabel"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="@versionLabel"/>
+                                    </xhtml:td>
+                           <!-- codesystem id -->
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/id"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="(@id|@ref)"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                                <xhtml:tr>
+                           <!-- codesystem name -->
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/name"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="@name"/>
+                                    </xhtml:td>
+                           <!-- codesystem displayName -->
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/display-name"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="@displayName"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                        <!-- codesystem description -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/description"/>
+                                    </xhtml:td>
+                                    <xhtml:td colspan="3">
+                                        <xforms:output mediatype="text/html" ref="desc[@language=instance('language')]"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                        <!-- codesystem concepts heading -->
+                                <xforms:group ref=".[conceptList/codedConcept]">
+                                    <xhtml:tr>
+                                        <xhtml:td class="heading" colspan="4">
+                                            <xhtml:div class="heading">
+                                                <xforms:output ref="$resources/values"/>
+                                            </xhtml:div>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                </xforms:group>
+                        <!-- codesystem conceptList without pages -->
+                                <xforms:group ref="conceptList[count(codedConcept)&lt;=15]">
+                                    <xhtml:tr>
+                                        <xhtml:td colspan="4">
+                                            <fr:datatable height="300px" width="100%">
+                                                <xhtml:thead>
+                                                    <xhtml:tr>
+                                                        <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                                            <xforms:output ref="$resources/status"/>
+                                                        </xhtml:th>
+                                                        <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                                            <xforms:output ref="$resources/level"/>-<xforms:output ref="$resources/type"/>
+                                                        </xhtml:th>
+                                                        <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                                            <xforms:output ref="$resources/code"/>
+                                                        </xhtml:th>
+                                                        <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                                            <xforms:output ref="$resources/display-name"/>
+                                                        </xhtml:th>
+                                                        <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                                            <xforms:output ref="$resources/description"/>
+                                                        </xhtml:th>
+                                                    </xhtml:tr>
+                                                </xhtml:thead>
+                                                <xhtml:tbody>
+                                                    <xhtml:tr repeat-nodeset="codedConcept">
+                                                        <xhtml:td>
+                                                            <xxforms:variable name="statusCode" select="@statusCode"/>
+                                                            <xforms:output ref="instance('decor-types')/ItemStatusCodeLifeCycle/enumeration[@value=$statusCode]/label[@language=$resources/@xml:lang]" class="node-s{$statusCode}"/>
+                                                        </xhtml:td>
+                                                        <xhtml:td>
+                                                            <xforms:output ref="@level"/>-<xforms:output ref="@type"/>
+                                                        </xhtml:td>
+                                                        <xhtml:td>
+                                                            <xxforms:variable name="level" select="if (@level castable as xs:integer) then xs:integer(@level) else (0)"/>
+                                                            <xforms:repeat nodeset="1 to $level">
+                                                                <xforms:output ref="'&#160;&#160;&#160;'"/>
+                                                            </xforms:repeat>
+                                                            <xforms:group ref=".[@type='A']">
+                                                                <xhtml:b>
+                                                                    <xhtml:i>
+                                                                        <xforms:output ref="@code"/>
+                                                                    </xhtml:i>
+                                                                </xhtml:b>
+                                                            </xforms:group>
+                                                            <xforms:group ref=".[@type!='A']">
+                                                                <xhtml:b>
+                                                                    <xforms:output ref="@code"/>
+                                                                </xhtml:b>
+                                                            </xforms:group>
+                                                        </xhtml:td>
+                                                        <xhtml:td>
+                                                            <xforms:output ref="designation[@language=instance('language')]/@displayName"/>
+                                                        </xhtml:td>
+                                                        <xhtml:td>
+                                                            <xforms:output ref="designation[@language=instance('language')]"/>
+                                                        </xhtml:td>
+                                                    </xhtml:tr>
+                                                </xhtml:tbody>
+                                                <xforms:action ev:event="fr-selection-changed">
+                                                    <xforms:setvalue ref="instance('codesystemcode-navigation')/@code" value="event('selected')/@code"/>
+                                                </xforms:action>
+                                            </fr:datatable>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                </xforms:group>
+                        <!-- codesystem conceptList with pages -->
+                                <xforms:group ref="conceptList[count(codedConcept)&gt;15]">
+                                    <xhtml:tr>
+                                        <xhtml:td colspan="4">
+                                            <fr:datatable paginated="true" rowsPerPage="15" maxNbPagesToDisplay="10" height="300px" width="100%">
+                                                <xhtml:thead>
+                                                    <xhtml:tr>
+                                                        <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                                            <xforms:output ref="$resources/status"/>
+                                                        </xhtml:th>
+                                                        <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                                            <xforms:output ref="$resources/level"/>-<xforms:output ref="$resources/type"/>
+                                                        </xhtml:th>
+                                                        <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                                            <xforms:output ref="$resources/code"/>
+                                                        </xhtml:th>
+                                                        <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                                            <xforms:output ref="$resources/display-name"/>
+                                                        </xhtml:th>
+                                                        <xhtml:th fr:sortable="false" fr:resizeable="true">
+                                                            <xforms:output ref="$resources/description"/>
+                                                        </xhtml:th>
+                                                    </xhtml:tr>
+                                                </xhtml:thead>
+                                                <xhtml:tbody>
+                                                    <xhtml:tr repeat-nodeset="codedConcept">
+                                                        <xhtml:td>
+                                                            <xxforms:variable name="statusCode" select="@statusCode"/>
+                                                            <xforms:output ref="instance('decor-types')/ItemStatusCodeLifeCycle/enumeration[@value=$statusCode]/label[@language=$resources/@xml:lang]" class="node-s{$statusCode}"/>
+                                                        </xhtml:td>
+                                                        <xhtml:td>
+                                                            <xforms:output ref="@level"/>-<xforms:output ref="@type"/>
+                                                        </xhtml:td>
+                                                        <xhtml:td>
+                                                            <xxforms:variable name="level" select="if (@level castable as xs:integer) then xs:integer(@level) else (0)"/>
+                                                            <xforms:repeat nodeset="1 to $level">
+                                                                <xforms:output ref="'&#160;&#160;&#160;'"/>
+                                                            </xforms:repeat>
+                                                            <xforms:group ref=".[@type='A']">
+                                                                <xhtml:b>
+                                                                    <xhtml:i>
+                                                                        <xforms:output ref="@code"/>
+                                                                    </xhtml:i>
+                                                                </xhtml:b>
+                                                            </xforms:group>
+                                                            <xforms:group ref=".[@type!='A']">
+                                                                <xhtml:b>
+                                                                    <xforms:output ref="@code"/>
+                                                                </xhtml:b>
+                                                            </xforms:group>
+                                                        </xhtml:td>
+                                                        <xhtml:td>
+                                                            <xforms:output ref="designation[@language=instance('language')]/@displayName"/>
+                                                        </xhtml:td>
+                                                        <xhtml:td>
+                                                            <xforms:output ref="designation[@language=instance('language')]"/>
+                                                        </xhtml:td>
+                                                    </xhtml:tr>
+                                                </xhtml:tbody>
+                                                <xforms:action ev:event="fr-selection-changed">
+                                                    <xforms:setvalue ref="instance('codesystemcode-navigation')/@code" value="event('selected')/@code"/>
+                                                </xforms:action>
+                                            </fr:datatable>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                </xforms:group>
+                        <!-- group for new issues -->
+                                <xforms:group ref="instance('issues-instance')/issue[object/@id=instance('decor-codesystem')/codeSystem[not(@effectiveDate) or @effectiveDate=instance('version-navigation')]/(@id|@ref)]">
+                                    <xhtml:tr>
+                                        <xhtml:td colspan="4">
+                                            <xi:include href="/db/apps/art/resources/xform-parts.xml" xpointer="xpointer(//part[@id='issue-new'])">
+                                                <xi:fallback>
+                                                    <xhtml:p>Included document /db/apps/art/resources/xform-parts.xml not found!</xhtml:p>
+                                                </xi:fallback>
+                                            </xi:include>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                </xforms:group>
+                        <!--group for existing issues -->
+                                <xforms:group ref="instance('codesystem-issues')/issue">
+                                    <xhtml:tr>
+                                        <xhtml:td colspan="4">
+                                            <fr:accordion class="fr-accordion-lnf">
+                                                <fr:case>
+                                                    <fr:label ref="concat($resources/issues,' (',count(instance('codesystem-issues')/issue),')')"/>
+                                                    <xhtml:div class="detail">
+                                                        <fr:accordion class="fr-accordion-lnf">
+                                                            <xforms:repeat nodeset="instance('codesystem-issues')/issue">
+                                                                <fr:case>
+                                                                    <fr:label>
+                                                                        <xxforms:variable name="id" select="@id"/>
+                                                                        <xxforms:variable name="type" select="@type"/>
+                                                                        <xxforms:variable name="status" select="@currentStatusCode"/>
+                                                                        <xforms:output ref="instance('decor-types')/IssueType/enumeration[@value=$type]/label[@language=$resources/@xml:lang]" class="node-s{$status}">
+                                                                            <xforms:hint>
+                                                                                <xforms:output ref="$resources/status"/> = 
+                                                                                <xforms:output ref="instance('decor-types')/IssueStatusCodeLifeCycle/enumeration[@value=$status]/label[@language=$resources/@xml:lang]"/>
+                                                                            </xforms:hint>
+                                                                        </xforms:output>
+                                                                        <xforms:trigger appearance="minimal">
+                                                                            <xforms:label ref="concat('(',instance('project-instance')/ids/baseId[@id=string-join(tokenize($id,'\.')[position()!=last()],'.') ]/@prefix,tokenize($id,'\.')[last()],'): ')"/>
+                                                                            <xforms:action ev:event="DOMActivate">
+                                                                                <xforms:load resource="/decor-issues--{instance('project-instance')/@prefix}?issueId={$id}" show="new"/>
+                                                                            </xforms:action>
+                                                                        </xforms:trigger>
+                                                                        <xforms:output ref="@displayName"/>
+                                                                        <xhtml:div class="buttons">
+                                                                            <xforms:group ref=".[$editor or $issueCreator][@currentUserIsSubscribed='false']">
+                                                                                <xforms:trigger appearance="minimal">
+                                                                                    <xforms:label>
+                                                                                        <xhtml:img src="/img/subscribe.png" alt=""/>
+                                                                                        <xforms:output ref="$resources/subscribe"/>
+                                                                                    </xforms:label>
+                                                                                    <xforms:hint ref="$resources/subscribe-hint"/>
+                                                                                    <xforms:action ev:event="DOMActivate">
+                                                                                        <xforms:setvalue ref="instance('issue-navigation')/@id" value="$id"/>
+                                                                                        <xforms:setvalue ref="instance('issue-navigation')/@currentUserIsSubscribed" value="true()"/>
+                                                                                        <xforms:send submission="update-decor-issue-subscription"/>
+                                                                                        <xforms:setvalue ref="@currentUserIsSubscribed" value="true()"/>
+                                                                                    </xforms:action>
+                                                                                </xforms:trigger>
+                                                                            </xforms:group>
+                                                                            <xforms:group ref=".[$editor or $issueCreator][@currentUserIsSubscribed='true']">
+                                                                                <xforms:trigger appearance="minimal">
+                                                                                    <xforms:label>
+                                                                                        <xhtml:img src="/img/unsubscribe.png" alt=""/>
+                                                                                        <xforms:output ref="$resources/unsubscribe"/>
+                                                                                    </xforms:label>
+                                                                                    <xforms:hint ref="$resources/unsubscribe-hint"/>
+                                                                                    <xforms:action ev:event="DOMActivate">
+                                                                                        <xforms:setvalue ref="instance('issue-navigation')/@id" value="$id"/>
+                                                                                        <xforms:setvalue ref="instance('issue-navigation')/@currentUserIsSubscribed" value="false()"/>
+                                                                                        <xforms:send submission="update-decor-issue-subscription"/>
+                                                                                        <xforms:setvalue ref="@currentUserIsSubscribed" value="false()"/>
+                                                                                    </xforms:action>
+                                                                                </xforms:trigger>
+                                                                            </xforms:group>
+                                                                        </xhtml:div>
+                                                                    </fr:label>
+                                                                    <xi:include href="/db/apps/art/resources/xform-parts.xml" xpointer="xpointer(//part[@id='issue-readonly'])">
+                                                                        <xi:fallback>
+                                                                            <p>Included document /db/apps/art/resources/xform-parts.xml not found!</p>
+                                                                        </xi:fallback>
+                                                                    </xi:include>
+                                                                </fr:case>
+                                                            </xforms:repeat>
+                                                        </fr:accordion>
+                                                    </xhtml:div>
+                                                </fr:case>
+                                            </fr:accordion>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                </xforms:group>
+                        <!-- separator -->
+                                <xhtml:tr>
+                                    <xhtml:td colspan="4">
+                                        <xhtml:p/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                        <!-- accordeon with usage -->
+                                <xforms:group ref=".[not(instance('decor-codesystem')//@statusCode='new')]">
+                                    <xhtml:tr>
+                                        <xhtml:td colspan="4">
+                                            <fr:accordion class="fr-accordion-lnf">
+                                                <fr:case>
+                                                    <fr:label ref="concat($resources/usage,' (',count(instance('codesystem-usage')/(association|template)),')')"/>
+                                                    <fr:accordion class="fr-accordion-lnf">
+                                                        <fr:case>
+                                                            <fr:label ref="concat($resources/associations,' (',count(instance('codesystem-usage')/association),')')"/>
+                                                            <xhtml:table width="100%" class="detail zebra-table">
+                                                <!-- codesystem static associations -->
+                                                                <xhtml:tr>
+                                                                    <xhtml:td class="item-label">
+                                                                        <xforms:output ref="$resources/id"/>
+                                                                    </xhtml:td>
+                                                                    <xhtml:td class="item-label">
+                                                                        <xforms:output ref="$resources/name"/>
+                                                                    </xhtml:td>
+                                                                    <xhtml:td class="item-label">
+                                                                        <xforms:output ref="$resources/type"/>
+                                                                    </xhtml:td>
+                                                                    <xhtml:td class="item-label">
+                                                                        <xforms:output ref="$resources/project"/>
+                                                                    </xhtml:td>
+                                                                </xhtml:tr>
+                                                                <xforms:repeat nodeset="instance('codesystem-usage')/association">
+                                                                    <xhtml:tr class="not-selectable zebra-row-{if (position() mod 2 = 0) then 'even' else 'odd'}">
+                                                                        <xhtml:td>
+                                                                            <xforms:output ref="@conceptId"/>
+                                                                        </xhtml:td>
+                                                                        <xhtml:td>
+                                                                            <xxforms:variable name="conceptId" select="@originalConceptId"/>
+                                                                            <xxforms:variable name="conceptName" select="if (name[@language=instance('language')][string-length()&gt;0]) then (name[@language=instance('language')]) else (name[1])"/>
+                                                                            <xforms:trigger appearance="minimal">
+                                                                                <xforms:label>
+                                                                                    <xforms:output ref="$conceptName"/>
+                                                                                </xforms:label>
+                                                                                <xforms:action ev:event="DOMActivate">
+                                                                                    <xforms:load resource="/decor-datasets--{@prefix}?datasetId={@datasetId}&amp;conceptId={$conceptId}" show="new"/>
+                                                                                </xforms:action>
+                                                                            </xforms:trigger>
+                                                                            <xforms:repeat nodeset="instance('codesystem-usage')/terminologyAssociation[concept/@id=$conceptId][@code=instance('codesystemcode-navigation')/@code][@codeSystem=instance('codesystemcode-navigation')/@codeSystem]">
+                                                                                <xhtml:div class="not-selectable">
+                                                                                    <xhtml:span>• </xhtml:span>
+                                                                                    <xhtml:span style="margin-left: 5px;">
+                                                                                        <xforms:output ref="if (name[@language=instance('language')][string-length()&gt;0]) then (name[@language=instance('language')]) else (name[1])"/>
+                                                                                    </xhtml:span>
+                                                                                </xhtml:div>
+                                                                            </xforms:repeat>
+                                                                        </xhtml:td>
+                                                                        <xhtml:td>
+                                                                            <xforms:group ref=".[@type='static']">
+                                                                                <xforms:output ref="$resources/static"/>
+                                                                            </xforms:group>
+                                                                            <xforms:group ref=".[@type='dynamic']">
+                                                                                <xforms:output ref="$resources/dynamic"/>
+                                                                            </xforms:group>
+                                                                        </xhtml:td>
+                                                                        <xhtml:td>
+                                                                            <xforms:output ref="@projectName"/>
+                                                                        </xhtml:td>
+                                                                    </xhtml:tr>
+                                                                </xforms:repeat>
+                                                            </xhtml:table>
+                                                        </fr:case>
+                                                    </fr:accordion>
+                                                    <fr:accordion class="fr-accordion-lnf">
+                                                        <fr:case>
+                                                            <fr:label ref="concat($resources/templates,' (',count(instance('codesystem-usage')/template),')')"/>
+                                                            <xhtml:table width="100%" class="detail zebra-table">
+                                                <!-- codesystem used in templates -->
+                                                                <xhtml:tr>
+                                                                    <xhtml:td class="item-label">
+                                                                        <xforms:output ref="$resources/id"/>
+                                                                    </xhtml:td>
+                                                                    <xhtml:td class="item-label">
+                                                                        <xforms:output ref="$resources/name"/>
+                                                                    </xhtml:td>
+                                                                    <xhtml:td class="item-label">
+                                                                        <xforms:output ref="$resources/type"/>
+                                                                    </xhtml:td>
+                                                                    <xhtml:td class="item-label">
+                                                                        <xforms:output ref="$resources/project"/>
+                                                                    </xhtml:td>
+                                                                </xhtml:tr>
+                                                                <xforms:repeat nodeset="instance('codesystem-usage')/template">
+                                                                    <xhtml:tr class="not-selectable zebra-row-{if (position() mod 2 = 0) then 'even' else 'odd'}">
+                                                                        <xhtml:td>
+                                                                            <xforms:output ref="@id"/>
+                                                                        </xhtml:td>
+                                                                        <xhtml:td>
+                                                                            <xforms:trigger appearance="minimal">
+                                                                                <xforms:label>
+                                                                                    <xforms:output ref="if (string-length(@displayName)&gt;0) then @displayName else (@name)"/>
+                                                                                    <xforms:output ref="concat(' ',@effectiveDate)"/>
+                                                                                </xforms:label>
+                                                                                <xforms:action ev:event="DOMActivate">
+                                                                                    <xforms:load resource="/decor-templates--{@prefix}?templateRef={@id}&amp;templateEffectiveDate={@effectiveDate}" show="new"/>
+                                                                                </xforms:action>
+                                                                            </xforms:trigger>
+                                                                        </xhtml:td>
+                                                                        <xhtml:td>
+                                                                            <xforms:group ref=".[@type!='dynamic']">
+                                                                                <xforms:output ref="$resources/static"/>
+                                                                                <xforms:output ref="@type"/>
+                                                                            </xforms:group>
+                                                                            <xforms:group ref=".[@type='dynamic']">
+                                                                                <xforms:output ref="$resources/dynamic"/>
+                                                                            </xforms:group>
+                                                                        </xhtml:td>
+                                                                        <xhtml:td>
+                                                                            <xforms:output ref="@projectName"/>
+                                                                        </xhtml:td>
+                                                                    </xhtml:tr>
+                                                                </xforms:repeat>
+                                                            </xhtml:table>
+                                                        </fr:case>
+                                                    </fr:accordion>
+                                                </fr:case>
+                                            </fr:accordion>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                </xforms:group>
+                            </xforms:group>
+                        </xforms:group>
+                    </xhtml:table>
+                </xhtml:td>
+            </xhtml:tr>
+        </xhtml:table>
+      <!--            <fr:xforms-inspector/>-->
+    </xhtml:body>
+</xhtml:html>

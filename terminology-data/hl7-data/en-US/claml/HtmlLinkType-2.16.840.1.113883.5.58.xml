@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="29"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.58"/>
+   <Title name="HtmlLinkType" date="2012-08-02" version="1.000">HtmlLinkType values are drawn from HTML 4.0 and describe the relationship between the current document and the anchor that is the target of the link</Title>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="alternate" kind="concept">
+      <Meta name="internalId" value="11018"/>
+      <Rubric id="d1e139481" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Designates substitute versions for the document in which the link occurs. When used together with the lang attribute, it implies a translated version of the document. When used together with the media attribute, it implies a version designed for a different medium (or media).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e139494" kind="short">
+         <Label xml:lang="en-US">alternate</Label>
+      </Rubric>
+      <Rubric id="d1e139494" kind="preferred">
+         <Label xml:lang="en-US">alternate</Label>
+      </Rubric>
+   </Class>
+   <Class code="appendix" kind="concept">
+      <Meta name="internalId" value="11030"/>
+      <Rubric id="d1e139506" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Refers to a document serving as an appendix in a collection of documents.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e139519" kind="short">
+         <Label xml:lang="en-US">appendix</Label>
+      </Rubric>
+      <Rubric id="d1e139519" kind="preferred">
+         <Label xml:lang="en-US">appendix</Label>
+      </Rubric>
+   </Class>
+   <Class code="bookmark" kind="concept">
+      <Meta name="internalId" value="11032"/>
+      <Rubric id="d1e139530" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Refers to a bookmark. A bookmark is a link to a key entry point within an extended document. The title attribute may be used, for example, to label the bookmark. Note that several bookmarks may be defined in each document.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e139543" kind="short">
+         <Label xml:lang="en-US">bookmark</Label>
+      </Rubric>
+      <Rubric id="d1e139543" kind="preferred">
+         <Label xml:lang="en-US">bookmark</Label>
+      </Rubric>
+   </Class>
+   <Class code="chapter" kind="concept">
+      <Meta name="internalId" value="11027"/>
+      <Rubric id="d1e139554" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Refers to a document serving as a chapter in a collection of documents.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e139567" kind="short">
+         <Label xml:lang="en-US">chapter</Label>
+      </Rubric>
+      <Rubric id="d1e139567" kind="preferred">
+         <Label xml:lang="en-US">chapter</Label>
+      </Rubric>
+   </Class>
+   <Class code="contents" kind="concept">
+      <Meta name="internalId" value="11023"/>
+      <Rubric id="d1e139578" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Refers to a document serving as a table of contents. Some user agents also support the synonym ToC (from "Table of Contents").</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e139591" kind="short">
+         <Label xml:lang="en-US">contents</Label>
+      </Rubric>
+      <Rubric id="d1e139591" kind="preferred">
+         <Label xml:lang="en-US">contents</Label>
+      </Rubric>
+   </Class>
+   <Class code="copyright" kind="concept">
+      <Meta name="internalId" value="11026"/>
+      <Rubric id="d1e139602" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Refers to a copyright statement for the current document.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e139615" kind="short">
+         <Label xml:lang="en-US">copyright</Label>
+      </Rubric>
+      <Rubric id="d1e139615" kind="preferred">
+         <Label xml:lang="en-US">copyright</Label>
+      </Rubric>
+   </Class>
+   <Class code="glossary" kind="concept">
+      <Meta name="internalId" value="11025"/>
+      <Rubric id="d1e139626" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Refers to a document providing a glossary of terms that pertain to the current document.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e139639" kind="short">
+         <Label xml:lang="en-US">glossary</Label>
+      </Rubric>
+      <Rubric id="d1e139639" kind="preferred">
+         <Label xml:lang="en-US">glossary</Label>
+      </Rubric>
+   </Class>
+   <Class code="help" kind="concept">
+      <Meta name="internalId" value="11031"/>
+      <Rubric id="d1e139651" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Refers to a document offering help (more information, links to other sources of information, etc.).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e139664" kind="short">
+         <Label xml:lang="en-US">help</Label>
+      </Rubric>
+      <Rubric id="d1e139664" kind="preferred">
+         <Label xml:lang="en-US">help</Label>
+      </Rubric>
+   </Class>
+   <Class code="index" kind="concept">
+      <Meta name="internalId" value="11024"/>
+      <Rubric id="d1e139675" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Refers to a document providing an index for the current document.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e139688" kind="short">
+         <Label xml:lang="en-US">index</Label>
+      </Rubric>
+      <Rubric id="d1e139688" kind="preferred">
+         <Label xml:lang="en-US">index</Label>
+      </Rubric>
+   </Class>
+   <Class code="next" kind="concept">
+      <Meta name="internalId" value="11021"/>
+      <Rubric id="d1e139699" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Refers to the next document in a linear sequence of documents. User agents may choose to preload the "next" document, to reduce the perceived load time.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e139712" kind="short">
+         <Label xml:lang="en-US">next</Label>
+      </Rubric>
+      <Rubric id="d1e139712" kind="preferred">
+         <Label xml:lang="en-US">next</Label>
+      </Rubric>
+   </Class>
+   <Class code="prev" kind="concept">
+      <Meta name="internalId" value="11022"/>
+      <Rubric id="d1e139723" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Refers to the previous document in an ordered series of documents. Some user agents also support the synonym "Previous".</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e139736" kind="short">
+         <Label xml:lang="en-US">prev</Label>
+      </Rubric>
+      <Rubric id="d1e139736" kind="preferred">
+         <Label xml:lang="en-US">prev</Label>
+      </Rubric>
+   </Class>
+   <Class code="section" kind="concept">
+      <Meta name="internalId" value="11028"/>
+      <Rubric id="d1e139747" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Refers to a document serving as a section in a collection of documents.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e139760" kind="short">
+         <Label xml:lang="en-US">section</Label>
+      </Rubric>
+      <Rubric id="d1e139760" kind="preferred">
+         <Label xml:lang="en-US">section</Label>
+      </Rubric>
+   </Class>
+   <Class code="start" kind="concept">
+      <Meta name="internalId" value="11020"/>
+      <Rubric id="d1e139771" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Refers to the first document in a collection of documents. This link type tells search engines which document is considered by the author to be the starting point of the collection.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e139784" kind="short">
+         <Label xml:lang="en-US">start</Label>
+      </Rubric>
+      <Rubric id="d1e139784" kind="preferred">
+         <Label xml:lang="en-US">start</Label>
+      </Rubric>
+   </Class>
+   <Class code="stylesheet" kind="concept">
+      <Meta name="internalId" value="11019"/>
+      <Rubric id="d1e139796" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Refers to an external style sheet. See the section on external style sheets for details. This is used together with the link type "Alternate" for user-selectable alternate style sheets.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e139809" kind="short">
+         <Label xml:lang="en-US">stylesheet</Label>
+      </Rubric>
+      <Rubric id="d1e139809" kind="preferred">
+         <Label xml:lang="en-US">stylesheet</Label>
+      </Rubric>
+   </Class>
+   <Class code="subsection" kind="concept">
+      <Meta name="internalId" value="11029"/>
+      <Rubric id="d1e139820" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Refers to a document serving as a subsection in a collection of documents.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e139833" kind="short">
+         <Label xml:lang="en-US">subsection</Label>
+      </Rubric>
+      <Rubric id="d1e139833" kind="preferred">
+         <Label xml:lang="en-US">subsection</Label>
+      </Rubric>
+   </Class>
+</ClaML>

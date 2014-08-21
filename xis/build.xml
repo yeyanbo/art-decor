@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="xar" name="xis">
+    <property name="project.title" value="XIS Test information system"/>
+    <property name="project.version" value="1.1.9"/>
+    <property name="project.abbrev" value="xis"/>
+    <property name="project.app" value="xis"/>
+    <property name="project.uri" value="http://art-decor.org/ns/xis"/>
+    <property name="dependency.art.version" value="1.1.19"/>
+    <property name="build.dir" value="build"/>
+    <target name="xar">
+        <mkdir dir="${build.dir}"/>
+        <copy file="expath-pkg.xml.tmpl" tofile="expath-pkg.xml" filtering="true" overwrite="true">
+            <filterset>
+                <filter token="project.title" value="${project.title}"/>
+                <filter token="project.version" value="${project.version}"/>
+                <filter token="project.abbrev" value="${project.abbrev}"/>
+                <filter token="project.uri" value="${project.uri}"/>
+                <filter token="dependency.art.version" value="${dependency.art.version}"/>
+            </filterset>
+        </copy>
+        <zip basedir="." destfile="${build.dir}/${project.app}-${project.version}.xar" excludes="${build.dir}/* expath-pkg.xml.tmpl"/>
+    </target>
+</project>

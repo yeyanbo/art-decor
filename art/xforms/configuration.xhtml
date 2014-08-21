@@ -1,0 +1,198 @@
+<!--
+    Copyright (C) 2011-2014 ART-DECOR expert group art-decor.org
+    
+    Author: Gerrit Boers
+    
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+    
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+    
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:hl7="urn:hl7-org:v3" xmlns:atp="urn:nictiz.atp" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:widget="http://orbeon.org/oxf/xml/widget" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="configuration" xsi:schemaLocation="http://www.w3.org/1999/xhtml ../../orbeon_schemas/xhtml1-transitional-orbeon.xsd">
+    <xhtml:head>
+        <xhtml:style type="text/css">
+            .xforms-select-appearance-full span { display: block; clear: both }
+            .refreshimage { padding:10px 10px 10px 10px; }
+        </xhtml:style>
+        <xhtml:title>
+            <xforms:output ref="$resources/configuration"/>
+        </xhtml:title>
+        <xforms:model id="configuration">
+            <!-- Variable with path to art-exist for use by form -->
+            <xxforms:variable name="art-exist" select="xxforms:property('art.exist.url')"/>
+            <xxforms:variable name="systemtasks-exist" select="xxforms:property('systemtasks.exist.url')"/>
+            <xxforms:variable name="terminology-exist" select="xxforms:property('terminology.exist.url')"/>
+            <!-- resources for internationalization -->
+            <xforms:instance id="resources-instance">
+                <dummy/>
+            </xforms:instance>
+            <!-- submission for loading resources -->
+            <xforms:submission id="get-resources-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-form-resources.xquery" replace="instance" instance="resources-instance"/>
+            <!-- language -->
+            <xforms:instance id="language" xxforms:exclude-result-prefixes="#all">
+                <language/>
+            </xforms:instance>
+            
+            <!-- package list -->
+            <xforms:instance id="package-list">
+                <dummy/>
+            </xforms:instance>
+            <!-- submission for loading resources -->
+            <xforms:submission id="get-package-list" serialization="none" method="get" resource="{$art-exist}/modules/get-installed-packages-list.xquery" replace="instance" instance="package-list"/>
+            
+            <!-- update-codesystem-index -->
+            <xforms:instance id="update-codesystem-index">
+                <dummy/>
+            </xforms:instance>
+            <!-- submission for updating index -->
+            <xforms:submission id="update-classification-index" serialization="none" method="get" resource="{$terminology-exist}/claml/modules/update-claml-index.xquery" replace="instance" instance="update-codesystem-index" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+            <!-- submission for refreshing the BBR cache -->
+            <!-- cache-refresh response -->
+            <xforms:instance id="cache-refresh">
+                <dummy/>
+            </xforms:instance>
+            <xforms:submission id="refresh-bbr-cache" serialization="none" method="get" resource="{$art-exist}/../systemtasks/modules/refresh-decor-cache.xquery?secret=61fgs756.s9&amp;user={xxforms:get-session-attribute('username')}&amp;password={xxforms:get-session-attribute('password')}" replace="instance" instance="cache-refresh">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+            
+            <!-- menu-refresh response -->
+            <xforms:instance id="menu-refresh">
+                <dummy/>
+            </xforms:instance>
+            <!-- submission for menu refresh -->
+            <xforms:submission id="refresh-menu" serialization="none" method="get" resource="{$art-exist}/modules/refresh-art-menu.xquery" replace="instance" instance="menu-refresh" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+            <xforms:action ev:event="xforms-model-construct-done">
+                <xforms:send submission="get-resources-submission"/>
+                <xforms:setvalue ref="instance('language')" value="if (string-length(xxforms:get-session-attribute('language'))&gt;0) then (xxforms:get-session-attribute('language')) else (instance('resources-instance')//resources[1]/@xml:lang/string())"/>
+                <xforms:send submission="get-package-list"/>
+            </xforms:action>
+            <!-- relevant language is returned as first node, rest should be empty -->
+            <xxforms:variable name="resources" select="instance('resources-instance')//resources[1]"/>
+            <xxforms:variable name="administrator" select="contains(xxforms:get-session-attribute('groups'),'dba')"/>
+        </xforms:model>
+    </xhtml:head>
+    <!-- Start of XForm body -->
+    <xhtml:body>
+        <xhtml:table width="100%" class="detail zebra-table">
+            <xhtml:tr>
+                <xhtml:td class="heading" colspan="3">
+                    <xhtml:div class="heading">
+                        <xforms:output ref="$resources/installed-packages"/>
+                    </xhtml:div>
+                </xhtml:td>
+            </xhtml:tr>
+            <xhtml:tr class="not-selectable">
+                <xhtml:td width="8%" class="heading">
+                    <xforms:output ref="$resources/name"/>
+                </xhtml:td>
+                <xhtml:td width="8%" class="heading">
+                    <xforms:output ref="$resources/version"/>
+                </xhtml:td>
+                <xhtml:td width="8%" class="heading">
+                    <xforms:output ref="$resources/collection"/>
+                </xhtml:td>
+            </xhtml:tr>
+            <xforms:repeat nodeset="instance('package-list')/package" id="package-list2">
+                <xhtml:tr class="not-selectable zebra-row-{if (position() mod 2 = 0) then 'even' else 'odd'}">
+                    <xhtml:td>
+                        <xforms:output ref="@title"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:output ref="@version"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:output ref="@collection"/>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xforms:repeat>
+        </xhtml:table>
+        <xforms:group ref=".[$administrator]">
+            <xhtml:table width="100%" class="detail" style="margin-top:1.5em;">
+                <xhtml:tr>
+                    <xhtml:td class="heading" colspan="2">
+                        <xhtml:div class="heading">
+                            <xforms:output ref="$resources/functions"/>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td>
+                        <fr:button>
+                            <xforms:label>
+                                <xhtml:img src="/img/arrow_refresh.png" alt=""/>
+                            </xforms:label>
+                            <xforms:hint ref="$resources/refresh-menu"/>
+                            <xforms:action ev:event="DOMActivate">
+                                <xforms:send submission="refresh-menu"/>
+                            </xforms:action>
+                        </fr:button>
+                        <xforms:output ref="$resources/refresh-menu"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:group ref="instance('menu-refresh')[@dateTime]">
+                            <xhtml:img src="/img/tick.png" alt="ready"/>
+                            <xforms:output ref="$resources/as-of"/>
+                            <xforms:output ref="@dateTime" xxforms:format="if (. castable as xs:dateTime) then replace(format-dateTime(.,'[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]', (), (), ()),' 00:00:00','') else (.)"/>
+                        </xforms:group>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td>
+                        <fr:button>
+                            <xforms:label>
+                                <xhtml:img src="/img/arrow_refresh.png" alt=""/>
+                            </xforms:label>
+                            <xforms:hint ref="$resources/update-codesystem-index"/>
+                            <xforms:action ev:event="DOMActivate">
+                                <xforms:send submission="update-classification-index"/>
+                            </xforms:action>
+                        </fr:button>
+                        <xforms:output ref="$resources/update-codesystem-index"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:group ref="instance('update-codesystem-index')[@index]">
+                            <xhtml:img src="/img/tick.png" alt="ready"/>
+                            <xforms:output ref="@index"/> (<xforms:output ref="@codeSystems"/>)
+                        </xforms:group>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td>
+                        <fr:button>
+                            <xforms:label>
+                                <xhtml:img src="/img/arrow_refresh.png" alt=""/>
+                            </xforms:label>
+                            <xforms:hint ref="$resources/refresh-bbr"/>
+                            <xforms:action ev:event="DOMActivate">
+                                <xforms:send submission="refresh-bbr-cache"/>
+                            </xforms:action>
+                        </fr:button>
+                        <xforms:output ref="$resources/refresh-bbr"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:group ref="instance('cache-refresh')[result]">
+                            <xhtml:img src="/img/tick.png" alt="ready"/>
+                            <xforms:output ref="concat($resources/bbr-cached, ': ', result/@cached, ', ', $resources/bbr-unreachable, ': ', result/@unreachable, ', ', $resources/as-of)"/>
+                            <xforms:output ref="result/@time" xxforms:format="if (. castable as xs:dateTime) then replace(format-dateTime(.,'[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]', (), (), ()),' 00:00:00','') else (.)"/>
+                        </xforms:group>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xhtml:table>
+        </xforms:group>
+    </xhtml:body>
+</xhtml:html>

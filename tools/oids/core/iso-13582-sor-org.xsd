@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+
+    ISO TC 215
+
+    ISO TS 13582
+    Health Informatics — Communication model and XML-interface specification for OID Registries (Sharing of OID registry information in healthcare)
+
+    W3C schema
+
+    version 2012-02-25
+
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sch="http://www.ascc.net/xml/schematron" elementFormDefault="qualified">
+    <xsd:include schemaLocation="iso-21090_hl7-r2_datatypes.xsd"/>
+
+    <!-- This OID registry  -->
+    <xsd:element name="registry">
+        <xsd:annotation>
+            <xsd:documentation>The OID registry</xsd:documentation>
+            <xsd:appinfo>
+                <sch:pattern name="Validate xxx type">
+                    <sch:rule abstract="true" id="xxx">
+                        <sch:report test="@id and xxx[@id=current/@id]"> ERROR: yyy</sch:report>
+                    </sch:rule>
+                </sch:pattern>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                
+                <!-- CLASS ATTRIBUTES -->
+                
+                <!-- valid time -->
+                <xsd:element name="validTime" type="IVL_TS" minOccurs="1" maxOccurs="unbounded">
+                    <xsd:annotation>
+                        <xsd:documentation>This is the validity time interval, i.e. the begin (and end) time when this registry is/was responsible for registering OIDs. This can be a list of
+                            intervals.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                
+                <!-- scoped OIDs -->
+                <xsd:element name="scopedOID" type="ST.OID" minOccurs="1" maxOccurs="unbounded"/>
+                
+                <!-- name of the registry -->
+                <xsd:element name="name" type="ST" minOccurs="1" maxOccurs="1"/>
+                
+                <!-- description of the registry, multiple languages possible -->
+                <xsd:element name="description" type="ED" minOccurs="0" maxOccurs="unbounded"/>
+                
+                <!-- CLASS ASSOCIATIONS -->
+                
+                <!-- association to hosting person -->
+                <xsd:element name="person" type="PersonType" minOccurs="1" maxOccurs="unbounded"/>
+                
+                <!-- association to hosting organization -->
+                <xsd:element name="hostingOrganization" type="OrganizationType" minOccurs="1" maxOccurs="unbounded"/>
+                
+                <!-- association to 0..* OID definitions -->
+                <xsd:element ref="oid" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:complexType name="PersonType">
+        <xsd:sequence>
+            <!-- CLASS ATTRIBUTES -->
+            <!-- person name -->
+            <xsd:element name="name" type="EN" minOccurs="1" maxOccurs="unbounded"/>
+            <!-- person addr -->
+            <xsd:element name="addr" type="AD" minOccurs="0" maxOccurs="unbounded"/>
+            <!-- person telecom -->
+            <xsd:element name="telecom" type="TEL" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="OrganizationType">
+        <xsd:sequence>
+            <!-- CLASS ATTRIBUTES -->
+            <!-- organization ids -->
+            <xsd:element name="id" type="ST.OID" minOccurs="0" maxOccurs="unbounded"/>
+            <!-- organization name -->
+            <xsd:element name="name" type="EN" minOccurs="1" maxOccurs="unbounded"/>
+            <!-- organization address -->
+            <xsd:element name="addr" type="AD" minOccurs="0" maxOccurs="unbounded"/>
+            <!-- organization telecom -->
+            <xsd:element name="telecom" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- OID definition -->
+    <xsd:element name="oid">
+        <xsd:complexType>
+            <xsd:sequence>
+
+                <!-- CLASS ATTRIBUTES -->
+
+                <!-- dotNotation -->
+                <xsd:element name="dotNotation" type="ST.OID" minOccurs="1" maxOccurs="1"/>
+
+                <!-- asn1Notation -->
+                <xsd:element name="asn1Notation" type="ST.ASN1" minOccurs="0" maxOccurs="1"/>
+
+                <!-- iriNotation -->
+                <xsd:element name="iriNotation" type="ST.IRI" minOccurs="0" maxOccurs="1"/>
+
+                <!-- symbolicName -->
+                <xsd:element name="symbolicName" type="ST.SYMB" minOccurs="0" maxOccurs="1"/>
+                
+                <!-- category -->
+                <xsd:element name="category" type="OIDcategories" minOccurs="1" maxOccurs="1"/>
+
+                <!-- status -->
+                <xsd:element name="status" type="OIDstatusCodes" minOccurs="1" maxOccurs="1"/>
+
+                <!-- creationDate -->
+                <xsd:element name="creationDate" type="TS" minOccurs="0" maxOccurs="1"/>
+
+                <!-- realm -->
+                <xsd:element name="realm" type="CS" minOccurs="0" maxOccurs="unbounded"/>
+
+                <!-- description -->
+                <xsd:element name="description" type="ED" minOccurs="1" maxOccurs="unbounded"/>
+                
+                <!-- CLASS ASSOCIATIONS -->
+               
+                <!-- registration authority -->
+                <xsd:element name="registrationAuthority" type="RegistrationAuthorityType" minOccurs="1" maxOccurs="1"/>
+
+                <!-- responsible authority -->
+                <xsd:element name="responsibleAuthority" type="ResponsibleAuthorityType" minOccurs="1" maxOccurs="unbounded"/>
+
+                <!-- submitting authority -->
+                <xsd:element name="submittingAuthority" type="SubmittingAuthorityType" minOccurs="0" maxOccurs="1"/>
+
+                <!-- additional property -->
+                <xsd:element name="additionalProperty" type="AdditionalPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+
+                <!-- history annotation -->
+                <xsd:element name="historyAnnotation" type="HistoryAnnotationType" minOccurs="0" maxOccurs="unbounded"/>
+
+                <!-- reference -->
+                <xsd:element name="reference" type="ReferenceType" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:complexType name="RegistrationAuthorityType">
+        <xsd:sequence>
+            <!-- CLASS ATTRIBUTES -->
+            <!-- role code -->
+            <xsd:element name="code" type="RoleCodes" minOccurs="1" maxOccurs="1"/>
+            <!-- CLASS ASSOCIATIONS -->
+            <!-- association to person -->
+            <xsd:element name="person" type="PersonType" minOccurs="0" maxOccurs="unbounded"/>
+            <!-- association to organization -->
+            <xsd:element name="scopingOrganization" type="OrganizationType" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ResponsibleAuthorityType">
+        <xsd:sequence>
+            <!-- CLASS ATTRIBUTES -->
+            <!-- role code -->
+            <xsd:element name="code" type="RoleCodes" minOccurs="1" maxOccurs="1"/>
+            <!-- status code -->
+            <xsd:element name="statusCode" type="RoleStatus" minOccurs="1" maxOccurs="1"/>
+            <!-- valid time -->
+            <xsd:element name="validTime" type="IVL_TS" minOccurs="1" maxOccurs="unbounded"/>
+            <!-- CLASS ASSOCIATIONS -->
+            <!-- association to person -->
+            <xsd:element name="person" type="PersonType" minOccurs="0" maxOccurs="unbounded"/>
+            <!-- association to organization -->
+            <xsd:element name="scopingOrganization" type="OrganizationType" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="SubmittingAuthorityType">
+        <xsd:sequence>
+            <!-- CLASS ATTRIBUTES -->
+            <!-- role code -->
+            <xsd:element name="code" type="RoleCodes" minOccurs="1" maxOccurs="1"/>
+            <!-- application date -->
+            <xsd:element name="applicationDate" type="TS" minOccurs="0" maxOccurs="1"/>
+            <!-- CLASS ASSOCIATIONS -->
+            <!-- association to person -->
+            <xsd:element name="person" type="PersonType" minOccurs="1" maxOccurs="1"/>
+            <!-- association to organization -->
+            <xsd:element name="scopingOrganization" type="OrganizationType" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="HistoryAnnotationType">
+        <xsd:sequence>
+            <!-- CLASS ATTRIBUTES -->
+            <!-- annotation date -->
+            <xsd:element name="annotationDate" type="TS" minOccurs="0" maxOccurs="1"/>
+            <!-- text -->
+            <xsd:element name="text" type="ED" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ReferenceType">
+        <xsd:sequence>
+            <!-- CLASS ATTRIBUTES -->
+            <!-- reference -->
+            <xsd:element name="ref" type="TEL" minOccurs="1" maxOccurs="1"/>
+            <!-- type -->
+            <xsd:element name="type" type="ReferenceTypeCodes" minOccurs="1" maxOccurs="1"/>
+            <!-- reference -->
+            <xsd:element name="lastVisitedDate" type="TS" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="AdditionalPropertyType">
+        <xsd:sequence>
+            <!-- CLASS ATTRIBUTES -->
+            <!-- attribute -->
+            <xsd:element name="attribute" type="ST" minOccurs="1" maxOccurs="1"/>
+            <!-- value -->
+            <xsd:element name="value" type="ST" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ST.OID">
+        <xsd:complexContent>
+            <xsd:restriction base="ST">
+                <xsd:attribute name="value">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:pattern value="\{?\s*(0|[1-9][0-9]*)(\.(0|[1-9][0-9]*))*\s*\}?"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:attribute>
+            </xsd:restriction>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ST.ASN1">
+        <xsd:complexContent>
+            <xsd:restriction base="ST">
+                <xsd:attribute name="value">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <!-- 2DO: check pattern -->
+                            <xsd:pattern value="\{?\s*([a-z][a-zA-Z0-9\-]*\s*((\s*(0|[1-9][0-9]*)\s*\))?|(0|[1-9][0-9]*))\s*){2,}\s*\}?"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:attribute>
+            </xsd:restriction>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ST.IRI">
+        <xsd:complexContent>
+            <xsd:restriction base="ST">
+                <xsd:attribute name="value">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <!-- 2DO: pattern to follow -->
+                            <xsd:pattern value=".*"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:attribute>
+            </xsd:restriction>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ST.SYMB">
+        <xsd:complexContent>
+            <xsd:restriction base="ST">
+                <xsd:attribute name="value">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:pattern value="[a-z]([a-z]|[A-Z]|[0-9]|[\-][^-])*([^-])?"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:attribute>
+            </xsd:restriction>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="OIDcategories">
+        <xsd:complexContent>
+            <xsd:restriction base="CD">
+                <xsd:attribute name="code" type="list_OIDcategories"/>
+            </xsd:restriction>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:simpleType name="list_OIDcategories">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="N">
+                <xsd:annotation>
+                    <xsd:documentation>node</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="NRA">
+                <xsd:annotation>
+                    <xsd:documentation>registration authority (RA)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="NMN">
+                <xsd:annotation>
+                    <xsd:documentation>structure for the management of OIDs</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="L">
+                <xsd:annotation>
+                    <xsd:documentation>leaf</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="LIO">
+                <xsd:annotation>
+                    <xsd:documentation>an instance of an object</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="LNS">
+                <xsd:annotation>
+                    <xsd:documentation>a namespace identifier </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="OIDstatusCodes">
+        <xsd:complexContent>
+            <xsd:restriction base="CD">
+                <xsd:attribute name="code" type="list_OIDstatusCodes"/>
+            </xsd:restriction>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:simpleType name="list_OIDstatusCodes">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="pending">
+                <xsd:annotation>
+                    <xsd:documentation>OID assignment pending</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="completed">
+                <xsd:annotation>
+                    <xsd:documentation>OID assignment complete</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="retired">
+                <xsd:annotation>
+                    <xsd:documentation>OID retired/withdrawn</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="unknown">
+                <xsd:annotation>
+                    <xsd:documentation>status of the OID unknown</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="ReferenceTypeCodes">
+        <xsd:complexContent>
+            <xsd:restriction base="CD">
+                <xsd:attribute name="code" type="list_ReferenceTypeCodes"/>
+            </xsd:restriction>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:simpleType name="list_ReferenceTypeCodes">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="RPLC">
+                <xsd:annotation>
+                    <xsd:documentation>replaced by OID</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PREF">
+                <xsd:annotation>
+                    <xsd:documentation>preferred OID</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="LINK">
+                <xsd:annotation>
+                    <xsd:documentation>link access (to code and value set tables)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="IDSD">
+                <xsd:annotation>
+                    <xsd:documentation>identification scheme documentation</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="RoleCodes">
+        <xsd:complexContent>
+            <xsd:restriction base="CD">
+                <xsd:attribute name="code" type="list_RoleCodes"/>
+            </xsd:restriction>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:simpleType name="list_RoleCodes">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="PRI">
+                <xsd:annotation>
+                    <xsd:documentation>primary</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SEC">
+                <xsd:annotation>
+                    <xsd:documentation>secondary</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OBO">
+                <xsd:annotation>
+                    <xsd:documentation>on behalf of</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CON">
+                <xsd:annotation>
+                    <xsd:documentation>contact person</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="RoleStatus">
+        <xsd:complexContent>
+            <xsd:restriction base="CD">
+                <xsd:attribute name="code" type="list_RoleStatus"/>
+            </xsd:restriction>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:simpleType name="list_RoleStatus">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="active">
+                <xsd:annotation>
+                    <xsd:documentation>active</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="terminated">
+                <xsd:annotation>
+                    <xsd:documentation>terminated</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

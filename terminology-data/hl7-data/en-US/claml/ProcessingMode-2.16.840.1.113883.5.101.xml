@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="29"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.101"/>
+   <Title name="ProcessingMode" date="2012-08-02" version="1.000"/>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="A" kind="concept">
+      <Meta name="internalId" value="10121"/>
+      <Rubric id="d1e185838" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Identifies archive mode of processing.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e185851" kind="short">
+         <Label xml:lang="en-US">Archive</Label>
+      </Rubric>
+      <Rubric id="d1e185851" kind="preferred">
+         <Label xml:lang="en-US">Archive</Label>
+      </Rubric>
+   </Class>
+   <Class code="I" kind="concept">
+      <Meta name="internalId" value="10123"/>
+      <Rubric id="d1e185863" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Identifies initial load mode of processing.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e185876" kind="short">
+         <Label xml:lang="en-US">Initial load</Label>
+      </Rubric>
+      <Rubric id="d1e185876" kind="preferred">
+         <Label xml:lang="en-US">Initial load</Label>
+      </Rubric>
+   </Class>
+   <Class code="R" kind="concept">
+      <Meta name="internalId" value="10122"/>
+      <Rubric id="d1e185887" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Identifies restore mode of processing.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e185900" kind="short">
+         <Label xml:lang="en-US">Restore from archive</Label>
+      </Rubric>
+      <Rubric id="d1e185900" kind="preferred">
+         <Label xml:lang="en-US">Restore from archive</Label>
+      </Rubric>
+   </Class>
+   <Class code="T" kind="concept">
+      <Meta name="internalId" value="10124"/>
+      <Rubric id="d1e185911" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Identifies on-line mode of processing.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e185924" kind="short">
+         <Label xml:lang="en-US">Current processing</Label>
+      </Rubric>
+      <Rubric id="d1e185924" kind="preferred">
+         <Label xml:lang="en-US">Current processing</Label>
+      </Rubric>
+   </Class>
+</ClaML>

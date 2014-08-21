@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="146"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.9"/>
+   <Title name="CalendarCycle" date="2012-08-02" version="1.000">Calendar cycle identifiers</Title>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="_CalendarCycleOneLetter" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21046"/>
+      <SubClass code="CW"/>
+      <SubClass code="W"/>
+      <SubClass code="CY"/>
+      <SubClass code="Y"/>
+      <SubClass code="D"/>
+      <SubClass code="DM"/>
+      <SubClass code="DW"/>
+      <SubClass code="J"/>
+      <SubClass code="H"/>
+      <SubClass code="HD"/>
+      <SubClass code="M"/>
+      <SubClass code="MY"/>
+      <SubClass code="N"/>
+      <SubClass code="NH"/>
+      <SubClass code="S"/>
+      <SubClass code="SN"/>
+      <Rubric id="d1e83177" kind="short">
+         <Label xml:lang="en-US">CalendarCycleOneLetter</Label>
+      </Rubric>
+      <Rubric id="d1e83177" kind="preferred">
+         <Label xml:lang="en-US">CalendarCycleOneLetter</Label>
+      </Rubric>
+   </Class>
+   <Class code="_CalendarCycleTwoLetter" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21047"/>
+      <SubClass code="CW"/>
+      <SubClass code="W"/>
+      <SubClass code="CY"/>
+      <SubClass code="Y"/>
+      <SubClass code="D"/>
+      <SubClass code="DM"/>
+      <SubClass code="DW"/>
+      <SubClass code="J"/>
+      <SubClass code="H"/>
+      <SubClass code="HD"/>
+      <SubClass code="M"/>
+      <SubClass code="MY"/>
+      <SubClass code="N"/>
+      <SubClass code="NH"/>
+      <SubClass code="S"/>
+      <SubClass code="SN"/>
+      <SubClass code="_GregorianCalendarCycle"/>
+      <SubClass code="CD"/>
+      <SubClass code="CH"/>
+      <SubClass code="CM"/>
+      <SubClass code="CN"/>
+      <SubClass code="CS"/>
+      <SubClass code="DY"/>
+      <SubClass code="WY"/>
+      <Rubric id="d1e83187" kind="short">
+         <Label xml:lang="en-US">CalendarCycleTwoLetter</Label>
+      </Rubric>
+      <Rubric id="d1e83187" kind="preferred">
+         <Label xml:lang="en-US">CalendarCycleTwoLetter</Label>
+      </Rubric>
+   </Class>
+   <Class code="CW W" kind="concept">
+      <Meta name="internalId" value="10689"/>
+      <SuperClass code="_CalendarCycleOneLetter"/>
+      <SuperClass code="_CalendarCycleTwoLetter"/>
+      <Rubric id="d1e83206" kind="short">
+         <Label xml:lang="en-US">week (continuous)</Label>
+      </Rubric>
+      <Rubric id="d1e83206" kind="preferred">
+         <Label xml:lang="en-US">week (continuous)</Label>
+      </Rubric>
+   </Class>
+   <Class code="CY Y" kind="concept">
+      <Meta name="internalId" value="10686"/>
+      <SuperClass code="_CalendarCycleOneLetter"/>
+      <SuperClass code="_CalendarCycleTwoLetter"/>
+      <Rubric id="d1e83228" kind="short">
+         <Label xml:lang="en-US">year</Label>
+      </Rubric>
+      <Rubric id="d1e83228" kind="preferred">
+         <Label xml:lang="en-US">year</Label>
+      </Rubric>
+   </Class>
+   <Class code="D DM" kind="concept">
+      <Meta name="internalId" value="10691"/>
+      <SuperClass code="_CalendarCycleOneLetter"/>
+      <SuperClass code="_CalendarCycleTwoLetter"/>
+      <Rubric id="d1e83250" kind="short">
+         <Label xml:lang="en-US">day of the month</Label>
+      </Rubric>
+      <Rubric id="d1e83250" kind="preferred">
+         <Label xml:lang="en-US">day of the month</Label>
+      </Rubric>
+   </Class>
+   <Class code="DW J" kind="concept">
+      <Meta name="internalId" value="10694"/>
+      <SuperClass code="_CalendarCycleOneLetter"/>
+      <SuperClass code="_CalendarCycleTwoLetter"/>
+      <Rubric id="d1e83272" kind="short">
+         <Label xml:lang="en-US">day of the week (begins with Monday)</Label>
+      </Rubric>
+      <Rubric id="d1e83272" kind="preferred">
+         <Label xml:lang="en-US">day of the week (begins with Monday)</Label>
+      </Rubric>
+   </Class>
+   <Class code="H HD" kind="concept">
+      <Meta name="internalId" value="10695"/>
+      <SuperClass code="_CalendarCycleOneLetter"/>
+      <SuperClass code="_CalendarCycleTwoLetter"/>
+      <Rubric id="d1e83294" kind="short">
+         <Label xml:lang="en-US">hour of the day</Label>
+      </Rubric>
+      <Rubric id="d1e83294" kind="preferred">
+         <Label xml:lang="en-US">hour of the day</Label>
+      </Rubric>
+   </Class>
+   <Class code="M MY" kind="concept">
+      <Meta name="internalId" value="10687"/>
+      <SuperClass code="_CalendarCycleOneLetter"/>
+      <SuperClass code="_CalendarCycleTwoLetter"/>
+      <Rubric id="d1e83317" kind="short">
+         <Label xml:lang="en-US">month of the year</Label>
+      </Rubric>
+      <Rubric id="d1e83317" kind="preferred">
+         <Label xml:lang="en-US">month of the year</Label>
+      </Rubric>
+   </Class>
+   <Class code="N NH" kind="concept">
+      <Meta name="internalId" value="10697"/>
+      <SuperClass code="_CalendarCycleOneLetter"/>
+      <SuperClass code="_CalendarCycleTwoLetter"/>
+      <Rubric id="d1e83339" kind="short">
+         <Label xml:lang="en-US">minute of the hour</Label>
+      </Rubric>
+      <Rubric id="d1e83339" kind="preferred">
+         <Label xml:lang="en-US">minute of the hour</Label>
+      </Rubric>
+   </Class>
+   <Class code="S SN" kind="concept">
+      <Meta name="internalId" value="10699"/>
+      <SuperClass code="_CalendarCycleOneLetter"/>
+      <SuperClass code="_CalendarCycleTwoLetter"/>
+      <Rubric id="d1e83361" kind="short">
+         <Label xml:lang="en-US">second of the minute</Label>
+      </Rubric>
+      <Rubric id="d1e83361" kind="preferred">
+         <Label xml:lang="en-US">second of the minute</Label>
+      </Rubric>
+   </Class>
+   <Class code="_GregorianCalendarCycle" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21048"/>
+      <SuperClass code="_CalendarCycleTwoLetter"/>
+      <Rubric id="d1e83378" kind="short">
+         <Label xml:lang="en-US">GregorianCalendarCycle</Label>
+      </Rubric>
+      <Rubric id="d1e83378" kind="preferred">
+         <Label xml:lang="en-US">GregorianCalendarCycle</Label>
+      </Rubric>
+   </Class>
+   <Class code="CD" kind="concept">
+      <Meta name="internalId" value="10692"/>
+      <SuperClass code="_CalendarCycleTwoLetter"/>
+      <Rubric id="d1e83392" kind="short">
+         <Label xml:lang="en-US">day (continuous)</Label>
+      </Rubric>
+      <Rubric id="d1e83392" kind="preferred">
+         <Label xml:lang="en-US">day (continuous)</Label>
+      </Rubric>
+   </Class>
+   <Class code="CH" kind="concept">
+      <Meta name="internalId" value="10696"/>
+      <SuperClass code="_CalendarCycleTwoLetter"/>
+      <Rubric id="d1e83406" kind="short">
+         <Label xml:lang="en-US">hour (continuous)</Label>
+      </Rubric>
+      <Rubric id="d1e83406" kind="preferred">
+         <Label xml:lang="en-US">hour (continuous)</Label>
+      </Rubric>
+   </Class>
+   <Class code="CM" kind="concept">
+      <Meta name="internalId" value="10688"/>
+      <SuperClass code="_CalendarCycleTwoLetter"/>
+      <Rubric id="d1e83421" kind="short">
+         <Label xml:lang="en-US">month (continuous)</Label>
+      </Rubric>
+      <Rubric id="d1e83421" kind="preferred">
+         <Label xml:lang="en-US">month (continuous)</Label>
+      </Rubric>
+   </Class>
+   <Class code="CN" kind="concept">
+      <Meta name="internalId" value="10698"/>
+      <SuperClass code="_CalendarCycleTwoLetter"/>
+      <Rubric id="d1e83435" kind="short">
+         <Label xml:lang="en-US">minute (continuous)</Label>
+      </Rubric>
+      <Rubric id="d1e83435" kind="preferred">
+         <Label xml:lang="en-US">minute (continuous)</Label>
+      </Rubric>
+   </Class>
+   <Class code="CS" kind="concept">
+      <Meta name="internalId" value="10700"/>
+      <SuperClass code="_CalendarCycleTwoLetter"/>
+      <Rubric id="d1e83449" kind="short">
+         <Label xml:lang="en-US">second (continuous)</Label>
+      </Rubric>
+      <Rubric id="d1e83449" kind="preferred">
+         <Label xml:lang="en-US">second (continuous)</Label>
+      </Rubric>
+   </Class>
+   <Class code="DY" kind="concept">
+      <Meta name="internalId" value="10693"/>
+      <SuperClass code="_CalendarCycleTwoLetter"/>
+      <Rubric id="d1e83463" kind="short">
+         <Label xml:lang="en-US">day of the year</Label>
+      </Rubric>
+      <Rubric id="d1e83463" kind="preferred">
+         <Label xml:lang="en-US">day of the year</Label>
+      </Rubric>
+   </Class>
+   <Class code="WY" kind="concept">
+      <Meta name="internalId" value="10690"/>
+      <SuperClass code="_CalendarCycleTwoLetter"/>
+      <Rubric id="d1e83477" kind="short">
+         <Label xml:lang="en-US">week of the year</Label>
+      </Rubric>
+      <Rubric id="d1e83477" kind="preferred">
+         <Label xml:lang="en-US">week of the year</Label>
+      </Rubric>
+   </Class>
+</ClaML>

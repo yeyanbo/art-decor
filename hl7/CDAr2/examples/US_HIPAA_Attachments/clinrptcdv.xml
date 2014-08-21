@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href='CDA.xsl' type='text/xsl'?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument classCode="DOCCLIN" moodCode="EVN" xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../schemas/CDA.xsd">
+  <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+  <id extension="clinrptcdv" root="2.16.840.1.113883.19.2744.1.1"/>
+  <!-- The document contains a discharge note identified by LOINC code 11490-0. -->
+  <code code="11490-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Discharge Note"/>
+  <title>Discharge Summary</title>
+  <!-- A message was created on August 14, 2006 at 5:39:24 AM. -->
+  <effectiveTime value="20060814053924"/>
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality" displayName="Normal"/>
+  <!-- Patient Identification includes name and gender. -->
+  <!-- The patient name is Patient H. Sample. The medical record ID of the patient for the sending institution is 6910828. -->
+  <recordTarget contextControlCode="OP" typeCode="RCT">
+    <patientRole classCode="PAT">
+      <id extension="184569" root="2.16.840.1.113883.19.2744.1.2"/>
+      <patient>
+        <name>
+          <given>Patient</given>
+          <given>H</given>
+          <family>Sample</family>
+        </name>
+        <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" displayName="Male"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+
+  <!-- author of the document -->
+  <author contextControlCode="OP" typeCode="AUT">
+    <time value="20060612"/>
+    <assignedAuthor>
+      <id extension="A522" root="2.16.840.1.113883.19.2744.1.3"/>
+      <assignedPerson>
+        <name>
+          <given>Ken</given>
+          <family>Cure</family>
+          <suffix>MD</suffix>
+        </name>
+      </assignedPerson>
+    </assignedAuthor>
+  </author>
+
+  <!-- organization maintaining the document -->
+  <custodian typeCode="CST">
+    <assignedCustodian classCode="ASSIGNED">
+      <representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+        <id extension="ghc" root="2.16.840.1.113883.19.2744.1.3.1"/>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+
+  <!-- legal authenticator  -->
+  <!-- Dr. Cure signed the note on 30 October 2006 at 12:53 PM. -->
+  <legalAuthenticator contextControlCode="OP" typeCode="LA">
+    <time value="200610301253"/>
+    <signatureCode code="S"/>
+    <assignedEntity>
+      <id extension="A522" root="2.16.840.1.113883.19.2744.1.3"/>
+      <assignedPerson>
+        <name>
+          <given>Ken</given>
+          <family>Cure</family>
+          <suffix>MD</suffix>
+        </name>
+      </assignedPerson>
+    </assignedEntity>
+  </legalAuthenticator>
+
+  <!-- The claim associated with this CDA document is identified by the value XA728302 in data 
+          element TRN02-Attachment Control Number of Loop 2000A-Payer/Provider Control Number. 
+  -->
+  <inFulfillmentOf>
+    <order>
+      <id extension="XA728302" root="2.16.840.1.113883.19.2744.1.5"/>
+    </order>
+  </inFulfillmentOf>
+
+  <!-- The billing account number within the sending institution that is associated with the claim is 773789090. -->
+  <componentOf>
+    <encompassingEncounter>
+      <id extension="773789090" root="2.16.840.1.113883.19.2744.1.4"/>
+      <effectiveTime value="20060814"/>
+      <!-- The provider is Ken Cure, MD, who is identified as ID number A522 by the hospital. -->
+      <responsibleParty>
+        <assignedEntity>
+          <id extension="A522" root="2.16.840.1.113883.19.2744.1.3"/>
+          <assignedPerson>
+            <name>
+              <given>Ken</given>
+              <family>Cure</family>
+              <suffix>MD</suffix>
+            </name>
+          </assignedPerson>
+        </assignedEntity>
+      </responsibleParty>
+    </encompassingEncounter>
+  </componentOf>
+
+  <component contextConductionInd="true" typeCode="COMP">
+    <structuredBody>
+      <component>
+        <section>
+          <code code="11535-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HOSPITAL DISCHARGE DX"/>
+          <title>HOSPITAL DISCHARGE DX</title>
+          <text>
+            <list listType="unordered">
+              <item>Metastatic breast cancer</item>
+              <item>Malignant pleural effusion</item>
+            </list>
+          </text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <code code="10185-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HOSPITAL DISCHARGE PROCEDURES"/>
+          <title>HOSPITAL DISCHARGE PROCEDURES</title>
+          <text>
+            <list listType="ordered">
+              <item>Thracoscopy with chest tube placement and pleurodesis.</item>
+            </list>
+          </text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <code code="10164-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF PRESENT ILLNESS"/>
+          <title>HISTORY OF PRESENT ILLNESS</title>
+          <text>
+            <paragraph>The patient is a very pleasant, 70-year-old female with a history of breast cancer that was originally diagnosed in the early 80's. At
+              that time she had a radical mastectomy with postoperative radiotherapy. In the mid 80's she developed a chest wall recurrence and was treated with
+              further radiation therapy. She then went without evidence of disease for many years until the late 90's when she developed bone metastases with
+              involvement of her sacroiliac joint, right trochanter, and left sacral area. She was started on Tamoxifen at that point in time and has done well
+              until recently when she developed shortness of breath and was found to have a larger pleural effusion. This has been tapped on two occasions and
+              has rapidly reaccumulated so she was admitted at this time for thoracoscopy with pleurodesis. Of note, her CA15-3 was 44 in the mid-2000's and was
+              recently found to be 600. </paragraph>
+          </text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <code code="10184-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HOSPITAL DISCHARGE PHYSICAL FINDINGS"/>
+          <title>HOSPITAL DISCHARGE PHYSICAL FINDINGS</title>
+          <text>
+            <paragraph> Physical examination at the time of admission revealed a thin, pleasant female in mild repiratory distress. She had no adenopathy. She
+              had decreased breath sounds three fourths of the way up on the right side. THe left lung was mostly clear although there were a few scattered
+              rales. Cadiac examination revealed a regular rate and rhythm without murmurs. She had no hepatospenomegally and not peripheral clubbing, cyanosis
+              or edema. </paragraph>
+          </text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <code code="11493-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HOSPITAL DISCHARGE STUDIES SUMMARY"/>
+          <title>HOSPITAL DISCHARGE STUDIES SUMMARY</title>
+          <text>
+            <paragraph>A chext x-ray showed a large pleural effusion on the right.</paragraph>
+          </text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <code code="8648-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HOSPITAL COURSE"/>
+          <title>HOSPITAL COURSE</title>
+          <text>
+            <paragraph>The patient was admitted. A CT scan was performed which showed a possibility that the lung was trapped by tumor and that there were some
+              adhesions. The patient then underwent thoracoscopy which confirmed the presence of a pleural peel of tumor and multiple adhesions which were taken
+              down. Two chest tubes were subsequently placed. These were left in place for approxmately four days, wafter which a TALC slurry was infused ant
+              the cheest tubes were removed the following day. Because of the significant pleural peel and the trapped lungs, it is clearly possible that the
+              pleurodesis will not be successful and this was explained to the patient and the family prior to the procedure. </paragraph>
+            <paragraph>Of note, we started her on Megace during this hospitalization because she was having significant nausea and vomiting with the Arimidex
+              that she had been taking </paragraph>
+          </text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <code code="11544-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HOSPITAL DISCHARGE FOLLOWUP"/>
+          <title>HOSPITAL DISCHARGE FOLLOWUP</title>
+          <text>
+            <paragraph> The patient is being transferred to an extended-care facility near her home, where she will remain until she has enough strength to go
+              home. It is possible that the fluid may reaccumulate and require repeat tapping despite the pleurodesis that was performed. Hopefully, however,
+              with the combination of pleurodesis and Megace that she was started on, she will have improvement of her cancer, and a decrease in her pulmonary
+              symptomatology. Overall, however, her prognosis is poor because of her debilitated state and the status of her lungs. </paragraph>
+            <paragraph>She is being dischaged on Tylenol with Codeine as needed for pain, Megace, and a Multivitamin. Shit will have a follow-up appointment
+              with Dr. Follow in three weeks with a chest X-ray. The have been instructed to call us in the interim should there be any problems.</paragraph>
+          </text>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

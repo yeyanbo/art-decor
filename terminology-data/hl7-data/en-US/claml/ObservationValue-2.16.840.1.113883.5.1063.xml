@@ -1,0 +1,2054 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="133"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1063"/>
+   <Title name="ObservationValue" date="2012-08-02" version="1.000">This domain is the root domain to which all HL7-recognized value sets for the Observation.value attribute will be linked when Observation.value has a coded data type. OpenIssue: Description copied from Concept Domain of same name. Must be corrected..</Title>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="_ActCoverageAssessmentObservationValue" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22268"/>
+      <SubClass code="_ActFinancialStatusObservationValue"/>
+      <SubClass code="ELSTAT"/>
+      <SubClass code="HLSTAT"/>
+      <SubClass code="LIVDEP"/>
+      <SubClass code="LIVSIT"/>
+      <SubClass code="SOECSTAT"/>
+      <Rubric id="d1e171558" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Codes specify the category of observation, evidence, or document used to assess for services, e.g., discharge planning, or to establish eligibility for coverage under a policy or program. The type of evidence is coded as observation values.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e171571" kind="short">
+         <Label xml:lang="en-US">ActCoverageAssessmentObservationValue</Label>
+      </Rubric>
+      <Rubric id="d1e171571" kind="preferred">
+         <Label xml:lang="en-US">ActCoverageAssessmentObservationValue</Label>
+      </Rubric>
+   </Class>
+   <Class code="_AllergyTestValue" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21496"/>
+      <SubClass code="A0"/>
+      <SubClass code="A1"/>
+      <SubClass code="A2"/>
+      <SubClass code="A3"/>
+      <SubClass code="A4"/>
+      <Rubric id="d1e171582" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicates the result of a particular allergy test. E.g. Negative, Mild, Moderate, Severe</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e171595" kind="short">
+         <Label xml:lang="en-US">AllergyTestValue</Label>
+      </Rubric>
+      <Rubric id="d1e171595" kind="preferred">
+         <Label xml:lang="en-US">AllergyTestValue</Label>
+      </Rubric>
+   </Class>
+   <Class code="_CoverageLimitObservationValue" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22627"/>
+      <SubClass code="_CoverageLevelObservationValue"/>
+      <Rubric id="d1e171606" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Coded observation values for coverage limitations, for e.g., types of claims or types of parties covered under a policy or program.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e171622" kind="short">
+         <Label xml:lang="en-US">CoverageLimitObservationValue</Label>
+      </Rubric>
+      <Rubric id="d1e171622" kind="preferred">
+         <Label xml:lang="en-US">CoverageLimitObservationValue</Label>
+      </Rubric>
+   </Class>
+   <Class code="_GeneticObservationValue" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22648"/>
+      <SubClass code="Homozygote"/>
+      <Rubric id="d1e171633" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The domain contains genetic analysis specific observation values, e.g. Homozygote, Heterozygote, etc.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e171649" kind="short">
+         <Label xml:lang="en-US">GeneticObservationValue</Label>
+      </Rubric>
+      <Rubric id="d1e171649" kind="preferred">
+         <Label xml:lang="en-US">GeneticObservationValue</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ObservationMeasureScoring" kind="concept">
+      <Meta name="internalId" value="23037"/>
+      <SubClass code="CONTVAR"/>
+      <SubClass code="PROPOR"/>
+      <SubClass code="RATIO"/>
+      <Rubric id="d1e171660" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Observation values used to indicate the type of scoring (e.g. proportion, ratio) used by a health quality measure.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e171673" kind="short">
+         <Label xml:lang="en-US">ObservationMeasureScoring</Label>
+      </Rubric>
+      <Rubric id="d1e171673" kind="preferred">
+         <Label xml:lang="en-US">ObservationMeasureScoring</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ObservationMeasureType" kind="concept">
+      <Meta name="internalId" value="23041"/>
+      <SubClass code="OUTCOME"/>
+      <SubClass code="PROCESS"/>
+      <Rubric id="d1e171684" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Observation values used to indicate whether a health quality measure is used to example a process or outcome over time.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e171697" kind="short">
+         <Label xml:lang="en-US">ObservationMeasureType</Label>
+      </Rubric>
+      <Rubric id="d1e171697" kind="preferred">
+         <Label xml:lang="en-US">ObservationMeasureType</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ObservationPopulationInclusion" kind="concept">
+      <Meta name="internalId" value="23044"/>
+      <SubClass code="DENEX"/>
+      <SubClass code="DENEXCEP"/>
+      <SubClass code="DENOM"/>
+      <SubClass code="IPP"/>
+      <SubClass code="MSRPOPL"/>
+      <SubClass code="NUMER"/>
+      <SubClass code="NUMEX"/>
+      <Rubric id="d1e171709" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Observation values used to assert various populations that a subject falls into.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e171722" kind="short">
+         <Label xml:lang="en-US">ObservationPopulationInclusion</Label>
+      </Rubric>
+      <Rubric id="d1e171722" kind="preferred">
+         <Label xml:lang="en-US">ObservationPopulationInclusion</Label>
+      </Rubric>
+   </Class>
+   <Class code="_PartialCompletionScale" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21099"/>
+      <SubClass code="G"/>
+      <SubClass code="LE"/>
+      <SubClass code="ME"/>
+      <SubClass code="MI"/>
+      <SubClass code="N"/>
+      <SubClass code="S"/>
+      <Rubric id="d1e171731" kind="short">
+         <Label xml:lang="en-US">PartialCompletionScale</Label>
+      </Rubric>
+      <Rubric id="d1e171731" kind="preferred">
+         <Label xml:lang="en-US">PartialCompletionScale</Label>
+      </Rubric>
+   </Class>
+   <Class code="_SeverityObservation" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21100"/>
+      <SubClass code="H"/>
+      <SubClass code="L"/>
+      <SubClass code="M"/>
+      <Rubric id="d1e171742" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Potential values for observations of severity.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e171755" kind="short">
+         <Label xml:lang="en-US">SeverityObservation</Label>
+      </Rubric>
+      <Rubric id="d1e171755" kind="preferred">
+         <Label xml:lang="en-US">SeverityObservation</Label>
+      </Rubric>
+   </Class>
+   <Class code="_SubjectBodyPosition" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22917"/>
+      <SubClass code="LLD"/>
+      <SubClass code="PRN"/>
+      <SubClass code="RLD"/>
+      <SubClass code="SFWL"/>
+      <SubClass code="SIT"/>
+      <SubClass code="STN"/>
+      <SubClass code="SUP"/>
+      <Rubric id="d1e171766" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Contains codes for defining the observed, physical position of a subject, such as during an observation, assessment, collection of a specimen, etc. ECG waveforms and vital signs, such as blood pressure, are two examples where a general, observed position typically needs to be noted.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e171779" kind="short">
+         <Label xml:lang="en-US">_SubjectBodyPosition</Label>
+      </Rubric>
+      <Rubric id="d1e171779" kind="preferred">
+         <Label xml:lang="en-US">_SubjectBodyPosition</Label>
+      </Rubric>
+   </Class>
+   <Class code="_VerificationOutcomeValue" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21906"/>
+      <SubClass code="ACT"/>
+      <SubClass code="ACTPEND"/>
+      <SubClass code="ELG"/>
+      <SubClass code="INACT"/>
+      <SubClass code="INPNDINV"/>
+      <SubClass code="INPNDUPD"/>
+      <SubClass code="NELG"/>
+      <Rubric id="d1e171790" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Values for observations of verification act results</p>
+            <p>
+               <b>Examples:</b>Verified, not verified, verified with warning.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e171809" kind="short">
+         <Label xml:lang="en-US">verification outcome</Label>
+      </Rubric>
+      <Rubric id="d1e171809" kind="preferred">
+         <Label xml:lang="en-US">verification outcome</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ActFinancialStatusObservationValue" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22306"/>
+      <SuperClass code="_ActCoverageAssessmentObservationValue"/>
+      <SubClass code="ASSET"/>
+      <SubClass code="INCOME"/>
+      <SubClass code="LIVEXP"/>
+      <Rubric id="d1e172021" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Code specifying financial indicators used to assess or establish eligibility for coverage under a policy or program; e.g., pay stub; tax or income document; asset document; living expenses.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e172039" kind="short">
+         <Label xml:lang="en-US">ActFinancialStatusObservationValue</Label>
+      </Rubric>
+      <Rubric id="d1e172039" kind="preferred">
+         <Label xml:lang="en-US">ActFinancialStatusObservationValue</Label>
+      </Rubric>
+   </Class>
+   <Class code="ELSTAT" kind="concept">
+      <Meta name="internalId" value="22295"/>
+      <SuperClass code="_ActCoverageAssessmentObservationValue"/>
+      <SubClass code="ADOPT"/>
+      <SubClass code="BTHCERT"/>
+      <SubClass code="CCOC"/>
+      <SubClass code="DRLIC"/>
+      <SubClass code="FOSTER"/>
+      <SubClass code="MEMBER"/>
+      <SubClass code="MIL"/>
+      <SubClass code="MRGCERT"/>
+      <SubClass code="PASSPORT"/>
+      <SubClass code="STUDENRL"/>
+      <Rubric id="d1e172050" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Code specifying eligibility indicators used to assess or establish eligibility for coverage under a policy or program eligibility status, e.g., certificates of creditable coverage; student enrollment; adoption, marriage or birth certificate.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e172068" kind="short">
+         <Label xml:lang="en-US">eligibility indicator</Label>
+      </Rubric>
+      <Rubric id="d1e172068" kind="preferred">
+         <Label xml:lang="en-US">eligibility indicator</Label>
+      </Rubric>
+   </Class>
+   <Class code="HLSTAT" kind="concept">
+      <Meta name="internalId" value="22290"/>
+      <SuperClass code="_ActCoverageAssessmentObservationValue"/>
+      <SubClass code="DISABLE"/>
+      <SubClass code="DRUG"/>
+      <SubClass code="IVDRG"/>
+      <SubClass code="PGNT"/>
+      <Rubric id="d1e172079" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Code specifying non-clinical indicators related to health status used to assess or establish eligibility for coverage under a policy or program, e.g., pregnancy, disability, drug use, mental health issues.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e172097" kind="short">
+         <Label xml:lang="en-US">health status</Label>
+      </Rubric>
+      <Rubric id="d1e172097" kind="preferred">
+         <Label xml:lang="en-US">health status</Label>
+      </Rubric>
+   </Class>
+   <Class code="LIVDEP" kind="concept">
+      <Meta name="internalId" value="22286"/>
+      <SuperClass code="_ActCoverageAssessmentObservationValue"/>
+      <SubClass code="RELDEP"/>
+      <SubClass code="SPSDEP"/>
+      <SubClass code="URELDEP"/>
+      <Rubric id="d1e172108" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Code specifying observations related to living dependency, such as dependent upon spouse for activities of daily living.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e172126" kind="short">
+         <Label xml:lang="en-US">living dependency</Label>
+      </Rubric>
+      <Rubric id="d1e172126" kind="preferred">
+         <Label xml:lang="en-US">living dependency</Label>
+      </Rubric>
+   </Class>
+   <Class code="LIVSIT" kind="concept">
+      <Meta name="internalId" value="22277"/>
+      <SuperClass code="_ActCoverageAssessmentObservationValue"/>
+      <SubClass code="ALONE"/>
+      <SubClass code="DEPCHD"/>
+      <SubClass code="DEPSPS"/>
+      <SubClass code="DEPYGCHD"/>
+      <SubClass code="FAM"/>
+      <SubClass code="RELAT"/>
+      <SubClass code="SPS"/>
+      <SubClass code="UNREL"/>
+      <Rubric id="d1e172137" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Code specifying observations related to living situation for a person in a private residence.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e172155" kind="short">
+         <Label xml:lang="en-US">living situation</Label>
+      </Rubric>
+      <Rubric id="d1e172155" kind="preferred">
+         <Label xml:lang="en-US">living situation</Label>
+      </Rubric>
+   </Class>
+   <Class code="SOECSTAT" kind="concept">
+      <Meta name="internalId" value="22269"/>
+      <SuperClass code="_ActCoverageAssessmentObservationValue"/>
+      <SubClass code="ABUSE"/>
+      <SubClass code="HMLESS"/>
+      <SubClass code="ILGIM"/>
+      <SubClass code="INCAR"/>
+      <SubClass code="PROB"/>
+      <SubClass code="REFUG"/>
+      <SubClass code="UNEMPL"/>
+      <Rubric id="d1e172167" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Code specifying observations or indicators related to socio-economic status used to assess to assess for services, e.g., discharge planning, or to establish eligibility for coverage under a policy or program.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e172185" kind="short">
+         <Label xml:lang="en-US">socio economic status</Label>
+      </Rubric>
+      <Rubric id="d1e172185" kind="preferred">
+         <Label xml:lang="en-US">socio economic status</Label>
+      </Rubric>
+   </Class>
+   <Class code="ASSET" kind="concept">
+      <Meta name="internalId" value="22316"/>
+      <SuperClass code="_ActFinancialStatusObservationValue"/>
+      <SubClass code="ANNUITY"/>
+      <SubClass code="PROP"/>
+      <SubClass code="RETACCT"/>
+      <SubClass code="TRUST"/>
+      <Rubric id="d1e172196" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Codes specifying asset indicators used to assess or establish eligibility for coverage under a policy or program.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e172214" kind="short">
+         <Label xml:lang="en-US">asset</Label>
+      </Rubric>
+      <Rubric id="d1e172214" kind="preferred">
+         <Label xml:lang="en-US">asset</Label>
+      </Rubric>
+   </Class>
+   <Class code="INCOME" kind="concept">
+      <Meta name="internalId" value="22307"/>
+      <SuperClass code="_ActFinancialStatusObservationValue"/>
+      <SubClass code="CHILD"/>
+      <SubClass code="DISABL"/>
+      <SubClass code="INVEST"/>
+      <SubClass code="PAY"/>
+      <SubClass code="RETIRE"/>
+      <SubClass code="SPOUSAL"/>
+      <SubClass code="SUPPLE"/>
+      <SubClass code="TAX"/>
+      <Rubric id="d1e172225" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Code specifying income indicators used to assess or establish eligibility for coverage under a policy or program; e.g., pay or pension check, child support payments received or provided, and taxes paid.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e172243" kind="short">
+         <Label xml:lang="en-US">income</Label>
+      </Rubric>
+      <Rubric id="d1e172243" kind="preferred">
+         <Label xml:lang="en-US">income</Label>
+      </Rubric>
+   </Class>
+   <Class code="LIVEXP" kind="concept">
+      <Meta name="internalId" value="22321"/>
+      <SuperClass code="_ActFinancialStatusObservationValue"/>
+      <SubClass code="CLOTH"/>
+      <SubClass code="FOOD"/>
+      <SubClass code="HEALTH"/>
+      <SubClass code="HOUSE"/>
+      <SubClass code="LEGAL"/>
+      <SubClass code="MORTG"/>
+      <SubClass code="RENT"/>
+      <SubClass code="SUNDRY"/>
+      <SubClass code="TRANS"/>
+      <SubClass code="UTIL"/>
+      <Rubric id="d1e172254" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Codes specifying living expense indicators used to assess or establish eligibility for coverage under a policy or program.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e172272" kind="short">
+         <Label xml:lang="en-US">living expense</Label>
+      </Rubric>
+      <Rubric id="d1e172272" kind="preferred">
+         <Label xml:lang="en-US">living expense</Label>
+      </Rubric>
+   </Class>
+   <Class code="A0" kind="concept">
+      <Meta name="internalId" value="22816"/>
+      <SuperClass code="_AllergyTestValue"/>
+      <Rubric id="d1e172283" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Patient exhibits no reaction to the challenge agent.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e172304" kind="short">
+         <Label xml:lang="en-US">no reaction</Label>
+      </Rubric>
+      <Rubric id="d1e172304" kind="preferred">
+         <Label xml:lang="en-US">no reaction</Label>
+      </Rubric>
+   </Class>
+   <Class code="A1" kind="concept">
+      <Meta name="internalId" value="22817"/>
+      <SuperClass code="_AllergyTestValue"/>
+      <Rubric id="d1e172315" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Patient exhibits a minimal reaction to the challenge agent.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e172336" kind="short">
+         <Label xml:lang="en-US">minimal reaction</Label>
+      </Rubric>
+      <Rubric id="d1e172336" kind="preferred">
+         <Label xml:lang="en-US">minimal reaction</Label>
+      </Rubric>
+   </Class>
+   <Class code="A2" kind="concept">
+      <Meta name="internalId" value="22818"/>
+      <SuperClass code="_AllergyTestValue"/>
+      <Rubric id="d1e172348" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Patient exhibits a mild reaction to the challenge agent.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e172369" kind="short">
+         <Label xml:lang="en-US">mild reaction</Label>
+      </Rubric>
+      <Rubric id="d1e172369" kind="preferred">
+         <Label xml:lang="en-US">mild reaction</Label>
+      </Rubric>
+   </Class>
+   <Class code="A3" kind="concept">
+      <Meta name="internalId" value="22819"/>
+      <SuperClass code="_AllergyTestValue"/>
+      <Rubric id="d1e172380" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Patient exhibits moderate reaction to the challenge agent.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e172401" kind="short">
+         <Label xml:lang="en-US">moderate reaction</Label>
+      </Rubric>
+      <Rubric id="d1e172401" kind="preferred">
+         <Label xml:lang="en-US">moderate reaction</Label>
+      </Rubric>
+   </Class>
+   <Class code="A4" kind="concept">
+      <Meta name="internalId" value="22820"/>
+      <SuperClass code="_AllergyTestValue"/>
+      <Rubric id="d1e172412" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Patient exhibits a severe reaction to the challenge agent.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e172433" kind="short">
+         <Label xml:lang="en-US">severe reaction</Label>
+      </Rubric>
+      <Rubric id="d1e172433" kind="preferred">
+         <Label xml:lang="en-US">severe reaction</Label>
+      </Rubric>
+   </Class>
+   <Class code="ADC" kind="concept">
+      <Meta name="internalId" value="22631"/>
+      <SuperClass code="_CoverageLevelObservationValue"/>
+      <Rubric id="d1e172540" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Child over an age as specified by coverage policy or program, e.g., student, differently abled, and income dependent.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e172561" kind="short">
+         <Label xml:lang="en-US">adult child</Label>
+      </Rubric>
+      <Rubric id="d1e172561" kind="preferred">
+         <Label xml:lang="en-US">adult child</Label>
+      </Rubric>
+   </Class>
+   <Class code="CHD" kind="concept">
+      <Meta name="internalId" value="22632"/>
+      <SuperClass code="_CoverageLevelObservationValue"/>
+      <Rubric id="d1e172572" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Dependent biological, adopted, foster child as specified by coverage policy or program.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e172593" kind="short">
+         <Label xml:lang="en-US">child</Label>
+      </Rubric>
+      <Rubric id="d1e172593" kind="preferred">
+         <Label xml:lang="en-US">child</Label>
+      </Rubric>
+   </Class>
+   <Class code="DEP" kind="concept">
+      <Meta name="internalId" value="22633"/>
+      <SuperClass code="_CoverageLevelObservationValue"/>
+      <Rubric id="d1e172604" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Person requiring functional and/or financial assistance from another person as specified by coverage policy or program.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e172625" kind="short">
+         <Label xml:lang="en-US">dependent</Label>
+      </Rubric>
+      <Rubric id="d1e172625" kind="preferred">
+         <Label xml:lang="en-US">dependent</Label>
+      </Rubric>
+   </Class>
+   <Class code="DP" kind="concept">
+      <Meta name="internalId" value="22634"/>
+      <SuperClass code="_CoverageLevelObservationValue"/>
+      <Rubric id="d1e172636" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Persons registered as a family unit in a domestic partner registry as specified by law and by coverage policy or program.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e172657" kind="short">
+         <Label xml:lang="en-US">domestic partner</Label>
+      </Rubric>
+      <Rubric id="d1e172657" kind="preferred">
+         <Label xml:lang="en-US">domestic partner</Label>
+      </Rubric>
+   </Class>
+   <Class code="ECH" kind="concept">
+      <Meta name="internalId" value="22635"/>
+      <SuperClass code="_CoverageLevelObservationValue"/>
+      <Rubric id="d1e172668" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>An individual employed by an employer who receive remuneration in wages, salary, commission, tips, piece-rates, or pay-in-kind through the employeraTMs payment system (i.e., not a contractor) as specified by coverage policy or program.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e172689" kind="short">
+         <Label xml:lang="en-US">employee</Label>
+      </Rubric>
+      <Rubric id="d1e172689" kind="preferred">
+         <Label xml:lang="en-US">employee</Label>
+      </Rubric>
+   </Class>
+   <Class code="FLY" kind="concept">
+      <Meta name="internalId" value="22636"/>
+      <SuperClass code="_CoverageLevelObservationValue"/>
+      <Rubric id="d1e172700" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>As specified by coverage policy or program.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e172721" kind="short">
+         <Label xml:lang="en-US">family coverage</Label>
+      </Rubric>
+      <Rubric id="d1e172721" kind="preferred">
+         <Label xml:lang="en-US">family coverage</Label>
+      </Rubric>
+   </Class>
+   <Class code="IND" kind="concept">
+      <Meta name="internalId" value="22637"/>
+      <SuperClass code="_CoverageLevelObservationValue"/>
+      <Rubric id="d1e172733" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Person as specified by coverage policy or program.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e172754" kind="short">
+         <Label xml:lang="en-US">individual</Label>
+      </Rubric>
+      <Rubric id="d1e172754" kind="preferred">
+         <Label xml:lang="en-US">individual</Label>
+      </Rubric>
+   </Class>
+   <Class code="SSP" kind="concept">
+      <Meta name="internalId" value="22638"/>
+      <SuperClass code="_CoverageLevelObservationValue"/>
+      <Rubric id="d1e172765" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A pair of people of the same gender who live together as a family as specified by coverage policy or program, e.g., Naomi and Ruth from the Book of Ruth; Socrates and Alcibiades</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e172786" kind="short">
+         <Label xml:lang="en-US">same sex partner</Label>
+      </Rubric>
+      <Rubric id="d1e172786" kind="preferred">
+         <Label xml:lang="en-US">same sex partner</Label>
+      </Rubric>
+   </Class>
+   <Class code="_CoverageLevelObservationValue" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22630"/>
+      <SuperClass code="_CoverageLimitObservationValue"/>
+      <SubClass code="ADC"/>
+      <SubClass code="CHD"/>
+      <SubClass code="DEP"/>
+      <SubClass code="DP"/>
+      <SubClass code="ECH"/>
+      <SubClass code="FLY"/>
+      <SubClass code="IND"/>
+      <SubClass code="SSP"/>
+      <Rubric id="d1e172797" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Coded observation values for types of covered parties under a policy or program based on their personal relationships or employment status.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e172818" kind="short">
+         <Label xml:lang="en-US">CoverageLevelObservationValue</Label>
+      </Rubric>
+      <Rubric id="d1e172818" kind="preferred">
+         <Label xml:lang="en-US">CoverageLevelObservationValue</Label>
+      </Rubric>
+   </Class>
+   <Class code="Homozygote" kind="concept">
+      <Meta name="internalId" value="22649"/>
+      <SuperClass code="_GeneticObservationValue"/>
+      <Rubric id="d1e172899" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>An individual having different alleles at one or more loci regarding a specific character</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e172920" kind="short">
+         <Label xml:lang="en-US">HOMO</Label>
+      </Rubric>
+      <Rubric id="d1e172920" kind="preferred">
+         <Label xml:lang="en-US">HOMO</Label>
+      </Rubric>
+   </Class>
+   <Class code="CONTVAR" kind="concept">
+      <Meta name="internalId" value="23038"/>
+      <SuperClass code="_ObservationMeasureScoring"/>
+      <Rubric id="d1e173374" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A measure score in which each individual value for the measure can fall anywhere along a continuous scale (e.g., mean time to thrombolytics which aggregates the time in minutes from a case presenting with chest pain to the time of administration of thrombolytics).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e173392" kind="short">
+         <Label xml:lang="en-US">continuous variable measure scoring</Label>
+      </Rubric>
+      <Rubric id="d1e173392" kind="preferred">
+         <Label xml:lang="en-US">continuous variable measure scoring</Label>
+      </Rubric>
+   </Class>
+   <Class code="PROPOR" kind="concept">
+      <Meta name="internalId" value="23039"/>
+      <SuperClass code="_ObservationMeasureScoring"/>
+      <Rubric id="d1e173403" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A score derived by dividing the number of cases that meet a criterion for quality (the numerator) by the number of eligible cases within a given time frame (the denominator) where the numerator cases are a subset of the denominator cases (e.g., percentage of eligible women with a mammogram performed in the last year).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e173421" kind="short">
+         <Label xml:lang="en-US">proportion measure scoring</Label>
+      </Rubric>
+      <Rubric id="d1e173421" kind="preferred">
+         <Label xml:lang="en-US">proportion measure scoring</Label>
+      </Rubric>
+   </Class>
+   <Class code="RATIO" kind="concept">
+      <Meta name="internalId" value="23040"/>
+      <SuperClass code="_ObservationMeasureScoring"/>
+      <Rubric id="d1e173432" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A score that may have a value of zero or greater that is derived by dividing a count of one type of data by a count of another type of data (e.g., the number of patients with central lines who develop infection divided by the number of central line days).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e173450" kind="short">
+         <Label xml:lang="en-US">ratio measure scoring</Label>
+      </Rubric>
+      <Rubric id="d1e173450" kind="preferred">
+         <Label xml:lang="en-US">ratio measure scoring</Label>
+      </Rubric>
+   </Class>
+   <Class code="OUTCOME" kind="concept">
+      <Meta name="internalId" value="23042"/>
+      <SuperClass code="_ObservationMeasureType"/>
+      <Rubric id="d1e173461" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A measure that indicates the result of the performance (or non-performance) of a function or process.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e173479" kind="short">
+         <Label xml:lang="en-US">outcome measure type</Label>
+      </Rubric>
+      <Rubric id="d1e173479" kind="preferred">
+         <Label xml:lang="en-US">outcome measure type</Label>
+      </Rubric>
+   </Class>
+   <Class code="PROCESS" kind="concept">
+      <Meta name="internalId" value="23043"/>
+      <SuperClass code="_ObservationMeasureType"/>
+      <Rubric id="d1e173490" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A measure which focuses on a process which leads to a certain outcome, meaning that a scientific basis exists for believing that the process, when executed well, will increase the probability of achieving a desired outcome.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e173508" kind="short">
+         <Label xml:lang="en-US">process measure type</Label>
+      </Rubric>
+      <Rubric id="d1e173508" kind="preferred">
+         <Label xml:lang="en-US">process measure type</Label>
+      </Rubric>
+   </Class>
+   <Class code="DENEX" kind="concept">
+      <Meta name="internalId" value="23442"/>
+      <SuperClass code="_ObservationPopulationInclusion"/>
+      <Rubric id="d1e173520" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Patients who should be removed from the eMeasure population and denominator before determining if numerator criteria are met. Denominator exclusions are used in proportion and ratio measures to help narrow the denominator.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e173538" kind="short">
+         <Label xml:lang="en-US">denominator exclusions</Label>
+      </Rubric>
+      <Rubric id="d1e173538" kind="preferred">
+         <Label xml:lang="en-US">denominator exclusions</Label>
+      </Rubric>
+   </Class>
+   <Class code="DENEXCEP" kind="concept">
+      <Meta name="internalId" value="23046"/>
+      <SuperClass code="_ObservationPopulationInclusion"/>
+      <Rubric id="d1e173549" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Denominator exceptions are those conditions that should remove a patient, procedure or unit of measurement from the denominator only if the numerator criteria are not met. Denominator exceptions allow for adjustment of the calculated score for those providers with higher risk populations. Denominator exceptions are used only in proportion eMeasures. They are not appropriate for ratio or continuous variable eMeasures. Denominator exceptions allow for the exercise of clinical judgment and should be specifically defined where capturing the information in a structured manner fits the clinical workflow. Generic denominator exception reasons used in proportion eMeasures fall into three general categories:</p>
+            <ul>
+               <li>Medical reasons</li>
+               <li>Patient reasons</li>
+               <li>System reasons</li>
+            </ul>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e173579" kind="short">
+         <Label xml:lang="en-US">denominator exceptions</Label>
+      </Rubric>
+      <Rubric id="d1e173579" kind="preferred">
+         <Label xml:lang="en-US">denominator exceptions</Label>
+      </Rubric>
+   </Class>
+   <Class code="DENOM" kind="concept">
+      <Meta name="internalId" value="23045"/>
+      <SuperClass code="_ObservationPopulationInclusion"/>
+      <Rubric id="d1e173590" kind="definition">
+         <Label xml:lang="en-US">
+            <p>It can be the same as the initial patient population or a subset of the initial patient population to further constrain the population for the purpose of the eMeasure. Different measures within an eMeasure set may have different Denominators. Continuous Variable eMeasures do not have a Denominator, but instead define a Measure Population.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e173608" kind="short">
+         <Label xml:lang="en-US">denominator</Label>
+      </Rubric>
+      <Rubric id="d1e173608" kind="preferred">
+         <Label xml:lang="en-US">denominator</Label>
+      </Rubric>
+   </Class>
+   <Class code="IPP" kind="concept">
+      <Meta name="internalId" value="23047"/>
+      <SuperClass code="_ObservationPopulationInclusion"/>
+      <Rubric id="d1e173619" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The <i>initial patient population</i>refers to all patients to be evaluated by a specific performance eMeasure who share a common set of specified characteristics within a specific measurement set to which a given measure belongs. Details often include information based upon specific age groups, diagnoses, diagnostic and procedure codes, and enrollment periods.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e173640" kind="short">
+         <Label xml:lang="en-US">initial patient population</Label>
+      </Rubric>
+      <Rubric id="d1e173640" kind="preferred">
+         <Label xml:lang="en-US">initial patient population</Label>
+      </Rubric>
+   </Class>
+   <Class code="MSRPOPL" kind="concept">
+      <Meta name="internalId" value="23048"/>
+      <SuperClass code="_ObservationPopulationInclusion"/>
+      <Rubric id="d1e173651" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Measure population is used only in continuous variable eMeasures. It is a narrative description of the eMeasure population. (e.g., all patients seen in the Emergency Department during the measurement period).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e173669" kind="short">
+         <Label xml:lang="en-US">measure population</Label>
+      </Rubric>
+      <Rubric id="d1e173669" kind="preferred">
+         <Label xml:lang="en-US">measure population</Label>
+      </Rubric>
+   </Class>
+   <Class code="NUMER" kind="concept">
+      <Meta name="internalId" value="23049"/>
+      <SuperClass code="_ObservationPopulationInclusion"/>
+      <Rubric id="d1e173680" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Numerators are used in proportion and ratio eMeasures. In proportion measures the numerator criteria are the processes or outcomes expected for each patient, procedure, or other unit of measurement defined in the denominator. In ratio measures the numerator is related, but not directly derived from the denominator (e.g., a numerator listing the number of central line blood stream infections and a denominator indicating the days per thousand of central line usage in a specific time period).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e173698" kind="short">
+         <Label xml:lang="en-US">numerator</Label>
+      </Rubric>
+      <Rubric id="d1e173698" kind="preferred">
+         <Label xml:lang="en-US">numerator</Label>
+      </Rubric>
+   </Class>
+   <Class code="NUMEX" kind="concept">
+      <Meta name="internalId" value="23443"/>
+      <SuperClass code="_ObservationPopulationInclusion"/>
+      <Rubric id="d1e173710" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Numerator Exclusions are used only in ratio eMeasures to define instances that should not be included in the numerator data. (e.g., if the number of central line blood stream infections per 1000 catheter days were to exclude infections with a specific bacterium, that bacterium would be listed as a numerator exclusion.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e173728" kind="short">
+         <Label xml:lang="en-US">numerator exclusions</Label>
+      </Rubric>
+      <Rubric id="d1e173728" kind="preferred">
+         <Label xml:lang="en-US">numerator exclusions</Label>
+      </Rubric>
+   </Class>
+   <Class code="G" kind="concept">
+      <Meta name="internalId" value="18126"/>
+      <SuperClass code="_PartialCompletionScale"/>
+      <Rubric id="d1e173739" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Value for Act.partialCompletionCode attribute that implies 81-99% completion</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e173757" kind="short">
+         <Label xml:lang="en-US">Great extent</Label>
+      </Rubric>
+      <Rubric id="d1e173757" kind="preferred">
+         <Label xml:lang="en-US">Great extent</Label>
+      </Rubric>
+   </Class>
+   <Class code="LE" kind="concept">
+      <Meta name="internalId" value="18125"/>
+      <SuperClass code="_PartialCompletionScale"/>
+      <Rubric id="d1e173768" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Value for Act.partialCompletionCode attribute that implies 61-80% completion</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e173786" kind="short">
+         <Label xml:lang="en-US">Large extent</Label>
+      </Rubric>
+      <Rubric id="d1e173786" kind="preferred">
+         <Label xml:lang="en-US">Large extent</Label>
+      </Rubric>
+   </Class>
+   <Class code="ME" kind="concept">
+      <Meta name="internalId" value="18124"/>
+      <SuperClass code="_PartialCompletionScale"/>
+      <Rubric id="d1e173797" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Value for Act.partialCompletionCode attribute that implies 41-60% completion</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e173815" kind="short">
+         <Label xml:lang="en-US">Medium extent</Label>
+      </Rubric>
+      <Rubric id="d1e173815" kind="preferred">
+         <Label xml:lang="en-US">Medium extent</Label>
+      </Rubric>
+   </Class>
+   <Class code="MI" kind="concept">
+      <Meta name="internalId" value="18122"/>
+      <SuperClass code="_PartialCompletionScale"/>
+      <Rubric id="d1e173826" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Value for Act.partialCompletionCode attribute that implies 1-20% completion</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e173844" kind="short">
+         <Label xml:lang="en-US">Minimal extent</Label>
+      </Rubric>
+      <Rubric id="d1e173844" kind="preferred">
+         <Label xml:lang="en-US">Minimal extent</Label>
+      </Rubric>
+   </Class>
+   <Class code="N" kind="concept">
+      <Meta name="internalId" value="18121"/>
+      <SuperClass code="_PartialCompletionScale"/>
+      <Rubric id="d1e173855" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Value for Act.partialCompletionCode attribute that implies 0% completion</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e173873" kind="short">
+         <Label xml:lang="en-US">None</Label>
+      </Rubric>
+      <Rubric id="d1e173873" kind="preferred">
+         <Label xml:lang="en-US">None</Label>
+      </Rubric>
+   </Class>
+   <Class code="S" kind="concept">
+      <Meta name="internalId" value="18123"/>
+      <SuperClass code="_PartialCompletionScale"/>
+      <Rubric id="d1e173885" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Value for Act.partialCompletionCode attribute that implies 21-40% completion</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e173903" kind="short">
+         <Label xml:lang="en-US">Some extent</Label>
+      </Rubric>
+      <Rubric id="d1e173903" kind="preferred">
+         <Label xml:lang="en-US">Some extent</Label>
+      </Rubric>
+   </Class>
+   <Class code="H" kind="concept">
+      <Meta name="internalId" value="16644"/>
+      <SuperClass code="_SeverityObservation"/>
+      <Rubric id="d1e173914" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicates the condition may be life-threatening or has the potential to cause permanent injury.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e173932" kind="short">
+         <Label xml:lang="en-US">High</Label>
+      </Rubric>
+      <Rubric id="d1e173932" kind="preferred">
+         <Label xml:lang="en-US">High</Label>
+      </Rubric>
+   </Class>
+   <Class code="L" kind="concept">
+      <Meta name="internalId" value="16646"/>
+      <SuperClass code="_SeverityObservation"/>
+      <Rubric id="d1e173943" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicates the condition may result in some adverse consequences but is unlikely to substantially affect the situation of the subject.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e173961" kind="short">
+         <Label xml:lang="en-US">Low</Label>
+      </Rubric>
+      <Rubric id="d1e173961" kind="preferred">
+         <Label xml:lang="en-US">Low</Label>
+      </Rubric>
+   </Class>
+   <Class code="M" kind="concept">
+      <Meta name="internalId" value="16645"/>
+      <SuperClass code="_SeverityObservation"/>
+      <Rubric id="d1e173972" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicates the condition may result in noticable adverse adverse consequences but is unlikely to be life-threatening or cause permanent injury.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e173990" kind="short">
+         <Label xml:lang="en-US">Moderate</Label>
+      </Rubric>
+      <Rubric id="d1e173990" kind="preferred">
+         <Label xml:lang="en-US">Moderate</Label>
+      </Rubric>
+   </Class>
+   <Class code="LLD" kind="concept">
+      <Meta name="internalId" value="22918"/>
+      <SuperClass code="_SubjectBodyPosition"/>
+      <Rubric id="d1e174001" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Lying on the left side.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174019" kind="short">
+         <Label xml:lang="en-US">left lateral decubitus</Label>
+      </Rubric>
+      <Rubric id="d1e174019" kind="preferred">
+         <Label xml:lang="en-US">left lateral decubitus</Label>
+      </Rubric>
+   </Class>
+   <Class code="PRN" kind="concept">
+      <Meta name="internalId" value="22919"/>
+      <SuperClass code="_SubjectBodyPosition"/>
+      <Rubric id="d1e174030" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Lying with the front or ventral surface downward; lying face down.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174048" kind="short">
+         <Label xml:lang="en-US">prone</Label>
+      </Rubric>
+      <Rubric id="d1e174048" kind="preferred">
+         <Label xml:lang="en-US">prone</Label>
+      </Rubric>
+   </Class>
+   <Class code="RLD" kind="concept">
+      <Meta name="internalId" value="22920"/>
+      <SuperClass code="_SubjectBodyPosition"/>
+      <Rubric id="d1e174060" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Lying on the right side.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174078" kind="short">
+         <Label xml:lang="en-US">right lateral decubitus</Label>
+      </Rubric>
+      <Rubric id="d1e174078" kind="preferred">
+         <Label xml:lang="en-US">right lateral decubitus</Label>
+      </Rubric>
+   </Class>
+   <Class code="SFWL" kind="concept">
+      <Meta name="internalId" value="22921"/>
+      <SuperClass code="_SubjectBodyPosition"/>
+      <Rubric id="d1e174089" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A semi-sitting position in bed with the head of the bed elevated approximately 45 degrees.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174107" kind="short">
+         <Label xml:lang="en-US">Semi-Fowler's</Label>
+      </Rubric>
+      <Rubric id="d1e174107" kind="preferred">
+         <Label xml:lang="en-US">Semi-Fowler's</Label>
+      </Rubric>
+   </Class>
+   <Class code="SIT" kind="concept">
+      <Meta name="internalId" value="22922"/>
+      <SuperClass code="_SubjectBodyPosition"/>
+      <Rubric id="d1e174118" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Resting the body on the buttocks, typically with upper torso erect or semi erect.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174136" kind="short">
+         <Label xml:lang="en-US">sitting</Label>
+      </Rubric>
+      <Rubric id="d1e174136" kind="preferred">
+         <Label xml:lang="en-US">sitting</Label>
+      </Rubric>
+   </Class>
+   <Class code="STN" kind="concept">
+      <Meta name="internalId" value="22923"/>
+      <SuperClass code="_SubjectBodyPosition"/>
+      <Rubric id="d1e174147" kind="definition">
+         <Label xml:lang="en-US">
+            <p>To be stationary, upright, vertical, on one's legs.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174165" kind="short">
+         <Label xml:lang="en-US">standing</Label>
+      </Rubric>
+      <Rubric id="d1e174165" kind="preferred">
+         <Label xml:lang="en-US">standing</Label>
+      </Rubric>
+   </Class>
+   <Class code="SUP" kind="concept">
+      <Meta name="internalId" value="22924"/>
+      <SuperClass code="_SubjectBodyPosition"/>
+      <SubClass code="RTRD"/>
+      <SubClass code="TRD"/>
+      <Rubric id="d1e174179" kind="short">
+         <Label xml:lang="en-US">supine</Label>
+      </Rubric>
+      <Rubric id="d1e174179" kind="preferred">
+         <Label xml:lang="en-US">supine</Label>
+      </Rubric>
+   </Class>
+   <Class code="ACT" kind="concept">
+      <Meta name="internalId" value="22213"/>
+      <SuperClass code="_VerificationOutcomeValue"/>
+      <Rubric id="d1e174190" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Coverage is in effect for healthcare service(s) and/or product(s).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174211" kind="short">
+         <Label xml:lang="en-US">active coverage</Label>
+      </Rubric>
+      <Rubric id="d1e174211" kind="preferred">
+         <Label xml:lang="en-US">active coverage</Label>
+      </Rubric>
+   </Class>
+   <Class code="ACTPEND" kind="concept">
+      <Meta name="internalId" value="22214"/>
+      <SuperClass code="_VerificationOutcomeValue"/>
+      <Rubric id="d1e174223" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Coverage is in effect for healthcare service(s) and/or product(s) - Pending Investigation</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174244" kind="short">
+         <Label xml:lang="en-US">active - pending investigation</Label>
+      </Rubric>
+      <Rubric id="d1e174244" kind="preferred">
+         <Label xml:lang="en-US">active - pending investigation</Label>
+      </Rubric>
+   </Class>
+   <Class code="ELG" kind="concept">
+      <Meta name="internalId" value="22211"/>
+      <SuperClass code="_VerificationOutcomeValue"/>
+      <Rubric id="d1e174255" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Coverage is in effect for healthcare service(s) and/or product(s).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174276" kind="short">
+         <Label xml:lang="en-US">eligible</Label>
+      </Rubric>
+      <Rubric id="d1e174276" kind="preferred">
+         <Label xml:lang="en-US">eligible</Label>
+      </Rubric>
+   </Class>
+   <Class code="INACT" kind="concept">
+      <Meta name="internalId" value="22215"/>
+      <SuperClass code="_VerificationOutcomeValue"/>
+      <Rubric id="d1e174287" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Coverage is not in effect for healthcare service(s) and/or product(s).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174308" kind="short">
+         <Label xml:lang="en-US">inactive</Label>
+      </Rubric>
+      <Rubric id="d1e174308" kind="preferred">
+         <Label xml:lang="en-US">inactive</Label>
+      </Rubric>
+   </Class>
+   <Class code="INPNDINV" kind="concept">
+      <Meta name="internalId" value="22217"/>
+      <SuperClass code="_VerificationOutcomeValue"/>
+      <Rubric id="d1e174319" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Coverage is not in effect for healthcare service(s) and/or product(s) - Pending Investigation.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174340" kind="short">
+         <Label xml:lang="en-US">inactive - pending investigation</Label>
+      </Rubric>
+      <Rubric id="d1e174340" kind="preferred">
+         <Label xml:lang="en-US">inactive - pending investigation</Label>
+      </Rubric>
+   </Class>
+   <Class code="INPNDUPD" kind="concept">
+      <Meta name="internalId" value="22216"/>
+      <SuperClass code="_VerificationOutcomeValue"/>
+      <Rubric id="d1e174351" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Coverage is not in effect for healthcare service(s) and/or product(s) - Pending Eligibility Update.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174372" kind="short">
+         <Label xml:lang="en-US">inactive - pending eligibility update</Label>
+      </Rubric>
+      <Rubric id="d1e174372" kind="preferred">
+         <Label xml:lang="en-US">inactive - pending eligibility update</Label>
+      </Rubric>
+   </Class>
+   <Class code="NELG" kind="concept">
+      <Meta name="internalId" value="22212"/>
+      <SuperClass code="_VerificationOutcomeValue"/>
+      <Rubric id="d1e174383" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Coverage is not in effect for healthcare service(s) and/or product(s). May optionally include reasons for the ineligibility.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174404" kind="short">
+         <Label xml:lang="en-US">not eligible</Label>
+      </Rubric>
+      <Rubric id="d1e174404" kind="preferred">
+         <Label xml:lang="en-US">not eligible</Label>
+      </Rubric>
+   </Class>
+   <Class code="ANNUITY" kind="concept">
+      <Meta name="internalId" value="22320"/>
+      <SuperClass code="ASSET"/>
+      <Rubric id="d1e174416" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of annuity ownership or status as beneficiary.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174434" kind="short">
+         <Label xml:lang="en-US">annuity</Label>
+      </Rubric>
+      <Rubric id="d1e174434" kind="preferred">
+         <Label xml:lang="en-US">annuity</Label>
+      </Rubric>
+   </Class>
+   <Class code="PROP" kind="concept">
+      <Meta name="internalId" value="22317"/>
+      <SuperClass code="ASSET"/>
+      <Rubric id="d1e174445" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of real property ownership, e.g., deed or real estate contract.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174463" kind="short">
+         <Label xml:lang="en-US">real property</Label>
+      </Rubric>
+      <Rubric id="d1e174463" kind="preferred">
+         <Label xml:lang="en-US">real property</Label>
+      </Rubric>
+   </Class>
+   <Class code="RETACCT" kind="concept">
+      <Meta name="internalId" value="22318"/>
+      <SuperClass code="ASSET"/>
+      <Rubric id="d1e174474" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of retirement investment account ownership.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174492" kind="short">
+         <Label xml:lang="en-US">retirement investment account</Label>
+      </Rubric>
+      <Rubric id="d1e174492" kind="preferred">
+         <Label xml:lang="en-US">retirement investment account</Label>
+      </Rubric>
+   </Class>
+   <Class code="TRUST" kind="concept">
+      <Meta name="internalId" value="22319"/>
+      <SuperClass code="ASSET"/>
+      <Rubric id="d1e174503" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of status as trust beneficiary.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174521" kind="short">
+         <Label xml:lang="en-US">trust</Label>
+      </Rubric>
+      <Rubric id="d1e174521" kind="preferred">
+         <Label xml:lang="en-US">trust</Label>
+      </Rubric>
+   </Class>
+   <Class code="ADOPT" kind="concept">
+      <Meta name="internalId" value="22304"/>
+      <SuperClass code="ELSTAT"/>
+      <Rubric id="d1e174532" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of adoption.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174550" kind="short">
+         <Label xml:lang="en-US">adoption document</Label>
+      </Rubric>
+      <Rubric id="d1e174550" kind="preferred">
+         <Label xml:lang="en-US">adoption document</Label>
+      </Rubric>
+   </Class>
+   <Class code="BTHCERT" kind="concept">
+      <Meta name="internalId" value="22303"/>
+      <SuperClass code="ELSTAT"/>
+      <Rubric id="d1e174561" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of birth.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174579" kind="short">
+         <Label xml:lang="en-US">birth certificate</Label>
+      </Rubric>
+      <Rubric id="d1e174579" kind="preferred">
+         <Label xml:lang="en-US">birth certificate</Label>
+      </Rubric>
+   </Class>
+   <Class code="CCOC" kind="concept">
+      <Meta name="internalId" value="22299"/>
+      <SuperClass code="ELSTAT"/>
+      <Rubric id="d1e174591" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of creditable coverage.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174609" kind="short">
+         <Label xml:lang="en-US">creditable coverage document</Label>
+      </Rubric>
+      <Rubric id="d1e174609" kind="preferred">
+         <Label xml:lang="en-US">creditable coverage document</Label>
+      </Rubric>
+   </Class>
+   <Class code="DRLIC" kind="concept">
+      <Meta name="internalId" value="22301"/>
+      <SuperClass code="ELSTAT"/>
+      <Rubric id="d1e174620" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of driving status.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174638" kind="short">
+         <Label xml:lang="en-US">driver license</Label>
+      </Rubric>
+      <Rubric id="d1e174638" kind="preferred">
+         <Label xml:lang="en-US">driver license</Label>
+      </Rubric>
+   </Class>
+   <Class code="FOSTER" kind="concept">
+      <Meta name="internalId" value="22305"/>
+      <SuperClass code="ELSTAT"/>
+      <Rubric id="d1e174649" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of foster child status.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174667" kind="short">
+         <Label xml:lang="en-US">foster child document</Label>
+      </Rubric>
+      <Rubric id="d1e174667" kind="preferred">
+         <Label xml:lang="en-US">foster child document</Label>
+      </Rubric>
+   </Class>
+   <Class code="MEMBER" kind="concept">
+      <Meta name="internalId" value="22296"/>
+      <SuperClass code="ELSTAT"/>
+      <Rubric id="d1e174678" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of status as covered member under a policy or program, e.g., member id card or coverage document.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174696" kind="short">
+         <Label xml:lang="en-US">program or policy member</Label>
+      </Rubric>
+      <Rubric id="d1e174696" kind="preferred">
+         <Label xml:lang="en-US">program or policy member</Label>
+      </Rubric>
+   </Class>
+   <Class code="MIL" kind="concept">
+      <Meta name="internalId" value="22302"/>
+      <SuperClass code="ELSTAT"/>
+      <Rubric id="d1e174707" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of military status.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174725" kind="short">
+         <Label xml:lang="en-US">military identification</Label>
+      </Rubric>
+      <Rubric id="d1e174725" kind="preferred">
+         <Label xml:lang="en-US">military identification</Label>
+      </Rubric>
+   </Class>
+   <Class code="MRGCERT" kind="concept">
+      <Meta name="internalId" value="22300"/>
+      <SuperClass code="ELSTAT"/>
+      <Rubric id="d1e174736" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of marriage status.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174754" kind="short">
+         <Label xml:lang="en-US">marriage certificate</Label>
+      </Rubric>
+      <Rubric id="d1e174754" kind="preferred">
+         <Label xml:lang="en-US">marriage certificate</Label>
+      </Rubric>
+   </Class>
+   <Class code="PASSPORT" kind="concept">
+      <Meta name="internalId" value="22297"/>
+      <SuperClass code="ELSTAT"/>
+      <Rubric id="d1e174766" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of citizenship.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174784" kind="short">
+         <Label xml:lang="en-US">passport</Label>
+      </Rubric>
+      <Rubric id="d1e174784" kind="preferred">
+         <Label xml:lang="en-US">passport</Label>
+      </Rubric>
+   </Class>
+   <Class code="STUDENRL" kind="concept">
+      <Meta name="internalId" value="22298"/>
+      <SuperClass code="ELSTAT"/>
+      <Rubric id="d1e174795" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of student status.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174813" kind="short">
+         <Label xml:lang="en-US">student enrollment</Label>
+      </Rubric>
+      <Rubric id="d1e174813" kind="preferred">
+         <Label xml:lang="en-US">student enrollment</Label>
+      </Rubric>
+   </Class>
+   <Class code="DISABLE" kind="concept">
+      <Meta name="internalId" value="22293"/>
+      <SuperClass code="HLSTAT"/>
+      <Rubric id="d1e174824" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indication of disability.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174842" kind="short">
+         <Label xml:lang="en-US">disabled</Label>
+      </Rubric>
+      <Rubric id="d1e174842" kind="preferred">
+         <Label xml:lang="en-US">disabled</Label>
+      </Rubric>
+   </Class>
+   <Class code="DRUG" kind="concept">
+      <Meta name="internalId" value="22294"/>
+      <SuperClass code="HLSTAT"/>
+      <Rubric id="d1e174853" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indication of drug use.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174871" kind="short">
+         <Label xml:lang="en-US">drug use</Label>
+      </Rubric>
+      <Rubric id="d1e174871" kind="preferred">
+         <Label xml:lang="en-US">drug use</Label>
+      </Rubric>
+   </Class>
+   <Class code="IVDRG" kind="concept">
+      <Meta name="internalId" value="22292"/>
+      <SuperClass code="HLSTAT"/>
+      <Rubric id="d1e174882" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indication of IV drug use .</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174900" kind="short">
+         <Label xml:lang="en-US">IV drug use</Label>
+      </Rubric>
+      <Rubric id="d1e174900" kind="preferred">
+         <Label xml:lang="en-US">IV drug use</Label>
+      </Rubric>
+   </Class>
+   <Class code="PGNT" kind="concept">
+      <Meta name="internalId" value="22291"/>
+      <SuperClass code="HLSTAT"/>
+      <Rubric id="d1e174911" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Non-clinical report of pregnancy.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174929" kind="short">
+         <Label xml:lang="en-US">pregnant</Label>
+      </Rubric>
+      <Rubric id="d1e174929" kind="preferred">
+         <Label xml:lang="en-US">pregnant</Label>
+      </Rubric>
+   </Class>
+   <Class code="CHILD" kind="concept">
+      <Meta name="internalId" value="22311"/>
+      <SuperClass code="INCOME"/>
+      <Rubric id="d1e174941" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of child support payments received or provided.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174959" kind="short">
+         <Label xml:lang="en-US">child support</Label>
+      </Rubric>
+      <Rubric id="d1e174959" kind="preferred">
+         <Label xml:lang="en-US">child support</Label>
+      </Rubric>
+   </Class>
+   <Class code="DISABL" kind="concept">
+      <Meta name="internalId" value="22314"/>
+      <SuperClass code="INCOME"/>
+      <Rubric id="d1e174970" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of disability income replacement payment.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e174988" kind="short">
+         <Label xml:lang="en-US">disability pay</Label>
+      </Rubric>
+      <Rubric id="d1e174988" kind="preferred">
+         <Label xml:lang="en-US">disability pay</Label>
+      </Rubric>
+   </Class>
+   <Class code="INVEST" kind="concept">
+      <Meta name="internalId" value="22310"/>
+      <SuperClass code="INCOME"/>
+      <Rubric id="d1e174999" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of investment income, e.g., dividend check, annuity payment; real estate rent, investment divestiture proceeds; trust or endowment check.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175017" kind="short">
+         <Label xml:lang="en-US">investment income</Label>
+      </Rubric>
+      <Rubric id="d1e175017" kind="preferred">
+         <Label xml:lang="en-US">investment income</Label>
+      </Rubric>
+   </Class>
+   <Class code="PAY" kind="concept">
+      <Meta name="internalId" value="22308"/>
+      <SuperClass code="INCOME"/>
+      <Rubric id="d1e175028" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of paid employment, e.g., letter of hire, contract, employer letter; copy of pay check or pay stub.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175046" kind="short">
+         <Label xml:lang="en-US">paid employment</Label>
+      </Rubric>
+      <Rubric id="d1e175046" kind="preferred">
+         <Label xml:lang="en-US">paid employment</Label>
+      </Rubric>
+   </Class>
+   <Class code="RETIRE" kind="concept">
+      <Meta name="internalId" value="22309"/>
+      <SuperClass code="INCOME"/>
+      <Rubric id="d1e175057" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of retirement payment, e.g., pension check.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175075" kind="short">
+         <Label xml:lang="en-US">retirement pay</Label>
+      </Rubric>
+      <Rubric id="d1e175075" kind="preferred">
+         <Label xml:lang="en-US">retirement pay</Label>
+      </Rubric>
+   </Class>
+   <Class code="SPOUSAL" kind="concept">
+      <Meta name="internalId" value="22312"/>
+      <SuperClass code="INCOME"/>
+      <Rubric id="d1e175086" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of spousal or partner support payments received or provided; e.g., alimony payment; support stipulations in a divorce settlement.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175104" kind="short">
+         <Label xml:lang="en-US">spousal or partner support</Label>
+      </Rubric>
+      <Rubric id="d1e175104" kind="preferred">
+         <Label xml:lang="en-US">spousal or partner support</Label>
+      </Rubric>
+   </Class>
+   <Class code="SUPPLE" kind="concept">
+      <Meta name="internalId" value="22313"/>
+      <SuperClass code="INCOME"/>
+      <Rubric id="d1e175116" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of income supplement, e.g., gifting, parental income support; stipend, or grant.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175134" kind="short">
+         <Label xml:lang="en-US">income supplement</Label>
+      </Rubric>
+      <Rubric id="d1e175134" kind="preferred">
+         <Label xml:lang="en-US">income supplement</Label>
+      </Rubric>
+   </Class>
+   <Class code="TAX" kind="concept">
+      <Meta name="internalId" value="22315"/>
+      <SuperClass code="INCOME"/>
+      <Rubric id="d1e175145" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of tax obligation or payment, e.g., statement of taxable income.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175163" kind="short">
+         <Label xml:lang="en-US">tax obligation</Label>
+      </Rubric>
+      <Rubric id="d1e175163" kind="preferred">
+         <Label xml:lang="en-US">tax obligation</Label>
+      </Rubric>
+   </Class>
+   <Class code="RELDEP" kind="concept">
+      <Meta name="internalId" value="22288"/>
+      <SuperClass code="LIVDEP"/>
+      <Rubric id="d1e175174" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Continued living in private residence requires functional and health care assistance from one or more relatives.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175192" kind="short">
+         <Label xml:lang="en-US">relative dependent</Label>
+      </Rubric>
+      <Rubric id="d1e175192" kind="preferred">
+         <Label xml:lang="en-US">relative dependent</Label>
+      </Rubric>
+   </Class>
+   <Class code="SPSDEP" kind="concept">
+      <Meta name="internalId" value="22287"/>
+      <SuperClass code="LIVDEP"/>
+      <Rubric id="d1e175203" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Continued living in private residence requires functional and health care assistance from spouse or life partner.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175221" kind="short">
+         <Label xml:lang="en-US">spouse dependent</Label>
+      </Rubric>
+      <Rubric id="d1e175221" kind="preferred">
+         <Label xml:lang="en-US">spouse dependent</Label>
+      </Rubric>
+   </Class>
+   <Class code="URELDEP" kind="concept">
+      <Meta name="internalId" value="22289"/>
+      <SuperClass code="LIVDEP"/>
+      <Rubric id="d1e175232" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Continued living in private residence requires functional and health care assistance from one or more unrelated persons.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175250" kind="short">
+         <Label xml:lang="en-US">unrelated person dependent</Label>
+      </Rubric>
+      <Rubric id="d1e175250" kind="preferred">
+         <Label xml:lang="en-US">unrelated person dependent</Label>
+      </Rubric>
+   </Class>
+   <Class code="CLOTH" kind="concept">
+      <Meta name="internalId" value="22327"/>
+      <SuperClass code="LIVEXP"/>
+      <Rubric id="d1e175261" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of clothing expenses.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175279" kind="short">
+         <Label xml:lang="en-US">clothing expense</Label>
+      </Rubric>
+      <Rubric id="d1e175279" kind="preferred">
+         <Label xml:lang="en-US">clothing expense</Label>
+      </Rubric>
+   </Class>
+   <Class code="FOOD" kind="concept">
+      <Meta name="internalId" value="22329"/>
+      <SuperClass code="LIVEXP"/>
+      <Rubric id="d1e175291" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of transportation expenses.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175309" kind="short">
+         <Label xml:lang="en-US">food expense</Label>
+      </Rubric>
+      <Rubric id="d1e175309" kind="preferred">
+         <Label xml:lang="en-US">food expense</Label>
+      </Rubric>
+   </Class>
+   <Class code="HEALTH" kind="concept">
+      <Meta name="internalId" value="22326"/>
+      <SuperClass code="LIVEXP"/>
+      <Rubric id="d1e175320" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of health expenses; including medication costs, health service costs, financial participations, and health coverage premiums.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175338" kind="short">
+         <Label xml:lang="en-US">health expense</Label>
+      </Rubric>
+      <Rubric id="d1e175338" kind="preferred">
+         <Label xml:lang="en-US">health expense</Label>
+      </Rubric>
+   </Class>
+   <Class code="HOUSE" kind="concept">
+      <Meta name="internalId" value="22324"/>
+      <SuperClass code="LIVEXP"/>
+      <Rubric id="d1e175349" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of housing expense, e.g., household appliances, fixtures, furnishings, and maintenance and repairs.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175367" kind="short">
+         <Label xml:lang="en-US">household expense</Label>
+      </Rubric>
+      <Rubric id="d1e175367" kind="preferred">
+         <Label xml:lang="en-US">household expense</Label>
+      </Rubric>
+   </Class>
+   <Class code="LEGAL" kind="concept">
+      <Meta name="internalId" value="22328"/>
+      <SuperClass code="LIVEXP"/>
+      <Rubric id="d1e175378" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of legal expenses.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175396" kind="short">
+         <Label xml:lang="en-US">legal expense</Label>
+      </Rubric>
+      <Rubric id="d1e175396" kind="preferred">
+         <Label xml:lang="en-US">legal expense</Label>
+      </Rubric>
+   </Class>
+   <Class code="MORTG" kind="concept">
+      <Meta name="internalId" value="22323"/>
+      <SuperClass code="LIVEXP"/>
+      <Rubric id="d1e175407" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of mortgage amount, interest, and payments.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175425" kind="short">
+         <Label xml:lang="en-US">mortgage</Label>
+      </Rubric>
+      <Rubric id="d1e175425" kind="preferred">
+         <Label xml:lang="en-US">mortgage</Label>
+      </Rubric>
+   </Class>
+   <Class code="RENT" kind="concept">
+      <Meta name="internalId" value="22322"/>
+      <SuperClass code="LIVEXP"/>
+      <Rubric id="d1e175436" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of rental or lease payments.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175454" kind="short">
+         <Label xml:lang="en-US">rent</Label>
+      </Rubric>
+      <Rubric id="d1e175454" kind="preferred">
+         <Label xml:lang="en-US">rent</Label>
+      </Rubric>
+   </Class>
+   <Class code="SUNDRY" kind="concept">
+      <Meta name="internalId" value="22330"/>
+      <SuperClass code="LIVEXP"/>
+      <Rubric id="d1e175466" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of transportation expenses.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175484" kind="short">
+         <Label xml:lang="en-US">sundry expense</Label>
+      </Rubric>
+      <Rubric id="d1e175484" kind="preferred">
+         <Label xml:lang="en-US">sundry expense</Label>
+      </Rubric>
+   </Class>
+   <Class code="TRANS" kind="concept">
+      <Meta name="internalId" value="22325"/>
+      <SuperClass code="LIVEXP"/>
+      <Rubric id="d1e175495" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of transportation expenses, e.g., vehicle payments, vehicle insurance, vehicle fuel, and vehicle maintenance and repairs.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175513" kind="short">
+         <Label xml:lang="en-US">transportation expense</Label>
+      </Rubric>
+      <Rubric id="d1e175513" kind="preferred">
+         <Label xml:lang="en-US">transportation expense</Label>
+      </Rubric>
+   </Class>
+   <Class code="UTIL" kind="concept">
+      <Meta name="internalId" value="22331"/>
+      <SuperClass code="LIVEXP"/>
+      <Rubric id="d1e175524" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicator of transportation expenses.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175542" kind="short">
+         <Label xml:lang="en-US">utility expense</Label>
+      </Rubric>
+      <Rubric id="d1e175542" kind="preferred">
+         <Label xml:lang="en-US">utility expense</Label>
+      </Rubric>
+   </Class>
+   <Class code="ALONE" kind="concept">
+      <Meta name="internalId" value="22281"/>
+      <SuperClass code="LIVSIT"/>
+      <Rubric id="d1e175553" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Living alone. Maps to PD1-2 Living arrangement (IS) 00742 [A]</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175571" kind="short">
+         <Label xml:lang="en-US">alone</Label>
+      </Rubric>
+      <Rubric id="d1e175571" kind="preferred">
+         <Label xml:lang="en-US">alone</Label>
+      </Rubric>
+   </Class>
+   <Class code="DEPCHD" kind="concept">
+      <Meta name="internalId" value="22278"/>
+      <SuperClass code="LIVSIT"/>
+      <Rubric id="d1e175582" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Living with one or more dependent children requiring moderate supervision.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175600" kind="short">
+         <Label xml:lang="en-US">dependent children</Label>
+      </Rubric>
+      <Rubric id="d1e175600" kind="preferred">
+         <Label xml:lang="en-US">dependent children</Label>
+      </Rubric>
+   </Class>
+   <Class code="DEPSPS" kind="concept">
+      <Meta name="internalId" value="22280"/>
+      <SuperClass code="LIVSIT"/>
+      <Rubric id="d1e175611" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Living with disabled spouse requiring functional and health care assistance</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175629" kind="short">
+         <Label xml:lang="en-US">dependent spouse</Label>
+      </Rubric>
+      <Rubric id="d1e175629" kind="preferred">
+         <Label xml:lang="en-US">dependent spouse</Label>
+      </Rubric>
+   </Class>
+   <Class code="DEPYGCHD" kind="concept">
+      <Meta name="internalId" value="22279"/>
+      <SuperClass code="LIVSIT"/>
+      <Rubric id="d1e175641" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Living with one or more dependent children requiring intensive supervision</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175659" kind="short">
+         <Label xml:lang="en-US">dependent young children</Label>
+      </Rubric>
+      <Rubric id="d1e175659" kind="preferred">
+         <Label xml:lang="en-US">dependent young children</Label>
+      </Rubric>
+   </Class>
+   <Class code="FAM" kind="concept">
+      <Meta name="internalId" value="22284"/>
+      <SuperClass code="LIVSIT"/>
+      <Rubric id="d1e175670" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Living with family. Maps to PD1-2 Living arrangement (IS) 00742 [F]</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175688" kind="short">
+         <Label xml:lang="en-US">live with family</Label>
+      </Rubric>
+      <Rubric id="d1e175688" kind="preferred">
+         <Label xml:lang="en-US">live with family</Label>
+      </Rubric>
+   </Class>
+   <Class code="RELAT" kind="concept">
+      <Meta name="internalId" value="22283"/>
+      <SuperClass code="LIVSIT"/>
+      <Rubric id="d1e175699" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Living with one or more relatives. Maps to PD1-2 Living arrangement (IS) 00742 [R]</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175717" kind="short">
+         <Label xml:lang="en-US">relative</Label>
+      </Rubric>
+      <Rubric id="d1e175717" kind="preferred">
+         <Label xml:lang="en-US">relative</Label>
+      </Rubric>
+   </Class>
+   <Class code="SPS" kind="concept">
+      <Meta name="internalId" value="22282"/>
+      <SuperClass code="LIVSIT"/>
+      <Rubric id="d1e175728" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Living only with spouse or life partner. Maps to PD1-2 Living arrangement (IS) 00742 [S]</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175746" kind="short">
+         <Label xml:lang="en-US">spouse only</Label>
+      </Rubric>
+      <Rubric id="d1e175746" kind="preferred">
+         <Label xml:lang="en-US">spouse only</Label>
+      </Rubric>
+   </Class>
+   <Class code="UNREL" kind="concept">
+      <Meta name="internalId" value="22285"/>
+      <SuperClass code="LIVSIT"/>
+      <Rubric id="d1e175757" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Living with one or more unrelated persons.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175775" kind="short">
+         <Label xml:lang="en-US">unrelated person</Label>
+      </Rubric>
+      <Rubric id="d1e175775" kind="preferred">
+         <Label xml:lang="en-US">unrelated person</Label>
+      </Rubric>
+   </Class>
+   <Class code="ABUSE" kind="concept">
+      <Meta name="internalId" value="22275"/>
+      <SuperClass code="SOECSTAT"/>
+      <Rubric id="d1e175786" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indication of abuse victim.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175804" kind="short">
+         <Label xml:lang="en-US">abuse victim</Label>
+      </Rubric>
+      <Rubric id="d1e175804" kind="preferred">
+         <Label xml:lang="en-US">abuse victim</Label>
+      </Rubric>
+   </Class>
+   <Class code="HMLESS" kind="concept">
+      <Meta name="internalId" value="22270"/>
+      <SuperClass code="SOECSTAT"/>
+      <Rubric id="d1e175816" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indication of status as homeless.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175834" kind="short">
+         <Label xml:lang="en-US">homeless</Label>
+      </Rubric>
+      <Rubric id="d1e175834" kind="preferred">
+         <Label xml:lang="en-US">homeless</Label>
+      </Rubric>
+   </Class>
+   <Class code="ILGIM" kind="concept">
+      <Meta name="internalId" value="22271"/>
+      <SuperClass code="SOECSTAT"/>
+      <Rubric id="d1e175845" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indication of status as illegal immigrant.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175863" kind="short">
+         <Label xml:lang="en-US">illegal immigrant</Label>
+      </Rubric>
+      <Rubric id="d1e175863" kind="preferred">
+         <Label xml:lang="en-US">illegal immigrant</Label>
+      </Rubric>
+   </Class>
+   <Class code="INCAR" kind="concept">
+      <Meta name="internalId" value="22272"/>
+      <SuperClass code="SOECSTAT"/>
+      <Rubric id="d1e175874" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indication of status as incarcerated.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175892" kind="short">
+         <Label xml:lang="en-US">incarcerated</Label>
+      </Rubric>
+      <Rubric id="d1e175892" kind="preferred">
+         <Label xml:lang="en-US">incarcerated</Label>
+      </Rubric>
+   </Class>
+   <Class code="PROB" kind="concept">
+      <Meta name="internalId" value="22273"/>
+      <SuperClass code="SOECSTAT"/>
+      <Rubric id="d1e175903" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indication of probation status.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175921" kind="short">
+         <Label xml:lang="en-US">probation</Label>
+      </Rubric>
+      <Rubric id="d1e175921" kind="preferred">
+         <Label xml:lang="en-US">probation</Label>
+      </Rubric>
+   </Class>
+   <Class code="REFUG" kind="concept">
+      <Meta name="internalId" value="22276"/>
+      <SuperClass code="SOECSTAT"/>
+      <Rubric id="d1e175932" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indication of refugee status.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175950" kind="short">
+         <Label xml:lang="en-US">refugee</Label>
+      </Rubric>
+      <Rubric id="d1e175950" kind="preferred">
+         <Label xml:lang="en-US">refugee</Label>
+      </Rubric>
+   </Class>
+   <Class code="UNEMPL" kind="concept">
+      <Meta name="internalId" value="22274"/>
+      <SuperClass code="SOECSTAT"/>
+      <Rubric id="d1e175961" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indication of unemployed status.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e175979" kind="short">
+         <Label xml:lang="en-US">unemployed</Label>
+      </Rubric>
+      <Rubric id="d1e175979" kind="preferred">
+         <Label xml:lang="en-US">unemployed</Label>
+      </Rubric>
+   </Class>
+   <Class code="RTRD" kind="concept">
+      <Meta name="internalId" value="22925"/>
+      <SuperClass code="SUP"/>
+      <Rubric id="d1e175991" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Lying on the back, on an inclined plane, typically about 30-45 degrees with head raised and feet lowered.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e176009" kind="short">
+         <Label xml:lang="en-US">reverse trendelenburg</Label>
+      </Rubric>
+      <Rubric id="d1e176009" kind="preferred">
+         <Label xml:lang="en-US">reverse trendelenburg</Label>
+      </Rubric>
+   </Class>
+   <Class code="TRD" kind="concept">
+      <Meta name="internalId" value="22926"/>
+      <SuperClass code="SUP"/>
+      <Rubric id="d1e176020" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Lying on the back, on an inclined plane, typically about 30-45 degrees, with head lowered and feet raised.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e176038" kind="short">
+         <Label xml:lang="en-US">trendelenburg</Label>
+      </Rubric>
+      <Rubric id="d1e176038" kind="preferred">
+         <Label xml:lang="en-US">trendelenburg</Label>
+      </Rubric>
+   </Class>
+</ClaML>

@@ -1,0 +1,27 @@
+<server-info>
+    <!-- Link prefix to ART-DECOR Projects. Must end on /. Change this to your own environment -->
+    <url-art-decor-deeplinkprefix>http://art-decor.org/art-decor/</url-art-decor-deeplinkprefix>
+    <!-- Link prefix to ART-DECOR Services. Must end on /. Change this to your own environment -->
+    <url-art-decor-services>http://art-decor.org/decor/services/</url-art-decor-services>
+    <!-- Determines the server interface language, if one is not set for the user (may be guest) -->
+    <defaultLanguage>en-US</defaultLanguage>
+    <!-- Determines the list of known/trusted buildingBlockRepositories external to your own server. Projects should compare this list with the full list of repositories-->
+    <externalBuildingBlockRepositoryServers>
+        <!--<buildingBlockServer url="http://art-decor.org/decor/services/"/>-->
+    </externalBuildingBlockRepositoryServers>
+    <externalBuildingBlockRepositories>
+        <!--<buildingBlockRepository url="http://art-decor.org/decor/services/" ident="ad1bbr-">
+            <name language="en-US">CDA Release 2</name>
+            <name language="nl-NL">CDA Release 2</name>
+            <name language="de-DE">CDA Release 2</name>
+        </buildingBlockRepository>-->
+    </externalBuildingBlockRepositories>
+   <!-- for standard ART-DECOR menu --> 
+   <xformStylesheet>apply-rules.xsl</xformStylesheet>
+   <!-- for art-decor.org ART-DECOR menu --> 
+   <!-- <xformStylesheet>apply-rules-artdecororg.xsl</xformStylesheet> --> 
+   <!-- for terminology only menu -->
+   <!-- <xformStylesheet>apply-rules-terminology.xsl</xformStylesheet> -->
+   <!-- for XIS only menu -->
+   <!-- <xformStylesheet>apply-rules-xis.xsl</xformStylesheet> -->
+</server-info>

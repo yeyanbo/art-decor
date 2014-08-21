@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="ASCII"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <realmCode code="UV"/>
+  <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+  <templateId root="1.3.6.1.4.1.19376.1.3.3"/>
+  <id root="1.3.6.1.4.1.19376.1.3.4.103000182001215079.1216843657265.1"/>
+  <code code="18725-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Microbiology Studies"/>
+  <title>Public Health Laboratory Report</title>
+  <effectiveTime value="20080723160737.0315-0400"/>
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" displayName="Normal"/>
+  <languageCode code="en-US" codeSystem="2.16.840.1.113883.6.121"/>
+  <setId extension="07SR012345" root="1.3.6.1.4.1.19376.1.3.4"/>
+  <versionNumber value="1"/>
+  <recordTarget typeCode="RCT">
+    <patientRole classCode="PAT">
+      <id extension="sw54321" root="1.3.6.1.4.1.19376.1.3.4"/>
+      <addr use="HP"><streetAddressLine>1313 Mockingbird Lane</streetAddressLine><city>Janesville</city><state>WI</state><postalCode>53545</postalCode><country>USA</country>PO BOX 53545</addr>
+      <addr use="H"><country>GB</country></addr>
+      <telecom value="tel: 608-555-5555"/>
+      <patient classCode="PSN">
+        <name><family>Winters</family><given>Shelly</given></name>
+        <administrativeGenderCode code="F" codeSystem="2.16.840.113883.5.1" codeSystemName="HL7" displayName="FEMALE"/>
+        <birthTime value="19401213000000.0000-0500"/>
+        <religiousAffiliationCode code="C19207" codeSystem="2.16.840.1.113883" codeSystemName="HL7" displayName="INDEPENDENT"/>
+        <ethnicGroupCode code="C15879" codeSystem="2.16.840.1.113883" codeSystemName="HL7" displayName="Not Hispanic or Latino"/>
+        <birthplace>
+          <place>
+            <addr><country>USA</country></addr>
+          </place>
+        </birthplace>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <time value="20080723160737.0315-0400"/>
+    <assignedAuthor>
+      <id extension="AD2007" root="1.3.6.1.4.1.19376.1.3.4"/>
+      <addr><streetAddressLine>650 Harry Rd</streetAddressLine><city>San Jose</city><state>CA</state><postalCode>95120</postalCode><country>USA</country></addr>
+      <telecom value="tel: 408-555-5555"/>
+      <assignedPerson>
+        <name><family>Person</family><given>Author</given></name>
+      </assignedPerson>
+      <representedOrganization>
+        <id extension="AD2007" root="1.3.6.1.4.1.19376.1.3.4"/>
+        <name>IBM</name>
+        <telecom value="tel: 408-555-5555"/>
+        <addr><streetAddressLine>650 Harry Rd</streetAddressLine><city>San Jose</city><state>CA</state><postalCode>95120</postalCode><country>USA</country></addr>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <author>
+    <time value="20080723160737.0315-0400"/>
+    <assignedAuthor>
+      <id extension="AD2007" root="1.3.6.1.4.1.19376.1.3.4"/>
+      <addr><streetAddressLine>650 Harry Rd</streetAddressLine><city>San Jose</city><state>CA</state><postalCode>95120</postalCode><country>USA</country></addr>
+      <telecom value="tel: 408-555-5555"/>
+      <assignedAuthoringDevice>
+        <softwareName>IBM Public Health Application System</softwareName>
+      </assignedAuthoringDevice>
+      <representedOrganization>
+        <id extension="AD2007" root="1.3.6.1.4.1.19376.1.3.4"/>
+        <name>IBM DEVICE</name>
+        <telecom value="tel: 408-555-5555"/>
+        <addr><streetAddressLine>650 Harry Rd</streetAddressLine><city>San Jose</city><state>CA</state><postalCode>95120</postalCode><country>USA</country></addr>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <custodian typeCode="CST">
+    <assignedCustodian classCode="ASSIGNED">
+      <representedCustodianOrganization>
+        <id nullFlavor="UNK"/>
+        <name>Universal Custodian Services</name>
+        <telecom value="tel: 789-555-2121"/>
+        <addr><streetAddressLine>1600 Pennsylvania Ave</streetAddressLine><city>Washington DC</city><postalCode>98765</postalCode><country>USA</country></addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <informationRecipient>
+    <intendedRecipient>
+      <id extension="0000" root="1.3.6.1.4.1.19376.1.3.4"/>
+      <addr><streetAddressLine>1600 Clifton Road</streetAddressLine><city>Atlanta</city><state>GA</state><postalCode>30333</postalCode><country>USA</country></addr>
+      <telecom value="tel: 404-639-3535"/>
+      <informationRecipient>
+        <name><family>Angulo</family><given>Fred</given></name>
+      </informationRecipient>
+      <receivedOrganization>
+        <id extension="0000" root="1.3.6.1.4.1.19376.1.3.4"/>
+        <name>FoodNet</name>
+        <telecom value="tel: 404-639-3535"/>
+        <addr><streetAddressLine>1600 Clifton Road</streetAddressLine><city>Atlanta</city><state>GA</state><postalCode>30333</postalCode><country>USA</country></addr>
+      </receivedOrganization>
+    </intendedRecipient>
+  </informationRecipient>
+  <legalAuthenticator>
+    <time value="20080723160737.0315-0400"/>
+    <signatureCode code="S"/>
+    <assignedEntity>
+      <id extension="B092987200201" root="1.3.6.1.4.1.19376.1.3.4"/>
+      <addr><streetAddressLine>7000 Laboratory Drive</streetAddressLine><city>Chicago</city><state>IL</state><postalCode>60622</postalCode><country>USA</country></addr>
+      <telecom value="tel: 312-555-5555"/>
+      <assignedPerson>
+        <name><family>Johnson</family><given>Linda</given><prefix>Dr</prefix></name>
+      </assignedPerson>
+      <representedOrganization>
+        <id extension="rm83747" root="1.3.6.1.4.1.19376.1.3.4"/>
+        <name>Public Health Laboratory</name>
+        <telecom value="tel: 312-555-5555"/>
+        <addr><streetAddressLine>1234 Laboratory Drive</streetAddressLine><city>Chicago</city><state>IL</state><postalCode>60622</postalCode><country>USA</country></addr>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+  <authenticator>
+    <time value="20080723160737.0315-0400"/>
+    <signatureCode code="S"/>
+    <assignedEntity>
+      <id extension="274" root="1.3.6.1.4.1.19376.1.3.4"/>
+      <addr><streetAddressLine>7000 Laboratory Drive</streetAddressLine><city>Chicago</city><state>IL</state><postalCode>60622</postalCode><country>USA</country></addr>
+      <telecom value="tel: 312-555-5555"/>
+      <assignedPerson>
+        <name><suffix>MT ASCP</suffix><family>Technologist</family><given>274</given></name>
+      </assignedPerson>
+      <representedOrganization>
+        <id extension="rm83747" root="1.3.6.1.4.1.19376.1.3.4"/>
+        <name>PRF Public Health Laboratory</name>
+        <telecom value="tel: 312-555-5555"/>
+        <addr><streetAddressLine>1234 Laboratory Drive</streetAddressLine><city>Chicago</city><state>IL</state><postalCode>60622</postalCode><country>USA</country></addr>
+      </representedOrganization>
+    </assignedEntity>
+  </authenticator>
+  <participant typeCode="REF">
+    <time>
+      <low value="20080404055700.0000-0400"/>
+      <high value="20080408131600.0000-0400"/>
+    </time>
+    <associatedEntity classCode="PROV">
+      <id extension="90573" root="1.3.6.1.4.1.19376.1.3.4"/>
+      <addr><streetAddressLine>3113 Hospital Drive</streetAddressLine><city>Chicago</city><state>IL</state><postalCode>60622</postalCode><country>USA</country></addr>
+      <telecom nullFlavor="UNK"/>
+      <associatedPerson>
+        <name><family>Patel</family><given>Kiran</given><prefix>Dr.</prefix></name>
+      </associatedPerson>
+      <scopingOrganization>
+        <id extension="rm83747" root="1.3.6.1.4.1.19376.1.3.4"/>
+        <name>REF Hospital</name>
+        <telecom nullFlavor="UNK"/>
+        <addr><streetAddressLine>7000 Hosptial Drive</streetAddressLine><city>Chicago</city><state>IL</state><postalCode>60622</postalCode><country>USA</country></addr>
+      </scopingOrganization>
+    </associatedEntity>
+  </participant>
+  <inFulfillmentOf>
+    <order>
+      <id extension="28902809" root="1.3.6.1.4.1.19376.1.3.4"/>
+    </order>
+  </inFulfillmentOf>
+  <documentationOf>
+    <serviceEvent>
+      <effectiveTime>
+        <low value="20080404000000.0000-0400"/>
+        <high value="20080408000000.0000-0400"/>
+      </effectiveTime>
+    </serviceEvent>
+  </documentationOf>
+  <authorization>
+    <consent classCode="CONS" moodCode="EVN">
+      <statusCode code="completed"/>
+    </consent>
+  </authorization>
+  <componentOf>
+    <encompassingEncounter>
+      <id extension="ENC1234" root="1.3.6.1.4.1.19376.1.3.4"/>
+      <effectiveTime value="20080404000000.0000-0400"/>
+      <location>
+        <healthCareFacility>
+          <code code="HU" codeSystem="2.16.840.1.113883.5.10588" codeSystemName="HL7 Service Delivery Location" displayName="Hospital Unit"/>
+        </healthCareFacility>
+      </location>
+    </encompassingEncounter>
+  </componentOf>
+  <component typeCode="COMP">
+    <structuredBody classCode="DOCBODY" moodCode="EVN">
+      <component typeCode="COMP">
+        <section classCode="DOCSECT">
+          <templateId root="1.3.6.1.4.1.19376.1.3.3.2.1"/>
+          <code code="18725-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Microbiology Studies"/>
+          <title>Public Health Laboratory Report</title>
+          <text><table>
+              <thead ID="isoTest">
+                <tr>
+                  <th>Organism Isolated</th>
+                  <th>Specimen Type</th>
+                  <th>Comments</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr ID="isoTestComment">
+                  <td>Test Comment: Performed at Hospital Laboratory</td>
+                </tr>
+                <tr ID="isoTestComment1">
+                  <td>Test Comment Previous Result 1: Performed at Hospital Laboratory</td>
+                </tr>
+              </tfoot>
+              <tbody>
+                <tr>
+                  <td>Salmonella Group C</td>
+                  <td>stool</td>
+                  <td/>
+                </tr>
+              </tbody>
+            </table><table>
+              <thead ID="serotypeTest">
+                <tr>
+                  <th>Salmonella Serotype</th>
+                  <th>LOINC</th>
+                  <th>SNOMED</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Salmonella tennessee 6,7,14;z29;1,2,7</td>
+                  <td>6463-4</td>
+                  <td>79153007</td>
+                </tr>
+              </tbody>
+            </table><table>
+              <thead ID="susceptibilityTest">
+                <tr>
+                  <th>Microbiology Susceptibility</th>
+                  <th>Interpretation</th>
+                  <th>Comments</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <td>Test Comment: Performed at Hospital Laboratory</td>
+                </tr>
+              </tfoot>
+              <tbody>
+                <tr ID="a0">
+                  <td>Tetracycline</td>
+                  <td>Susceptible</td>
+                  <td></td>
+                </tr>
+                <tr ID="a1">
+                  <td>Ciprofloxacin</td>
+                  <td>Susceptible</td>
+                  <td></td>
+                </tr>
+                <tr ID="a2">
+                  <td>Trimethprim + Sulfamethoxazole</td>
+                  <td>Susceptible</td>
+                  <td></td>
+                </tr>
+                <tr ID="a3">
+                  <td>Ampicillin</td>
+                  <td>Susceptible</td>
+                  <td></td>
+                </tr>
+                <tr ID="a4">
+                  <td>Chloramphenicol</td>
+                  <td>Susceptible</td>
+                  <td></td>
+                </tr>
+                <tr ID="a5">
+                  <td>Ceftriaxone</td>
+                  <td>Susceptible</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table><table>
+              <thead ID="phagetypeTest">
+                <tr>
+                  <th>Salmonella Phagetype</th>
+                  <th>Comments</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr ID="phagetypeTestComment">
+                  <td>Test Comment: Performed at Hospital Laboratory</td>
+                </tr>
+              </tfoot>
+              <tbody>
+                <tr>
+                  <td/>
+                  <td/>
+                </tr>
+              </tbody>
+            </table><table>
+              <thead ID="pulsenetTest">
+                <tr>
+                  <th>Salmonella PulseNet</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>PulseNet image embedded in document.</td>
+                </tr>
+              </tbody>
+            </table><renderMultiMedia referencedObject="PulseNet"/><paragraph ID="sComment">Specimen level salmonella comment goes here.</paragraph></text>
+          <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN">
+              <code code="18725-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Microbiology Studies"/>
+              <statusCode code="completed"/>
+              <specimen typeCode="SPC">
+                <specimenRole classCode="SPEC">
+                  <id extension="55584739900388" root="1.3.6.1.4.1.19376.1.3.4"/>
+                  <id extension="555847399003" root="1.3.6.1.4.1.19376.1.3.4"/>
+                  <specimenPlayingEntity>
+                    <code code="STL" codeSystem="2.16.840.1.113883.5.129" codeSystemName="HL7" displayName="Stool"/>
+                  </specimenPlayingEntity>
+                </specimenRole>
+              </specimen>
+              <entryRelationship typeCode="COMP">
+                <act classCode="ACT" moodCode="EVN">
+                  <templateId root="1.3.6.1.4.1.19376.1.3.1.2"/>
+                  <code code="33882-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Collection Time"/>
+                  <effectiveTime value="20080404000000.0000-0400"/>
+                  <participant typeCode="PRF">
+                    <participantRole>
+                      <addr><streetAddressLine>7000 Hosptial Drive</streetAddressLine><city>Chicago</city><state>IL</state><postalCode>60622</postalCode><country>USA</country></addr>
+                      <telecom value="tel: 312-555-5555"/>
+                    </participantRole>
+                  </participant>
+                </act>
+              </entryRelationship>
+              <entryRelationship typeCode="COMP">
+                <act classCode="ACT" moodCode="EVN">
+                  <templateId root="1.3.6.1.4.1.19376.1.3.1.3"/>
+                  <code code="TBDXX-X" codeSystem="2.16.840.1.113883.6.1" codeSystemName="TBDXX" displayName="Receive Time"/>
+                  <effectiveTime value="20080408000000.0000-0400"/>
+                </act>
+              </entryRelationship>
+              <entryRelationship typeCode="COMP">
+                <organizer classCode="CLUSTER" moodCode="EVN">
+                  <templateId root="1.3.6.1.4.1.19376.1.3.1.1"/>
+                  <statusCode code="completed"/>
+                  <component>
+                    <observation classCode="COND" moodCode="EVN">
+                      <templateId root="1.3.6.1.4.1.19376.1.3.1.1.1"/>
+                      <code code="170516003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Notification of Disease">
+                        <qualifier>
+                          <name code="105590001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Substance"/>
+                          <value code="116154003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Patient"/>
+                        </qualifier>
+                      </code>
+                      <value xsi:type="CE" code="27268008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Salmonella">
+                        <translation code="6463-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Salmonella"/>
+                        <translation code="L-17100" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED" displayName="Salmonella"/>
+                      </value>
+                    </observation>
+                  </component>
+                </organizer>
+              </entryRelationship>
+              <entryRelationship typeCode="COMP">
+                <organizer classCode="CLUSTER" moodCode="EVN">
+                  <templateId root="1.3.6.1.4.1.19376.1.3.1.5"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime value="20080408000000.0000-0400"/>
+                  <specimen typeCode="SPC">
+                    <specimenRole classCode="ISLT">
+                      <specimenPlayingEntity classCode="MIC">
+                        <code code="79153007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Salmonella tennessee 6,7,14;z29;1,2,7">
+                          <translation xsi:type="CE" code="6463-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Salmonella tennessee 6,7,14;z29;1,2,7"/>
+                          <translation xsi:type="CE" code="L-17601" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED" displayName="Salmonella tennessee 6,7,14;z29;1,2,7"/>
+                        </code>
+                      </specimenPlayingEntity>
+                    </specimenRole>
+                  </specimen>
+                  <component>
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                      <code code="89029-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Microbiology Culture">
+                        <originalText><reference value="isoTest"/></originalText>
+                      </code>
+                      <statusCode code="completed"/>
+                      <effectiveTime value="20080408000000.0000-0400"/>
+                      <value xsi:type="CE" code="1116048001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED" displayName="Salmonella Group C"/>
+                      <performer typeCode="PRF">
+                        <assignedEntity>
+                          <id extension="rm83747" root="1.3.6.1.4.1.19376.1.3.4"/>
+                          <addr><streetAddressLine>7000 Hosptial Drive</streetAddressLine><city>Chicago</city><state>IL</state><postalCode>60622</postalCode><country>USA</country></addr>
+                          <telecom value="tel: 312-555-5555"/>
+                          <assignedPerson>
+                            <name><family>Trenton</family><given>Douglas</given><prefix>Dr.</prefix></name>
+                          </assignedPerson>
+                          <representedOrganization>
+                            <id extension="rm83747" root="1.3.6.1.4.1.19376.1.3.4"/>
+                            <name>Hospital Laboratory</name>
+                            <telecom value="tel: 312-555-5555"/>
+                            <addr><streetAddressLine>7000 Hosptial Drive</streetAddressLine><city>Chicago</city><state>IL</state><postalCode>60622</postalCode><country>USA</country></addr>
+                          </representedOrganization>
+                        </assignedEntity>
+                      </performer>
+                      <entryRelationship typeCode="COMP">
+                        <act classCode="ACT" moodCode="EVN">
+                          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+                          <code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+                          <text><reference value="isoTestComment"/></text>
+                          <statusCode code="completed"/>
+                        </act>
+                      </entryRelationship>
+                      <entryRelationship typeCode="REFR">
+                        <sequenceNumber value="1"/>
+                        <observation classCode="OBS" moodCode="EVN">
+                          <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                          <code code="89029-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Microbiology Culture"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20080408000000.0000-0400"/>
+                          <value xsi:type="CE" code="27268008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Salmonella species"/>
+                          <performer typeCode="PRF">
+                            <assignedEntity>
+                              <id extension="rm83747" root="1.3.6.1.4.1.19376.1.3.4"/>
+                              <addr><streetAddressLine>7000 Hosptial Drive</streetAddressLine><city>Chicago</city><state>IL</state><postalCode>60622</postalCode><country>USA</country></addr>
+                              <telecom value="tel: 312-555-5555"/>
+                              <assignedPerson>
+                                <name><family>Trenton</family><given>Douglas</given><prefix>Dr.</prefix></name>
+                              </assignedPerson>
+                              <representedOrganization>
+                                <id extension="rm83747" root="1.3.6.1.4.1.19376.1.3.4"/>
+                                <name>Hospital Laboratory</name>
+                                <telecom value="tel: 312-555-5555"/>
+                                <addr><streetAddressLine>7000 Hosptial Drive</streetAddressLine><city>Chicago</city><state>IL</state><postalCode>60622</postalCode><country>USA</country></addr>
+                              </representedOrganization>
+                            </assignedEntity>
+                          </performer>
+                          <entryRelationship typeCode="COMP">
+                            <act classCode="ACT" moodCode="EVN">
+                              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+                              <code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+                              <text><reference value="isoTestComment0"/></text>
+                              <statusCode code="completed"/>
+                            </act>
+                          </entryRelationship>
+                        </observation>
+                      </entryRelationship>
+                      <entryRelationship typeCode="REFR">
+                        <sequenceNumber value="2"/>
+                        <observation classCode="OBS" moodCode="EVN">
+                          <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                          <code code="89029-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Microbiology Culture"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20080408000000.0000-0400"/>
+                          <value xsi:type="CE" code="27268008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Salmonella species"/>
+                          <performer typeCode="PRF">
+                            <assignedEntity>
+                              <id extension="rm83747" root="1.3.6.1.4.1.19376.1.3.4"/>
+                              <addr><streetAddressLine>7000 Hosptial Drive</streetAddressLine><city>Chicago</city><state>IL</state><postalCode>60622</postalCode><country>USA</country></addr>
+                              <telecom value="tel: 312-555-5555"/>
+                              <assignedPerson>
+                                <name><family>Trenton</family><given>Douglas</given><prefix>Dr.</prefix></name>
+                              </assignedPerson>
+                              <representedOrganization>
+                                <id extension="rm83747" root="1.3.6.1.4.1.19376.1.3.4"/>
+                                <name>Hospital Laboratory</name>
+                                <telecom value="tel: 312-555-5555"/>
+                                <addr><streetAddressLine>7000 Hosptial Drive</streetAddressLine><city>Chicago</city><state>IL</state><postalCode>60622</postalCode><country>USA</country></addr>
+                              </representedOrganization>
+                            </assignedEntity>
+                          </performer>
+                        </observation>
+                      </entryRelationship>
+                      <entryRelationship typeCode="REFR">
+                        <sequenceNumber value="3"/>
+                        <observation classCode="OBS" moodCode="EVN">
+                          <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                          <code code="89029-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Microbiology Culture"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20080408000000.0000-0400"/>
+                          <value xsi:type="CE" code="27268008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Salmonella species"/>
+                          <performer typeCode="PRF">
+                            <assignedEntity>
+                              <id extension="rm83747" root="1.3.6.1.4.1.19376.1.3.4"/>
+                              <addr><streetAddressLine>7000 Hosptial Drive</streetAddressLine><city>Chicago</city><state>IL</state><postalCode>60622</postalCode><country>USA</country></addr>
+                              <telecom value="tel: 312-555-5555"/>
+                              <assignedPerson>
+                                <name><family>Trenton</family><given>Douglas</given><prefix>Dr.</prefix></name>
+                              </assignedPerson>
+                              <representedOrganization>
+                                <id extension="rm83747" root="1.3.6.1.4.1.19376.1.3.4"/>
+                                <name>Hospital Laboratory</name>
+                                <telecom value="tel: 312-555-5555"/>
+                                <addr><streetAddressLine>7000 Hosptial Drive</streetAddressLine><city>Chicago</city><state>IL</state><postalCode>60622</postalCode><country>USA</country></addr>
+                              </representedOrganization>
+                            </assignedEntity>
+                          </performer>
+                        </observation>
+                      </entryRelationship>
+                    </observation>
+                  </component>
+                  <component>
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                      <code code="20951-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Salmonella Serotype">
+                        <originalText><reference value="serotypeTest"/></originalText>
+                      </code>
+                      <statusCode code="completed"/>
+                      <effectiveTime value="20080408000000.0000-0400"/>
+                      <value xsi:type="CE" code="79153007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Salmonella tennessee 6,7,14;z29;1,2,7"/>
+                    </observation>
+                  </component>
+                  <component>
+                    <organizer classCode="BATTERY" moodCode="EVN">
+                      <templateId root="1.3.6.1.4.1.19376.1.3.1.4"/>
+                      <code code="29576-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Microbiology Susceptibility">
+                        <originalText><reference value="susceptibilityTest"/></originalText>
+                      </code>
+                      <statusCode code="completed"/>
+                      <effectiveTime value="20080408000000.0000-0400"/>
+                      <performer typeCode="PRF">
+                        <assignedEntity>
+                          <id extension="rm83747" root="1.3.6.1.4.1.19376.1.3.4"/>
+                          <addr><streetAddressLine>7000 Hosptial Drive</streetAddressLine><city>Chicago</city><state>IL</state><postalCode>60622</postalCode><country>USA</country></addr>
+                          <telecom value="tel: 312-555-5555"/>
+                          <assignedPerson>
+                            <name><family>Trenton</family><given>Douglas</given><prefix>Dr.</prefix></name>
+                          </assignedPerson>
+                          <representedOrganization>
+                            <id extension="rm83747" root="1.3.6.1.4.1.19376.1.3.4"/>
+                            <name>Hospital Laboratory</name>
+                            <telecom value="tel: 312-555-5555"/>
+                            <addr><streetAddressLine>7000 Hosptial Drive</streetAddressLine><city>Chicago</city><state>IL</state><postalCode>60622</postalCode><country>USA</country></addr>
+                          </representedOrganization>
+                        </assignedEntity>
+                      </performer>
+                      <component>
+                        <act classCode="ACT" moodCode="EVN">
+                          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+                          <code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+                          <text><reference value="susceptibilityTest"/></text>
+                          <statusCode code="completed"/>
+                        </act>
+                      </component>
+                      <component>
+                        <observation classCode="OBS" moodCode="EVN">
+                          <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                          <code code="18993-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Tetracycline"/>
+                          <statusCode code="completed"/>
+                          <interpretationCode code="S" codeSystem="2.16.840.1.113883.11.10219" displayName="Susceptible"/>
+                        </observation>
+                      </component>
+                      <component>
+                        <observation classCode="OBS" moodCode="EVN">
+                          <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                          <code code="18906-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Ciprofloxacin"/>
+                          <statusCode code="completed"/>
+                          <interpretationCode code="S" codeSystem="2.16.840.1.113883.11.10219" displayName="Susceptible"/>
+                        </observation>
+                      </component>
+                      <component>
+                        <observation classCode="OBS" moodCode="EVN">
+                          <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                          <code code="18995-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Trimethprim + Sulfamethoxazole"/>
+                          <statusCode code="completed"/>
+                          <interpretationCode code="S" codeSystem="2.16.840.1.113883.11.10219" displayName="Susceptible"/>
+                        </observation>
+                      </component>
+                      <component>
+                        <observation classCode="OBS" moodCode="EVN">
+                          <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                          <code code="18864-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Ampicillin"/>
+                          <statusCode code="completed"/>
+                          <interpretationCode code="S" codeSystem="2.16.840.1.113883.11.10219" displayName="Susceptible"/>
+                          <entryRelationship typeCode="REFR">
+                            <sequenceNumber value="1"/>
+                            <observation classCode="OBS" moodCode="EVN">
+                              <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                              <code code="18864-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Ampicillin"/>
+                              <statusCode code="completed"/>
+                              <interpretationCode code="R" codeSystem="2.16.840.1.113883.11.10219" displayName="Resistant"/>
+                            </observation>
+                          </entryRelationship>
+                        </observation>
+                      </component>
+                      <component>
+                        <observation classCode="OBS" moodCode="EVN">
+                          <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                          <code code="18903-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Chloramphenicol"/>
+                          <statusCode code="completed"/>
+                          <interpretationCode code="S" codeSystem="2.16.840.1.113883.11.10219" displayName="Susceptible"/>
+                        </observation>
+                      </component>
+                      <component>
+                        <observation classCode="OBS" moodCode="EVN">
+                          <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                          <code code="18895-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Ceftriaxone"/>
+                          <statusCode code="completed"/>
+                          <interpretationCode code="S" codeSystem="2.16.840.1.113883.11.10219" displayName="Susceptible"/>
+                        </observation>
+                      </component>
+                      <component>
+                        <act classCode="ACT" moodCode="EVN">
+                          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+                          <code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+                          <text><reference value="susceptibilityTestComment2"/></text>
+                          <statusCode code="completed"/>
+                        </act>
+                      </component>
+                    </organizer>
+                  </component>
+                  <component>
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                      <code code="PHAGETYPE_TEST" codeSystemName="TEST INDICATOR">
+                        <originalText><reference value="phagetypeTest"/></originalText>
+                      </code>
+                      <statusCode code="completed"/>
+                      <effectiveTime value="20080408000000.0000-0400"/>
+                      <entryRelationship typeCode="COMP">
+                        <act classCode="ACT" moodCode="EVN">
+                          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+                          <code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+                          <text><reference value="phagetypeTestComment"/></text>
+                          <statusCode code="completed"/>
+                        </act>
+                      </entryRelationship>
+                    </observation>
+                  </component>
+                  <component>
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                      <code code="PULSE_NET_RESULT" codeSystemName="TEST INDICATOR">
+                        <originalText><reference value="pulsenetTest"/></originalText>
+                      </code>
+                      <statusCode code="completed"/>
+                      <effectiveTime value="20080408000000.0000-0400"/>
+                      <methodCode code="PFGE" codeSystem="1.2.820.99999.106000022002159086.1170200374775.3" displayName="PFGE"/>
+                      <entryRelationship typeCode="COMP">
+                        <observationMedia classCode="OBS" ID="PulseNet" moodCode="EVN">
+                          <value representation="B64" mediaType="image/jpeg">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</value>
+                        </observationMedia>
+                      </entryRelationship>
+                    </observation>
+                  </component>
+                </organizer>
+              </entryRelationship>
+              <entryRelationship typeCode="COMP">
+                <act classCode="ACT" moodCode="EVN">
+                  <templateId extension="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+                  <code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Annotation Comment"/>
+                  <text><reference value="sComment"/></text>
+                  <statusCode code="completed"/>
+                </act>
+              </entryRelationship>
+            </act>
+          </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

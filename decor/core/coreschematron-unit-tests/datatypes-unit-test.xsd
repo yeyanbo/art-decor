@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:hl7-org:v3" targetNamespace="urn:hl7-org:v3" elementFormDefault="qualified">
+    <xs:include schemaLocation="coreschemas/datatypes.xsd"/>
+    <xs:include schemaLocation="coreschemas/NarrativeBlock.xsd"/>
+    
+    <xs:element name="datatypes">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="element" type="ANY" maxOccurs="unbounded"/>
+                <xs:element name="element-sd" type="SD.TEXT" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="AD.DE">
+        <xs:complexContent>
+            <xs:extension base="AD"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="AD.EPSOS">
+        <xs:complexContent>
+            <xs:extension base="AD"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="AD.NL">
+        <xs:complexContent>
+            <xs:extension base="AD"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="CD.EPSOS">
+        <xs:complexContent>
+            <xs:extension base="CD"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="CE.EPSOS">
+        <xs:complexContent>
+            <xs:extension base="CE"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="CO.EPSOS">
+        <xs:complexContent>
+            <xs:extension base="CO"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="CV.EPSOS">
+        <xs:complexContent>
+            <xs:extension base="CV"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="CS.LANG">
+        <xs:complexContent>
+            <xs:extension base="CS"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="II.AT.ATU">
+        <xs:complexContent>
+            <xs:extension base="II"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="II.AT.BLZ">
+        <xs:complexContent>
+            <xs:extension base="II"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="II.AT.DVR">
+        <xs:complexContent>
+            <xs:extension base="II"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="II.AT.KTONR">
+        <xs:complexContent>
+            <xs:extension base="II"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="II.EPSOS">
+        <xs:complexContent>
+            <xs:extension base="II"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="II.NL.AGB">
+        <xs:complexContent>
+            <xs:extension base="II"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="II.NL.BSN">
+        <xs:complexContent>
+            <xs:extension base="II"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="II.NL.URA">
+        <xs:complexContent>
+            <xs:extension base="II"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="II.NL.UZI">
+        <xs:complexContent>
+            <xs:extension base="II"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="INT.NONNEG">
+        <xs:complexContent>
+            <xs:extension base="INT"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="INT.POS">
+        <xs:complexContent>
+            <xs:extension base="INT"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="IVL_TS.EPSOS.TZ.OPT">
+        <xs:complexContent>
+            <xs:extension base="IVL_TS"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="IVL_TS.EPSOS.TZ">
+        <xs:complexContent>
+            <xs:extension base="IVL_TS"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="REAL.NONNEG">
+        <xs:complexContent>
+            <xs:extension base="REAL"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="REAL.POS">
+        <xs:complexContent>
+            <xs:extension base="REAL"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="SD.TEXT">
+        <xs:complexContent>
+            <xs:extension base="StrucDoc.Text"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="TEL.AT">
+        <xs:complexContent>
+            <xs:extension base="TEL"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="TEL.EPSOS">
+        <xs:complexContent>
+            <xs:extension base="TEL"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="TS.DATE.FULL">
+        <xs:complexContent>
+            <xs:extension base="TS"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="TS.DATE.MIN">
+        <xs:complexContent>
+            <xs:extension base="TS"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="TS.DATE">
+        <xs:complexContent>
+            <xs:extension base="TS"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="TS.DATETIME.MIN">
+        <xs:complexContent>
+            <xs:extension base="TS"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="TS.EPSOS.TZ.OPT">
+        <xs:complexContent>
+            <xs:extension base="TS"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="TS.EPSOS.TZ">
+        <xs:complexContent>
+            <xs:extension base="TS"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="URL.NL.EXTENDED">
+        <xs:complexContent>
+            <xs:extension base="TEL"/>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

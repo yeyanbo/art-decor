@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="1042"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1132"/>
+   <Title name="hl7CMETAttribution" date="2012-08-02" version="1.000"/>
+   <Class code="rootClass">
+      <SubClass subCount="0" code="contact" kind="concept">
+         <Rubric id="d1e131474" kind="preferred">
+            <Label xml:lang="en-US">contact</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="identified" kind="concept">
+         <Rubric id="d1e131502" kind="preferred">
+            <Label xml:lang="en-US">identified</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="identified-confirmable" kind="concept">
+         <Rubric id="d1e131529" kind="preferred">
+            <Label xml:lang="en-US">identified-confirmable</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="identified-informational" kind="concept">
+         <Rubric id="d1e131556" kind="preferred">
+            <Label xml:lang="en-US">identified-informational</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="informational" kind="concept">
+         <Rubric id="d1e131583" kind="preferred">
+            <Label xml:lang="en-US">informational</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="minimal" kind="concept">
+         <Rubric id="d1e131610" kind="preferred">
+            <Label xml:lang="en-US">minimal</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="universal" kind="concept">
+         <Rubric id="d1e131637" kind="preferred">
+            <Label xml:lang="en-US">universal</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">hl7CMETAttribution</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl"/>
+      </Rubric>
+   </Class>
+   <Class code="contact" kind="concept">
+      <Meta name="internalId" value="23149"/>
+      <Rubric id="d1e131458" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Provides sufficient information to allow the object identified to be contacted. This is likely to have the content of identified and confirmable plus telephone number.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e131474" kind="short">
+         <Label xml:lang="en-US">contact</Label>
+      </Rubric>
+      <Rubric id="d1e131474" kind="preferred">
+         <Label xml:lang="en-US">contact</Label>
+      </Rubric>
+   </Class>
+   <Class code="identified" kind="concept">
+      <Meta name="internalId" value="23153"/>
+      <Rubric id="d1e131486" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>This variant is a proper subset of universal and is intended to provide sufficient information to identify the object(s) modeled by the CMET. This variant is only suitable for use within TIGHTLY COUPLED SYSTEMS ONLY. This variant provides ONLY the ID (and code where applicable) and Name. Other variants may not be substituted at runtime.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e131502" kind="short">
+         <Label xml:lang="en-US">identified</Label>
+      </Rubric>
+      <Rubric id="d1e131502" kind="preferred">
+         <Label xml:lang="en-US">identified</Label>
+      </Rubric>
+   </Class>
+   <Class code="identified-confirmable" kind="concept">
+      <Meta name="internalId" value="23151"/>
+      <Rubric id="d1e131513" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>This extends the identified variant by adding just sufficient additional information to allow the identity of object modeled to be confirmed by a number of corroborating items of data; for instance a patient's date of birth and current address. However, specific contact information, such as telephone number, are not viewed as confirming information.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e131529" kind="short">
+         <Label xml:lang="en-US">identified-confirmable</Label>
+      </Rubric>
+      <Rubric id="d1e131529" kind="preferred">
+         <Label xml:lang="en-US">identified-confirmable</Label>
+      </Rubric>
+   </Class>
+   <Class code="identified-informational" kind="concept">
+      <Meta name="internalId" value="23152"/>
+      <Rubric id="d1e131540" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Generally the same information content as "contactable" but using new "informational" CMETs as dependant CMETs. This flavor allows expression of the CMET when non-focal class information is not known.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e131556" kind="short">
+         <Label xml:lang="en-US">identified-informational</Label>
+      </Rubric>
+      <Rubric id="d1e131556" kind="preferred">
+         <Label xml:lang="en-US">identified-informational</Label>
+      </Rubric>
+   </Class>
+   <Class code="informational" kind="concept">
+      <Meta name="internalId" value="23150"/>
+      <Rubric id="d1e131567" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Generally the same information content as "contactable", but with required (not mandatory) ids on entry point class. This flavor allows expression of the CMET even when mandatory information is not known.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e131583" kind="short">
+         <Label xml:lang="en-US">informational</Label>
+      </Rubric>
+      <Rubric id="d1e131583" kind="preferred">
+         <Label xml:lang="en-US">informational</Label>
+      </Rubric>
+   </Class>
+   <Class code="minimal" kind="concept">
+      <Meta name="internalId" value="23148"/>
+      <Rubric id="d1e131594" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Provides more than identified, but not as much as universal. There are not expected to be many of these.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e131610" kind="short">
+         <Label xml:lang="en-US">minimal</Label>
+      </Rubric>
+      <Rubric id="d1e131610" kind="preferred">
+         <Label xml:lang="en-US">minimal</Label>
+      </Rubric>
+   </Class>
+   <Class code="universal" kind="concept">
+      <Meta name="internalId" value="23147"/>
+      <Rubric id="d1e131621" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>This variant includes all attributes and associations present in the R-MIM. Any of non-mandatory and non-required attributes and/or associations may be present or absent, as permitted in the cardinality constraints.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e131637" kind="short">
+         <Label xml:lang="en-US">universal</Label>
+      </Rubric>
+      <Rubric id="d1e131637" kind="preferred">
+         <Label xml:lang="en-US">universal</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

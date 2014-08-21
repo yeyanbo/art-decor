@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen SCHSchema="../schematrons/elab-cdaafname.sch"?>
+<!-- 
+    
+    Voorbeeld document Afname
+    Hematologie
+        
+    Storyboard
+    ===
+    Mvr Aaltje Cornelia van Aalst is bij haar huisarts Dr. Daniel Schagen in behandeling
+    wegens een tekort aan bloedplaatjes. Dit werd begin januari 2010 ontdekt en ze is inmiddels
+    behandeld. Ter controle wordt een afname bij het prikpunt "Woonzorgcomplex St. Jozef Oord" 
+    en een bepaling bij het lab "Allab bv Alkmaar" aangevraagd.
+    
+    OIDs
+    ===
+    Filler lab:
+    2.16.528.1.1007.3.2.1111.21 = id root
+    2.16.528.1.1007.3.2.1111.20 = setId root
+    2.16.528.1.1007.3.2.1111.19 = order id root
+    
+    Filler afnamepunt:
+    2.16.528.1.1007.3.2.3333.19 = afname order id root
+    2.16.528.1.1007.3.2.3333.20 = setId root
+    2.16.528.1.1007.3.2.3333.21 = id root
+    
+    Placer:
+    2.16.528.1.1007.3.2.2222.19 = order id root
+    
+    Generieke opmerkingen
+    ===
+    * sommige coderingen zijn hier alleen voorbeelden; uiteindelijke codestelses en codes worden nog bepaald
+    * er zijn voor het bijhorende schema CDA_IHE_LAB.xsd voor de afname en monster gerelateerde gegevens aanpassingen/aanvullingen gedaan
+    * met LAB-stylesheet kan de inhoud vertoond worden
+    
+    Genoemde templateId's zijn nog optioneel; wordt nog aangepast.
+    
+-->
+
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../schemas/CDA_IHE_LAB.xsd" xmlns:lab="urn:oid:2.16.840.1.113883.2.4.6.10.35.81"
+    xmlns="urn:hl7-org:v3" classCode="DOCCLIN" moodCode="EVN">
+
+    <realmCode code="NL"/>
+
+    <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+
+    <!-- e-Lab template vor labafname documenten -->
+    <templateId root="2.16.840.1.113883.2.4.6.10.35.2"/>
+    <templateId root="2.16.840.1.113883.2.4.6.10.100001"/>
+    
+    <!-- Identificatie van (deze versie van) het labaanvraagdocument -->
+    <id extension="309920" root="2.16.528.1.1007.3.2.1111.21.1"/>
+
+    <!-- Item: 40010 - Soort document - opdracht 1..1 M -->
+    <code code="X-LAB-SPMCOL" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="SPECIMEN COLLECTION"/>
+
+    <!-- Titel in vrije tekst -->
+    <title>Labafname dd. 31 januari 2010</title>
+
+    <!-- "Afrondingsdatum" van het document, 29 januari 2010 10:34:56 -->
+    <effectiveTime value="20100131101500"/>
+
+    <!-- Vertrouwelijkheid van het document -->
+    <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+
+    <!-- Taal van de het document -->
+    <languageCode code="nl-NL"/>
+
+    <!-- Versionering: dit is versie 1 uit het set met onderstaande id (het eerste originele document) -->
+    <setId extension="278" root="2.16.528.1.1007.3.2.3333.20"/>
+    <versionNumber value="1"/>
+
+    <!-- Gegevens patiënt -->
+    <!-- Item: 10005 - (HL7: recordTarget) 1..1 M -->
+    <recordTarget typeCode="RCT" contextControlCode="OP">
+
+        <patientRole classCode="PAT">
+
+            <!-- Item: 10110 - Identificaties van de patiënt: het burgerservicenummer 1..1 M -->
+            <id root="2.16.840.1.113883.2.4.6.3" extension="080481243"/>
+
+            <!-- Item: 10170 - Adres 0..1 O -->
+            <addr use="HP">
+                <streetName>Kalverdijkerlaantje</streetName>
+                <houseNumber>33a</houseNumber>
+                <additionalLocator>tegenover</additionalLocator>
+                <houseNumber>30</houseNumber>
+                <postalCode>1747 GE</postalCode>
+                <city>Tuitjehoorn</city>
+            </addr>
+
+            <!-- Item: 10270 - Bezoekadres 0..1 C tbv monsterafname -->
+            <addr use="TMP PHYS">
+                <streetName>Rietkraag</streetName>
+                <houseNumber>7</houseNumber>
+                <postalCode>1747 EL</postalCode>
+                <city>Tuitjehoorn</city>
+            </addr>
+
+            <!-- Item: 10150 - Telefoonnummer 0..* O -->
+            <telecom use="HP" value="tel:+31226394981"/>
+
+            <!-- Item: 10160 - Email 0..* O -->
+            <telecom use="H" value="mailto:aalst@provider.nl"/>
+
+            <patient classCode="PSN">
+
+                <!-- Item: 10030 - Reguliere naam 0..1 C -->
+                <name use="L">
+                    <given qualifier="IN">A.C.</given>
+                    <prefix qualifier="VV BR">van </prefix>
+                    <family qualifier="BR">Aalst</family>
+                </name>
+
+                <!-- Item: 10080 - Wettelijke naam 0..1 C -->
+                <name use="OR">
+                    <given qualifier="IN">Aaltje Cornelia</given>
+                    <prefix qualifier="VV BR">van </prefix>
+                    <family qualifier="BR">Aalst</family>
+                </name>
+
+                <!-- Item: 10120 - Geslacht 1..1 M -->
+                <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1"/>
+
+                <!-- Item: 10130 - Geboortedatum 1..1 M -->
+                <birthTime value="19421014"/>
+
+                <!-- Item: 10140 - Meerlingindicatie 0..1 C, extension van CDA in lab: namespace -->
+                <lab:multipleBirthInd value="false"/>
+
+            </patient>
+
+        </patientRole>
+
+    </recordTarget>
+
+    <!-- Auteur document: deze overlapt mogelijk met legalAuthenticator. Merk op dat de auteur ook een systeem mag zijn -->
+    <!-- Item: 20005 - (HL7: author) 1..1 M -->
+    <author typeCode="AUT" contextControlCode="OP">
+
+        <!-- Moment van afronden van het document -->
+        <time value="20100131101500"/>
+
+        <assignedAuthor classCode="ASSIGNED">
+
+            <!-- Item: 20070 - UZI  nummer 1..1 M -->
+            <id root="2.16.528.1.1007.3.1" extension="000012345"/>
+
+            <!-- Item: 20080 - Specialisme 0..1 C, UZI-rolcode, hier 01.020 Arts klinische chemie -->
+            <code code="01.020" codeSystem="2.16.840.1.113883.2.4.15.111"/>
+
+            <!-- Naam auteur -->
+            <assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                <!-- Item: 20020 - Reguliere naam 1..1 M -->
+                <name>
+                    <prefix qualifier="AC">Dr.</prefix>
+                    <given qualifier="IN">H.</given>
+                    <family qualifier="BR">Kacemius</family>
+                </name>
+            </assignedPerson>
+
+            <!-- Item: Gegevens zorgaanbieder 1..1 M  (context van de auteur) -->
+            <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+
+                <!-- Item: 30150 - URA nummer 1..1 M -->
+                <id extension="00008481" root="2.16.528.1.1007.3.3"/>
+
+                <!-- Item: 30160 - Type instelling 0..1 C -->
+
+                <!-- Item: 30010 - Naam 1..1 M -->
+                <name use="P">Woonzorgcomplex St. Jozef Oord - Stichting Artsenlaboratorium en Trombosedienst</name>
+
+                <!-- Item: 30020 - Adres 1..1 M -->
+                <addr use="HP">
+                    <streetName>St. Jozefpark</streetName>
+                    <houseNumber>1</houseNumber>
+                    <postalCode>1816 MB</postalCode>
+                    <city>Tuitjenhorn</city>
+                </addr>
+
+            </representedOrganization>
+        </assignedAuthor>
+    </author>
+
+    <!-- Item: 30600 - Custodian (beheerder van het document) 1..1 M -->
+    <custodian typeCode="CST">
+
+        <assignedCustodian classCode="ASSIGNED">
+
+            <representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+
+                <!-- Item: 30150 - URA nummer 1..1 M -->
+                <id extension="34009246" root="2.16.528.1.1007.3.3"/>
+
+                <!-- Item: 30160 - Type instelling 0..1 C -->
+
+                <!-- Item: 30010 - Naam 1..1 M -->
+                <name use="L">Stichting Artsenlaboratorium en Trombosedienst</name>
+
+                <!-- Item: 30020 - Adres 1..1 M -->
+                <addr use="WP">
+                    <streetName>Rubenslaan</streetName>
+                    <houseNumber>2-6</houseNumber>
+                    <postalCode>1816 MB</postalCode>
+                    <city>Alkmaar</city>
+                </addr>
+
+            </representedCustodianOrganization>
+        </assignedCustodian>
+
+    </custodian>
+    
+    <!-- Item: 30200 Beoogde ontvanger(s) / medeontvangers zoals die bekend is bij het aanmaken van het document, bijv. de oprachtegever -->
+    <informationRecipient typeCode="PRCP">
+        <intendedRecipient classCode="ASSIGNED">
+            <!-- UZI-nummer -->
+            <id root="2.16.528.1.1007.3.1" extension="000003425"/>
+            <!-- adres -->
+            <addr use="HP">
+                <streetName>Vroedschap</streetName>
+                <houseNumber>7</houseNumber>
+                <postalCode>1722 GX</postalCode>
+                <city>Langedijk</city>
+            </addr>
+            <!-- Naam van de kopie ontvanger -->
+            <informationRecipient classCode="PSN" determinerCode="INSTANCE">
+                <name>
+                    <prefix qualifier="AC">Dr.</prefix>
+                    <given qualifier="IN">Daniel</given>
+                    <family>Schagen</family>
+                </name>
+            </informationRecipient>
+            <!-- Organisatie van de kopie ontvanger -->
+            <receivedOrganization classCode="ORG" determinerCode="INSTANCE">
+                <!-- UZI Registerabonneenummer (URA) -->
+                <id extension="00013667" root="2.16.528.1.1007.3.3"/>
+                <name>Huisartspraktijk Dr Schagen</name>
+            </receivedOrganization>
+        </intendedRecipient>
+    </informationRecipient>
+    
+    <!-- Item: 30300 - Aanvrager (bij uitslagen)  -->
+    <participant typeCode="REF" contextControlCode="OP">
+        <time value="20100131"/>
+        <associatedEntity classCode="ROL">
+            <!-- UZI-nummer -->
+            <id root="2.16.528.1.1007.3.1" extension="000003425"/>
+            <!-- adres -->
+            <addr use="HP">
+                <streetName>Vroedschap</streetName>
+                <houseNumber>7</houseNumber>
+                <postalCode>1722 GX</postalCode>
+                <city>Langedijk</city>
+            </addr>
+            <!-- Naam van de aanvragende zorgverlener -->
+            <associatedPerson classCode="PSN" determinerCode="INSTANCE">
+                <name>
+                    <prefix qualifier="AC">Dr.</prefix>
+                    <given qualifier="IN">Daniel</given>
+                    <family>Schagen</family>
+                </name>
+            </associatedPerson>
+            <!-- Organisatie van de aanvragende zorgverlener -->
+            <scopingOrganization classCode="ORG" determinerCode="INSTANCE">
+                <!-- UZI Registerabonneenummer (URA) -->
+                <id extension="00013667" root="2.16.528.1.1007.3.3"/>
+                <name>Huisartspraktijk Dr Schagen</name>
+            </scopingOrganization>
+        </associatedEntity>
+    </participant>
+
+    <!-- oorspronkelijke aanvraag (met placer order nummer) -->
+    <inFulfillmentOf typeCode="FLFS">
+        <order classCode="ACT" moodCode="RQO">
+            <!-- placer order nummer voor afname -->
+            <id extension="459123" root="2.16.528.1.1007.3.2.2222.19.2"/>
+        </order>
+    </inFulfillmentOf>
+
+    <!-- Service Event, status, type en tijdstip van de afname -->
+    <documentationOf typeCode="DOC">
+        <serviceEvent classCode="PROC" moodCode="EVN">
+
+            <!-- dit is het filler nummer afname -->
+            <id extension="48737" root="2.16.528.1.1007.3.2.1111.19"/>
+
+            <!-- de afname is compleet/afgesloten, extension van CDA in lab: namespace -->
+            <lab:statusCode code="completed"/>
+
+            <!-- datum afsluiting -->
+            <effectiveTime value="20100131"/>
+
+            <!-- uitvoerder -->
+            <performer typeCode="PRF">
+
+                <assignedEntity classCode="ASSIGNED">
+
+                    <!-- UZI-nummer -->
+                    <id root="2.16.528.1.1007.3.1" extension="000012345"/>
+
+                    <!-- Specialisme in de vorm van UZI-rolcode, hier 01.020 Arts klinische chemie 
+                        Wie doet dit bij afnamepunt?-->
+                    <code code="01.020" codeSystem="2.16.840.1.113883.2.4.15.111"/>
+
+                    <!-- Item: 30020 - Adres 1..1 M -->
+                    <addr use="WP">
+                        <streetName>Rubenslaan</streetName>
+                        <houseNumber>2-6</houseNumber>
+                        <postalCode>1816 MB</postalCode>
+                        <city>Alkmaar</city>
+                    </addr>
+                    
+                    <representedOrganization>
+                        <!-- Item: 30150 - URA nummer 1..1 M -->
+                        <id extension="34009246" root="2.16.528.1.1007.3.3"/>
+
+                        <!-- Item: 30160 - Type instelling 0..1 C -->
+
+                        <!-- Item: 30010 - Naam 1..1 M -->
+                        <name use="L">Stichting Artsenlaboratorium en Trombosedienst</name>
+    
+                    </representedOrganization>
+
+                </assignedEntity>
+
+            </performer>
+
+        </serviceEvent>
+    </documentationOf>
+
+    <!--
+        CDA body: uitslag 
+        met CDA sections
+        * administratieve gegevens
+        * afnamegegevens,
+        * materiaalgegevens
+        
+        in CDA Level 1/2 en in CDA Level 3
+    -->
+    <component typeCode="COMP" contextConductionInd="true">
+
+        <structuredBody classCode="DOCBODY" moodCode="EVN">
+
+            <!-- deze component/section gaat over de administratieve afnamegegevens -->
+            <component typeCode="COMP">
+                <section classCode="DOCSECT" moodCode="EVN">
+
+                    <code code="X-LAB-SPMCOL" codeSystem="2.16.840.1.113883.6.1" displayName="Afnamegegevens"/>
+
+                    <title>Administratieve afnamegegevens</title>
+                    <text>
+                        <table width="50%">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <content styleCode="Bold">Afnamenummer</content>
+                                    </td>
+                                    <!-- Komt uit header: documentationOf.ServiceEvent.id -->
+                                    <td>48737</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <content styleCode="Bold">Afnameopdrachtnummer:</content>
+                                    </td>
+                                    <!-- Komt uit header: inFulfillmentOf.Order.id-->
+                                    <td>459123</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <content styleCode="Bold">Afnamelocatie:</content>
+                                    </td>
+                                    <!-- Komt uit header: documentationOf.ServiceEvent.performer -->
+                                    <td>Stichting Artsenlaboratorium en Trombosedienst</td>
+                                </tr>
+                                <tr>
+                                    <td><content styleCode="Bold">Uitvoerend laboratorium:</content>
+                                    </td>
+                                    <td>Allab bv Alkmaar</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry typeCode="DRIV" contextConductionInd="true">
+                        
+                        <templateId root="2.16.840.1.113883.2.4.6.10.35.202"/>
+                        
+                        <act classCode="ACT" moodCode="EVN">
+                            <code code="X-LAB-SPMCOL" codeSystem="2.16.840.1.113883.6.1" displayName="Admin afnamegegevens"/>
+                            <statusCode code="completed"/>
+                            <effectiveTime value="201001311014"/>
+                            <entryRelationship typeCode="COMP">
+                                <act classCode="ACT" moodCode="RQO">
+                                    <code code="X-LAB-ORDER" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="LABORATORY ORDER"/>
+                                    <!-- gewenst uitvoerend lab -->
+                                    <performer>
+                                        <assignedEntity>
+                                            <!-- UZI Registerabonneenummer (URA) -->
+                                            <id extension="00008481" root="2.16.528.1.1007.3.3"/>
+                                            <!-- Werkadres -->
+                                            <addr use="WP">
+                                                <streetName>Rubenslaan</streetName>
+                                                <houseNumber>2-6</houseNumber>
+                                                <postalCode>1816 MB</postalCode>
+                                                <city>Alkmaar</city>
+                                            </addr>
+                                        </assignedEntity>
+                                    </performer>
+                                </act>
+                            </entryRelationship>
+                        </act>
+                        
+                    </entry>
+                </section>
+            </component>
+
+            <!-- deze component/section gaat over de niet-administratieve afnamegegevens -->
+            <component typeCode="COMP" contextConductionInd="true">
+
+                <section classCode="DOCSECT" moodCode="EVN">
+
+                    <code code="X-LAB-SPMCOLM" codeSystem="2.16.840.1.113883.6.1" displayName="Afnamegegevens"/>
+                    
+                    <title>Niet-administratieve afnamegegevens</title>
+                    
+                    <text>
+                        <table width="50%">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <content styleCode="Bold">Opmerkingen t.a.v. afname</content>
+                                    </td>
+                                    <td>Patient zegt griep te hebben.</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <content styleCode="Bold">Toestand van de patient</content>
+                                    </td>
+                                    <td>Nuchter. Laatste maaltijd gisteren om 20 uur</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <content styleCode="Bold">Laatste medicatie</content>
+                                    </td>
+                                    <td>FLUIMUCIL INHVLST 100MG/ML AMPUL 4ML, 31-01-2010 08:00 uur</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry typeCode="DRIV" contextConductionInd="true">
+
+                        <templateId root="2.16.840.1.113883.2.4.6.10.35.203"/>
+                        
+                        <!-- Level 1 en 2 zijn volledig afgeleid uit Level 3 -->
+
+                        <!-- Item: 50100 - Opmerkingen tav. afname  -->
+                        <act classCode="ACT" moodCode="EVN">
+                            <code code="X-LAB-SPMCOLM" codeSystem="2.16.840.1.113883.6.1" displayName="Afnamegegevens"/>
+                            <statusCode code="completed"/>
+                            <effectiveTime value="201001311014"/>
+                            <entryRelationship typeCode="COMP">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <code code="TBD_CODE" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Opmerking t.a.v. afname"/>
+                                    <statusCode code="completed"/>
+                                    <value xsi:type="CE" nullFlavor="NAV">
+                                        <originalText>Patient zegt griep te hebben.</originalText>
+                                    </value>
+                                </observation>
+                            </entryRelationship>
+
+                            <!-- Item: 50110 - Toestand van de patiënt   -->
+                            <entryRelationship typeCode="COMP">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <code code="TBD_CODE" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Toestand"/>
+                                    <statusCode code="completed"/>
+                                    <value xsi:type="CE" nullFlavor="NAV">
+                                        <originalText>Nuchter. Laatste maaltijd gisteren om 20 uur</originalText>
+                                    </value>
+                                </observation>
+                            </entryRelationship>
+
+                            <!-- Item: 50115 - Laatste tijdstip inname medicatie 0..* C -->
+                            <entryRelationship typeCode="COMP">
+                                <substanceAdministration classCode="SBADM" moodCode="EVN">
+                                    <code code="394829006" codeSystem="2.16.840.1.113883.6.96" displayName="Past medication"/>
+                                    <statusCode code="completed"/>
+                                    <!-- Item: 50118 - Datum/tijd inname 1..1 M -->
+                                    <effectiveTime value="201001310800"/>
+                                    <consumable>
+                                        <!-- Item: 50116 - (HL7: soort medicijn) 1..1 M -->
+                                        <manufacturedProduct>
+                                            <manufacturedLabeledDrug>
+                                                <code code="13966383" codeSystem="2.16.840.1.113883.2.4.4.8" codeSystemName="G-Standaard Artikel" displayName="FLUIMUCIL INHVLST 100MG/ML AMPUL 4ML"/>
+                                            </manufacturedLabeledDrug>
+                                        </manufacturedProduct>
+                                    </consumable>
+                                </substanceAdministration>
+                            </entryRelationship>
+
+                        </act>
+
+                    </entry>
+                </section>
+
+            </component>
+
+            <!-- deze component/section bevat materiaal gegevens (per monster) -->
+            <component typeCode="COMP" contextConductionInd="true">
+
+                <section classCode="DOCSECT" moodCode="EVN">
+
+                    <code code="X-LAB-SPMSCT" codeSystem="2.16.840.1.113883.6.1" displayName="Monstergegevens"/>
+                    <title>Materiaal gegevens (per monster)</title>
+                    <text>
+                        <table width="50%">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <content styleCode="Bold">Materiaal:</content>
+                                    </td>
+                                    <td>Volbloed</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <content styleCode="Bold">Containertype:</content>
+                                    </td>
+                                    <td>K/Na EDTA buis</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <content styleCode="Bold">Datum/tijd van afname:</content>
+                                    </td>
+                                    <td>31-01-2010 10:14</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <content styleCode="Bold">Datum/tijd van aanname:</content>
+                                    </td>
+                                    <td>Nvt</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <content styleCode="Bold">Verzamelperiode:</content>
+                                    </td>
+                                    <td>2 min</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <content styleCode="Bold">Volume materiaal:</content>
+                                    </td>
+                                    <td>4 ml</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <content styleCode="Bold">Aspect van materiaal:</content>
+                                    </td>
+                                    <td>Materiaal troebel</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <content styleCode="Bold">Locatie van vergaring:</content>
+                                    </td>
+                                    <td>Prikpunt</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry typeCode="DRIV" contextConductionInd="true">
+                        
+                        <templateId root="2.16.840.1.113883.2.4.6.10.35.204"/>
+                        
+                        <!-- Level 1 en 2 zijn volledig afgeleid uit Level 3 -->
+
+                        <act classCode="ACT" moodCode="EVN">
+
+                            <code code="X-LAB-SPMSCT" codeSystem="2.16.840.1.113883.6.1" displayName="Monstergegevens"/>
+                            <!-- Datum/tijdstip afname -->
+                            <effectiveTime>
+                                <center nullFlavor="NA"/>
+                            </effectiveTime>
+
+                            <specimen typeCode="SPC">
+
+                                <specimenRole classCode="SPEC">
+
+                                    <!-- monster identificatie -->
+                                    <id extension="1573987-346273" root="2.16.528.1.1007.3.2.3333.19"/>
+
+                                    <specimenPlayingEntity classCode="ENT" determinerCode="INSTANCE">
+
+                                        <!-- monster materiaal -->
+                                        <code code="87612001" codeSystem="2.16.840.1.113883.6.96" displayName="volbloed"/>
+
+                                        <!-- hoeveelheid -->
+                                        <quantity value="4" unit="ml"/>
+
+                                        <!-- containertype -->
+                                        <lab:asSpecimenInContainer classCode="CONT">
+                                            <lab:container classCode="CONT" determinerCode="INSTANCE">
+                                                <lab:code code="TUBE" codeSystem="2.16.840.1.113883.5.1060" codeSystemName="ContainerEntityType" displayName="buis"/>
+                                                <lab:asEntityInEntity classCode="CONT">
+                                                    <lab:containerAdditiveMaterial classCode="MAT" determinerCode="KIND">
+                                                        <lab:code code="69519002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="EDTA"/>
+                                                    </lab:containerAdditiveMaterial>
+                                                </lab:asEntityInEntity>
+                                            </lab:container>
+                                        </lab:asSpecimenInContainer>
+
+                                    </specimenPlayingEntity>
+
+                                    <lab:productOf typeCode="PRD">
+
+                                        <lab:specimenCollectionProcess classCode="SPECCOLLECT" moodCode="EVN">
+
+                                            <!-- Wijze van verkrijgen -->
+                                            <lab:code code="7800008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="punctie"/>
+
+                                            <!-- afnametijdstip / verzamelperiode -->
+                                            <lab:effectiveTime>
+                                                <!-- periode low/high aangeven of eindpunt en breedte van het interval-->
+                                                <lab:high value="201001311014"/>
+                                                <lab:width value="2" unit="min"/>
+                                            </lab:effectiveTime>
+
+                                            <!-- locatie/oriëntatie -->
+                                            <lab:targetSiteCode code="LA" codeSystem="2.16.840.1.113883.5.1052" displayName="arm, links"/>
+
+                                            <!-- Item: 50150 - Gegevens afnamespecialist  -->
+                                            <lab:performer typeCode="PRF" contextControlCode="OP">
+
+                                                <lab:assignedEntity classCode="ASSIGNED">
+
+                                                    <!-- UZI-nummer -->
+                                                    <lab:id root="2.16.528.1.1007.3.1" extension="000012345"/>
+
+                                                    <!-- Specialisme in de vorm van UZI-rolcode, hier 01.020 Arts klinische chemie 
+                                                        Wie doet dit bij afnamepunt?-->
+                                                    <lab:code code="01.020" codeSystem="2.16.840.1.113883.2.4.15.111"/>
+
+                                                    <lab:assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                                                        <lab:name>
+                                                            <lab:prefix qualifier="AC">Dr.</lab:prefix>
+                                                            <lab:given qualifier="IN">H.</lab:given>
+                                                            <lab:amily qualifier="BR">Kacemius</lab:amily>
+                                                        </lab:name>
+                                                    </lab:assignedPerson>
+
+                                                </lab:assignedEntity>
+
+                                            </lab:performer>
+
+                                        </lab:specimenCollectionProcess>
+
+                                    </lab:productOf>
+
+                                    <!-- er is 1 proces step om tot het monster te komen
+                                        maar hier alvast de situatie van een ingeleverd monster -->
+                                    <!-- Item: 50160 - Gegevens inleveraar 0..1 C -->
+                                    <lab:productOf typeCode="PRD">
+                                        <lab:specimenProcessStep classCode="TRNS" moodCode="EVN">
+                                            <lab:code code="SREC" codeSystem="2.16.840.1.113883.5.4" displayName="specimen received"/>
+                                            <!-- Item: 50199 - Datum/tijd aanname  -->
+                                            <lab:effectiveTime>
+                                                <lab:high value="201001311014"/>
+                                            </lab:effectiveTime>
+                                            <lab:performer typeCode="PRF" contextControlCode="OP">
+                                                <lab:assignedEntity classCode="ASSIGNED">
+                                                    <lab:assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                                                        <!-- Item: 50162 - (HL7: inleveraar persoon)  -->
+                                                        <lab:name>
+                                                            <lab:given>Jan</lab:given>
+                                                            <lab:family>Aalst</lab:family>
+                                                        </lab:name>
+                                                    </lab:assignedPerson>
+                                                </lab:assignedEntity>
+                                            </lab:performer>
+                                        </lab:specimenProcessStep>
+                                    </lab:productOf>
+
+                                    <!--
+                                        Toelichting materiaal zoals aspect, kleur, gewicht (maar niet volume, verzamelperiode)                                        
+                                    -->
+                                    <lab:subjectOf typeCode="SBJ">
+                                        <lab:observationEvent classCode="SPCOBS" moodCode="EVN">
+                                            <lab:code code="250429001" codeSystem="2.16.840.1.113883.6.96"/>
+                                            <lab:value xsi:type="CD" nullFlavor="NAV">
+                                                <originalText>Materiaal troebel</originalText>
+                                            </lab:value>
+                                        </lab:observationEvent>
+                                    </lab:subjectOf>
+
+                                </specimenRole>
+                            </specimen>
+
+                            <!-- Locatie van vergaring -->
+                            <participant typeCode="LOC">
+                                <participantRole classCode="DSDLOC">
+                                    <code code="HUSCS" codeSystem="2.16.840.1.113883.5.111" displayName="prikpunt"/>
+                                </participantRole>
+                            </participant>
+
+                        </act>
+                    </entry>
+                </section>
+            </component>
+        </structuredBody>
+    </component>
+</ClinicalDocument>

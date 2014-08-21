@@ -1,0 +1,1932 @@
+<?xml-stylesheet type="text/xsl" href="http://art-decor.org/ADAR/rv/DECOR2schematron.xsl"?><?xml-model href="http://art-decor.org/ADAR/rv/DECOR.xsd" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<decor xmlns:sdtc="urn:hl7-org:sdtc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://art-decor.org/ADAR/rv/DECOR.xsd">
+    <project id="2.16.840.1.113883.3.1937.99.60.5" prefix="demo5-" defaultLanguage="en-US">
+        <!-- 
+            
+            demo5: 2.16.840.1.113883.3.1937.99.60.5
+        
+        -->
+        <name language="en-US">Demo 5: Vital Signs CDA Document</name>
+        <name language="de-DE">Demo 5: Vitalparameter CDA Document</name>
+        <name language="nl-NL">Demo 5: Vitale parameters CDA Document</name>
+        <desc language="en-US">Demo 5: Vital Signs Report Summary CDA Document</desc>
+        <desc language="de-DE">Demo 5: Vital Signs Report Summary CDA Document</desc>
+        <desc language="nl-NL">Demo 5: Vitale parameters samenvatting CDA Document</desc>
+        <copyright years="2012 2013 2014" by="The ART-DECOR expert group" logo="art-decor-logo-small.jpg">
+            <addrLine>E info@art-decor.org</addrLine>
+            <addrLine>E contact@art-decor.org</addrLine>
+        </copyright>
+        <author id="1" username="kai">dr Kai U. Heitmann</author>
+        <author id="2" username="maarten">Maarten Ligtvoet</author>
+        <reference url="http://art-decor.org/demos/demo5/"/>
+        <buildingBlockRepository url="http://art-decor.org/decor/services/" ident="ad1bbr-"/>
+        <buildingBlockRepository url="http://art-decor.org/decor/services/" ident="ad2bbr-"/>
+        <buildingBlockRepository url="http://art-decor.org/decor/services/" ident="ad3bbr-"/>
+        <release date="2014-07-30T10:14:21" by="dr Kai U. Heitmann" statusCode="pending">
+            <note language="en-US">
+                <div>Some minor tweaks and additions:</div>
+                <div>
+                    <ul>
+                        <li>
+                            <span style="line-height: 1.22;">added examples in template definitions</span>
+                            <br clear="none"/>
+                        </li>
+                        <li>
+                            <span style="line-height: 1.22;">corrected some template id's in examples</span>
+                            <br clear="none"/>
+                        </li>
+                        <li>
+                            <span style="line-height: 1.22;">added complete XML example document</span>
+                            <br clear="none"/>
+                        </li>
+                    </ul>
+                </div>
+            </note>
+        </release>
+        <release date="2014-07-29T11:08:27" by="Maarten Ligtvoet" versionLabel="v1.01">
+            <note language="en-US">Initial release</note>
+        </release>
+    </project>
+    <datasets>
+        <dataset id="2.16.840.1.113883.3.1937.99.60.5.1.1" statusCode="draft" effectiveDate="2014-07-08T00:00:00">
+            <!-- 
+                Person / patient
+            -->
+            <name language="nl-NL">Demo 5 dataset</name>
+            <desc language="nl-NL">Demo 5 dataset</desc>
+            <concept id="2.16.840.1.113883.3.1937.99.60.5.2.10" type="group" statusCode="draft" effectiveDate="2014-07-08T00:00:00">
+                <name language="en-US">Person</name>
+                <name language="de-DE">Person</name>
+                <name language="nl-NL">Persoon</name>
+                <desc language="en-US">Person</desc>
+                <desc language="de-DE">Person</desc>
+                <desc language="nl-NL">Persoon</desc>
+                <concept id="2.16.840.1.113883.3.1937.99.60.5.2.100" type="item" statusCode="draft" effectiveDate="2014-07-08T00:00:00">
+                    <name language="en-US">Name</name>
+                    <name language="de-DE">Name</name>
+                    <name language="nl-NL">Naam</name>
+                    <desc language="en-US">Name of the person</desc>
+                    <desc language="de-DE">Name der Person</desc>
+                    <desc language="nl-NL">Persoonsnaam</desc>
+                    <valueDomain type="string"/>
+                </concept>
+                <concept id="2.16.840.1.113883.3.1937.99.60.5.2.110" statusCode="draft" effectiveDate="2014-07-08T00:00:00" type="item">
+                    <name language="en-US">National Patient Identifier</name>
+                    <name language="de-DE">Nationale Patienten-Identifikation</name>
+                    <name language="nl-NL">Nationale patiëntidentificatie</name>
+                    <desc language="en-US">National Patient Identifier, here: Dutch Burgerservicenummer</desc>
+                    <desc language="de-DE">Nationale Patienten-Identifikation, hier: Niederländische Burgerservicenummer</desc>
+                    <desc language="nl-NL">Nationale patiëntidentificatie, hier: Nederlands Burgerservicenummer</desc>
+                    <valueDomain type="identifier"/>
+                </concept>
+                <concept id="2.16.840.1.113883.3.1937.99.60.5.2.120" type="item" statusCode="draft" effectiveDate="2014-07-08T00:00:00">
+                    <name language="en-US">Date of birth</name>
+                    <name language="de-DE">Geburtstdatum</name>
+                    <name language="nl-NL">Geboortedatum</name>
+                    <desc language="en-US">Date of birth</desc>
+                    <desc language="de-DE">Geburtstdatum</desc>
+                    <desc language="nl-NL">Geboortedatum</desc>
+                    <valueDomain type="date"/>
+                </concept>
+                <concept id="2.16.840.1.113883.3.1937.99.60.5.2.130" type="item" statusCode="draft" effectiveDate="2014-07-08T00:00:00">
+                    <name language="en-US">Gender</name>
+                    <name language="de-DE">Geschlecht</name>
+                    <name language="nl-NL">Geslacht</name>
+                    <desc language="en-US">Gender</desc>
+                    <desc language="de-DE">Geschlecht</desc>
+                    <desc language="nl-NL">Geslacht</desc>
+                    <valueDomain type="code">
+                        <conceptList id="2.16.840.1.113883.3.1937.99.60.5.8.130.0">
+                            <concept id="2.16.840.1.113883.3.1937.99.60.3.8.130.1">
+                                <name language="en-US">male</name>
+                                <name language="de-DE">männlich</name>
+                                <name language="nl-NL">mannelijk</name>
+                            </concept>
+                            <concept id="2.16.840.1.113883.3.1937.99.60.3.8.130.2">
+                                <name language="en-US">female</name>
+                                <name language="de-DE">weiblich</name>
+                                <name language="nl-NL">vrouwelijk</name>
+                            </concept>
+                            <concept id="2.16.840.1.113883.3.1937.99.60.3.8.130.3">
+                                <name language="en-US">unspecified</name>
+                                <name language="de-DE">unbestimmt</name>
+                                <name language="nl-NL">ongedefinieerd</name>
+                            </concept>
+                        </conceptList>
+                    </valueDomain>
+                </concept>
+            </concept>
+            <!-- 
+                Vitalparameters
+            -->
+            <concept id="2.16.840.1.113883.3.1937.99.60.5.2.20" statusCode="draft" effectiveDate="2014-07-08T00:00:00" type="group">
+                <name language="nl-NL">Vitale parameters</name>
+                <name language="en-US">Vital signs</name>
+                <desc language="nl-NL">Vitale parameters</desc>
+                <desc language="en-US">Vital signs</desc>
+                <concept id="2.16.840.1.113883.3.1937.99.60.5.2.210" effectiveDate="2014-07-08T00:00:00" type="group" statusCode="draft">
+                    <name language="nl-NL">Lichaamslengte</name>
+                    <name language="en-US">Body height</name>
+                    <desc language="nl-NL">Lichaamslengte</desc>
+                    <desc language="en-US">Body height</desc>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2100" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Identificatie</name>
+                        <name language="en-US">Identification</name>
+                        <desc language="nl-NL">Identificatie</desc>
+                        <desc language="en-US">Identification</desc>
+                        <valueDomain type="identifier"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2110" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Uitslag meting</name>
+                        <name language="en-US">Results measurement</name>
+                        <desc language="nl-NL">Uitslag meting</desc>
+                        <desc language="en-US">Results measurement</desc>
+                        <valueDomain type="quantity">
+                            <property unit="cm"/>
+                            <property unit="m"/>
+                        </valueDomain>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2120" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Datum</name>
+                        <name language="en-US">Date</name>
+                        <desc language="nl-NL">Datum</desc>
+                        <desc language="en-US">Date</desc>
+                        <valueDomain type="datetime"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2130" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Opmerking</name>
+                        <name language="en-US">Comments</name>
+                        <desc language="nl-NL">Opmerking</desc>
+                        <desc language="en-US">Comments</desc>
+                        <valueDomain type="string"/>
+                    </concept>
+                </concept>
+                <concept id="2.16.840.1.113883.3.1937.99.60.5.2.220" effectiveDate="2014-07-08T00:00:00" type="group" statusCode="draft">
+                    <name language="nl-NL">Lichaamslengte, liggend</name>
+                    <name language="en-US">Body height, lying</name>
+                    <desc language="nl-NL">Lichaamslengte, liggend</desc>
+                    <desc language="en-US">Body height, lying</desc>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2200" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Identificatie</name>
+                        <name language="en-US">Identification</name>
+                        <desc language="nl-NL">Identificatie</desc>
+                        <desc language="en-US">Identification</desc>
+                        <valueDomain type="identifier"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2210" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Uitslag meting</name>
+                        <name language="en-US">Results measurement</name>
+                        <desc language="nl-NL">Uitslag meting</desc>
+                        <desc language="en-US">Results measurement</desc>
+                        <valueDomain type="quantity">
+                            <property unit="cm"/>
+                            <property unit="m"/>
+                        </valueDomain>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2220" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Datum</name>
+                        <name language="en-US">Date</name>
+                        <desc language="nl-NL">Datum</desc>
+                        <desc language="en-US">Date</desc>
+                        <valueDomain type="datetime"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2230" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Opmerking</name>
+                        <name language="en-US">Comments</name>
+                        <desc language="nl-NL">Opmerking</desc>
+                        <desc language="en-US">Comments</desc>
+                        <valueDomain type="string"/>
+                    </concept>
+                </concept>
+                <concept id="2.16.840.1.113883.3.1937.99.60.5.2.230" effectiveDate="2014-07-08T00:00:00" type="group" statusCode="draft">
+                    <name language="nl-NL">Lichaamsgewicht</name>
+                    <name language="en-US">Body weight</name>
+                    <desc language="nl-NL">Lichaamsgewicht</desc>
+                    <desc language="en-US">Body weight</desc>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2300" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Identificatie</name>
+                        <name language="en-US">Identification</name>
+                        <desc language="nl-NL">Identificatie</desc>
+                        <desc language="en-US">Identification</desc>
+                        <valueDomain type="identifier"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2310" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Uitslag meting</name>
+                        <name language="en-US">Results measurement</name>
+                        <desc language="nl-NL">Uitslag meting</desc>
+                        <desc language="en-US">Results measurement</desc>
+                        <valueDomain type="quantity">
+                            <property unit="g"/>
+                            <property unit="kg"/>
+                        </valueDomain>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2320" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Datum</name>
+                        <name language="en-US">Date</name>
+                        <desc language="nl-NL">Datum</desc>
+                        <desc language="en-US">Date</desc>
+                        <valueDomain type="datetime"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2330" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Opmerking</name>
+                        <name language="en-US">Comments</name>
+                        <desc language="nl-NL">Opmerking</desc>
+                        <desc language="en-US">Comments</desc>
+                        <valueDomain type="string"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2340" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Meetmethode</name>
+                        <name language="en-US">Method of measurement</name>
+                        <desc language="nl-NL">Meetmethode</desc>
+                        <desc language="en-US">Method of measurement</desc>
+                        <valueDomain type="string"/>
+                    </concept>
+                </concept>
+                <concept id="2.16.840.1.113883.3.1937.99.60.5.2.240" effectiveDate="2014-07-08T00:00:00" type="group" statusCode="draft">
+                    <name language="nl-NL">Hartfrequentie</name>
+                    <name language="en-US">Heart rate</name>
+                    <desc language="nl-NL">Hartfrequentie</desc>
+                    <desc language="en-US">Heart rate</desc>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2400" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Identificatie</name>
+                        <name language="en-US">Identification</name>
+                        <desc language="nl-NL">Identificatie</desc>
+                        <desc language="en-US">Identification</desc>
+                        <valueDomain type="identifier"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2410" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Uitslag meting</name>
+                        <name language="en-US">Results measurement</name>
+                        <desc language="nl-NL">Uitslag meting</desc>
+                        <desc language="en-US">Results measurement</desc>
+                        <valueDomain type="quantity">
+                            <property unit="/min"/>
+                        </valueDomain>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2420" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Datum</name>
+                        <name language="en-US">Date</name>
+                        <desc language="nl-NL">Datum</desc>
+                        <desc language="en-US">Date</desc>
+                        <valueDomain type="datetime"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2430" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Toelichting</name>
+                        <name language="en-US">Explanation</name>
+                        <desc language="nl-NL">Toelichting</desc>
+                        <desc language="en-US">Explanation</desc>
+                        <valueDomain type="string"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2440" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Hartslag meetmethode</name>
+                        <name language="en-US">Heartbeat method of measurement</name>
+                        <desc language="nl-NL">Hartslag meetmethode</desc>
+                        <desc language="en-US">Heartbeat method of measurement</desc>
+                        <valueDomain type="code"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2445" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Hartslag regelmatigheid</name>
+                        <name language="en-US">Heartbeat regularity</name>
+                        <desc language="nl-NL">Hartslag regelmatigheid</desc>
+                        <desc language="en-US">Heartbeat regularity</desc>
+                        <valueDomain type="code"/>
+                    </concept>
+                </concept>
+                <concept id="2.16.840.1.113883.3.1937.99.60.5.2.250" effectiveDate="2014-07-08T00:00:00" type="group" statusCode="draft">
+                    <name language="nl-NL">Ademhalingsfrequentie</name>
+                    <name language="en-US">Respiratory rate</name>
+                    <desc language="nl-NL">Ademhalingsfrequentie</desc>
+                    <desc language="en-US">Respiratory rate</desc>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2500" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Identificatie</name>
+                        <name language="en-US">Identification</name>
+                        <desc language="nl-NL">Identificatie</desc>
+                        <desc language="en-US">Identification</desc>
+                        <valueDomain type="identifier"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2510" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Uitslag meting</name>
+                        <name language="en-US">Results measurement</name>
+                        <desc language="nl-NL">Uitslag meting</desc>
+                        <desc language="en-US">Results measurement</desc>
+                        <valueDomain type="quantity">
+                            <property unit="/min"/>
+                        </valueDomain>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2520" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Datum</name>
+                        <name language="en-US">Date</name>
+                        <desc language="nl-NL">Datum</desc>
+                        <desc language="en-US">Date</desc>
+                        <valueDomain type="datetime">
+                            <property timeStampPrecision="YMDHM"/>
+                        </valueDomain>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2530" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Opmerking</name>
+                        <name language="en-US">Comments</name>
+                        <desc language="nl-NL">Opmerking</desc>
+                        <desc language="en-US">Comments</desc>
+                        <valueDomain type="string"/>
+                    </concept>
+                </concept>
+                <concept id="2.16.840.1.113883.3.1937.99.60.5.2.260" effectiveDate="2014-07-08T00:00:00" type="group" statusCode="draft">
+                    <name language="nl-NL">Bloeddruk</name>
+                    <name language="en-US">Blood pressure</name>
+                    <desc language="nl-NL">Bloeddruk</desc>
+                    <desc language="en-US">Blood pressure</desc>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2600" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Identificatie</name>
+                        <name language="en-US">Identification</name>
+                        <desc language="nl-NL">Identificatie</desc>
+                        <desc language="en-US">Identification</desc>
+                        <valueDomain type="identifier"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2610" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Systolische bloeddruk</name>
+                        <name language="en-US">Systolic blood pressure</name>
+                        <desc language="nl-NL">Systolische bloeddruk</desc>
+                        <desc language="en-US">Systolic blood pressure</desc>
+                        <valueDomain type="quantity">
+                            <property unit="mmHg"/>
+                        </valueDomain>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2612" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Diastolische bloeddruk</name>
+                        <name language="en-US">Diastolic blood pressure</name>
+                        <desc language="nl-NL">Diastolische bloeddruk</desc>
+                        <desc language="en-US">Diastolic blood pressure</desc>
+                        <valueDomain type="quantity">
+                            <property unit="mmHg"/>
+                        </valueDomain>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2614" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Gemiddelde bloeddruk</name>
+                        <name language="en-US">Mean blood pressure</name>
+                        <desc language="nl-NL">Gemiddelde bloeddruk</desc>
+                        <desc language="en-US">Mean blood pressure</desc>
+                        <valueDomain type="quantity">
+                            <property unit="mmHg"/>
+                        </valueDomain>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2620" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Datum</name>
+                        <name language="en-US">Date</name>
+                        <desc language="nl-NL">Datum</desc>
+                        <desc language="en-US">Date</desc>
+                        <valueDomain type="datetime">
+                            <property timeStampPrecision="YMDHM"/>
+                        </valueDomain>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2630" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Toelichting</name>
+                        <name language="en-US">Explanation</name>
+                        <desc language="nl-NL">Toelichting</desc>
+                        <desc language="en-US">Explanation</desc>
+                        <valueDomain type="string"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2640" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Meetmethode</name>
+                        <name language="en-US">Method of measurement</name>
+                        <desc language="nl-NL">Meetmethode</desc>
+                        <desc language="en-US">Method of measurement</desc>
+                        <valueDomain type="code"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2650" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Manchet</name>
+                        <name language="en-US">Cuff</name>
+                        <desc language="nl-NL">Manchet</desc>
+                        <desc language="en-US">Cuff</desc>
+                        <valueDomain type="code"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2660" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Meetlokalisatie</name>
+                        <name language="en-US">Localisation of measurement</name>
+                        <desc language="nl-NL">Meetlokalisatie</desc>
+                        <desc language="en-US">Localisation of measurement</desc>
+                        <valueDomain type="code"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2670" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Diastolisch eindpunt</name>
+                        <name language="en-US">End-diastolic pressure</name>
+                        <desc language="nl-NL">Diastolisch eindpunt</desc>
+                        <desc language="en-US">End-diastolic pressure</desc>
+                        <valueDomain type="code"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2680" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Houding</name>
+                        <name language="en-US">Position</name>
+                        <desc language="nl-NL">Houding</desc>
+                        <desc language="en-US">Position</desc>
+                        <valueDomain type="code"/>
+                    </concept>
+                </concept>
+                <concept id="2.16.840.1.113883.3.1937.99.60.5.2.270" effectiveDate="2014-07-08T00:00:00" type="group" statusCode="draft">
+                    <name language="nl-NL">O2 Saturatie</name>
+                    <name language="en-US">O2 Saturation</name>
+                    <desc language="nl-NL">O2 Saturatie</desc>
+                    <desc language="en-US">O2 Saturation</desc>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2700" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Identificatie</name>
+                        <name language="en-US">Identification</name>
+                        <desc language="nl-NL">Identificatie</desc>
+                        <desc language="en-US">Identification</desc>
+                        <valueDomain type="identifier"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2710" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Uitslag meting</name>
+                        <name language="en-US">Results measurement</name>
+                        <desc language="nl-NL">Uitslag meting</desc>
+                        <desc language="en-US">Results measurement</desc>
+                        <valueDomain type="quantity">
+                            <property unit="/min"/>
+                        </valueDomain>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2720" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Datum</name>
+                        <name language="en-US">Date</name>
+                        <desc language="nl-NL">Datum</desc>
+                        <desc language="en-US">Date</desc>
+                        <valueDomain type="datetime"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2730" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Toelichting</name>
+                        <name language="en-US">Explanation</name>
+                        <desc language="nl-NL">Toelichting</desc>
+                        <desc language="en-US">Explanation</desc>
+                        <valueDomain type="string"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2740" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Extra zuurstoftoediening</name>
+                        <name language="en-US">Supplemental oxygen</name>
+                        <desc language="nl-NL">Extra zuurstoftoediening</desc>
+                        <desc language="en-US">Supplemental oxygen</desc>
+                        <valueDomain type="boolean"/>
+                    </concept>
+                </concept>
+                <concept id="2.16.840.1.113883.3.1937.99.60.5.2.280" effectiveDate="2014-07-08T00:00:00" type="group" statusCode="draft">
+                    <name language="nl-NL">Pols</name>
+                    <name language="en-US">Pulse</name>
+                    <desc language="nl-NL">Pols</desc>
+                    <desc language="en-US">Pulse</desc>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2800" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Identificatie</name>
+                        <name language="en-US">Identification</name>
+                        <desc language="nl-NL">Identificatie</desc>
+                        <desc language="en-US">Identification</desc>
+                        <valueDomain type="identifier"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2810" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Uitslag meting</name>
+                        <name language="en-US">Results measurement</name>
+                        <desc language="nl-NL">Uitslag meting</desc>
+                        <desc language="en-US">Results measurement</desc>
+                        <valueDomain type="quantity">
+                            <property unit="/min"/>
+                        </valueDomain>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2820" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Datum</name>
+                        <name language="en-US">Date</name>
+                        <desc language="nl-NL">Datum</desc>
+                        <desc language="en-US">Date</desc>
+                        <valueDomain type="datetime"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2830" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Toelichting</name>
+                        <name language="en-US">Explanation</name>
+                        <desc language="nl-NL">Toelichting</desc>
+                        <desc language="en-US">Explanation</desc>
+                        <valueDomain type="string"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2840" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Pols regelmatigheid</name>
+                        <name language="en-US">Pulse regularity</name>
+                        <desc language="nl-NL">Pols regelmatigheid</desc>
+                        <desc language="en-US">Pulse regularity</desc>
+                        <valueDomain type="code"/>
+                    </concept>
+                </concept>
+                <concept id="2.16.840.1.113883.3.1937.99.60.5.2.290" effectiveDate="2014-07-08T00:00:00" type="group" statusCode="draft">
+                    <name language="nl-NL">Lichaamstemperatuur</name>
+                    <name language="en-US">Body temperature</name>
+                    <desc language="nl-NL">Lichaamstemperatuur</desc>
+                    <desc language="en-US">Body temperature</desc>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2900" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Identificatie</name>
+                        <name language="en-US">Identification</name>
+                        <desc language="nl-NL">Identificatie</desc>
+                        <desc language="en-US">Identification</desc>
+                        <valueDomain type="identifier"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2910" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Uitslag meting</name>
+                        <name language="en-US">Results measurement</name>
+                        <desc language="nl-NL">Uitslag meting</desc>
+                        <desc language="en-US">Results measurement</desc>
+                        <valueDomain type="quantity">
+                            <property unit="C"/>
+                        </valueDomain>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2920" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Datum</name>
+                        <name language="en-US">Date</name>
+                        <desc language="nl-NL">Datum</desc>
+                        <desc language="en-US">Date</desc>
+                        <valueDomain type="datetime"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2930" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Toelichting</name>
+                        <name language="en-US">Explanation</name>
+                        <desc language="nl-NL">Toelichting</desc>
+                        <desc language="en-US">Explanation</desc>
+                        <valueDomain type="string"/>
+                    </concept>
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.2940" effectiveDate="2014-07-08T00:00:00" type="item" statusCode="draft">
+                        <name language="nl-NL">Meetmethode</name>
+                        <name language="en-US">Method of measurement</name>
+                        <desc language="nl-NL">Meetmethode</desc>
+                        <desc language="en-US">Method of measurement</desc>
+                        <valueDomain type="code"/>
+                    </concept>
+                </concept>
+                <history validTimeHigh="2014-07-10T10:45:39">
+                    <concept id="2.16.840.1.113883.3.1937.99.60.5.2.20" statusCode="draft" effectiveDate="2014-07-08T00:00:00" type="group">
+                        <name language="nl-NL">Vitalparameters</name>
+                        <name language="en-US">Vitalsigns</name>
+                        <desc language="nl-NL">Vitalparameters</desc>
+                        <desc language="en-US">Vitalsigns</desc>
+                        <concept id="2.16.840.1.113883.3.1937.99.60.5.2.210" statusCode="draft" effectiveDate="2014-07-08T00:00:00"/>
+                        <concept id="2.16.840.1.113883.3.1937.99.60.5.2.220" statusCode="draft" effectiveDate="2014-07-08T00:00:00"/>
+                        <concept id="2.16.840.1.113883.3.1937.99.60.5.2.230" statusCode="draft" effectiveDate="2014-07-08T00:00:00"/>
+                        <concept id="2.16.840.1.113883.3.1937.99.60.5.2.240" statusCode="draft" effectiveDate="2014-07-08T00:00:00"/>
+                        <concept id="2.16.840.1.113883.3.1937.99.60.5.2.250" statusCode="draft" effectiveDate="2014-07-08T00:00:00"/>
+                        <concept id="2.16.840.1.113883.3.1937.99.60.5.2.260" statusCode="draft" effectiveDate="2014-07-08T00:00:00"/>
+                        <concept id="2.16.840.1.113883.3.1937.99.60.5.2.270" statusCode="draft" effectiveDate="2014-07-08T00:00:00"/>
+                        <concept id="2.16.840.1.113883.3.1937.99.60.5.2.280" statusCode="draft" effectiveDate="2014-07-08T00:00:00"/>
+                        <concept id="2.16.840.1.113883.3.1937.99.60.5.2.290" statusCode="draft" effectiveDate="2014-07-08T00:00:00"/>
+                    </concept>
+                </history>
+            </concept>
+        </dataset>
+    </datasets>
+    <scenarios>
+        <actors>
+            <actor id="2.16.840.1.113883.3.1937.99.60.5.7.1" type="device">
+                <name language="nl-NL">Documentatiesysteem vitale parameters</name>
+                <name language="en-US">Documentation system vital signs</name>
+            </actor>
+            <actor id="2.16.840.1.113883.3.1937.99.60.5.7.2" type="device">
+                <name language="nl-NL">Patiëntendossier als ontvangend systeem vitale parameters</name>
+                <name language="en-US">Patient file as receiving system vital signs</name>
+            </actor>
+        </actors>
+        <scenario id="2.16.840.1.113883.3.1937.99.60.5.3.1" effectiveDate="2014-07-08T00:00:00" statusCode="draft">
+            <name language="nl-NL">Samenvatting vitale parameter gegevens</name>
+            <name language="en-US">Summary Vital Signs</name>
+            <desc language="nl-NL">Overdracht vitale parameter gegevens</desc>
+            <desc language="en-US">Summary Vital Signs</desc>
+            <transaction id="2.16.840.1.113883.3.1937.99.60.5.4.100" type="group" effectiveDate="2014-07-08T00:00:00" statusCode="draft">
+                <name language="nl-NL">Samenvatting vitale parameter gegevens</name>
+                <name language="en-US">Summary vital signs data</name>
+                <desc language="nl-NL">Samenvatting vitale parameter gegevens</desc>
+                <desc language="en-US">Summary vital signs data</desc>
+                <transaction id="2.16.840.1.113883.3.1937.99.60.5.4.101" type="stationary" label="summaryvitalsigns" model="POCD_MT000040" effectiveDate="2014-07-08T00:00:00" statusCode="draft">
+                    <name language="nl-NL">Samenvatting vitale parameter gegevens</name>
+                    <name language="en-US">Summary vital signs data</name>
+                    <desc language="nl-NL">Samenvatting vitale parameter gegevens</desc>
+                    <desc language="en-US">Summary vital signs data</desc>
+                    <actors>
+                        <actor id="2.16.840.1.113883.3.1937.99.60.5.7.1" role="sender"/>
+                    </actors>
+                    <representingTemplate ref="2.16.840.1.113883.3.1937.99.60.5.10.1" sourceDataset="2.16.840.1.113883.3.1937.99.60.5.1.1"><!--item 10 :: Person-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.10" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 100 :: Name-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.100" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 110 :: National Patient Identifier-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.110" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 120 :: Date of birth-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.120" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 130 :: Gender-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.130" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 20 :: Vitale parameters-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.20" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 210 :: Lichaamslengte-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.210" minimumMultiplicity="0" maximumMultiplicity="1"/><!--item 2100 :: Identificatie-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2100" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2110 :: Uitslag meting-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2110" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2120 :: Datum-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2120" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2130 :: Opmerking-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2130" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 220 :: Lichaamslengte, liggend-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.220" minimumMultiplicity="0" maximumMultiplicity="1"/><!--item 2200 :: Identificatie-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2200" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2210 :: Uitslag meting-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2210" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2220 :: Datum-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2220" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2230 :: Opmerking-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2230" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 230 :: Lichaamsgewicht-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.230" minimumMultiplicity="0" maximumMultiplicity="1"/><!--item 2300 :: Identificatie-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2300" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2310 :: Uitslag meting-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2310" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2320 :: Datum-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2320" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2330 :: Opmerking-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2330" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2340 :: Meetmethode-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2340" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 240 :: Hartfrequentie-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.240" minimumMultiplicity="0" maximumMultiplicity="1"/><!--item 2400 :: Identificatie-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2400" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2410 :: Uitslag meting-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2410" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2420 :: Datum-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2420" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2430 :: Toelichting-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2430" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2440 :: Hartslag meetmethode-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2440" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2445 :: Hartslag regelmatigheid-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2445" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 250 :: Ademhalingsfrequentie-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.250" minimumMultiplicity="0" maximumMultiplicity="1"/><!--item 2500 :: Identificatie-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2500" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2510 :: Uitslag meting-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2510" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2520 :: Datum-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2520" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2530 :: Opmerking-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2530" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 260 :: Bloeddruk-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.260" minimumMultiplicity="0" maximumMultiplicity="1"/><!--item 2600 :: Identificatie-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2600" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2610 :: Systolische bloeddruk-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2610" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2612 :: Diastolische bloeddruk-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2612" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2614 :: Gemiddelde bloeddruk-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2614" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2620 :: Datum-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2620" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2630 :: Toelichting-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2630" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2640 :: Meetmethode-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2640" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2650 :: Manchet-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2650" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2660 :: Meetlokalisatie-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2660" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2670 :: Diastolisch eindpunt-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2670" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2680 :: Houding-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2680" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 270 :: O2 Saturatie-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.270" minimumMultiplicity="0" maximumMultiplicity="1"/><!--item 2700 :: Identificatie-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2700" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2710 :: Uitslag meting-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2710" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2720 :: Datum-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2720" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2730 :: Toelichting-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2730" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2740 :: Extra zuurstoftoediening-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2740" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 280 :: Pols-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.280" minimumMultiplicity="0" maximumMultiplicity="1"/><!--item 2800 :: Identificatie-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2800" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2810 :: Uitslag meting-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2810" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2820 :: Datum-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2820" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2830 :: Toelichting-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2830" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2840 :: Pols regelmatigheid-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2840" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 290 :: Lichaamstemperatuur-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.290" minimumMultiplicity="0" maximumMultiplicity="1"/><!--item 2900 :: Identificatie-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2900" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2910 :: Uitslag meting-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2910" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2920 :: Datum-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2920" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2930 :: Toelichting-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2930" minimumMultiplicity="1" maximumMultiplicity="1"/><!--item 2940 :: Meetmethode-->
+                        <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2940" minimumMultiplicity="1" maximumMultiplicity="1"/>
+                    </representingTemplate>
+                </transaction>
+            </transaction>
+        </scenario>
+    </scenarios>
+    <ids>
+        <baseId id="2.16.840.1.113883.3.1937.99.60.5.1" type="DS" prefix="demo5-dataset-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.60.5.2" type="DE" prefix="demo5-dataelement-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.60.5.3" type="SC" prefix="demo5-scenario-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.60.5.4" type="TR" prefix="demo5-transaction-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.60.5.5" type="CS" prefix="demo5-codesystem-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.60.5.6" type="IS" prefix="demo5-issue-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.60.5.7" type="AC" prefix="demo5-actor-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.60.5.8" type="CL" prefix="demo5-conceptlist-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.60.5.9" type="EL" prefix="demo5-element-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.60.5.10" type="TM" prefix="demo5-template-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.60.5.11" type="VS" prefix="demo5-valueset-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.60.5.16" type="RL" prefix="demo5-rule-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.60.5.17" type="TX" prefix="demo5-test-data-element-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.60.5.18" type="SX" prefix="demo5-test-scenario-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.60.5.19" type="EX" prefix="demo5-example-instance-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.60.5.20" type="QX" prefix="demo5-test-requirement-"/>
+        <baseId id="2.16.840.1.113883.3.1937.99.60.5.21" type="CM" prefix="demo5-community-"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.60.5.1" type="DS"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.60.5.2" type="DE"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.60.5.3" type="SC"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.60.5.4" type="TR"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.60.5.5" type="CS"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.60.5.6" type="IS"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.60.5.7" type="AC"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.60.5.8" type="CL"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.60.5.9" type="EL"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.60.5.10" type="TM"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.60.5.11" type="VS"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.60.5.16" type="RL"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.60.5.17" type="TX"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.60.5.18" type="SX"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.60.5.19" type="EX"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.60.5.20" type="QX"/>
+        <defaultBaseId id="2.16.840.1.113883.3.1937.99.60.5.21" type="CM"/>
+        <id root="2.16.840.1.113883.2.4.6.3">
+            <designation language="nl-NL" type="preferred" displayName="Burgerservicenummer">Dit is een voorbeeld van een burgerservicenummer. 
+	        </designation>
+            <designation language="en-US" type="preferred" displayName="Dutch National Citizen Identifier BSN">This is an example of a National Citizen Identifier used in health care. It is the real Dutch "Burgerservicenummer", the Citizen Service Numnber. </designation>
+        </id>
+        <id root="2.16.840.1.113883.6.1">
+            <designation language="nl-NL" type="preferred" displayName="LOINC">LOINC</designation>
+            <designation language="en-US" type="preferred" displayName="LOINC">LOINC</designation>
+        </id>
+        <id root="2.16.840.1.113883.6.96">
+            <designation language="nl-NL" type="preferred" displayName="Snomed-CT">SNOMED CT</designation>
+            <designation language="en-US" type="preferred" displayName="Snomed-CT">SNOMED CT</designation>
+        </id>
+    </ids>
+    <terminology>
+        <codeSystem ref="2.16.840.1.113883.5.1" name="AdministrativeGender" displayName="AdministrativeGender"/>
+        <codeSystem ref="2.16.840.1.113883.5.25" name="BasicConfidentialityKind" displayName="BasicConfidentialityKind"/>
+        <codeSystem ref="2.16.840.1.113883.6.1" name="LOINC" displayName="LOINC"/>
+        <!-- 
+            value set references
+        -->
+        <valueSet ref="2.16.840.1.113883.1.11.1" name="AdministrativeGender" displayName="AdministrativeGender (HL7)"/>
+        <valueSet ref="2.16.840.1.113883.1.11.15933" name="ActStatus" displayName="ActStatus"/>
+        <valueSet ref="2.16.840.1.113883.1.11.78" name="ObservationInterpretation" displayName="ObservationInterpretation"/>
+        <valueSet ref="2.16.840.1.113883.1.11.14079" name="ObservationMethod" displayName="ObservationMethod"/>
+        <!-- 
+            lokale value sets
+        -->
+        <valueSet id="2.16.840.1.113883.1.11.16926" name="BasicConfidentialityKind" displayName="Basic Confidentiality Kind (HL7)" effectiveDate="2005-09-01T00:00:00" statusCode="final">
+            <conceptList>
+                <concept code="N" codeSystem="2.16.840.1.113883.5.25" displayName="Normal" level="0" type="L"/>
+                <concept code="R" codeSystem="2.16.840.1.113883.5.25" displayName="Restricted" level="0" type="L"/>
+                <concept code="V" codeSystem="2.16.840.1.113883.5.25" displayName="Very restricted" level="0" type="L"/>
+            </conceptList>
+        </valueSet>
+        <valueSet id="2.16.840.1.113883.3.1937.99.60.5.11.1" name="VitalSignResult" effectiveDate="2013-12-19T00:00:00" displayName="Vital Sign Result" statusCode="draft">
+            <conceptList>
+                <concept code="9279-1" codeSystem="2.16.840.1.113883.6.1" displayName="Respiratory rate" level="0" type="L"/>
+                <concept code="2710-2" codeSystem="2.16.840.1.113883.6.1" displayName="Oxygen saturation in Capillary blood by Oximetry" level="0" type="L"/>
+                <concept code="8480-6" codeSystem="2.16.840.1.113883.6.1" displayName="Systolic blood pressure" level="0" type="L"/>
+                <concept code="8462-4" codeSystem="2.16.840.1.113883.6.1" displayName="Diastolic blood pressure" level="0" type="L"/>
+                <concept code="8287-5" codeSystem="2.16.840.1.113883.6.1" displayName="Head Occipital-frontal circumference by Tape measure" level="0" type="L"/>
+                <concept code="39156-5" codeSystem="2.16.840.1.113883.6.1" displayName="BMI (Body Mass Index)" level="0" type="L"/>
+                <concept code="3140-1" codeSystem="2.16.840.1.113883.6.1" displayName="BSA (Body Surface Area)" level="0" type="L"/>
+                <!-- additionals/others -->
+                <concept code="8893-0" codeSystem="2.16.840.1.113883.6.1" displayName="Heart rate Peripheral artery by palpation" level="0" type="L"/>
+                <include ref="2.16.840.1.113883.3.1937.99.60.5.11.7"/>
+                <include ref="2.16.840.1.113883.3.1937.99.60.5.11.8"/>
+                <include ref="2.16.840.1.113883.3.1937.99.60.5.11.9"/>
+                <include ref="2.16.840.1.113883.3.1937.99.60.5.11.10"/>
+            </conceptList>
+        </valueSet>
+        <valueSet id="2.16.840.1.113883.3.1937.99.60.5.11.7" name="HeartRateByMethod" displayName="Heart Rate By Method" effectiveDate="2013-12-31T00:00:00" statusCode="draft">
+            <conceptList>
+                <concept code="8867-4" codeSystem="2.16.840.1.113883.6.1" displayName="Heart rate" level="0" type="L"/>
+                <concept code="68999-2" codeSystem="2.16.840.1.113883.6.1" displayName="Heart rate -supine" level="1" type="L"/>
+                <concept code="40443-4" codeSystem="2.16.840.1.113883.6.1" displayName="Heart rate -resting" level="1" type="L"/>
+                <concept code="69000-8" codeSystem="2.16.840.1.113883.6.1" displayName="Heart rate -sitting" level="1" type="L"/>
+                <concept code="69001-6" codeSystem="2.16.840.1.113883.6.1" displayName="Heart rate -standing" level="1" type="L"/>
+            </conceptList>
+        </valueSet>
+        <valueSet id="2.16.840.1.113883.3.1937.99.60.5.11.8" name="BodyWeightByMethod" displayName="Body Weight By Method" effectiveDate="2013-12-31T00:00:00" statusCode="draft">
+            <conceptList>
+                <concept code="3141-9" codeSystem="2.16.840.1.113883.6.1" displayName="Body weight Measured" level="0" type="L"/>
+                <concept code="8350-1" codeSystem="2.16.840.1.113883.6.1" displayName="Body weight Measured -with clothes" level="1" type="L"/>
+                <concept code="8351-9" codeSystem="2.16.840.1.113883.6.1" displayName="Body weight Measured -without clothes" level="1" type="L"/>
+                <concept code="3142-7" codeSystem="2.16.840.1.113883.6.1" displayName="Body weight Stated" level="0" type="L"/>
+            </conceptList>
+        </valueSet>
+        <valueSet id="2.16.840.1.113883.3.1937.99.60.5.11.9" name="BodyTemperatureByMethod" displayName="Body Temperature By Method" effectiveDate="2013-12-31T00:00:00" statusCode="draft">
+            <conceptList>
+                <concept code="8310-5" codeSystem="2.16.840.1.113883.6.1" displayName="Body temperature" level="0" type="L"/>
+                <concept code="8329-5" codeSystem="2.16.840.1.113883.6.1" displayName="Body temperature - Core" level="1" type="L"/>
+                <concept code="8331-1" codeSystem="2.16.840.1.113883.6.1" displayName="Body temperature - Mouth" level="1" type="L"/>
+                <concept code="8332-9" codeSystem="2.16.840.1.113883.6.1" displayName="Body temperature - Rectum" level="1" type="L"/>
+                <concept code="8328-7" codeSystem="2.16.840.1.113883.6.1" displayName="Body temperature - Axillary" level="1" type="L"/>
+                <concept code="8330-3" codeSystem="2.16.840.1.113883.6.1" displayName="Body temperature - Intravascular" level="1" type="L"/>
+                <concept code="8334-5" codeSystem="2.16.840.1.113883.6.1" displayName="Body temperature - Urinary bladder" level="1" type="L"/>
+                <concept code="8333-7" codeSystem="2.16.840.1.113883.6.1" displayName="Body temperature - Tympanic membrane" level="1" type="L"/>
+            </conceptList>
+        </valueSet>
+        <valueSet id="2.16.840.1.113883.3.1937.99.60.5.11.10" name="BodyHeightByMethod" displayName="Body Height By Method" effectiveDate="2014-07-08T00:00:00" statusCode="draft">
+            <conceptList>
+                <concept code="8302-2" codeSystem="2.16.840.1.113883.6.1" displayName="Body height" level="0" type="L"/>
+                <concept code="8306-3" codeSystem="2.16.840.1.113883.6.1" displayName="Body height -lying" level="1" type="L"/>
+            </conceptList>
+        </valueSet>
+        <valueSet id="2.16.840.1.113883.3.1937.99.60.5.11.2" name="ProblemType" displayName="Problem Type" effectiveDate="2013-12-31T00:00:00" statusCode="final">
+            <conceptList>
+                <concept code="404684003" codeSystem="2.16.840.1.113883.6.96" displayName="Finding" level="0" type="L"/>
+                <concept code="409586006" codeSystem="2.16.840.1.113883.6.96" displayName="Complaint" level="0" type="L"/>
+                <concept code="282291009" codeSystem="2.16.840.1.113883.6.96" displayName="Diagnosis" level="0" type="L"/>
+                <concept code="64572001" codeSystem="2.16.840.1.113883.6.96" displayName="Condition" level="0" type="L"/>
+                <concept code="248536006" codeSystem="2.16.840.1.113883.6.96" displayName="Finding of functional performance and activity" level="0" type="L"/>
+                <concept code="418799008" codeSystem="2.16.840.1.113883.6.96" displayName="Symptom" level="0" type="L"/>
+                <concept code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem" level="0" type="L"/>
+                <concept code="373930000" codeSystem="2.16.840.1.113883.6.96" displayName="Cognitive function finding" level="0" type="L"/>
+            </conceptList>
+        </valueSet>
+        <valueSet id="2.16.840.1.113883.3.1937.99.60.5.11.3" name="ProblemActstatusCode" displayName="ProblemAct statusCode" effectiveDate="2013-12-31T00:00:00" statusCode="final">
+            <conceptList>
+                <concept code="completed" codeSystem="2.16.840.1.113883.5.14" displayName="Completed" level="0" type="L"/>
+                <concept code="aborted" codeSystem="2.16.840.1.113883.5.14" displayName="Aborted" level="0" type="L"/>
+                <concept code="active" codeSystem="2.16.840.1.113883.5.14" displayName="Active" level="0" type="L"/>
+                <concept code="suspended" codeSystem="2.16.840.1.113883.5.14" displayName="Suspended" level="0" type="L"/>
+            </conceptList>
+        </valueSet>
+        <valueSet id="2.16.840.1.113883.3.1937.99.60.5.11.11" name="Time_Ath_PQ_UCUM" displayName="Time a tot h PQ (UCUM)" effectiveDate="2013-02-21T00:00:00" statusCode="draft">
+            <conceptList>
+                <!-- 'h', 'd', 'wk', 'mo' of 'a' -->
+                <concept code="h" codeSystem="2.16.840.1.113883.6.8" displayName="Hour" level="0" type="L"/>
+                <concept code="d" codeSystem="2.16.840.1.113883.6.8" displayName="Day" level="0" type="L"/>
+                <concept code="wk" codeSystem="2.16.840.1.113883.6.8" displayName="Week" level="0" type="L"/>
+                <concept code="mo" codeSystem="2.16.840.1.113883.6.8" displayName="Month" level="0" type="L"/>
+                <concept code="a" codeSystem="2.16.840.1.113883.6.8" displayName="Year" level="0" type="L"/>
+            </conceptList>
+        </valueSet>
+        <valueSet id="2.16.840.1.113883.3.1937.99.60.5.11.5" name="PulseRhythm" displayName="Pulse Rhythm" effectiveDate="2013-12-31T00:00:00" statusCode="draft">
+            <conceptList>
+                <concept code="162999005" codeSystem="2.16.840.1.113883.2.4.4.30.14" displayName="On examination - pulse rhythm regular (finding)" level="0" type="L"/>
+                <concept code="275954009" codeSystem="2.16.840.1.113883.2.4.4.30.14" displayName="On examination - irregular pulse (finding)" level="0" type="L"/>
+            </conceptList>
+        </valueSet>
+        <valueSet id="2.16.840.1.113883.3.1937.99.60.5.11.6" name="HeartRhythm" displayName="Heart Rhythm" effectiveDate="2013-12-31T00:00:00" statusCode="draft">
+            <conceptList>
+                <concept code="106068003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Atrial rhythm" level="0" type="S"/>
+                <concept code="49760004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Left atrial rhythm" level="1" type="L"/>
+                <concept code="81437007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Normal atrial rhythm" level="1" type="L"/>
+                <concept code="251185006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Escape beat" level="0" type="L"/>
+                <concept code="301114007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Finding of regularity of heart rhythm" level="0" type="S"/>
+                <concept code="361136003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Abnormal heart beat" level="1" type="S"/>
+                <concept code="361137007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Irregular heart beat" level="2" type="L"/>
+                <concept code="248650006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Heart irregular" level="1" type="S"/>
+                <concept code="248653008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Dropped beats - heart" level="2" type="L"/>
+                <concept code="248651005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Heart irregularly irregular" level="2" type="L"/>
+                <concept code="248652003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Heart regularly irregular" level="2" type="L"/>
+                <concept code="251184005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Fusion beat" level="0" type="L"/>
+                <concept code="66230004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Reciprocal rhythm" level="0" type="L"/>
+                <concept code="10370003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Rhythm from artificial pacing" level="0" type="S"/>
+                <concept code="63749008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Atrial rhythm from artificial pacing" level="1" type="L"/>
+                <concept code="40669004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Malfunction from artificial pacing" level="1" type="L"/>
+                <concept code="61552005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Ventricular rhythm from artificial pacing" level="1" type="L"/>
+                <concept code="106067008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Sinus node rhythm" level="0" type="S"/>
+                <concept code="64730000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Normal sinus rhythm" level="1" type="L"/>
+                <concept code="251150006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Sinus rhythm" level="0" type="S"/>
+                <concept code="423175003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Normal sinus arrhythmia" level="1" type="L"/>
+                <concept code="64730000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Normal sinus rhythm" level="1" type="L"/>
+            </conceptList>
+        </valueSet>
+    </terminology>
+    <rules>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.1" name="VitalSignsCDAdocument" displayName="Vital Signs Summary CDA document" effectiveDate="2014-07-08T00:00:00" statusCode="draft">
+            <desc language="nl-NL">Een minimaal CDA Release 2 document die alleen een paar attributen en relaties voor een ClinicalDocument class bevat: <ul>
+                    <li>typeId: vast</li>
+                    <li>id: uniek id van de document instantiatie</li>
+                    <li>code: type van het document</li>
+                    <li>effectiveTime: datum waarop document is gecreëerd</li>
+                    <li>confidentialityCode: indicatie van level van vertrouwen voor dit document</li>
+                    <li>recordTarget: onderwerp (bv. patient)</li>
+                    <li>author: auteur van dit document</li>
+                    <li>custodian: beheerder van dit document</li>
+                    <li>component: bevat (in dit geval) een gestructureerde inhoud</li>
+                </ul>
+            </desc>
+            <desc language="en-US">A minimal CDA Release 2 document, that contains only a few attributes and relationships for the ClinicalDocument class: <ul>
+                    <li>typeId: fixed</li>
+                    <li>id: unique id of the document instance</li>
+                    <li>code: type of document</li>
+                    <li>effectiveTime: creation date of the document</li>
+                    <li>confidentialityCode: confidentiality level indication for this document</li>
+                    <li>recordTarget: the record target (e.g. patient)</li>
+                    <li>author: author of this document</li>
+                    <li>custodian: custodian for this document</li>
+                    <li>component: contains (in this case) structured body</li>
+                </ul>
+            </desc>
+            <classification type="cdadocumentlevel"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.10.12.1" flexibility="2005-09-07T00:00:00"/>
+            <context path="/"/>
+            <example>
+                <ClinicalDocument xmlns="urn:hl7-org:v3">
+                    <!-- CDA Header -->
+                    <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+                    <templateId root="2.16.840.1.113883.3.1937.99.60.5.10.1"/>
+                    <id extension="38457384973598" root="2.16.840.1.113883.3.1937.99.3.2.56754657.1"/>
+                    <code code="51848-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Assessment note"/>
+                    <effectiveTime value="20140708123456"/>
+                    <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+                    <recordTarget>
+                        <!-- .. -->
+                    </recordTarget>
+                    <author>
+                        <!-- .. -->
+                    </author>
+                    <custodian>
+                        <!-- .. -->
+                    </custodian>
+                    <!-- CDA Body -->
+                    <component>
+                        <structuredBody>
+                            <component>
+                                <!-- .. -->
+                            </component>
+                        </structuredBody>
+                    </component>
+                </ClinicalDocument>
+            </example>
+            <element name="hl7:ClinicalDocument">
+                <include ref="CDAtypeId"/>
+                <element name="hl7:templateId" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="II">
+                    <desc language="nl-NL">CDA document template id for dit soort document</desc>
+                    <desc language="en-US">CDA document template id for this kind of document</desc>
+                    <example>
+                        <templateId root="2.16.840.1.113883.3.1937.99.60.5.10.1"/>
+                    </example>
+                    <attribute root="2.16.840.1.113883.3.1937.99.60.5.10.1"/>
+                </element>
+                <include ref="CDAid"/>
+                <element name="hl7:code" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CE">
+                    <vocabulary code="51848-0" codeSystem="2.16.840.1.113883.6.1"/>
+                </element>
+                <include ref="CDAtitle" minimumMultiplicity="0" maximumMultiplicity="1">
+                    <example>
+                        <title>Assessment Note as of 8 July 2014</title>
+                    </example>
+                </include>
+                <include ref="CDAeffectiveTime"/>
+                <include ref="CDAconfidentialityCode"/>
+                <include ref="CDArecordTarget"/>
+                <include ref="CDAauthor"/>
+                <include ref="CDAcustodian"/>
+                <element name="hl7:component">
+                    <attribute typeCode="COMP" contextConductionInd="true" isOptional="true"/>
+                    <element name="hl7:structuredBody">
+                        <attribute classCode="DOCBODY" moodCode="EVN" isOptional="true"/>
+                        <element name="hl7:component" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" contains="2.16.840.1.113883.3.1937.99.60.5.10.3001" flexibility="2014-07-08T00:00:00">
+                            <attribute typeCode="COMP" contextConductionInd="true" isOptional="true"/>
+                        </element>
+                    </element>
+                </element>
+            </element>
+        </template>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.900001" name="CDAtypeId" displayName="CDA typeId" effectiveDate="2014-07-08T00:00:00" statusCode="active">
+            <desc language="nl-NL">Het clinical document <tt>typeId</tt> identificeert de beperkingen op de inhoud opgelegd door CA R2 en wordt gebruikt als een versie identificatiecode. <p/> De <tt>@root</tt> and <tt>@extension</tt> waardes van dit element zijn gespecificeerd zoals getoond in het <i>voorbeeld</i> hier onder. </desc>
+            <desc language="en-US">The clinical document <tt>typeId</tt> identifies the constraints imposed by CDA R2 on the content, essentially acting as a version identifier. <p/> The <tt>@root</tt> and <tt>@extension</tt> values of this element are specified as shown in the <i>example</i> below. </desc>
+            <classification type="cdaheaderlevel"/>
+            <item label="CDAtypeId"/>
+            <example>
+                <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+            </example>
+            <element name="hl7:typeId" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="II">
+                <attribute extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+            </element>
+        </template>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.900002" name="CDAid" displayName="CDA id" effectiveDate="2014-07-08T00:00:00" statusCode="active">
+            <desc language="nl-NL">Het clinical document <tt>id</tt> element is een identificatie data type. Het <tt>@root</tt> attribuut is normaliter een OID. De <tt>@root</tt> identificeert de scope van de <tt>@extension</tt>. De <tt>@root</tt> en <tt>@extension</tt> attributen identificeren het document.</desc>
+            <desc language="en-US">The clinical document <tt>id</tt> element is an instance identifier data type. The <tt>@root</tt> attribute is typically an OID. The <tt>@root</tt> uniquely identifies the scope of the <tt>@extension</tt>. The <tt>@root</tt> and <tt>@extension</tt> attributes uniquely identify the document.</desc>
+            <classification type="cdaheaderlevel"/>
+            <example caption="Id with unique root OID only (no extension)">
+                <id root="2.16.528.1.1007.3.2.1111.21.1.1293878605987"/>
+            </example>
+            <example caption="Id with root and extension">
+                <id extension="j86574633" root="2.16.840.1.113883.2.4.6.6.99.23444.17"/>
+            </example>
+            <example caption="Id with a GUID instead of an OID">
+                <id root="2a620155-9d11-439e-92b3-5d9815ff4dd8"/>
+            </example>
+            <element name="hl7:id" datatype="II" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true"/>
+        </template>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.900003" name="CDAtitle" displayName="CDA title" effectiveDate="2014-07-08T00:00:00" statusCode="active">
+            <classification type="cdaheaderlevel"/>
+            <element name="hl7:title" datatype="ST" minimumMultiplicity="0" maximumMultiplicity="1"/>
+        </template>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.900004" name="CDAeffectiveTime" displayName="CDA effectiveTime" effectiveDate="2014-07-08T00:00:00" statusCode="active">
+            <desc language="nl-NL">Datum waarop het verslag is gecreëerd, op de seconde exact</desc>
+            <desc language="en-US">Date report was created, precise to the second</desc>
+            <classification type="cdaheaderlevel"/>
+            <example>
+                <effectiveTime value="20120611083422"/>
+            </example>
+            <example caption="Invalid example of an effective date: not precise enough (year and month only)" type="error">
+                <effectiveTime value="201310"/>
+            </example>
+            <example caption="Very valid example of an effective with a time zone" type="valid">
+                <effectiveTime value="201310171717+0100"/>
+            </example>
+            <element name="hl7:effectiveTime" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="TS.DATETIME.MIN" id="2.16.840.1.113883.3.1937.99.60.5.9.900004.1"/>
+        </template>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.900005" name="CDAconfidentialityCode" displayName="CDA confidentialityCode" effectiveDate="2014-07-08T00:00:00" statusCode="active">
+            <classification type="cdaheaderlevel"/>
+            <example>
+                <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+            </example>
+            <element name="hl7:confidentialityCode" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CE">
+                <vocabulary valueSet="BasicConfidentialityKind"/>
+            </element>
+        </template>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.900200" name="PersonElements" displayName="CDA Person Elements" effectiveDate="2014-07-08T00:00:00" statusCode="active">
+            <classification type="cdaheaderlevel"/>
+            <attribute classCode="PSN" isOptional="true"/>
+            <attribute determinerCode="INSTANCE" isOptional="true"/>
+            <element name="hl7:name" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="PN" id="2.16.840.1.113883.3.1937.99.60.5.9.900200.1">
+                <element name="hl7:family" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="ST" id="2.16.840.1.113883.3.1937.99.60.5.9.900200.2"/>
+                <element name="hl7:given" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="ST" id="2.16.840.1.113883.3.1937.99.60.5.9.900200.3"/>
+            </element>
+        </template>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.900201" name="OrganizationElements" displayName="CDA Organization Elements" effectiveDate="2014-07-08T00:00:00" statusCode="draft">
+            <classification type="cdaheaderlevel"/>
+            <attribute classCode="ORG" isOptional="true"/>
+            <attribute determinerCode="INSTANCE" isOptional="true"/>
+            <!-- Element id -->
+            <element name="hl7:id" minimumMultiplicity="0" maximumMultiplicity="*" datatype="II"/>
+            <!-- Element name -->
+            <element name="hl7:name" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="ON"/>
+            <!-- Element telecom -->
+            <element name="hl7:telecom" minimumMultiplicity="0" maximumMultiplicity="*" datatype="TEL"/>
+            <!-- Element addr -->
+            <element name="hl7:addr" minimumMultiplicity="0" maximumMultiplicity="1" datatype="AD"/>
+        </template>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.900202" name="AssignedEntityElements" displayName="AssignedEntityElements" effectiveDate="2014-07-08T00:00:00" statusCode="draft">
+            <classification type="cdaheaderlevel"/>
+            <!-- Element id -->
+            <element name="hl7:id" minimumMultiplicity="1" maximumMultiplicity="*" datatype="II"/>
+            <!-- Element addr -->
+            <element name="hl7:addr" minimumMultiplicity="0" maximumMultiplicity="1" datatype="AD"/>
+            <!-- Element telecom -->
+            <element name="hl7:telecom" minimumMultiplicity="0" maximumMultiplicity="*" datatype="TEL"/>
+            <element name="hl7:assignedPerson" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true">
+                <!-- include HeaderPerson elements -->
+                <include ref="PersonElements"/>
+            </element>
+            <!-- Element representedOrganization -->
+            <element name="hl7:representedOrganization" minimumMultiplicity="0" maximumMultiplicity="1">
+                <!-- include HeaderOrganization elements -->
+                <include ref="OrganizationElements"/>
+            </element>
+        </template>
+
+        <!-- NationalPatientIdentifier --><!--Burgerservicenummer-->
+        <templateAssociation templateId="2.16.840.1.113883.3.1937.99.60.5.10.900207" effectiveDate="2014-07-08T00:00:00">
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.110" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.110.1"/>
+        </templateAssociation>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.900207" name="NationalPatientIdentifier" displayName="Burgerservicenummer" effectiveDate="2014-07-08T00:00:00" statusCode="active">
+            <desc language="nl-NL">Burgerservicenummer (zie: http://www.denhaag.nl/en/residents/to/Burgerservicenummer-BSN.htm)</desc>
+            <desc language="en-US">National Patient Identifier (Burgerservicenummer) (see also: http://www.denhaag.nl/en/residents/to/Burgerservicenummer-BSN.htm)</desc>
+            <example caption="BSN">
+                <id root="2.16.840.1.113883.2.4.6.3" extension="100202020"/>
+            </example>
+            <element name="hl7:id" datatype="II.NL.BSN" id="2.16.840.1.113883.3.1937.99.60.5.9.110.1">
+                <attribute root="2.16.840.1.113883.2.4.6.3"/>
+                <attribute name="extension">
+                    <desc language="nl-NL">Burgerservicenummer</desc>
+                    <desc language="en-US">National Patient Identifier (Burgerservicenummer)</desc>
+                </attribute>
+            </element>
+        </template>
+        <templateAssociation templateId="2.16.840.1.113883.3.1937.99.60.5.10.2001" effectiveDate="2014-07-08T00:00:00">
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.10" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.2001.1"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.100" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.2001.2"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.120" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.2001.4"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.130" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.2001.5"/>
+        </templateAssociation>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.2001" name="CDArecordTarget" displayName="CDA recordTarget" effectiveDate="2014-07-08T00:00:00" statusCode="active">
+            <desc language="nl-NL">De patiënt / cliënt</desc>
+            <desc language="en-US">The patient / client</desc>
+            <classification type="cdaheaderlevel"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.10.12.101" flexibility="2005-09-07T00:00:00"/>
+            <example caption="A simple patient, named John Doedidoe">
+                <recordTarget>
+                    <patientRole>
+                        <id root="2.16.840.1.113883.2.4.6.3" extension="100202020"/>
+                        <patient>
+                            <name>
+                                <given>John</given>
+                                <family>Doedidoe</family>
+                            </name>
+                            <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+                            <birthTime value="19620219"/>
+                        </patient>
+                    </patientRole>
+                </recordTarget>
+            </example>
+            <element name="hl7:recordTarget" id="2.16.840.1.113883.3.1937.99.60.5.9.2001.1">
+                <attribute typeCode="RCT" contextControlCode="OP" isOptional="true"/>
+                <element name="hl7:patientRole" minimumMultiplicity="1" maximumMultiplicity="1" id="2.16.840.1.113883.3.1937.99.60.5.9.10">
+                    <attribute classCode="PAT" isOptional="true"/>
+                    <!-- Element id, here: the national patient identifier -->
+                    <include ref="NationalPatientIdentifier" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R"/>
+                    <!-- Element patient -->
+                    <element name="hl7:patient" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R" id="2.16.840.1.113883.3.1937.99.60.5.9.11">
+                        <example>
+                            <patient classCode="PSN" determinerCode="INSTANCE">
+                                <name><!-- ... --></name>
+                                <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+                                <birthTime value="19620219"/>
+                            </patient>
+                        </example>
+                        <attribute classCode="PSN" isOptional="true"/>
+                        <attribute determinerCode="INSTANCE" isOptional="true"/>
+                        <!-- Element name -->
+                        <element name="hl7:name" minimumMultiplicity="1" maximumMultiplicity="*" conformance="R" datatype="PN" id="2.16.840.1.113883.3.1937.99.60.5.9.2001.2"/>
+                        <!-- Element administrativeGenderCode -->
+                        <element name="hl7:administrativeGenderCode" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R" datatype="CE" id="2.16.840.1.113883.3.1937.99.60.5.9.2001.5">
+                            <vocabulary valueSet="AdministrativeGender"/>
+                        </element>
+                        <!-- Element birthTime -->
+                        <element name="hl7:birthTime" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R" datatype="TS" id="2.16.840.1.113883.3.1937.99.60.5.9.2001.4"/>
+                    </element>
+                </element>
+            </element>
+        </template>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.2002" name="CDAauthor" displayName="CDA author" effectiveDate="2014-07-08T00:00:00" statusCode="active">
+            <desc language="nl-NL">Auteur van het document</desc>
+            <desc language="en-US">Author of the document</desc>
+            <classification type="cdaheaderlevel"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.10.12.102" flexibility="2005-09-07T00:00:00"/>
+            <example>
+                <author>
+                    <time value="20131020"/>
+                    <assignedAuthor>
+                        <id extension="HCP89567" root="2.16.840.1.113883.3.1937.99.3.1.997788"/>
+                        <assignedPerson>
+                            <name>
+                                <given>Kai</given>
+                                <family>Heitmann</family>
+                            </name>
+                        </assignedPerson>
+                        <representedOrganization>
+                            <name>The World's Best Vaccination Service Delivery Location</name>
+                        </representedOrganization>
+                    </assignedAuthor>
+                </author>
+            </example>
+            <element name="hl7:author" minimumMultiplicity="1" maximumMultiplicity="*" isMandatory="true" id="2.16.840.1.113883.3.1937.99.60.5.9.2002.1">
+                <attribute typeCode="AUT" isOptional="true"/>
+                <!-- Element time -->
+                <element name="hl7:time" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="TS.DATE.MIN"/>
+                <!-- Element assignedAuthor -->
+                <element name="hl7:assignedAuthor" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true">
+                    <attribute classCode="ASSIGNED" isOptional="true"/>
+                    <element name="hl7:id" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R" datatype="II"/>
+                    <element name="hl7:assignedPerson" minimumMultiplicity="0" maximumMultiplicity="1">
+                        <include ref="PersonElements"/>
+                    </element>
+                    <element name="hl7:representedOrganization" minimumMultiplicity="0" maximumMultiplicity="1">
+                        <include ref="OrganizationElements"/>
+                    </element>
+                </element>
+            </element>
+        </template>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.2003" name="CDAcustodian" displayName="CDA custodian" effectiveDate="2014-07-08T00:00:00" statusCode="active">
+            <desc language="nl-NL">Beheerder van het document</desc>
+            <desc language="en-US">Custodian of the document</desc>
+            <classification type="cdaheaderlevel"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.10.12.104" flexibility="2005-09-07T00:00:00"/>
+            <example>
+                <custodian>
+                    <assignedCustodian>
+                        <representedCustodianOrganization>
+                            <id root="2.16.840.1.113883.3.1937.99.3.2.997788"/>
+                            <name/>
+                        </representedCustodianOrganization>
+                    </assignedCustodian>
+                </custodian>
+            </example>
+            <element name="hl7:custodian" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true">
+                <attribute typeCode="CST" isOptional="true"/>
+                <element name="hl7:assignedCustodian" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true">
+                    <attribute classCode="ASSIGNED" isOptional="true"/>
+                    <element name="hl7:representedCustodianOrganization" minimumMultiplicity="0" maximumMultiplicity="1">
+                        <include ref="OrganizationElements"/>
+                    </element>
+                </element>
+            </element>
+        </template>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.3001" name="VitalSignsSection" displayName="Vital Signs Section" effectiveDate="2014-07-08T00:00:00" statusCode="draft" isClosed="false">
+            <desc language="nl-NL"/>
+            <classification type="cdasectionlevel"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.10.12.201" flexibility="2005-09-07T00:00:00"/>
+            <context id="**"/>
+            <example>
+                <section classCode="DOCSECT">
+                    <templateId root="2.16.840.1.113883.3.1937.99.60.5.10.3001"/>
+                    <code code="8716-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Vital signs"/>
+                    <title>Vital Signs</title>
+                    <text>...</text>
+                </section>
+            </example>
+            <element name="hl7:section" minimumMultiplicity="0" maximumMultiplicity="*">
+                <attribute name="classCode" value="DOCSECT" isOptional="true"/>
+                <element name="hl7:templateId" minimumMultiplicity="1" maximumMultiplicity="1" datatype="II">
+                    <attribute name="root" value="2.16.840.1.113883.3.1937.99.60.5.10.3001"/>
+                </element>
+                <element name="hl7:code" minimumMultiplicity="1" maximumMultiplicity="1" datatype="CD" isMandatory="true">
+                    <vocabulary code="8716-3" codeSystem="2.16.840.1.113883.6.1"/>
+                </element>
+                <element name="hl7:title" minimumMultiplicity="1" maximumMultiplicity="1" datatype="ST" isMandatory="true"/>
+                <element name="hl7:text" minimumMultiplicity="1" maximumMultiplicity="1" datatype="SD.TEXT" isMandatory="true"/>
+                <element name="hl7:entry" minimumMultiplicity="0" maximumMultiplicity="*" contains="2.16.840.1.113883.3.1937.99.60.5.10.115">
+                    <attribute name="typeCode" isOptional="false" datatype="cs">
+                        <vocabulary code="COMP"/>
+                    </attribute>
+                    <attribute name="contextConductionInd" isOptional="true" datatype="bl"/>
+                </element>
+            </element>
+        </template>
+
+        
+        <!-- Observation Reference Range -->
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.114" name="ObservationReferenceRange" displayName="Observation Reference Range" effectiveDate="2013-12-27T00:00:00" statusCode="draft">
+            <classification type="cdaentrylevel"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.10.12.324" flexibility="2005-09-07T00:00:00"/>
+            <element name="hl7:referenceRange" minimumMultiplicity="0" maximumMultiplicity="*">
+                <desc language="nl-NL">Referentiewaarden</desc>
+                <example caption="Reference range with preconditions">
+                    <referenceRange typeCode="REFV">
+                        <observationRange classCode="OBS" moodCode="EVN.CRT">
+                            <text>43.0 - 49.0</text>
+                            <value xsi:type="IVL_PQ">
+                                <low value="43.0" unit="%"/>
+                                <high value="49.0" unit="%"/>
+                            </value>
+                            <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83" codeSystemName="ObservationInterpretation"/>
+                        </observationRange>
+                    </referenceRange>
+                </example>
+                <example caption="Reference range with preconditions">
+                    <referenceRange typeCode="REFV">
+                        <observationRange classCode="OBS" moodCode="EVN.CRT">
+                            <text>&gt;40</text>
+                            <value xsi:type="IVL_PQ">
+                                <low value="40.0" unit="%" inclusive="false"/>
+                            </value>
+                            <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83" codeSystemName="ObservationInterpretation"/>
+                        </observationRange>
+                    </referenceRange>
+                </example>
+                <example caption="Reference range with preconditions">
+                    <referenceRange typeCode="REFV">
+                        <observationRange classCode="OBS" moodCode="EVN.CRT">
+                            <text> Phase 1: 43.0 - 49.0 Phase 2: 45.0 – 55.0 1835 Phase 3: 49.0 – 63.0 </text>
+                            <interpretationCode code="H" codeSystem="2.16.840.1.113883.5.83"/>
+                        </observationRange>
+                    </referenceRange>
+                </example>
+                <attribute typeCode="REFV"/>
+                <!-- Element observationRange -->
+                <element name="hl7:observationRange" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true">
+                    <attribute classCode="OBS" moodCode="EVN.CRT"/>
+                    <!-- Element text -->
+                    <element name="hl7:text" minimumMultiplicity="0" maximumMultiplicity="1" datatype="ED" id="2.16.840.1.113883.3.1937.99.60.5.9.114.1"/>
+                    <element name="hl7:code" conformance="NP"/>
+                    <!-- Element value -->
+                    <element name="hl7:value" minimumMultiplicity="0" maximumMultiplicity="1" datatype="IVL_PQ" id="2.16.840.1.113883.3.1937.99.60.5.9.114.2">
+                        <element name="hl7:low" minimumMultiplicity="1" maximumMultiplicity="1" datatype="PQ" id="2.16.840.1.113883.3.1937.99.60.5.9.114.3"/>
+                        <element name="hl7:high" minimumMultiplicity="1" maximumMultiplicity="1" datatype="PQ" id="2.16.840.1.113883.3.1937.99.60.5.9.114.4"/>
+                    </element>
+                    <!-- Element interpretationCode -->
+                    <element name="hl7:interpretationCode" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CE" id="2.16.840.1.113883.3.1937.99.60.5.9.114.5">
+                        <vocabulary valueSet="ObservationInterpretation"/>
+                    </element>
+                </element>
+            </element>
+        </template>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.115" name="VitalSignObservation" displayName="Vital Sign Observation" effectiveDate="2013-12-19T00:00:00" statusCode="draft" isClosed="false">
+            <classification type="cdaentrylevel"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.10.12.303" flexibility="2005-09-07T00:00:00"/>
+            <relationship type="ADAPT" template="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+            <relationship type="ADAPT" template="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+            <relationship type="ADAPT" template="2.16.840.1.113883.10.20.1.31"/>
+            <context id="**"/>
+            <element name="hl7:observation" minimumMultiplicity="1" maximumMultiplicity="1">
+                <attribute classCode="OBS" moodCode="EVN"/>
+                <!-- Element templateId -->
+                <element name="hl7:templateId" minimumMultiplicity="1" maximumMultiplicity="1" datatype="II">
+                    <attribute root="2.16.840.1.113883.3.1937.99.60.5.10.115"/>
+                </element>
+                <!-- Element id -->
+                <element name="hl7:id" minimumMultiplicity="1" maximumMultiplicity="1"/>
+                <!-- Element code -->
+                <element name="hl7:code" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CE">
+                    <vocabulary valueSet="VitalSignResult"/>
+                    <element name="hl7:originalText" minimumMultiplicity="0" maximumMultiplicity="1" datatype="ED"/>
+                </element>
+                <!-- Element text -->
+                <element name="hl7:text" minimumMultiplicity="0" maximumMultiplicity="1" conformance="C" datatype="ED"/>
+                <!-- Element statusCode -->
+                <element name="hl7:statusCode" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CS">
+                    <vocabulary code="completed"/>
+                </element>
+                <!-- Element effectiveTime -->
+                <element name="hl7:effectiveTime" minimumMultiplicity="0" maximumMultiplicity="1" datatype="TS"/>
+                <!-- Element value -->
+                <element name="hl7:value" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R" datatype="PQ"/>
+            </element>
+        </template>
+        <templateAssociation templateId="2.16.840.1.113883.3.1937.99.60.5.10.116" effectiveDate="2013-12-19T00:00:00">
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.250" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.116.1"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2500" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.116.2"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2510" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.116.3"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2520" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.116.4"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2530" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.116.5"/>
+        </templateAssociation>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.116" name="RespiratoryRate" displayName="Respiratory Rate" effectiveDate="2013-12-19T00:00:00" statusCode="draft">
+            <desc language="nl-NL">Ademhalingsfrequentie</desc>
+            <desc language="en-US">Breath rate</desc>
+            <classification type="cdaentrylevel"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.10.12.303" flexibility="2005-09-07T00:00:00"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.3.1937.99.60.5.10.115"/>
+            <context id="**"/>
+            <example>
+                <observation classCode="OBS" moodCode="EVN">
+                    <templateId root="2.16.840.1.113883.3.1937.99.60.5.10.116"/>
+                    <id root="10c1eb7e-dc2d-4d1f-806a-2ad65eba0396"/>
+                    <code code="9279-1" codeSystem="2.16.840.1.113883.6.1" displayName="Respiratory Rate"/>
+                    <statusCode code="completed"/>
+                    <effectiveTime value="20131219"/>
+                    <value xsi:type="PQ" value="17" unit="/min"/>
+                </observation>
+            </example>
+            <element name="hl7:observation" minimumMultiplicity="1" maximumMultiplicity="1" id="2.16.840.1.113883.3.1937.99.60.5.9.116.1">
+                <attribute classCode="OBS" moodCode="EVN"/>
+                <!-- Element templateId -->
+                <element name="hl7:templateId" minimumMultiplicity="1" maximumMultiplicity="1" datatype="II">
+                    <attribute root="2.16.840.1.113883.3.1937.99.60.5.10.116"/>
+                </element>
+                <!-- Element id -->
+                <element name="hl7:id" minimumMultiplicity="1" maximumMultiplicity="1" id="2.16.840.1.113883.3.1937.99.60.5.9.116.2"/>
+                <!-- Element code -->
+                <element name="hl7:code" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CE">
+                    <vocabulary code="9279-1" codeSystem="2.16.840.1.113883.6.1"/>
+                    <element name="hl7:originalText" minimumMultiplicity="0" maximumMultiplicity="1" datatype="ED"/>
+                </element>
+                <!-- Element text -->
+                <element name="hl7:text" minimumMultiplicity="0" maximumMultiplicity="1" datatype="ED" id="2.16.840.1.113883.3.1937.99.60.5.9.116.5"/>
+                <!-- Element statusCode -->
+                <element name="hl7:statusCode" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CS">
+                    <vocabulary code="completed"/>
+                </element>
+                <!-- Element effectiveTime -->
+                <element name="hl7:effectiveTime" minimumMultiplicity="0" maximumMultiplicity="1" datatype="TS" id="2.16.840.1.113883.3.1937.99.60.5.9.116.3"/>
+                <!-- Element value -->
+                <element name="hl7:value" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R" datatype="PQ" id="2.16.840.1.113883.3.1937.99.60.5.9.116.4">
+                    <property unit="/min"/>
+                </element>
+            </element>
+        </template>
+        <templateAssociation templateId="2.16.840.1.113883.3.1937.99.60.5.10.117" effectiveDate="2013-12-19T00:00:00">
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.230" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.117.1"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2300" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.117.2"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2310" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.117.3"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2320" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.117.4"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2330" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.117.5"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2340" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.117.6"/>
+        </templateAssociation>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.117" name="BodyWeight" displayName="Body Weight" effectiveDate="2013-12-19T00:00:00" statusCode="draft">
+            <desc language="nl-NL">Lichaamsgewicht</desc>
+            <desc language="en-US">Body weight</desc>
+            <classification type="cdaentrylevel"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.10.12.303" flexibility="2005-09-07T00:00:00"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.3.1937.99.60.5.10.115"/>
+            <context id="**"/>
+            <example>
+                <observation classCode="OBS" moodCode="EVN">
+                    <templateId root="2.16.840.1.113883.3.1937.99.60.5.10.117"/>
+                    <id root="8689ca91-57cc-4dca-8b8a-5680520e8806"/>
+                    <code code="3142-7" codeSystem="2.16.840.1.113883.6.1" displayName="Body Weight"/>
+                    <statusCode code="completed"/>
+                    <effectiveTime value="20131219"/>
+                    <value xsi:type="PQ" value="79" unit="kg"/>
+                </observation>
+            </example>
+            <element name="hl7:observation" minimumMultiplicity="1" maximumMultiplicity="1" id="2.16.840.1.113883.3.1937.99.60.5.9.117.1">
+                <attribute classCode="OBS" moodCode="EVN"/>
+                <!-- Element templateId -->
+                <element name="hl7:templateId" minimumMultiplicity="1" maximumMultiplicity="1" datatype="II">
+                    <attribute root="2.16.840.1.113883.3.1937.99.60.5.10.117"/>
+                </element>
+                <!-- Element id -->
+                <element name="hl7:id" minimumMultiplicity="1" maximumMultiplicity="1" id="2.16.840.1.113883.3.1937.99.60.5.9.117.2"/>
+                <!-- Element code -->
+                <element name="hl7:code" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CE" id="2.16.840.1.113883.3.1937.99.60.5.9.117.6">
+                    <vocabulary valueSet="BodyWeightByMethod"/>
+                </element>
+                <!-- Element text -->
+                <element name="hl7:text" minimumMultiplicity="0" maximumMultiplicity="1" datatype="ED" id="2.16.840.1.113883.3.1937.99.60.5.9.117.5"/>
+                <!-- Element statusCode -->
+                <element name="hl7:statusCode" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CS">
+                    <vocabulary code="completed"/>
+                </element>
+                <!-- Element effectiveTime -->
+                <element name="hl7:effectiveTime" minimumMultiplicity="0" maximumMultiplicity="1" datatype="TS" id="2.16.840.1.113883.3.1937.99.60.5.9.117.4"/>
+                <!-- Element value -->
+                <element name="hl7:value" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R" datatype="PQ" id="2.16.840.1.113883.3.1937.99.60.5.9.117.3">
+                    <property unit="g" minInclude="0" maxInclude="10000"/>
+                    <property unit="kg" minInclude="0" maxInclude="350"/>
+                </element>
+            </element>
+        </template>
+        <templateAssociation templateId="2.16.840.1.113883.3.1937.99.60.5.10.118" effectiveDate="2013-12-19T00:00:00">
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.240" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.118.1"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2400" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.118.2"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2410" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.118.3"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2420" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.118.4"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2430" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.118.5"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2440" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.118.7"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2445" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.118.6"/>
+        </templateAssociation>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.118" name="HeartRate" displayName="Heart Rate" effectiveDate="2013-12-19T00:00:00" statusCode="draft">
+            <desc language="nl-NL">Hartfrequentie</desc>
+            <desc language="en-US">Heart rate</desc>
+            <classification type="cdaentrylevel"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.10.12.303" flexibility="2005-09-07T00:00:00"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.3.1937.99.60.5.10.115"/>
+            <context id="**"/>
+            <example>
+                <observation classCode="OBS" moodCode="EVN">
+                    <templateId root="2.16.840.1.113883.3.1937.99.60.5.10.118"/>
+                    <id root="bbfb672e-a620-4aa4-9117-bdd8b2505aaa"/>
+                    <code code="8867-4" codeSystem="2.16.840.1.113883.6.1" displayName="Heart Rate"/>
+                    <statusCode code="completed"/>
+                    <effectiveTime value="20131219"/>
+                    <value xsi:type="PQ" value="67" unit="/min"/>
+                    <entryRelationship typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN">
+                            <code code="8884-9" codeSystem="2.16.840.1.113883.6.1" displayName="Heart rate rhythm"/>
+                            <value xsi:type="CE" code="251150006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="Snomed CT" displayName="Sinus rhythm"/>
+                        </observation>
+                    </entryRelationship>
+                </observation>
+            </example>
+            <element name="hl7:observation" minimumMultiplicity="1" maximumMultiplicity="1" id="2.16.840.1.113883.3.1937.99.60.5.9.118.1">
+                <attribute classCode="OBS" moodCode="EVN"/>
+                <!-- Element templateId -->
+                <element name="hl7:templateId" minimumMultiplicity="1" maximumMultiplicity="1" datatype="II">
+                    <attribute root="2.16.840.1.113883.3.1937.99.60.5.10.118"/>
+                </element>
+                <!-- Element id -->
+                <element name="hl7:id" minimumMultiplicity="1" maximumMultiplicity="1" id="2.16.840.1.113883.3.1937.99.60.5.9.118.2"/>
+                <!-- Element code -->
+                <element name="hl7:code" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CE" id="2.16.840.1.113883.3.1937.99.60.5.9.118.7">
+                    <vocabulary valueSet="HeartRateByMethod"/>
+                </element>
+                <!-- Element text -->
+                <element name="hl7:text" minimumMultiplicity="0" maximumMultiplicity="1" datatype="ED" id="2.16.840.1.113883.3.1937.99.60.5.9.118.5"/>
+                <!-- Element statusCode -->
+                <element name="hl7:statusCode" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CS">
+                    <vocabulary code="completed"/>
+                </element>
+                <!-- Element effectiveTime -->
+                <element name="hl7:effectiveTime" minimumMultiplicity="0" maximumMultiplicity="1" datatype="TS" id="2.16.840.1.113883.3.1937.99.60.5.9.118.4"/>
+                <!-- Element value -->
+                <element name="hl7:value" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R" datatype="PQ" id="2.16.840.1.113883.3.1937.99.60.5.9.118.3">
+                    <property unit="/min"/>
+                </element>
+                <element name="hl7:entryRelationship" minimumMultiplicity="0" maximumMultiplicity="*">
+                    <desc language="nl-NL">Regelmatigheid</desc>
+                    <desc language="en-US">Regularity</desc>
+                    <attribute typeCode="COMP"/>
+                    <element name="hl7:observation" minimumMultiplicity="1" maximumMultiplicity="1" id="2.16.840.1.113883.3.1937.99.60.5.9.125.1">
+                        <attribute classCode="OBS" moodCode="EVN"/>
+                        <element name="hl7:code" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CE">
+                            <vocabulary code="8884-9" codeSystem="2.16.840.1.113883.6.1"/>
+                        </element>
+                        <element name="hl7:value" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R" datatype="CE" id="2.16.840.1.113883.3.1937.99.60.5.9.118.6">
+                            <vocabulary valueSet="HeartRhythm"/>
+                        </element>
+                    </element>
+                </element>
+            </element>
+        </template>
+        <templateAssociation templateId="2.16.840.1.113883.3.1937.99.60.5.10.119" effectiveDate="2013-12-19T00:00:00">
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.210" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.119.1"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2100" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.119.2"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2110" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.119.3"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2120" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.119.4"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2130" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.119.5"/>
+        </templateAssociation>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.119" name="BodyHeight" displayName="Body Height" effectiveDate="2013-12-19T00:00:00" statusCode="draft">
+            <desc language="nl-NL">Lichaamslengte</desc>
+            <desc language="en-US">Body height</desc>
+            <classification type="cdaentrylevel"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.10.12.303" flexibility="2005-09-07T00:00:00"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.3.1937.99.60.5.10.115"/>
+            <context id="**"/>
+            <example>
+                <observation classCode="OBS" moodCode="EVN">
+                    <templateId root="2.16.840.1.113883.3.1937.99.60.5.10.119"/>
+                    <id root="2296492f-3bb8-4d8a-9d1a-22c278980dff"/>
+                    <code code="8302-2" codeSystem="2.16.840.1.113883.6.1" displayName="Body Height"/>
+                    <statusCode code="completed"/>
+                    <effectiveTime value="20131219"/>
+                    <value xsi:type="PQ" value="189" unit="cm"/>
+                </observation>
+            </example>
+            <element name="hl7:observation" minimumMultiplicity="1" maximumMultiplicity="1" id="2.16.840.1.113883.3.1937.99.60.5.9.119.1">
+                <attribute classCode="OBS" moodCode="EVN"/>
+                <!-- Element templateId -->
+                <element name="hl7:templateId" minimumMultiplicity="1" maximumMultiplicity="1" datatype="II">
+                    <attribute root="2.16.840.1.113883.3.1937.99.60.5.10.119"/>
+                </element>
+                <!-- Element id -->
+                <element name="hl7:id" minimumMultiplicity="1" maximumMultiplicity="1" id="2.16.840.1.113883.3.1937.99.60.5.9.119.2"/>
+                <!-- Element code -->
+                <element name="hl7:code" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CE">
+                    <vocabulary valueSet="BodyHeightByMethod"/>
+                    <element name="hl7:originalText" minimumMultiplicity="0" maximumMultiplicity="1" datatype="ED"/>
+                </element>
+                <!-- Element text -->
+                <element name="hl7:text" minimumMultiplicity="0" maximumMultiplicity="1" datatype="ED" id="2.16.840.1.113883.3.1937.99.60.5.9.119.5"/>
+                <!-- Element statusCode -->
+                <element name="hl7:statusCode" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CS">
+                    <vocabulary code="completed"/>
+                </element>
+                <!-- Element effectiveTime -->
+                <element name="hl7:effectiveTime" minimumMultiplicity="0" maximumMultiplicity="1" datatype="TS" id="2.16.840.1.113883.3.1937.99.60.5.9.119.4"/>
+                <!-- Element value -->
+                <element name="hl7:value" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R" datatype="PQ" id="2.16.840.1.113883.3.1937.99.60.5.9.119.3">
+                    <property unit="cm" minInclude="0" maxInclude="250"/>
+                    <property unit="m" minInclude="0.00" maxInclude="2.50" fractionDigits="2"/>
+                </element>
+            </element>
+        </template>
+        <templateAssociation templateId="2.16.840.1.113883.3.1937.99.60.5.10.125" effectiveDate="2013-12-19T00:00:00">
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.280" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.125.1"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2800" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.125.2"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2810" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.125.3"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2820" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.125.4"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2830" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.125.5"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2840" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.125.6"/>
+        </templateAssociation>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.125" name="HeartRatePeripheral" displayName="HeartRatePeripheral" effectiveDate="2013-12-19T00:00:00" statusCode="draft">
+            <desc language="nl-NL">Pols</desc>
+            <desc language="en-US">Pulse</desc>
+            <classification type="cdaentrylevel"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.10.12.303" flexibility="2005-09-07T00:00:00"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.3.1937.99.60.5.10.115"/>
+            <context id="**"/>
+            <example>
+                <observation classCode="OBS" moodCode="EVN">
+                    <templateId root="2.16.840.1.113883.3.1937.99.60.5.10.125"/>
+                    <id root="786bf452-509c-4edb-b94b-6117d1d39d39"/>
+                    <code code="8893-0" codeSystem="2.16.840.1.113883.6.1" displayName="Heart rate Peripheral artery by palpation"/>
+                    <statusCode code="completed"/>
+                    <effectiveTime value="20131219"/>
+                    <value xsi:type="PQ" value="76" unit="/min"/>
+                    <entryRelationship typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN">
+                            <code code="364095004" codeSystem="2.16.840.1.113883.6.1" displayName="Pulse rhythm (observable entity)"/>
+                            <value xsi:type="CE" code="162999005" codeSystem="2.16.840.1.113883.6.96" displayName="On examination - pulse rhythm regular (finding)"/>
+                        </observation>
+                    </entryRelationship>
+                </observation>
+            </example>
+            <element name="hl7:observation" minimumMultiplicity="1" maximumMultiplicity="1" id="2.16.840.1.113883.3.1937.99.60.5.9.125.1">
+                <attribute classCode="OBS" moodCode="EVN"/>
+                <!-- Element templateId -->
+                <element name="hl7:templateId" minimumMultiplicity="1" maximumMultiplicity="1" datatype="II">
+                    <attribute root="2.16.840.1.113883.3.1937.99.60.5.10.125"/>
+                </element>
+                <!-- Element id -->
+                <element name="hl7:id" minimumMultiplicity="1" maximumMultiplicity="1" id="2.16.840.1.113883.3.1937.99.60.5.9.125.2"/>
+                <!-- Element code -->
+                <element name="hl7:code" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CE">
+                    <vocabulary code="8893-0" codeSystem="2.16.840.1.113883.6.1"/>
+                </element>
+                <!-- Element text -->
+                <element name="hl7:text" minimumMultiplicity="0" maximumMultiplicity="1" datatype="ED" id="2.16.840.1.113883.3.1937.99.60.5.9.125.5"/>
+                <!-- Element statusCode -->
+                <element name="hl7:statusCode" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CS">
+                    <vocabulary code="completed"/>
+                </element>
+                <!-- Element effectiveTime -->
+                <element name="hl7:effectiveTime" minimumMultiplicity="0" maximumMultiplicity="1" datatype="TS" id="2.16.840.1.113883.3.1937.99.60.5.9.125.4"/>
+                <!-- Element value -->
+                <element name="hl7:value" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R" datatype="PQ" id="2.16.840.1.113883.3.1937.99.60.5.9.125.3">
+                    <property unit="/min"/>
+                </element>
+                <element name="hl7:entryRelationship" minimumMultiplicity="0" maximumMultiplicity="*">
+                    <desc language="nl-NL">Regelmatigheid</desc>
+                    <desc language="en-US">Regularity</desc>
+                    <attribute typeCode="COMP" inversionInd="false"/>
+                    <element name="hl7:observation" minimumMultiplicity="1" maximumMultiplicity="1">
+                        <attribute classCode="OBS" moodCode="EVN"/>
+                        <element name="hl7:code" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CE">
+                            <vocabulary code="364095004" codeSystem="2.16.840.1.113883.6.96"/>
+                        </element>
+                        <element name="hl7:value" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R" datatype="CE" id="2.16.840.1.113883.3.1937.99.60.5.9.125.6">
+                            <vocabulary valueSet="PulseRhythm"/>
+                        </element>
+                    </element>
+                </element>
+            </element>
+        </template>
+        <templateAssociation templateId="2.16.840.1.113883.3.1937.99.60.5.10.126" effectiveDate="2013-12-19T00:00:00">
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.290" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.126.1"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2900" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.126.2"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2910" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.126.3"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2920" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.126.4"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2930" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.126.5"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2940" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.126.6"/>
+        </templateAssociation>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.126" name="BodyTemperature" displayName="Body Temperature" effectiveDate="2013-12-19T00:00:00" statusCode="draft">
+            <desc language="nl-NL">Pols</desc>
+            <desc language="en-US">Pulse</desc>
+            <classification type="cdaentrylevel"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.10.12.303" flexibility="2005-09-07T00:00:00"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.3.1937.99.60.5.10.115"/>
+            <context id="**"/>
+            <example>
+                <observation classCode="OBS" moodCode="EVN">
+                    <templateId root="2.16.840.1.113883.3.1937.99.60.5.10.126"/>
+                    <id root="af1eb111-93b0-4c84-8e55-98f2098b7950"/>
+                    <code code="8310-5" codeSystem="2.16.840.1.113883.6.1" displayName="Body temperature"/>
+                    <statusCode code="completed"/>
+                    <effectiveTime value="20131219"/>
+                    <value xsi:type="PQ" value="37.0" unit="Cel"/>
+                </observation>
+            </example>
+            <element name="hl7:observation" minimumMultiplicity="1" maximumMultiplicity="1" id="2.16.840.1.113883.3.1937.99.60.5.9.126.1">
+                <attribute classCode="OBS" moodCode="EVN"/>
+                <!-- Element templateId -->
+                <element name="hl7:templateId" minimumMultiplicity="1" maximumMultiplicity="1" datatype="II">
+                    <attribute root="2.16.840.1.113883.3.1937.99.60.5.10.126"/>
+                </element>
+                <!-- Element id -->
+                <element name="hl7:id" minimumMultiplicity="1" maximumMultiplicity="1" id="2.16.840.1.113883.3.1937.99.60.5.9.126.2"/>
+                <!-- Element code -->
+                <element name="hl7:code" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CE" id="2.16.840.1.113883.3.1937.99.60.5.9.126.6">
+                    <vocabulary valueSet="BodyTemperatureByMethod"/>
+                </element>
+                <!-- Element text -->
+                <element name="hl7:text" minimumMultiplicity="0" maximumMultiplicity="1" datatype="ED" id="2.16.840.1.113883.3.1937.99.60.5.9.126.5"/>
+                <!-- Element statusCode -->
+                <element name="hl7:statusCode" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CS">
+                    <vocabulary code="completed"/>
+                </element>
+                <!-- Element effectiveTime -->
+                <element name="hl7:effectiveTime" minimumMultiplicity="0" maximumMultiplicity="1" datatype="TS" id="2.16.840.1.113883.3.1937.99.60.5.9.126.4"/>
+                <!-- Element value -->
+                <element name="hl7:value" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R" datatype="PQ" id="2.16.840.1.113883.3.1937.99.60.5.9.126.3">
+                    <property unit="Cel"/>
+                </element>
+            </element>
+        </template>
+        <templateAssociation templateId="2.16.840.1.113883.3.1937.99.60.5.10.127" effectiveDate="2013-12-19T00:00:00">
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.270" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.127.1"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2700" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.127.2"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2710" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.127.3"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2720" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.127.4"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2730" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.127.5"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2740" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.127.6"/>
+        </templateAssociation>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.127" name="OxygenSaturation" displayName="Oxygen Saturation" effectiveDate="2013-12-19T00:00:00" statusCode="draft">
+            <desc language="nl-NL">O2 saturatie (SO2)</desc>
+            <desc language="en-US">O2 saturation (SO2)</desc>
+            <classification type="cdaentrylevel"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.10.12.303" flexibility="2005-09-07T00:00:00"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.3.1937.99.60.5.10.115"/>
+            <context id="**"/>
+            <example>
+                <observation classCode="OBS" moodCode="EVN">
+                    <templateId root="2.16.840.1.113883.3.1937.99.60.5.10.127"/>
+                    <id root="769eb111-93b0-4c84-8e55-98f2098b7950"/>
+                    <code code="2710-2" codeSystem="2.16.840.1.113883.6.1" displayName="Oxygen saturation in Capillary blood by Oximetry"/>
+                    <statusCode code="completed"/>
+                    <effectiveTime value="20131219"/>
+                    <value xsi:type="PQ" value="86.0" unit="%"/>
+                    <entryRelationship typeCode="COMP">
+                        <!-- O2 Therapy -->
+                    </entryRelationship>
+                </observation>
+            </example>
+            <element name="hl7:observation" minimumMultiplicity="1" maximumMultiplicity="1" id="2.16.840.1.113883.3.1937.99.60.5.9.127.1">
+                <attribute classCode="OBS" moodCode="EVN"/>
+                <!-- Element templateId -->
+                <element name="hl7:templateId" minimumMultiplicity="1" maximumMultiplicity="1" datatype="II">
+                    <attribute root="2.16.840.1.113883.3.1937.99.60.5.10.127"/>
+                </element>
+                <!-- Element id -->
+                <element name="hl7:id" minimumMultiplicity="1" maximumMultiplicity="1" id="2.16.840.1.113883.3.1937.99.60.5.9.127.2"/>
+                <!-- Element code -->
+                <element name="hl7:code" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CE">
+                    <vocabulary code="2710-2" codeSystem="2.16.840.1.113883.6.1"/>
+                </element>
+                <!-- Element text -->
+                <element name="hl7:text" minimumMultiplicity="0" maximumMultiplicity="1" datatype="ED" id="2.16.840.1.113883.3.1937.99.60.5.9.127.5"/>
+                <!-- Element statusCode -->
+                <element name="hl7:statusCode" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CS">
+                    <vocabulary code="completed"/>
+                </element>
+                <!-- Element effectiveTime -->
+                <element name="hl7:effectiveTime" minimumMultiplicity="0" maximumMultiplicity="1" datatype="TS" id="2.16.840.1.113883.3.1937.99.60.5.9.127.4"/>
+                <!-- Element value -->
+                <element name="hl7:value" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R" datatype="PQ" id="2.16.840.1.113883.3.1937.99.60.5.9.127.3">
+                    <property unit="%"/>
+                </element>
+                <element name="hl7:entryRelationship" minimumMultiplicity="0" maximumMultiplicity="1">
+                    <desc language="nl-NL">Zuurstoftherapie</desc>
+                    <desc language="en-US">Oxygen therapy</desc>
+                    <attribute typeCode="COMP" inversionInd="false"/>
+                    <element name="hl7:procedure" minimumMultiplicity="1" maximumMultiplicity="1" id="2.16.840.1.113883.3.1937.99.60.5.9.127.6">
+                        <example caption="Zuurstoftherapie">
+                            <procedure classCode="PROC" moodCode="EVN">
+                                <code code="57485005" codeSystem="2.16.840.1.113883.6.96" displayName="Oxygen therapy (procedure)"/>
+                            </procedure>
+                        </example>
+                        <example caption="Geen zuurstoftherapie">
+                            <procedure classCode="PROC" moodCode="EVN" negationInd="true">
+                                <code code="57485005" codeSystem="2.16.840.1.113883.6.96" displayName="Oxygen therapy (procedure)"/>
+                            </procedure>
+                        </example>
+                        <attribute classCode="PROC" moodCode="EVN"/>
+                        <attribute name="negationInd" isOptional="true"/>
+                        <element name="hl7:code" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true">
+                            <vocabulary code="57485005" codeSystem="2.16.840.1.113883.6.96"/>
+                        </element>
+                    </element>
+                </element>
+            </element>
+        </template>
+        <templateAssociation templateId="2.16.840.1.113883.3.1937.99.60.5.10.128" effectiveDate="2013-12-30T00:00:00">
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.260" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.128.1"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2600" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.128.2"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2620" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.128.4"/>
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2630" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.128.5"/>
+        </templateAssociation>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.128" name="BloodPressure" displayName="Blood pressure" effectiveDate="2013-12-30T00:00:00" statusCode="draft">
+            <desc language="nl-NL">Blood pressure</desc>
+            <desc language="en-US">Bloeddruk</desc>
+            <classification type="cdaentrylevel"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.10.12.303" flexibility="2005-09-07T00:00:00"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.3.1937.99.60.5.10.115"/>
+            <context id="**"/>
+            <example>
+                <observation classCode="OBS" moodCode="EVN">
+                    <templateId root="2.16.840.1.113883.3.1937.99.60.5.10.128"/>
+                    <id root="456fec70-9674-4b2a-9837-cdf7420765de"/>
+                    <code code="35094-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Blood pressure panel"/>
+                    <statusCode code="completed"/>
+                    <entryRelationship typeCode="COMP">
+                        <!-- systolic BP ... -->
+                    </entryRelationship>
+                    <entryRelationship typeCode="COMP">
+                        <!-- diastolic BP ... -->
+                    </entryRelationship>
+                </observation>
+            </example>
+            <element name="hl7:observation" minimumMultiplicity="1" maximumMultiplicity="1" id="2.16.840.1.113883.3.1937.99.60.5.9.128.1">
+                <attribute classCode="OBS" moodCode="EVN"/>
+                <!-- Element templateId -->
+                <element name="hl7:templateId" minimumMultiplicity="1" maximumMultiplicity="1" datatype="II">
+                    <attribute root="2.16.840.1.113883.3.1937.99.60.5.10.128"/>
+                </element>
+                <!-- Element id -->
+                <element name="hl7:id" minimumMultiplicity="1" maximumMultiplicity="1" id="2.16.840.1.113883.3.1937.99.60.5.9.128.2"/>
+                <!-- Element code -->
+                <element name="hl7:code" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CE">
+                    <vocabulary code="35094-2" codeSystem="2.16.840.1.113883.6.1"/>
+                </element>
+                <!-- Element text -->
+                <element name="hl7:text" minimumMultiplicity="0" maximumMultiplicity="1" datatype="ED" id="2.16.840.1.113883.3.1937.99.60.5.9.128.5"/>
+                <!-- Element statusCode -->
+                <element name="hl7:statusCode" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CS">
+                    <vocabulary code="completed"/>
+                </element>
+                <!-- Element effectiveTime -->
+                <element name="hl7:effectiveTime" minimumMultiplicity="0" maximumMultiplicity="1" datatype="TS" id="2.16.840.1.113883.3.1937.99.60.5.9.128.4"/>
+                <!-- Element value -->
+                <element name="hl7:value" conformance="NP"/>
+                <element name="hl7:methodCode" minimumMultiplicity="0" maximumMultiplicity="1" datatype="CE" id="2.16.840.1.113883.3.1937.99.60.5.9.128.9">
+                    <vocabulary valueSet="ObservationMethod"/>
+                </element>
+                <element name="hl7:entryRelationship" minimumMultiplicity="0" maximumMultiplicity="1" contains="SystolicBloodPressure">
+                    <desc language="nl-NL">Systolische bloeddruk</desc>
+                    <desc language="en-US">Systolic blood pressure</desc>
+                    <attribute typeCode="COMP" inversionInd="false"/>
+                </element>
+                <element name="hl7:entryRelationship" minimumMultiplicity="0" maximumMultiplicity="1" contains="DiastolicBloodPressure">
+                    <desc language="nl-NL">Diastolische bloeddruk</desc>
+                    <desc language="en-US">Diastolic blood pressure</desc>
+                    <attribute typeCode="COMP" inversionInd="false"/>
+                </element>
+                <element name="hl7:entryRelationship" minimumMultiplicity="0" maximumMultiplicity="1" contains="MeanBloodPressure">
+                    <desc language="nl-NL">Gemiddelde bloeddruk</desc>
+                    <desc language="en-US">Mean blood pressure</desc>
+                    <attribute typeCode="COMP" inversionInd="false"/>
+                </element>
+            </element>
+        </template>
+        <templateAssociation templateId="2.16.840.1.113883.3.1937.99.60.5.10.129" effectiveDate="2013-12-30T00:00:00">
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2610" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.129.3"/>
+        </templateAssociation>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.129" name="SystolicBloodPressure" displayName="Systolic blood pressure" effectiveDate="2013-12-30T00:00:00" statusCode="draft">
+            <desc language="nl-NL">Systolische bloeddruk</desc>
+            <desc language="en-US">Systolic blood pressure</desc>
+            <classification type="cdaentrylevel"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.10.12.303" flexibility="2005-09-07T00:00:00"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.3.1937.99.60.5.10.115"/>
+            <context id="**"/>
+            <example>
+                <observation classCode="OBS" moodCode="EVN">
+                    <templateId root="2.16.840.1.113883.10.20.22.4.27.2"/>
+                    <id root="a0e39c70-9674-4b2a-9837-cdf74200d8d5"/>
+                    <code code="8480-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Intravascular Systolic"/>
+                    <statusCode code="completed"/>
+                    <effectiveTime value="20131231"/>
+                    <value xsi:type="PQ" value="132" unit="mm[Hg]"/>
+                    <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+                </observation>
+            </example>
+            <element name="hl7:observation" minimumMultiplicity="1" maximumMultiplicity="1" id="2.16.840.1.113883.3.1937.99.60.5.9.129.1">
+                <attribute name="classCode" value="OBS"/>
+                <attribute name="moodCode" value="EVN"/>
+                <element name="hl7:templateId" minimumMultiplicity="1" maximumMultiplicity="1" datatype="II">
+                    <attribute name="root" value="2.16.840.1.113883.3.1937.99.60.5.10.129"/>
+                </element>
+                <element name="hl7:id" minimumMultiplicity="1" maximumMultiplicity="1" id="2.16.840.1.113883.3.1937.99.60.5.9.129.2"/>
+                <element name="hl7:code" minimumMultiplicity="1" maximumMultiplicity="1" datatype="CE" isMandatory="true">
+                    <vocabulary code="8480-6" codeSystem="2.16.840.1.113883.6.1"/>
+                </element>
+                <element name="hl7:text" minimumMultiplicity="0" maximumMultiplicity="1" datatype="ED" id="2.16.840.1.113883.3.1937.99.60.5.9.129.5"/>
+                <element name="hl7:statusCode" minimumMultiplicity="1" maximumMultiplicity="1" datatype="CS" isMandatory="true">
+                    <vocabulary code="completed"/>
+                </element>
+                <element name="hl7:effectiveTime" minimumMultiplicity="0" maximumMultiplicity="1" datatype="TS" id="2.16.840.1.113883.3.1937.99.60.5.9.129.4"/>
+                <element name="hl7:value" minimumMultiplicity="1" maximumMultiplicity="1" datatype="PQ" id="2.16.840.1.113883.3.1937.99.60.5.9.129.3" conformance="R">
+                    <property unit="mm[Hg]"/>
+                </element>
+                <element name="hl7:interpretationCode" minimumMultiplicity="0" maximumMultiplicity="*" datatype="CE" id="2.16.840.1.113883.3.1937.99.60.5.9.122.6">
+                    <vocabulary valueSet="ObservationInterpretation"/>
+                </element>
+            </element>
+        </template>
+        <templateAssociation templateId="2.16.840.1.113883.3.1937.99.60.5.10.130" effectiveDate="2013-12-30T00:00:00">
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2612" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.130.3"/>
+        </templateAssociation>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.130" name="DiastolicBloodPressure" displayName="Diastolic blood pressure" effectiveDate="2013-12-30T00:00:00" statusCode="draft">
+            <desc language="nl-NL">Diastolische bloeddruk</desc>
+            <desc language="en-US">Diastolic blood pressure</desc>
+            <classification type="cdaentrylevel"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.10.12.303" flexibility="2005-09-07T00:00:00"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.3.1937.99.60.5.10.115"/>
+            <context id="**"/>
+            <example>
+                <observation classCode="OBS" moodCode="EVN">
+                    <templateId root="2.16.840.1.113883.10.20.22.4.27.2"/>
+                    <id root="f5139c70-9674-4b2a-9837-cdf74200d981"/>
+                    <code code="8462-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Intravascular Diastolic"/>
+                    <statusCode code="completed"/>
+                    <effectiveTime value="20131231"/>
+                    <value xsi:type="PQ" value="81" unit="mm[Hg]"/>
+                    <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+                </observation>
+            </example>
+            <element name="hl7:observation" minimumMultiplicity="1" maximumMultiplicity="1" id="2.16.840.1.113883.3.1937.99.60.5.9.130.1">
+                <attribute classCode="OBS" moodCode="EVN"/>
+                <!-- Element templateId -->
+                <element name="hl7:templateId" minimumMultiplicity="1" maximumMultiplicity="1" datatype="II">
+                    <attribute root="2.16.840.1.113883.3.1937.99.60.5.10.130"/>
+                </element>
+                <!-- Element id -->
+                <element name="hl7:id" minimumMultiplicity="1" maximumMultiplicity="1" id="2.16.840.1.113883.3.1937.99.60.5.9.130.2"/>
+                <!-- Element code -->
+                <element name="hl7:code" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CE">
+                    <vocabulary code="8462-4" codeSystem="2.16.840.1.113883.6.1"/>
+                </element>
+                <!-- Element text -->
+                <element name="hl7:text" minimumMultiplicity="0" maximumMultiplicity="1" datatype="ED" id="2.16.840.1.113883.3.1937.99.60.5.9.130.5"/>
+                <!-- Element statusCode -->
+                <element name="hl7:statusCode" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CS">
+                    <vocabulary code="completed"/>
+                </element>
+                <!-- Element effectiveTime -->
+                <element name="hl7:effectiveTime" minimumMultiplicity="0" maximumMultiplicity="1" datatype="TS" id="2.16.840.1.113883.3.1937.99.60.5.9.130.4"/>
+                <!-- Element value -->
+                <element name="hl7:value" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R" datatype="PQ" id="2.16.840.1.113883.3.1937.99.60.5.9.130.3">
+                    <property unit="mm[Hg]"/>
+                </element>
+                <element name="hl7:interpretationCode" minimumMultiplicity="0" maximumMultiplicity="*" datatype="CE" id="2.16.840.1.113883.3.1937.99.60.5.9.122.6">
+                    <vocabulary valueSet="ObservationInterpretation"/>
+                </element>
+            </element>
+        </template>
+        <templateAssociation templateId="2.16.840.1.113883.3.1937.99.60.5.10.131" effectiveDate="2013-12-30T00:00:00">
+            <concept ref="2.16.840.1.113883.3.1937.99.60.5.2.2614" effectiveDate="2014-07-08T00:00:00" elementId="2.16.840.1.113883.3.1937.99.60.5.9.131.3"/>
+        </templateAssociation>
+        <template id="2.16.840.1.113883.3.1937.99.60.5.10.131" name="MeanBloodPressure" displayName="Mean blood pressure" effectiveDate="2013-12-30T00:00:00" statusCode="draft">
+            <desc language="nl-NL">Gemiddelde bloeddruk</desc>
+            <desc language="en-US">Mean blood pressure</desc>
+            <classification type="cdaentrylevel"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.10.12.303" flexibility="2005-09-07T00:00:00"/>
+            <relationship type="SPEC" template="2.16.840.1.113883.3.1937.99.60.5.10.115"/>
+            <context id="**"/>
+            <element name="hl7:observation" minimumMultiplicity="1" maximumMultiplicity="1" id="2.16.840.1.113883.3.1937.99.60.5.9.131.1">
+                <attribute classCode="OBS" moodCode="EVN"/>
+                <!-- Element templateId -->
+                <element name="hl7:templateId" minimumMultiplicity="1" maximumMultiplicity="1" datatype="II">
+                    <attribute root="2.16.840.1.113883.3.1937.99.60.5.10.131"/>
+                </element>
+                <!-- Element id -->
+                <element name="hl7:id" minimumMultiplicity="1" maximumMultiplicity="1" id="2.16.840.1.113883.3.1937.99.60.5.9.131.2"/>
+                <!-- Element code -->
+                <element name="hl7:code" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CE">
+                    <vocabulary code="8478-0" codeSystem="2.16.840.1.113883.6.1"/>
+                </element>
+                <!-- Element text -->
+                <element name="hl7:text" minimumMultiplicity="0" maximumMultiplicity="1" datatype="ED" id="2.16.840.1.113883.3.1937.99.60.5.9.131.5"/>
+                <!-- Element statusCode -->
+                <element name="hl7:statusCode" minimumMultiplicity="1" maximumMultiplicity="1" isMandatory="true" datatype="CS">
+                    <vocabulary code="completed"/>
+                </element>
+                <!-- Element effectiveTime -->
+                <element name="hl7:effectiveTime" minimumMultiplicity="0" maximumMultiplicity="1" datatype="TS" id="2.16.840.1.113883.3.1937.99.60.5.9.131.4"/>
+                <!-- Element value -->
+                <element name="hl7:value" minimumMultiplicity="1" maximumMultiplicity="1" conformance="R" datatype="PQ" id="2.16.840.1.113883.3.1937.99.60.5.9.131.3">
+                    <property unit="mm[Hg]"/>
+                </element>
+                <element name="hl7:interpretationCode" minimumMultiplicity="0" maximumMultiplicity="*" datatype="CE" id="2.16.840.1.113883.3.1937.99.60.5.9.122.6">
+                    <vocabulary valueSet="ObservationInterpretation"/>
+                </element>
+            </element>
+        </template>
+    </rules>
+    <issues> </issues>
+</decor>

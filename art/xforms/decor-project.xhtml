@@ -1,0 +1,2641 @@
+<!--
+    Copyright (C) 2011-2014 ART-DECOR expert group art-decor.org
+    
+    Author: Gerrit Boers, Marc de Graauw, Kai U. Heitmann
+
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:svrl="http://purl.oclc.org/dsdl/svrl" xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:widget="http://orbeon.org/oxf/xml/widget" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="decor-project" xsi:schemaLocation="http://www.w3.org/1999/xhtml https://raw.github.com/orbeon/orbeon-forms/master/src/main/resources/org/orbeon/oxf/xml/schemas/xhtml1-transitional-orbeon.xsd">
+    <xhtml:head>
+        <xhtml:style type="text/css">
+            .xforms-repeat-selected-item-1,
+            .xforms-repeat-selected-item-2,
+            .xforms-repeat-selected-item-3,
+            .xforms-repeat-selected-item-4,
+            .xforms-repeat-selected-item-5 { 
+                font-weight:normal; background-color:inherit; color:black;
+            }
+            .msgborder {border : 1px solid #C3C0B2}
+            .msgheader {float:left; padding: 5px;}
+            .msgrow {padding: 5px;}
+            .spinner {padding-left:10px; padding-right:10px;}
+        </xhtml:style>
+        <xhtml:title>
+            <xforms:output ref="if (instance('project-instance')/name[@language=$resources/@xml:lang]) then (instance('project-instance')/name[@language=$resources/@xml:lang]) else (instance('project-instance')/name[1])"/> - <xforms:output ref="$resources/project-information"/>
+        </xhtml:title>
+        <xforms:model id="decor-project">
+         <!-- Variable with path to art-external-exist for use by html -->
+            <xxforms:variable name="art-external-exist" select="xxforms:property('art.external.exist.url')"/>
+         <!-- Variable with path to art-exist -->
+            <xxforms:variable name="art-exist" select="xxforms:property('art.exist.url')"/>
+         <!-- Variable with path to decor-external-exist for use by html -->
+            <xxforms:variable name="decor-external-exist" select="xxforms:property('decor.external.exist.url')"/>
+         <!-- Variable with path to decor-exist-db -->
+            <xxforms:variable name="decor-exist" select="xxforms:property('decor.exist.url')"/>
+         <!-- resources for internationalization -->
+            <xforms:instance id="resources-instance">
+                <dummy/>
+            </xforms:instance>
+         <!-- submission for loading resources -->
+            <xforms:submission id="get-resources-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-form-resources.xquery" replace="instance" instance="resources-instance"/>
+         <!-- language -->
+            <xforms:instance id="language">
+                <language/>
+            </xforms:instance>
+
+         <!-- instance for edit status -->
+            <xforms:instance id="data-safe">
+                <data-safe>true</data-safe>
+            </xforms:instance>
+        <!-- instance for edit status of ids -->
+            <xforms:instance id="ids-safe">
+                <data-safe>true</data-safe>
+            </xforms:instance>
+         <!-- instance for UI settings -->
+            <xforms:instance id="ui-instance">
+                <ui>
+                    <project-description>view</project-description>
+                    <version-description>view</version-description>
+                </ui>
+            </xforms:instance>
+
+         <!-- instance for document name -->
+            <xforms:instance id="document">
+                <name>dsexpl1</name>
+            </xforms:instance>
+            
+            <!-- instance for user groups -->
+            <xforms:instance id="user-groups" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+            <xforms:submission id="get-user-groups" serialization="none" method="get" resource="{$art-exist}/modules/get-groups.xq?username={xxforms:get-session-attribute('username')}" replace="instance" instance="user-groups"/>
+
+         <!-- instance for users -->
+            <xforms:instance id="users-instance">
+                <users/>
+            </xforms:instance>
+            <xforms:submission id="get-users-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-user-list.xquery" replace="instance" instance="users-instance" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}"/>
+
+         <!-- instance for new author -->
+            <xforms:instance id="author-instance" xxforms:exclude-result-prefixes="#all">
+                <author id="" username="guest" email="" notifier="">Guest</author>
+            </xforms:instance>
+
+            <!-- instance for new version -->
+            <xforms:instance id="version-instance" xxforms:exclude-result-prefixes="#all">
+                <version by="" versionLabel="" release="false" development="false" prefix="" compile-language="" publication-request="false" date="">
+                    <desc language=""/>
+                </version>
+            </xforms:instance>
+            <xforms:instance id="version-instance-original" xxforms:exclude-result-prefixes="#all">
+                <version by="" versionLabel="" release="false" development="false" prefix="" compile-language="" publication-request="false" date="">
+                    <desc language=""/>
+                </version>
+            </xforms:instance>
+            <xforms:instance id="create-version-busy" xxforms:exclude-result-prefixes="#all">
+                <processing>false</processing>
+            </xforms:instance>
+            <xforms:bind nodeset="instance('version-instance')">
+                <xforms:bind ref="@by" required="true()"/>
+                <xforms:bind ref="@release" type="xs:boolean"/>
+                <xforms:bind ref="@development" type="xs:boolean"/>
+                <xforms:bind ref="@publication-request" type="xs:boolean"/>
+                <xforms:bind ref="@versionLabel" readonly="instance('version-instance')/@release='false'"/>
+                <xforms:bind ref="@compile-language" required="instance('version-instance')/@publication-request='true'"/>
+                <xforms:bind ref="@publication-request" relevant="string-length(instance('version-instance')/@compile-language)&gt;0"/>
+            </xforms:bind>
+            <xforms:bind nodeset="instance('create-version-busy')" readonly="instance('create-version-busy')='true'"/>
+                
+            <!-- create version submission -->
+            <xforms:submission id="create-decor-version" mode="asynchronous" ref="instance('version-instance')" action="{$art-exist}/modules/create-decor-version.xquery" method="post" replace="instance" xxforms:instance="version-instance" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+                <xforms:toggle case="version-case-busy" ev:event="xforms-submit"/>
+                <xforms:toggle case="version-case-error" ev:event="xforms-submit-error"/>
+                <xforms:toggle case="version-case-done" ev:event="xforms-submit-done"/>
+                <xforms:action ev:event="xforms-submit-done">
+                    <xforms:action if="not(instance('version-instance')/@status='OK')">
+                        <xforms:message>
+                            <!-- the result is returned in the version-instance status (OK or the error hint text) -->
+                            <xforms:output ref="if (instance('version-instance')/@status='OK') then 'Success' else instance('version-instance')/@status"/>
+                        </xforms:message>
+                    </xforms:action>
+                    <xforms:insert context="instance('project-versions-instance')" origin="instance('version-instance')/*" at="1" position="before"/>
+                    <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                    <xforms:setvalue ref="instance('create-version-busy')">false</xforms:setvalue>
+                </xforms:action>
+                <xforms:action ev:event="xforms-submit-error">
+                    <xforms:setvalue ref="instance('create-version-busy')">false</xforms:setvalue>
+                </xforms:action>
+            </xforms:submission>
+
+            <!-- instance for DECOR Schema enumerations -->
+            <xforms:instance id="decor-types">
+                <dummy/>
+            </xforms:instance>
+         <!-- get decor schema submission -->
+            <xforms:submission id="get-decor-schema-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-schema-types.xquery" replace="instance" instance="decor-types" xxforms:readonly="true"/>
+
+         <!-- instance for DECOR project -->
+            <xforms:instance id="project-instance" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+            <xforms:instance id="project-ids-instance" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+         <!--  get project submission -->
+            <xforms:submission id="get-decor-project-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-project.xq?project={instance('document')}&amp;language={instance('language')}&amp;checkadram=true" replace="instance" instance="project-instance">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!--  get project ids submission -->
+            <xforms:submission id="get-decor-project-ids-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-ids.xquery?project={instance('document')}&amp;language={instance('language')}" replace="instance" instance="project-ids-instance">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+
+         <!-- instance for dataset navigation -->
+            <xforms:instance id="dataset-navigation">
+                <id/>
+            </xforms:instance>
+            <!-- instance for dataset list -->
+            <xforms:instance id="dataset-list-instance">
+                <dummy/>
+            </xforms:instance>
+            <!-- get dataset list submission -->
+            <xforms:submission id="get-decor-dataset-list-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-dataset-list.xq?project={instance('document')}" replace="instance" instance="dataset-list-instance">
+                <xforms:action ev:event="xforms-submit-done">
+                    <xforms:setvalue ref="instance('dataset-navigation')" value="instance('dataset-list-instance')//dataset[1]/@id"/>
+                </xforms:action>
+            </xforms:submission>
+            
+         <!-- save project submission -->
+            <xforms:submission id="save-decor-project" ref="instance('project-instance')" action="{$art-exist}/modules/save-decor-project.xquery" method="post" replace="instance" xxforms:instance="data-safe" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+                <xforms:action ev:event="xforms-submit-done">
+                    <xforms:send submission="get-decor-project-submission"/>
+                    <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                </xforms:action>
+            </xforms:submission>
+         <!-- save ids submission -->
+            <xforms:submission id="save-decor-ids" ref="instance('project-ids-instance')" action="{$art-exist}/modules/save-decor-ids.xquery?project={instance('document')}" method="post" replace="instance" xxforms:instance="ids-safe" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+                <xforms:action ev:event="xforms-submit-done">
+                    <xforms:send submission="get-decor-project-submission"/>
+                    <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                    <xforms:send submission="get-decor-project-ids-submission"/>
+                    <xforms:setvalue ref="instance('ids-safe')">true</xforms:setvalue>
+                </xforms:action>
+            </xforms:submission>
+            <xforms:instance id="issue-notifier-instance">
+                <dummy/>
+            </xforms:instance>
+            <xforms:bind nodeset="instance('issue-notifier-instance')" readonly="not($admin)"/>
+            <!-- get notifier setting, which is retrieved in the project instance, but technically comes from the issues element -->
+            <xforms:submission id="get-decor-notifier-setting" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-notifier-setting.xquery?prefix={instance('project-instance')/@prefix}" replace="instance" instance="issue-notifier-instance">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+            <!-- save notifier setting, which is retrieved in the project instance, but technically comes from the issues element -->
+            <xforms:submission id="save-decor-notifier-setting" serialization="none" method="get" resource="{$art-exist}/modules/save-decor-notifier-setting.xquery?prefix={instance('project-instance')/@prefix}&amp;notifier={instance('issue-notifier-instance')}" replace="none" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+
+         <!-- instance for decor check -->
+            <xforms:instance id="decor-check">
+                <dummy/>
+            </xforms:instance>
+            <xforms:instance id="decor-check-busy">
+                <processing processing="true"/>
+            </xforms:instance>
+         <!-- check decor -->
+            <xforms:submission id="check-decor" serialization="none" mode="asynchronous" method="get" resource="{$art-exist}/modules/check-decor.xquery?prefix={instance('document')}&amp;dataset={instance('dataset-navigation')}" replace="instance" instance="decor-check">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+                <xforms:toggle case="check-case-busy" ev:event="xforms-submit"/>
+                <xforms:toggle case="check-case-error" ev:event="xforms-submit-error"/>
+                <xforms:toggle case="check-case-done" ev:event="xforms-submit-done"/>
+            </xforms:submission>
+            <!-- Disable the check button when the request is being processed -->
+            <xforms:bind nodeset="instance('decor-check')" readonly="instance('decor-check')/@processing"/>
+            
+         <!-- instance for generated template status -->
+            <xforms:instance id="template-stylesheets">
+                <dummy/>
+            </xforms:instance>
+         <!-- get-template-stylesheets-status -->
+            <xforms:submission id="get-template-stylesheets-status" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-template-stylesheet-status.xquery?project={instance('document')}" replace="instance" instance="template-stylesheets"/>
+            <xforms:instance id="generate-templates">
+                <dummy/>
+            </xforms:instance>
+         <!-- generate template stylesheets -->
+            <xforms:submission id="generate-template-stylesheets" serialization="none" method="get" resource="{$art-exist}/modules/get-stylesheet-for-templates.xquery?prefix={instance('document')}" replace="none" instance="generate-templates" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}"/>
+         <!-- generate valueset stylesheets -->
+            <xforms:submission id="generate-valueset-stylesheets" serialization="none" method="get" resource="{$art-exist}/modules/get-stylesheet-for-valuesets.xquery?prefix={instance('document')}" replace="none" instance="generate-templates" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}"/>
+         <!-- generate xpaths -->
+            <xforms:submission id="generate-xpaths" serialization="none" method="get" resource="{$art-exist}/modules/save-xpaths-for-project.xquery?prefix={instance('document')}" replace="none" instance="generate-templates" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}"/>
+
+         <!-- instance for decor compilations -->
+            <xforms:instance id="compile-results">
+                <dummy/>
+            </xforms:instance>
+         <!-- compile decor -->
+            <xforms:submission id="compile-decor" serialization="none" method="get" resource="{$art-exist}/modules/compile-decor.xquery?prefix={instance('document')}" replace="instance" instance="compile-results">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+            
+         <!-- instance for new bbr -->
+            <xforms:instance id="bbr-instance">
+                <dummy/>
+            </xforms:instance>
+         <!-- instance for building block repositories to choose from -->
+            <xforms:instance id="decor-bbr-list">
+                <dummy/>
+            </xforms:instance>
+         <!-- get building block repositories list submission -->
+            <xforms:submission id="get-decor-bbr-list" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-bbr-list.xquery" replace="instance" instance="decor-bbr-list" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+            
+         <!-- instance for decor locks -->
+            <xforms:instance id="decor-locks">
+                <dummy/>
+            </xforms:instance>
+         <!-- get decor locks submission -->
+            <xforms:submission id="get-decor-project-locks" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-project-locks.xquery?prefix={instance('document')}" replace="instance" instance="decor-locks"/>
+         <!-- instance for  lock to clear -->
+            <xforms:instance id="clear-lock">
+                <lock ref="" effectiveDate="" projectId=""/>
+            </xforms:instance>
+         <!-- clear lock submission -->
+            <xforms:submission id="clear-decor-lock" serialization="none" method="get" resource="{$art-exist}/modules/clear-decor-lock.xquery?ref={instance('clear-lock')/@ref}&amp;effectiveDate={instance('clear-lock')/@effectiveDate}&amp;projectId={instance('clear-lock')/@projectId}" replace="none" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- instance for community list -->
+            <xforms:instance id="community-list">
+                <dummy/>
+            </xforms:instance>
+         <!-- get project community list -->
+            <xforms:submission id="get-decor-project-community-list" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-project-community-list.xquery?prefix={instance('document')}" replace="instance" instance="community-list"/>
+         <!-- instance for new community -->
+            <xforms:instance id="new-community" xxforms:exclude-result-prefixes="#all">
+                <community name="" displayName="" projectId="">
+                    <desc language=""/>
+                    <access>
+                        <author username="" rights="rw"/>
+                    </access>
+                    <prototype>
+                        <data type="" label="" datatype="text">
+                            <desc language=""/>
+                        </data>
+                    </prototype>
+                </community>
+            </xforms:instance>
+         <!-- instance for DECOR file -->
+            <xforms:instance id="valid-community">
+                <community-valid>false</community-valid>
+            </xforms:instance>
+         <!-- new community author -->
+            <xforms:instance id="new-author" xxforms:exclude-result-prefixes="#all">
+                <author username="guest" rights="r"/>
+            </xforms:instance>
+         <!-- new prototype -->
+            <xforms:instance id="new-prototype" xxforms:exclude-result-prefixes="#all">
+                <data type="" label="" datatype="text">
+                    <desc language="nl-NL"/>
+                </data>
+            </xforms:instance>
+         <!-- create new community submission -->
+            <xforms:submission id="create-decor-community" ref="instance('new-community')" action="{$art-exist}/modules/create-decor-community.xquery" method="post" replace="none" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+            
+         <!-- instance for upload -->
+            <xforms:instance id="upload-instance">
+                <content xsi:type="xs:base64Binary" copyright-repeat="1" mediatype="" filename="" size=""/>
+            </xforms:instance>
+            <xforms:instance id="upload-result-instance">
+                <content xsi:type="xs:base64Binary" mediatype="" filename="" size=""/>
+            </xforms:instance>
+            <xforms:submission id="upload-logo-submission" method="post" ref="instance('upload-instance')" action="{$art-exist}/modules/save-decor-copyright-logo.xquery?project={instance('document')}" replace="instance" xxforms:instance="upload-result-instance" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    <xforms:output value="event('response-body')"/>
+                </xforms:message>
+                <xforms:action ev:event="xforms-submit-done">
+                    <xforms:setvalue ref="instance('project-instance')/copyright[instance('upload-instance')/xs:int(@copyright-repeat)]/@logo" value="instance('upload-instance')/@filename"/>
+                    <xxforms:hide dialog="add-change-logo-dialog"/>
+                </xforms:action>
+            </xforms:submission>
+
+         <!-- event observer for community validity -->
+            <xforms:action ev:event="xxforms-invalid" ev:observer="new-community">
+                <xforms:setvalue ref="instance('valid-community')" value="'false'"/>
+            </xforms:action>
+            <xforms:action ev:event="xxforms-valid" ev:observer="new-community">
+                <xforms:setvalue ref="instance('valid-community')" value="'true'"/>
+            </xforms:action>
+         <!-- event observer for project changes -->
+            <xforms:action ev:observer="project-instance" ev:event="xforms-insert xforms-delete xxforms-value-changed">
+                <xforms:setvalue ref="instance('data-safe')">false</xforms:setvalue>
+            </xforms:action>
+            <xforms:action ev:observer="project-ids-instance" ev:event="xforms-insert xforms-delete xxforms-value-changed">
+                <xforms:setvalue ref="instance('ids-safe')">false</xforms:setvalue>
+            </xforms:action>
+            <xforms:action ev:event="xforms-model-construct-done">
+                <xforms:send submission="get-resources-submission"/>
+                <xforms:send submission="get-decor-project-submission"/>
+                <xforms:send submission="get-decor-dataset-list-submission"/>
+                <xforms:setvalue ref="instance('language')" value="if (string-length(xxforms:get-session-attribute('language'))&gt;0) then (xxforms:get-session-attribute('language')) else (instance('project-instance')/@defaultLanguage/string())"/>
+                <xforms:setvalue ref="instance('document')" value="xxforms:get-request-parameter('prefix')"/>
+                <xforms:send submission="get-decor-project-ids-submission"/>
+                <xforms:setvalue ref="instance('ids-safe')">true</xforms:setvalue>
+                <xforms:send submission="get-user-groups"/>
+                <xforms:send submission="get-decor-notifier-setting"/>
+                <xforms:send submission="get-decor-schema-submission"/>
+                <xforms:send submission="get-template-stylesheets-status"/>
+                <xforms:send submission="get-decor-project-locks"/>
+                <xforms:send submission="get-decor-project-community-list"/>
+                <xforms:setvalue ref="instance('version-instance-original')/@by" value="if (instance('project-instance')/author[@username=xxforms:get-session-attribute('username')][string-length()=0]) then xxforms:get-session-attribute('username') else (instance('project-instance')/author[@username=xxforms:get-session-attribute('username')][1])"/>
+                <xforms:setvalue ref="instance('version-instance-original')/@compile-language" value="string-join(instance('project-instance')/name/@language,' ')"/>
+                <!-- start the project versions poll -->
+                <xforms:send submission="get-decor-project-versions-submission"/>
+                <xforms:dispatch name="PollForProjectVersionsEvent" target="decor-project"/>
+            </xforms:action>
+            <xforms:action ev:event="xforms-ready">
+                <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                <xforms:setvalue ref="instance('ids-safe')">true</xforms:setvalue>
+            </xforms:action>
+            <xxforms:script ev:event="xforms-ready">
+                window.onbeforeunload = function() {
+                    if (ORBEON.xforms.Document.getValue('data-safe-input') != 'true')
+                    return "Deze tekst kunnen we aanpassen.";
+               }
+            </xxforms:script>
+            <!-- relevant language is returned as first node, rest should be empty -->
+            <xxforms:variable name="resources" select="instance('resources-instance')//resources[1]"/>
+            <xxforms:variable name="currentUser" select="instance('project-instance')/author[@username=xxforms:get-session-attribute('username')]/@username"/>
+            <xxforms:variable name="editor" select="instance('user-groups')/group[.='editor'][$currentUser]"/>
+            <xxforms:variable name="admin" select="instance('user-groups')/group[.='decor-admin'][$editor]"/>
+            <xforms:bind nodeset="instance('project-instance')">
+                <xforms:bind ref=".[$editor]" id="projectIds"/>
+                <xforms:bind ref=".[$admin]" id="projectStatus"/>
+                <xforms:bind ref=".[$admin]" id="compilation"/>
+                <xforms:bind ref=".[$admin]" id="community"/>
+                <xforms:bind ref=".[$admin]" id="decormaintenance"/>
+                <xforms:bind ref="copyright[$admin]">
+                    <xforms:bind ref="@years" required="true()" constraint="matches(.,'^\d{4}(-\d{4})?( \d{4}(-\d{4})?)*$')"/>
+                    <xforms:bind ref="@by" required="true()"/>
+                </xforms:bind>
+                <xforms:bind ref="author[not($admin or @username=xxforms:get-session-attribute('username'))]" readonly="true()"/>
+                <xforms:bind ref="@repository" type="xs:boolean" readonly="true()"/>
+                <xforms:bind ref="@private" type="xs:boolean" readonly="true()"/>
+                <xforms:bind ref="ids" readonly="true()"/>
+            </xforms:bind>
+            <xforms:bind nodeset="instance('project-ids-instance')">
+                <xforms:bind ref="baseId" readonly="not($admin)">
+                    <xforms:bind ref="@id" required="true()" constraint="matches(.,'[1-9][0-9]*(\.[0-9]+)*|([0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12})')"/>
+                    <xforms:bind ref="@id" constraint="count(ancestor::ids/baseId[@id=current()])=1"/>
+                    <xforms:bind ref="@type" required="true()" readonly="../@default='true'"/>
+                    <xforms:bind ref="@prefix" required="true()"/>
+                    <xforms:bind ref="@default" type="xs:boolean" readonly="not(.=false()) or ../@id[string-length()=0] or ../@prefix[string-length()=0]"/>
+                </xforms:bind>
+                <xforms:bind ref="id">
+                    <xforms:bind ref="@root" required="true()" constraint="matches(.,'[1-9][0-9]*(\.[0-9]+)*|([0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12})')"/>
+                    <xforms:bind ref="@root" constraint="count(ancestor::ids/id[@root=current()])=1"/>
+                    <xforms:bind ref="designation[@language=instance('language')]/@displayName" required="true()"/>
+                    <xforms:bind ref="designation[@language=instance('language')]" required="true()"/>
+                </xforms:bind>
+            </xforms:bind>
+
+         <!-- bindings for new community -->
+            <xforms:bind nodeset="instance('new-community')">
+                <xforms:bind ref="@name" required="true()" constraint="not(.=instance('community-list')//@name or contains(.,' '))"/>
+                <xforms:bind ref="prototype">
+                    <xforms:bind ref="data/@type" required="true()" constraint="not(contains(.,' '))"/>
+                    <xforms:bind ref="data/@label" required="true()"/>
+                </xforms:bind>
+            </xforms:bind>
+            <xforms:bind nodeset="instance('valid-community')" readonly=".='false'"/>
+            
+            <!-- 
+                types and things for project version / release
+            -->
+            <xforms:instance id="project-versions-instance">
+                <dummy/>
+            </xforms:instance>
+            <xforms:instance id="project-versions-timer">
+                <time>0</time>
+            </xforms:instance>
+            <!-- submission for loading resources -->
+            <xforms:submission id="get-decor-project-versions-submission" mode="asynchronous" method="post" resource="{$art-exist}/modules/get-decor-project-versions.xquery?project={instance('document')}" replace="instance" instance="project-versions-instance"/>
+            <xforms:action ev:event="PollForProjectVersionsEvent">
+                <!-- poll every 120 seconds = 120.000 ms, not nore than 500 times -->
+                <xforms:action if="instance('project-versions-timer')&lt;500">
+                    <xforms:send submission="get-decor-project-versions-submission"/>
+                    <xforms:dispatch name="PollForProjectVersionsEvent" delay="120000" target="decor-project"/>
+                    <xxforms:variable name="time" select="number(instance('project-versions-timer'))"/>
+                    <xforms:setvalue ref="instance('project-versions-timer')" value="$time+1"/>
+                </xforms:action>
+            </xforms:action>
+            <!-- set project version/release -->
+            <xforms:instance id="selected-version-release-item">
+                <selected-version-release-item/>
+            </xforms:instance>
+            <!-- instance to hold new status code for release/version with specified date in specified project -->
+            <xforms:instance id="version-release-status-change">
+                <version-release-status-change projectPrefix="" date="" statusCode=""/>
+            </xforms:instance>
+            <xforms:instance id="version-release-status-change-response">
+                <response projectPrefix="" date="" statusCode=""/>
+            </xforms:instance>
+            <!-- submission to change status -->
+            <xforms:submission id="set-version-release-status" ref="instance('version-release-status-change')" resource="{$art-exist}/modules/set-version-release-status.xquery" method="post" replace="instance" xxforms:instance="version-release-status-change-response" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+                <!--
+                <xforms:message ev:event="xforms-submit-done" level="modal">
+                    <xforms:output ref="instance('version-release-status-change-response')/@projectPrefix"/>
+                    <xforms:output ref="instance('version-release-status-change-response')/@date"/>
+                    <xforms:output ref="instance('version-release-status-change-response')/@statusCode"/>
+                    <xforms:output ref="instance('version-release-status-change-response')/@targetDate"/>
+                </xforms:message>
+                -->
+                <xforms:action ev:event="xforms-submit-done">
+                    <xforms:send submission="get-decor-project-versions-submission"/>
+                </xforms:action>
+            </xforms:submission>
+        </xforms:model>
+    </xhtml:head>
+    <xhtml:body>
+      <!-- special output used to give warning if user leaves page -->
+        <xforms:output ref="instance('data-safe')" id="data-safe-input" style="display: none"/>
+      <!-- dialog for selecting BBR -->
+        <xxforms:dialog id="select-bbr-dialog" appearance="full" level="modeless" close="false" draggable="true" visible="false">
+            <xforms:action ev:event="xxforms-dialog-open">
+                <xforms:send submission="get-decor-bbr-list"/>
+            </xforms:action>
+            <xforms:label ref="$resources/select-bbr"/>
+            <xhtml:table width="350">
+                <xhtml:tr>
+                    <xhtml:td class="heading">
+                        <xforms:output ref="$resources/select-bbr"/>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xhtml:div class="navigate-small">
+                            <fr:datatable width="100%" scrollable="vertical" height="200px">
+                                <xhtml:thead>
+                                    <xhtml:tr>
+                                        <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                            <xforms:output ref="$resources/name"/>
+                                        </xhtml:th>
+                                        <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                            <xforms:output ref="$resources/url"/>
+                                        </xhtml:th>
+                                        <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                            <xforms:output ref="$resources/prefix"/>
+                                        </xhtml:th>
+                                        <xhtml:th fr:sortable="true" fr:sortKey="@type" fr:resizeable="true">
+                                            <xforms:output ref="$resources/type"/>
+                                        </xhtml:th>
+                                    </xhtml:tr>
+                                </xhtml:thead>
+                                <xhtml:tbody>
+                                    <xhtml:tr repeat-nodeset="instance('decor-bbr-list')/buildingBlockRepository[not(concat(@url,@ident)=instance('project-instance')/buildingBlockRepository/concat(@url,@ident))]" id="bbr-table">
+                                        <xhtml:td>
+                                            <xforms:output ref="name[@language=instance('language')]"/>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:output ref="@url"/>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:output ref="@ident"/>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:output ref="if (@type='local') then ($resources/this-server) else ($resources/external-server)"/>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                </xhtml:tbody>
+                                <xforms:action ev:event="fr-selection-changed">
+                                    <xforms:setvalue ref="instance('bbr-instance')" value="event('selected')/concat(@url,@ident)"/>
+                                </xforms:action>
+                            </fr:datatable>
+                            <!--<xforms:select1 ref="instance('bbr-instance')" appearance="compact">
+                                <xforms:itemset nodeset="instance('decor-bbr-list')/buildingBlockRepository[not(concat(@url,@ident)=instance('project-instance')/buildingBlockRepository/concat(@url,@ident))]">
+                                    <xforms:label ref="name[@language=instance('language')]"/>
+                                    <xforms:value ref="concat(@url,@ident)"/>
+                                </xforms:itemset>
+                            </xforms:select1>-->
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xhtml:div class="buttons">
+                            <fr:button>
+                                <xforms:label ref="$resources/cancel"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xxforms:hide ev:event="DOMActivate" dialog="select-bbr-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                            <fr:button>
+                                <xforms:label ref="$resources/add"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <!-- The save-decor-project.xquery will put it in the right place -->
+                                    <xforms:insert context="instance('project-instance')" at="last()" position="after" origin="instance('decor-bbr-list')/buildingBlockRepository[concat(@url,@ident)=instance('bbr-instance')]"/>
+                                    <xxforms:hide ev:event="DOMActivate" dialog="select-bbr-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xhtml:table>
+        </xxforms:dialog>
+      <!-- dialog for selecting Art user -->
+        <xxforms:dialog id="select-user-dialog" appearance="full" level="modeless" close="false" draggable="true" visible="false">
+            <xforms:action ev:event="xxforms-dialog-open">
+                <xforms:send submission="get-users-submission"/>
+            </xforms:action>
+            <xforms:label ref="$resources/select-user"/>
+            <xhtml:table width="250">
+                <xhtml:tr>
+                    <xhtml:td class="heading">
+                        <xforms:output ref="$resources/select-user"/>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xhtml:div class="navigate-small">
+                            <xforms:select1 ref="instance('author-instance')/@username" appearance="compact" id="user-select">
+                                <xforms:itemset nodeset="instance('users-instance')/user[not(@name=instance('project-instance')/author/@username)]">
+                                    <xforms:label ref="displayName"/>
+                                    <xforms:value ref="@name"/>
+                                </xforms:itemset>
+                                <xforms:action ev:event="xforms-value-changed">
+                                    <xforms:setvalue ref="instance('author-instance')" value="instance('users-instance')/user[@name=instance('author-instance')/@username]/displayName"/>
+                                    <xforms:setvalue ref="instance('author-instance')/@email" value="instance('users-instance')/user[@name=instance('author-instance')/@username]/email"/>
+                                </xforms:action>
+                            </xforms:select1>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xhtml:div class="buttons">
+                            <fr:button>
+                                <xforms:label ref="$resources/cancel"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xxforms:hide ev:event="DOMActivate" dialog="select-user-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                            <fr:button>
+                                <xforms:label ref="$resources/add"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xxforms:variable name="newId" select="max(instance('project-instance')/author/@id)+1"/>
+                                    <xforms:setvalue ref="instance('author-instance')/@id" value="$newId"/>
+                                    <xforms:insert context="instance('project-instance')" nodeset="author" at="last()" position="after" origin="instance('author-instance')"/>
+                                    <xxforms:hide ev:event="DOMActivate" dialog="select-user-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xhtml:table>
+        </xxforms:dialog>
+      <!-- dialog for selecting Project author -->
+        <xxforms:dialog id="select-community-author" appearance="full" level="modeless" close="false" draggable="true" visible="false">
+            <xforms:action ev:event="xxforms-dialog-open">
+                <xforms:send submission="get-users-submission"/>
+            </xforms:action>
+            <xforms:label ref="$resources/select-user"/>
+            <xhtml:table width="250">
+                <xhtml:tr>
+                    <xhtml:td class="heading">
+                        <xforms:output ref="$resources/select-user"/>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xhtml:div class="navigate-small">
+                            <xforms:select1 ref="instance('new-author')/@username" appearance="compact" id="community-author-select">
+                                <xforms:itemset nodeset="instance('project-instance')/author[@username!='guest'][not(@username=instance('new-community')/access/author/@username)]">
+                                    <xforms:label ref="."/>
+                                    <xforms:value ref="@username"/>
+                                </xforms:itemset>
+                                <xforms:action ev:event="xforms-value-changed">
+                                    <xforms:setvalue ref="instance('new-author')" value="instance('project-instance')/author[@username=instance('new-author')/@username]"/>
+                                </xforms:action>
+                            </xforms:select1>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xhtml:div class="buttons">
+                            <fr:button>
+                                <xforms:label ref="$resources/cancel"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xxforms:hide ev:event="DOMActivate" dialog="select-community-author"/>
+                                </xforms:action>
+                            </fr:button>
+                            <fr:button>
+                                <xforms:label ref="$resources/add"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xforms:insert context="instance('new-community')/access" nodeset="author" at="index('communityAuthorList')" position="after" origin="instance('new-author')"/>
+                                    <xxforms:hide ev:event="DOMActivate" dialog="select-community-author"/>
+                                </xforms:action>
+                            </fr:button>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xhtml:table>
+        </xxforms:dialog>
+        <!-- dialog for changing the release/version status code -->
+        <xxforms:dialog id="change-version-release-status-dialog" appearance="full" level="modal" close="false" draggable="true" visible="false">
+            <xforms:action ev:event="xxforms-dialog-open">
+                <!-- preset with first element from ReleaseStatusCodeLifeCycle (not equal to current status code), also date and project prefix -->
+                <xforms:setvalue ref="instance('version-release-status-change')/@statusCode" value="(instance('decor-types')/ReleaseStatusCodeLifeCycle/enumeration[not(@value=instance('selected-version-release-item')/@statusCode)]/@value)[1]"/>
+                <xforms:setvalue ref="instance('version-release-status-change')/@date" value="instance('selected-version-release-item')/@date"/>
+                <xforms:setvalue ref="instance('version-release-status-change')/@projectPrefix" value="instance('document')"/>
+            </xforms:action>
+            <xhtml:table width="250">
+                <xhtml:tr>
+                    <xhtml:td class="heading" colspan="2">
+                        <xhtml:div class="heading">
+                            <xforms:output ref="$resources/edit-status"/>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xforms:group ref="instance('selected-version-release-item')/name()='release'">
+                            <xforms:output ref="$resources/release"/>
+                        </xforms:group>
+                        <xforms:group ref="instance('selected-version-release-item')//name()='version'">
+                            <xforms:output ref="$resources/version"/>
+                        </xforms:group>
+                        <xxforms:variable name="rvdate" select="instance('selected-version-release-item')/@date"/>
+                        <xforms:output ref="$resources/as-of"/>
+                        <xforms:output ref="$rvdate" xxforms:format="if (. castable as xs:dateTime) then replace(format-dateTime(.,'[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]', (), (), ()),' 00:00:00','') else (.)"/>
+                        <xforms:output ref="$resources/action-by"/>
+                        <xforms:output ref="instance('selected-version-release-item')/@by"/>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xxforms:variable name="rvstatuscode" select="instance('selected-version-release-item')/@statusCode"/>
+                        <xforms:output ref="$resources/current-status"/>
+                        <xforms:group ref=".[string-length($rvstatuscode)=0]">
+                            <xforms:output ref="$resources/none"/>
+                        </xforms:group>
+                        <xforms:group ref=".[string-length($rvstatuscode)&gt;0]">
+                            <xforms:output ref="instance('decor-types')/ReleaseStatusCodeLifeCycle/enumeration[@value=$rvstatuscode]/label[@language=$resources/@xml:lang]" class="node-s{$rvstatuscode}"/>
+                        </xforms:group>
+                        <xhtml:hr/>
+                        <xforms:output ref="$resources/switch-status-to"/>
+                        <xhtml:div style="padding: 10px 0 10px 0;">
+                            <xforms:select1 ref="instance('version-release-status-change')/@statusCode">
+                                <xforms:itemset ref="instance('decor-types')/ReleaseStatusCodeLifeCycle/enumeration[not(@value=$rvstatuscode)]">
+                                    <xforms:label ref="label[@language=$resources/@xml:lang]"/>
+                                    <xforms:value ref="@value"/>
+                                </xforms:itemset>
+                            </xforms:select1>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xhtml:div class="buttons">
+                            <fr:button>
+                                <xforms:label ref="$resources/cancel"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xxforms:hide ev:event="DOMActivate" dialog="change-version-release-status-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                            <fr:button>
+                                <xforms:label ref="$resources/change-status"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xforms:send submission="set-version-release-status"/>
+                                    <xxforms:hide ev:event="DOMActivate" dialog="change-version-release-status-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xhtml:table>
+        </xxforms:dialog>
+        <!-- dialog for uploading a (new) logo -->
+        <xxforms:dialog id="add-change-logo-dialog" appearance="full" level="modal" close="false" draggable="true" visible="false">
+            <xforms:label ref="$resources/add-change-logo"/>
+            <xhtml:table class="detail" width="250">
+                <xhtml:tr>
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/current-logo-name"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:output ref="instance('project-instance')/copyright[instance('upload-instance')/xs:int(@copyright-repeat)]/@logo"/>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td colspan="2">
+                        <xforms:upload ref="instance('upload-instance')">
+                            <xforms:filename ref="@filename"/>
+                            <xforms:mediatype ref="@mediatype"/>
+                            <xxforms:size ref="@size"/>
+                            <xforms:action ev:event="xxforms-upload-done">
+                                <xforms:send submission="upload-logo-submission"/>
+                            </xforms:action>
+                        </xforms:upload>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td colspan="2">
+                        <xhtml:div class="buttons">
+                            <fr:button>
+                                <xforms:label ref="$resources/cancel"/>
+                                <xxforms:hide ev:event="DOMActivate" dialog="add-change-logo-dialog"/>
+                            </fr:button>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xhtml:table>
+        </xxforms:dialog>
+        
+        <!-- tabview -->
+        <fr:tabview>
+         <!-- general project info tab -->
+            <fr:tab>
+                <fr:label ref="$resources/general"/>
+            <!-- ADMIN EDITOR -->
+                <xforms:group ref="instance('project-instance')[$admin]">
+                    <xhtml:table width="100%" class="detail">
+                        <!-- project name -->
+                        <xhtml:tr>
+                            <xhtml:td class="item-label-var" style="min-width: 175px;">
+                                <xforms:output ref="$resources/name"/>
+                            </xhtml:td>
+                            <!--<xhtml:td class="item-label-var"/>-->
+                            <xhtml:td colspan="3" style="font-weight: bold;">
+                                <xxforms:variable name="nameLang" select="if (name[@language=instance('language')]) then instance('language') else if (name[@language='en-US']) then 'en-US' else (name[1]/@language)"/>
+                                <xforms:group ref=".[$nameLang=instance('language')]">
+                                    <xforms:output ref="name[@language=$nameLang]"/>
+                                </xforms:group>
+                                <xforms:group ref=".[not($nameLang=instance('language'))]">
+                                    <xhtml:i style="color: grey;">
+                                        <xforms:output ref="name[@language=$nameLang]"/>
+                                        (<xforms:output ref="$nameLang"/>)
+                                    </xhtml:i>
+                                </xforms:group>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <!-- desc -->
+                        <xhtml:tr>
+                            <xhtml:td class="item-label-var">
+                                <xforms:output ref="$resources/description"/>
+                                <xhtml:div class="buttons">
+                                    <fr:button ref="instance('ui-instance')[project-description='view']">
+                                        <xforms:label>
+                                            <xhtml:img src="/img/write.png" alt=""/>
+                                        </xforms:label>
+                                        <xforms:hint ref="$resources/edit"/>
+                                        <xforms:action ev:event="DOMActivate">
+                                            <xforms:setvalue ref="instance('ui-instance')/project-description" value="'edit'"/>
+                                        </xforms:action>
+                                    </fr:button>
+                                </xhtml:div>
+                            </xhtml:td>
+                            <xhtml:td colspan="3">
+                                <xforms:group ref=".[instance('ui-instance')/project-description='view']">
+                                    <xforms:output mediatype="text/html" ref="desc[@language=instance('language')]"/>
+                                </xforms:group>
+                                <xforms:group ref=".[instance('ui-instance')/project-description='edit']">
+                                    <xforms:textarea mediatype="text/html" ref="desc[@language=instance('language')]"/>
+                                </xforms:group>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <!-- properties (language/repository/private/notifier) -->
+                        <xhtml:tr>
+                            <xhtml:td class="item-label-var">
+                                <xforms:output ref="$resources/properties"/>
+                            </xhtml:td>
+                            <xhtml:td colspan="3">
+                                <xhtml:span style="margin: 0 0 0 0;">
+                                    <xforms:output ref="concat($resources/prefix,': ')"/>
+                                    <xforms:output ref="@prefix"/>
+                                </xhtml:span>
+                                <xhtml:span style="margin: 0 10px 0 30px;">
+                                    <xforms:output ref="$resources/defaultLanguage"/>
+                                    <xhtml:img src="/img/flags/{lower-case(substring(@defaultLanguage,4,2))}.png" alt=""/>
+                                    <xforms:output ref="@defaultLanguage"/>
+                                </xhtml:span>
+                                <xhtml:span style="margin: 0 10px 0 30px;">
+                                    <xforms:input ref="@repository" class="auto-width"/>
+                                    <xforms:output ref="$resources/Is-repository">
+                                        <xforms:hint ref="$resources/Is-repository-hint"/>
+                                    </xforms:output>
+                                </xhtml:span>
+                                <xhtml:span style="margin: 0 10px 0 30px;">
+                                    <xforms:input ref="@private" class="auto-width"/>
+                                    <xforms:output ref="$resources/Is-private">
+                                        <xforms:hint ref="$resources/Is-private-hint"/>
+                                    </xforms:output>
+                                </xhtml:span>
+                                <xhtml:span style="margin: 0 10px 0 30px;">
+                                    <xforms:output ref="concat($resources/project-notifier,': ')"/>
+                                    <xforms:select1 ref="instance('issue-notifier-instance')" class="auto-width">
+                                        <xforms:item>
+                                            <xforms:label>---</xforms:label>
+                                            <xforms:value/>
+                                        </xforms:item>
+                                        <xforms:item>
+                                            <xforms:label ref="$resources/on"/>
+                                            <xforms:value>on</xforms:value>
+                                        </xforms:item>
+                                        <xforms:item>
+                                            <xforms:label ref="$resources/off"/>
+                                            <xforms:value>off</xforms:value>
+                                        </xforms:item>
+                                        <xforms:help ref="$resources/global-notifier-switch-hint"/>
+                                        <xforms:action ev:event="xforms-value-changed">
+                                            <xforms:send submission="save-decor-notifier-setting"/>
+                                        </xforms:action>
+                                    </xforms:select1>
+                                </xhtml:span>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <!-- ADRAM status -->
+                        <xhtml:tr>
+                            <xhtml:td class="item-label-var">
+                                <xforms:output ref="$resources/publication-location"/>
+                                <xhtml:div class="buttons">
+                                    <fr:button>
+                                        <xforms:label>
+                                            <xhtml:img src="/img/arrowright.png" alt=""/>
+                                        </xforms:label>
+                                        <xforms:hint ref="$resources/open"/>
+                                        <xforms:action ev:event="DOMActivate">
+                                            <xforms:load resource="{reference/@url}" show="new"/>
+                                        </xforms:action>
+                                    </fr:button>
+                                </xhtml:div>
+                            </xhtml:td>
+                            <xhtml:td colspan="3">
+                                <xforms:input ref="reference/@url"/>
+                                <xforms:group ref=".[$admin]">
+                                    <xforms:group ref=".[starts-with(@servicestatus, '200')]">
+                                        <xforms:group ref=".[contains(@servicestatus, 'adram')]">
+                                            <xhtml:img src="/img/node-sfinal.png" alt="" style="vertical-align: middle;"/>
+                                            <xforms:output ref="concat(' ', $resources/adram-configured)"/>
+                                        </xforms:group>
+                                        <xforms:group ref=".[contains(@servicestatus, 'halted')]">
+                                            <xhtml:img src="/img/node-spending.png" alt="" style="vertical-align: middle;"/>
+                                            <xforms:output ref="concat(' ', $resources/adram-halted)"/>
+                                        </xforms:group>
+                                        <xforms:group ref=".[not( contains(@servicestatus, 'adram') or contains(@servicestatus, 'halted') )]">
+                                            <xhtml:img src="/img/node-srejected.png" alt="" style="vertical-align: middle;"/>
+                                            <xforms:output ref="concat(' ', $resources/adram-notconfigured)"/>
+                                        </xforms:group>
+                                    </xforms:group>
+                                    <xforms:group ref=".[starts-with(@servicestatus, '404')]">
+                                        <xhtml:img src="/img/node-sopen.png" alt="" style="vertical-align: middle;"/>
+                                    </xforms:group>
+                                    <xforms:group ref=".[starts-with(@servicestatus, '500')]">
+                                        <xhtml:img src="/img/node-s.png" alt="" style="vertical-align: middle;"/>
+                                    </xforms:group>
+                                </xforms:group>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <!-- BBR configuration -->
+                        <xhtml:tr>
+                            <xhtml:td class="item-label-var">
+                                <xforms:output ref="instance('decor-types')/buildingBlockRepository/label[@language=$resources/@xml:lang]"/>
+                                <xhtml:div class="buttons">
+                                    <fr:button>
+                                        <xforms:label>
+                                            <xhtml:img src="/img/plus.png" alt=""/>
+                                        </xforms:label>
+                                        <xforms:hint>
+                                            <xforms:output ref="$resources/add-bbr"/>
+                                        </xforms:hint>
+                                        <xforms:action ev:event="DOMActivate">
+                                            <xxforms:show dialog="select-bbr-dialog"/>
+                                        </xforms:action>
+                                    </fr:button>
+                                </xhtml:div>
+                            </xhtml:td>
+                            <xhtml:td colspan="3">
+                                <xforms:group ref=".[buildingBlockRepository]">
+                                    <xhtml:table width="100%" class="detail zebra-table">
+                                        <xhtml:tr class="not-selectable">
+                                            <xhtml:td class="heading">
+                                                <xforms:output ref="$resources/url"/>
+                                            </xhtml:td>
+                                            <xhtml:td class="heading">
+                                                <xforms:output ref="$resources/prefix"/>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                        <xforms:repeat nodeset="buildingBlockRepository" id="buildingBlockRepositories">
+                                            <xhtml:tr class="not-selectable zebra-row-{if (position() mod 2 = 0) then 'even' else 'odd'}">
+                                                <xhtml:td>
+                                                    <xforms:input ref="@url"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:input ref="@ident"/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:repeat>
+                                    </xhtml:table>
+                                </xforms:group>
+                            </xhtml:td>
+                        </xhtml:tr>
+                    </xhtml:table>
+                </xforms:group>
+            <!-- VIEWER -->
+                <xforms:group ref="instance('project-instance')[not($admin)]">
+                    <xhtml:table width="100%" class="detail">
+                  <!-- project name -->
+                        <xhtml:tr>
+                            <xhtml:td class="item-label">
+                                <xforms:output ref="$resources/name"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xxforms:variable name="nameLang" select="if (name[@language=instance('language')]) then instance('language') else if (name[@language='en-US']) then 'en-US' else (name[1]/@language)"/>
+                                <xforms:group ref=".[$nameLang=instance('language')]">
+                                    <xforms:output ref="name[@language=$nameLang]"/>
+                                </xforms:group>
+                                <xforms:group ref=".[not($nameLang=instance('language'))]">
+                                    <xhtml:i style="color: grey;">
+                                        <xforms:output ref="name[@language=$nameLang]"/>
+                                        (<xforms:output ref="$nameLang"/>)
+                                    </xhtml:i>
+                                </xforms:group>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xhtml:tr>
+                            <xhtml:td class="item-label">
+                                <xforms:output ref="$resources/prefix"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:output ref="@prefix"/>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xhtml:tr>
+                            <xhtml:td class="item-label">
+                                <xforms:output ref="$resources/description"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xhtml:table width="100%">
+                                    <xhtml:tr>
+                                        <xhtml:td>
+                                            <xforms:output mediatype="text/html" ref="desc[@language=instance('language')]"/>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                </xhtml:table>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xhtml:tr>
+                            <xhtml:td class="item-label">
+                                <xforms:output ref="$resources/reference"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xhtml:a href="{reference/@url}">
+                                    <xforms:output ref="reference/@url"/>
+                                </xhtml:a>
+                                <!--
+                                <xforms:output ref="@servicestatus"/>
+                                -->
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xhtml:tr>
+                            <xhtml:td class="item-label">
+                                <xforms:output ref="$resources/default"/>
+                                <xforms:output ref="lower-case($resources/language)"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xhtml:img src="/img/flags/{lower-case(substring(@defaultLanguage,4,2))}.png" alt=""/>
+                                <xforms:output ref="@defaultLanguage"/>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xhtml:tr>
+                            <xhtml:td class="item-label">
+                                <xforms:output ref="$resources/Is-repository"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:output ref="if (@repository='true') then ($resources/yes) else ($resources/no)"/>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <!--<xhtml:tr>
+                            <xhtml:td class="item-label">
+                                <xforms:output ref="$resources/Is-private"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:output ref="if (@private='true') then ($resources/yes) else ($resources/no)"/>
+                            </xhtml:td>
+                        </xhtml:tr>-->
+                        <xforms:group ref=".[buildingBlockRepository]">
+                            <xhtml:tr>
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="instance('decor-types')/buildingBlockRepository/label[@language=$resources/@xml:lang]"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xhtml:table width="100%" class="detail zebra-table">
+                                        <xhtml:tr class="not-selectable">
+                                            <xhtml:td class="heading">
+                                                <xforms:output ref="$resources/url"/>
+                                            </xhtml:td>
+                                            <xhtml:td class="heading">
+                                                <xforms:output ref="$resources/prefix"/>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                        <xforms:repeat nodeset="buildingBlockRepository">
+                                            <xhtml:tr class="not-selectable zebra-row-{if (position() mod 2 = 0) then 'even' else 'odd'}">
+                                                <xhtml:td>
+                                                    <xforms:output ref="@url"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:output ref="@ident"/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:repeat>
+                                    </xhtml:table>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xforms:group>
+                    </xhtml:table>
+                </xforms:group>
+            </fr:tab>
+         <!-- project contributors -->
+            <fr:tab>
+                <fr:label ref="$resources/copyright"/>
+            <!-- EDITOR -->
+                <xforms:group ref="instance('project-instance')[$admin]">
+                    <xhtml:table width="100%" class="detail zebra-table">
+                        <xhtml:tr>
+                            <xhtml:td class="heading" colspan="4">
+                                <xhtml:div class="heading">
+                                    <xforms:output ref="$resources/contributors"/>
+                                </xhtml:div>
+                                <xhtml:div class="buttons">
+                                    <fr:button>
+                                        <xforms:label>
+                                            <xhtml:img src="/img/plus.png" alt=""/>
+                                        </xforms:label>
+                                        <xforms:hint appearance="minimal">
+                                            <xforms:output ref="$resources/add"/>
+                                        </xforms:hint>
+                                        <xforms:insert ev:event="DOMActivate" nodeset="*[self::desc]" origin="xxforms:element('copyright',(xxforms:attribute('years',format-date(current-date(),'[Y0001]')),xxforms:attribute('logo',''),xxforms:attribute('by',$resources/organization),xxforms:element('addrLine',$resources/contact-data)))"/>
+                                    </fr:button>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xhtml:tr class="not-selectable">
+                            <xhtml:td class="heading">
+                                <xforms:output ref="$resources/contributor"/>
+                            </xhtml:td>
+                            <xhtml:td class="heading">
+                                <xforms:output ref="$resources/logo"/>
+                            </xhtml:td>
+                            <xhtml:td class="heading">
+                                <xforms:output ref="$resources/copyright-years"/>
+                            </xhtml:td>
+                            <xhtml:td class="heading" width="5%"/>
+                        </xhtml:tr>
+                        <xforms:repeat nodeset="copyright">
+                     <!-- project contributors -->
+                            <xhtml:tr class="not-selectable zebra-row-{if (position() mod 2 = 0) then 'even' else 'odd'}">
+                                <xhtml:td>
+                                    <xhtml:strong>
+                                        <xforms:input ref="@by" class="not-selectable" incremental="true">
+                                            <xforms:alert ref="$resources/required-field"/>
+                                        </xforms:input>
+                                    </xhtml:strong>
+                                    <xforms:repeat nodeset="addrLine">
+                                        <xhtml:br/>
+                                        <xforms:input ref="." class="not-selectable"/>
+                                        <xforms:trigger appearance="minimal">
+                                            <xforms:label>
+                                                <xhtml:img src="/img/itemadd.png" alt=""/>
+                                            </xforms:label>
+                                            <xforms:hint appearance="minimal">
+                                                <xforms:output ref="$resources/add"/>
+                                            </xforms:hint>
+                                            <xforms:insert ev:event="DOMActivate" nodeset="." origin="xxforms:element('addrLine',(xxforms:attribute('type','')))"/>
+                                        </xforms:trigger>
+                                        <xforms:trigger appearance="minimal" ref=".[count(../addrLine)&gt;=2]">
+                                            <xforms:label>
+                                                <xhtml:img src="/img/itemdelete.png" alt=""/>
+                                            </xforms:label>
+                                            <xforms:hint appearance="minimal">
+                                                <xforms:output ref="$resources/remove"/>
+                                            </xforms:hint>
+                                            <xforms:delete ev:event="DOMActivate" nodeset="."/>
+                                        </xforms:trigger>
+                                    </xforms:repeat>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xxforms:variable name="copyright-repeat" select="count(preceding-sibling::copyright) + 1"/>
+                                    <xforms:group ref=".[string-length(@logo)&gt;0]">
+                                        <xforms:trigger appearance="minimal">
+                                            <xforms:label>
+                                                <xhtml:img src="{$decor-external-exist}/data/{../@collection}/{../@prefix}logos/{@logo}" width="200" alt=""/>
+                                            </xforms:label>
+                                            <xforms:hint ref="$resources/change"/>
+                                            <xforms:action ev:event="DOMActivate">
+                                                <xforms:setvalue ref="instance('upload-instance')/@copyright-repeat" value="$copyright-repeat"/>
+                                                <xxforms:show dialog="add-change-logo-dialog"/>
+                                            </xforms:action>
+                                        </xforms:trigger>
+                                    </xforms:group>
+                                    <xforms:group ref=".[string-length(@logo)=0]">
+                                        <fr:button>
+                                            <xforms:label ref="$resources/add"/>
+                                            <xforms:action ev:event="DOMActivate">
+                                                <xforms:setvalue ref="instance('upload-instance')/@copyright-repeat" value="$copyright-repeat"/>
+                                                <xxforms:show dialog="add-change-logo-dialog"/>
+                                            </xforms:action>
+                                        </fr:button>
+                                    </xforms:group>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:input ref="@years" class="not-selectable" incremental="true">
+                                        <xforms:alert ref="$resources/required-field"/>
+                                    </xforms:input>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xhtml:div class="buttons">
+                                        <fr:button>
+                                            <xforms:label>
+                                                <xhtml:img src="/img/remove.gif" alt=""/>
+                                            </xforms:label>
+                                            <xforms:hint>
+                                                <xforms:output ref="$resources/remove"/>
+                                            </xforms:hint>
+                                            <xforms:action ev:event="DOMActivate">
+                                                <xforms:delete ref="context()"/>
+                                                <xforms:send submission="update-decor-issue-submission"/>
+                                            </xforms:action>
+                                        </fr:button>
+                                    </xhtml:div>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xforms:repeat>
+                    </xhtml:table>
+                </xforms:group>
+            <!-- VIEWER -->
+                <xforms:group ref="instance('project-instance')[not($admin)]">
+                    <xhtml:table width="100%" class="detail">
+                        <xhtml:tr>
+                            <xhtml:td class="heading" colspan="3">
+                                <xhtml:div class="heading">
+                                    <xforms:output ref="$resources/contributors"/>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xhtml:tr class="not-selectable">
+                            <xhtml:td class="heading">
+                                <xforms:output ref="$resources/contributor"/>
+                            </xhtml:td>
+                            <xhtml:td class="heading">
+                                <xforms:output ref="$resources/logo"/>
+                            </xhtml:td>
+                            <xhtml:td class="heading">
+                                <xforms:output ref="$resources/copyright-years"/>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xforms:repeat nodeset="copyright">
+                     <!-- project contributors -->
+                            <xhtml:tr class="not-selectable zebra-row-{if (position() mod 2 = 0) then 'even' else 'odd'}">
+                                <xhtml:td style="padding: 5px;">
+                                    <xhtml:strong>
+                                        <xforms:output ref="@by" class="not-selectable"/>
+                                    </xhtml:strong>
+                                    <xforms:repeat nodeset="addrLine">
+                                        <xhtml:br/>
+                                        <xforms:output ref="text()" class="not-selectable"/>
+                                    </xforms:repeat>
+                                </xhtml:td>
+                                <xhtml:td style="padding: 5px;">
+                                    <xforms:group ref=".[@logo]">
+                                        <xhtml:img src="{$decor-external-exist}/data/{../@collection}/{../@prefix}logos/{@logo}" width="200" alt=""/>
+                                    </xforms:group>
+                                </xhtml:td>
+                                <xhtml:td style="padding: 5px;">
+                                    <xforms:output ref="@years" class="not-selectable"/>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xforms:repeat>
+                    </xhtml:table>
+                </xforms:group>
+            </fr:tab>
+         <!-- project authors -->
+            <fr:tab>
+                <fr:label ref="$resources/authors"/>
+                <xhtml:table width="100%" class="detail zebra-table">
+               <!-- row with authors header and buttons -->
+                    <xhtml:tr>
+                        <xhtml:td class="heading" colspan="3">
+                            <xhtml:div class="heading">
+                                <xforms:output ref="$resources/authors"/>
+                            </xhtml:div>
+                     <!-- div with buttons -->
+                            <xforms:group ref=".[$admin]">
+                                <xhtml:div class="buttons">
+                                    <fr:button id="add-author">
+                                        <xforms:label>
+                                            <xhtml:img src="/img/plus.png" alt=""/>
+                                        </xforms:label>
+                                        <xforms:hint>
+                                            <xforms:output ref="$resources/add-author"/>
+                                        </xforms:hint>
+                                        <xforms:action ev:event="DOMActivate">
+                                            <xxforms:show dialog="select-user-dialog"/>
+                                        </xforms:action>
+                                    </fr:button>
+                                    <!-- Deleting authors should be avoided as they might be connected to issues -->
+                                    <!--<fr:button id="delete-author">
+                                        <xforms:label>
+                                            <xhtml:img src="/img/remove.gif" alt=""/>
+                                        </xforms:label>
+                                        <xforms:hint>
+                                            <xforms:output ref="$resources/delete-author"/>
+                                        </xforms:hint>
+                                        <xforms:action ev:event="DOMActivate">
+                                            <xforms:delete context="instance('project-instance')" nodeset="author" at="index('authorList')"/>
+                                        </xforms:action>
+                                    </fr:button>-->
+                                </xhtml:div>
+                            </xforms:group>
+                        </xhtml:td>
+                    </xhtml:tr>
+                    <xhtml:tr>
+                        <!-- Disabled because it doesn't offer the user info, it should NOT be edited, and username could be abused -->
+                        <!--<xhtml:td class="heading">
+                                <xforms:output ref="$resources/id"/>
+                            </xhtml:td>-->
+                        <!--<xhtml:td class="heading">
+                                <xforms:output ref="$resources/art-user"/>
+                            </xhtml:td>-->
+                        <xhtml:td class="heading">
+                            <xforms:output ref="$resources/name"/>
+                        </xhtml:td>
+                        <xhtml:td class="heading">
+                            <xforms:output ref="$resources/email"/>
+                        </xhtml:td>
+                        <xhtml:td class="heading">
+                            <xforms:output ref="$resources/issue-subscription">
+                                <xforms:help ref="$resources/issue-subscription-hint"/>
+                            </xforms:output>
+                        </xhtml:td>
+                    </xhtml:tr>
+               <!-- VIEWER / EDITOR -->
+                    <xforms:repeat nodeset="instance('project-instance')/author">
+                        <xhtml:tr class="not-selectable zebra-row-{if (position() mod 2 = 0) then 'even' else 'odd'}">
+                            <!-- Disabled because it doesn't offer the user info, it should NOT be edited, and username could be abused -->
+                            <!--<xhtml:td>
+                                    <xforms:output ref="@id"/>
+                                </xhtml:td>-->
+                            <!--<xhtml:td>
+                                    <xforms:group ref=".[@username=$currentUser]">
+                                        <xforms:output ref="@username"/>
+                                    </xforms:group>
+                                </xhtml:td>-->
+                            <xhtml:td>
+                                <xforms:group ref=".[$admin or @username=$currentUser]">
+                                    <xforms:input ref="."/>
+                                </xforms:group>
+                                <xforms:group ref=".[not($admin or @username=$currentUser)]">
+                                    <xforms:output ref="."/>
+                                </xforms:group>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:group ref=".[$admin or @username=$currentUser]">
+                                    <xforms:input ref="@email"/>
+                                </xforms:group>
+                                <xforms:group ref=".[not($admin or @username=$currentUser)]">
+                                    <xhtml:i>
+                                        <xforms:output ref="$resources/not-visible">
+                                            <xforms:hint ref="$resources/visible-for-decor-admin-user-hint"/>
+                                        </xforms:output>
+                                    </xhtml:i>
+                                </xforms:group>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:group ref=".[$admin or @username=$currentUser]">
+                                    <xforms:select1 ref="@notifier" class="auto-width">
+                                        <xforms:item>
+                                            <xforms:label>---</xforms:label>
+                                            <xforms:value/>
+                                        </xforms:item>
+                                        <xforms:item>
+                                            <xforms:label ref="$resources/on"/>
+                                            <xforms:value>on</xforms:value>
+                                        </xforms:item>
+                                        <xforms:item>
+                                            <xforms:label ref="$resources/off"/>
+                                            <xforms:value>off</xforms:value>
+                                        </xforms:item>
+                                    </xforms:select1>
+                                </xforms:group>
+                                <xforms:group ref=".[not($admin or @username=$currentUser)]">
+                                    <xhtml:i>
+                                        <xforms:output ref="$resources/not-visible">
+                                            <xforms:hint ref="$resources/visible-for-decor-admin-user-hint"/>
+                                        </xforms:output>
+                                    </xhtml:i>
+                                </xforms:group>
+                            </xhtml:td>
+                        </xhtml:tr>
+                    </xforms:repeat>
+                </xhtml:table>
+            </fr:tab>
+         <!-- version information -->
+            <fr:tab>
+                <fr:label ref="$resources/version-information"/>
+                <xhtml:table width="100%" class="detail zebra-table">
+                    <xhtml:tr class="not-selectable">
+                        <xhtml:td class="heading" colspan="6">
+                            <xhtml:div class="heading">
+                                <xforms:output ref="concat($resources/versions, ' / ', $resources/releases)"/>
+                            </xhtml:div>
+                            <!-- div with buttons -->
+                            <xforms:group ref=".[$admin]">
+                                <xhtml:div class="buttons">
+                                    <fr:button ref=".[instance('version-instance')[string-length(@by)=0]]" id="add-release">
+                                        <xforms:label>
+                                            <xhtml:img src="/img/plus.png" alt=""/>
+                                        </xforms:label>
+                                        <xforms:hint>
+                                            <xforms:output ref="$resources/new-version-release-pubrequest"/>
+                                        </xforms:hint>
+                                        <xforms:action ev:event="DOMActivate">
+                                            <xforms:insert origin="instance('version-instance-original')" nodeset="instance('version-instance')"/>
+                                        </xforms:action>
+                                    </fr:button>
+                                </xhtml:div>
+                            </xforms:group>
+                        </xhtml:td>
+                    </xhtml:tr>
+                            
+                    <!-- Group for making new version or release, only for editor -->
+                    <xforms:group ref="instance('project-instance')[$editor]">
+                        <xforms:group ref=".[string-length(instance('version-instance')/@by)&gt;0]">
+                            <xhtml:tr>
+                                <xhtml:td colspan="6">
+                                    <xhtml:table class="detail" width="100%" id="create-version-dialog">
+                                        <xhtml:tr>
+                                            <xhtml:td class="heading" colspan="2">
+                                                <xhtml:div class="heading">
+                                                    <xforms:output ref="$resources/new-version-release-pubrequest"/>
+                                                </xhtml:div>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                        <!-- Should not allow to submit version/release as someone else -->
+                                        <xhtml:tr>
+                                            <xhtml:td class="item-label">
+                                                <xforms:output ref="$resources/by"/>
+                                            </xhtml:td>
+                                            <xhtml:td>
+                                                <xforms:output ref="instance('version-instance')/@by"/>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                        <xhtml:tr>
+                                            <xhtml:td class="item-label">
+                                                <xforms:output ref="$resources/description"/>
+                                            </xhtml:td>
+                                            <xhtml:td>
+                                                <xforms:textarea mediatype="text/html" ref="instance('version-instance')/desc" id="releasetext-input"/>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                        <xforms:group ref=".[$admin]">
+                                            <xhtml:tr>
+                                                <xhtml:td class="item-label">
+                                                    <xforms:output ref="$resources/type"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:select1 ref="instance('version-instance')/@release" appearance="full">
+                                                        <xforms:item>
+                                                            <xforms:label ref="$resources/version-intermediate"/>
+                                                            <xforms:value>false</xforms:value>
+                                                        </xforms:item>
+                                                        <xforms:item>
+                                                            <xforms:label ref="$resources/release"/>
+                                                            <xforms:value>true</xforms:value>
+                                                        </xforms:item>
+                                                    </xforms:select1>
+                                                    <!--<xforms:input ref="instance('version-instance')/@release" class="auto-width"/>-->
+                                                    <xforms:input ref="instance('version-instance')/@versionLabel">
+                                                        <xforms:hint ref="$resources/release-version-label" appearance="minimal"/>
+                                                    </xforms:input>
+                                                    <!--
+                                                    <xforms:group ref=".[instance('version-instance')/@release='true']">
+                                                        <xhtml:br/>
+                                                        <xforms:input ref="instance('version-instance')/@development" class="auto-width"/>
+                                                        <xforms:output ref="$resources/use-development"/>
+                                                    </xforms:group>
+                                                    -->
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:group>
+                                        <xforms:group ref=".[instance('version-instance')/@release='true']">
+                                            <xhtml:tr>
+                                                <xhtml:td class="item-label">
+                                                    <xforms:output ref="$resources/compile-save"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:output ref="$resources/compile-takes-a-while"/>
+                                                    <xhtml:br/>
+                                                    <xforms:select ref="instance('version-instance')/@compile-language" appearance="full">
+                                                        <xforms:itemset nodeset="instance('project-instance')/name/@language">
+                                                            <xforms:label ref="if (instance('resources-instance')/resources[@xml:lang=context()][@displayName]) then (instance('resources-instance')/resources[@xml:lang=context()]/@displayName) else (.)"/>
+                                                            <xforms:value ref="."/>
+                                                        </xforms:itemset>
+                                                        <xforms:alert>
+                                                            <xforms:output ref="$resources/required-field"/>
+                                                        </xforms:alert>
+                                                    </xforms:select>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:group>
+                                        <xforms:group ref=".[instance('version-instance')/@compile-language[string-length()&gt;0]]">
+                                            <xhtml:tr>
+                                                <xhtml:td class="item-label">
+                                                    <xforms:output ref="$resources/publication-request"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:group ref=".[not(contains(@servicestatus, 'adram')) and string-length(reference/@url)&gt;0]">
+                                                        <xforms:output ref="$resources/warnings"/>
+                                                        <xforms:output ref="': '"/>
+                                                        <xforms:output ref="$resources/adram-notconfigured"/>
+                                                        <xhtml:br/>
+                                                    </xforms:group>
+                                                    <xforms:group ref=".[string-length(reference/@url)&gt;0]">
+                                                        <xforms:input ref="instance('version-instance')/@publication-request" class="auto-width"/>
+                                                        <xforms:output ref="$resources/publication-will-be"/>
+                                                        <xhtml:a href="{reference/@url}">
+                                                            <xforms:output ref="reference/@url"/>
+                                                        </xhtml:a>
+                                                    </xforms:group>
+                                                    <xforms:group ref=".[not(reference/@url)]">
+                                                        <xforms:output ref="$resources/need-to-define-reference"/>
+                                                    </xforms:group>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:group>
+                                        <xhtml:tr>
+                                            <xhtml:td colspan="2" class="item-label">
+                                                <xhtml:div class="buttons" style="margin-top:0.5em; margin-bottom:0.5em;">
+                                                    <xhtml:img src="/img/blank.gif" style="height:2em;" alt="Ready"/>
+                                                    <xforms:switch>
+                                                        <xforms:case id="version-ready"/>
+                                                        <xforms:case id="version-case-busy">
+                                                            <xhtml:img src="/img/loader.gif" class="spinner" alt="Busy"/>
+                                                        </xforms:case>
+                                                        <xforms:case id="version-case-submit-error">
+                                                            <xhtml:img src="/img/exclamation.gif" class="spinner" alt="Error"/>
+                                                        </xforms:case>
+                                                        <xforms:case id="version-case-done"/>
+                                                    </xforms:switch>
+                                                    <fr:button ref="xxforms:instance('create-version-busy')">
+                                                        <xforms:label>
+                                                            <xforms:output ref="$resources/cancel"/>
+                                                        </xforms:label>
+                                                        <xforms:action ev:event="DOMActivate">
+                                                            <xforms:delete nodeset="instance('version-instance')/(@*|*)"/>
+                                                        </xforms:action>
+                                                    </fr:button>
+                                                    <fr:button ref="xxforms:instance('create-version-busy')">
+                                                        <xforms:label>
+                                                            <xforms:output ref="$resources/add"/>
+                                                        </xforms:label>
+                                                        <xforms:action ev:event="DOMActivate">
+                                                            <xforms:setvalue ref="instance('version-instance')/@prefix" value="instance('project-instance')/@prefix"/>
+                                                            <xforms:setvalue ref="instance('version-instance')/desc/@language" value="instance('language')"/>
+                                                            <xforms:setvalue ref="instance('create-version-busy')">true</xforms:setvalue>
+                                                            <xforms:send submission="create-decor-version"/>
+                                                        </xforms:action>
+                                                    </fr:button>
+                                                </xhtml:div>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xhtml:table>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xforms:group>
+                    </xforms:group>
+                    <xforms:group ref="instance('project-versions-instance')">
+                        <xhtml:tr class="not-selectable">
+                            <xhtml:td width="8%" class="heading">
+                                <xforms:output ref="$resources/date"/>
+                            </xhtml:td>
+                            <xhtml:td width="10%" class="heading">
+                                <xforms:output ref="$resources/by"/>
+                            </xhtml:td>
+                            <xhtml:td width="77%" class="heading">
+                                <xforms:output ref="$resources/description"/>
+                            </xhtml:td>
+                            <xhtml:td width="5%" class="heading">
+                                <xforms:output ref="$resources/status"/>
+                            </xhtml:td>
+                            <xhtml:td class="heading">
+                                <xforms:output ref="$resources/publication"/>
+                            </xhtml:td>
+                            <xhtml:td class="heading">
+                                <xforms:group ref=".[$admin]">
+                                    <xforms:output ref="$resources/edit"/>
+                                </xforms:group>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xforms:repeat nodeset="version|release" id="version-release-list">
+                            <xhtml:tr class="not-selectable zebra-row-{if (position() mod 2 = 0) then 'even' else 'odd'}">
+                                <xhtml:td>
+                                    <xforms:output ref="@date" xxforms:format="if (. castable as xs:dateTime) then replace(format-dateTime(.,'[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]', (), (), ()),' 00:00:00','') else (.)"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:output ref="@by"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:group ref=".[@versionLabel]">
+                                        <xhtml:b>
+                                            <xforms:output ref="concat($resources/release, ': ')"/>
+                                            <xforms:output ref="@versionLabel"/>
+                                        </xhtml:b>
+                                    </xforms:group>
+                                    <xforms:output mediatype="text/html" ref="desc|note"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xxforms:variable name="statusCode" select="@statusCode"/>
+                                    <xxforms:variable name="statusCodeLabel" select="instance('decor-types')/ReleaseStatusCodeLifeCycle/enumeration[@value=$statusCode]/label[@language=$resources/@xml:lang]"/>
+                                    <xforms:output ref="replace($statusCodeLabel, ' ', '&#160;')" class="node-s{$statusCode}"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <!-- publicationstatus -->
+                                    <xforms:group ref=".[contains(@publicationstatus, 'version')]">
+                                        <xhtml:img src="/img/save16.png" alt="" title="{$resources/archived-version}"/>
+                                    </xforms:group>
+                                    <xforms:group ref=".[contains(@publicationstatus, 'pending')]">
+                                        <xhtml:img src="/img/node-spending.png" alt="" title="{$resources/pending-request}"/>
+                                    </xforms:group>
+                                    <xforms:group ref=".[contains(@publicationstatus, 'completed')]">
+                                        <xhtml:img src="/img/book_open.png" alt="" title="{$resources/publication-available}"/>
+                                    </xforms:group>
+                                    <xforms:group ref=".[contains(@publicationstatus, 'failed')]">
+                                        <xhtml:img src="/img/node-sopen.png" alt="" title="{$resources/publication-failed}"/>
+                                    </xforms:group>
+                                    <xforms:group ref=".[contains(@publicationstatus, 'inprogress')]">
+                                        <xhtml:img src="/img/construction.png" alt="" title="{$resources/publication-busy}"/>
+                                    </xforms:group>
+                                    <!--
+                                    <xforms:output ref="@publicationstatus"/>
+                                    -->
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:group ref=".[name()='release' and $admin]">
+                                        <xforms:trigger appearance="minimal">
+                                            <xforms:label>
+                                                <xhtml:img src="/img/gear16.png" alt="{$resources/edit-status}"/>
+                                            </xforms:label>
+                                            <xforms:hint appearance="minimal" ref="$resources/edit-status"/>
+                                            <xforms:action ev:event="DOMActivate">
+                                                <xforms:delete ref="instance('selected-version-release-item')/*"/>
+                                                <xxforms:variable name="rvdate" select="@date"/>
+                                                <xforms:insert origin="(instance('project-versions-instance')//*[@date=$rvdate])[1]" nodeset="instance('selected-version-release-item')"/>
+                                                <xxforms:show dialog="change-version-release-status-dialog"/>
+                                            </xforms:action>
+                                        </xforms:trigger>
+                                    </xforms:group>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xforms:repeat>
+                    </xforms:group>
+                </xhtml:table>
+            </fr:tab>
+         <!-- project ids -->
+            <fr:tab bind="projectIds">
+                <fr:label ref="$resources/ids"/>
+                <xhtml:table width="100%" class="detail zebra-table">
+                    <xforms:group ref="instance('project-ids-instance')">
+                  <!-- external ids -->
+                        <xhtml:tr>
+                            <xhtml:td class="heading" colspan="4">
+                                <xhtml:div class="heading">
+                                    <xforms:output ref="$resources/external-ids"/>
+                                </xhtml:div>
+                                <xhtml:div class="buttons">
+                                    <fr:button>
+                                        <xforms:label>
+                                            <xhtml:img src="/img/plus.png" alt="" align="right"/>
+                                        </xforms:label>
+                                        <xforms:hint ref="$resources/add-id"/>
+                                        <xforms:action ev:event="DOMActivate">
+                                            <xforms:insert context="instance('project-ids-instance')" nodeset="*" at="last()" position="after" origin="xxforms:element('id',(xxforms:attribute('root',''),xxforms:element('designation',(xxforms:attribute('language',instance('language')),xxforms:attribute('preferredForLanguage','true'),xxforms:attribute('displayName','')))))"/>
+                                        </xforms:action>
+                                    </fr:button>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xhtml:tr>
+                            <xhtml:td class="heading">
+                                <xforms:output ref="$resources/id"/>
+                            </xhtml:td>
+                            <xhtml:td class="heading">
+                                <xforms:output ref="$resources/display-name"/>
+                            </xhtml:td>
+                            <xhtml:td class="heading" colspan="2">
+                                <xforms:output ref="$resources/designation"/>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xforms:repeat nodeset="id" id="externalIdList">
+                            <xhtml:tr class="zebra-row-{if (position() mod 2 = 0) then 'even' else 'odd'}">
+                                <xhtml:td>
+                                    <xforms:input ref="@root">
+                                        <xforms:alert>
+                                            <xforms:output ref="$resources/required-field"/>
+                                        </xforms:alert>
+                                    </xforms:input>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:input ref="designation[@language=instance('language')]/@displayName">
+                                        <xforms:alert>
+                                            <xforms:output ref="$resources/required-field"/>
+                                        </xforms:alert>
+                                    </xforms:input>
+                                </xhtml:td>
+                                <xhtml:td colspan="2">
+                                    <xforms:input ref="designation[@language=instance('language')]">
+                                        <xforms:alert>
+                                            <xforms:output ref="$resources/required-field"/>
+                                        </xforms:alert>
+                                    </xforms:input>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xforms:repeat>
+                  <!-- default base ids -->
+                        <!--<xhtml:tr>
+                            <xhtml:td class="heading" colspan="3">
+                                <xhtml:div class="heading">
+                                    <xforms:output ref="$resources/default-ids"/>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xhtml:tr>
+                            <xhtml:td class="heading">
+                                <xforms:output ref="$resources/id"/>
+                            </xhtml:td>
+                            <xhtml:td class="heading" colspan="2">
+                                <xforms:output ref="$resources/type"/>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xforms:repeat nodeset="xxforms:sort(defaultBaseId, tokenize(@id,'\.')[last()], 'number', 'ascending')" id="defaultaseIdList">
+                            <xhtml:tr class="not-selectable zebra-row-{if (position() mod 2 = 0) then 'even' else 'odd'}">
+                                <xhtml:td>
+                                    <xforms:output ref="@id"/>
+                                </xhtml:td>
+                                <xhtml:td colspan="2">
+                                    <xxforms:variable name="type" select="@type"/>
+                                    <xforms:output ref="instance('decor-types')/DecorObjectType/enumeration[@value=$type]/label[@language=$resources/@xml:lang]"/>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xforms:repeat>-->
+                  <!-- base ids -->
+                        <xhtml:tr>
+                            <xhtml:td class="heading" colspan="4">
+                                <xhtml:div class="heading">
+                                    <xforms:output ref="$resources/Baseids"/>
+                                </xhtml:div>
+                                <xhtml:div class="buttons">
+                                    <fr:button ref=".[$admin]">
+                                        <xforms:label>
+                                            <xhtml:img src="/img/plus.png" alt="" align="right"/>
+                                        </xforms:label>
+                                        <xforms:hint ref="$resources/add-id"/>
+                                        <xforms:action ev:event="DOMActivate">
+                                            <xforms:insert context="instance('project-ids-instance')" nodeset="baseId" at="last()" position="after" origin="xxforms:element('baseId',(xxforms:attribute('id',''),xxforms:attribute('type','DE'),xxforms:attribute('prefix',''),xxforms:attribute('default','false'),xxforms:attribute('status','new')))"/>
+                                        </xforms:action>
+                                    </fr:button>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xhtml:tr>
+                            <xhtml:td class="heading">
+                                <xforms:output ref="$resources/id"/>
+                            </xhtml:td>
+                            <xhtml:td class="heading">
+                                <xforms:output ref="$resources/type"/>
+                            </xhtml:td>
+                            <xhtml:td class="heading">
+                                <xforms:output ref="$resources/prefix"/>
+                            </xhtml:td>
+                            <xhtml:td class="heading">
+                                <xforms:output ref="$resources/default"/>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xforms:repeat nodeset="xxforms:sort(baseId, @type, 'text', 'ascending')" id="baseIdList">
+                            <xxforms:variable name="baseId" select="@id"/>
+                            <xxforms:variable name="baseType" select="@type"/>
+                            <xxforms:variable name="basePrefix" select="@prefix"/>
+                            <xhtml:tr class="not-selectable zebra-row-{if (position() mod 2 = 0) then 'even' else 'odd'}">
+                                <xhtml:td>
+                                    <xforms:group ref=".[@status='new']">
+                                        <xforms:input ref="@id">
+                                            <xforms:alert>
+                                                <xforms:output ref="$resources/required-field"/>
+                                            </xforms:alert>
+                                        </xforms:input>
+                                    </xforms:group>
+                                    <xforms:group ref=".[not(@status='new')]">
+                                        <xforms:output ref="$baseId"/>
+                                    </xforms:group>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:group ref=".[@status='new']">
+                                        <xforms:select1 ref="@type">
+                                            <xforms:itemset ref="instance('decor-types')/DecorObjectType/enumeration">
+                                                <xforms:label ref="label[@language=$resources/@xml:lang]"/>
+                                                <xforms:value ref="@value"/>
+                                            </xforms:itemset>
+                                        </xforms:select1>
+                                    </xforms:group>
+                                    <xforms:group ref=".[not(@status='new')]">
+                                        <xforms:output ref="instance('decor-types')/DecorObjectType/enumeration[@value=$baseType]/label[@language=$resources/@xml:lang]"/>
+                                    </xforms:group>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:input ref="@prefix">
+                                        <xforms:alert>
+                                            <xforms:output ref="$resources/required-field"/>
+                                        </xforms:alert>
+                                        <xforms:action ev:event="DOMFocusOut">
+                                            <xforms:setvalue ref="$basePrefix" value="if ($basePrefix='-' or $basePrefix='') then '' else if (ends-with($basePrefix,'-')) then $basePrefix else(concat($basePrefix,'-'))"/>
+                                        </xforms:action>
+                                    </xforms:input>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:input ref="@default" class="auto-width">
+                                        <xforms:action ev:event="xforms-value-changed" if=".='true'">
+                                            <xforms:action xxforms:iterate="instance('project-ids-instance')/baseId[@type=$baseType][not(@id=$baseId)]/@default">
+                                                <xforms:setvalue ref="context()" value="false()"/>
+                                            </xforms:action>
+                                                <!-- should never be more than one, but just in case -->
+                                            <xforms:action xxforms:iterate="instance('project-ids-instance')/defaultBaseId[@type=$baseType]/@id">
+                                                <xforms:setvalue ref="context()" value="$baseId"/>
+                                            </xforms:action>
+                                        </xforms:action>
+                                    </xforms:input>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xforms:repeat>
+                    </xforms:group>
+                </xhtml:table>
+            </fr:tab>
+         <!-- status with respect to testing -->
+            <fr:tab bind="projectStatus">
+                <fr:label ref="$resources/status"/>
+                <xhtml:table width="100%" class="detail zebra-table">
+               <!-- Locks heading -->
+                    <xhtml:tr>
+                        <xhtml:td class="heading" colspan="5">
+                            <xhtml:div class="heading">
+                                <xforms:output ref="$resources/decor-locks"/>
+                            </xhtml:div>
+                            <xhtml:div class="buttons">
+                                <fr:button>
+                                    <xforms:label>
+                                        <xhtml:img src="/img/arrow_refresh.png" alt=""/>
+                                    </xforms:label>
+                                    <xforms:hint ref="$resources/refresh"/>
+                                    <xforms:action ev:event="DOMActivate">
+                                        <xforms:send submission="get-decor-project-locks"/>
+                                    </xforms:action>
+                                </fr:button>
+                            </xhtml:div>
+                        </xhtml:td>
+                    </xhtml:tr>
+                    <xhtml:tr>
+                        <xhtml:td class="heading">
+                            <xforms:output ref="$resources/object"/>
+                        </xhtml:td>
+                        <xhtml:td class="heading">
+                            <xforms:output ref="$resources/name"/>
+                        </xhtml:td>
+                        <xhtml:td class="heading">
+                            <xforms:output ref="$resources/date-time"/>
+                        </xhtml:td>
+                        <xhtml:td class="heading">
+                            <xforms:output ref="$resources/user"/>
+                        </xhtml:td>
+                        <xhtml:td class="heading"/>
+                    </xhtml:tr>
+                    <xforms:repeat nodeset="instance('decor-locks')//concept" id="conceptLocks">
+                        <xhtml:tr class="not-selectable zebra-row-{if (position() mod 2 = 0) then 'even' else 'odd'}">
+                            <xhtml:td>
+                                <xforms:output ref="$resources/concept"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:output ref="name[@language=instance('language')]"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:output ref="conceptLock/@since" xxforms:format="if (. castable as xs:dateTime) then replace(format-dateTime(.,'[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]', (), (), ()),' 00:00:00','') else (.)"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:output ref="conceptLock/@userName"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xhtml:div class="buttons">
+                                    <xforms:trigger appearance="minimal">
+                                        <xforms:label>
+                                            <xhtml:img src="/img/itemdelete.png" alt=""/>
+                                        </xforms:label>
+                                        <xforms:hint appearance="minimal">
+                                            <xforms:output ref="$resources/delete"/>
+                                        </xforms:hint>
+                                        <xforms:action ev:event="DOMActivate">
+                                            <xforms:setvalue ref="instance('clear-lock')/@ref" value="context()/conceptLock/@ref"/>
+                                            <xforms:setvalue ref="instance('clear-lock')/@effectiveDate" value="context()/conceptLock/@effectiveDate"/>
+                                            <xforms:send submission="clear-decor-lock"/>
+                                            <xforms:send submission="get-decor-project-locks"/>
+                                        </xforms:action>
+                                    </xforms:trigger>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                    </xforms:repeat>
+                    <xforms:repeat nodeset="instance('decor-locks')//valueSet" id="valuesetLocks">
+                        <xhtml:tr class="not-selectable">
+                            <xhtml:td>
+                                <xforms:output ref="$resources/value-set"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:output ref="name"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:output ref="lock/@since" xxforms:format="if (. castable as xs:dateTime) then replace(format-dateTime(.,'[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]', (), (), ()),' 00:00:00','') else (.)"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:output ref="lock/@userName"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xhtml:div class="buttons">
+                                    <xforms:trigger appearance="minimal">
+                                        <xforms:label>
+                                            <xhtml:img src="/img/itemdelete.png" alt=""/>
+                                        </xforms:label>
+                                        <xforms:hint appearance="minimal">
+                                            <xforms:output ref="$resources/delete"/>
+                                        </xforms:hint>
+                                        <xforms:action ev:event="DOMActivate">
+                                            <xforms:setvalue ref="instance('clear-lock')/@ref" value="context()/lock/@ref"/>
+                                            <xforms:setvalue ref="instance('clear-lock')/@effectiveDate" value="context()/lock/@effectiveDate"/>
+                                            <xforms:send submission="clear-decor-lock"/>
+                                            <xforms:send submission="get-decor-project-locks"/>
+                                        </xforms:action>
+                                    </xforms:trigger>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                    </xforms:repeat>
+                    <xforms:repeat nodeset="instance('decor-locks')//community" id="communityLocks">
+                        <xhtml:tr class="not-selectable">
+                            <xhtml:td>
+                                <xforms:output ref="$resources/mycommunity"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:output ref="name"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:output ref="communityLock/@since" xxforms:format="if (. castable as xs:dateTime) then replace(format-dateTime(.,'[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]', (), (), ()),' 00:00:00','') else (.)"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:output ref="communityLock/@userName"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xhtml:div class="buttons">
+                                    <xforms:trigger appearance="minimal">
+                                        <xforms:label>
+                                            <xhtml:img src="/img/itemdelete.png" alt=""/>
+                                        </xforms:label>
+                                        <xforms:hint appearance="minimal">
+                                            <xforms:output ref="$resources/delete"/>
+                                        </xforms:hint>
+                                        <xforms:action ev:event="DOMActivate">
+                                            <xforms:setvalue ref="instance('clear-lock')/@ref" value="context()/communityLock/@ref"/>
+                                            <xforms:setvalue ref="instance('clear-lock')/@projectId" value="context()/communityLock/@projectId"/>
+                                            <xforms:send submission="clear-decor-lock"/>
+                                            <xforms:send submission="get-decor-project-locks"/>
+                                        </xforms:action>
+                                    </xforms:trigger>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                    </xforms:repeat>
+                    <xforms:repeat nodeset="instance('decor-locks')//template" id="templateLocks">
+                        <xhtml:tr class="not-selectable">
+                            <xhtml:td>
+                                <xforms:output ref="$resources/template"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:output ref="name"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:output ref="lock/@since" xxforms:format="if (. castable as xs:dateTime) then replace(format-dateTime(.,'[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]', (), (), ()),' 00:00:00','') else (.)"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:output ref="lock/@userName"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xhtml:div class="buttons">
+                                    <xforms:trigger appearance="minimal">
+                                        <xforms:label>
+                                            <xhtml:img src="/img/itemdelete.png" alt=""/>
+                                        </xforms:label>
+                                        <xforms:hint appearance="minimal">
+                                            <xforms:output ref="$resources/delete"/>
+                                        </xforms:hint>
+                                        <xforms:action ev:event="DOMActivate">
+                                            <xforms:setvalue ref="instance('clear-lock')/@ref" value="context()/lock/@ref"/>
+                                            <xforms:setvalue ref="instance('clear-lock')/@effectiveDate" value="context()/lock/@effectiveDate"/>
+                                            <xforms:send submission="clear-decor-lock"/>
+                                            <xforms:send submission="get-decor-project-locks"/>
+                                        </xforms:action>
+                                    </xforms:trigger>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                    </xforms:repeat>
+                </xhtml:table>
+                <xhtml:p/>
+            </fr:tab>
+         <!-- MyCommunity -->
+            <fr:tab bind="community">
+                <fr:label ref="$resources/mycommunity"/>
+                <xforms:group ref="instance('new-community')[not(edit)]">
+                    <xhtml:table width="100%" class="detail zebra-table">
+                  <!-- Community list heading -->
+                        <xhtml:tr>
+                            <xhtml:td class="heading" colspan="3">
+                                <xhtml:div class="heading">
+                                    <xforms:output ref="$resources/mycommunity"/>
+                                </xhtml:div>
+                                <xhtml:div class="buttons">
+                                    <xforms:group ref=".[$admin]">
+                              <!-- button for creating new community -->
+                                        <fr:button>
+                                            <xforms:label>
+                                                <xhtml:img src="/img/plus.png" alt=""/>
+                                            </xforms:label>
+                                            <xforms:hint>
+                                                <xforms:output ref="$resources/add-commnunity"/>
+                                            </xforms:hint>
+                                            <xforms:action ev:event="DOMActivate">
+                                                <xforms:setvalue ref="instance('new-community')/@projectId" value="instance('project-instance')/@id"/>
+                                                <xforms:setvalue ref="instance('new-community')/desc/@language" value="instance('language')"/>
+                                                <xforms:setvalue ref="instance('new-community')/prototype/data/desc/@language" value="instance('language')"/>
+                                                <xforms:setvalue ref="instance('new-community')/access/author/@username" value="xxforms:get-session-attribute('username')"/>
+                                                <xforms:insert context="instance('new-community')" origin="xxforms:element('edit','')"/>
+                                                <xforms:setfocus control="communityName"/>
+                                            </xforms:action>
+                                        </fr:button>
+                                    </xforms:group>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xhtml:tr>
+                            <xhtml:td class="heading" width="25%">
+                                <xforms:output ref="$resources/display-name"/>
+                            </xhtml:td>
+                            <xhtml:td class="heading" width="25%">
+                                <xforms:output ref="$resources/name"/>
+                            </xhtml:td>
+                            <xhtml:td class="heading" width="50%">
+                                <xforms:output ref="$resources/description"/>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xforms:repeat nodeset="instance('community-list')//community" id="communityList">
+                            <xhtml:tr class="not-selectable zebra-row-{if (position() mod 2 = 0) then 'even' else 'odd'}">
+                                <xhtml:td width="25%">
+                                    <xxforms:variable name="prefix" select="instance('project-instance')/@prefix"/>
+                                    <xxforms:variable name="defaultLanguage" select="instance('language')"/>
+                                    <xforms:trigger appearance="minimal">
+                                        <xforms:label ref="if (string-length(@displayName)&gt;0) then @displayName else (@name)"/>
+                                        <xforms:action ev:event="DOMActivate">
+                                            <xforms:load resource="/decor-mycommunity--{$prefix}?name={@name}&amp;language={$defaultLanguage}" show="new"/>
+                                        </xforms:action>
+                                    </xforms:trigger>
+                                </xhtml:td>
+                                <xhtml:td width="25%">
+                                    <xforms:output ref="@name"/>
+                                </xhtml:td>
+                                <xhtml:td width="50%">
+                                    <xforms:output mediatype="text/html" ref="desc[@language=instance('language')]"/>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xforms:repeat>
+                    </xhtml:table>
+                </xforms:group>
+                <xforms:group ref="instance('new-community')[edit]">
+                    <xxforms:variable name="edit" select="edit[$admin]"/>
+                    <xhtml:table width="100%" class="detail" style="margin-top:0.5em;">
+                  <!-- heading with buttons -->
+                        <xhtml:tr>
+                            <xhtml:td class="heading">
+                                <xhtml:div class="heading">
+                                    <xforms:group ref=".[string-length(@displayName)&gt;0]">
+                                        <xforms:output ref="$resources/mycommunity"/>
+                                        <xforms:output ref="@displayName"/>
+                                    </xforms:group>
+                                    <xforms:group ref=".[string-length(@displayName)=0]">
+                                        <xforms:output ref="$resources/mycommunity"/>
+                                        <xforms:output ref="@name"/>
+                                    </xforms:group>
+                                </xhtml:div>
+                                <xhtml:div class="buttons">
+                                    <fr:button>
+                                        <xforms:label ref="$resources/cancel"/>
+                                        <xforms:action ev:event="DOMActivate">
+                                            <xforms:delete nodeset="instance('new-community')/edit"/>
+                                        </xforms:action>
+                                    </fr:button>
+                                    <fr:button ref="instance('valid-community')" id="create-community">
+                                        <xforms:label ref="$resources/save"/>
+                                        <xforms:action ev:event="DOMActivate">
+                                            <xforms:send submission="create-decor-community"/>
+                                            <xforms:delete nodeset="instance('new-community')/edit"/>
+                                            <xforms:send submission="get-decor-project-community-list"/>
+                                        </xforms:action>
+                                    </fr:button>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                  <!-- name -->
+                        <xhtml:tr>
+                            <xhtml:td>
+                                <xhtml:table width="100%" class="detail">
+                                    <xhtml:tr>
+                                        <xhtml:td class="item-label">
+                                            <xforms:output ref="$resources/name"/>
+                                        </xhtml:td>
+                                        <xhtml:td class="not-selectable">
+                                            <xforms:input ref="@name" incremental="true" id="communityName">
+                                                <xforms:alert>
+                                                    <xforms:output ref="if (string-length(instance('new-community')/@name)=0) then $resources/required-field else($resources/already-exists)"/>
+                                                </xforms:alert>
+                                            </xforms:input>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                </xhtml:table>
+                            </xhtml:td>
+                        </xhtml:tr>
+                  <!-- display name -->
+                        <xhtml:tr>
+                            <xhtml:td>
+                                <xhtml:table width="100%" class="detail">
+                                    <xhtml:tr>
+                                        <xhtml:td class="item-label">
+                                            <xforms:output ref="$resources/display-name"/>
+                                        </xhtml:td>
+                                        <xhtml:td class="not-selectable">
+                                            <xforms:input ref="@displayName" incremental="true"/>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                </xhtml:table>
+                            </xhtml:td>
+                        </xhtml:tr>
+                  <!-- description -->
+                        <xhtml:tr>
+                            <xhtml:td>
+                                <fr:accordion class="fr-accordion-lnf">
+                                    <fr:case selected="true">
+                                        <fr:label ref="$resources/description"/>
+                                        <xhtml:div class="detail">
+                                            <xforms:textarea mediatype="text/html" ref="desc[@language=instance('language')]" incremental="true"/>
+                                        </xhtml:div>
+                                    </fr:case>
+                                </fr:accordion>
+                            </xhtml:td>
+                        </xhtml:tr>
+                    </xhtml:table>
+                    <xhtml:table width="100%" class="detail" style="margin-top:0.5em;">
+                  <!-- community access header -->
+                        <xhtml:tr>
+                            <xhtml:td class="heading">
+                                <xhtml:div class="heading">
+                                    <xforms:output ref="$resources/authors"/>
+                                </xhtml:div>
+                                <xhtml:div class="buttons">
+                                    <fr:button id="add-community-author">
+                                        <xforms:label>
+                                            <xhtml:img src="/img/plus.png" alt=""/>
+                                        </xforms:label>
+                                        <xforms:hint>
+                                            <xforms:output ref="$resources/add-author"/>
+                                        </xforms:hint>
+                                        <xforms:action ev:event="DOMActivate">
+                                            <xxforms:show dialog="select-community-author"/>
+                                        </xforms:action>
+                                    </fr:button>
+                                    <fr:button id="delete-community-author">
+                                        <xforms:label>
+                                            <xhtml:img src="/img/remove.gif" alt=""/>
+                                        </xforms:label>
+                                        <xforms:hint>
+                                            <xforms:output ref="$resources/delete-author"/>
+                                        </xforms:hint>
+                                        <xforms:action ev:event="DOMActivate">
+                                            <xforms:delete context="instance('new-community')/access" nodeset="author" at="index('communityAuthorList')"/>
+                                        </xforms:action>
+                                    </fr:button>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                  <!-- community access -->
+                        <xhtml:tr>
+                            <xhtml:td>
+                                <xhtml:table width="100%" class="detail">
+                                    <xhtml:tr>
+                                        <xhtml:td class="heading">
+                                            <xforms:output ref="$resources/name"/>
+                                        </xhtml:td>
+                                        <xhtml:td class="heading">
+                                            <xforms:output ref="$resources/permissions"/>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                    <xforms:repeat nodeset="instance('new-community')/access/author" id="communityAuthorList">
+                                        <xhtml:tr>
+                                            <xhtml:td>
+                                                <xxforms:variable name="user" select="@username"/>
+                                                <xforms:output ref="instance('project-instance')/author[@username=$user]"/>
+                                            </xhtml:td>
+                                            <xhtml:td>
+                                                <xforms:select1 ref="@rights" appearance="minimal" class="auto-width">
+                                                    <xforms:item>
+                                                        <xforms:label>r</xforms:label>
+                                                        <xforms:value>r</xforms:value>
+                                                    </xforms:item>
+                                                    <xforms:item>
+                                                        <xforms:label>rw</xforms:label>
+                                                        <xforms:value>rw</xforms:value>
+                                                    </xforms:item>
+                                                </xforms:select1>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xforms:repeat>
+                                </xhtml:table>
+                            </xhtml:td>
+                        </xhtml:tr>
+                    </xhtml:table>
+                    <xhtml:table width="100%" class="detail" style="margin-top:0.5em;">
+                  <!-- Prototypes -->
+                        <xhtml:tr>
+                            <xhtml:td>
+                                <xhtml:table width="100%">
+                                    <xhtml:tr>
+                                        <xhtml:td class="heading">
+                                            <xhtml:div class="heading">
+                                                <xforms:output ref="$resources/prototypes"/>
+                                            </xhtml:div>
+                                            <xhtml:div class="buttons">
+                                                <xforms:group ref=".[$edit]">
+                                                    <fr:button id="add-proto">
+                                                        <xforms:label>
+                                                            <xhtml:img src="/img/plus.png" alt="" align="right"/>
+                                                        </xforms:label>
+                                                        <xforms:hint ref="$resources/add"/>
+                                                        <xforms:action ev:event="DOMActivate">
+                                                            <xforms:setvalue ref="instance('new-prototype')/desc/@language" value="instance('language')"/>
+                                                            <xforms:insert context="instance('new-community')/prototype" nodeset="data" origin="instance('new-prototype')"/>
+                                                        </xforms:action>
+                                                    </fr:button>
+                                                </xforms:group>
+                                            </xhtml:div>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                    <xforms:group ref=".[$edit]">
+                                        <xhtml:tr>
+                                            <xhtml:td>
+                                                <xforms:repeat nodeset="prototype/data" id="prototypes">
+                                                    <xhtml:table width="100%" class="detail">
+                                                        <xhtml:tr class="not-selectable">
+                                                            <xhtml:td class="heading" colspan="4">
+                                                                <xxforms:variable name="type" select="@type"/>
+                                                                <xforms:output ref=".[@type=$type]/@label"/>
+                                                                <xforms:group ref=".[not(used)]">
+                                                                    <xhtml:div class="buttons">
+                                                                        <fr:button id="delete-proto">
+                                                                            <xforms:label>
+                                                                                <xhtml:img src="/img/remove.gif" alt="" align="right"/>
+                                                                            </xforms:label>
+                                                                            <xforms:hint ref="$resources/delete"/>
+                                                                            <xforms:action ev:event="DOMActivate">
+                                                                                <xforms:delete nodeset="instance('new-community')/prototype/data[index('prototypes')]"/>
+                                                                            </xforms:action>
+                                                                        </fr:button>
+                                                                    </xhtml:div>
+                                                                </xforms:group>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                        <xhtml:tr class="not-selectable">
+                                                            <xhtml:td class="item-label" width="25%">
+                                                                <xforms:output ref="$resources/type"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td class="paddedtd" width="25%">
+                                                                <xforms:input ref="@type" incremental="true">
+                                                                    <xforms:alert>
+                                                                        <xforms:output ref="$resources/required-field"/>
+                                                                    </xforms:alert>
+                                                                </xforms:input>
+                                                            </xhtml:td>
+                                                            <xhtml:td class="item-label" width="25%">
+                                                                <xforms:output ref="$resources/datatype"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td class="paddedtd" width="25%">
+                                                                <xforms:output ref="@datatype"/>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                        <xhtml:tr class="not-selectable">
+                                                            <xhtml:td class="item-label">
+                                                                <xforms:output ref="$resources/label"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td class="paddedtd">
+                                                                <xforms:input ref="@label" incremental="true">
+                                                                    <xforms:alert>
+                                                                        <xforms:output ref="$resources/required-field"/>
+                                                                    </xforms:alert>
+                                                                </xforms:input>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                        <xhtml:tr class="not-selectable">
+                                                            <xhtml:td class="item-label">
+                                                                <xforms:output ref="$resources/description"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td class="paddedtd" colspan="3">
+                                                                <xforms:textarea mediatype="text/html" ref="desc[@language=instance('language')]" incremental="true"/>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                    </xhtml:table>
+                                                </xforms:repeat>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xforms:group>
+                                </xhtml:table>
+                            </xhtml:td>
+                        </xhtml:tr>
+                    </xhtml:table>
+                </xforms:group>
+            </fr:tab>
+            <!-- project maintenance -->
+            <fr:tab bind="decormaintenance">
+                <fr:label ref="$resources/development"/>
+                <xhtml:table width="100%" class="detail" style="margin-top:0.5em;">
+                    <!-- Prototypes -->
+                    <xhtml:tr>
+                        <xhtml:td class="heading" colspan="3">
+                            <xhtml:div class="heading">
+                                <xforms:output ref="$resources/check-decor"/>
+                            </xhtml:div>
+                        </xhtml:td>
+                    </xhtml:tr>
+                    <xhtml:tr>
+                        <xhtml:td>
+                            <xhtml:div class="buttons" style="float:left;">
+                                <fr:button ref="xxforms:instance('decor-check')">
+                                    <xforms:label ref="$resources/check-decor"/>
+                                    <xforms:action ev:event="DOMActivate">
+                                        <xforms:insert origin="instance('decor-check-busy')" nodeset="instance('decor-check')"/>
+                                        <xforms:send submission="check-decor"/>
+                                        <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                                    </xforms:action>
+                                </fr:button>
+                            </xhtml:div>
+                            <xforms:select1 ref="instance('dataset-navigation')" appearance="minimal">
+                                <xforms:itemset nodeset="instance('dataset-list-instance')//dataset">
+                                    <xforms:label>
+                                        <xforms:output ref="if (exists(name[@language=$resources/@xml:lang]/@selectorName)) then (name[@language=$resources/@xml:lang]/@selectorName)[1] else ((name/@selectorName)[1])"/>
+                                    </xforms:label>
+                                    <xforms:value ref="@id"/>
+                                </xforms:itemset>
+                            </xforms:select1>
+                            <xforms:switch>
+                                <xforms:case id="check-ready"/>
+                                <xforms:case id="check-case-busy">
+                                    <xhtml:img src="/img/loader.gif" class="spinner" alt="Busy"/>
+                                </xforms:case>
+                                <xforms:case id="check-case-submit-error">
+                                    <xhtml:img src="/img/exclamation.gif" class="spinner" alt="Error"/>
+                                </xforms:case>
+                                <xforms:case id="check-case-done"/>
+                            </xforms:switch>
+                        </xhtml:td>
+                    </xhtml:tr>
+                    <xhtml:tr>
+                        <xhtml:td>
+                            <xforms:group ref="instance('decor-check')[schema]">
+                                <xhtml:table width="100%" class="detail">
+                                    <xhtml:tr>
+                                        <xhtml:td class="heading" style="width: 10px;">
+                                            <xforms:group ref=".[schema/report/status='invalid']">
+                                                <xhtml:img style="vertical-align:middle;" src="/img/node-sopen.png" alt=""/>
+                                            </xforms:group>
+                                            <xforms:group ref=".[schema/report/status='valid']">
+                                                <xhtml:img style="vertical-align:middle;" src="/img/node-sfinal.png" alt=""/>
+                                            </xforms:group>
+                                        </xhtml:td>
+                                        <xhtml:td class="heading">
+                                            <xforms:output ref="'Schema Validation'"/>
+                                            <xforms:output ref="concat(': ', count(schema/report/message) ,' item(s)')"/>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                    <xforms:group ref=".[count(schema/report/message)&gt;0]">
+                                        <xhtml:tr>
+                                            <xhtml:td/>
+                                            <xhtml:td>
+                                                <xhtml:table width="100%" class="detail msgborder" style="margin-bottom:0.5em;">
+                                                    <xhtml:tr>
+                                                        <xhtml:td class="heading" style="width: 10px;">
+                                                            <xforms:output ref="$resources/level"/>
+                                                        </xhtml:td>
+                                                        <xhtml:td class="heading">
+                                                            <xforms:output ref="$resources/location"/>
+                                                        </xhtml:td>
+                                                        <xhtml:td class="heading">
+                                                            <xforms:output ref="$resources/description"/>
+                                                        </xhtml:td>
+                                                    </xhtml:tr>
+                                                    <xforms:repeat nodeset="schema/report/message" id="checkResulta">
+                                                        <xhtml:tr class="not-selectable zebra-row-{if (position() mod 2 = 0) then 'even' else 'odd'}">
+                                                            <xhtml:td class="msgrow">
+                                                                <xforms:group ref=".[@level='Error']">
+                                                                    <xhtml:img style="vertical-align:middle;" src="/img/node-sopen.png" alt=""/>
+                                                                </xforms:group>
+                                                                <xforms:group ref=".[@level='Warning']">
+                                                                    <xhtml:img style="vertical-align:middle;" src="/img/node-sdraft.png" alt=""/>
+                                                                </xforms:group>
+                                                            </xhtml:td>
+                                                            <xhtml:td class="msgrow">
+                                                                <xforms:output ref="concat(@line, ':', @column)"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td class="msgrow">
+                                                                <xforms:output ref="."/>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                    </xforms:repeat>
+                                                </xhtml:table>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xforms:group>
+                                    <xforms:group ref=".[count(schematron/report/message)&gt;0]">
+                                        <xhtml:tr>
+                                            <xhtml:td class="heading" style="width: 10px;">
+                                                <xforms:group ref=".[schematron/report/status='invalid']">
+                                                    <xhtml:img style="vertical-align:middle;" src="/img/node-sopen.png" alt=""/>
+                                                </xforms:group>
+                                                <xforms:group ref=".[schematron/report/status='valid']">
+                                                    <xhtml:img style="vertical-align:middle;" src="/img/node-sfinal.png" alt=""/>
+                                                </xforms:group>
+                                            </xhtml:td>
+                                            <xhtml:td class="heading">
+                                                <xforms:output ref="'Schematron Validation'"/>
+                                                <xforms:output ref="concat(': ', count(schematron/report/message//svrl:failed-assert) ,' item(s)')"/>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                        <xforms:group ref=".[count(schematron/report/*)&gt;0]">
+                                            <xhtml:tr>
+                                                <xhtml:td/>
+                                                <xhtml:td>
+                                                    <xhtml:table width="100%" class="detail msgborder" style="margin-bottom:0.5em;">
+                                                        <xhtml:tr>
+                                                            <xhtml:td class="heading" style="width: 10px;">
+                                                                <xforms:output ref="$resources/level"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td class="heading">
+                                                                <xforms:output ref="$resources/description"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td class="heading">
+                                                                <xforms:output ref="$resources/location"/>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                        <xforms:repeat nodeset="schematron/report/message//svrl:failed-assert" id="checkResultd">
+                                                            <!--
+                                                            <svrl:failed-assert test="not($isInTransaction) or $isInTemplate or not($rulesDefined)" role="warning" location="/decor[1]/datasets[1]/dataset[1]/concept[2]">
+                                                                <svrl:text>
+                                                                    WARNING: concept group with conceptId '2.16.840.1.113883.3.1937.99.61.7.2.3' ('Vaccination') is used in at least one transaction, but does not have a templateAssociation
+                                                                </svrl:text>
+                                                            </svrl:failed-assert>
+                                                            -->
+                                                            <xhtml:tr class="not-selectable zebra-row-{if (position() mod 2 = 0) then 'even' else 'odd'}">
+                                                                <xhtml:td class="msgrow">
+                                                                    <xforms:group ref=".[@role='error']">
+                                                                        <xhtml:img style="vertical-align:middle;" src="/img/node-sopen.png" alt=""/>
+                                                                    </xforms:group>
+                                                                    <xforms:group ref=".[@role='warning']">
+                                                                        <xhtml:img style="vertical-align:middle;" src="/img/node-sdraft.png" alt=""/>
+                                                                    </xforms:group>
+                                                                    <xforms:group ref=".[not(@role)]">
+                                                                        <xhtml:img style="vertical-align:middle;" src="/img/node-sopen.png" alt=""/>
+                                                                    </xforms:group>
+                                                                </xhtml:td>
+                                                                <xhtml:td class="msgrow">
+                                                                    <xforms:output ref="svrl:text"/>
+                                                                </xhtml:td>
+                                                                <xhtml:td class="msgrow">
+                                                                    <xforms:output ref="@location"/>
+                                                                </xhtml:td>
+                                                            </xhtml:tr>
+                                                        </xforms:repeat>
+                                                    </xhtml:table>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:group>
+                                    </xforms:group>
+                                    <xhtml:tr>
+                                        <xhtml:td class="heading" style="width: 10px;">
+                                            <xforms:group ref=".[count(errors/error/*|warnings/warning/*)&gt;0]">
+                                                <xhtml:img style="vertical-align:middle;" src="/img/node-sopen.png" alt=""/>
+                                            </xforms:group>
+                                            <xforms:group ref=".[count(errors/error/*|warnings/warning/*)=0]">
+                                                <xhtml:img style="vertical-align:middle;" src="/img/node-sfinal.png" alt=""/>
+                                            </xforms:group>
+                                        </xhtml:td>
+                                        <xhtml:td class="heading">
+                                            <xforms:output ref="'DECOR usability level checks'"/>
+                                            <xforms:output ref="concat(': ', count(errors/error/*|warnings/warning/*) ,' item(s)')"/>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                    <xforms:group ref=".[count(errors/error/*|warnings/warning/*)&gt;0]">
+                                        <xhtml:tr>
+                                            <xhtml:td/>
+                                            <xhtml:td>
+                                                <xhtml:table width="100%" class="detail msgborder" style="margin-bottom:0.5em;">
+                                                    <xhtml:tr>
+                                                        <xhtml:td class="heading">
+                                                            <xforms:output ref="$resources/level"/>
+                                                        </xhtml:td>
+                                                        <xhtml:td class="heading">
+                                                            <xforms:output ref="$resources/description"/>
+                                                        </xhtml:td>
+                                                    </xhtml:tr>
+                                                    <xforms:repeat nodeset="(errors/error|warnings/warning)[count(*)&gt;0]" id="checkResultb">
+                                                        <xhtml:tr>
+                                                            <xhtml:td style="width: 10px;">
+                                                                <xforms:group ref=".[name(.)='error']">
+                                                                    <xhtml:img style="vertical-align:middle;" src="/img/node-sopen.png" alt=""/>
+                                                                </xforms:group>
+                                                                <xforms:group ref=".[name(.)='warning']">
+                                                                    <xhtml:img style="vertical-align:middle;" src="/img/node-sdraft.png" alt=""/>
+                                                                </xforms:group>
+                                                            </xhtml:td>
+                                                            <xhtml:td>
+                                                                <xhtml:b>
+                                                                    <xforms:output ref="@text"/>
+                                                                </xhtml:b>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                        <xhtml:tr>
+                                                            <xhtml:td/>
+                                                            <xhtml:td>
+                                                                <xhtml:table width="100%" class="detail msgborder" style="margin-bottom:0.5em;">
+                                                                    <xforms:repeat nodeset="element" id="checkResult1">
+                                                                        <xhtml:tr class="not-selectable zebra-row-{if (position() mod 2 = 0) then 'even' else 'odd'}">
+                                                                            <xhtml:td>
+                                                                                <xforms:output ref="'Element ID: '"/>
+                                                                                <xforms:output ref="@id"/>
+                                                                                <xforms:output ref="' in template '"/>
+                                                                                <xforms:output ref="@template"/>
+                                                                            </xhtml:td>
+                                                                        </xhtml:tr>
+                                                                    </xforms:repeat>
+                                                                    <xforms:repeat nodeset="concept" id="checkResult2">
+                                                                        <xhtml:tr class="not-selectable zebra-row-{if (position() mod 2 = 0) then 'even' else 'odd'}">
+                                                                            <xhtml:td>
+                                                                                <xforms:output ref="'Concept ID: '"/>
+                                                                                <xforms:output ref="@ref"/>
+                                                                                <xforms:output ref="concat(' (', @type, ') ')"/>
+                                                                                <xforms:output ref="name"/>
+                                                                            </xhtml:td>
+                                                                        </xhtml:tr>
+                                                                    </xforms:repeat>
+                                                                    <xforms:repeat nodeset="template" id="checkResult3">
+                                                                        <xhtml:tr class="not-selectable zebra-row-{if (position() mod 2 = 0) then 'even' else 'odd'}">
+                                                                            <xhtml:td>
+                                                                                <xforms:output ref="'Template name: '"/>
+                                                                                <xforms:output ref="@name"/>
+                                                                                <xforms:output ref="' element ID: '"/>
+                                                                                <xforms:output ref="@elementId"/>
+                                                                                <xforms:output ref="' '"/>
+                                                                                <xforms:output ref="concept/name"/>
+                                                                                <xforms:output mediatype="text/html" value="xxforms:serialize(xxforms:call-xpl('oxf:/ops/utils/formatting/format.xpl', 'data', element, 'data')/*, 'html')"/>
+                                                                            </xhtml:td>
+                                                                        </xhtml:tr>
+                                                                    </xforms:repeat>
+                                                                </xhtml:table>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                    </xforms:repeat>
+                                                </xhtml:table>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xforms:group>
+                                </xhtml:table>
+                            </xforms:group>
+                            <!--
+                            <xforms:output mediatype="text/html" value="xxforms:serialize(xxforms:call-xpl('oxf:/ops/utils/formatting/format.xpl', 'data', instance('decor-check'), 'data')/*, 'html')"/>
+                            -->
+                        </xhtml:td>
+                    </xhtml:tr>
+                    <xhtml:tr>
+                        <xhtml:td class="heading" colspan="3">
+                            <xhtml:div class="heading">
+                                <xforms:output ref="$resources/compile-development"/>
+                                <!-- ... -->
+                            </xhtml:div>
+                        </xhtml:td>
+                    </xhtml:tr>
+                    <xhtml:tr>
+                        <xhtml:td>
+                            <!--
+                            <xhtml:div class="buttons" style="float:left;">
+                                <fr:button>
+                                    <xforms:label ref="$resources/compile-development"/>
+                                    <xforms:action ev:event="DOMActivate">
+                                        <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                                    </xforms:action>
+                                </fr:button>
+                                <xforms:output ref="$resources/compile-takes-a-while"/>
+                            </xhtml:div>
+                            -->
+                        </xhtml:td>
+                    </xhtml:tr>
+                </xhtml:table>
+            </fr:tab>
+        </fr:tabview>
+      <!-- save and cancel buttons -->
+        <xhtml:table width="100%">
+            <xhtml:tr>
+                <xhtml:td colspan="2">
+               <!-- show cancel and save buttons if data-safe=false -->
+                    <xforms:group ref=".[instance('data-safe')='false']">
+                        <xhtml:div class="buttons">
+                            <fr:button>
+                                <xforms:label ref="$resources/cancel"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xforms:send submission="get-decor-project-submission"/>
+                                    <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                                    <xforms:setvalue ref="instance('ui-instance')/project-description">view</xforms:setvalue>
+                                </xforms:action>
+                            </fr:button>
+                            <fr:button>
+                                <xforms:label ref="$resources/save"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xforms:send submission="save-decor-project"/>
+                                    <xforms:setvalue ref="instance('ui-instance')/project-description">view</xforms:setvalue>
+                                </xforms:action>
+                            </fr:button>
+                        </xhtml:div>
+                    </xforms:group>
+                    <xforms:group ref=".[instance('ids-safe')='false']">
+                        <xhtml:div class="buttons">
+                            <fr:button>
+                                <xforms:label ref="$resources/cancel"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xforms:send submission="get-decor-project-ids-submission"/>
+                                    <xforms:setvalue ref="instance('ids-safe')">true</xforms:setvalue>
+                                </xforms:action>
+                            </fr:button>
+                            <fr:button>
+                                <xforms:label ref="$resources/save"/>
+                                <xforms:hint ref="$resources/save"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xforms:send submission="save-decor-ids"/>
+                                </xforms:action>
+                            </fr:button>
+                        </xhtml:div>
+                    </xforms:group>
+                </xhtml:td>
+            </xhtml:tr>
+        </xhtml:table>
+      <!--      <fr:xforms-inspector/>-->
+    </xhtml:body>
+</xhtml:html>

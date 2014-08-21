@@ -1,0 +1,51 @@
+<!--
+    Copyright (C) 2008 Orbeon, Inc.
+
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<!-- NOTE: In the future, we can use <xi:fallback> and remove this file. -->
+<properties>
+   <property as="xs:string" name="oxf.url-rewriting.app-prefix" value=""/>
+
+   <property as="xs:anyURI" name="oxf.epilogue.theme" value="oxf:/config/art-decor-theme-main.xsl"/>
+   <property as="xs:anyURI" name="oxf.epilogue.theme.embeddable" value="oxf:/config/art-decor-theme-main.xsl"/>
+   <property as="xs:anyURI" name="oxf.epilogue.theme.renderer" value="oxf:/config/art-decor-theme-main.xsl"/>
+
+<!-- The password is already changed from the Orbeon default, it should be changed for each installation -->
+   <property as="xs:string" name="oxf.xforms.password" value="They said I definitely should CHANGE THIS PASSWORD"/>
+
+   <!-- new style properties -->
+   <!-- 
+      All properties come in two flavours:
+      1. internal use, these are used by Orbeon to directly access the eXist database.
+      2. external use, These are used when links to resources or services are passed to the client.
+   -->
+   <property as="xs:anyURI" name="art.exist.url" value="http://localhost:8877/art"/>
+   <property as="xs:anyURI" name="art.external.exist.url" value="http://localhost:8877/art"/>
+
+   <property as="xs:anyURI" name="decor.exist.url" value="http://localhost:8877/decor"/>
+   <property as="xs:anyURI" name="decor.external.exist.url" value="http://localhost:8877/decor"/>
+
+   <property as="xs:anyURI" name="xis.exist.url" value="http://localhost:8877/xis"/>
+   <property as="xs:anyURI" name="xis.external.exist.url" value="http://localhost:8877/xis"/>
+
+   <property as="xs:anyURI" name="tools.exist.url" value="http://localhost:8877/tools"/>
+   <property as="xs:anyURI" name="tools.external.exist.url" value="http://localhost:8877/tools"/>
+
+   <property as="xs:anyURI" name="terminology.exist.url" value="http://localhost:8877/terminology"/>
+   <property as="xs:anyURI" name="terminology.external.exist.url" value="http://localhost:8877/terminology"/>
+
+   <property as="xs:anyURI" name="temple.exist.url" value="http://localhost:8877/temple"/>
+   <property as="xs:anyURI" name="temple.external.exist.url" value="http://localhost:8877/temple"/>
+
+   <!--   <property as="xs:integer" name="oxf.xforms.delay-before-upload-progress-refresh" value="100"/>-->
+   <!--   <property as="xs:string" name="oxf.xforms.xbl.fr.fusion-charts.uri-to-swf" value="/FusionCharts"/>-->
+</properties>

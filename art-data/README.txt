@@ -1,0 +1,1 @@
+This directory is created by the ART package, and contains configuration data

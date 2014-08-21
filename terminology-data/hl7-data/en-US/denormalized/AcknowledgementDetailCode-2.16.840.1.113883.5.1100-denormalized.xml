@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1100"/>
+   <Title name="AcknowledgementDetailCode" date="2012-08-02" version="1.000">OpenIssue:Missing description.</Title>
+   <Class code="rootClass">
+      <SubClass subCount="6" code="_AcknowledgementDetailNotSupportedCode" kind="abstract">
+         <Rubric id="d1e20729" kind="preferred">
+            <Label xml:lang="en-US">AcknowledgementDetailNotSupportedCode</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="INTERR" kind="concept">
+         <Rubric id="d1e20753" kind="preferred">
+            <Label xml:lang="en-US">Internal system error</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="NOSTORE" kind="concept">
+         <Rubric id="d1e20780" kind="preferred">
+            <Label xml:lang="en-US">No storage space for message.</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="RTEDEST" kind="concept">
+         <Rubric id="d1e20807" kind="preferred">
+            <Label xml:lang="en-US">Message routing error, destination unreachable.</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="RTUDEST" kind="concept">
+         <Rubric id="d1e20831" kind="preferred">
+            <Label xml:lang="en-US">Error: Message routing error, unknown destination.</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="RTWDEST" kind="concept">
+         <Rubric id="d1e20858" kind="preferred">
+            <Label xml:lang="en-US">Message routing warning, destination unreachable.</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="7" code="SYN" kind="concept">
+         <Rubric id="d1e20883" kind="preferred">
+            <Label xml:lang="en-US">Syntax error</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">AcknowledgementDetailCode</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">OpenIssue:Missing description.</Label>
+      </Rubric>
+   </Class>
+   <Class code="_AcknowledgementDetailNotSupportedCode" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21419"/>
+      <SubClass code="NS200" subCount="0">
+         <Rubric id="d1e20938" kind="preferred">
+            <Label xml:lang="en-US">Unsupported interaction</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NS202" subCount="0">
+         <Rubric id="d1e20967" kind="preferred">
+            <Label xml:lang="en-US">Unsupported processing id</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NS203" subCount="0">
+         <Rubric id="d1e20996" kind="preferred">
+            <Label xml:lang="en-US">Unsupported version id</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NS250" subCount="0">
+         <Rubric id="d1e21025" kind="preferred">
+            <Label xml:lang="en-US">Unsupported processing Mode</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NS260" subCount="0">
+         <Rubric id="d1e21055" kind="preferred">
+            <Label xml:lang="en-US">Unknown sender</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NS261" subCount="0">
+         <Rubric id="d1e21084" kind="preferred">
+            <Label xml:lang="en-US">Unrecognized attentionline</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e20716" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Refelects rejections because elements of the communication are not supported in the current context.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e20729" kind="short">
+         <Label xml:lang="en-US">AcknowledgementDetailNotSupportedCode</Label>
+      </Rubric>
+      <Rubric id="d1e20729" kind="preferred">
+         <Label xml:lang="en-US">AcknowledgementDetailNotSupportedCode</Label>
+      </Rubric>
+   </Class>
+   <Class code="INTERR" kind="concept">
+      <Meta name="internalId" value="22074"/>
+      <Rubric id="d1e20740" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An internal software component (database, application, queue mechanism, etc.) has failed, leading to inability to process the message.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e20753" kind="short">
+         <Label xml:lang="en-US">Internal system error</Label>
+      </Rubric>
+      <Rubric id="d1e20753" kind="preferred">
+         <Label xml:lang="en-US">Internal system error</Label>
+      </Rubric>
+   </Class>
+   <Class code="NOSTORE" kind="concept">
+      <Meta name="internalId" value="21442"/>
+      <Rubric id="d1e20764" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Rejection:</b>The message can't be stored by the receiver due to an unspecified internal application issue. The message was neither processed nor stored by the receiving application.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e20780" kind="short">
+         <Label xml:lang="en-US">No storage space for message.</Label>
+      </Rubric>
+      <Rubric id="d1e20780" kind="preferred">
+         <Label xml:lang="en-US">No storage space for message.</Label>
+      </Rubric>
+   </Class>
+   <Class code="RTEDEST" kind="concept">
+      <Meta name="internalId" value="21443"/>
+      <Rubric id="d1e20791" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Error:</b>The destination of this message is known to the receiving application. Messages have been successfully routed to that destination in the past. The link to the destination application or an intermediate application is unavailable.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e20807" kind="short">
+         <Label xml:lang="en-US">Message routing error, destination unreachable.</Label>
+      </Rubric>
+      <Rubric id="d1e20807" kind="preferred">
+         <Label xml:lang="en-US">Message routing error, destination unreachable.</Label>
+      </Rubric>
+   </Class>
+   <Class code="RTUDEST" kind="concept">
+      <Meta name="internalId" value="21440"/>
+      <Rubric id="d1e20818" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The destination of this message is unknown to the receiving application. The receiving application in the message does not match the application which received the message. The message was neither routed, processed nor stored by the receiving application.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e20831" kind="short">
+         <Label xml:lang="en-US">Error: Message routing error, unknown destination.</Label>
+      </Rubric>
+      <Rubric id="d1e20831" kind="preferred">
+         <Label xml:lang="en-US">Error: Message routing error, unknown destination.</Label>
+      </Rubric>
+   </Class>
+   <Class code="RTWDEST" kind="concept">
+      <Meta name="internalId" value="21441"/>
+      <Rubric id="d1e20842" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Warning:</b>The destination of this message is known to the receiving application. Messages have been successfully routed to that destination in the past. The link to the destination application or an intermediate application is (temporarily) unavailable. The receiving application will forward the message as soon as the destination can be reached again.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e20858" kind="short">
+         <Label xml:lang="en-US">Message routing warning, destination unreachable.</Label>
+      </Rubric>
+      <Rubric id="d1e20858" kind="preferred">
+         <Label xml:lang="en-US">Message routing warning, destination unreachable.</Label>
+      </Rubric>
+   </Class>
+   <Class code="SYN" kind="concept">
+      <Meta name="internalId" value="22075"/>
+      <SubClass code="SYN102" subCount="0">
+         <Rubric id="d1e21113" kind="preferred">
+            <Label xml:lang="en-US">Data type error</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SYN105" subCount="3">
+         <Rubric id="d1e21145" kind="preferred">
+            <Label xml:lang="en-US">Required element missing</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SYN106" subCount="3">
+         <Rubric id="d1e21177" kind="preferred">
+            <Label xml:lang="en-US">Terminology error</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SYN108" subCount="2">
+         <Rubric id="d1e21209" kind="preferred">
+            <Label xml:lang="en-US">Number of repetitions exceeds limit</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SYN109" subCount="0">
+         <Rubric id="d1e21242" kind="preferred">
+            <Label xml:lang="en-US">Mandatory element with null value</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SYN111" subCount="0">
+         <Rubric id="d1e21274" kind="preferred">
+            <Label xml:lang="en-US">Value does not match fixed value</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SYN113" subCount="0">
+         <Rubric id="d1e21306" kind="preferred">
+            <Label xml:lang="en-US">Formal constraint violation</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e20870" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Reflects errors in the syntax or structure of the communication.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e20883" kind="short">
+         <Label xml:lang="en-US">Syntax error</Label>
+      </Rubric>
+      <Rubric id="d1e20883" kind="preferred">
+         <Label xml:lang="en-US">Syntax error</Label>
+      </Rubric>
+   </Class>
+   <Class code="NS200" kind="concept">
+      <Meta name="internalId" value="21420"/>
+      <SuperClass code="_AcknowledgementDetailNotSupportedCode">
+         <Rubric id="d1e20729" kind="preferred">
+            <Label xml:lang="en-US">AcknowledgementDetailNotSupportedCode</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e20920" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The interaction (or: this version of the interaction) is not supported.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e20938" kind="short">
+         <Label xml:lang="en-US">Unsupported interaction</Label>
+      </Rubric>
+      <Rubric id="d1e20938" kind="preferred">
+         <Label xml:lang="en-US">Unsupported interaction</Label>
+      </Rubric>
+   </Class>
+   <Class code="NS202" kind="concept">
+      <Meta name="internalId" value="21421"/>
+      <SuperClass code="_AcknowledgementDetailNotSupportedCode">
+         <Rubric id="d1e20729" kind="preferred">
+            <Label xml:lang="en-US">AcknowledgementDetailNotSupportedCode</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e20949" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The Processing ID is not supported.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e20967" kind="short">
+         <Label xml:lang="en-US">Unsupported processing id</Label>
+      </Rubric>
+      <Rubric id="d1e20967" kind="preferred">
+         <Label xml:lang="en-US">Unsupported processing id</Label>
+      </Rubric>
+   </Class>
+   <Class code="NS203" kind="concept">
+      <Meta name="internalId" value="21423"/>
+      <SuperClass code="_AcknowledgementDetailNotSupportedCode">
+         <Rubric id="d1e20729" kind="preferred">
+            <Label xml:lang="en-US">AcknowledgementDetailNotSupportedCode</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e20978" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The Version ID is not supported.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e20996" kind="short">
+         <Label xml:lang="en-US">Unsupported version id</Label>
+      </Rubric>
+      <Rubric id="d1e20996" kind="preferred">
+         <Label xml:lang="en-US">Unsupported version id</Label>
+      </Rubric>
+   </Class>
+   <Class code="NS250" kind="concept">
+      <Meta name="internalId" value="21422"/>
+      <SuperClass code="_AcknowledgementDetailNotSupportedCode">
+         <Rubric id="d1e20729" kind="preferred">
+            <Label xml:lang="en-US">AcknowledgementDetailNotSupportedCode</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e21007" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The processing mode is not supported.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21025" kind="short">
+         <Label xml:lang="en-US">Unsupported processing Mode</Label>
+      </Rubric>
+      <Rubric id="d1e21025" kind="preferred">
+         <Label xml:lang="en-US">Unsupported processing Mode</Label>
+      </Rubric>
+   </Class>
+   <Class code="NS260" kind="concept">
+      <Meta name="internalId" value="21424"/>
+      <SuperClass code="_AcknowledgementDetailNotSupportedCode">
+         <Rubric id="d1e20729" kind="preferred">
+            <Label xml:lang="en-US">AcknowledgementDetailNotSupportedCode</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e21037" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The Device.id of the sender is unknown.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21055" kind="short">
+         <Label xml:lang="en-US">Unknown sender</Label>
+      </Rubric>
+      <Rubric id="d1e21055" kind="preferred">
+         <Label xml:lang="en-US">Unknown sender</Label>
+      </Rubric>
+   </Class>
+   <Class code="NS261" kind="concept">
+      <Meta name="internalId" value="21425"/>
+      <SuperClass code="_AcknowledgementDetailNotSupportedCode">
+         <Rubric id="d1e20729" kind="preferred">
+            <Label xml:lang="en-US">AcknowledgementDetailNotSupportedCode</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e21066" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The receiver requires information in the attentionLine classes for routing purposes.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21084" kind="short">
+         <Label xml:lang="en-US">Unrecognized attentionline</Label>
+      </Rubric>
+      <Rubric id="d1e21084" kind="preferred">
+         <Label xml:lang="en-US">Unrecognized attentionline</Label>
+      </Rubric>
+   </Class>
+   <Class code="SYN102" kind="concept">
+      <Meta name="internalId" value="21414"/>
+      <SuperClass code="SYN">
+         <Rubric id="d1e20883" kind="preferred">
+            <Label xml:lang="en-US">Syntax error</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e21095" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The attribute contained data of the wrong data type, e.g. a numeric attribute contained "FOO".</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21113" kind="short">
+         <Label xml:lang="en-US">Data type error</Label>
+      </Rubric>
+      <Rubric id="d1e21113" kind="preferred">
+         <Label xml:lang="en-US">Data type error</Label>
+      </Rubric>
+   </Class>
+   <Class code="SYN105" kind="concept">
+      <Meta name="internalId" value="22747"/>
+      <SuperClass code="SYN">
+         <Rubric id="d1e20883" kind="preferred">
+            <Label xml:lang="en-US">Syntax error</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="SYN100" subCount="0">
+         <Rubric id="d1e21335" kind="preferred">
+            <Label xml:lang="en-US">Required association missing</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SYN101" subCount="0">
+         <Rubric id="d1e21364" kind="preferred">
+            <Label xml:lang="en-US">Required attribute missing</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SYN114" subCount="0">
+         <Rubric id="d1e21396" kind="preferred">
+            <Label xml:lang="en-US">Insufficient repetitions</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e21124" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Required association or attribute missing in message; or the sequence of the classes is different than required by the standard or one of the conformance profiles identified in the message.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21145" kind="short">
+         <Label xml:lang="en-US">Required element missing</Label>
+      </Rubric>
+      <Rubric id="d1e21145" kind="preferred">
+         <Label xml:lang="en-US">Required element missing</Label>
+      </Rubric>
+   </Class>
+   <Class code="SYN106" kind="concept">
+      <Meta name="internalId" value="22749"/>
+      <SuperClass code="SYN">
+         <Rubric id="d1e20883" kind="preferred">
+            <Label xml:lang="en-US">Syntax error</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="SYN103" subCount="0">
+         <Rubric id="d1e21426" kind="preferred">
+            <Label xml:lang="en-US">Value not found in code system</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SYN104" subCount="0">
+         <Rubric id="d1e21455" kind="preferred">
+            <Label xml:lang="en-US">Invalid code system in CNE</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SYN107" subCount="0">
+         <Rubric id="d1e21487" kind="preferred">
+            <Label xml:lang="en-US">Deprecated code</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e21156" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A coded attribute or datatype property violates one of the terminology constraints specified in the standard or one of the conformance profiles or templates declared by the instance.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21177" kind="short">
+         <Label xml:lang="en-US">Terminology error</Label>
+      </Rubric>
+      <Rubric id="d1e21177" kind="preferred">
+         <Label xml:lang="en-US">Terminology error</Label>
+      </Rubric>
+   </Class>
+   <Class code="SYN108" kind="concept">
+      <Meta name="internalId" value="22751"/>
+      <SuperClass code="SYN">
+         <Rubric id="d1e20883" kind="preferred">
+            <Label xml:lang="en-US">Syntax error</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="SYN110" subCount="0">
+         <Rubric id="d1e21516" kind="preferred">
+            <Label xml:lang="en-US">Number of association repetitions exceeds limit</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SYN112" subCount="0">
+         <Rubric id="d1e21545" kind="preferred">
+            <Label xml:lang="en-US">Number of attribute repetitions exceeds limit</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e21188" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The number of repetitions of a (group of) association(s) or attribute(s) exceeds the limits of the standard or of one of the conformance profiles or templates identified in the message.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21209" kind="short">
+         <Label xml:lang="en-US">Number of repetitions exceeds limit</Label>
+      </Rubric>
+      <Rubric id="d1e21209" kind="preferred">
+         <Label xml:lang="en-US">Number of repetitions exceeds limit</Label>
+      </Rubric>
+   </Class>
+   <Class code="SYN109" kind="concept">
+      <Meta name="internalId" value="22752"/>
+      <SuperClass code="SYN">
+         <Rubric id="d1e20883" kind="preferred">
+            <Label xml:lang="en-US">Syntax error</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e21221" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>An attribute or association identified as mandatory in a specification or declared conformance profile or template has been specified with a null flavor.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21242" kind="short">
+         <Label xml:lang="en-US">Mandatory element with null value</Label>
+      </Rubric>
+      <Rubric id="d1e21242" kind="preferred">
+         <Label xml:lang="en-US">Mandatory element with null value</Label>
+      </Rubric>
+   </Class>
+   <Class code="SYN111" kind="concept">
+      <Meta name="internalId" value="22753"/>
+      <SuperClass code="SYN">
+         <Rubric id="d1e20883" kind="preferred">
+            <Label xml:lang="en-US">Syntax error</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e21253" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The value of an attribute or property differs from the fixed value asserted in the standard or one of the conformance profiles or templates declared in the message.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21274" kind="short">
+         <Label xml:lang="en-US">Value does not match fixed value</Label>
+      </Rubric>
+      <Rubric id="d1e21274" kind="preferred">
+         <Label xml:lang="en-US">Value does not match fixed value</Label>
+      </Rubric>
+   </Class>
+   <Class code="SYN113" kind="concept">
+      <Meta name="internalId" value="22754"/>
+      <SuperClass code="SYN">
+         <Rubric id="d1e20883" kind="preferred">
+            <Label xml:lang="en-US">Syntax error</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e21285" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A formal constraint asserted in the standard or one of the conformance profiles or templates declared in the message has been violated.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21306" kind="short">
+         <Label xml:lang="en-US">Formal constraint violation</Label>
+      </Rubric>
+      <Rubric id="d1e21306" kind="preferred">
+         <Label xml:lang="en-US">Formal constraint violation</Label>
+      </Rubric>
+   </Class>
+   <Class code="SYN100" kind="concept">
+      <Meta name="internalId" value="21412"/>
+      <SuperClass code="SYN105">
+         <Rubric id="d1e21145" kind="preferred">
+            <Label xml:lang="en-US">Required element missing</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e21317" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Required association missing in message; or the sequence of the classes is different than required by the standard or one of the conformance profiles identified in the message.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21335" kind="short">
+         <Label xml:lang="en-US">Required association missing</Label>
+      </Rubric>
+      <Rubric id="d1e21335" kind="preferred">
+         <Label xml:lang="en-US">Required association missing</Label>
+      </Rubric>
+   </Class>
+   <Class code="SYN101" kind="concept">
+      <Meta name="internalId" value="21413"/>
+      <SuperClass code="SYN105">
+         <Rubric id="d1e21145" kind="preferred">
+            <Label xml:lang="en-US">Required element missing</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e21346" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A required attribute is missing in a class.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21364" kind="short">
+         <Label xml:lang="en-US">Required attribute missing</Label>
+      </Rubric>
+      <Rubric id="d1e21364" kind="preferred">
+         <Label xml:lang="en-US">Required attribute missing</Label>
+      </Rubric>
+   </Class>
+   <Class code="SYN114" kind="concept">
+      <Meta name="internalId" value="22748"/>
+      <SuperClass code="SYN105">
+         <Rubric id="d1e21145" kind="preferred">
+            <Label xml:lang="en-US">Required element missing</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e21375" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The number of repetitions of a group of association or attributes is less than the required minimum for the standard or of one of the conformance profiles or templates identified in the message.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21396" kind="short">
+         <Label xml:lang="en-US">Insufficient repetitions</Label>
+      </Rubric>
+      <Rubric id="d1e21396" kind="preferred">
+         <Label xml:lang="en-US">Insufficient repetitions</Label>
+      </Rubric>
+   </Class>
+   <Class code="SYN103" kind="concept">
+      <Meta name="internalId" value="21415"/>
+      <SuperClass code="SYN106">
+         <Rubric id="d1e21177" kind="preferred">
+            <Label xml:lang="en-US">Terminology error</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e21408" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An attribute value was compared against the corresponding code system, and no match was found.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21426" kind="short">
+         <Label xml:lang="en-US">Value not found in code system</Label>
+      </Rubric>
+      <Rubric id="d1e21426" kind="preferred">
+         <Label xml:lang="en-US">Value not found in code system</Label>
+      </Rubric>
+   </Class>
+   <Class code="SYN104" kind="concept">
+      <Meta name="internalId" value="21416"/>
+      <SuperClass code="SYN106">
+         <Rubric id="d1e21177" kind="preferred">
+            <Label xml:lang="en-US">Terminology error</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e21437" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An attribute value referenced a code system that is not valid for an attribute constrained to CNE.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21455" kind="short">
+         <Label xml:lang="en-US">Invalid code system in CNE</Label>
+      </Rubric>
+      <Rubric id="d1e21455" kind="preferred">
+         <Label xml:lang="en-US">Invalid code system in CNE</Label>
+      </Rubric>
+   </Class>
+   <Class code="SYN107" kind="concept">
+      <Meta name="internalId" value="22750"/>
+      <SuperClass code="SYN106">
+         <Rubric id="d1e21177" kind="preferred">
+            <Label xml:lang="en-US">Terminology error</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e21466" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A coded attribute is referencing a code that has been deprecated by the owning code system.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21487" kind="short">
+         <Label xml:lang="en-US">Deprecated code</Label>
+      </Rubric>
+      <Rubric id="d1e21487" kind="preferred">
+         <Label xml:lang="en-US">Deprecated code</Label>
+      </Rubric>
+   </Class>
+   <Class code="SYN110" kind="concept">
+      <Meta name="internalId" value="21417"/>
+      <SuperClass code="SYN108">
+         <Rubric id="d1e21209" kind="preferred">
+            <Label xml:lang="en-US">Number of repetitions exceeds limit</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e21498" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The number of repetitions of a (group of) association(s) exceeds the limits of the standard or of one of the conformance profiles identified in the message.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21516" kind="short">
+         <Label xml:lang="en-US">Number of association repetitions exceeds limit</Label>
+      </Rubric>
+      <Rubric id="d1e21516" kind="preferred">
+         <Label xml:lang="en-US">Number of association repetitions exceeds limit</Label>
+      </Rubric>
+   </Class>
+   <Class code="SYN112" kind="concept">
+      <Meta name="internalId" value="21418"/>
+      <SuperClass code="SYN108">
+         <Rubric id="d1e21209" kind="preferred">
+            <Label xml:lang="en-US">Number of repetitions exceeds limit</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e21527" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The number of repetitions of an attribute exceeds the limits of the standard or of one of the conformance profiles identified in the message.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e21545" kind="short">
+         <Label xml:lang="en-US">Number of attribute repetitions exceeds limit</Label>
+      </Rubric>
+      <Rubric id="d1e21545" kind="preferred">
+         <Label xml:lang="en-US">Number of attribute repetitions exceeds limit</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

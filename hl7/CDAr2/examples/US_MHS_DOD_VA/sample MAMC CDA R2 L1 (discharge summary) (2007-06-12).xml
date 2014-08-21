@@ -1,0 +1,294 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<?xml-stylesheet type='text/xsl' href='IMPL_CDAR2.xsl'?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns='urn:hl7-org:v3' xmlns:crs='urn:hl7-org:crs' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation="urn:hl7-org:v3 ../../schemas/CDA.xsd">
+	<realmCode code='US'/>
+	<typeId extension='POCD_HD000040' root='2.16.840.1.113883.1.3'/>
+	<templateId extension='IMPL_CDAR2_LEVEL1' root='2.16.840.1.113883.10' />
+	<templateId extension='IMPL_CDAR2_LEVEL2' root='2.16.840.1.113883.10' />
+	<templateId extension='IMPL_MHS-VHS.1' root='2.16.840.1.113883.3.42' />
+	<id extension='12345_20060323185504' root='2.16.840.1.113883.3.42.127.125.1'/>
+	<code code='34133-9' displayName='SUMMARIZATION OF EPISODE NOTE'
+			codeSystem='2.16.840.1.113883.6.1' codeSystemName='LOINC'/>
+	<title>MADIGAN ARMY MEDICAL CENTER DISCHARGE SUMMARY</title>
+	<effectiveTime value='20060323185504+0500'/>
+	<confidentialityCode code='N' codeSystem='2.16.840.1.113883.5.25'/>
+	<languageCode code='en-US'/>
+	<setId extension='S12345_20060323185504' root='2.16.840.1.113883.3.42.127.125.1'/>
+	<versionNumber value='1'/>
+
+
+	<recordTarget>
+		<patientRole>
+		<id extension='20111223333' root='2.16.840.1.113883.3.42.127.125.2'/>
+		<id extension='9101112' root='2.16.840.1.113883.3.42.10001.100001.12'/> 
+			<!--  DEERS EDIPN root -->
+			<addr>
+				<streetAddressLine>17 Daws Rd.</streetAddressLine>
+				<city>Tacoma</city>
+				<state>WA</state>
+				<postalCode>98123</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom value='tel:(781)555-1212' use='HP'/>
+			<patient>
+				<name>
+					<prefix>Mr.</prefix>
+					<given>Lotta</given>
+					<family>Pain</family>
+				</name>
+				<administrativeGenderCode code='M' codeSystem='2.16.840.1.113883.5.1'/>
+				<birthTime value='19600127'/>
+			</patient>
+			<providerOrganization>
+				<id extension='0125' root='2.16.840.1.113883.3.42.10002.100001.8'/>
+				<name>Madigan Army Medical Center</name>
+				<telecom value='tel:(253)968-1110' use='WP'/>
+				<addr>
+					<streetAddressLine>9040 Fitzsimmons Ave </streetAddressLine>
+					<city>Tacoma</city>
+					<state>WA</state>
+					<postalCode>98431</postalCode>
+					<country>USA</country>
+				</addr>
+			</providerOrganization>
+		</patientRole>
+	</recordTarget>
+
+	<author>
+		<time value='20060323224411+0500'/>
+		<assignedAuthor>
+			<id extension='4321' root='2.16.840.1.113883.3.42.127.125.3'/>
+			<code code='SELF' codeSystem='2.16.840.1.113883.5.111'/>
+			<addr>
+				<streetAddressLine>9040 Fitzsimmons Ave </streetAddressLine>
+				<city>Tacoma</city>
+				<state>WA</state>
+				<postalCode>98431</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom value='tel:(253) 968-1110' use='WP'/>
+			<assignedPerson>
+				<name>
+					<prefix>Dr.</prefix>
+					<given>Good</given>
+					<family>Provider</family>
+					<suffix>MD</suffix>
+				</name>
+			</assignedPerson>
+		</assignedAuthor>
+	</author>
+	<author>
+		<time value='20060323224411+0500'/>
+		<assignedAuthor>
+			<id extension='3210' root='2.16.840.1.113883.3.42.127.125.3'/>
+			<addr>
+				<streetAddressLine>9040 Fitzsimmons Ave </streetAddressLine>
+				<city>Tacoma</city>
+				<state>WA</state>
+				<postalCode>98431</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom value='tel: (253) 968-1110' use='WP'/>
+			<assignedAuthoringDevice>
+				<softwareName>ESSENTRIS</softwareName>
+			</assignedAuthoringDevice>
+		</assignedAuthor>
+	</author>
+
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id extension='0125' root='2.16.840.1.113883.3.42.10002.100001.8'/>
+				<name>Madigan Army Medical Center</name>
+				<telecom value='tel:(253)968-1110' use='WP'/>
+			<addr>
+				<streetAddressLine>9040 Fitzsimmons Ave </streetAddressLine>
+				<city>Tacoma</city>
+				<state>WA</state>
+				<postalCode>98431</postalCode>
+				<country>USA</country>
+			</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+
+	<authenticator>
+		<time value='20060323224512+0500'/>
+		<signatureCode code='S'/>
+		<assignedEntity>
+			<id extension='4321' root='2.16.840.1.113883.3.42.127.125.3'/>
+			<addr>
+				<streetAddressLine>9040 Fitzsimmons Ave </streetAddressLine>
+				<city>Tacoma</city>
+				<state>WA</state>
+				<postalCode>98431</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom value='tel:(253) 968-1110' use='WP'/>
+			<assignedPerson>
+				<name>
+					<prefix>Dr.</prefix>
+					<given>Good</given>
+					<family>Provider</family>
+					<suffix>MD</suffix>
+				</name>
+			</assignedPerson>
+		</assignedEntity>
+	</authenticator>
+
+	<documentationOf>
+		<serviceEvent classCode='PCPR'>
+			<effectiveTime>
+				<low value='20060322'/>
+				<high value='20060323'/>
+			</effectiveTime>
+			<performer typeCode='PRF'>
+				<functionCode code='PCP' codeSystem='2.16.840.1.113883.5.88'/>
+				<assignedEntity>
+					<id extension='4321' root='2.16.840.1.113883.3.42.127.125.3'/>
+					<code code='59058001'
+						codeSystem='2.16.840.1.113883.6.96'
+						codeSystemName='SNOMED CT'
+						displayName='General Physician'/>
+					<addr>
+						<streetAddressLine>9040 Fitzsimmons Ave</streetAddressLine>
+						<city>Tacoma</city>
+						<state>WA</state>
+						<postalCode>98431</postalCode>
+						<country>USA</country>
+					</addr>
+					<telecom value='tel:(253) 968-1110' use='WP'/>
+					<assignedPerson>
+						<name>
+							<prefix>Dr.</prefix>
+							<given>Good</given>
+							<family>Provider</family>
+							<suffix>MD</suffix>
+						</name>
+					</assignedPerson>
+				</assignedEntity>
+			</performer>
+		</serviceEvent>
+	</documentationOf>
+
+<componentOf>
+	<encompassingEncounter>
+		<id extension='1234' root='2.16.840.1.113883.3.42.127.125.4'/>
+		<code code='99213'
+			codeSystem='2.16.840.1.113883.6.12'
+			displayName='Evaluation and Managment'
+			codeSystemName='CPT-4'/>
+		<effectiveTime>
+			<low value='20060322'/>
+			<high value='20060323'/>
+		</effectiveTime>
+		<dischargeDispositionCode code ='UNK' 
+			displayName='See details in the CDA Body'/>
+	</encompassingEncounter>
+</componentOf>
+
+
+<component>
+	<nonXMLBody>
+		<text mediaType="text/plain">
+Allergy information is not available in this document.  Please refer to Madigan’s outpatient system (CHCS or AHLTA) to obtain that information.
+
+Note Type:   Multidiscipline D/C
+    Note Time:   N/A
+    Last Stored: 23 Mar 2006
+    Stored by:   Provider, Good, MD               Nurse, John RN
+                MULTIDISCIPLINARY DISCHARGE NOTE
+              Madigan Army Medical Center, Tacoma, WA
+                 
+    HOSPITALIZED FROM:22 Mar 2006           TO:    23 Mar 2006      TIME OF RELEASE
+    DISPOSITION  Discharge to home                             RELEASED TO
+    CHIEF COMPLAINT ON ADMISSION:
+    DISCHARGE DIAGNOSES:#1 Severe COPD w/ exacerbation on 5L as an outpt, PFTs
+                  mmm YY: DLCO 2.33, TLC 5.3, Vc 2.9, Frc 3.33, RV 
+                 2.4; Pre-bronchodilator: FVC 2.39, FEV1 1.16, 
+                 FEV1/FVC 46%; Post-bronchodilator: FVC 2.54, FEV1 
+                 1.16, FEV1/FVC 46%; Severe obstruction w/ no 
+                 post-bronchodilator response.
+    DISCHARGE DIAGNOSES:#2 Cor pulmonale, normal LVEF and no wall motion 
+                 abnormalities on echo this hospitalization w/ 
+                 imparied relaxation, severely dilated and 
+                 hypokinetic RV, RA silated, mild TR
+    DISCHARGE DIAGNOSES:#3 Bronchiectasis
+    DISCHARGE DIAGNOSES:#4 S/P tx for TB infection
+    DISCHARGE DIAGNOSES:#5 H/O prostate CA
+    DISCHARGE DIAGNOSES:#6 GERD
+    DISCHARGE DIAGNOSES:#7 H/O hyponatremia (baseline 120-130)
+    DISCHARGE DIAGNOSES:#8 Osteoporosis
+    DISCHARGE DIAGNOSES:#9 HTN
+    DISCHARGE DIAGNOSES:#10HLD
+    DISCHARGE DIAGNOSES:#11"Irregular Heart Beat"
+    INVASIVE PROCEDURES/SURGERIES (e.g., biopsy, colonoscopy, bronchoscopy, 
+    central lines):
+    #1 CXR                            DATE:02JUN2001
+      IMPRESSION:
+      1. Coarse, irregular emphysematous change with regions of bibasilar 
+      probable 
+      fibrosis. This is consistent with history of COPD. It is impossible to
+       exclude infiltrate on this study.
+      2. 15 mm right mid-lung nodular density. Differential includes pulmonary
+       nodule vs. vessel.
+      3. Irregular right apical pleural thickening with associated lung volume
+       loss.
+    INVASIVE PROCEDURES/SURGERIES (e.g., biopsy, colonoscopy, bronchoscopy, 
+    central lines):
+
+
+
+   REGISTER #:   1111111  012522222222
+   LAST, FIRST
+   FMP/SSN:   20-111-11-1111
+   STATUS:   Other
+   PCM:   ???
+   ADMIT DATE:   22Mar2006
+   MADIGAN ARMY MEDICAL CENTER
+     Multidiscipline D/C
+   CliniComp, Intl.      Page 1 of 6              printed Fri Mar 23 02:56
+
+      Continued...
+
+
+      Continued...
+
+    PRIMARY CARE MANAGER:
+    PATIENT EDUCATION DONE DURING HOSPITALIZATION
+      #1
+                  
+              
+       Discharging Nurse will print final copies for patient and record.
+    DISCHARGING PHARMACIST:FEELBETTER, RICHARD,  RPH
+    DISCHARGING NURSE:                               NURSE, HELPER, RN
+    DISCHARGING DOCTOR:    PROVIDER, GOOD D. MD
+    RESPONSIBLE RESIDENT:
+    ATTENDING PHYSICIAN:   BLUE, LESLIE L., MD
+     Two copies of this form were printed, the signed copy was placed in the 
+     patient's inpatient record. The final copy was given to:
+     Patient / Significant Other communicates knowledge of, and understands all of the above.
+      
+     Signature________________________________________________________________________________
+      
+     Time: __________  Date: _______________
+
+
+
+   REGISTER #:   1111111  012522222222
+   LAST, FIRST
+   FMP/SSN:   20-111-11-1111
+   STATUS:   Other
+   PCM:   ???
+   ADMIT DATE:   22Mar2006
+   MADIGAN ARMY MEDICAL CENTER
+     Multidiscipline D/C
+   CliniComp, Intl.                        printed Fri MMM 11 02:56
+                              Page 6 of 6              printed Fri Mar 23 02:56
+
+		</text>
+	</nonXMLBody>
+</component>
+
+</ClinicalDocument>

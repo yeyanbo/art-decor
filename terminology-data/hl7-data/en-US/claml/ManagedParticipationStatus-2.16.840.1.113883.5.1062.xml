@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="83"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1062"/>
+   <Title name="ManagedParticipationStatus" date="2012-08-02" version="1.000">Codes representing the defined possible states of a Managed Participation, as defined by the Managed Participation class state machine.</Title>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="normal" kind="concept">
+      <Meta name="internalId" value="15993"/>
+      <SubClass code="active"/>
+      <SubClass code="cancelled"/>
+      <SubClass code="completed"/>
+      <SubClass code="pending"/>
+      <Rubric id="d1e143209" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The 'typical' state. Excludes "nullified" which represents the termination state of a participation instance that was created in error.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e143222" kind="short">
+         <Label xml:lang="en-US">normal</Label>
+      </Rubric>
+      <Rubric id="d1e143222" kind="preferred">
+         <Label xml:lang="en-US">normal</Label>
+      </Rubric>
+   </Class>
+   <Class code="nullified" kind="concept">
+      <Meta name="internalId" value="15998"/>
+      <Rubric id="d1e143234" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The state representing the termination of a Participation instance that was created in error.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e143247" kind="short">
+         <Label xml:lang="en-US">nullified</Label>
+      </Rubric>
+      <Rubric id="d1e143247" kind="preferred">
+         <Label xml:lang="en-US">nullified</Label>
+      </Rubric>
+   </Class>
+   <Class code="active" kind="concept">
+      <Meta name="internalId" value="15996"/>
+      <SuperClass code="normal"/>
+      <Rubric id="d1e143258" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The state representing the fact that the Participation is in progress.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e143276" kind="short">
+         <Label xml:lang="en-US">active</Label>
+      </Rubric>
+      <Rubric id="d1e143276" kind="preferred">
+         <Label xml:lang="en-US">active</Label>
+      </Rubric>
+   </Class>
+   <Class code="cancelled" kind="concept">
+      <Meta name="internalId" value="15995"/>
+      <SuperClass code="normal"/>
+      <Rubric id="d1e143287" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The terminal state resulting from cancellation of the Participation prior to activation.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e143305" kind="short">
+         <Label xml:lang="en-US">cancelled</Label>
+      </Rubric>
+      <Rubric id="d1e143305" kind="preferred">
+         <Label xml:lang="en-US">cancelled</Label>
+      </Rubric>
+   </Class>
+   <Class code="completed" kind="concept">
+      <Meta name="internalId" value="15997"/>
+      <SuperClass code="normal"/>
+      <Rubric id="d1e143316" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The terminal state representing the successful completion of the Participation.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e143334" kind="short">
+         <Label xml:lang="en-US">completed</Label>
+      </Rubric>
+      <Rubric id="d1e143334" kind="preferred">
+         <Label xml:lang="en-US">completed</Label>
+      </Rubric>
+   </Class>
+   <Class code="pending" kind="concept">
+      <Meta name="internalId" value="15994"/>
+      <SuperClass code="normal"/>
+      <Rubric id="d1e143345" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The state representing that fact that the Participation has not yet become active.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e143363" kind="short">
+         <Label xml:lang="en-US">pending</Label>
+      </Rubric>
+      <Rubric id="d1e143363" kind="preferred">
+         <Label xml:lang="en-US">pending</Label>
+      </Rubric>
+   </Class>
+</ClaML>

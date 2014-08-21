@@ -1,0 +1,198 @@
+<!--
+    Copyright (C) 2011-2014 ART-DECOR expert group art-decor.org
+    
+    Author: Gerrit Boers
+    Help: Kai U. Heitmann
+    
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+    
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+    
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:atp="urn:nictiz.atp" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:widget="http://orbeon.org/oxf/xml/widget" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="home" xsi:schemaLocation="http://www.w3.org/1999/xhtml ../../orbeon_schemas/xhtml1-transitional-orbeon.xsd">
+    <xhtml:head>
+        <xhtml:title>
+            <xforms:output ref="$resources/about-art-decor"/>
+        </xhtml:title>
+        <!-- styling specific for this xform -->
+        <xhtml:style type="text/css"> 
+            .xforms-repeat-selected-item-2 { 
+            font-weight: normal; background-color: inherit; color: black; 
+            }
+            .titlehead { 
+            padding-left : 50px; text-align : left; color : #fd986e; font-size : 16px; border-bottom: .1em solid #dddddd; 
+            } 
+            .titletext { 
+            padding-left : 100px; text-align : left; color : #bbbbbb; font-size : 14px; font-weight: normal; background-color: inherit;
+            }
+            .titleimg { 
+            padding-left : 100px; padding-top: 10px; 
+            } 
+            td.paddedtd { 
+            padding:0.2em 0.5em;
+            } 
+            .pack {
+            padding: 3em 1em;
+            } 
+            .hometop { 
+            color : #e16e22; font-weight : bold; font-size : 18px; text-align : left; padding-bottom : .4em; margin-top : 0; margin-bottom : 0; line-height : 120%;
+            } 
+            .note_available { 
+            background-repeat:no-repeat; padding:2px 0 0 18px; line-height:18px; background-image:url('img/note.png') 
+            } 
+            .lastlogin { 
+            padding-bottom : 10px; text-align : left; color : #bbbbbb; background-color: inherit;
+            } 
+        </xhtml:style>
+        <xforms:model id="main-model">
+            <!-- instance with logo -->
+            <xforms:instance id="logo">
+                <logo href="http://art-decor.org">art-decor-logo40.png</logo>
+            </xforms:instance>
+            <!-- Variable with path to art-exist -->
+            <xxforms:variable name="art-exist" select="xxforms:property('art.exist.url')"/>
+            <xxforms:variable name="art-external-exist" select="xxforms:property('art.external.exist.url')"/>
+            <!-- resources for internationalization -->
+            <xforms:instance id="resources-instance">
+                <dummy/>
+            </xforms:instance>
+            <!-- submission for loading resources -->
+            <xforms:submission id="get-resources-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-form-resources.xquery" replace="instance" instance="resources-instance"/>
+            <!-- language -->
+            <xforms:instance id="language">
+                <language/>
+            </xforms:instance>
+            
+            <!-- instance for DECOR Schema -->
+            <xforms:instance id="decor-types">
+                <dummy/>
+            </xforms:instance>
+            <!-- get decor schema submission -->
+            <xforms:submission id="get-decor-types" serialization="none" method="get" resource="{$art-exist}/modules/get-decor-schema-types.xquery" replace="instance" instance="decor-types"/>
+            
+            <!-- load instances -->
+            <xforms:action ev:event="xforms-model-construct-done">
+                <xforms:send submission="get-resources-submission"/>
+                <xforms:setvalue ref="instance('language')" value="instance('resources-instance')//resources[1]/@xml:lang/string()"/>
+                <xforms:insert context="." origin="xxforms:set-session-attribute('language', instance('language'))"/>
+                <xforms:send submission="get-decor-types"/>
+                <xforms:setvalue ref="instance('comefrom')" value="xxforms:get-session-attribute('comefrom')"/>
+                <xforms:insert context="." origin="xxforms:set-session-attribute('comefrom', '')"/>
+                <xforms:setvalue ref="instance('user-safe')" value="'true'"/>
+            </xforms:action>
+            <xforms:action ev:event="xforms-model-construct-done load-resources"/>
+            <xxforms:variable name="resources" select="instance('resources-instance')//resources[1]"/>
+        </xforms:model>
+    </xhtml:head>
+    <!-- Start of XForm body -->
+    <xhtml:body>
+        <xhtml:div style="width:700px;">
+            <xhtml:h1>About</xhtml:h1>
+            <xhtml:p>
+                <xhtml:strong>DECOR</xhtml:strong> (Data Elements, Codes, OIDs and Rules) is a methodology to capture the data needs of 
+                caregivers in terms of data sets and scenarios and use it to generate various artifacts: documentation, value sets, 
+                XML instance validation, generation and processing support, and test tools etc. DECOR allows to iteratively improve 
+                recorded data and link together input from various experts with different background knowledge like caregivers, 
+                terminologist, modelers, analysts and interface/communication specialists. DECOR mainly registers datasets, 
+                data types, allowable value ranges, identifications, codes, business rules with an underlying version management. 
+                The underlying data format is XML, and transformations with style sheets can be used for HTML documentation, 
+                consistency checks across all artefacts and to generate XML materials.
+            </xhtml:p>
+            DECOR consists of two parts:
+            <xhtml:ul>
+                <xhtml:li>DECOR methodology: a framework to model artifacts (including documentation)</xhtml:li>
+                <xhtml:li>DECOR software: XML-schemas, XML-schematrons, XML-stylesheets.</xhtml:li>
+            </xhtml:ul>
+            <xhtml:p>
+                <xhtml:strong>ART</xhtml:strong> (Advanced Requirement Tooling) is the DECOR user interface to create and adapt DECOR files, and to generate artifacts from DECOR files. ART is based on the eXist-db XML database, XQuery and Orbeon XForms.</xhtml:p>
+            <xhtml:p>
+                For more information about ART-DECOR see: <a href="http://art-decor.org">ART-DECOR expert group</a>
+            </xhtml:p>
+            <xhtml:hr/>
+            <xhtml:h1>Legal</xhtml:h1>
+            <xhtml:p>
+                <xhtml:strong>
+                    <xhtml:i>Icons</xhtml:i>
+                </xhtml:strong>
+                <xhtml:br/>
+                <xhtml:a href="http://www.axialis.com/free/icons">Icons</xhtml:a> by <xhtml:a href="http://www.axialis.com">Axialis Team</xhtml:a>
+            </xhtml:p>
+            <xhtml:p>
+                <xhtml:strong>
+                    <xhtml:i>SNOMED Clinical Terms® (SNOMED CT®)</xhtml:i>
+                </xhtml:strong>
+                <xhtml:br/>
+                ART-DECOR includes SNOMED Clinical Terms® (SNOMED CT®) which is used by permission of the International Health Terminology Standards Development Organization (IHTSDO). All rights reserved. SNOMED CT® was originally created by the College of American Pathologists. “SNOMED”, “SNOMED CT” and “SNOMED Clinical Terms” are registered trademarks of the IHTSDO (www.ihtsdo.org).
+                <br/>Use of SNOMED CT in ART-DECOR is governed by the conditions of the following SNOMED CT Sub-license issued by The Netherlands.
+                <ol>
+                    <li>The meaning of the terms “Affiliate”, or “Data Analysis System”, “Data Creation System”, “Derivative”, “End User”, 
+                        “Extension”, “Member”, “Non-Member Territory”, “SNOMED CT” and “SNOMED CT Content” are as defined in the IHTSDO Affiliate License Agreement (see www.ihtsdo.org/license.pdf).</li>
+                    <li>Information about Affiliate Licensing is available at www.ihtsdo.org/license. Individuals or organizations wishing to register as 
+                        IHTSDO Affiliates can register at www.ihtsdo.org/salsa, subject to acceptance of the Affiliate License Agreement (see www.ihtsdo.org/license.pdf).</li>
+                    <li>The current list of IHTSDO Member Territories can be viewed at www.ihtsdo.org/members. Countries not included in that list are “Non-Member Territories”.</li>
+                    <li>End Users, that do not hold an IHTSDO Affiliate License, may access SNOMED CT® using ART-DECOR subject to acceptance of and adherence to the following sub-license limitations:
+                        <ul>
+                            <li>a) The sub-licensee is only permitted to access SNOMED CT® using this software (or service) for the purpose of exploring and evaluating the terminology.</li>
+                            <li>b) The sub-licensee is not permitted the use of this software as part of a system that constitutes a SNOMED CT “Data Creation System” or
+                                “Data Analysis System”, as defined in the IHTSDO Affiliate License. This means that the sub-licensee must not use ART-DECOR to add or copy 
+                                SNOMED CT identifiers into any type of record system, database or document.</li>
+                            <li>c) The sub-licensee is not permitted to translate or modify SNOMED CT Content or Derivatives.</li>
+                            <li>d) The sub-licensee is not permitted to distribute or share SNOMED CT Content or Derivatives.</li>
+                        </ul>
+                    </li>
+                    <li>IHTSDO Affiliates may use ART-DECOR as part of a “Data Creation System” or “Data Analysis System” subject to the following conditions:
+                        <ul>
+                            <li>a) The IHTSDO Affiliate, using ART-DECOR must accept full responsibility for any reporting and fees due for use or deployment of such a system in a Non-Member Territory.</li>
+                            <li>b) The IHTSDO Affiliate must not use ART-DECOR to access or interact with SNOMED CT in any way that is not permitted by the Affiliate License Agreement.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </xhtml:p>
+            <xhtml:p>
+                <xhtml:strong>
+                    <xhtml:i>Logical Observation Identifiers Names and Codes LOINC</xhtml:i>
+                </xhtml:strong>
+                <xhtml:br/>
+                This material contains content from LOINC® (http://loinc.org). The LOINC table, LOINC codes, and LOINC panels and forms file are copyright © 1995-2014, Regenstrief Institute, Inc. 
+                and the Logical Observation Identifiers Names and Codes (LOINC) Committee and available at no cost under the license at 
+                <xhtml:a href="http://loinc.org/terms-of-use">http://loinc.org/terms-of-use</xhtml:a>
+            </xhtml:p>
+            <xhtml:p>
+                <xhtml:strong>
+                    <xhtml:i>Health Level Seven International (HL7)</xhtml:i>
+                </xhtml:strong>
+                <xhtml:br/>
+                This Site contains material that is available as public domain information as well as Intellectual Property that belongs exclusively to HL7. 
+                Intellectual property is protected as outlined in the HL7 bylaws and its Governance and Operations Manual (GOM). Copyright, trademark, patent, 
+                and other applicable laws protect the services and materials appearing on the Site. All materials on the Site may be accessed, downloaded or 
+                printed provided that you comply with the HL7 bylaws and GOM based on your applicable membership level. No other use of these materials may be 
+                made without express written permission of HL7. Any unauthorized use of the words or images on this Site may violate copyright laws, trademark 
+                laws, the laws of privacy and publicity, and civil and criminal statutes.<xhtml:br/>
+                <xhtml:a href="http://www.hl7.org/legal/tc.cfm?ref=nav">See Terms &amp; Conditions of Use</xhtml:a>
+            </xhtml:p>
+            <xhtml:p>
+                <xhtml:strong>
+                    <xhtml:i>ICD-10</xhtml:i>
+                </xhtml:strong>
+                <xhtml:br/>codes, terms and text © World Health Organization, Third Edition. 2007.
+            </xhtml:p>
+            <xhtml:p>
+                <xhtml:strong>
+                    <xhtml:i>ICD-O-3</xhtml:i>
+                </xhtml:strong>
+                <xhtml:br/>codes, terms and text © World Health Organization, Third  Edition. 2007.
+            </xhtml:p>
+            <xhtml:p>
+                <xhtml:strong>
+                    <xhtml:i>ICF</xhtml:i>
+                </xhtml:strong>
+                <xhtml:br/>codes, terms and text © World Health Organization, First Edition, 2001.
+            </xhtml:p>
+        </xhtml:div>
+    </xhtml:body>
+</xhtml:html>

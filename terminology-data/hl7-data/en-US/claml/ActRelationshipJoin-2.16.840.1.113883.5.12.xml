@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="29"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.12"/>
+   <Title name="ActRelationshipJoin" date="2012-08-02" version="1.000"/>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="D" kind="concept">
+      <Meta name="internalId" value="10364"/>
+      <Rubric id="d1e70346" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Detach this branch from the other branches so it will not be resynchronized with the other branches.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70359" kind="short">
+         <Label xml:lang="en-US">detached</Label>
+      </Rubric>
+      <Rubric id="d1e70359" kind="preferred">
+         <Label xml:lang="en-US">detached</Label>
+      </Rubric>
+   </Class>
+   <Class code="K" kind="concept">
+      <Meta name="internalId" value="10362"/>
+      <Rubric id="d1e70371" kind="definition">
+         <Label xml:lang="en-US">
+            <p>When all other concurrent branches are terminated, interrupt and discontinue this branch.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70384" kind="short">
+         <Label xml:lang="en-US">kill</Label>
+      </Rubric>
+      <Rubric id="d1e70384" kind="preferred">
+         <Label xml:lang="en-US">kill</Label>
+      </Rubric>
+   </Class>
+   <Class code="W" kind="concept">
+      <Meta name="internalId" value="10361"/>
+      <Rubric id="d1e70395" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Wait for this branch to terminate.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70408" kind="short">
+         <Label xml:lang="en-US">wait</Label>
+      </Rubric>
+      <Rubric id="d1e70408" kind="preferred">
+         <Label xml:lang="en-US">wait</Label>
+      </Rubric>
+   </Class>
+   <Class code="X" kind="concept">
+      <Meta name="internalId" value="10363"/>
+      <Rubric id="d1e70419" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Wait for any one of the branches in the set of exclusive wait branches to terminate, then discontinue all the other exclusive wait branches.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70432" kind="short">
+         <Label xml:lang="en-US">exclusive wait</Label>
+      </Rubric>
+      <Rubric id="d1e70432" kind="preferred">
+         <Label xml:lang="en-US">exclusive wait</Label>
+      </Rubric>
+   </Class>
+</ClaML>

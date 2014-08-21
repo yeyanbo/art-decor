@@ -1,0 +1,4884 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="138"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1080"/>
+   <Title name="Dentition" date="2012-08-02" version="1.000"/>
+   <Authors>
+      <Author name="Responsible"/>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="ArtificialDentition" kind="concept">
+      <Meta name="internalId" value="19523"/>
+      <SubClass code="TID10a"/>
+      <SubClass code="TID10i"/>
+      <SubClass code="TID10p"/>
+      <SubClass code="TID10pd"/>
+      <SubClass code="TID10pm"/>
+      <SubClass code="TID11a"/>
+      <SubClass code="TID11i"/>
+      <SubClass code="TID11p"/>
+      <SubClass code="TID11pd"/>
+      <SubClass code="TID11pm"/>
+      <SubClass code="TID12a"/>
+      <SubClass code="TID12i"/>
+      <SubClass code="TID12p"/>
+      <SubClass code="TID12pd"/>
+      <SubClass code="TID12pm"/>
+      <SubClass code="TID13a"/>
+      <SubClass code="TID13i"/>
+      <SubClass code="TID13p"/>
+      <SubClass code="TID13pd"/>
+      <SubClass code="TID13pm"/>
+      <SubClass code="TID14a"/>
+      <SubClass code="TID14i"/>
+      <SubClass code="TID14p"/>
+      <SubClass code="TID14pd"/>
+      <SubClass code="TID14pm"/>
+      <SubClass code="TID15a"/>
+      <SubClass code="TID15i"/>
+      <SubClass code="TID15p"/>
+      <SubClass code="TID15pd"/>
+      <SubClass code="TID15pm"/>
+      <SubClass code="TID16a"/>
+      <SubClass code="TID16i"/>
+      <SubClass code="TID16p"/>
+      <SubClass code="TID16pd"/>
+      <SubClass code="TID16pm"/>
+      <SubClass code="TID17a"/>
+      <SubClass code="TID17ad"/>
+      <SubClass code="TID17am"/>
+      <SubClass code="TID17i"/>
+      <SubClass code="TID17id"/>
+      <SubClass code="TID17im"/>
+      <SubClass code="TID17p"/>
+      <SubClass code="TID17pd"/>
+      <SubClass code="TID17pm"/>
+      <SubClass code="TID18a"/>
+      <SubClass code="TID18ad"/>
+      <SubClass code="TID18am"/>
+      <SubClass code="TID18i"/>
+      <SubClass code="TID18id"/>
+      <SubClass code="TID18im"/>
+      <SubClass code="TID18p"/>
+      <SubClass code="TID18pd"/>
+      <SubClass code="TID18pm"/>
+      <SubClass code="TID19a"/>
+      <SubClass code="TID19ad"/>
+      <SubClass code="TID19am"/>
+      <SubClass code="TID19i"/>
+      <SubClass code="TID19id"/>
+      <SubClass code="TID19im"/>
+      <SubClass code="TID19p"/>
+      <SubClass code="TID19pd"/>
+      <SubClass code="TID19pm"/>
+      <SubClass code="TID1a"/>
+      <SubClass code="TID1i"/>
+      <SubClass code="TID1p"/>
+      <SubClass code="TID1pd"/>
+      <SubClass code="TID1pm"/>
+      <SubClass code="TID20a"/>
+      <SubClass code="TID20i"/>
+      <SubClass code="TID20p"/>
+      <SubClass code="TID20pd"/>
+      <SubClass code="TID20pm"/>
+      <SubClass code="TID21a"/>
+      <SubClass code="TID21i"/>
+      <SubClass code="TID21p"/>
+      <SubClass code="TID21pd"/>
+      <SubClass code="TID21pm"/>
+      <SubClass code="TID22a"/>
+      <SubClass code="TID22i"/>
+      <SubClass code="TID22p"/>
+      <SubClass code="TID22pd"/>
+      <SubClass code="TID22pm"/>
+      <SubClass code="TID23a"/>
+      <SubClass code="TID23i"/>
+      <SubClass code="TID23p"/>
+      <SubClass code="TID23pd"/>
+      <SubClass code="TID23pm"/>
+      <SubClass code="TID24a"/>
+      <SubClass code="TID24i"/>
+      <SubClass code="TID24p"/>
+      <SubClass code="TID24pd"/>
+      <SubClass code="TID24pm"/>
+      <SubClass code="TID25a"/>
+      <SubClass code="TID25i"/>
+      <SubClass code="TID25p"/>
+      <SubClass code="TID25pd"/>
+      <SubClass code="TID25pm"/>
+      <SubClass code="TID26a"/>
+      <SubClass code="TID26i"/>
+      <SubClass code="TID26p"/>
+      <SubClass code="TID26pd"/>
+      <SubClass code="TID26pm"/>
+      <SubClass code="TID27a"/>
+      <SubClass code="TID27i"/>
+      <SubClass code="TID27p"/>
+      <SubClass code="TID27pd"/>
+      <SubClass code="TID27pm"/>
+      <SubClass code="TID28a"/>
+      <SubClass code="TID28i"/>
+      <SubClass code="TID28p"/>
+      <SubClass code="TID28pd"/>
+      <SubClass code="TID28pm"/>
+      <SubClass code="TID29a"/>
+      <SubClass code="TID29i"/>
+      <SubClass code="TID29p"/>
+      <SubClass code="TID29pd"/>
+      <SubClass code="TID29pm"/>
+      <SubClass code="TID2a"/>
+      <SubClass code="TID2i"/>
+      <SubClass code="TID2p"/>
+      <SubClass code="TID2pd"/>
+      <SubClass code="TID2pm"/>
+      <SubClass code="TID30a"/>
+      <SubClass code="TID30ad"/>
+      <SubClass code="TID30am"/>
+      <SubClass code="TID30i"/>
+      <SubClass code="TID30id"/>
+      <SubClass code="TID30im"/>
+      <SubClass code="TID30p"/>
+      <SubClass code="TID30pd"/>
+      <SubClass code="TID30pm"/>
+      <SubClass code="TID31a"/>
+      <SubClass code="TID31ad"/>
+      <SubClass code="TID31am"/>
+      <SubClass code="TID31i"/>
+      <SubClass code="TID31id"/>
+      <SubClass code="TID31im"/>
+      <SubClass code="TID31p"/>
+      <SubClass code="TID31pd"/>
+      <SubClass code="TID31pm"/>
+      <SubClass code="TID32a"/>
+      <SubClass code="TID32ad"/>
+      <SubClass code="TID32am"/>
+      <SubClass code="TID32i"/>
+      <SubClass code="TID32id"/>
+      <SubClass code="TID32im"/>
+      <SubClass code="TID32p"/>
+      <SubClass code="TID32pd"/>
+      <SubClass code="TID32pm"/>
+      <SubClass code="TID3a"/>
+      <SubClass code="TID3i"/>
+      <SubClass code="TID3p"/>
+      <SubClass code="TID3pd"/>
+      <SubClass code="TID3pm"/>
+      <SubClass code="TID4a"/>
+      <SubClass code="TID4i"/>
+      <SubClass code="TID4p"/>
+      <SubClass code="TID4pd"/>
+      <SubClass code="TID4pm"/>
+      <SubClass code="TID5a"/>
+      <SubClass code="TID5i"/>
+      <SubClass code="TID5p"/>
+      <SubClass code="TID5pd"/>
+      <SubClass code="TID5pm"/>
+      <SubClass code="TID6a"/>
+      <SubClass code="TID6i"/>
+      <SubClass code="TID6p"/>
+      <SubClass code="TID6pd"/>
+      <SubClass code="TID6pm"/>
+      <SubClass code="TID7a"/>
+      <SubClass code="TID7i"/>
+      <SubClass code="TID7p"/>
+      <SubClass code="TID7pd"/>
+      <SubClass code="TID7pm"/>
+      <SubClass code="TID8a"/>
+      <SubClass code="TID8i"/>
+      <SubClass code="TID8p"/>
+      <SubClass code="TID8pd"/>
+      <SubClass code="TID8pm"/>
+      <SubClass code="TID9a"/>
+      <SubClass code="TID9i"/>
+      <SubClass code="TID9p"/>
+      <SubClass code="TID9pd"/>
+      <SubClass code="TID9pm"/>
+      <Rubric id="d1e97197" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Artificial dentition, artificial subsitutes for the natural dentition</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97210" kind="short">
+         <Label xml:lang="en-US">Artificial dentition</Label>
+      </Rubric>
+      <Rubric id="d1e97210" kind="preferred">
+         <Label xml:lang="en-US">Artificial dentition</Label>
+      </Rubric>
+   </Class>
+   <Class code="PermanentDentition" kind="concept">
+      <Meta name="internalId" value="19404"/>
+      <SubClass code="TID1"/>
+      <SubClass code="TID10"/>
+      <SubClass code="TID11"/>
+      <SubClass code="TID12"/>
+      <SubClass code="TID13"/>
+      <SubClass code="TID14"/>
+      <SubClass code="TID15"/>
+      <SubClass code="TID16"/>
+      <SubClass code="TID17"/>
+      <SubClass code="TID17d"/>
+      <SubClass code="TID17m"/>
+      <SubClass code="TID18"/>
+      <SubClass code="TID18d"/>
+      <SubClass code="TID18m"/>
+      <SubClass code="TID19"/>
+      <SubClass code="TID19d"/>
+      <SubClass code="TID19m"/>
+      <SubClass code="TID2"/>
+      <SubClass code="TID20"/>
+      <SubClass code="TID21"/>
+      <SubClass code="TID22"/>
+      <SubClass code="TID23"/>
+      <SubClass code="TID24"/>
+      <SubClass code="TID25"/>
+      <SubClass code="TID26"/>
+      <SubClass code="TID27"/>
+      <SubClass code="TID28"/>
+      <SubClass code="TID29"/>
+      <SubClass code="TID3"/>
+      <SubClass code="TID30"/>
+      <SubClass code="TID30d"/>
+      <SubClass code="TID30m"/>
+      <SubClass code="TID31"/>
+      <SubClass code="TID31d"/>
+      <SubClass code="TID31m"/>
+      <SubClass code="TID32"/>
+      <SubClass code="TID32d"/>
+      <SubClass code="TID32m"/>
+      <SubClass code="TID4"/>
+      <SubClass code="TID5"/>
+      <SubClass code="TID6"/>
+      <SubClass code="TID7"/>
+      <SubClass code="TID8"/>
+      <SubClass code="TID9"/>
+      <Rubric id="d1e97221" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Permanent dentition, the natural teeth of adulthood that replace or are added to the deciduous teeth</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97234" kind="short">
+         <Label xml:lang="en-US">Permanent dentition</Label>
+      </Rubric>
+      <Rubric id="d1e97234" kind="preferred">
+         <Label xml:lang="en-US">Permanent dentition</Label>
+      </Rubric>
+   </Class>
+   <Class code="PrimaryDentition" kind="concept">
+      <Meta name="internalId" value="19502"/>
+      <SubClass code="TIDA"/>
+      <SubClass code="TIDB"/>
+      <SubClass code="TIDC"/>
+      <SubClass code="TIDD"/>
+      <SubClass code="TIDE"/>
+      <SubClass code="TIDF"/>
+      <SubClass code="TIDG"/>
+      <SubClass code="TIDH"/>
+      <SubClass code="TIDI"/>
+      <SubClass code="TIDJ"/>
+      <SubClass code="TIDK"/>
+      <SubClass code="TIDL"/>
+      <SubClass code="TIDM"/>
+      <SubClass code="TIDN"/>
+      <SubClass code="TIDO"/>
+      <SubClass code="TIDP"/>
+      <SubClass code="TIDQ"/>
+      <SubClass code="TIDR"/>
+      <SubClass code="TIDS"/>
+      <SubClass code="TIDT"/>
+      <Rubric id="d1e97245" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Primary dentition, the first teeth to errupt and usually replaced with permanent dentition</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97258" kind="short">
+         <Label xml:lang="en-US">Primary dentition</Label>
+      </Rubric>
+      <Rubric id="d1e97258" kind="preferred">
+         <Label xml:lang="en-US">Primary dentition</Label>
+      </Rubric>
+   </Class>
+   <Class code="SupernumeraryTooth" kind="concept">
+      <Meta name="internalId" value="19449"/>
+      <SubClass code="TID10s"/>
+      <SubClass code="TID11s"/>
+      <SubClass code="TID12s"/>
+      <SubClass code="TID13s"/>
+      <SubClass code="TID14s"/>
+      <SubClass code="TID15s"/>
+      <SubClass code="TID16s"/>
+      <SubClass code="TID17s"/>
+      <SubClass code="TID18s"/>
+      <SubClass code="TID19s"/>
+      <SubClass code="TID1s"/>
+      <SubClass code="TID20s"/>
+      <SubClass code="TID21s"/>
+      <SubClass code="TID22s"/>
+      <SubClass code="TID23s"/>
+      <SubClass code="TID24s"/>
+      <SubClass code="TID25s"/>
+      <SubClass code="TID26s"/>
+      <SubClass code="TID27s"/>
+      <SubClass code="TID28s"/>
+      <SubClass code="TID29s"/>
+      <SubClass code="TID2s"/>
+      <SubClass code="TID30s"/>
+      <SubClass code="TID31s"/>
+      <SubClass code="TID32s"/>
+      <SubClass code="TID3s"/>
+      <SubClass code="TID4s"/>
+      <SubClass code="TID5s"/>
+      <SubClass code="TID6s"/>
+      <SubClass code="TID7s"/>
+      <SubClass code="TID8s"/>
+      <SubClass code="TID9s"/>
+      <SubClass code="TIDAs"/>
+      <SubClass code="TIDBs"/>
+      <SubClass code="TIDCs"/>
+      <SubClass code="TIDDs"/>
+      <SubClass code="TIDEs"/>
+      <SubClass code="TIDFs"/>
+      <SubClass code="TIDGs"/>
+      <SubClass code="TIDHs"/>
+      <SubClass code="TIDIs"/>
+      <SubClass code="TIDJs"/>
+      <SubClass code="TIDKs"/>
+      <SubClass code="TIDLs"/>
+      <SubClass code="TIDMs"/>
+      <SubClass code="TIDNs"/>
+      <SubClass code="TIDOs"/>
+      <SubClass code="TIDPs"/>
+      <SubClass code="TIDQs"/>
+      <SubClass code="TIDRs"/>
+      <SubClass code="TIDSs"/>
+      <SubClass code="TIDTs"/>
+      <Rubric id="d1e97269" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary tooth, any tooth in addition to the normal permanent and primary dentition</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97282" kind="short">
+         <Label xml:lang="en-US">Supernumerary Tooth</Label>
+      </Rubric>
+      <Rubric id="d1e97282" kind="preferred">
+         <Label xml:lang="en-US">Supernumerary Tooth</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID10a" kind="concept">
+      <Meta name="internalId" value="19673"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e97349" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left lateral incisor abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97367" kind="short">
+         <Label xml:lang="en-US">10a</Label>
+      </Rubric>
+      <Rubric id="d1e97367" kind="preferred">
+         <Label xml:lang="en-US">10a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID10i" kind="concept">
+      <Meta name="internalId" value="19533"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e97378" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left lateral incisor implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97396" kind="short">
+         <Label xml:lang="en-US">10i</Label>
+      </Rubric>
+      <Rubric id="d1e97396" kind="preferred">
+         <Label xml:lang="en-US">10i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID10p" kind="concept">
+      <Meta name="internalId" value="19596"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e97407" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left lateral incisor prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97425" kind="short">
+         <Label xml:lang="en-US">10p</Label>
+      </Rubric>
+      <Rubric id="d1e97425" kind="preferred">
+         <Label xml:lang="en-US">10p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID10pd" kind="concept">
+      <Meta name="internalId" value="19597"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e97437" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left lateral incisor distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97455" kind="short">
+         <Label xml:lang="en-US">10pd</Label>
+      </Rubric>
+      <Rubric id="d1e97455" kind="preferred">
+         <Label xml:lang="en-US">10pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID10pm" kind="concept">
+      <Meta name="internalId" value="19595"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e97466" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left lateral incisor mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97484" kind="short">
+         <Label xml:lang="en-US">10pm</Label>
+      </Rubric>
+      <Rubric id="d1e97484" kind="preferred">
+         <Label xml:lang="en-US">10pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID11a" kind="concept">
+      <Meta name="internalId" value="19674"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e97495" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left canine abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97513" kind="short">
+         <Label xml:lang="en-US">11a</Label>
+      </Rubric>
+      <Rubric id="d1e97513" kind="preferred">
+         <Label xml:lang="en-US">11a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID11i" kind="concept">
+      <Meta name="internalId" value="19534"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e97524" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left canine implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97542" kind="short">
+         <Label xml:lang="en-US">11i</Label>
+      </Rubric>
+      <Rubric id="d1e97542" kind="preferred">
+         <Label xml:lang="en-US">11i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID11p" kind="concept">
+      <Meta name="internalId" value="19599"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e97553" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left canine prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97571" kind="short">
+         <Label xml:lang="en-US">11p</Label>
+      </Rubric>
+      <Rubric id="d1e97571" kind="preferred">
+         <Label xml:lang="en-US">11p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID11pd" kind="concept">
+      <Meta name="internalId" value="19600"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e97582" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left canine distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97600" kind="short">
+         <Label xml:lang="en-US">11pd</Label>
+      </Rubric>
+      <Rubric id="d1e97600" kind="preferred">
+         <Label xml:lang="en-US">11pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID11pm" kind="concept">
+      <Meta name="internalId" value="19598"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e97612" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left canine mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97630" kind="short">
+         <Label xml:lang="en-US">11pm</Label>
+      </Rubric>
+      <Rubric id="d1e97630" kind="preferred">
+         <Label xml:lang="en-US">11pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID12a" kind="concept">
+      <Meta name="internalId" value="19675"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e97641" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left first premolar abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97659" kind="short">
+         <Label xml:lang="en-US">12a</Label>
+      </Rubric>
+      <Rubric id="d1e97659" kind="preferred">
+         <Label xml:lang="en-US">12a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID12i" kind="concept">
+      <Meta name="internalId" value="19535"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e97670" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left first premolar implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97688" kind="short">
+         <Label xml:lang="en-US">12i</Label>
+      </Rubric>
+      <Rubric id="d1e97688" kind="preferred">
+         <Label xml:lang="en-US">12i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID12p" kind="concept">
+      <Meta name="internalId" value="19602"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e97699" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left first premolar prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97717" kind="short">
+         <Label xml:lang="en-US">12p</Label>
+      </Rubric>
+      <Rubric id="d1e97717" kind="preferred">
+         <Label xml:lang="en-US">12p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID12pd" kind="concept">
+      <Meta name="internalId" value="19603"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e97728" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left first premolar distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97746" kind="short">
+         <Label xml:lang="en-US">12pd</Label>
+      </Rubric>
+      <Rubric id="d1e97746" kind="preferred">
+         <Label xml:lang="en-US">12pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID12pm" kind="concept">
+      <Meta name="internalId" value="19601"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e97757" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left first premolar mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97775" kind="short">
+         <Label xml:lang="en-US">12pm</Label>
+      </Rubric>
+      <Rubric id="d1e97775" kind="preferred">
+         <Label xml:lang="en-US">12pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID13a" kind="concept">
+      <Meta name="internalId" value="19676"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e97787" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left second premolar abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97805" kind="short">
+         <Label xml:lang="en-US">13a</Label>
+      </Rubric>
+      <Rubric id="d1e97805" kind="preferred">
+         <Label xml:lang="en-US">13a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID13i" kind="concept">
+      <Meta name="internalId" value="19536"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e97816" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left second premolar implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97834" kind="short">
+         <Label xml:lang="en-US">13i</Label>
+      </Rubric>
+      <Rubric id="d1e97834" kind="preferred">
+         <Label xml:lang="en-US">13i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID13p" kind="concept">
+      <Meta name="internalId" value="19605"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e97845" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left second premolar prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97863" kind="short">
+         <Label xml:lang="en-US">13p</Label>
+      </Rubric>
+      <Rubric id="d1e97863" kind="preferred">
+         <Label xml:lang="en-US">13p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID13pd" kind="concept">
+      <Meta name="internalId" value="19606"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e97874" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left second premolar distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97892" kind="short">
+         <Label xml:lang="en-US">13pd</Label>
+      </Rubric>
+      <Rubric id="d1e97892" kind="preferred">
+         <Label xml:lang="en-US">13pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID13pm" kind="concept">
+      <Meta name="internalId" value="19604"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e97903" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left second premolar mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97921" kind="short">
+         <Label xml:lang="en-US">13pm</Label>
+      </Rubric>
+      <Rubric id="d1e97921" kind="preferred">
+         <Label xml:lang="en-US">13pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID14a" kind="concept">
+      <Meta name="internalId" value="19677"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e97932" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left first molar abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97950" kind="short">
+         <Label xml:lang="en-US">14a</Label>
+      </Rubric>
+      <Rubric id="d1e97950" kind="preferred">
+         <Label xml:lang="en-US">14a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID14i" kind="concept">
+      <Meta name="internalId" value="19537"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e97962" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left first molar implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e97980" kind="short">
+         <Label xml:lang="en-US">14i</Label>
+      </Rubric>
+      <Rubric id="d1e97980" kind="preferred">
+         <Label xml:lang="en-US">14i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID14p" kind="concept">
+      <Meta name="internalId" value="19608"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e97991" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left first molar prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98009" kind="short">
+         <Label xml:lang="en-US">14p</Label>
+      </Rubric>
+      <Rubric id="d1e98009" kind="preferred">
+         <Label xml:lang="en-US">14p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID14pd" kind="concept">
+      <Meta name="internalId" value="19609"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98020" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left first molar distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98038" kind="short">
+         <Label xml:lang="en-US">14pd</Label>
+      </Rubric>
+      <Rubric id="d1e98038" kind="preferred">
+         <Label xml:lang="en-US">14pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID14pm" kind="concept">
+      <Meta name="internalId" value="19607"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98049" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left first molar mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98067" kind="short">
+         <Label xml:lang="en-US">14pm</Label>
+      </Rubric>
+      <Rubric id="d1e98067" kind="preferred">
+         <Label xml:lang="en-US">14pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID15a" kind="concept">
+      <Meta name="internalId" value="19678"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98078" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left second molar abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98096" kind="short">
+         <Label xml:lang="en-US">15a</Label>
+      </Rubric>
+      <Rubric id="d1e98096" kind="preferred">
+         <Label xml:lang="en-US">15a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID15i" kind="concept">
+      <Meta name="internalId" value="19538"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98107" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left second molar implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98125" kind="short">
+         <Label xml:lang="en-US">15i</Label>
+      </Rubric>
+      <Rubric id="d1e98125" kind="preferred">
+         <Label xml:lang="en-US">15i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID15p" kind="concept">
+      <Meta name="internalId" value="19611"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98137" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left second molar prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98155" kind="short">
+         <Label xml:lang="en-US">15p</Label>
+      </Rubric>
+      <Rubric id="d1e98155" kind="preferred">
+         <Label xml:lang="en-US">15p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID15pd" kind="concept">
+      <Meta name="internalId" value="19612"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98166" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left second molar distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98184" kind="short">
+         <Label xml:lang="en-US">15pd</Label>
+      </Rubric>
+      <Rubric id="d1e98184" kind="preferred">
+         <Label xml:lang="en-US">15pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID15pm" kind="concept">
+      <Meta name="internalId" value="19610"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98195" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left second molar mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98213" kind="short">
+         <Label xml:lang="en-US">15pm</Label>
+      </Rubric>
+      <Rubric id="d1e98213" kind="preferred">
+         <Label xml:lang="en-US">15pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID16a" kind="concept">
+      <Meta name="internalId" value="19679"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98224" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left third molar abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98242" kind="short">
+         <Label xml:lang="en-US">16a</Label>
+      </Rubric>
+      <Rubric id="d1e98242" kind="preferred">
+         <Label xml:lang="en-US">16a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID16i" kind="concept">
+      <Meta name="internalId" value="19539"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98253" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left third molar implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98271" kind="short">
+         <Label xml:lang="en-US">16i</Label>
+      </Rubric>
+      <Rubric id="d1e98271" kind="preferred">
+         <Label xml:lang="en-US">16i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID16p" kind="concept">
+      <Meta name="internalId" value="19614"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98282" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left third molar prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98300" kind="short">
+         <Label xml:lang="en-US">16p</Label>
+      </Rubric>
+      <Rubric id="d1e98300" kind="preferred">
+         <Label xml:lang="en-US">16p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID16pd" kind="concept">
+      <Meta name="internalId" value="19615"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98312" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left third molar distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98330" kind="short">
+         <Label xml:lang="en-US">16pd</Label>
+      </Rubric>
+      <Rubric id="d1e98330" kind="preferred">
+         <Label xml:lang="en-US">16pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID16pm" kind="concept">
+      <Meta name="internalId" value="19613"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98341" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left third molar mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98359" kind="short">
+         <Label xml:lang="en-US">16pm</Label>
+      </Rubric>
+      <Rubric id="d1e98359" kind="preferred">
+         <Label xml:lang="en-US">16pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID17a" kind="concept">
+      <Meta name="internalId" value="19680"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98370" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left third molar abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98388" kind="short">
+         <Label xml:lang="en-US">17a</Label>
+      </Rubric>
+      <Rubric id="d1e98388" kind="preferred">
+         <Label xml:lang="en-US">17a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID17ad" kind="concept">
+      <Meta name="internalId" value="19682"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98399" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left third molar abutment distal hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98417" kind="short">
+         <Label xml:lang="en-US">17ad</Label>
+      </Rubric>
+      <Rubric id="d1e98417" kind="preferred">
+         <Label xml:lang="en-US">17ad</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID17am" kind="concept">
+      <Meta name="internalId" value="19681"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98428" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left third molar abutment mesial hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98446" kind="short">
+         <Label xml:lang="en-US">17am</Label>
+      </Rubric>
+      <Rubric id="d1e98446" kind="preferred">
+         <Label xml:lang="en-US">17am</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID17i" kind="concept">
+      <Meta name="internalId" value="19540"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98457" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left third molar implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98475" kind="short">
+         <Label xml:lang="en-US">17i</Label>
+      </Rubric>
+      <Rubric id="d1e98475" kind="preferred">
+         <Label xml:lang="en-US">17i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID17id" kind="concept">
+      <Meta name="internalId" value="19542"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98487" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left third molar implant distal hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98505" kind="short">
+         <Label xml:lang="en-US">17id</Label>
+      </Rubric>
+      <Rubric id="d1e98505" kind="preferred">
+         <Label xml:lang="en-US">17id</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID17im" kind="concept">
+      <Meta name="internalId" value="19541"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98516" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left third molar implant mesial hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98534" kind="short">
+         <Label xml:lang="en-US">17im</Label>
+      </Rubric>
+      <Rubric id="d1e98534" kind="preferred">
+         <Label xml:lang="en-US">17im</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID17p" kind="concept">
+      <Meta name="internalId" value="19617"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98545" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left third molar prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98563" kind="short">
+         <Label xml:lang="en-US">17p</Label>
+      </Rubric>
+      <Rubric id="d1e98563" kind="preferred">
+         <Label xml:lang="en-US">17p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID17pd" kind="concept">
+      <Meta name="internalId" value="19616"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98574" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left third molar distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98592" kind="short">
+         <Label xml:lang="en-US">17pd</Label>
+      </Rubric>
+      <Rubric id="d1e98592" kind="preferred">
+         <Label xml:lang="en-US">17pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID17pm" kind="concept">
+      <Meta name="internalId" value="19618"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98603" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left third molar mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98621" kind="short">
+         <Label xml:lang="en-US">17pm</Label>
+      </Rubric>
+      <Rubric id="d1e98621" kind="preferred">
+         <Label xml:lang="en-US">17pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID18a" kind="concept">
+      <Meta name="internalId" value="19683"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98632" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left second molar abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98650" kind="short">
+         <Label xml:lang="en-US">18a</Label>
+      </Rubric>
+      <Rubric id="d1e98650" kind="preferred">
+         <Label xml:lang="en-US">18a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID18ad" kind="concept">
+      <Meta name="internalId" value="19685"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98662" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left second molar abutment distal hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98680" kind="short">
+         <Label xml:lang="en-US">18ad</Label>
+      </Rubric>
+      <Rubric id="d1e98680" kind="preferred">
+         <Label xml:lang="en-US">18ad</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID18am" kind="concept">
+      <Meta name="internalId" value="19684"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98691" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left second molar abutment mesial hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98709" kind="short">
+         <Label xml:lang="en-US">18am</Label>
+      </Rubric>
+      <Rubric id="d1e98709" kind="preferred">
+         <Label xml:lang="en-US">18am</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID18i" kind="concept">
+      <Meta name="internalId" value="19543"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98720" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left second molar implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98738" kind="short">
+         <Label xml:lang="en-US">18i</Label>
+      </Rubric>
+      <Rubric id="d1e98738" kind="preferred">
+         <Label xml:lang="en-US">18i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID18id" kind="concept">
+      <Meta name="internalId" value="19545"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98749" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left second molar implant distal hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98767" kind="short">
+         <Label xml:lang="en-US">18id</Label>
+      </Rubric>
+      <Rubric id="d1e98767" kind="preferred">
+         <Label xml:lang="en-US">18id</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID18im" kind="concept">
+      <Meta name="internalId" value="19544"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98778" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left second molar implant mesial hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98796" kind="short">
+         <Label xml:lang="en-US">18im</Label>
+      </Rubric>
+      <Rubric id="d1e98796" kind="preferred">
+         <Label xml:lang="en-US">18im</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID18p" kind="concept">
+      <Meta name="internalId" value="19620"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98807" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left second molar prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98825" kind="short">
+         <Label xml:lang="en-US">18p</Label>
+      </Rubric>
+      <Rubric id="d1e98825" kind="preferred">
+         <Label xml:lang="en-US">18p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID18pd" kind="concept">
+      <Meta name="internalId" value="19619"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98837" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left second molar distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98855" kind="short">
+         <Label xml:lang="en-US">18pd</Label>
+      </Rubric>
+      <Rubric id="d1e98855" kind="preferred">
+         <Label xml:lang="en-US">18pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID18pm" kind="concept">
+      <Meta name="internalId" value="19621"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98866" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left second molar mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98884" kind="short">
+         <Label xml:lang="en-US">18pm</Label>
+      </Rubric>
+      <Rubric id="d1e98884" kind="preferred">
+         <Label xml:lang="en-US">18pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID19a" kind="concept">
+      <Meta name="internalId" value="19686"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98895" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left first molar abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98913" kind="short">
+         <Label xml:lang="en-US">19a</Label>
+      </Rubric>
+      <Rubric id="d1e98913" kind="preferred">
+         <Label xml:lang="en-US">19a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID19ad" kind="concept">
+      <Meta name="internalId" value="19688"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98924" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left first molar abutment distal hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98942" kind="short">
+         <Label xml:lang="en-US">19ad</Label>
+      </Rubric>
+      <Rubric id="d1e98942" kind="preferred">
+         <Label xml:lang="en-US">19ad</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID19am" kind="concept">
+      <Meta name="internalId" value="19687"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98953" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left first molar abutment mesial hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e98971" kind="short">
+         <Label xml:lang="en-US">19am</Label>
+      </Rubric>
+      <Rubric id="d1e98971" kind="preferred">
+         <Label xml:lang="en-US">19am</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID19i" kind="concept">
+      <Meta name="internalId" value="19546"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e98982" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left first molar implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99000" kind="short">
+         <Label xml:lang="en-US">19i</Label>
+      </Rubric>
+      <Rubric id="d1e99000" kind="preferred">
+         <Label xml:lang="en-US">19i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID19id" kind="concept">
+      <Meta name="internalId" value="19548"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99012" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left first molar implant distal hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99030" kind="short">
+         <Label xml:lang="en-US">19id</Label>
+      </Rubric>
+      <Rubric id="d1e99030" kind="preferred">
+         <Label xml:lang="en-US">19id</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID19im" kind="concept">
+      <Meta name="internalId" value="19547"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99041" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left first molar implant mesial hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99059" kind="short">
+         <Label xml:lang="en-US">19im</Label>
+      </Rubric>
+      <Rubric id="d1e99059" kind="preferred">
+         <Label xml:lang="en-US">19im</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID19p" kind="concept">
+      <Meta name="internalId" value="19623"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99070" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left first molar prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99088" kind="short">
+         <Label xml:lang="en-US">19p</Label>
+      </Rubric>
+      <Rubric id="d1e99088" kind="preferred">
+         <Label xml:lang="en-US">19p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID19pd" kind="concept">
+      <Meta name="internalId" value="19622"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99099" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left first molar distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99117" kind="short">
+         <Label xml:lang="en-US">19pd</Label>
+      </Rubric>
+      <Rubric id="d1e99117" kind="preferred">
+         <Label xml:lang="en-US">19pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID19pm" kind="concept">
+      <Meta name="internalId" value="19624"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99128" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left first molar mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99146" kind="short">
+         <Label xml:lang="en-US">19pm</Label>
+      </Rubric>
+      <Rubric id="d1e99146" kind="preferred">
+         <Label xml:lang="en-US">19pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID1a" kind="concept">
+      <Meta name="internalId" value="19664"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99157" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right third molar abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99175" kind="short">
+         <Label xml:lang="en-US">1a</Label>
+      </Rubric>
+      <Rubric id="d1e99175" kind="preferred">
+         <Label xml:lang="en-US">1a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID1i" kind="concept">
+      <Meta name="internalId" value="19524"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99187" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right third molar implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99205" kind="short">
+         <Label xml:lang="en-US">1i</Label>
+      </Rubric>
+      <Rubric id="d1e99205" kind="preferred">
+         <Label xml:lang="en-US">1i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID1p" kind="concept">
+      <Meta name="internalId" value="19569"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99216" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right third molar prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99234" kind="short">
+         <Label xml:lang="en-US">1p</Label>
+      </Rubric>
+      <Rubric id="d1e99234" kind="preferred">
+         <Label xml:lang="en-US">1p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID1pd" kind="concept">
+      <Meta name="internalId" value="19568"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99245" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right third molar distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99263" kind="short">
+         <Label xml:lang="en-US">1pd</Label>
+      </Rubric>
+      <Rubric id="d1e99263" kind="preferred">
+         <Label xml:lang="en-US">1pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID1pm" kind="concept">
+      <Meta name="internalId" value="19570"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99274" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right third molar mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99292" kind="short">
+         <Label xml:lang="en-US">1pm</Label>
+      </Rubric>
+      <Rubric id="d1e99292" kind="preferred">
+         <Label xml:lang="en-US">1pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID20a" kind="concept">
+      <Meta name="internalId" value="19689"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99303" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left second premolar abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99321" kind="short">
+         <Label xml:lang="en-US">20a</Label>
+      </Rubric>
+      <Rubric id="d1e99321" kind="preferred">
+         <Label xml:lang="en-US">20a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID20i" kind="concept">
+      <Meta name="internalId" value="19549"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99332" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left second premolar implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99350" kind="short">
+         <Label xml:lang="en-US">20i</Label>
+      </Rubric>
+      <Rubric id="d1e99350" kind="preferred">
+         <Label xml:lang="en-US">20i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID20p" kind="concept">
+      <Meta name="internalId" value="19626"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99362" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left second premolar prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99380" kind="short">
+         <Label xml:lang="en-US">20p</Label>
+      </Rubric>
+      <Rubric id="d1e99380" kind="preferred">
+         <Label xml:lang="en-US">20p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID20pd" kind="concept">
+      <Meta name="internalId" value="19625"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99391" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left second premolar distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99409" kind="short">
+         <Label xml:lang="en-US">20pd</Label>
+      </Rubric>
+      <Rubric id="d1e99409" kind="preferred">
+         <Label xml:lang="en-US">20pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID20pm" kind="concept">
+      <Meta name="internalId" value="19627"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99420" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left second premolar mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99438" kind="short">
+         <Label xml:lang="en-US">20pm</Label>
+      </Rubric>
+      <Rubric id="d1e99438" kind="preferred">
+         <Label xml:lang="en-US">20pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID21a" kind="concept">
+      <Meta name="internalId" value="19690"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99449" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left first premolar abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99467" kind="short">
+         <Label xml:lang="en-US">21a</Label>
+      </Rubric>
+      <Rubric id="d1e99467" kind="preferred">
+         <Label xml:lang="en-US">21a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID21i" kind="concept">
+      <Meta name="internalId" value="19550"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99478" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left first premolar implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99496" kind="short">
+         <Label xml:lang="en-US">21i</Label>
+      </Rubric>
+      <Rubric id="d1e99496" kind="preferred">
+         <Label xml:lang="en-US">21i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID21p" kind="concept">
+      <Meta name="internalId" value="19629"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99507" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left first premolar prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99525" kind="short">
+         <Label xml:lang="en-US">21p</Label>
+      </Rubric>
+      <Rubric id="d1e99525" kind="preferred">
+         <Label xml:lang="en-US">21p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID21pd" kind="concept">
+      <Meta name="internalId" value="19628"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99537" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left first premolar distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99555" kind="short">
+         <Label xml:lang="en-US">21pd</Label>
+      </Rubric>
+      <Rubric id="d1e99555" kind="preferred">
+         <Label xml:lang="en-US">21pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID21pm" kind="concept">
+      <Meta name="internalId" value="19630"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99566" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left first premolar mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99584" kind="short">
+         <Label xml:lang="en-US">21pm</Label>
+      </Rubric>
+      <Rubric id="d1e99584" kind="preferred">
+         <Label xml:lang="en-US">21pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID22a" kind="concept">
+      <Meta name="internalId" value="19691"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99595" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left canine abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99613" kind="short">
+         <Label xml:lang="en-US">22a</Label>
+      </Rubric>
+      <Rubric id="d1e99613" kind="preferred">
+         <Label xml:lang="en-US">22a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID22i" kind="concept">
+      <Meta name="internalId" value="19551"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99624" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left canine implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99642" kind="short">
+         <Label xml:lang="en-US">22i</Label>
+      </Rubric>
+      <Rubric id="d1e99642" kind="preferred">
+         <Label xml:lang="en-US">22i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID22p" kind="concept">
+      <Meta name="internalId" value="19632"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99653" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left canine prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99671" kind="short">
+         <Label xml:lang="en-US">22p</Label>
+      </Rubric>
+      <Rubric id="d1e99671" kind="preferred">
+         <Label xml:lang="en-US">22p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID22pd" kind="concept">
+      <Meta name="internalId" value="19631"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99682" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left canine distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99700" kind="short">
+         <Label xml:lang="en-US">22pd</Label>
+      </Rubric>
+      <Rubric id="d1e99700" kind="preferred">
+         <Label xml:lang="en-US">22pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID22pm" kind="concept">
+      <Meta name="internalId" value="19633"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99712" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left canine mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99730" kind="short">
+         <Label xml:lang="en-US">22pm</Label>
+      </Rubric>
+      <Rubric id="d1e99730" kind="preferred">
+         <Label xml:lang="en-US">22pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID23a" kind="concept">
+      <Meta name="internalId" value="19692"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99741" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left lateral incisor abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99759" kind="short">
+         <Label xml:lang="en-US">23a</Label>
+      </Rubric>
+      <Rubric id="d1e99759" kind="preferred">
+         <Label xml:lang="en-US">23a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID23i" kind="concept">
+      <Meta name="internalId" value="19552"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99770" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left lateral incisor implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99788" kind="short">
+         <Label xml:lang="en-US">23i</Label>
+      </Rubric>
+      <Rubric id="d1e99788" kind="preferred">
+         <Label xml:lang="en-US">23i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID23p" kind="concept">
+      <Meta name="internalId" value="19635"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99799" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left lateral incisor prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99817" kind="short">
+         <Label xml:lang="en-US">23p</Label>
+      </Rubric>
+      <Rubric id="d1e99817" kind="preferred">
+         <Label xml:lang="en-US">23p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID23pd" kind="concept">
+      <Meta name="internalId" value="19634"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99828" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left lateral incisor distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99846" kind="short">
+         <Label xml:lang="en-US">23pd</Label>
+      </Rubric>
+      <Rubric id="d1e99846" kind="preferred">
+         <Label xml:lang="en-US">23pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID23pm" kind="concept">
+      <Meta name="internalId" value="19636"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99857" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left lateral incisor mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99875" kind="short">
+         <Label xml:lang="en-US">23pm</Label>
+      </Rubric>
+      <Rubric id="d1e99875" kind="preferred">
+         <Label xml:lang="en-US">23pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID24a" kind="concept">
+      <Meta name="internalId" value="19693"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99887" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left central incisor abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99905" kind="short">
+         <Label xml:lang="en-US">24a</Label>
+      </Rubric>
+      <Rubric id="d1e99905" kind="preferred">
+         <Label xml:lang="en-US">24a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID24i" kind="concept">
+      <Meta name="internalId" value="19553"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99916" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left central incisor implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99934" kind="short">
+         <Label xml:lang="en-US">24i</Label>
+      </Rubric>
+      <Rubric id="d1e99934" kind="preferred">
+         <Label xml:lang="en-US">24i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID24p" kind="concept">
+      <Meta name="internalId" value="19638"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99945" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left central incisor prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99963" kind="short">
+         <Label xml:lang="en-US">24p</Label>
+      </Rubric>
+      <Rubric id="d1e99963" kind="preferred">
+         <Label xml:lang="en-US">24p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID24pd" kind="concept">
+      <Meta name="internalId" value="19637"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e99974" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left central incisor distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e99992" kind="short">
+         <Label xml:lang="en-US">24pd</Label>
+      </Rubric>
+      <Rubric id="d1e99992" kind="preferred">
+         <Label xml:lang="en-US">24pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID24pm" kind="concept">
+      <Meta name="internalId" value="19639"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100003" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left central incisor mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100021" kind="short">
+         <Label xml:lang="en-US">24pm</Label>
+      </Rubric>
+      <Rubric id="d1e100021" kind="preferred">
+         <Label xml:lang="en-US">24pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID25a" kind="concept">
+      <Meta name="internalId" value="19694"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100032" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right central incisor abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100050" kind="short">
+         <Label xml:lang="en-US">25a</Label>
+      </Rubric>
+      <Rubric id="d1e100050" kind="preferred">
+         <Label xml:lang="en-US">25a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID25i" kind="concept">
+      <Meta name="internalId" value="19554"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100062" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right central incisor implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100080" kind="short">
+         <Label xml:lang="en-US">25i</Label>
+      </Rubric>
+      <Rubric id="d1e100080" kind="preferred">
+         <Label xml:lang="en-US">25i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID25p" kind="concept">
+      <Meta name="internalId" value="19641"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100091" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right central incisor prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100109" kind="short">
+         <Label xml:lang="en-US">25p</Label>
+      </Rubric>
+      <Rubric id="d1e100109" kind="preferred">
+         <Label xml:lang="en-US">25p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID25pd" kind="concept">
+      <Meta name="internalId" value="19642"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100120" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right central incisor distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100138" kind="short">
+         <Label xml:lang="en-US">25pd</Label>
+      </Rubric>
+      <Rubric id="d1e100138" kind="preferred">
+         <Label xml:lang="en-US">25pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID25pm" kind="concept">
+      <Meta name="internalId" value="19640"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100149" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right central incisor mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100167" kind="short">
+         <Label xml:lang="en-US">25pm</Label>
+      </Rubric>
+      <Rubric id="d1e100167" kind="preferred">
+         <Label xml:lang="en-US">25pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID26a" kind="concept">
+      <Meta name="internalId" value="19695"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100178" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right lateral incisor abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100196" kind="short">
+         <Label xml:lang="en-US">26a</Label>
+      </Rubric>
+      <Rubric id="d1e100196" kind="preferred">
+         <Label xml:lang="en-US">26a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID26i" kind="concept">
+      <Meta name="internalId" value="19555"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100207" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right lateral incisor implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100225" kind="short">
+         <Label xml:lang="en-US">26i</Label>
+      </Rubric>
+      <Rubric id="d1e100225" kind="preferred">
+         <Label xml:lang="en-US">26i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID26p" kind="concept">
+      <Meta name="internalId" value="19644"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100237" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right lateral incisor prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100255" kind="short">
+         <Label xml:lang="en-US">26p</Label>
+      </Rubric>
+      <Rubric id="d1e100255" kind="preferred">
+         <Label xml:lang="en-US">26p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID26pd" kind="concept">
+      <Meta name="internalId" value="19645"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100266" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right lateral incisor distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100284" kind="short">
+         <Label xml:lang="en-US">26pd</Label>
+      </Rubric>
+      <Rubric id="d1e100284" kind="preferred">
+         <Label xml:lang="en-US">26pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID26pm" kind="concept">
+      <Meta name="internalId" value="19643"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100295" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right lateral incisor mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100313" kind="short">
+         <Label xml:lang="en-US">26pm</Label>
+      </Rubric>
+      <Rubric id="d1e100313" kind="preferred">
+         <Label xml:lang="en-US">26pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID27a" kind="concept">
+      <Meta name="internalId" value="19696"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100324" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right canine abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100342" kind="short">
+         <Label xml:lang="en-US">27a</Label>
+      </Rubric>
+      <Rubric id="d1e100342" kind="preferred">
+         <Label xml:lang="en-US">27a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID27i" kind="concept">
+      <Meta name="internalId" value="19556"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100353" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right canine implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100371" kind="short">
+         <Label xml:lang="en-US">27i</Label>
+      </Rubric>
+      <Rubric id="d1e100371" kind="preferred">
+         <Label xml:lang="en-US">27i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID27p" kind="concept">
+      <Meta name="internalId" value="19647"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100382" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right canine prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100400" kind="short">
+         <Label xml:lang="en-US">27p</Label>
+      </Rubric>
+      <Rubric id="d1e100400" kind="preferred">
+         <Label xml:lang="en-US">27p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID27pd" kind="concept">
+      <Meta name="internalId" value="19648"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100412" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right canine distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100430" kind="short">
+         <Label xml:lang="en-US">27pd</Label>
+      </Rubric>
+      <Rubric id="d1e100430" kind="preferred">
+         <Label xml:lang="en-US">27pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID27pm" kind="concept">
+      <Meta name="internalId" value="19646"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100441" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right canine mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100459" kind="short">
+         <Label xml:lang="en-US">27pm</Label>
+      </Rubric>
+      <Rubric id="d1e100459" kind="preferred">
+         <Label xml:lang="en-US">27pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID28a" kind="concept">
+      <Meta name="internalId" value="19697"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100470" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right first premolar abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100488" kind="short">
+         <Label xml:lang="en-US">28a</Label>
+      </Rubric>
+      <Rubric id="d1e100488" kind="preferred">
+         <Label xml:lang="en-US">28a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID28i" kind="concept">
+      <Meta name="internalId" value="19557"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100499" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right first premolar implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100517" kind="short">
+         <Label xml:lang="en-US">28i</Label>
+      </Rubric>
+      <Rubric id="d1e100517" kind="preferred">
+         <Label xml:lang="en-US">28i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID28p" kind="concept">
+      <Meta name="internalId" value="19650"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100528" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right first premolar prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100546" kind="short">
+         <Label xml:lang="en-US">28p</Label>
+      </Rubric>
+      <Rubric id="d1e100546" kind="preferred">
+         <Label xml:lang="en-US">28p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID28pd" kind="concept">
+      <Meta name="internalId" value="19651"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100557" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right first premolar distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100575" kind="short">
+         <Label xml:lang="en-US">28pd</Label>
+      </Rubric>
+      <Rubric id="d1e100575" kind="preferred">
+         <Label xml:lang="en-US">28pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID28pm" kind="concept">
+      <Meta name="internalId" value="19649"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100587" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right first premolar mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100605" kind="short">
+         <Label xml:lang="en-US">28pm</Label>
+      </Rubric>
+      <Rubric id="d1e100605" kind="preferred">
+         <Label xml:lang="en-US">28pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID29a" kind="concept">
+      <Meta name="internalId" value="19698"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100616" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right second premolar abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100634" kind="short">
+         <Label xml:lang="en-US">29a</Label>
+      </Rubric>
+      <Rubric id="d1e100634" kind="preferred">
+         <Label xml:lang="en-US">29a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID29i" kind="concept">
+      <Meta name="internalId" value="19558"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100645" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right second premolar implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100663" kind="short">
+         <Label xml:lang="en-US">29i</Label>
+      </Rubric>
+      <Rubric id="d1e100663" kind="preferred">
+         <Label xml:lang="en-US">29i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID29p" kind="concept">
+      <Meta name="internalId" value="19653"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100674" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right second premolar prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100692" kind="short">
+         <Label xml:lang="en-US">29p</Label>
+      </Rubric>
+      <Rubric id="d1e100692" kind="preferred">
+         <Label xml:lang="en-US">29p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID29pd" kind="concept">
+      <Meta name="internalId" value="19654"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100703" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right second premolar distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100721" kind="short">
+         <Label xml:lang="en-US">29pd</Label>
+      </Rubric>
+      <Rubric id="d1e100721" kind="preferred">
+         <Label xml:lang="en-US">29pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID29pm" kind="concept">
+      <Meta name="internalId" value="19652"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100732" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right second premolar mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100750" kind="short">
+         <Label xml:lang="en-US">29pm</Label>
+      </Rubric>
+      <Rubric id="d1e100750" kind="preferred">
+         <Label xml:lang="en-US">29pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID2a" kind="concept">
+      <Meta name="internalId" value="19665"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100762" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right second molar abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100780" kind="short">
+         <Label xml:lang="en-US">2a</Label>
+      </Rubric>
+      <Rubric id="d1e100780" kind="preferred">
+         <Label xml:lang="en-US">2a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID2i" kind="concept">
+      <Meta name="internalId" value="19525"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100791" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right second molar implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100809" kind="short">
+         <Label xml:lang="en-US">2i</Label>
+      </Rubric>
+      <Rubric id="d1e100809" kind="preferred">
+         <Label xml:lang="en-US">2i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID2p" kind="concept">
+      <Meta name="internalId" value="19572"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100820" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right second molar prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100838" kind="short">
+         <Label xml:lang="en-US">2p</Label>
+      </Rubric>
+      <Rubric id="d1e100838" kind="preferred">
+         <Label xml:lang="en-US">2p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID2pd" kind="concept">
+      <Meta name="internalId" value="19571"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100849" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right second molar distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100867" kind="short">
+         <Label xml:lang="en-US">2pd</Label>
+      </Rubric>
+      <Rubric id="d1e100867" kind="preferred">
+         <Label xml:lang="en-US">2pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID2pm" kind="concept">
+      <Meta name="internalId" value="19573"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100878" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right second molar mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100896" kind="short">
+         <Label xml:lang="en-US">2pm</Label>
+      </Rubric>
+      <Rubric id="d1e100896" kind="preferred">
+         <Label xml:lang="en-US">2pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID30a" kind="concept">
+      <Meta name="internalId" value="19699"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100907" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right first molar abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100925" kind="short">
+         <Label xml:lang="en-US">30a</Label>
+      </Rubric>
+      <Rubric id="d1e100925" kind="preferred">
+         <Label xml:lang="en-US">30a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID30ad" kind="concept">
+      <Meta name="internalId" value="19701"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100937" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right first molar abutment distal hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100955" kind="short">
+         <Label xml:lang="en-US">30ad</Label>
+      </Rubric>
+      <Rubric id="d1e100955" kind="preferred">
+         <Label xml:lang="en-US">30ad</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID30am" kind="concept">
+      <Meta name="internalId" value="19700"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100966" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right first molar abutment mesial hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e100984" kind="short">
+         <Label xml:lang="en-US">30am</Label>
+      </Rubric>
+      <Rubric id="d1e100984" kind="preferred">
+         <Label xml:lang="en-US">30am</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID30i" kind="concept">
+      <Meta name="internalId" value="19559"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e100995" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right first molar implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101013" kind="short">
+         <Label xml:lang="en-US">30i</Label>
+      </Rubric>
+      <Rubric id="d1e101013" kind="preferred">
+         <Label xml:lang="en-US">30i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID30id" kind="concept">
+      <Meta name="internalId" value="19561"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101024" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right first molar implant distal hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101042" kind="short">
+         <Label xml:lang="en-US">30id</Label>
+      </Rubric>
+      <Rubric id="d1e101042" kind="preferred">
+         <Label xml:lang="en-US">30id</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID30im" kind="concept">
+      <Meta name="internalId" value="19560"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101053" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right first molar implant mesial hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101071" kind="short">
+         <Label xml:lang="en-US">30im</Label>
+      </Rubric>
+      <Rubric id="d1e101071" kind="preferred">
+         <Label xml:lang="en-US">30im</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID30p" kind="concept">
+      <Meta name="internalId" value="19656"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101082" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right first molar prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101100" kind="short">
+         <Label xml:lang="en-US">30p</Label>
+      </Rubric>
+      <Rubric id="d1e101100" kind="preferred">
+         <Label xml:lang="en-US">30p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID30pd" kind="concept">
+      <Meta name="internalId" value="19657"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101112" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right first molar distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101130" kind="short">
+         <Label xml:lang="en-US">30pd</Label>
+      </Rubric>
+      <Rubric id="d1e101130" kind="preferred">
+         <Label xml:lang="en-US">30pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID30pm" kind="concept">
+      <Meta name="internalId" value="19655"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101141" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right first molar mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101159" kind="short">
+         <Label xml:lang="en-US">30pm</Label>
+      </Rubric>
+      <Rubric id="d1e101159" kind="preferred">
+         <Label xml:lang="en-US">30pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID31a" kind="concept">
+      <Meta name="internalId" value="19702"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101170" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right second molar abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101188" kind="short">
+         <Label xml:lang="en-US">31a</Label>
+      </Rubric>
+      <Rubric id="d1e101188" kind="preferred">
+         <Label xml:lang="en-US">31a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID31ad" kind="concept">
+      <Meta name="internalId" value="19704"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101199" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right second molar abutment distal hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101217" kind="short">
+         <Label xml:lang="en-US">31ad</Label>
+      </Rubric>
+      <Rubric id="d1e101217" kind="preferred">
+         <Label xml:lang="en-US">31ad</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID31am" kind="concept">
+      <Meta name="internalId" value="19703"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101228" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right second molar abutment mesial hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101246" kind="short">
+         <Label xml:lang="en-US">31am</Label>
+      </Rubric>
+      <Rubric id="d1e101246" kind="preferred">
+         <Label xml:lang="en-US">31am</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID31i" kind="concept">
+      <Meta name="internalId" value="19562"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101257" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right second molar implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101275" kind="short">
+         <Label xml:lang="en-US">31i</Label>
+      </Rubric>
+      <Rubric id="d1e101275" kind="preferred">
+         <Label xml:lang="en-US">31i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID31id" kind="concept">
+      <Meta name="internalId" value="19564"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101287" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right second molar implant distal hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101305" kind="short">
+         <Label xml:lang="en-US">31id</Label>
+      </Rubric>
+      <Rubric id="d1e101305" kind="preferred">
+         <Label xml:lang="en-US">31id</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID31im" kind="concept">
+      <Meta name="internalId" value="19563"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101316" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right second molar implant mesial hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101334" kind="short">
+         <Label xml:lang="en-US">31im</Label>
+      </Rubric>
+      <Rubric id="d1e101334" kind="preferred">
+         <Label xml:lang="en-US">31im</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID31p" kind="concept">
+      <Meta name="internalId" value="19659"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101345" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right second molar prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101363" kind="short">
+         <Label xml:lang="en-US">31p</Label>
+      </Rubric>
+      <Rubric id="d1e101363" kind="preferred">
+         <Label xml:lang="en-US">31p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID31pd" kind="concept">
+      <Meta name="internalId" value="19660"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101374" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right second molar distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101392" kind="short">
+         <Label xml:lang="en-US">31pd</Label>
+      </Rubric>
+      <Rubric id="d1e101392" kind="preferred">
+         <Label xml:lang="en-US">31pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID31pm" kind="concept">
+      <Meta name="internalId" value="19658"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101403" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right second molar mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101421" kind="short">
+         <Label xml:lang="en-US">31pm</Label>
+      </Rubric>
+      <Rubric id="d1e101421" kind="preferred">
+         <Label xml:lang="en-US">31pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID32a" kind="concept">
+      <Meta name="internalId" value="19705"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101432" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right third molar abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101450" kind="short">
+         <Label xml:lang="en-US">32a</Label>
+      </Rubric>
+      <Rubric id="d1e101450" kind="preferred">
+         <Label xml:lang="en-US">32a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID32ad" kind="concept">
+      <Meta name="internalId" value="19707"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101462" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right third molar abutment distal hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101480" kind="short">
+         <Label xml:lang="en-US">32ad</Label>
+      </Rubric>
+      <Rubric id="d1e101480" kind="preferred">
+         <Label xml:lang="en-US">32ad</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID32am" kind="concept">
+      <Meta name="internalId" value="19706"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101491" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right third molar abutment mesial hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101509" kind="short">
+         <Label xml:lang="en-US">32am</Label>
+      </Rubric>
+      <Rubric id="d1e101509" kind="preferred">
+         <Label xml:lang="en-US">32am</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID32i" kind="concept">
+      <Meta name="internalId" value="19565"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101520" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right third molar implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101538" kind="short">
+         <Label xml:lang="en-US">32i</Label>
+      </Rubric>
+      <Rubric id="d1e101538" kind="preferred">
+         <Label xml:lang="en-US">32i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID32id" kind="concept">
+      <Meta name="internalId" value="19567"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101549" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right third molar implant distal hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101567" kind="short">
+         <Label xml:lang="en-US">32id</Label>
+      </Rubric>
+      <Rubric id="d1e101567" kind="preferred">
+         <Label xml:lang="en-US">32id</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID32im" kind="concept">
+      <Meta name="internalId" value="19566"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101578" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right third molar implant mesial hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101596" kind="short">
+         <Label xml:lang="en-US">32im</Label>
+      </Rubric>
+      <Rubric id="d1e101596" kind="preferred">
+         <Label xml:lang="en-US">32im</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID32p" kind="concept">
+      <Meta name="internalId" value="19662"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101607" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right third molar prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101625" kind="short">
+         <Label xml:lang="en-US">32p</Label>
+      </Rubric>
+      <Rubric id="d1e101625" kind="preferred">
+         <Label xml:lang="en-US">32p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID32pd" kind="concept">
+      <Meta name="internalId" value="19663"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101637" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right third molar distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101655" kind="short">
+         <Label xml:lang="en-US">32pd</Label>
+      </Rubric>
+      <Rubric id="d1e101655" kind="preferred">
+         <Label xml:lang="en-US">32pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID32pm" kind="concept">
+      <Meta name="internalId" value="19661"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101666" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right third molar mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101684" kind="short">
+         <Label xml:lang="en-US">32pm</Label>
+      </Rubric>
+      <Rubric id="d1e101684" kind="preferred">
+         <Label xml:lang="en-US">32pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID3a" kind="concept">
+      <Meta name="internalId" value="19666"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101695" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right first molar abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101713" kind="short">
+         <Label xml:lang="en-US">3a</Label>
+      </Rubric>
+      <Rubric id="d1e101713" kind="preferred">
+         <Label xml:lang="en-US">3a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID3i" kind="concept">
+      <Meta name="internalId" value="19526"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101724" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right first molar implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101742" kind="short">
+         <Label xml:lang="en-US">3i</Label>
+      </Rubric>
+      <Rubric id="d1e101742" kind="preferred">
+         <Label xml:lang="en-US">3i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID3p" kind="concept">
+      <Meta name="internalId" value="19575"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101753" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right first molar prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101771" kind="short">
+         <Label xml:lang="en-US">3p</Label>
+      </Rubric>
+      <Rubric id="d1e101771" kind="preferred">
+         <Label xml:lang="en-US">3p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID3pd" kind="concept">
+      <Meta name="internalId" value="19574"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101782" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right first molar distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101800" kind="short">
+         <Label xml:lang="en-US">3pd</Label>
+      </Rubric>
+      <Rubric id="d1e101800" kind="preferred">
+         <Label xml:lang="en-US">3pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID3pm" kind="concept">
+      <Meta name="internalId" value="19576"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101812" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right first molar mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101830" kind="short">
+         <Label xml:lang="en-US">3pm</Label>
+      </Rubric>
+      <Rubric id="d1e101830" kind="preferred">
+         <Label xml:lang="en-US">3pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID4a" kind="concept">
+      <Meta name="internalId" value="19667"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101841" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right second premolar abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101859" kind="short">
+         <Label xml:lang="en-US">4a</Label>
+      </Rubric>
+      <Rubric id="d1e101859" kind="preferred">
+         <Label xml:lang="en-US">4a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID4i" kind="concept">
+      <Meta name="internalId" value="19527"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101870" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right second premolar implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101888" kind="short">
+         <Label xml:lang="en-US">4i</Label>
+      </Rubric>
+      <Rubric id="d1e101888" kind="preferred">
+         <Label xml:lang="en-US">4i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID4p" kind="concept">
+      <Meta name="internalId" value="19578"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101899" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right second premolar prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101917" kind="short">
+         <Label xml:lang="en-US">4p</Label>
+      </Rubric>
+      <Rubric id="d1e101917" kind="preferred">
+         <Label xml:lang="en-US">4p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID4pd" kind="concept">
+      <Meta name="internalId" value="19577"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101928" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right second premolar distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101946" kind="short">
+         <Label xml:lang="en-US">4pd</Label>
+      </Rubric>
+      <Rubric id="d1e101946" kind="preferred">
+         <Label xml:lang="en-US">4pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID4pm" kind="concept">
+      <Meta name="internalId" value="19579"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101957" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right second premolar mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e101975" kind="short">
+         <Label xml:lang="en-US">4pm</Label>
+      </Rubric>
+      <Rubric id="d1e101975" kind="preferred">
+         <Label xml:lang="en-US">4pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID5a" kind="concept">
+      <Meta name="internalId" value="19668"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e101987" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right first premolar abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102005" kind="short">
+         <Label xml:lang="en-US">5a</Label>
+      </Rubric>
+      <Rubric id="d1e102005" kind="preferred">
+         <Label xml:lang="en-US">5a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID5i" kind="concept">
+      <Meta name="internalId" value="19528"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e102016" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right first premolar implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102034" kind="short">
+         <Label xml:lang="en-US">5i</Label>
+      </Rubric>
+      <Rubric id="d1e102034" kind="preferred">
+         <Label xml:lang="en-US">5i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID5p" kind="concept">
+      <Meta name="internalId" value="19581"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e102045" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right first premolar prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102063" kind="short">
+         <Label xml:lang="en-US">5p</Label>
+      </Rubric>
+      <Rubric id="d1e102063" kind="preferred">
+         <Label xml:lang="en-US">5p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID5pd" kind="concept">
+      <Meta name="internalId" value="19580"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e102074" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right first premolar distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102092" kind="short">
+         <Label xml:lang="en-US">5pd</Label>
+      </Rubric>
+      <Rubric id="d1e102092" kind="preferred">
+         <Label xml:lang="en-US">5pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID5pm" kind="concept">
+      <Meta name="internalId" value="19582"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e102103" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right first premolar mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102121" kind="short">
+         <Label xml:lang="en-US">5pm</Label>
+      </Rubric>
+      <Rubric id="d1e102121" kind="preferred">
+         <Label xml:lang="en-US">5pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID6a" kind="concept">
+      <Meta name="internalId" value="19669"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e102132" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right canine abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102150" kind="short">
+         <Label xml:lang="en-US">6a</Label>
+      </Rubric>
+      <Rubric id="d1e102150" kind="preferred">
+         <Label xml:lang="en-US">6a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID6i" kind="concept">
+      <Meta name="internalId" value="19529"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e102162" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right canine implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102180" kind="short">
+         <Label xml:lang="en-US">6i</Label>
+      </Rubric>
+      <Rubric id="d1e102180" kind="preferred">
+         <Label xml:lang="en-US">6i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID6p" kind="concept">
+      <Meta name="internalId" value="19584"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e102191" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right canine prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102209" kind="short">
+         <Label xml:lang="en-US">6p</Label>
+      </Rubric>
+      <Rubric id="d1e102209" kind="preferred">
+         <Label xml:lang="en-US">6p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID6pd" kind="concept">
+      <Meta name="internalId" value="19583"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e102220" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right canine distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102238" kind="short">
+         <Label xml:lang="en-US">6pd</Label>
+      </Rubric>
+      <Rubric id="d1e102238" kind="preferred">
+         <Label xml:lang="en-US">6pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID6pm" kind="concept">
+      <Meta name="internalId" value="19585"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e102249" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right canine mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102267" kind="short">
+         <Label xml:lang="en-US">6pm</Label>
+      </Rubric>
+      <Rubric id="d1e102267" kind="preferred">
+         <Label xml:lang="en-US">6pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID7a" kind="concept">
+      <Meta name="internalId" value="19670"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e102278" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right lateral incisor abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102296" kind="short">
+         <Label xml:lang="en-US">7a</Label>
+      </Rubric>
+      <Rubric id="d1e102296" kind="preferred">
+         <Label xml:lang="en-US">7a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID7i" kind="concept">
+      <Meta name="internalId" value="19530"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e102307" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right lateral incisor implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102325" kind="short">
+         <Label xml:lang="en-US">7i</Label>
+      </Rubric>
+      <Rubric id="d1e102325" kind="preferred">
+         <Label xml:lang="en-US">7i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID7p" kind="concept">
+      <Meta name="internalId" value="19587"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e102337" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right lateral incisor prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102355" kind="short">
+         <Label xml:lang="en-US">7p</Label>
+      </Rubric>
+      <Rubric id="d1e102355" kind="preferred">
+         <Label xml:lang="en-US">7p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID7pd" kind="concept">
+      <Meta name="internalId" value="19586"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e102366" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right lateral incisor distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102384" kind="short">
+         <Label xml:lang="en-US">7pd</Label>
+      </Rubric>
+      <Rubric id="d1e102384" kind="preferred">
+         <Label xml:lang="en-US">7pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID7pm" kind="concept">
+      <Meta name="internalId" value="19588"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e102395" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right lateral incisor mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102413" kind="short">
+         <Label xml:lang="en-US">7pm</Label>
+      </Rubric>
+      <Rubric id="d1e102413" kind="preferred">
+         <Label xml:lang="en-US">7pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID8a" kind="concept">
+      <Meta name="internalId" value="19671"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e102424" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right central incisor abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102442" kind="short">
+         <Label xml:lang="en-US">8a</Label>
+      </Rubric>
+      <Rubric id="d1e102442" kind="preferred">
+         <Label xml:lang="en-US">8a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID8i" kind="concept">
+      <Meta name="internalId" value="19531"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e102453" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right central incisor implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102471" kind="short">
+         <Label xml:lang="en-US">8i</Label>
+      </Rubric>
+      <Rubric id="d1e102471" kind="preferred">
+         <Label xml:lang="en-US">8i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID8p" kind="concept">
+      <Meta name="internalId" value="19590"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e102482" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right central incisor prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102500" kind="short">
+         <Label xml:lang="en-US">8p</Label>
+      </Rubric>
+      <Rubric id="d1e102500" kind="preferred">
+         <Label xml:lang="en-US">8p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID8pd" kind="concept">
+      <Meta name="internalId" value="19589"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e102512" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right central incisor distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102530" kind="short">
+         <Label xml:lang="en-US">8pd</Label>
+      </Rubric>
+      <Rubric id="d1e102530" kind="preferred">
+         <Label xml:lang="en-US">8pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID8pm" kind="concept">
+      <Meta name="internalId" value="19591"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e102541" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right central incisor mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102559" kind="short">
+         <Label xml:lang="en-US">8pm</Label>
+      </Rubric>
+      <Rubric id="d1e102559" kind="preferred">
+         <Label xml:lang="en-US">8pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID9a" kind="concept">
+      <Meta name="internalId" value="19672"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e102570" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left central incisor abutment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102588" kind="short">
+         <Label xml:lang="en-US">9a</Label>
+      </Rubric>
+      <Rubric id="d1e102588" kind="preferred">
+         <Label xml:lang="en-US">9a</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID9i" kind="concept">
+      <Meta name="internalId" value="19532"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e102599" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left central incisor implant</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102617" kind="short">
+         <Label xml:lang="en-US">9i</Label>
+      </Rubric>
+      <Rubric id="d1e102617" kind="preferred">
+         <Label xml:lang="en-US">9i</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID9p" kind="concept">
+      <Meta name="internalId" value="19593"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e102628" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left central incisor prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102646" kind="short">
+         <Label xml:lang="en-US">9p</Label>
+      </Rubric>
+      <Rubric id="d1e102646" kind="preferred">
+         <Label xml:lang="en-US">9p</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID9pd" kind="concept">
+      <Meta name="internalId" value="19594"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e102657" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left central incisor distal prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102675" kind="short">
+         <Label xml:lang="en-US">9pd</Label>
+      </Rubric>
+      <Rubric id="d1e102675" kind="preferred">
+         <Label xml:lang="en-US">9pd</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID9pm" kind="concept">
+      <Meta name="internalId" value="19592"/>
+      <SuperClass code="ArtificialDentition"/>
+      <Rubric id="d1e102687" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left central incisor mesial prosthesis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102705" kind="short">
+         <Label xml:lang="en-US">9pm</Label>
+      </Rubric>
+      <Rubric id="d1e102705" kind="preferred">
+         <Label xml:lang="en-US">9pm</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID1" kind="concept">
+      <Meta name="internalId" value="19405"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e102716" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right third molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102734" kind="short">
+         <Label xml:lang="en-US">1</Label>
+      </Rubric>
+      <Rubric id="d1e102734" kind="preferred">
+         <Label xml:lang="en-US">1</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID10" kind="concept">
+      <Meta name="internalId" value="19414"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e102745" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left lateral incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102763" kind="short">
+         <Label xml:lang="en-US">10</Label>
+      </Rubric>
+      <Rubric id="d1e102763" kind="preferred">
+         <Label xml:lang="en-US">10</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID11" kind="concept">
+      <Meta name="internalId" value="19415"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e102774" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left canine</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102792" kind="short">
+         <Label xml:lang="en-US">11</Label>
+      </Rubric>
+      <Rubric id="d1e102792" kind="preferred">
+         <Label xml:lang="en-US">11</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID12" kind="concept">
+      <Meta name="internalId" value="19416"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e102803" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left first premolar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102821" kind="short">
+         <Label xml:lang="en-US">12</Label>
+      </Rubric>
+      <Rubric id="d1e102821" kind="preferred">
+         <Label xml:lang="en-US">12</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID13" kind="concept">
+      <Meta name="internalId" value="19417"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e102832" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left second premolar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102850" kind="short">
+         <Label xml:lang="en-US">13</Label>
+      </Rubric>
+      <Rubric id="d1e102850" kind="preferred">
+         <Label xml:lang="en-US">13</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID14" kind="concept">
+      <Meta name="internalId" value="19418"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e102862" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left first molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102880" kind="short">
+         <Label xml:lang="en-US">14</Label>
+      </Rubric>
+      <Rubric id="d1e102880" kind="preferred">
+         <Label xml:lang="en-US">14</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID15" kind="concept">
+      <Meta name="internalId" value="19419"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e102891" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left second molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102909" kind="short">
+         <Label xml:lang="en-US">15</Label>
+      </Rubric>
+      <Rubric id="d1e102909" kind="preferred">
+         <Label xml:lang="en-US">15</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID16" kind="concept">
+      <Meta name="internalId" value="19420"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e102920" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left third molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102938" kind="short">
+         <Label xml:lang="en-US">16</Label>
+      </Rubric>
+      <Rubric id="d1e102938" kind="preferred">
+         <Label xml:lang="en-US">16</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID17" kind="concept">
+      <Meta name="internalId" value="19421"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e102949" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left third molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102967" kind="short">
+         <Label xml:lang="en-US">17</Label>
+      </Rubric>
+      <Rubric id="d1e102967" kind="preferred">
+         <Label xml:lang="en-US">17</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID17d" kind="concept">
+      <Meta name="internalId" value="19423"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e102978" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left third molar distal hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e102996" kind="short">
+         <Label xml:lang="en-US">17d</Label>
+      </Rubric>
+      <Rubric id="d1e102996" kind="preferred">
+         <Label xml:lang="en-US">17d</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID17m" kind="concept">
+      <Meta name="internalId" value="19422"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103007" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left third molar mesial hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103025" kind="short">
+         <Label xml:lang="en-US">17m</Label>
+      </Rubric>
+      <Rubric id="d1e103025" kind="preferred">
+         <Label xml:lang="en-US">17m</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID18" kind="concept">
+      <Meta name="internalId" value="19424"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103037" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left second molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103055" kind="short">
+         <Label xml:lang="en-US">18</Label>
+      </Rubric>
+      <Rubric id="d1e103055" kind="preferred">
+         <Label xml:lang="en-US">18</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID18d" kind="concept">
+      <Meta name="internalId" value="19426"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103066" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left second molar distal hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103084" kind="short">
+         <Label xml:lang="en-US">18d</Label>
+      </Rubric>
+      <Rubric id="d1e103084" kind="preferred">
+         <Label xml:lang="en-US">18d</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID18m" kind="concept">
+      <Meta name="internalId" value="19425"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103095" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left second molar mesial hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103113" kind="short">
+         <Label xml:lang="en-US">18m</Label>
+      </Rubric>
+      <Rubric id="d1e103113" kind="preferred">
+         <Label xml:lang="en-US">18m</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID19" kind="concept">
+      <Meta name="internalId" value="19427"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103124" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left first molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103142" kind="short">
+         <Label xml:lang="en-US">19</Label>
+      </Rubric>
+      <Rubric id="d1e103142" kind="preferred">
+         <Label xml:lang="en-US">19</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID19d" kind="concept">
+      <Meta name="internalId" value="19429"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103153" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left first molar distal hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103171" kind="short">
+         <Label xml:lang="en-US">19d</Label>
+      </Rubric>
+      <Rubric id="d1e103171" kind="preferred">
+         <Label xml:lang="en-US">19d</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID19m" kind="concept">
+      <Meta name="internalId" value="19428"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103182" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left first molar mesial hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103200" kind="short">
+         <Label xml:lang="en-US">19m</Label>
+      </Rubric>
+      <Rubric id="d1e103200" kind="preferred">
+         <Label xml:lang="en-US">19m</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID2" kind="concept">
+      <Meta name="internalId" value="19406"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103212" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right second molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103230" kind="short">
+         <Label xml:lang="en-US">2</Label>
+      </Rubric>
+      <Rubric id="d1e103230" kind="preferred">
+         <Label xml:lang="en-US">2</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID20" kind="concept">
+      <Meta name="internalId" value="19430"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103241" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left second premolar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103259" kind="short">
+         <Label xml:lang="en-US">20</Label>
+      </Rubric>
+      <Rubric id="d1e103259" kind="preferred">
+         <Label xml:lang="en-US">20</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID21" kind="concept">
+      <Meta name="internalId" value="19431"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103270" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left first premolar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103288" kind="short">
+         <Label xml:lang="en-US">21</Label>
+      </Rubric>
+      <Rubric id="d1e103288" kind="preferred">
+         <Label xml:lang="en-US">21</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID22" kind="concept">
+      <Meta name="internalId" value="19432"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103299" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left canine</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103317" kind="short">
+         <Label xml:lang="en-US">22</Label>
+      </Rubric>
+      <Rubric id="d1e103317" kind="preferred">
+         <Label xml:lang="en-US">22</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID23" kind="concept">
+      <Meta name="internalId" value="19433"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103328" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left lateral incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103346" kind="short">
+         <Label xml:lang="en-US">23</Label>
+      </Rubric>
+      <Rubric id="d1e103346" kind="preferred">
+         <Label xml:lang="en-US">23</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID24" kind="concept">
+      <Meta name="internalId" value="19434"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103357" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left central incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103375" kind="short">
+         <Label xml:lang="en-US">24</Label>
+      </Rubric>
+      <Rubric id="d1e103375" kind="preferred">
+         <Label xml:lang="en-US">24</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID25" kind="concept">
+      <Meta name="internalId" value="19435"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103387" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right central incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103405" kind="short">
+         <Label xml:lang="en-US">25</Label>
+      </Rubric>
+      <Rubric id="d1e103405" kind="preferred">
+         <Label xml:lang="en-US">25</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID26" kind="concept">
+      <Meta name="internalId" value="19436"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103416" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right lateral incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103434" kind="short">
+         <Label xml:lang="en-US">26</Label>
+      </Rubric>
+      <Rubric id="d1e103434" kind="preferred">
+         <Label xml:lang="en-US">26</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID27" kind="concept">
+      <Meta name="internalId" value="19437"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103445" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right canine</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103463" kind="short">
+         <Label xml:lang="en-US">27</Label>
+      </Rubric>
+      <Rubric id="d1e103463" kind="preferred">
+         <Label xml:lang="en-US">27</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID28" kind="concept">
+      <Meta name="internalId" value="19438"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103474" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right first premolar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103492" kind="short">
+         <Label xml:lang="en-US">28</Label>
+      </Rubric>
+      <Rubric id="d1e103492" kind="preferred">
+         <Label xml:lang="en-US">28</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID29" kind="concept">
+      <Meta name="internalId" value="19439"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103503" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right second premolar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103521" kind="short">
+         <Label xml:lang="en-US">29</Label>
+      </Rubric>
+      <Rubric id="d1e103521" kind="preferred">
+         <Label xml:lang="en-US">29</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID3" kind="concept">
+      <Meta name="internalId" value="19407"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103532" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right first molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103550" kind="short">
+         <Label xml:lang="en-US">3</Label>
+      </Rubric>
+      <Rubric id="d1e103550" kind="preferred">
+         <Label xml:lang="en-US">3</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID30" kind="concept">
+      <Meta name="internalId" value="19440"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103562" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right first molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103580" kind="short">
+         <Label xml:lang="en-US">30</Label>
+      </Rubric>
+      <Rubric id="d1e103580" kind="preferred">
+         <Label xml:lang="en-US">30</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID30d" kind="concept">
+      <Meta name="internalId" value="19442"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103591" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right first molar distal hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103609" kind="short">
+         <Label xml:lang="en-US">30d</Label>
+      </Rubric>
+      <Rubric id="d1e103609" kind="preferred">
+         <Label xml:lang="en-US">30d</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID30m" kind="concept">
+      <Meta name="internalId" value="19441"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103620" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right first molar mesial hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103638" kind="short">
+         <Label xml:lang="en-US">30m</Label>
+      </Rubric>
+      <Rubric id="d1e103638" kind="preferred">
+         <Label xml:lang="en-US">30m</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID31" kind="concept">
+      <Meta name="internalId" value="19443"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103649" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right second molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103667" kind="short">
+         <Label xml:lang="en-US">31</Label>
+      </Rubric>
+      <Rubric id="d1e103667" kind="preferred">
+         <Label xml:lang="en-US">31</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID31d" kind="concept">
+      <Meta name="internalId" value="19445"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103678" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right second molar distal hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103696" kind="short">
+         <Label xml:lang="en-US">31d</Label>
+      </Rubric>
+      <Rubric id="d1e103696" kind="preferred">
+         <Label xml:lang="en-US">31d</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID31m" kind="concept">
+      <Meta name="internalId" value="19444"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103707" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right second molar mesial hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103725" kind="short">
+         <Label xml:lang="en-US">31m</Label>
+      </Rubric>
+      <Rubric id="d1e103725" kind="preferred">
+         <Label xml:lang="en-US">31m</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID32" kind="concept">
+      <Meta name="internalId" value="19446"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103737" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right third molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103755" kind="short">
+         <Label xml:lang="en-US">32</Label>
+      </Rubric>
+      <Rubric id="d1e103755" kind="preferred">
+         <Label xml:lang="en-US">32</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID32d" kind="concept">
+      <Meta name="internalId" value="19448"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103766" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right third molar distal hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103784" kind="short">
+         <Label xml:lang="en-US">32d</Label>
+      </Rubric>
+      <Rubric id="d1e103784" kind="preferred">
+         <Label xml:lang="en-US">32d</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID32m" kind="concept">
+      <Meta name="internalId" value="19447"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103795" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right third molar mesial hemisection</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103813" kind="short">
+         <Label xml:lang="en-US">32m</Label>
+      </Rubric>
+      <Rubric id="d1e103813" kind="preferred">
+         <Label xml:lang="en-US">32m</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID4" kind="concept">
+      <Meta name="internalId" value="19408"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103824" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right second premolar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103842" kind="short">
+         <Label xml:lang="en-US">4</Label>
+      </Rubric>
+      <Rubric id="d1e103842" kind="preferred">
+         <Label xml:lang="en-US">4</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID5" kind="concept">
+      <Meta name="internalId" value="19409"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103853" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right first premolar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103871" kind="short">
+         <Label xml:lang="en-US">5</Label>
+      </Rubric>
+      <Rubric id="d1e103871" kind="preferred">
+         <Label xml:lang="en-US">5</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID6" kind="concept">
+      <Meta name="internalId" value="19410"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103882" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right canine</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103900" kind="short">
+         <Label xml:lang="en-US">6</Label>
+      </Rubric>
+      <Rubric id="d1e103900" kind="preferred">
+         <Label xml:lang="en-US">6</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID7" kind="concept">
+      <Meta name="internalId" value="19411"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103912" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right lateral incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103930" kind="short">
+         <Label xml:lang="en-US">7</Label>
+      </Rubric>
+      <Rubric id="d1e103930" kind="preferred">
+         <Label xml:lang="en-US">7</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID8" kind="concept">
+      <Meta name="internalId" value="19412"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103941" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right central incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103959" kind="short">
+         <Label xml:lang="en-US">8</Label>
+      </Rubric>
+      <Rubric id="d1e103959" kind="preferred">
+         <Label xml:lang="en-US">8</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID9" kind="concept">
+      <Meta name="internalId" value="19413"/>
+      <SuperClass code="PermanentDentition"/>
+      <Rubric id="d1e103970" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left central incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e103988" kind="short">
+         <Label xml:lang="en-US">9</Label>
+      </Rubric>
+      <Rubric id="d1e103988" kind="preferred">
+         <Label xml:lang="en-US">9</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDA" kind="concept">
+      <Meta name="internalId" value="19503"/>
+      <SuperClass code="PrimaryDentition"/>
+      <Rubric id="d1e103999" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right second primary molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104017" kind="short">
+         <Label xml:lang="en-US">A</Label>
+      </Rubric>
+      <Rubric id="d1e104017" kind="preferred">
+         <Label xml:lang="en-US">A</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDB" kind="concept">
+      <Meta name="internalId" value="19504"/>
+      <SuperClass code="PrimaryDentition"/>
+      <Rubric id="d1e104028" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right first primary molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104046" kind="short">
+         <Label xml:lang="en-US">B</Label>
+      </Rubric>
+      <Rubric id="d1e104046" kind="preferred">
+         <Label xml:lang="en-US">B</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDC" kind="concept">
+      <Meta name="internalId" value="19505"/>
+      <SuperClass code="PrimaryDentition"/>
+      <Rubric id="d1e104057" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right primary canine</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104075" kind="short">
+         <Label xml:lang="en-US">C</Label>
+      </Rubric>
+      <Rubric id="d1e104075" kind="preferred">
+         <Label xml:lang="en-US">C</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDD" kind="concept">
+      <Meta name="internalId" value="19506"/>
+      <SuperClass code="PrimaryDentition"/>
+      <Rubric id="d1e104087" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right lateral primary incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104105" kind="short">
+         <Label xml:lang="en-US">D</Label>
+      </Rubric>
+      <Rubric id="d1e104105" kind="preferred">
+         <Label xml:lang="en-US">D</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDE" kind="concept">
+      <Meta name="internalId" value="19507"/>
+      <SuperClass code="PrimaryDentition"/>
+      <Rubric id="d1e104116" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary right central primary incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104134" kind="short">
+         <Label xml:lang="en-US">E</Label>
+      </Rubric>
+      <Rubric id="d1e104134" kind="preferred">
+         <Label xml:lang="en-US">E</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDF" kind="concept">
+      <Meta name="internalId" value="19508"/>
+      <SuperClass code="PrimaryDentition"/>
+      <Rubric id="d1e104145" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left central primary incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104163" kind="short">
+         <Label xml:lang="en-US">F</Label>
+      </Rubric>
+      <Rubric id="d1e104163" kind="preferred">
+         <Label xml:lang="en-US">F</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDG" kind="concept">
+      <Meta name="internalId" value="19509"/>
+      <SuperClass code="PrimaryDentition"/>
+      <Rubric id="d1e104174" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left lateral primary incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104192" kind="short">
+         <Label xml:lang="en-US">G</Label>
+      </Rubric>
+      <Rubric id="d1e104192" kind="preferred">
+         <Label xml:lang="en-US">G</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDH" kind="concept">
+      <Meta name="internalId" value="19510"/>
+      <SuperClass code="PrimaryDentition"/>
+      <Rubric id="d1e104203" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left primary canine</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104221" kind="short">
+         <Label xml:lang="en-US">H</Label>
+      </Rubric>
+      <Rubric id="d1e104221" kind="preferred">
+         <Label xml:lang="en-US">H</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDI" kind="concept">
+      <Meta name="internalId" value="19511"/>
+      <SuperClass code="PrimaryDentition"/>
+      <Rubric id="d1e104232" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left first primary molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104250" kind="short">
+         <Label xml:lang="en-US">I</Label>
+      </Rubric>
+      <Rubric id="d1e104250" kind="preferred">
+         <Label xml:lang="en-US">I</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDJ" kind="concept">
+      <Meta name="internalId" value="19512"/>
+      <SuperClass code="PrimaryDentition"/>
+      <Rubric id="d1e104262" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Maxillary left second primary molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104280" kind="short">
+         <Label xml:lang="en-US">J</Label>
+      </Rubric>
+      <Rubric id="d1e104280" kind="preferred">
+         <Label xml:lang="en-US">J</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDK" kind="concept">
+      <Meta name="internalId" value="19513"/>
+      <SuperClass code="PrimaryDentition"/>
+      <Rubric id="d1e104291" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left second primary molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104309" kind="short">
+         <Label xml:lang="en-US">K</Label>
+      </Rubric>
+      <Rubric id="d1e104309" kind="preferred">
+         <Label xml:lang="en-US">K</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDL" kind="concept">
+      <Meta name="internalId" value="19514"/>
+      <SuperClass code="PrimaryDentition"/>
+      <Rubric id="d1e104320" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left first primary molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104338" kind="short">
+         <Label xml:lang="en-US">L</Label>
+      </Rubric>
+      <Rubric id="d1e104338" kind="preferred">
+         <Label xml:lang="en-US">L</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDM" kind="concept">
+      <Meta name="internalId" value="19515"/>
+      <SuperClass code="PrimaryDentition"/>
+      <Rubric id="d1e104349" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left primary canine</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104367" kind="short">
+         <Label xml:lang="en-US">M</Label>
+      </Rubric>
+      <Rubric id="d1e104367" kind="preferred">
+         <Label xml:lang="en-US">M</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDN" kind="concept">
+      <Meta name="internalId" value="19516"/>
+      <SuperClass code="PrimaryDentition"/>
+      <Rubric id="d1e104378" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left lateral primary incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104396" kind="short">
+         <Label xml:lang="en-US">N</Label>
+      </Rubric>
+      <Rubric id="d1e104396" kind="preferred">
+         <Label xml:lang="en-US">N</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDO" kind="concept">
+      <Meta name="internalId" value="19517"/>
+      <SuperClass code="PrimaryDentition"/>
+      <Rubric id="d1e104407" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular left central primary incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104425" kind="short">
+         <Label xml:lang="en-US">O</Label>
+      </Rubric>
+      <Rubric id="d1e104425" kind="preferred">
+         <Label xml:lang="en-US">O</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDP" kind="concept">
+      <Meta name="internalId" value="19518"/>
+      <SuperClass code="PrimaryDentition"/>
+      <Rubric id="d1e104437" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right central primary incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104455" kind="short">
+         <Label xml:lang="en-US">P</Label>
+      </Rubric>
+      <Rubric id="d1e104455" kind="preferred">
+         <Label xml:lang="en-US">P</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDQ" kind="concept">
+      <Meta name="internalId" value="19519"/>
+      <SuperClass code="PrimaryDentition"/>
+      <Rubric id="d1e104466" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right lateral primary incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104484" kind="short">
+         <Label xml:lang="en-US">Q</Label>
+      </Rubric>
+      <Rubric id="d1e104484" kind="preferred">
+         <Label xml:lang="en-US">Q</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDR" kind="concept">
+      <Meta name="internalId" value="19520"/>
+      <SuperClass code="PrimaryDentition"/>
+      <Rubric id="d1e104495" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right primary canine</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104513" kind="short">
+         <Label xml:lang="en-US">R</Label>
+      </Rubric>
+      <Rubric id="d1e104513" kind="preferred">
+         <Label xml:lang="en-US">R</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDS" kind="concept">
+      <Meta name="internalId" value="19521"/>
+      <SuperClass code="PrimaryDentition"/>
+      <Rubric id="d1e104524" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right first primary molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104542" kind="short">
+         <Label xml:lang="en-US">S</Label>
+      </Rubric>
+      <Rubric id="d1e104542" kind="preferred">
+         <Label xml:lang="en-US">S</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDT" kind="concept">
+      <Meta name="internalId" value="19522"/>
+      <SuperClass code="PrimaryDentition"/>
+      <Rubric id="d1e104553" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mandibular right second primary molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104571" kind="short">
+         <Label xml:lang="en-US">T</Label>
+      </Rubric>
+      <Rubric id="d1e104571" kind="preferred">
+         <Label xml:lang="en-US">T</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID10s" kind="concept">
+      <Meta name="internalId" value="19459"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e104582" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary left lateral incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104600" kind="short">
+         <Label xml:lang="en-US">10s</Label>
+      </Rubric>
+      <Rubric id="d1e104600" kind="preferred">
+         <Label xml:lang="en-US">10s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID11s" kind="concept">
+      <Meta name="internalId" value="19460"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e104612" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary left canine</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104630" kind="short">
+         <Label xml:lang="en-US">11s</Label>
+      </Rubric>
+      <Rubric id="d1e104630" kind="preferred">
+         <Label xml:lang="en-US">11s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID12s" kind="concept">
+      <Meta name="internalId" value="19461"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e104641" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary left first premolar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104659" kind="short">
+         <Label xml:lang="en-US">12s</Label>
+      </Rubric>
+      <Rubric id="d1e104659" kind="preferred">
+         <Label xml:lang="en-US">12s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID13s" kind="concept">
+      <Meta name="internalId" value="19462"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e104670" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary left second premolar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104688" kind="short">
+         <Label xml:lang="en-US">13s</Label>
+      </Rubric>
+      <Rubric id="d1e104688" kind="preferred">
+         <Label xml:lang="en-US">13s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID14s" kind="concept">
+      <Meta name="internalId" value="19463"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e104699" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary left first molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104717" kind="short">
+         <Label xml:lang="en-US">14s</Label>
+      </Rubric>
+      <Rubric id="d1e104717" kind="preferred">
+         <Label xml:lang="en-US">14s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID15s" kind="concept">
+      <Meta name="internalId" value="19464"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e104728" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary left second molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104746" kind="short">
+         <Label xml:lang="en-US">15s</Label>
+      </Rubric>
+      <Rubric id="d1e104746" kind="preferred">
+         <Label xml:lang="en-US">15s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID16s" kind="concept">
+      <Meta name="internalId" value="19465"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e104757" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary left third molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104775" kind="short">
+         <Label xml:lang="en-US">16s</Label>
+      </Rubric>
+      <Rubric id="d1e104775" kind="preferred">
+         <Label xml:lang="en-US">16s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID17s" kind="concept">
+      <Meta name="internalId" value="19466"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e104787" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular left third molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104805" kind="short">
+         <Label xml:lang="en-US">17s</Label>
+      </Rubric>
+      <Rubric id="d1e104805" kind="preferred">
+         <Label xml:lang="en-US">17s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID18s" kind="concept">
+      <Meta name="internalId" value="19467"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e104816" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular left second molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104834" kind="short">
+         <Label xml:lang="en-US">18s</Label>
+      </Rubric>
+      <Rubric id="d1e104834" kind="preferred">
+         <Label xml:lang="en-US">18s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID19s" kind="concept">
+      <Meta name="internalId" value="19468"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e104845" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular left first molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104863" kind="short">
+         <Label xml:lang="en-US">19s</Label>
+      </Rubric>
+      <Rubric id="d1e104863" kind="preferred">
+         <Label xml:lang="en-US">19s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID1s" kind="concept">
+      <Meta name="internalId" value="19450"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e104874" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary right third molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104892" kind="short">
+         <Label xml:lang="en-US">1s</Label>
+      </Rubric>
+      <Rubric id="d1e104892" kind="preferred">
+         <Label xml:lang="en-US">1s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID20s" kind="concept">
+      <Meta name="internalId" value="19469"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e104903" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular left second premolar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104921" kind="short">
+         <Label xml:lang="en-US">20s</Label>
+      </Rubric>
+      <Rubric id="d1e104921" kind="preferred">
+         <Label xml:lang="en-US">20s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID21s" kind="concept">
+      <Meta name="internalId" value="19470"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e104932" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular left first premolar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104950" kind="short">
+         <Label xml:lang="en-US">21s</Label>
+      </Rubric>
+      <Rubric id="d1e104950" kind="preferred">
+         <Label xml:lang="en-US">21s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID22s" kind="concept">
+      <Meta name="internalId" value="19471"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e104962" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular left canine</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e104980" kind="short">
+         <Label xml:lang="en-US">22s</Label>
+      </Rubric>
+      <Rubric id="d1e104980" kind="preferred">
+         <Label xml:lang="en-US">22s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID23s" kind="concept">
+      <Meta name="internalId" value="19472"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e104991" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular left lateral incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105009" kind="short">
+         <Label xml:lang="en-US">23s</Label>
+      </Rubric>
+      <Rubric id="d1e105009" kind="preferred">
+         <Label xml:lang="en-US">23s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID24s" kind="concept">
+      <Meta name="internalId" value="19473"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105020" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular left central incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105038" kind="short">
+         <Label xml:lang="en-US">24s</Label>
+      </Rubric>
+      <Rubric id="d1e105038" kind="preferred">
+         <Label xml:lang="en-US">24s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID25s" kind="concept">
+      <Meta name="internalId" value="19474"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105049" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular right central incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105067" kind="short">
+         <Label xml:lang="en-US">25s</Label>
+      </Rubric>
+      <Rubric id="d1e105067" kind="preferred">
+         <Label xml:lang="en-US">25s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID26s" kind="concept">
+      <Meta name="internalId" value="19475"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105078" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular right lateral incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105096" kind="short">
+         <Label xml:lang="en-US">26s</Label>
+      </Rubric>
+      <Rubric id="d1e105096" kind="preferred">
+         <Label xml:lang="en-US">26s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID27s" kind="concept">
+      <Meta name="internalId" value="19476"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105107" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular right canine</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105125" kind="short">
+         <Label xml:lang="en-US">27s</Label>
+      </Rubric>
+      <Rubric id="d1e105125" kind="preferred">
+         <Label xml:lang="en-US">27s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID28s" kind="concept">
+      <Meta name="internalId" value="19477"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105137" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular right first premolar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105155" kind="short">
+         <Label xml:lang="en-US">28s</Label>
+      </Rubric>
+      <Rubric id="d1e105155" kind="preferred">
+         <Label xml:lang="en-US">28s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID29s" kind="concept">
+      <Meta name="internalId" value="19478"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105166" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular right second premolar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105184" kind="short">
+         <Label xml:lang="en-US">29s</Label>
+      </Rubric>
+      <Rubric id="d1e105184" kind="preferred">
+         <Label xml:lang="en-US">29s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID2s" kind="concept">
+      <Meta name="internalId" value="19451"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105195" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary right second molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105213" kind="short">
+         <Label xml:lang="en-US">2s</Label>
+      </Rubric>
+      <Rubric id="d1e105213" kind="preferred">
+         <Label xml:lang="en-US">2s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID30s" kind="concept">
+      <Meta name="internalId" value="19479"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105224" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular right first molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105242" kind="short">
+         <Label xml:lang="en-US">30s</Label>
+      </Rubric>
+      <Rubric id="d1e105242" kind="preferred">
+         <Label xml:lang="en-US">30s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID31s" kind="concept">
+      <Meta name="internalId" value="19480"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105253" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular right second molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105271" kind="short">
+         <Label xml:lang="en-US">31s</Label>
+      </Rubric>
+      <Rubric id="d1e105271" kind="preferred">
+         <Label xml:lang="en-US">31s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID32s" kind="concept">
+      <Meta name="internalId" value="19481"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105282" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular right third molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105300" kind="short">
+         <Label xml:lang="en-US">32s</Label>
+      </Rubric>
+      <Rubric id="d1e105300" kind="preferred">
+         <Label xml:lang="en-US">32s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID3s" kind="concept">
+      <Meta name="internalId" value="19452"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105312" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary right first molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105330" kind="short">
+         <Label xml:lang="en-US">3s</Label>
+      </Rubric>
+      <Rubric id="d1e105330" kind="preferred">
+         <Label xml:lang="en-US">3s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID4s" kind="concept">
+      <Meta name="internalId" value="19453"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105341" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary right second premolar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105359" kind="short">
+         <Label xml:lang="en-US">4s</Label>
+      </Rubric>
+      <Rubric id="d1e105359" kind="preferred">
+         <Label xml:lang="en-US">4s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID5s" kind="concept">
+      <Meta name="internalId" value="19454"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105370" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary right first premolar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105388" kind="short">
+         <Label xml:lang="en-US">5s</Label>
+      </Rubric>
+      <Rubric id="d1e105388" kind="preferred">
+         <Label xml:lang="en-US">5s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID6s" kind="concept">
+      <Meta name="internalId" value="19455"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105399" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary right canine</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105417" kind="short">
+         <Label xml:lang="en-US">6s</Label>
+      </Rubric>
+      <Rubric id="d1e105417" kind="preferred">
+         <Label xml:lang="en-US">6s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID7s" kind="concept">
+      <Meta name="internalId" value="19456"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105428" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary right lateral incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105446" kind="short">
+         <Label xml:lang="en-US">7s</Label>
+      </Rubric>
+      <Rubric id="d1e105446" kind="preferred">
+         <Label xml:lang="en-US">7s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID8s" kind="concept">
+      <Meta name="internalId" value="19457"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105457" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary right central incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105475" kind="short">
+         <Label xml:lang="en-US">8s</Label>
+      </Rubric>
+      <Rubric id="d1e105475" kind="preferred">
+         <Label xml:lang="en-US">8s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID9s" kind="concept">
+      <Meta name="internalId" value="19458"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105487" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary left central incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105505" kind="short">
+         <Label xml:lang="en-US">9s</Label>
+      </Rubric>
+      <Rubric id="d1e105505" kind="preferred">
+         <Label xml:lang="en-US">9s</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDAs" kind="concept">
+      <Meta name="internalId" value="19482"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105516" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary right second primary molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105534" kind="short">
+         <Label xml:lang="en-US">As</Label>
+      </Rubric>
+      <Rubric id="d1e105534" kind="preferred">
+         <Label xml:lang="en-US">As</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDBs" kind="concept">
+      <Meta name="internalId" value="19483"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105545" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary right first primary molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105563" kind="short">
+         <Label xml:lang="en-US">Bs</Label>
+      </Rubric>
+      <Rubric id="d1e105563" kind="preferred">
+         <Label xml:lang="en-US">Bs</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDCs" kind="concept">
+      <Meta name="internalId" value="19484"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105574" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary right primary canine</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105592" kind="short">
+         <Label xml:lang="en-US">Cs</Label>
+      </Rubric>
+      <Rubric id="d1e105592" kind="preferred">
+         <Label xml:lang="en-US">Cs</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDDs" kind="concept">
+      <Meta name="internalId" value="19485"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105603" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary right lateral primary incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105621" kind="short">
+         <Label xml:lang="en-US">Ds</Label>
+      </Rubric>
+      <Rubric id="d1e105621" kind="preferred">
+         <Label xml:lang="en-US">Ds</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDEs" kind="concept">
+      <Meta name="internalId" value="19486"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105632" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary right central primary incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105650" kind="short">
+         <Label xml:lang="en-US">Es</Label>
+      </Rubric>
+      <Rubric id="d1e105650" kind="preferred">
+         <Label xml:lang="en-US">Es</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDFs" kind="concept">
+      <Meta name="internalId" value="19487"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105662" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary left central primary incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105680" kind="short">
+         <Label xml:lang="en-US">Fs</Label>
+      </Rubric>
+      <Rubric id="d1e105680" kind="preferred">
+         <Label xml:lang="en-US">Fs</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDGs" kind="concept">
+      <Meta name="internalId" value="19488"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105691" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary left lateral primary incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105709" kind="short">
+         <Label xml:lang="en-US">Gs</Label>
+      </Rubric>
+      <Rubric id="d1e105709" kind="preferred">
+         <Label xml:lang="en-US">Gs</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDHs" kind="concept">
+      <Meta name="internalId" value="19489"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105720" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary left primary canine</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105738" kind="short">
+         <Label xml:lang="en-US">Hs</Label>
+      </Rubric>
+      <Rubric id="d1e105738" kind="preferred">
+         <Label xml:lang="en-US">Hs</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDIs" kind="concept">
+      <Meta name="internalId" value="19490"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105749" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary left first primary molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105767" kind="short">
+         <Label xml:lang="en-US">Is</Label>
+      </Rubric>
+      <Rubric id="d1e105767" kind="preferred">
+         <Label xml:lang="en-US">Is</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDJs" kind="concept">
+      <Meta name="internalId" value="19491"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105778" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary maxillary left second primary molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105796" kind="short">
+         <Label xml:lang="en-US">Js</Label>
+      </Rubric>
+      <Rubric id="d1e105796" kind="preferred">
+         <Label xml:lang="en-US">Js</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDKs" kind="concept">
+      <Meta name="internalId" value="19492"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105807" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular left second primary molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105825" kind="short">
+         <Label xml:lang="en-US">Ks</Label>
+      </Rubric>
+      <Rubric id="d1e105825" kind="preferred">
+         <Label xml:lang="en-US">Ks</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDLs" kind="concept">
+      <Meta name="internalId" value="19493"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105837" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular left first primary molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105855" kind="short">
+         <Label xml:lang="en-US">Ls</Label>
+      </Rubric>
+      <Rubric id="d1e105855" kind="preferred">
+         <Label xml:lang="en-US">Ls</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDMs" kind="concept">
+      <Meta name="internalId" value="19494"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105866" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular left primary canine</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105884" kind="short">
+         <Label xml:lang="en-US">Ms</Label>
+      </Rubric>
+      <Rubric id="d1e105884" kind="preferred">
+         <Label xml:lang="en-US">Ms</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDNs" kind="concept">
+      <Meta name="internalId" value="19495"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105895" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular left lateral primary incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105913" kind="short">
+         <Label xml:lang="en-US">Ns</Label>
+      </Rubric>
+      <Rubric id="d1e105913" kind="preferred">
+         <Label xml:lang="en-US">Ns</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDOs" kind="concept">
+      <Meta name="internalId" value="19496"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105924" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular left central primary incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105942" kind="short">
+         <Label xml:lang="en-US">Os</Label>
+      </Rubric>
+      <Rubric id="d1e105942" kind="preferred">
+         <Label xml:lang="en-US">Os</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDPs" kind="concept">
+      <Meta name="internalId" value="19497"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105953" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular right central primary incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e105971" kind="short">
+         <Label xml:lang="en-US">Ps</Label>
+      </Rubric>
+      <Rubric id="d1e105971" kind="preferred">
+         <Label xml:lang="en-US">Ps</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDQs" kind="concept">
+      <Meta name="internalId" value="19498"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e105982" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular right lateral primary incisor</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e106000" kind="short">
+         <Label xml:lang="en-US">Qs</Label>
+      </Rubric>
+      <Rubric id="d1e106000" kind="preferred">
+         <Label xml:lang="en-US">Qs</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDRs" kind="concept">
+      <Meta name="internalId" value="19499"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e106012" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular right primary canine</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e106030" kind="short">
+         <Label xml:lang="en-US">Rs</Label>
+      </Rubric>
+      <Rubric id="d1e106030" kind="preferred">
+         <Label xml:lang="en-US">Rs</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDSs" kind="concept">
+      <Meta name="internalId" value="19500"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e106041" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular right first primary molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e106059" kind="short">
+         <Label xml:lang="en-US">Ss</Label>
+      </Rubric>
+      <Rubric id="d1e106059" kind="preferred">
+         <Label xml:lang="en-US">Ss</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIDTs" kind="concept">
+      <Meta name="internalId" value="19501"/>
+      <SuperClass code="SupernumeraryTooth"/>
+      <Rubric id="d1e106070" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Supernumerary mandibular right second primary molar</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e106088" kind="short">
+         <Label xml:lang="en-US">Ts</Label>
+      </Rubric>
+      <Rubric id="d1e106088" kind="preferred">
+         <Label xml:lang="en-US">Ts</Label>
+      </Rubric>
+   </Class>
+</ClaML>

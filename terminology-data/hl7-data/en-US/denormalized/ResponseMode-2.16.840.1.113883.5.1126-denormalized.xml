@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="274"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1126"/>
+   <Title name="ResponseMode" date="2012-08-02" version="1.000">Specifies the mode, immediate versus deferred or queued, by which a receiver should communicate its receiver responsibilities.</Title>
+   <Class code="rootClass">
+      <SubClass subCount="0" code="D" kind="concept">
+         <Rubric id="d1e201913" kind="preferred">
+            <Label xml:lang="en-US">deferred</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="I" kind="concept">
+         <Rubric id="d1e201938" kind="preferred">
+            <Label xml:lang="en-US">immediate</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="Q" kind="concept">
+         <Rubric id="d1e201962" kind="preferred">
+            <Label xml:lang="en-US">queue</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">ResponseMode</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">Specifies the mode, immediate versus deferred or queued, by which a receiver should communicate its receiver responsibilities.</Label>
+      </Rubric>
+   </Class>
+   <Class code="D" kind="concept">
+      <Meta name="internalId" value="21433"/>
+      <Rubric id="d1e201900" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The receiver may respond in a non-immediate manner. Note: this will be the default value.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e201913" kind="short">
+         <Label xml:lang="en-US">deferred</Label>
+      </Rubric>
+      <Rubric id="d1e201913" kind="preferred">
+         <Label xml:lang="en-US">deferred</Label>
+      </Rubric>
+   </Class>
+   <Class code="I" kind="concept">
+      <Meta name="internalId" value="21432"/>
+      <Rubric id="d1e201925" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The receiver is required to assume that the sender is blocking and behave appropriately by sending an immediate response.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e201938" kind="short">
+         <Label xml:lang="en-US">immediate</Label>
+      </Rubric>
+      <Rubric id="d1e201938" kind="preferred">
+         <Label xml:lang="en-US">immediate</Label>
+      </Rubric>
+   </Class>
+   <Class code="Q" kind="concept">
+      <Meta name="internalId" value="21434"/>
+      <Rubric id="d1e201949" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The receiver shall keep any application responses in a queue until such time as the queue is polled.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e201962" kind="short">
+         <Label xml:lang="en-US">queue</Label>
+      </Rubric>
+      <Rubric id="d1e201962" kind="preferred">
+         <Label xml:lang="en-US">queue</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

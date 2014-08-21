@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen SCHSchema="../schematrons/elab-cdaaanvraag.sch"?>
+<!-- 
+    
+    Voorbeeld document Opdracht
+    De "EBV" Patiënt
+        
+    Storyboard
+    ===
+    Andy de Vries heeft sinds 4 dagen korts en is vaak moe. Zijn temperatuur is 38.8 C en hij neemt geen antibiotica
+    maar wel paracetamol.
+    Zijn huisarts Dr Daniel Deventer heeft het vermoeden dat hij een infectie met EBV is opgelopen. Hij vraagt een afname en een
+    onerzoek pakket EBV algemeen en auto differentatie panel aan.
+        
+-->
+
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../schemas/CDA_IHE_LAB.xsd" xmlns:lab="urn:oid:2.16.840.1.113883.2.4.6.10.35.81"
+    xmlns="urn:hl7-org:v3" classCode="DOCCLIN" moodCode="EVN">
+
+    <realmCode code="NL"/>
+
+    <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+
+    <!-- e-Lab template vor labaanvraag documenten -->
+    <templateId root="2.16.840.1.113883.2.4.6.10.35.1"/>
+    <templateId root="2.16.840.1.113883.2.4.6.10.100001"/>
+
+    <!-- Identificatie van (deze versie van) het labaanvraagdocument -->
+    <id extension="2384039" root="2.16.528.1.1007.3.2.1111.21.1"/>
+
+    <!-- Item: 40010 - Soort document - opdracht 1..1 M -->
+    <code code="X-LAB-ORDER" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="LABORATORY ORDER"/>
+
+    <!-- Titel in vrije tekst -->
+    <title>Labaanvraag dd. 2 mei 2010</title>
+
+    <!-- "Afrondingsdatum" van het document -->
+    <effectiveTime value="20100502142312"/>
+
+    <!-- Vertrouwelijkheid van het document -->
+    <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+
+    <!-- Taal van de het document -->
+    <languageCode code="nl-NL"/>
+
+    <!-- Versionering: dit is versie 1 uit het set met onderstaande id (het eerste originele document) -->
+    <setId extension="32123" root="2.16.528.1.1007.3.2.1111.20.1"/>
+    <versionNumber value="1"/>
+
+    <!-- Gegevens patiënt -->
+    <!-- Item: 10005 - (HL7: recordTarget) 1..1 M -->
+    <recordTarget typeCode="RCT" contextControlCode="OP">
+
+        <patientRole classCode="PAT">
+
+            <!-- Item: 10110 - Identificaties van de patiënt: het burgerservicenummer 1..1 M -->
+            <id root="2.16.840.1.113883.2.4.6.3" extension="280881241"/>
+
+            <!-- Item: 10170 - Adres 0..1 O -->
+            <addr use="HP">
+                <streetName>Parelhof</streetName>
+                <houseNumber>1</houseNumber>
+                <postalCode>1703 EZ</postalCode>
+                <city>Heerhugowaard</city>
+            </addr>
+
+            <!-- Item: 10150 - Telefoonnummer 0..* O -->
+            <telecom use="HP" value="tel:+31725755556"/>
+
+            <!-- Item: 10160 - Email 0..* O -->
+            <telecom use="H" value="mailto:zeb@zachtjes.nl"/>
+
+            <patient classCode="PSN">
+
+                <!-- Item: 10030 - Reguliere naam 0..1 C -->
+                <name use="L">
+                    <given>Andy</given>
+                    <prefix>de </prefix>
+                    <family>Vries</family>
+                </name>
+
+                <!-- Item: 10120 - Geslacht 1..1 M -->
+                <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+
+                <!-- Item: 10130 - Geboortedatum 1..1 M -->
+                <birthTime value="19810408"/>
+
+                <!-- Item: 10140 - Meerlingindicatie 0..1 C, extension van CDA in lab: namespace -->
+                <lab:multipleBirthInd value="false"/>
+
+            </patient>
+
+        </patientRole>
+
+    </recordTarget>
+
+    <!-- Auteur document: deze overlapt mogelijk met legalAuthenticator. Merk op dat de auteur ook een systeem mag zijn -->
+    <!-- Item: 20005 - (HL7: author) 1..1 M -->
+    <author typeCode="AUT" contextControlCode="OP">
+
+        <!-- Moment van afronden van het document -->
+        <!-- Item: 40050 - Opdrachtdatum X -->
+        <time value="20100502142312"/>
+
+        <assignedAuthor classCode="ASSIGNED">
+
+            <!-- Item: 20070 - UZI  nummer 1..1 M -->
+            <id root="2.16.528.1.1007.3.1" extension="000006423"/>
+
+            <!-- Item: 20080 - Specialisme 0..1 C, UZI-rolcode, hier 01.015 Huisarts -->
+            <code code="01.015" codeSystem="2.16.840.1.113883.2.4.15.111"/>
+
+            <!-- Naam auteur -->
+            <assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                <!-- Item: 20020 - Reguliere naam 1..1 M -->
+                <name>
+                    <prefix qualifier="AC">Dr.</prefix>
+                    <given qualifier="IN">Damian</given>
+                    <family>Deventer</family>
+                </name>
+            </assignedPerson>
+
+            <!-- Item: Gegevens zorgaanbieder 1..1 M  (context van de auteur) -->
+            <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+
+                <!-- Item: 30150 - URA nummer 1..1 M -->
+                <id extension="00077667" root="2.16.528.1.1007.3.3"/>
+
+                <!-- Item: 30160 - Type instelling 0..1 C -->
+
+                <!-- Item: 30010 - Naam 1..1 M -->
+                <name>Huisartspraktijk Dr Deventer</name>
+
+                <!-- Item: 30020 - Adres 1..1 M -->
+                <addr use="WP">
+                    <streetName>Clara Wichmanntuin</streetName>
+                    <houseNumber>12</houseNumber>
+                    <postalCode>1705 JZ</postalCode>
+                    <city>Heerhugowaard</city>
+                </addr>
+
+            </representedOrganization>
+        </assignedAuthor>
+    </author>
+
+    <!-- Item: 30600 - Custodian (beheerder van het document) 1..1 M -->
+    <custodian typeCode="CST">
+
+        <assignedCustodian classCode="ASSIGNED">
+
+            <representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+
+                <!-- Item: 30150 - URA nummer 1..1 M -->
+                <id extension="00077667" root="2.16.528.1.1007.3.3"/>
+
+                <!-- Item: 30160 - Type instelling 0..1 C -->
+
+                <!-- Item: 30010 - Naam 1..1 M -->
+                <name>Huisartspraktijk Dr Deventer</name>
+
+                <!-- Item: 30020 - Adres 1..1 M -->
+                <addr use="HP">
+                    <streetName>Clara Wichmanntuin</streetName>
+                    <houseNumber>12</houseNumber>
+                    <postalCode>1705 JZ</postalCode>
+                    <city>Heerhugowaard</city>
+                </addr>
+
+            </representedCustodianOrganization>
+
+        </assignedCustodian>
+
+    </custodian>
+    
+    <!-- Item: 10370 - Verzekeringsgegevens 0..* O -->
+    <participant typeCode="HLD">
+        
+        <associatedEntity classCode="POLHOLD">
+            
+            <!-- Item: 10400 - Polisnummer UZOVI 1..1 M -->
+            <id root="2.16.840.1.113883.2.4.6.4.9665" extension="457384578" assigningAuthorityName="Univé"/>
+            
+            <!-- Item: 10410 - Soort verzekering 0..1 O -->
+            <code code="SELF" codeSystem="2.16.840.1.113883.5.111"/>
+            
+            <scopingOrganization classCode="ORG" determinerCode="INSTANCE">
+                <!-- Item: 10390 - Verzekeringmaatschappij 1..1 M -->
+                <id extension="000003425" root="2.16.840.1.113883.2.4.6.4"/>
+            </scopingOrganization>
+            
+        </associatedEntity>
+        
+    </participant>
+
+    <!-- ABI heri niet van toepassing in dit voorbeeld maar vergelijkbaar met Verzekeraar -->
+
+    <!--
+        CDA body: opdrachtgegevens
+        met drie CDA sections
+        1. Opdrachtgegevens
+        2. klinisch/fysische informatie
+                gewicht
+                zwangerschap
+                medicatie
+                allergien
+                vaccinatie
+                ingrepen
+                contact plant/dier
+                verblijf buitenland
+         3. uitslagen sneltest
+        
+        in CDA Level 1/2 en in CDA Level 3
+    -->
+    <component typeCode="COMP" contextConductionInd="true">
+
+        <structuredBody classCode="DOCBODY" moodCode="EVN">
+
+            <!-- Item: opdrachtgegevens -->
+            <component typeCode="COMP">
+                
+                <section classCode="DOCSECT" moodCode="EVN">
+                    
+                    <code code="X-LAB-ORDER" codeSystem="2.16.840.1.113883.6.1" displayName="Laboratorium aanvraag"/>
+                    
+                    <title>Opdrachtgegevens</title>
+                    
+                    <text>
+                        <table width="50%">
+                            <tbody>
+                                <tr>
+                                    
+                                    <td>
+                                        <content styleCode="Bold">Opdracht:</content>
+                                    </td>
+                                    <td>
+                                        <list>
+                                            <item>Lab <list>
+                                                <item>Opdrachtnummer: 123459</item>
+                                                <!-- Deze komt uit /ClinicalDocument/author/time/@value -->
+                                                <item>Opdrachtdatum: 29-01-2010 10:15</item>
+                                            </list>
+                                            </item>
+                                            <item>Afname <list>
+                                                <item>Opdrachtnummer: 532433</item>
+                                                <item>Geldig: t/m 10-05-2010</item>
+                                                <item>Locatie: Afnamepunt</item>
+                                            </list>
+                                            </item>
+                                        </list>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <content styleCode="Bold">Status:</content>
+                                    </td>
+                                    <td>
+                                        <content>nieuw</content>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <content styleCode="Bold">Urgentie:</content>
+                                    </td>
+                                    <td>
+                                        <content>spoed</content>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <content styleCode="Bold">Aanvragen:</content>
+                                    </td>
+                                    <td>
+                                        <list>
+                                            <item>Hematologie (Materiaal: Volbloed) <list>
+                                                <item>Epstein Barr virus Ab (13238-1)</item>
+                                                <item>Auto differential panel (57021-8)</item>
+                                            </list>
+                                            </item>
+                                        </list>
+                                    </td>
+                                </tr>   
+                                <tr>
+                                    <td>
+                                        <content styleCode="Bold">Vraagstelling: </content>
+                                    </td>
+                                    <td>Epstein-Barr virus hepatitis</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    
+                    <entry typeCode="DRIV" contextConductionInd="true">
+                        
+                        <templateId root="2.16.840.1.113883.2.4.6.10.35.200"/>
+                        
+                        <!-- Item: opdrachtgegevens -->
+                        <act classCode="ACT" moodCode="RQO">
+                            
+                            <!-- Item: 40025 - (HL7: Administratieve aanvraaggegevens act) 1..1 M -->
+
+                            <!-- Item: 40040 - Opdrachtnummer 1..1 M -->
+                            <id root="2.16.528.1.1007.3.2.2222.19.1" extension="3454254"/>
+
+                            <code code="X-LAB-ORDER" codeSystem="2.16.840.1.113883.6.1" displayName="Laboratorium aanvraag"/>
+
+                            <!-- Niet de opdrachtstatus eLab maar status van deze act/verzoek -->
+                            <statusCode code="active"/>
+                           
+                            <!-- Item: 40160 - Urgentie (voor bepaling) 0..1 O -->
+                            <priorityCode code="S" codeSystem="2.16.840.1.113883.5.7" displayName="spoed"/>
+
+                            <!-- Afnameverzoek: is een component van de huidige aanvraag -->
+                            <entryRelationship typeCode="COMP">
+
+                                <!-- Item: 40055 - (HL7: Afnameverzoek procedure) 0..1 O -->
+                                <procedure classCode="SPECCOLLECT" moodCode="RQO">
+
+                                    <!-- Item: 40056 - Opdrachtnummer afname  -->
+                                    <id root="2.16.528.1.1007.3.2.2222.19.2" extension="532433"/>
+                                    
+                                    <!-- Item: 40170 - Geldig vanaf (voor afname) 0..1 O -->
+                                    <!-- Item: 40180 - Geldig tot (voor afname) 0..1 O -->
+                                    <effectiveTime>
+                                        <high value="201005102359"/>
+                                    </effectiveTime>
+                                    
+                                    <!-- Item: 40058 - Gewenste locatie afname 1..1 M -->
+                                    <participant typeCode="LOC">
+                                        <participantRole classCode="SDLOC">
+                                            <code code="HUSCS" codeSystem="2.16.840.1.113883.5.111" displayName="Prikpunt"/>
+                                        </participantRole>
+                                    </participant>
+                                    
+                                    <!-- Item: 40057 - Opdracht aanvulling ja/nee 1..1 M -->
+                                    <entryRelationship typeCode="COMP">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <code code="308273005" codeSystem="2.16.840.1.113883.6.96"/>
+                                            <value xsi:type="BL" value="false"/>
+                                        </observation>
+                                    </entryRelationship>
+
+                                </procedure>
+
+                            </entryRelationship>
+                      
+                            <!-- Labbepalingsverzoek: is een component van de huidige aanvraag  -->
+                            <entryRelationship typeCode="COMP">
+
+                                <!-- Groep Item: 40081 - (HL7: bepalingsverzoek) 1..1 M -->
+                                <act classCode="ACT" moodCode="RQO">
+
+                                    <code code="X-LAB-ORDER" codeSystem="2.16.840.1.113883.6.1"/>
+
+                                    <!-- Item: 40082 - (HL7: uitvoerend lab - gewenste performer) 0..1 O -->
+                                    <performer typeCode="PRF">
+                                        
+                                        <!-- Item: 40089 - (HL7: uitvoerend lab - gewenste AssignedEntity) 0..1 C -->
+                                        <assignedEntity classCode="ASSIGNED">
+                                            <!-- UZI Registerabonneenummer (URA) -->
+                                            <id extension="00008481" root="2.16.528.1.1007.3.3"/>
+
+                                            <!-- Werkadres -->
+                                            <addr use="WP">
+                                                <streetName>Rubenslaan</streetName>
+                                                <houseNumber>2-6</houseNumber>
+                                                <postalCode>1816 MB</postalCode>
+                                                <city>Alkmaar</city>
+                                            </addr>
+                                            
+                                            <!-- Item: 40090 - Gegevens gewenst uitvoerend lab 1..1 M -->
+                                            <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+
+                                                <!-- UZI Registerabonneenummer (URA) -->
+                                                <id extension="00008481" root="2.16.528.1.1007.3.3"/>
+
+                                                <name use="L">Allab bv Alkmaar</name>
+                                                
+                                            </representedOrganization>
+                                        </assignedEntity>
+                                    </performer>
+
+                                    <entryRelationship typeCode="COMP">
+                                        <!-- Item: 40715 - Aanvragen per materiaal  0..* C -->
+                                        <organizer classCode="BATTERY" moodCode="RQO">
+                                            <code code="18725-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MICROBIOLOGY STUDIES"/>
+                                            <statusCode code="completed"/>
+                                            <!-- Item: 40721 - (HL7: aanvragen per materiaal specimen) 1..* M -->
+                                            <specimen typeCode="SPC">
+                                                <specimenRole classCode="SPEC">
+                                                    <specimenPlayingEntity classCode="ENT" determinerCode="INSTANCE">
+                                                        <!-- Item: 40723 - (HL7: aanvragen per materiaal specimen materiaal) 1..1 M -->
+                                                        <code code="87612001" codeSystem="2.16.840.1.113883.6.96" displayName="volbloed"/>
+                                                    </specimenPlayingEntity>
+                                                </specimenRole>
+                                            </specimen>
+                                            <!-- Item: 40716 - (HL7: aanvragen per materiaal) 1..* M -->
+                                            <component typeCode="COMP">
+                                                <observation classCode="OBS" moodCode="RQO">
+                                                    <code code="13238-1" codeSystem="2.16.840.1.113883.6.1" displayName="Epstein Barr virus Ab"> </code>
+                                                    <statusCode code="active"/>
+                                                </observation>
+                                            </component>
+                                            <component typeCode="COMP">
+                                                <observation classCode="OBS" moodCode="RQO">
+                                                    <code code="57021-8" codeSystem="2.16.840.1.113883.6.1" displayName="Auto differential panel"> </code>
+                                                    <statusCode code="active"/>
+                                                </observation>
+                                            </component>
+                                        </organizer>
+                                    </entryRelationship>
+
+                                </act>
+                            </entryRelationship>
+                            
+                            <!-- Item: 40240 - Vraagstelling 1..1 M -->
+                            <entryRelationship typeCode="COMP">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                                    <value xsi:type="CD" code="302919001" codeSystem="2.16.840.1.113883.6.96" displayName="Epstein-Barr virus hepatitis"/>
+                                </observation>
+                            </entryRelationship>
+                            
+                         </act>
+                        
+                    </entry>
+                    
+                </section>
+                
+            </component>
+
+            <!-- Component met de Klinische/ fysische informatie -->
+            <component typeCode="COMP">
+                <section classCode="DOCSECT" moodCode="EVN">
+                    <!-- Item: 40250 - Klinische/ fysische informatie: 0..1 C -->
+                    <code code="34117-2" codeSystem="2.16.840.1.113883.6.1" displayName="History and physical note"/>
+                    
+                    <title>Klinisch/fysische informatie</title>
+                    
+                    <text>
+                        <table width="100%">
+                            <tbody>
+                                <tr>
+                                    <td><content styleCode="Bold">1e ziektedag: </content></td>
+                                    <td>28-04-2010</td>
+                                </tr>
+                                <tr>
+                                    <td><content styleCode="Bold">Duur van de klacht: </content></td>
+                                    <td>4 dagen</td>
+                                </tr>
+                                <tr>
+                                    <td><content styleCode="Bold">Zwangerschap: </content></td>
+                                    <td>nee</td>
+                                </tr>
+                                <tr>
+                                    <td><content styleCode="Bold">Relevante medicatie:</content></td>
+                                    <td>
+                                        <list>
+                                            <item>Paracetamol 2 stuk per dag</item>
+                                            <item>geen antibiotica</item>
+                                        </list>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><content styleCode="Bold">Symptomen:</content></td>
+                                    <td>
+                                        <list>
+                                            <item>Shivering</item>
+                                            <item>Fever 38.8 C</item>
+                                            <item>Fatigue</item>
+                                        </list>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><content styleCode="Bold">Beroep: </content></td>
+                                    <td>Student</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </text>
+                    
+                    <entry typeCode="DRIV" contextConductionInd="true">
+                        
+                        <templateId root="2.16.840.1.113883.2.4.6.10.35.201"/>
+                        
+                        <!-- Item: 40250 - Klinische/ fysische informatie: 0..1 C -->
+                        <organizer classCode="CLUSTER" moodCode="EVN">
+                            
+                            <code code="34117-2" codeSystem="2.16.840.1.113883.6.1" displayName="History and physical note"/>
+                            
+                            <statusCode code="completed"/>
+
+                            <!-- Item: 40256 - (HL7: onderliggend lijden) 1..* M -->
+                            <component typeCode="COMP">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <code code="10154-3" displayName="Chief complaint" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                                    <statusCode code="active"/>
+                                    <effectiveTime>
+                                        <!-- Item: 40300 - 1e ziektedag 0..1 C -->
+                                        <low value="20100428"/>
+                                        <!-- Item: 40310 - Duur van de klacht 0..1 C -->
+                                        <width value="4" unit="d"/>
+                                    </effectiveTime>
+                                    <!-- Item: 40260 - Onderliggend lijden 0..1 C -->
+                                    <value xsi:type="CD" code="386661006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Fever"/>
+                                </observation>
+                            </component>
+                            
+                            <!-- Item: 40320 - Zwangerschap 1..1 M -->
+                            <component typeCode="COMP">
+                                <observation classCode="COND" moodCode="EVN" negationInd="true">
+                                    <code code="364320009" codeSystem="2.16.840.1.113883.6.96" displayName="Pregnancy"/>
+                                    <statusCode code="completed"/>
+                                </observation>
+                            </component>
+
+                            <!-- Item: 40380 - Relevante medicatie 1..1 C -->
+                            <component typeCode="COMP">
+                                <organizer classCode="BATTERY" moodCode="EVN">
+                                    
+                                    <code code="18605-6" displayName="Current Medication" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                                    
+                                    <statusCode code="completed"/>
+                                    
+                                    <!-- Item: 40380 - (HL7: lijst medicatie) 0..* C -->
+                                    <component typeCode="COMP">
+                                        <substanceAdministration classCode="SBADM" moodCode="EVN">
+                                            <code code="DRUG" codeSystem="2.16.840.1.113883.5.4"/>
+                                            <statusCode code="active"/>
+                                            <!-- Item: 40382 - Doseringsschema 0..1 O -->
+                                            <effectiveTime xsi:type="SXPR_TS">
+                                                <comp xsi:type="IVL_TS">
+                                                    <low nullFlavor="UNK"/>
+                                                </comp>
+                                                <comp xsi:type="PIVL_TS">
+                                                    <period value="0.5" unit="d"/>
+                                                </comp>
+                                            </effectiveTime>
+                                            <doseQuantity>
+                                                <!-- Item: 40382 - Hoeveelheid 0..1 O -->
+                                                <center value="1">
+                                                    <!-- Item: 40383 - Dosering (vertaling naar G-standaard)  -->
+                                                    <translation value="1" code="245" codeSystem="2.16.840.1.113883.2.4.4.1.900.2" displayName="Stuk"/>
+                                                    <!-- Item: 30384 - Dosering (vertaling naar tabel 25)  -->
+                                                    <translation value="1" code="100" codeSystem="2.16.840.1.113883.2.4.4.1.361" displayName="Tablet"/>
+                                                </center>
+                                            </doseQuantity>
+                                            <consumable typeCode="CSM">
+                                                <!-- Item: 40379 - (HL7: drug)  -->
+                                                <manufacturedProduct classCode="MANU">
+                                                    <manufacturedLabeledDrug classCode="MMAT" determinerCode="KIND">
+                                                        <!-- Item: 40381 - Medicatie 1..1 M -->
+                                                        <code code="99999999" codeSystem="2.16.840.1.113883.2.4.4.1" codeSystemName="G-Standaard GPK" displayName="Paracetamol"/>
+                                                    </manufacturedLabeledDrug>
+                                                </manufacturedProduct>
+                                            </consumable>
+                                        </substanceAdministration>
+                                    </component>
+                                    
+                                    <!-- Item: 40380 - (HL7: lijst medicatie) 0..* C -->
+                                    <component typeCode="COMP">
+                                        <substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="true">
+                                            <statusCode code="active"/>
+                                            <!-- Item: 40382 - Doseringsschema 0..1 O -->
+                                            <consumable typeCode="CSM">
+                                                <!-- Item: 40379 - (HL7: drug)  -->
+                                                <manufacturedProduct classCode="MANU">
+                                                    <manufacturedLabeledDrug classCode="MMAT" determinerCode="KIND">
+                                                        <!-- Item: 40381 - Medicatie 1..1 M -->
+                                                        <code code="99999999" codeSystem="2.16.840.1.113883.2.4.4.1" codeSystemName="G-Standaard GPK" displayName="Antibiotica"/>
+                                                    </manufacturedLabeledDrug>
+                                                </manufacturedProduct>
+                                            </consumable>
+                                        </substanceAdministration>
+                                    </component>
+                                    
+                                </organizer>
+                            </component>
+
+                            <!-- Item: 40400 - Symptomen etc. 0..1 C -->
+                            <component typeCode="COMP">
+                                <organizer classCode="BATTERY" moodCode="EVN">
+                                    
+                                    <code code="418799008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Finding reported by subject or history provider"/>
+                                    
+                                    <statusCode code="completed"/>
+                                    
+                                    <!-- 0..* components identifying symptoms -->
+                                    
+                                    <!-- Item: 40401 - Soort symptoom 1..* M -->
+                                    <component typeCode="COMP">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <code code="43724002" codeSystem="2.16.840.1.113883.6.96" displayName="Shivering"/>
+                                            <statusCode code="completed"/>
+                                        </observation>
+                                    </component>
+                                    
+                                    <!-- Item: 40401 - Soort symptoom 1..1 M -->
+                                    <component typeCode="COMP">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <code code="386661006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Fever"/>
+                                            <statusCode code="completed"/>
+                                            <!-- Item: 40405 - Symptoom (begeleidende waarde) 0..1 O -->
+                                            <value xsi:type="PQ" value="38.8" unit="C"/>
+                                        </observation>
+                                    </component>
+                                    
+                                    <!-- Item: 40401 - Soort symptoom 1..1 M -->
+                                    <component typeCode="COMP">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <code code="84229001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Fatigue"/>
+                                            <statusCode code="completed"/>
+                                        </observation>
+                                    </component>
+                                    
+                                </organizer>
+                            </component>
+
+                            <!-- Item: 40580 - Beroep 0..1 C -->
+                            <component typeCode="COMP">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <code code="184104002" codeSystem="2.16.840.1.113883.6.96" displayName="Patient occupation"/>
+                                    <statusCode code="completed"/>
+                                    <value xsi:type="CD" code="65853000" codeSystem="2.16.840.1.113883.6.96" displayName="Student"/>
+                                </observation>
+                            </component>
+
+                        </organizer>
+                    </entry>
+                </section>
+            </component>
+            
+        </structuredBody>
+    </component>
+</ClinicalDocument>

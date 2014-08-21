@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:hl7-org:v3 ../schemas/CDA.xsd" xmlns:voc="urn:hl7-org:v3/voc"
+    xmlns="urn:hl7-org:v3">
+
+    <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+    <templateId root="2.16.840.1.113883.2.10.1.1.9" extension="LAB"/>
+    <id root="2.16.840.1.113883.2.10.1.4.2" extension="I910969-1"/>
+    <code code="26436-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+        displayName="ALL LABORATORY STUDIES"/>
+    <title>INFORME DE LABORATORIO</title>
+    <effectiveTime value="20060322221056"/>
+    <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+    <languageCode code="es-AR"/>
+    <setId root="2.16.840.1.113883.2.10.1.4.3" extension="I910969"/>
+    <versionNumber value="1"/>
+    <recordTarget>
+        <patientRole>
+            <id root="2.16.840.1.113883.2.10.1.1.1" extension="910969"/>
+            <patient>
+                <name>
+
+                    <family>ALFA</family>
+                    <given> ADRIANO</given>
+                </name>
+                <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"
+                    codeSystemName="AdministrativeGender"> </administrativeGenderCode>
+                <birthTime value="20040411"/>
+            </patient>
+
+        </patientRole>
+    </recordTarget>
+
+    <author>
+        <time value="20060322221056"/>
+        <assignedAuthor>
+
+            <id root="2.16.840.1.113883.2.10.1.4.4" extension="10001"/>
+
+            <assignedAuthoringDevice>
+
+                <manufacturerModelName>GRUPO BIOQUIMICO S.A.</manufacturerModelName>
+                <softwareName>ENVCDA</softwareName>
+
+            </assignedAuthoringDevice>
+
+            <representedOrganization>
+                <id root="2.16.840.1.113883.2.10.1.1.4" extension="365"/>
+                <name>LABORATORIO CENTRAL</name>
+            </representedOrganization>
+        </assignedAuthor>
+    </author>
+
+    <custodian>
+        <assignedCustodian>
+            <representedCustodianOrganization>
+                <id root="2.16.840.1.113883.2.10.1.1.4" extension="365"/>
+                <name>LABORATORIO CENTRAL</name>
+            </representedCustodianOrganization>
+        </assignedCustodian>
+    </custodian>
+
+    <legalAuthenticator>
+
+        <time value="20060322221056"/>
+
+        <signatureCode code="S"/>
+
+        <assignedEntity>
+            <id root="2.16.840.1.113883.2.10.1.1.2" extension="4001"/>
+            <assignedPerson>
+                <name>
+                    <family>DE CRISTOFANO</family>
+                    <given>MIGUEL ANGEL</given>
+                </name>
+            </assignedPerson>
+            <representedOrganization>
+                <id root="2.16.840.1.113883.2.10.1.1.4" extension="365"/>
+                <name>LABORATORIO CENTRAL</name>
+            </representedOrganization>
+        </assignedEntity>
+
+    </legalAuthenticator>
+
+    <participant typeCode="PRCP">
+        <associatedEntity classCode="CON">
+            <id root="2.16.840.1.113883.2.10.1.1.2" extension="4001"/>
+            <associatedPerson>
+                <name>
+                    <family>LUNA</family>
+                    <given>DANIEL</given>
+                </name>
+            </associatedPerson>
+        </associatedEntity>
+    </participant>
+
+    <participant typeCode="BEN">
+        <associatedEntity classCode="COVPTY">
+            <id root="2.16.840.1.113883.2.10.1.1.5.2" extension="99999"/>
+            <associatedPerson>
+                <name>
+                    <family>ALFA</family>
+                    <given>ADRIANO</given>
+
+                </name>
+            </associatedPerson>
+            <scopingOrganization>
+
+                <id root="2.16.840.1.113883.2.10.1.1.5" extension="2"/>
+                <name>PLAN DE SALUD DEL HOSPITAL ITALIANO</name>
+
+            </scopingOrganization>
+        </associatedEntity>
+    </participant>
+
+    <inFulfillmentOf>
+        <order>
+            <id root="2.16.840.1.113883.2.10.1.2.3" extension="636236"/>
+        </order>
+    </inFulfillmentOf>
+
+    <documentationOf>
+        <serviceEvent>
+            <id root="2.16.840.1.113883.2.10.1.4.3" extension="I     910969"/>
+            <effectiveTime value="200409280000"/>
+            <performer typeCode="PPRF">
+                <assignedEntity>
+                    <id extension="2.16.840.1.113883.2.10.1.1.4" root="365"/>
+                </assignedEntity>
+            </performer>
+        </serviceEvent>
+    </documentationOf>
+
+    <componentOf>
+        <encompassingEncounter>
+            <id root="2.16.840.1.113883.2.10.1.1.8" extension="H0156280"/>
+            <effectiveTime value="18991230"/>
+            <location>
+                <healthCareFacility>
+                    <id root="2.16.840.1.113883.2.10.1.1.7" extension="205"/>
+                    <location>
+                        <name>10-</name>
+                    </location>
+                </healthCareFacility>
+            </location>
+
+        </encompassingEncounter>
+    </componentOf>
+
+    <component>
+        <structuredBody>
+            <component>
+
+                <section>
+                    <code code="369" codeSystem="2.16.840.1.113883.2.10.1.1.3"/>
+                    <text styleCode="xListing">
+
+                        <content ID="a1"> HEMATOCRITO : 39,0 % 37,0-47,0 Metodo: Citometria </content>
+
+                    </text>
+                    <entry>
+                        <observation classCode="OBS" moodCode="EVN">
+                            <id root="2.16.840.1.113883.2.10.1.4.5" extension="E157300-466-1"/>
+                            <code code="369" codeSystem="2.16.840.1.113883.2.10.1.1.3"
+                                displayName="HEMATOCRITO">
+                                <originalText>
+                                    <reference value="#a1"/>
+                                </originalText>
+                            </code>
+                            <statusCode code="completed"/>
+                            <effectiveTime value="20061106171200"/>
+                            <value unit="1" value="39.0" xsi:type="PQ"/>
+                            <referenceRange>
+                                <observationRange>
+                                    <value xsi:type="IVL_PQ">
+                                        <low unit="%" value="37.0"/>
+                                    </value>
+                                </observationRange>
+                            </referenceRange>
+                            <referenceRange>
+                                <observationRange>
+                                    <value xsi:type="IVL_PQ">
+                                        <high unit="%" value="47.0"/>
+                                    </value>
+                                </observationRange>
+                            </referenceRange>
+                        </observation>
+                    </entry>
+
+                </section>
+            </component>
+
+            <component>
+
+                <section>
+                    <code code="348" codeSystem="2.16.840.1.113883.2.10.1.1.3"/>
+
+                    <text styleCode="xListing">
+
+                        <content ID="a2"> GLUCOSA : 122 mg/dL 70-110 Metodo: Cinetico- Consumo de
+                            Oxigeno </content>
+                    </text>
+                    <entry>
+                        <observation classCode="OBS" moodCode="EVN">
+                            <id root="2.16.840.1.113883.2.10.1.4.5" extension="E157300-412-1"/>
+                            <code code="348" codeSystem="2.16.840.1.113883.2.10.1.1.3"
+                                displayName="GLUCEMIA">
+                                <originalText>
+                                    <reference value="#a2"/>
+                                </originalText>
+                            </code>
+                            <statusCode code="completed"/>
+                            <effectiveTime value="20061106171200"/>
+                            <value unit="mg/dL" value="122" xsi:type="PQ"/>
+                            <referenceRange>
+                                <observationRange>
+                                    <value xsi:type="IVL_PQ">
+                                        <low unit="mg/dL" value="70"/>
+                                    </value>
+                                </observationRange>
+                            </referenceRange>
+                            <referenceRange>
+                                <observationRange>
+                                    <value xsi:type="IVL_PQ">
+                                        <high unit="mg/dL" value="110"/>
+                                    </value>
+                                </observationRange>
+                            </referenceRange>
+                        </observation>
+                    </entry>
+
+                </section>
+            </component>
+
+        </structuredBody>
+
+    </component>
+
+</ClinicalDocument>

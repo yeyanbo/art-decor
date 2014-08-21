@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:epsos="urn:epsos-org:ep:medication" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ..\..\..\..\WP3.9\3.9.1\APPEND~1\B1-GUI~1\presc_disp_0625\presc_disp_0625\CDASchema\CDA_extended.xsd">
+	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+	<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.1.3"/>
+	<id assigningAuthorityName="Regione Lombardia" displayable="true" extension="030305.RRCSLS.REF030305X1042" root="2.16.840.1.113883.2.9.2.30"/>
+	<code code="60591-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Patient Summary"/>
+	<title>Patient Summary</title>
+	<effectiveTime value="20110308"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="HL7 Confidentiality" displayName="normal"/>
+	<languageCode code="it-IT"/>
+	<setId root="2.16.840.1.113883.2.9.2.30" extension="030305.RRCSLS.REF030305P1196" displayable="true" assigningAuthorityName="Regione Lombardia"/>
+  <versionNumber value="1"/>
+	<recordTarget>
+		<patientRole classCode="PAT">
+			<id assigningAuthorityName="MEF" displayable="true" extension="NTSTDC80A53G478W" root="2.16.840.1.113883.2.9.4.3.2"/>
+			<addr use="HP">
+				<state>MI</state>
+				<city>MILANO</city>
+				<country>IT</country>
+				<postalCode>20100</postalCode>
+				<streetAddressLine>V. C/O LOMBARDIA INFORMATICA VIA, MINZONI 24</streetAddressLine>
+			</addr>
+			<telecom nullFlavor="NI"/>
+			<patient>
+				<name>
+					<family>INTSISS</family>
+					<given>TREDICI</given>
+				</name>
+				<administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="HL7 AdministrativeGender" displayName="Femmina"/>
+				<birthTime value="19800113"/>
+				<languageCommunication>
+					<languageCode code="it-IT"/>
+				</languageCommunication>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author>
+		<functionCode code="221" codeSystem="2.16.840.1.113883.2.9.6.2.7" codeSystemName="epSOSHealthcareProfessionalRoles" displayName="Medico di Medicina Generale"/>
+		<time value="20110308"/>
+		<assignedAuthor classCode="ASSIGNED">
+			<id assigningAuthorityName="MEF" displayable="true" extension="DVLMMG57R07F205G" root="2.16.840.1.113883.2.9.4.3.2"/>
+			<addr nullFlavor="NI"/>
+			<telecom nullFlavor="NI"/>
+			<assignedPerson>
+				<name>
+					<family>DVALUNO</family>
+					<given>MMG</given>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id assigningAuthorityName="A.S.L. DELLA PROVINCIA DI LECCO" extension="030305" root="2.16.840.1.113883.2.9.4.1.1"/>
+				<name>A.S.L. DELLA PROVINCIA DI LECCO</name>
+				<telecom nullFlavor="NI"/>
+				<addr>
+					<state>LECCO</state>
+					<city>LECCO</city>
+					<country>IT</country>
+					<postalCode>23900</postalCode>
+					<streetAddressLine>CORSO CARLO ALBERTO,120</streetAddressLine>
+				</addr>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id assigningAuthorityName="A.S.L. DELLA PROVINCIA DI LECCO" extension="030305" root="2.16.840.1.113883.2.9.4.1.1"/>
+				<name>A.S.L. DELLA PROVINCIA DI LECCO</name>
+				<telecom nullFlavor="NI"/>
+				<addr>
+					<state>LECCO</state>
+					<city>LECCO</city>
+					<country>IT</country>
+					<postalCode>23900</postalCode>
+					<streetAddressLine>CORSO CARLO ALBERTO,120</streetAddressLine>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<legalAuthenticator>
+		<time value="20110308"/>
+		<signatureCode code="S"/>
+		<assignedEntity>
+			<id assigningAuthorityName="MEF" displayable="false" extension="DVLMMG57R07F205G" root="2.16.840.1.113883.2.9.4.3.2"/>
+			<addr nullFlavor="NI"/>
+			<telecom nullFlavor="NI"/>
+			<assignedPerson>
+				<name>
+					<family>DVALUNO</family>
+					<given>MMG</given>
+				</name>
+			</assignedPerson>
+			<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<id assigningAuthorityName="A.S.L. DELLA PROVINCIA DI LECCO" extension="030305" root="2.16.840.1.113883.2.9.4.1.1"/>
+				<name>A.S.L. DELLA PROVINCIA DI LECCO</name>
+				<telecom nullFlavor="NI"/>
+				<addr>
+					<state>LECCO</state>
+					<city>LECCO</city>
+					<country>IT</country>
+					<postalCode>23900</postalCode>
+					<streetAddressLine>CORSO CARLO ALBERTO,120</streetAddressLine>
+				</addr>
+			</representedOrganization>
+		</assignedEntity>
+	</legalAuthenticator>
+	<participant typeCode="IND">
+		<functionCode code="PCP" codeSystem="2.16.840.1.113883.5.88"/>
+		<associatedEntity classCode="PRS">
+			<addr nullFlavor="NI"/>
+			<telecom nullFlavor="NI"/>
+			<associatedPerson>
+				<name nullFlavor="NI"/>
+			</associatedPerson>
+		</associatedEntity>
+	</participant>
+	<documentationOf>
+		<serviceEvent classCode="PCPR">
+			<effectiveTime>
+				<low nullFlavor="NI"/>
+				<high value="20110308"/>
+			</effectiveTime>
+			<performer typeCode="PRF">
+				<functionCode code="221" codeSystem="2.16.840.1.113883.2.9.6.2.7" codeSystemName="epSOSHealthcareProfessionalRoles" displayName="Medico di Medicina Generale"/>
+				<assignedEntity>
+					<id assigningAuthorityName="MEF" displayable="false" extension="DVLMMG57R07F205G" root="2.16.840.1.113883.2.9.4.3.2"/>
+					<addr nullFlavor="NI"/>
+					<telecom nullFlavor="NI"/>
+					<assignedPerson>
+						<name>
+							<family>DVALUNO</family>
+							<given>MMG</given>
+						</name>
+					</assignedPerson>
+					<representedOrganization>
+						<id assigningAuthorityName="A.S.L. DELLA PROVINCIA DI LECCO" extension="030305" root="2.16.840.1.113883.2.9.4.1.1"/>
+						<name>A.S.L. DELLA PROVINCIA DI LECCO</name>
+						<telecom nullFlavor="NI"/>
+						<addr>
+							<state>LECCO</state>
+							<city>LECCO</city>
+							<country>IT</country>
+							<postalCode>23900</postalCode>
+							<streetAddressLine>CORSO CARLO ALBERTO,120</streetAddressLine>
+						</addr>
+					</representedOrganization>
+				</assignedEntity>
+			</performer>
+		</serviceEvent>
+	</documentationOf>
+	<relatedDocument typeCode="XFRM">
+		<parentDocument>
+			<id extension="030305.RRCSLS.REF030305X1042" root="2.16.840.1.113883.2.9.2.30"/>
+		</parentDocument>
+	</relatedDocument>
+	<component>
+		<structuredBody>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.8"/>
+					<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.3"/>
+					<id extension="RE00001" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+					<code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF MEDICATION USE"/>
+					<title>Terapie farmacologiche croniche o attuali rilevanti</title>
+					<text>
+						<table>
+							<thead>
+								<tr>
+									<th>Nome Farmaco</th>
+									<th>Principio Attivo</th>
+									<th>Dosaggio</th>
+									<th>Posologia</th>
+									<th>Via di Somministrazione</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="id_farmaco_0">
+									<td ID="nome_farmaco_0">NOLVADEX 10*30 CPR 10 MG</td>
+									<td ID="pa_farmaco_0">TAMOXIFENE</td>
+									<td ID="dosaggio_farmaco_0">20</td>
+									<td ID="posologia_farmaco_0">TRE COMPRESSE AL GIORNO</td>
+									<td ID="via_somm_farmaco_0"/>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.24"/>
+							<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.4"/>
+							<id extension="RE00001.0" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+							<text>
+								<reference value="#id_farmaco_0"/>
+							</text>
+							<statusCode code="completed"/>
+							<effectiveTime xsi:type="IVL_TS">
+								<low nullFlavor="UNK"/>
+								<high nullFlavor="UNK"/>
+							</effectiveTime>
+							<effectiveTime nullFlavor="UNK" operator="A"/>
+							<doseQuantity nullFlavor="NI"/>
+							<consumable>
+								<manufacturedProduct classCode="MANU">
+									<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.1"/>
+									<manufacturedMaterial>
+										<code code="023362015" codeSystem="2.16.840.1.113883.2.9.6.1.5" codeSystemName="AIC" displayName="NOLVADEX 10*30 CPR 10 MG">
+											<originalText>
+												<reference value="#nome_farmaco_0"/>
+											</originalText>
+										</code>
+										<epsos:asContent classCode="CONT">
+											<epsos:containerPackagedMedicine classCode="CONT" determinerCode="INSTANCE"/>
+										</epsos:asContent>
+										<epsos:ingredient classCode="ACTI">
+											<epsos:quantity>
+												<epsos:numerator nullFlavor="NI" xsi:type="epsos:PQ"/>
+												<epsos:denominator nullFlavor="NI" xsi:type="epsos:PQ"/>
+											</epsos:quantity>
+											<epsos:ingredient classCode="MMAT" determinerCode="KIND">
+												<epsos:code code="L02BA01" codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC" displayName="TAMOXIFENE"/>
+												<epsos:name>TAMOXIFENE</epsos:name>
+											</epsos:ingredient>
+										</epsos:ingredient>
+									</manufacturedMaterial>
+								</manufacturedProduct>
+							</consumable>
+						</substanceAdministration>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.2"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
+					<code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergies, adverse reactions, alerts"/>
+					<title>Allergie e reazioni avverse</title>
+					<text>
+						<table>
+							<thead>
+								<tr>
+									<th>Tipo Allergia</th>
+									<th>Tipo Reazione</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="id_allergia_0">
+									<td ID="tipo_allergia_0">ALLERGIA AL POLLINE</td>
+									<td ID="tipo_rezione_0">DIFFICOLTA' RESPIRATORIE</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+							<id extension="RE00002.0" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+							<code nullFlavor="NA"/>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low nullFlavor="UNK"/>
+								<high nullFlavor="UNK"/>
+							</effectiveTime>
+							<entryRelationship inversionInd="false" typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.18"/>
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<id extension="RE00002.0.1" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+									<code code="420134006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDT-CT" displayName="Propensity to adverse reactions"/>
+									<text>
+										<reference value="#id_allergia_0"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low nullFlavor="UNK"/>
+									</effectiveTime>
+									<value xsi:type="CD">
+										<originalText>
+											<reference value="#tipo_allergia_0"/>
+										</originalText>
+									</value>
+									<participant typeCode="CSM">
+										<participantRole classCode="MANU">
+											<playingEntity classCode="MMAT">
+												<code code="256259004" codeSystem="2.16.840.1.113883.6.96" displayName="Polline" >
+													<originalText>
+														<reference value="#id_allergia_0"/>
+													</originalText>
+												</code>
+											</playingEntity>
+										</participantRole>
+									</participant>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.8"/>
+					<id extension="RE00003" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+					<code code="11348-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF PAST ILLNESS"/>
+					<title>Anamnesi Pregressa</title>
+					<text>
+						<table>
+							<thead>
+								<tr>
+									<th>Descrizione Problema</th>
+									<th>Data Insorgenza</th>
+									<th>Diagnosi</th>
+									<th>Stato</th>
+									<th>Data Soluzione</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="id_anamnesi_pregressa_0">
+									<td ID="descr_problema_0">CONVULSIONI FEBBRILI ACUTE</td>
+									<td ID="dt_insorgenza_0">02/02/2011</td>
+									<td ID="diagnosi_0">CONVULSIONI FEBBRILI COMPLESSE</td>
+									<td ID="stato_0">Ricorrente</td>
+									<td ID="dt_soluzione_0"/>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+							<id extension="RE00003.0" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+							<code nullFlavor="NA"/>
+							<text>
+								<reference value="#id_anamnesi_pregressa_0"/>
+							</text>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low value="20110202"/>
+								<high nullFlavor="UNK"/>
+							</effectiveTime>
+							<entryRelationship inversionInd="false" typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<id extension="RE00003.0.1" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+									<code code="55607006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Problem"/>
+									<text>
+										<reference value="#descr_problema_0"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="20110202"/>
+										<high nullFlavor="UNK"/>
+									</effectiveTime>
+									<value code="78032" codeSystem="2.16.840.113883.6.103" codeSystemName="ICD9" displayName="CONVULSIONI FEBBRILI COMPLESSE" xsi:type="CD">
+										<originalText>
+											<reference value="#diagnosi_0"/>
+										</originalText>
+									</value>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.11"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
+					<id extension="RE00005" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+					<code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Problem List"/>
+					<title>Elenco dei problemi attivi</title>
+					<text>
+						<table>
+							<thead>
+								<tr>
+									<th>Descrizione Problema</th>
+									<th>Data Insorgenza</th>
+									<th>Diagnosi</th>
+									<th>Stato</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td ID="id_problema_attivo_0">Nessun problema noto</td>
+									<td/>
+									<td/>
+									<td/>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+							<id extension="RE00005.1" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+							<code nullFlavor="NA"/>
+							<statusCode code="active"/>
+							<effectiveTime>
+								<low nullFlavor="UNK"/>
+							</effectiveTime>
+							<entryRelationship inversionInd="false" typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+									<id extension="RE00005.1.1" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+
+							<code code="55607006" displayName="Problem" codeSystem="2.16.840.1.113883.6.96"/>
+									<text>
+										<reference value="#id_problema_attivo_0" />
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low nullFlavor="UNK"/>
+									</effectiveTime>
+									<value xsi:type="CD" code="160245001"	displayName="Nessuna patologia o disabilità in atto" codeSystem="2.16.840.1.113883.6.96"/>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.12"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.11"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.12"/>
+					<id extension="RE00004" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+					<code code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of procedures"/>
+					<title>Procedure Diagnostiche/Interventi</title>
+					<text>
+						<table>
+							<thead>
+								<tr>
+									<th>Data</th>
+									<th>Tipo Procedura/Intervento</th>
+									<th>Esito</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td/>
+									<td/>
+									<td/>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<procedure classCode="PROC" moodCode="EVN" nullFlavor="NA" />
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.7"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5"/>
+					<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.2.4"/>
+					<id extension="RE00006" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+					<code code="46264-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF MEDICAL DEVICE USE"/>
+					<title>Dispositivi Medici</title>
+					<text>
+						<table>
+							<thead>
+								<tr>
+									<th>Tipologia Strumento</th>
+									<th>Data Impianto</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="id_dispositivo_medico_0">
+									<td ID="id_desc_tipologia_Strumento_0">HOLTER PER CONTROLLO FREQUENZA CARDIACA</td>
+									<td ID="id_dt_impianto_0">06/03/2011</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<supply classCode="SPLY" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.3.5"/>
+							<text>
+								<reference value="#id_dispositivo_medico_0"/>
+							</text>
+							<effectiveTime value="20110306"/>
+							<participant typeCode="DEV">
+								<participantRole classCode="MANU">
+									<playingDevice classCode="DEV" determinerCode="INSTANCE">
+										<code nullFlavor="OTH">
+											<originalText>
+												<reference value="#id_desc_tipologia_Strumento_0"/>
+											</originalText>
+										</code>
+									</playingDevice>
+								</participantRole>
+							</participant>
+						</supply>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.5"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.17"/>
+					<code code="47420-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="FUNCTIONAL STATUS ASSESSMENT"/>
+					<title>Condizioni di non autosufficienza</title>
+					<text>
+						<table>
+							<thead>
+								<tr>
+									<th>Condizioni di non autosufficienza</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>NESSUNA</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.15"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.16"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.16.1"/>
+					<code code="29762-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="SOCIAL HISTORY"/>
+					<title>Vita Sociale</title>
+					<text>
+						<table>
+							<thead>
+								<tr>
+									<th>Elemento</th>
+									<th>Osservazione</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="id_vita_sociale_0">
+									<td ID="desc_vita_sociale_0">Numero Bicchieri al giorno</td>
+									<td ID="num_vita_sociale_0">1</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+							<templateId root="2.16.840.1.113883.10.20.1.33"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.4"/>
+							<id extension="RE00008.2" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+							<code code="160573003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" displayName="ETOH (Alcohol) Use"/>
+							<text>
+								<reference value="#id_vita_sociale_0"/>
+							</text>
+							<statusCode code="completed"/>
+							<effectiveTime nullFlavor="NI"/>
+							<value unit="{drink}/d" value="1" xsi:type="PQ"/>
+						</observation>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.16"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.25"/>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.2"/>
+					<id extension="RE00010" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+					<code code="8716-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Physical findings"/>
+					<title>Parametri di Monitoraggio (Segni Vitali)</title>
+					<text>
+						<table>
+							<thead>
+								<tr>
+									<th>Pressione Arteriosa Sistolica (mm[Hg])</th>
+									<th>Pressione Arteriosa Diastolica (mm[Hg])</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="id_segni_vitali_0">
+									<td ID="id_pressione_sistolica_0">90</td>
+									<td ID="id_pressione_diastolica_0">90</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.32"/>
+							<templateId root="2.16.840.1.113883.10.20.1.35"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.1"/>
+							<id extension="RE00010.1" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+							<code code="46680005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Vital signs"/>
+							<statusCode code="completed"/>
+							<effectiveTime nullFlavor="NI"/>
+							<author contextControlCode="OP" typeCode="AUT">
+								<functionCode code="221" codeSystem="2.16.840.1.113883.2.9.6.2.7" codeSystemName="epSOSHealthcareProfessionalRoles" displayName="Medico di Medicina Generale"/>
+								<time nullFlavor="NI"/>
+								<assignedAuthor classCode="ASSIGNED">
+									<id assigningAuthorityName="MEF" displayable="true" extension="DVLMMG57R07F205G" root="2.16.840.1.113883.2.9.4.3.2"/>
+									<addr nullFlavor="NI"/>
+									<telecom nullFlavor="NI"/>
+									<assignedPerson>
+										<name>
+											<family>DVALUNO</family>
+											<given>MMG</given>
+										</name>
+									</assignedPerson>
+									<representedOrganization>
+										<id assigningAuthorityName="A.S.L. DELLA PROVINCIA DI LECCO" extension="030305" root="2.16.840.1.113883.2.9.4.1.1"/>
+										<name>A.S.L. DELLA PROVINCIA DI LECCO</name>
+										<telecom nullFlavor="NI"/>
+										<addr nullFlavor="NI"/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<component typeCode="COMP">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<id extension="RE00010.1.1" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+									<code code="8480-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="INTRAVASCULAR SYSTOLIC"/>
+									<text>
+										<reference value="#id_pressione_sistolica_0"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime nullFlavor="NI"/>
+									<value unit="mm[Hg]" value="90" xsi:type="PQ"/>
+								</observation>
+							</component>
+							<component typeCode="COMP">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+									<id extension="RE00010.1.2" root="2.16.840.1.113883.2.9.2.30.3.1.3.1"/>
+									<code code="8462-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="INTRAVASCULAR DIASTOLIC"/>
+									<text>
+										<reference value="#id_pressione_diastolica_0"/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime nullFlavor="NI"/>
+									<value unit="mm[Hg]" value="90" xsi:type="PQ"/>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

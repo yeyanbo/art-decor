@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="134"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.83"/>
+   <Title name="ObservationInterpretation" date="2012-08-02" version="1.000">One or more codes specifying a rough qualitative interpretation of the observation, such as "normal", "abnormal", "below normal", "change up", "resistant", "susceptible", etc. OpenIssue: Description copied from Concept Domain of same name. Must be verified. Note also that this might be identical to the V2 code system of interpretation codes (formerly Abnormal Flags in older versions).</Title>
+   <Class code="rootClass">
+      <SubClass subCount="1" code="_GeneticObservationInterpretation" kind="abstract">
+         <Rubric id="d1e162969" kind="preferred">
+            <Label xml:lang="en-US">GeneticObservationInterpretation</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="4" code="_ObservationInterpretationChange" kind="abstract">
+         <Rubric id="d1e162994" kind="preferred">
+            <Label xml:lang="en-US">ObservationInterpretationChange</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="2" code="_ObservationInterpretationExceptions" kind="abstract">
+         <Rubric id="d1e163018" kind="preferred">
+            <Label xml:lang="en-US">ObservationInterpretationExceptions</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="2" code="_ObservationInterpretationNormality" kind="abstract">
+         <Rubric id="d1e163042" kind="preferred">
+            <Label xml:lang="en-US">ObservationInterpretationNormality</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="5" code="_ObservationInterpretationSusceptibility" kind="abstract">
+         <Rubric id="d1e163066" kind="preferred">
+            <Label xml:lang="en-US">ObservationInterpretationSusceptibility</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="2" code="EX" kind="concept">
+         <Rubric id="d1e163099" kind="preferred">
+            <Label xml:lang="en-US">outside threshold</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="3" code="ObservationInterpretationDetection" kind="abstract">
+         <Rubric id="d1e163126" kind="preferred">
+            <Label xml:lang="en-US">ObservationInterpretationDetection</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">ObservationInterpretation</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">One or more codes specifying a rough qualitative interpretation of the observation, such as "normal", "abnormal", "below normal", "change up", "resistant", "susceptible", etc. OpenIssue: Description copied from Concept Domain of same name. Must be verified. Note also that this might be identical to the V2 code system of interpretation codes (formerly Abnormal Flags in older versions).</Label>
+      </Rubric>
+   </Class>
+   <Class code="_GeneticObservationInterpretation" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22646"/>
+      <SubClass code="Carrier" subCount="0">
+         <Rubric id="d1e163159" kind="preferred">
+            <Label xml:lang="en-US">Carrier</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e162956" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Codes that specify interpretation of genetic analysis, such as "positive", "negative", "carrier", "responsive", etc.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e162969" kind="short">
+         <Label xml:lang="en-US">GeneticObservationInterpretation</Label>
+      </Rubric>
+      <Rubric id="d1e162969" kind="preferred">
+         <Label xml:lang="en-US">GeneticObservationInterpretation</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ObservationInterpretationChange" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21090"/>
+      <SubClass code="B" subCount="0">
+         <Rubric id="d1e163188" kind="preferred">
+            <Label xml:lang="en-US">better</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="D" subCount="0">
+         <Rubric id="d1e163217" kind="preferred">
+            <Label xml:lang="en-US">decreased</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="U" subCount="0">
+         <Rubric id="d1e163246" kind="preferred">
+            <Label xml:lang="en-US">increased</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="W" subCount="0">
+         <Rubric id="d1e163275" kind="preferred">
+            <Label xml:lang="en-US">worse</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e162981" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Change of quantity and/or severity. At most one of B or W and one of U or D allowed.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e162994" kind="short">
+         <Label xml:lang="en-US">ObservationInterpretationChange</Label>
+      </Rubric>
+      <Rubric id="d1e162994" kind="preferred">
+         <Label xml:lang="en-US">ObservationInterpretationChange</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ObservationInterpretationExceptions" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21091"/>
+      <SubClass code="&lt;" subCount="0">
+         <Rubric id="d1e163304" kind="preferred">
+            <Label xml:lang="en-US">low off scale</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="&gt;" subCount="0">
+         <Rubric id="d1e163334" kind="preferred">
+            <Label xml:lang="en-US">high off scale</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e163005" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Technical exceptions. At most one allowed. Does not imply normality or severity.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163018" kind="short">
+         <Label xml:lang="en-US">ObservationInterpretationExceptions</Label>
+      </Rubric>
+      <Rubric id="d1e163018" kind="preferred">
+         <Label xml:lang="en-US">ObservationInterpretationExceptions</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ObservationInterpretationNormality" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21092"/>
+      <SubClass code="A" subCount="3">
+         <Rubric id="d1e163363" kind="preferred">
+            <Label xml:lang="en-US">Abnormal</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="N" subCount="0">
+         <Rubric id="d1e163392" kind="preferred">
+            <Label xml:lang="en-US">Normal</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e163029" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Normality, Abnormality, Alert. Concepts in this category are mutually exclusive, i.e., at most one is allowed.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163042" kind="short">
+         <Label xml:lang="en-US">ObservationInterpretationNormality</Label>
+      </Rubric>
+      <Rubric id="d1e163042" kind="preferred">
+         <Label xml:lang="en-US">ObservationInterpretationNormality</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ObservationInterpretationSusceptibility" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21093"/>
+      <SubClass code="I" subCount="0">
+         <Rubric id="d1e163421" kind="preferred">
+            <Label xml:lang="en-US">intermediate</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="MS" subCount="0">
+         <Rubric id="d1e163450" kind="preferred">
+            <Label xml:lang="en-US">moderately susceptible</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="R" subCount="0">
+         <Rubric id="d1e163479" kind="preferred">
+            <Label xml:lang="en-US">resistent</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="S" subCount="0">
+         <Rubric id="d1e163509" kind="preferred">
+            <Label xml:lang="en-US">susceptible</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="VS" subCount="0">
+         <Rubric id="d1e163538" kind="preferred">
+            <Label xml:lang="en-US">very susceptible</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e163053" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Microbiology: interpretations of minimal inhibitory concentration (MIC) values. At most one allowed.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163066" kind="short">
+         <Label xml:lang="en-US">ObservationInterpretationSusceptibility</Label>
+      </Rubric>
+      <Rubric id="d1e163066" kind="preferred">
+         <Label xml:lang="en-US">ObservationInterpretationSusceptibility</Label>
+      </Rubric>
+   </Class>
+   <Class code="EX" kind="concept">
+      <Meta name="internalId" value="21634"/>
+      <SubClass code="HX" subCount="0">
+         <Rubric id="d1e163734" kind="preferred">
+            <Label xml:lang="en-US">above high threshold</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LX" subCount="0">
+         <Rubric id="d1e163772" kind="preferred">
+            <Label xml:lang="en-US">below low threshold</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e163077" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The observation/test result is interpreted as being outside the inclusion range for a particular protocol within which the result is being reported.</p>
+            <p>
+               <b>Example:</b>A positive result on a Hepatitis screening test.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163099" kind="short">
+         <Label xml:lang="en-US">outside threshold</Label>
+      </Rubric>
+      <Rubric id="d1e163099" kind="preferred">
+         <Label xml:lang="en-US">outside threshold</Label>
+      </Rubric>
+   </Class>
+   <Class code="ObservationInterpretationDetection" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22805"/>
+      <SubClass code="IND" subCount="0">
+         <Rubric id="d1e163804" kind="preferred">
+            <Label xml:lang="en-US">Indeterminate</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NEG" subCount="0">
+         <Rubric id="d1e163836" kind="preferred">
+            <Label xml:lang="en-US">Negative</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="POS" subCount="0">
+         <Rubric id="d1e163868" kind="preferred">
+            <Label xml:lang="en-US">Positive</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e163110" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The specializations of this concept indicate the presence or absence of an analyte in a test or of a sign in a clinical observation. In keeping with laboratory data processing practice, these codes provide a categorical interpretation of the "meaning" of the quantitative value for the same observation.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163126" kind="short">
+         <Label xml:lang="en-US">ObservationInterpretationDetection</Label>
+      </Rubric>
+      <Rubric id="d1e163126" kind="preferred">
+         <Label xml:lang="en-US">ObservationInterpretationDetection</Label>
+      </Rubric>
+   </Class>
+   <Class code="Carrier" kind="concept">
+      <Meta name="internalId" value="22647"/>
+      <SuperClass code="_GeneticObservationInterpretation">
+         <Rubric id="d1e162969" kind="preferred">
+            <Label xml:lang="en-US">GeneticObservationInterpretation</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e163138" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The patient is considered as carrier based on the testing results. A carrier is an individual who carries an altered form of a gene which can lead to having a child or offspring in future generations with a genetic disorder.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163159" kind="short">
+         <Label xml:lang="en-US">Carrier</Label>
+      </Rubric>
+      <Rubric id="d1e163159" kind="preferred">
+         <Label xml:lang="en-US">Carrier</Label>
+      </Rubric>
+   </Class>
+   <Class code="B" kind="concept">
+      <Meta name="internalId" value="10215"/>
+      <SuperClass code="_ObservationInterpretationChange">
+         <Rubric id="d1e162994" kind="preferred">
+            <Label xml:lang="en-US">ObservationInterpretationChange</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e163170" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Better (of severity or nominal observations)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163188" kind="short">
+         <Label xml:lang="en-US">better</Label>
+      </Rubric>
+      <Rubric id="d1e163188" kind="preferred">
+         <Label xml:lang="en-US">better</Label>
+      </Rubric>
+   </Class>
+   <Class code="D" kind="concept">
+      <Meta name="internalId" value="10218"/>
+      <SuperClass code="_ObservationInterpretationChange">
+         <Rubric id="d1e162994" kind="preferred">
+            <Label xml:lang="en-US">ObservationInterpretationChange</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e163199" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Significant change down (quantitative observations, does not imply B or W)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163217" kind="short">
+         <Label xml:lang="en-US">decreased</Label>
+      </Rubric>
+      <Rubric id="d1e163217" kind="preferred">
+         <Label xml:lang="en-US">decreased</Label>
+      </Rubric>
+   </Class>
+   <Class code="U" kind="concept">
+      <Meta name="internalId" value="10217"/>
+      <SuperClass code="_ObservationInterpretationChange">
+         <Rubric id="d1e162994" kind="preferred">
+            <Label xml:lang="en-US">ObservationInterpretationChange</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e163228" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Significant change up (quantitative observations, does not imply B or W)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163246" kind="short">
+         <Label xml:lang="en-US">increased</Label>
+      </Rubric>
+      <Rubric id="d1e163246" kind="preferred">
+         <Label xml:lang="en-US">increased</Label>
+      </Rubric>
+   </Class>
+   <Class code="W" kind="concept">
+      <Meta name="internalId" value="10216"/>
+      <SuperClass code="_ObservationInterpretationChange">
+         <Rubric id="d1e162994" kind="preferred">
+            <Label xml:lang="en-US">ObservationInterpretationChange</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e163257" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Worse (of severity or nominal observations)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163275" kind="short">
+         <Label xml:lang="en-US">worse</Label>
+      </Rubric>
+      <Rubric id="d1e163275" kind="preferred">
+         <Label xml:lang="en-US">worse</Label>
+      </Rubric>
+   </Class>
+   <Class code="&lt;" kind="concept">
+      <Meta name="internalId" value="10226"/>
+      <SuperClass code="_ObservationInterpretationExceptions">
+         <Rubric id="d1e163018" kind="preferred">
+            <Label xml:lang="en-US">ObservationInterpretationExceptions</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e163286" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Below absolute low-off instrument scale. This is statement depending on the instrument, logically does not imply LL or L (e.g., if the instrument is inadequate). If an off-scale value is also low or critically low one must also report L and LL respectively.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163304" kind="short">
+         <Label xml:lang="en-US">low off scale</Label>
+      </Rubric>
+      <Rubric id="d1e163304" kind="preferred">
+         <Label xml:lang="en-US">low off scale</Label>
+      </Rubric>
+   </Class>
+   <Class code="&gt;" kind="concept">
+      <Meta name="internalId" value="10227"/>
+      <SuperClass code="_ObservationInterpretationExceptions">
+         <Rubric id="d1e163018" kind="preferred">
+            <Label xml:lang="en-US">ObservationInterpretationExceptions</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e163316" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Above absolute high-off instrument scale. This is statement depending on the instrument, logically does not imply LL or L (e.g., if the instrument is inadequate). If an off-scale value is also high or critically high one must also report H and HH respectively.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163334" kind="short">
+         <Label xml:lang="en-US">high off scale</Label>
+      </Rubric>
+      <Rubric id="d1e163334" kind="preferred">
+         <Label xml:lang="en-US">high off scale</Label>
+      </Rubric>
+   </Class>
+   <Class code="A" kind="concept">
+      <Meta name="internalId" value="10208"/>
+      <SuperClass code="_ObservationInterpretationNormality">
+         <Rubric id="d1e163042" kind="preferred">
+            <Label xml:lang="en-US">ObservationInterpretationNormality</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="AA" subCount="2">
+         <Rubric id="d1e163567" kind="preferred">
+            <Label xml:lang="en-US">Abnormal alert</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="H" subCount="1">
+         <Rubric id="d1e163596" kind="preferred">
+            <Label xml:lang="en-US">High</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="L" subCount="1">
+         <Rubric id="d1e163625" kind="preferred">
+            <Label xml:lang="en-US">Low</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e163345" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Abnormal (for nominal observations, all service types)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163363" kind="short">
+         <Label xml:lang="en-US">Abnormal</Label>
+      </Rubric>
+      <Rubric id="d1e163363" kind="preferred">
+         <Label xml:lang="en-US">Abnormal</Label>
+      </Rubric>
+   </Class>
+   <Class code="N" kind="concept">
+      <Meta name="internalId" value="10207"/>
+      <SuperClass code="_ObservationInterpretationNormality">
+         <Rubric id="d1e163042" kind="preferred">
+            <Label xml:lang="en-US">ObservationInterpretationNormality</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e163374" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Normal (for all service types)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163392" kind="short">
+         <Label xml:lang="en-US">Normal</Label>
+      </Rubric>
+      <Rubric id="d1e163392" kind="preferred">
+         <Label xml:lang="en-US">Normal</Label>
+      </Rubric>
+   </Class>
+   <Class code="I" kind="concept">
+      <Meta name="internalId" value="10221"/>
+      <SuperClass code="_ObservationInterpretationSusceptibility">
+         <Rubric id="d1e163066" kind="preferred">
+            <Label xml:lang="en-US">ObservationInterpretationSusceptibility</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e163403" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Intermediate</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163421" kind="short">
+         <Label xml:lang="en-US">intermediate</Label>
+      </Rubric>
+      <Rubric id="d1e163421" kind="preferred">
+         <Label xml:lang="en-US">intermediate</Label>
+      </Rubric>
+   </Class>
+   <Class code="MS" kind="concept">
+      <Meta name="internalId" value="10222"/>
+      <SuperClass code="_ObservationInterpretationSusceptibility">
+         <Rubric id="d1e163066" kind="preferred">
+            <Label xml:lang="en-US">ObservationInterpretationSusceptibility</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e163432" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Moderately susceptible</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163450" kind="short">
+         <Label xml:lang="en-US">moderately susceptible</Label>
+      </Rubric>
+      <Rubric id="d1e163450" kind="preferred">
+         <Label xml:lang="en-US">moderately susceptible</Label>
+      </Rubric>
+   </Class>
+   <Class code="R" kind="concept">
+      <Meta name="internalId" value="10220"/>
+      <SuperClass code="_ObservationInterpretationSusceptibility">
+         <Rubric id="d1e163066" kind="preferred">
+            <Label xml:lang="en-US">ObservationInterpretationSusceptibility</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e163461" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Resistent</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163479" kind="short">
+         <Label xml:lang="en-US">resistent</Label>
+      </Rubric>
+      <Rubric id="d1e163479" kind="preferred">
+         <Label xml:lang="en-US">resistent</Label>
+      </Rubric>
+   </Class>
+   <Class code="S" kind="concept">
+      <Meta name="internalId" value="10223"/>
+      <SuperClass code="_ObservationInterpretationSusceptibility">
+         <Rubric id="d1e163066" kind="preferred">
+            <Label xml:lang="en-US">ObservationInterpretationSusceptibility</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e163491" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Susceptible</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163509" kind="short">
+         <Label xml:lang="en-US">susceptible</Label>
+      </Rubric>
+      <Rubric id="d1e163509" kind="preferred">
+         <Label xml:lang="en-US">susceptible</Label>
+      </Rubric>
+   </Class>
+   <Class code="VS" kind="concept">
+      <Meta name="internalId" value="10224"/>
+      <SuperClass code="_ObservationInterpretationSusceptibility">
+         <Rubric id="d1e163066" kind="preferred">
+            <Label xml:lang="en-US">ObservationInterpretationSusceptibility</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e163520" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Very susceptible</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163538" kind="short">
+         <Label xml:lang="en-US">very susceptible</Label>
+      </Rubric>
+      <Rubric id="d1e163538" kind="preferred">
+         <Label xml:lang="en-US">very susceptible</Label>
+      </Rubric>
+   </Class>
+   <Class code="AA" kind="concept">
+      <Meta name="internalId" value="10211"/>
+      <SuperClass code="A">
+         <Rubric id="d1e163363" kind="preferred">
+            <Label xml:lang="en-US">Abnormal</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="HH" subCount="0">
+         <Rubric id="d1e163659" kind="preferred">
+            <Label xml:lang="en-US">High alert</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LL" subCount="0">
+         <Rubric id="d1e163695" kind="preferred">
+            <Label xml:lang="en-US">Low alert</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e163549" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Abnormal alert (for nominal observations and all service types)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163567" kind="short">
+         <Label xml:lang="en-US">Abnormal alert</Label>
+      </Rubric>
+      <Rubric id="d1e163567" kind="preferred">
+         <Label xml:lang="en-US">Abnormal alert</Label>
+      </Rubric>
+   </Class>
+   <Class code="H" kind="concept">
+      <Meta name="internalId" value="10210"/>
+      <SuperClass code="A">
+         <Rubric id="d1e163363" kind="preferred">
+            <Label xml:lang="en-US">Abnormal</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="HH" subCount="0">
+         <Rubric id="d1e163659" kind="preferred">
+            <Label xml:lang="en-US">High alert</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e163578" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Above high normal (for quantitative observations)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163596" kind="short">
+         <Label xml:lang="en-US">High</Label>
+      </Rubric>
+      <Rubric id="d1e163596" kind="preferred">
+         <Label xml:lang="en-US">High</Label>
+      </Rubric>
+   </Class>
+   <Class code="L" kind="concept">
+      <Meta name="internalId" value="10209"/>
+      <SuperClass code="A">
+         <Rubric id="d1e163363" kind="preferred">
+            <Label xml:lang="en-US">Abnormal</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="LL" subCount="0">
+         <Rubric id="d1e163695" kind="preferred">
+            <Label xml:lang="en-US">Low alert</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e163607" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Below low normal (for quantitative observations)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163625" kind="short">
+         <Label xml:lang="en-US">Low</Label>
+      </Rubric>
+      <Rubric id="d1e163625" kind="preferred">
+         <Label xml:lang="en-US">Low</Label>
+      </Rubric>
+   </Class>
+   <Class code="HH" kind="concept">
+      <Meta name="internalId" value="10213"/>
+      <SuperClass code="AA">
+         <Rubric id="d1e163567" kind="preferred">
+            <Label xml:lang="en-US">Abnormal alert</Label>
+         </Rubric>
+      </SuperClass>
+      <SuperClass code="H">
+         <Rubric id="d1e163596" kind="preferred">
+            <Label xml:lang="en-US">High</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e163636" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Above upper alert threshold (for quantitative observations)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163659" kind="short">
+         <Label xml:lang="en-US">High alert</Label>
+      </Rubric>
+      <Rubric id="d1e163659" kind="preferred">
+         <Label xml:lang="en-US">High alert</Label>
+      </Rubric>
+   </Class>
+   <Class code="LL" kind="concept">
+      <Meta name="internalId" value="10212"/>
+      <SuperClass code="AA">
+         <Rubric id="d1e163567" kind="preferred">
+            <Label xml:lang="en-US">Abnormal alert</Label>
+         </Rubric>
+      </SuperClass>
+      <SuperClass code="L">
+         <Rubric id="d1e163625" kind="preferred">
+            <Label xml:lang="en-US">Low</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e163672" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Below lower alert threshold (for quantitative observations)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163695" kind="short">
+         <Label xml:lang="en-US">Low alert</Label>
+      </Rubric>
+      <Rubric id="d1e163695" kind="preferred">
+         <Label xml:lang="en-US">Low alert</Label>
+      </Rubric>
+   </Class>
+   <Class code="HX" kind="concept">
+      <Meta name="internalId" value="21636"/>
+      <SuperClass code="EX">
+         <Rubric id="d1e163099" kind="preferred">
+            <Label xml:lang="en-US">outside threshold</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e163707" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The numeric observation/test result is interpreted as being above the high threshold value for a particular protocol within which the result is being reported.</p>
+            <p>
+               <b>Example:</b>An ALT (SGOT) result above a protocol-defined threshold value of 2.5 times the upper limit of normal based on the subject's sex and age.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163734" kind="short">
+         <Label xml:lang="en-US">above high threshold</Label>
+      </Rubric>
+      <Rubric id="d1e163734" kind="preferred">
+         <Label xml:lang="en-US">above high threshold</Label>
+      </Rubric>
+   </Class>
+   <Class code="LX" kind="concept">
+      <Meta name="internalId" value="21635"/>
+      <SuperClass code="EX">
+         <Rubric id="d1e163099" kind="preferred">
+            <Label xml:lang="en-US">outside threshold</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e163745" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>The numeric observation/test result is interpreted as being below the low threshold value for a particular protocol within which the result is being reported.</p>
+            <p>
+               <b>Example:</b>A Total White Blood Cell Count falling below a protocol-defined threshold value of 3000/mm^3</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163772" kind="short">
+         <Label xml:lang="en-US">below low threshold</Label>
+      </Rubric>
+      <Rubric id="d1e163772" kind="preferred">
+         <Label xml:lang="en-US">below low threshold</Label>
+      </Rubric>
+   </Class>
+   <Class code="IND" kind="concept">
+      <Meta name="internalId" value="22807"/>
+      <SuperClass code="ObservationInterpretationDetection">
+         <Rubric id="d1e163126" kind="preferred">
+            <Label xml:lang="en-US">ObservationInterpretationDetection</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e163783" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The value of this observation does not allow interpretation as to whether or not the analyte or sign in question is present.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163804" kind="short">
+         <Label xml:lang="en-US">Indeterminate</Label>
+      </Rubric>
+      <Rubric id="d1e163804" kind="preferred">
+         <Label xml:lang="en-US">Indeterminate</Label>
+      </Rubric>
+   </Class>
+   <Class code="NEG" kind="concept">
+      <Meta name="internalId" value="22808"/>
+      <SuperClass code="ObservationInterpretationDetection">
+         <Rubric id="d1e163126" kind="preferred">
+            <Label xml:lang="en-US">ObservationInterpretationDetection</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e163815" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The value of this observation is interpreted as showing that the analyte or sign in question is not present.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163836" kind="short">
+         <Label xml:lang="en-US">Negative</Label>
+      </Rubric>
+      <Rubric id="d1e163836" kind="preferred">
+         <Label xml:lang="en-US">Negative</Label>
+      </Rubric>
+   </Class>
+   <Class code="POS" kind="concept">
+      <Meta name="internalId" value="22806"/>
+      <SuperClass code="ObservationInterpretationDetection">
+         <Rubric id="d1e163126" kind="preferred">
+            <Label xml:lang="en-US">ObservationInterpretationDetection</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e163847" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>he value of this observation is interpreted as showing that the analyte or sign in question is present.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e163868" kind="short">
+         <Label xml:lang="en-US">Positive</Label>
+      </Rubric>
+      <Rubric id="d1e163868" kind="preferred">
+         <Label xml:lang="en-US">Positive</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

@@ -1,0 +1,449 @@
+<!--
+    Copyright (C) 2011-2014 ART-DECOR expert group art-decor.org
+    
+    Author: Gerrit Boers, Alexander Henket
+
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:atp="urn:nictiz.atp" xmlns:hl7="urn:hl7-org:v3" xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:widget="http://orbeon.org/oxf/xml/widget" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="configuration"
+    xsi:schemaLocation="http://www.w3.org/1999/xhtml ../../orbeon_schemas/xhtml1-transitional-orbeon.xsd">
+    <xhtml:head>
+        <xhtml:style type="text/css"> .
+            xforms-select-appearance-full span { display: block; clear: both } 
+        </xhtml:style>
+        <xhtml:title>
+            <xforms:output ref="$resources/languages"/>
+        </xhtml:title>
+        <xforms:model id="language-support">
+            <!-- Variable with path to art-exist for use by form -->
+            <xxforms:variable name="art-exist" select="xxforms:property('art.exist.url')"/>
+            <!-- resources for internationalization -->
+            <xforms:instance id="resources-instance">
+                <dummy/>
+            </xforms:instance>
+            <!-- submission for loading resources -->
+            <xforms:submission id="get-resources-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-form-resources.xquery" replace="instance" instance="resources-instance"/>
+            <!-- language -->
+            <xforms:instance id="language" xxforms:exclude-result-prefixes="#all">
+                <language/>
+            </xforms:instance>
+
+            <!-- instance for server language -->
+            <xforms:instance id="server-language">
+                <dummy/>
+            </xforms:instance>
+            <!-- get decor submission -->
+            <xforms:submission id="get-server-language" serialization="none" method="get" resource="{$art-exist}/modules/get-server-language.xquery" replace="instance" instance="server-language"/>
+            <xforms:submission id="save-server-language" serialization="none" method="get" resource="{$art-exist}/modules/save-server-language.xquery?language={instance('server-language')}" replace="instance" instance="server-language" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal"> A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+
+            <!-- instance for edit status -->
+            <xforms:instance id="data-safe">
+                <data-safe>true</data-safe>
+            </xforms:instance>
+            <!-- resources editing -->
+            <xforms:instance id="resources-edit-instance">
+                <dummy/>
+            </xforms:instance>
+            <!-- submission for loading resources -->
+            <xforms:submission id="get-edit-resources" serialization="none" method="get" resource="{$art-exist}/modules/get-resources.xq?packageRoot={instance('package-navigation')}" replace="instance" instance="resources-edit-instance"/>
+            <!-- event observer for dataset changes -->
+            <xforms:action ev:observer="resources-edit-instance" ev:event="xforms-insert xforms-delete xxforms-value-changed">
+                <xforms:setvalue ref="instance('data-safe')">false</xforms:setvalue>
+            </xforms:action>
+
+            <!-- instance for package navigation -->
+            <xforms:instance id="package-navigation">
+                <path/>
+            </xforms:instance>
+            <!-- instance for package roots -->
+            <xforms:instance id="packages">
+                <packages/>
+            </xforms:instance>
+            <xforms:submission id="get-packages" serialization="none" method="get" resource="{$art-exist}/modules/get-art-package-list.xquery" replace="instance" instance="packages"/>
+
+            <!-- instance for holding  key -->
+            <xforms:instance id="key-navigation">
+                <key/>
+            </xforms:instance>
+            <!-- key navigation nodeset -->
+            <xforms:instance id="key-navigation-nodeset">
+                <expression>instance('resources-edit-instance')/resources[1]/*</expression>
+            </xforms:instance>
+            <xforms:instance id="undefined-key-navigation">
+                <root>
+                    <key/>
+                </root>
+            </xforms:instance>
+            <!-- undefined resources instance -->
+            <xforms:instance id="undefined-resources-instance">
+                <dummy/>
+            </xforms:instance>
+            <xforms:submission id="get-undefined-resources-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-undefined-resources.xq?packageRoot={instance('package-navigation')}" replace="instance" instance="undefined-resources-instance"/>
+            <!-- resource usage instance -->
+            <xforms:instance id="resource-usage-instance">
+                <dummy/>
+            </xforms:instance>
+            <xforms:submission id="get-resource-usage-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-resource-usage.xq?resource={instance('key-navigation')}&amp;packageRoot={instance('package-navigation')}" replace="instance" instance="resource-usage-instance"/>
+            <!-- unused resources instance -->
+            <xforms:instance id="unused-resources-instance">
+                <dummy/>
+            </xforms:instance>
+            <xforms:submission id="get-unused-resources-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-unused-resources.xq?resource={instance('key-navigation')}&amp;packageRoot={instance('package-navigation')}" replace="instance" instance="unused-resources-instance"/>
+            <!--         <xforms:bind ref="instance('undefined-resources-instance')/resource">
+            <xforms:bind nodeset="text" required="@rue()"/>
+         </xforms:bind>-->
+            <!-- save resources submission -->
+            <xforms:submission id="save-resources-submission" ref="instance('resources-edit-instance')" resource="{$art-exist}/modules/save-art-form-resources.xquery" method="post" replace="none" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal"> A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+            <!-- add new resources submission -->
+            <xforms:submission id="add-resources-submission" ref="instance('undefined-resources-instance')" action="{$art-exist}/modules/add-resources.xq" method="post" replace="none" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal"> A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+            <xforms:action ev:event="xforms-model-construct-done">
+                <xforms:send submission="get-resources-submission"/>
+                <xforms:setvalue ref="instance('language')" value="if (string-length(xxforms:get-session-attribute('language'))&gt;0) then (xxforms:get-session-attribute('language')) else (instance('resources-instance')//resources[1]/@xml:lang/string())"/>
+                <xforms:send submission="get-server-language"/>
+                <xforms:send submission="get-packages"/>
+                <xforms:setvalue ref="instance('package-navigation')" value="instance('packages')/root[1]"/>
+                <xforms:send submission="get-edit-resources"/>
+                <xforms:send submission="get-undefined-resources-submission"/>
+                <!--                <xforms:send submission="get-unused-resources-submission"/>-->
+                <xforms:setvalue ref="instance('undefined-key-navigation')/key" value="instance('undefined-resources-instance')/resource[1]/@key"/>
+            </xforms:action>
+            <xforms:action ev:event="xforms-ready">
+                <xforms:setvalue ref="instance('key-navigation')" value="xxforms:itemset('key-select', 'xml', false())//item[1]/value"/>
+                <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                <xforms:setfocus control="text-repeat"/>
+            </xforms:action>
+            <xxforms:script ev:event="xforms-ready"> 
+                window.onbeforeunload = function() { 
+                    if (ORBEON.xforms.Document.getValue('data-safe-input') != 'true') 
+                    return "Deze tekst kunnen we aanpassen."; 
+                } 
+            </xxforms:script>
+            <!-- relevant language is returned as first node, rest should be empty -->
+            <xxforms:variable name="resources" select="instance('resources-instance')//resources[1]"/>
+            <xxforms:variable name="administrator" select="contains(xxforms:get-session-attribute('groups'),'dba')"/>
+        </xforms:model>
+    </xhtml:head>
+    <!-- Start of XForm body -->
+    <xhtml:body>
+        <xforms:group ref=".[$administrator]">
+            <!-- special output used to give warning if user leaves page -->
+            <xforms:output ref="instance('data-safe')" id="data-safe-input" style="display: none"/>
+            <!-- languages -->
+            <xhtml:table width="100%">
+                <xhtml:tr>
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/default-server-language"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:select1 ref="instance('server-language')" class="auto-width" id="language-select">
+                            <xforms:itemset nodeset="instance('resources-instance')/resources">
+                                <xforms:label ref="@displayName"/>
+                                <xforms:value ref="@xml:lang"/>
+                            </xforms:itemset>
+                            <xforms:action ev:event="xforms-value-changed">
+                                <xforms:send submission="save-server-language"/>
+                                <xforms:send submission="get-server-language"/>
+                                <xforms:setvalue ref="instance('language')" value="instance('server-language')"/>
+                                <xforms:insert context="." origin="xxforms:set-session-attribute('language', instance('language'))"/>
+                                <xforms:send submission="get-resources-submission"/>
+                            </xforms:action>
+                        </xforms:select1>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/package"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xforms:select1 ref="instance('package-navigation')" class="auto-width" id="root-select">
+                            <xforms:itemset nodeset="instance('packages')/root">
+                                <xforms:label ref="concat(@abbrev,' - ',@title)"/>
+                                <xforms:value ref="."/>
+                            </xforms:itemset>
+                            <xforms:action ev:event="xforms-value-changed">
+                                <xforms:send submission="get-edit-resources"/>
+                                <xforms:send submission="get-undefined-resources-submission"/>
+                                <xforms:send submission="get-unused-resources-submission"/>
+                                <xforms:setvalue ref="instance('undefined-key-navigation')/key" value="instance('undefined-resources-instance')/resource[1]/@key"/>
+                                <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                            </xforms:action>
+                        </xforms:select1>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td colspan="2">
+                        <xhtml:p/>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xhtml:table width="100%">
+                            <!-- row with heading for tree control and edit buttons	-->
+                            <xhtml:tr>
+                                <xhtml:td class="heading">
+                                    <xhtml:div class="heading">
+                                        <xforms:output ref="$resources/key"/>
+                                    </xhtml:div>
+                                    <xhtml:div class="buttons">
+                                        <xforms:group ref=".[instance('key-navigation-nodeset')!='instance(''resources-edit-instance'')/resources[1]/*']">
+                                            <fr:button>
+                                                <xforms:label ref="$resources/remove-filter"/>
+                                                <xforms:action ev:event="DOMActivate">
+                                                    <xforms:setvalue ref="instance('key-navigation-nodeset')" value="'instance(''resources-edit-instance'')/resources[1]/*'"/>
+                                                </xforms:action>
+                                            </fr:button>
+                                        </xforms:group>
+                                        <!-- refresh -->
+                                        <fr:button ref=".[instance('data-safe')='true']">
+                                            <xforms:label>
+                                                <xhtml:img src="/img/arrow_refresh.png" alt=""/>
+                                            </xforms:label>
+                                            <xforms:hint ref="$resources/refresh"/>
+                                            <xforms:action ev:event="DOMActivate">
+                                                <xforms:send submission="get-resources-submission"/>
+                                                <xforms:send submission="get-decor-server-language"/>
+                                                <xforms:send submission="get-packages"/>
+                                                <xforms:action if="not(instance('package-navigation')=instance('packages')/root)">
+                                                    <xforms:setvalue ref="instance('package-navigation')" value="instance('packages')/root[1]"/>
+                                                </xforms:action>
+                                                <xforms:send submission="get-edit-resources"/>
+                                                <xforms:send submission="get-undefined-resources-submission"/>
+                                                <xforms:send submission="get-unused-resources-submission"/>
+                                                <xforms:action if="not(instance('undefined-key-navigation')/key=instance('undefined-resources-instance')/resource/@key)">
+                                                    <xforms:setvalue ref="instance('undefined-key-navigation')/key" value="instance('undefined-resources-instance')/resource[1]/@key"/>
+                                                </xforms:action>
+                                                <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                                            </xforms:action>
+                                        </fr:button>
+                                    </xhtml:div>
+                                </xhtml:td>
+                            </xhtml:tr>
+                            <xhtml:tr>
+                                <xhtml:td>
+                                    <xhtml:div class="navigate-small">
+                                        <xforms:select1 ref="instance('key-navigation')" appearance="compact" id="key-select">
+                                            <xforms:itemset nodeset="xxforms:evaluate(instance('key-navigation-nodeset'))">
+                                                <xforms:label ref="name()"/>
+                                                <xforms:value ref="name()"/>
+                                            </xforms:itemset>
+                                            <xforms:action ev:event="xforms-value-changed">
+                                                <xforms:send submission="get-resource-usage-submission"/>
+                                            </xforms:action>
+                                        </xforms:select1>
+                                    </xhtml:div>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xhtml:table>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xhtml:table class="detail" width="100%">
+                            <xhtml:tr>
+                                <xhtml:td colspan="2" class="heading">
+                                    <xhtml:div class="heading">
+                                        <xforms:output ref="instance('key-navigation')"/>
+                                    </xhtml:div>
+                                </xhtml:td>
+                            </xhtml:tr>
+                            <xhtml:tr>
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/language"/>
+                                </xhtml:td>
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/text"/>
+                                </xhtml:td>
+                            </xhtml:tr>
+                            <xforms:repeat nodeset="instance('resources-edit-instance')/resources" id="resources-repeat">
+                                <xhtml:tr>
+                                    <xhtml:td>
+                                        <xforms:output ref="@displayName"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:input ref="*[name()=instance('key-navigation')]" incremental="true"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xforms:repeat>
+                            <xhtml:tr>
+                                <xhtml:td colspan="2">
+                                    <xforms:group ref=".[instance('data-safe')='false']">
+                                        <xhtml:div class="buttons">
+                                            <fr:button>
+                                                <xforms:label ref="$resources/cancel"/>
+                                                <xforms:action ev:event="DOMActivate">
+                                                    <xforms:send submission="get-edit-resources"/>
+                                                    <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                                                </xforms:action>
+                                            </fr:button>
+                                            <fr:button>
+                                                <xforms:label ref="$resources/save"/>
+                                                <xforms:action ev:event="DOMActivate">
+                                                    <xforms:send submission="save-resources-submission"/>
+                                                    <xforms:send submission="get-edit-resources"/>
+                                                    <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                                                </xforms:action>
+                                            </fr:button>
+                                        </xhtml:div>
+                                    </xforms:group>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xhtml:table>
+                        <!-- resource usage -->
+                        <xhtml:div class="h2">
+                            <xforms:output ref="$resources/usage"/>
+                        </xhtml:div>
+                        <!-- xforms -->
+                        <xhtml:table class="detail" width="100%">
+                            <xhtml:thead>
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/xform"/>
+                                    </xhtml:td>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/count"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xhtml:thead>
+                            <xforms:repeat nodeset="instance('resource-usage-instance')/xform" id="usage-repeat">
+                                <xhtml:tr class="not-selectable">
+                                    <xhtml:td>
+                                        <xforms:output ref="@name"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="@count"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xforms:repeat>
+                        </xhtml:table>
+                    </xhtml:td>
+                </xhtml:tr>
+                <!-- missing text for language -->
+                <xhtml:tr>
+                    <xhtml:td colspan="2" class="heading">
+                        <xhtml:div class="heading">
+                            <xforms:output ref="$resources/missing-text"/>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td colspan="2">
+                        <xhtml:table class="detail" width="100%">
+                            <xhtml:thead>
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/language"/>
+                                    </xhtml:td>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/count"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xhtml:thead>
+                            <xforms:repeat nodeset="instance('resources-edit-instance')/resources[*/string-length(.)=0]" id="languages-repeat">
+                                <xhtml:tr>
+                                    <xhtml:td>
+                                        <xforms:output ref="@displayName"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="count(*[string-length(.)=0])"/>
+                                        <xhtml:div class="buttons">
+                                            <fr:button>
+                                                <xforms:label ref="$resources/show-in-list"/>
+                                                <xforms:action ev:event="DOMActivate">
+                                                    <xforms:setvalue ref="instance('key-navigation-nodeset')" value="'instance(''resources-edit-instance'')/resources[@xml:lang=''de-DE'']/*[string-length(.)=0]'"/>
+                                                </xforms:action>
+                                            </fr:button>
+                                        </xhtml:div>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xforms:repeat>
+                        </xhtml:table>
+                    </xhtml:td>
+                </xhtml:tr>
+
+                <!-- undefined keys -->
+                <xforms:group ref="instance('undefined-resources-instance')/resource">
+                    <xhtml:tr>
+                        <xhtml:td colspan="2" class="heading">
+                            <xhtml:div class="heading">
+                                <xforms:output ref="$resources/undefined-keys"/>
+                            </xhtml:div>
+                        </xhtml:td>
+                    </xhtml:tr>
+                    <xhtml:tr>
+                        <xhtml:td colspan="2">
+                            <xhtml:div class="detail">
+                                <xhtml:table width="100%">
+                                    <xhtml:thead>
+                                        <xhtml:tr>
+                                            <xhtml:td class="item-label">
+                                                <xforms:output ref="$resources/key"/>
+                                            </xhtml:td>
+                                            <xhtml:td class="item-label">
+                                                <xforms:output ref="$resources/text"/>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xhtml:thead>
+                                    <xforms:repeat nodeset="instance('undefined-resources-instance')/resource">
+                                        <xhtml:tr>
+                                            <xhtml:td>
+                                                <xforms:output ref="@key"/>
+                                            </xhtml:td>
+                                            <xhtml:td>
+                                                <xhtml:table>
+                                                    <xforms:repeat nodeset="text" id="text-repeat">
+                                                        <xhtml:tr>
+                                                            <xhtml:td>
+                                                                <xforms:output ref="@displayName"/>
+                                                            </xhtml:td>
+                                                            <xhtml:td>
+                                                                <xforms:input ref=".">
+                                                                    <xforms:alert>
+                                                                        <xforms:output ref="$resources/required-field"/>
+                                                                    </xforms:alert>
+                                                                </xforms:input>
+                                                            </xhtml:td>
+                                                        </xhtml:tr>
+                                                    </xforms:repeat>
+                                                </xhtml:table>
+                                            </xhtml:td>
+                                        </xhtml:tr>
+                                    </xforms:repeat>
+                                    <xhtml:tr>
+                                        <xhtml:td colspan="2" align="right">
+                                            <fr:button>
+                                                <xforms:label ref="$resources/add"/>
+                                                <xforms:action ev:event="DOMActivate">
+                                                    <xforms:send submission="add-resources-submission"/>
+                                                    <xforms:send submission="get-edit-resources"/>
+                                                    <xforms:send submission="get-undefined-resources-submission"/>
+                                                    <xforms:setvalue ref="instance('undefined-key-navigation')/key" value="instance('undefined-resources-instance')/resource[1]/@key"/>
+                                                    <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                                                </xforms:action>
+                                            </fr:button>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                </xhtml:table>
+                            </xhtml:div>
+                        </xhtml:td>
+                    </xhtml:tr>
+                </xforms:group>
+            </xhtml:table>
+            <!--      <fr:xforms-inspector/>-->
+        </xforms:group>
+    </xhtml:body>
+</xhtml:html>

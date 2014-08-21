@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   Copyright (C) 2013 Art Decor Expert Group art-decor.org
+
+   Author: Gerrit Boers
+   
+   This program is free software; you can redistribute it and/or modify it under the terms of the
+   GNU Lesser General Public License as published by the Free Software Foundation; either version
+   2.1 of the License, or (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+   without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+   See the GNU Lesser General Public License for more details.
+   
+   The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+--><!--
+   XML file for SNOMED-CT id generator
+   - namespaces contains a list of allowed namespaces
+   - each namespace contains a list of partitions
+   - each partition contains an id counter
+-->
+<namespaces>
+    <namespace id="1000146" name="Production">
+        <partition id="10" name="Concept" counter="1"/>
+        <partition id="11" name="Description" counter="1"/>
+        <partition id="12" name="Relation" counter="1"/>
+    </namespace>
+    <namespace id="1000147" name="Test">
+        <partition id="10" name="Concept" counter="1"/>
+        <partition id="11" name="Description" counter="1"/>
+        <partition id="12" name="Relation" counter="1"/>
+    </namespace>
+</namespaces>

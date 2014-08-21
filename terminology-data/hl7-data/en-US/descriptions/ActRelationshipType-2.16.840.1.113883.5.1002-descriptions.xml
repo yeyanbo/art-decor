@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<descriptions>
+   <description count="3" length="21" conceptId="ART" type="pref" language="en-US"
+                superClasses=""
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">act relationship type</description>
+   <description count="1" length="36" conceptId="_ActRelationshipTemporallyPertainsEnd"
+                type="pref"
+                language="en-US"
+                superClasses="ActClassTemporallyPertains"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">ActRelationshipTemporallyPertainsEnd</description>
+   <description count="1" length="38" conceptId="_ActRelationshipTemporallyPertainsStart"
+                type="pref"
+                language="en-US"
+                superClasses="ActClassTemporallyPertains"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">ActRelationshipTemporallyPertainsStart</description>
+   <description count="2" length="13" conceptId="DURING" type="pref" language="en-US"
+                superClasses="ActClassTemporallyPertains"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">occurs during</description>
+   <description count="2" length="13" conceptId="OVERLAP" type="pref" language="en-US"
+                superClasses="ActClassTemporallyPertains"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">overlaps with</description>
+   <description count="1" length="27" conceptId="_ActRelationshipCostTracking" type="pref"
+                language="en-US"
+                superClasses="ActRelationshipAccounting"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">ActRelationshipCostTracking</description>
+   <description count="1" length="22" conceptId="_ActRelationshipPosting" type="pref"
+                language="en-US"
+                superClasses="ActRelationshipAccounting"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">ActRelationshipPosting</description>
+   <description count="2" length="21" conceptId="CIND" type="pref" language="en-US"
+                superClasses="ActRelationshipConditional"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has contra-indication</description>
+   <description count="2" length="17" conceptId="PRCN" type="pref" language="en-US"
+                superClasses="ActRelationshipConditional"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has pre-condition</description>
+   <description count="2" length="10" conceptId="RSON" type="pref" language="en-US"
+                superClasses="ActRelationshipConditional"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has reason</description>
+   <description count="2" length="11" conceptId="TRIG" type="pref" language="en-US"
+                superClasses="ActRelationshipConditional"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has trigger</description>
+   <description count="2" length="10" conceptId="CHRG" type="pref" language="en-US"
+                superClasses="ActRelationshipCostTracking"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has charge</description>
+   <description count="2" length="8" conceptId="COST" type="pref" language="en-US"
+                superClasses="ActRelationshipCostTracking"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has cost</description>
+   <description count="2" length="10" conceptId="CREDIT" type="pref" language="en-US"
+                superClasses="ActRelationshipPosting"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has credit</description>
+   <description count="2" length="9" conceptId="DEBIT" type="pref" language="en-US"
+                superClasses="ActRelationshipPosting"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has debit</description>
+   <description count="4" length="17" conceptId="EAE" type="pref" language="en-US"
+                superClasses="ActRelationshipTemporallyPertainsEnd"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">ends after end of</description>
+   <description count="4" length="19" conceptId="EAS" type="pref" language="en-US"
+                superClasses="ActRelationshipTemporallyPertainsEnd"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">ends after start of</description>
+   <description count="3" length="15" conceptId="EBE" type="pref" language="en-US"
+                superClasses="ActRelationshipTemporallyPertainsEnd"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">ends before end</description>
+   <description count="4" length="20" conceptId="EBS" type="pref" language="en-US"
+                superClasses="ActRelationshipTemporallyPertainsEnd"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">ends before start of</description>
+   <description count="3" length="20" conceptId="ECW" type="pref" language="en-US"
+                superClasses="ActRelationshipTemporallyPertainsEnd"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">ends concurrent with</description>
+   <description count="4" length="26" conceptId="ECWS" type="pref" language="en-US"
+                superClasses="ActRelationshipTemporallyPertainsEnd"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">ends concurrent with start</description>
+   <description count="4" length="19" conceptId="SAE" type="pref" language="en-US"
+                superClasses="ActRelationshipTemporallyPertainsStart"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">starts after end of</description>
+   <description count="4" length="21" conceptId="SAS" type="pref" language="en-US"
+                superClasses="ActRelationshipTemporallyPertainsStart"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">starts after start of</description>
+   <description count="3" length="17" conceptId="SBE" type="pref" language="en-US"
+                superClasses="ActRelationshipTemporallyPertainsStart"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">starts before end</description>
+   <description count="4" length="22" conceptId="SBS" type="pref" language="en-US"
+                superClasses="ActRelationshipTemporallyPertainsStart"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">starts before start of</description>
+   <description count="3" length="22" conceptId="SCW" type="pref" language="en-US"
+                superClasses="ActRelationshipTemporallyPertainsStart"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">starts concurrent with</description>
+   <description count="4" length="26" conceptId="SCWE" type="pref" language="en-US"
+                superClasses="ActRelationshipTemporallyPertainsStart"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">starts concurrent with end</description>
+   <description count="3" length="24" conceptId="OBJC" type="pref" language="en-US"
+                superClasses="Act Relationsip Objective"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has continuing objective</description>
+   <description count="3" length="19" conceptId="OBJF" type="pref" language="en-US"
+                superClasses="Act Relationsip Objective"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has final objective</description>
+   <description count="1" length="26" conceptId="_ActRelationshipConditional" type="pref"
+                language="en-US"
+                superClasses="act relationship type"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">ActRelationshipConditional</description>
+   <description count="2" length="13" conceptId="COMP" type="pref" language="en-US"
+                superClasses="act relationship type"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has component</description>
+   <description count="2" length="11" conceptId="OUTC" type="pref" language="en-US"
+                superClasses="act relationship type"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has outcome</description>
+   <description count="3" length="25" conceptId="PERT" type="pref" language="en-US"
+                superClasses="act relationship type"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has pertinent information</description>
+   <description count="2" length="9" conceptId="SEQL" type="pref" language="en-US"
+                superClasses="act relationship type"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">is sequel</description>
+   <description count="2" length="9" conceptId="VALUE" type="pref" language="en-US"
+                superClasses="act relationship type"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has value</description>
+   <description count="1" length="7" conceptId="ARR" type="pref" language="en-US"
+                superClasses="has component"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">arrival</description>
+   <description count="3" length="20" conceptId="CTRLV" type="pref" language="en-US"
+                superClasses="has component"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has control variable</description>
+   <description count="1" length="9" conceptId="DEP" type="pref" language="en-US"
+                superClasses="has component"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">departure</description>
+   <description count="2" length="11" conceptId="EDU" type="pref" language="en-US"
+                superClasses="ends after start of"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">ends during</description>
+   <description count="2" length="15" conceptId="CONCURRENT" type="pref" language="en-US"
+                superClasses="ends concurrent with, starts concurrent with"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">concurrent with</description>
+   <description count="1" length="10" conceptId="OCCR" type="pref" language="en-US"
+                superClasses="fulfills"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">occurrence</description>
+   <description count="2" length="16" conceptId="OREF" type="pref" language="en-US"
+                superClasses="fulfills"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">references order</description>
+   <description count="2" length="17" conceptId="SCH" type="pref" language="en-US"
+                superClasses="fulfills"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">schedules request</description>
+   <description count="3" length="27" conceptId="ACTIMM" type="pref" language="en-US"
+                superClasses="immunization against"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">active immunization against</description>
+   <description count="3" length="28" conceptId="PASSIMM" type="pref" language="en-US"
+                superClasses="immunization against"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">passive immunization against</description>
+   <description count="1" length="8" conceptId="RCVY" type="pref" language="en-US"
+                superClasses="mitigates"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">recovers</description>
+   <description count="3" length="25" conceptId="_ActRelationsipObjective" type="pref"
+                language="en-US"
+                superClasses="has outcome"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">Act Relationsip Objective</description>
+   <description count="2" length="8" conceptId="GOAL" type="pref" language="en-US"
+                superClasses="has outcome"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has goal</description>
+   <description count="2" length="8" conceptId="RISK" type="pref" language="en-US"
+                superClasses="has outcome"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has risk</description>
+   <description count="1" length="26" conceptId="_ActClassTemporallyPertains" type="pref"
+                language="en-US"
+                superClasses="has pertinent information"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">ActClassTemporallyPertains</description>
+   <description count="1" length="25" conceptId="_ActRelationshipAccounting" type="pref"
+                language="en-US"
+                superClasses="has pertinent information"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">ActRelationshipAccounting</description>
+   <description count="2" length="13" conceptId="AUTH" type="pref" language="en-US"
+                superClasses="has pertinent information"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">authorized by</description>
+   <description count="3" length="15" conceptId="CAUS" type="pref" language="en-US"
+                superClasses="has pertinent information"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">is etiology for</description>
+   <description count="2" length="10" conceptId="COVBY" type="pref" language="en-US"
+                superClasses="has pertinent information"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">covered by</description>
+   <description count="3" length="15" conceptId="DRIV" type="pref" language="en-US"
+                superClasses="has pertinent information"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">is derived from</description>
+   <description count="1" length="11" conceptId="ELNK" type="pref" language="en-US"
+                superClasses="has pertinent information"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">episodeLink</description>
+   <description count="3" length="21" conceptId="EVID" type="pref" language="en-US"
+                superClasses="has pertinent information"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">provides evidence for</description>
+   <description count="2" length="14" conceptId="EXACBY" type="pref" language="en-US"
+                superClasses="has pertinent information"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">exacerbated by</description>
+   <description count="2" length="15" conceptId="EXPL" type="pref" language="en-US"
+                superClasses="has pertinent information"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has explanation</description>
+   <description count="2" length="13" conceptId="ITEMSLOC" type="pref" language="en-US"
+                superClasses="has pertinent information"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">items located</description>
+   <description count="2" length="10" conceptId="LIMIT" type="pref" language="en-US"
+                superClasses="has pertinent information"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">limited by</description>
+   <description count="2" length="12" conceptId="META" type="pref" language="en-US"
+                superClasses="has pertinent information"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has metadata</description>
+   <description count="3" length="19" conceptId="MFST" type="pref" language="en-US"
+                superClasses="has pertinent information"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">is manifestation of</description>
+   <description count="2" length="12" conceptId="NAME" type="pref" language="en-US"
+                superClasses="has pertinent information"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">assigns name</description>
+   <description count="3" length="21" conceptId="PREV" type="pref" language="en-US"
+                superClasses="has pertinent information"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has previous instance</description>
+   <description count="2" length="9" conceptId="REFR" type="pref" language="en-US"
+                superClasses="has pertinent information"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">refers to</description>
+   <description count="3" length="20" conceptId="REFV" type="pref" language="en-US"
+                superClasses="has pertinent information"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has reference values</description>
+   <description count="2" length="11" conceptId="RELVBY" type="pref" language="en-US"
+                superClasses="has pertinent information"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">relieved by</description>
+   <description count="2" length="11" conceptId="SPRT" type="pref" language="en-US"
+                superClasses="has pertinent information"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has support</description>
+   <description count="2" length="11" conceptId="SUBJ" type="pref" language="en-US"
+                superClasses="has pertinent information"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has subject</description>
+   <description count="2" length="13" conceptId="SUMM" type="pref" language="en-US"
+                superClasses="has pertinent information"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">summarized by</description>
+   <description count="1" length="4" conceptId="USE" type="pref" language="en-US"
+                superClasses="refers to"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">uses</description>
+   <description count="1" length="6" conceptId="BLOCK" type="pref" language="en-US"
+                superClasses="has reason"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">blocks</description>
+   <description count="1" length="9" conceptId="DIAG" type="pref" language="en-US"
+                superClasses="has reason"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">diagnoses</description>
+   <description count="2" length="20" conceptId="IMM" type="pref" language="en-US"
+                superClasses="has reason"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">immunization against</description>
+   <description count="1" length="9" conceptId="MITGT" type="pref" language="en-US"
+                superClasses="has reason"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">mitigates</description>
+   <description count="2" length="14" conceptId="PRYLX" type="pref" language="en-US"
+                superClasses="has reason"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">prophylaxis of</description>
+   <description count="1" length="6" conceptId="TREAT" type="pref" language="en-US"
+                superClasses="has reason"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">treats</description>
+   <description count="2" length="13" conceptId="SDU" type="pref" language="en-US"
+                superClasses="starts after start of"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">starts during</description>
+   <description count="2" length="12" conceptId="APND" type="pref" language="en-US"
+                superClasses="is sequel"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">is appendage</description>
+   <description count="2" length="12" conceptId="BSLN" type="pref" language="en-US"
+                superClasses="is sequel"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has baseline</description>
+   <description count="2" length="13" conceptId="COMPLY" type="pref" language="en-US"
+                superClasses="is sequel"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">complies with</description>
+   <description count="1" length="9" conceptId="DOC" type="pref" language="en-US"
+                superClasses="is sequel"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">documents</description>
+   <description count="1" length="8" conceptId="FLFS" type="pref" language="en-US"
+                superClasses="is sequel"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">fulfills</description>
+   <description count="2" length="18" conceptId="GEN" type="pref" language="en-US"
+                superClasses="is sequel"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has generalization</description>
+   <description count="2" length="16" conceptId="GEVL" type="pref" language="en-US"
+                superClasses="is sequel"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">evaluates (goal)</description>
+   <description count="2" length="21" conceptId="INST" type="pref" language="en-US"
+                superClasses="is sequel"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">instantiates (master)</description>
+   <description count="1" length="8" conceptId="MOD" type="pref" language="en-US"
+                superClasses="is sequel"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">modifies</description>
+   <description count="2" length="17" conceptId="MTCH" type="pref" language="en-US"
+                superClasses="is sequel"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">matches (trigger)</description>
+   <description count="2" length="10" conceptId="OPTN" type="pref" language="en-US"
+                superClasses="is sequel"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has option</description>
+   <description count="1" length="12" conceptId="RCHAL" type="pref" language="en-US"
+                superClasses="is sequel"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">re-challenge</description>
+   <description count="1" length="8" conceptId="REV" type="pref" language="en-US"
+                superClasses="is sequel"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">reverses</description>
+   <description count="1" length="8" conceptId="RPLC" type="pref" language="en-US"
+                superClasses="is sequel"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">replaces</description>
+   <description count="1" length="8" conceptId="SUCC" type="pref" language="en-US"
+                superClasses="is sequel"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">succeeds</description>
+   <description count="2" length="19" conceptId="UPDT" type="pref" language="en-US"
+                superClasses="is sequel"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">updates (condition)</description>
+   <description count="1" length="8" conceptId="XCRPT" type="pref" language="en-US"
+                superClasses="is sequel"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">Excerpts</description>
+   <description count="1" length="14" conceptId="XFRM" type="pref" language="en-US"
+                superClasses="is sequel"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">transformation</description>
+   <description count="3" length="19" conceptId="SPRTBND" type="pref" language="en-US"
+                superClasses="has support"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">has bounded support</description>
+   <description count="2" length="20" conceptId="ADJUNCT" type="pref" language="en-US"
+                superClasses="treats"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">adjunctive treatment</description>
+   <description count="2" length="21" conceptId="MTREAT" type="pref" language="en-US"
+                superClasses="treats"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">maintenance treatment</description>
+   <description count="1" length="9" conceptId="PALLTREAT" type="pref" language="en-US"
+                superClasses="treats"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">palliates</description>
+   <description count="2" length="18" conceptId="SYMP" type="pref" language="en-US"
+                superClasses="treats"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">symptomatic relief</description>
+   <description count="2" length="16" conceptId="VRXCRPT" type="pref" language="en-US"
+                superClasses="Excerpts"
+                classificationId="2.16.840.1.113883.5.1002"
+                classificationName="ActRelationshipType">Excerpt verbatim</description>
+</descriptions>

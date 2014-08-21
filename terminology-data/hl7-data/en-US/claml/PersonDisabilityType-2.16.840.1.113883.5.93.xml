@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="46"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.93"/>
+   <Title name="PersonDisabilityType" date="2012-08-02" version="1.000">A code identifying a person's disability.</Title>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="1" kind="concept">
+      <Meta name="internalId" value="10182"/>
+      <Rubric id="d1e184546" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Vision impaired</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e184559" kind="short">
+         <Label xml:lang="en-US">Vision impaired</Label>
+      </Rubric>
+      <Rubric id="d1e184559" kind="preferred">
+         <Label xml:lang="en-US">Vision impaired</Label>
+      </Rubric>
+   </Class>
+   <Class code="2" kind="concept">
+      <Meta name="internalId" value="10183"/>
+      <Rubric id="d1e184571" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Hearing impaired</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e184584" kind="short">
+         <Label xml:lang="en-US">Hearing impaired</Label>
+      </Rubric>
+      <Rubric id="d1e184584" kind="preferred">
+         <Label xml:lang="en-US">Hearing impaired</Label>
+      </Rubric>
+   </Class>
+   <Class code="3" kind="concept">
+      <Meta name="internalId" value="10184"/>
+      <Rubric id="d1e184595" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Speech impaired</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e184608" kind="short">
+         <Label xml:lang="en-US">Speech impaired</Label>
+      </Rubric>
+      <Rubric id="d1e184608" kind="preferred">
+         <Label xml:lang="en-US">Speech impaired</Label>
+      </Rubric>
+   </Class>
+   <Class code="4" kind="concept">
+      <Meta name="internalId" value="10185"/>
+      <Rubric id="d1e184619" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Mentally impaired</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e184632" kind="short">
+         <Label xml:lang="en-US">Mentally impaired</Label>
+      </Rubric>
+      <Rubric id="d1e184632" kind="preferred">
+         <Label xml:lang="en-US">Mentally impaired</Label>
+      </Rubric>
+   </Class>
+   <Class code="5" kind="concept">
+      <Meta name="internalId" value="10186"/>
+      <SubClass code="CB"/>
+      <SubClass code="CR"/>
+      <SubClass code="G"/>
+      <SubClass code="WC"/>
+      <SubClass code="WK"/>
+      <Rubric id="d1e184641" kind="short">
+         <Label xml:lang="en-US">Mobility impaired</Label>
+      </Rubric>
+      <Rubric id="d1e184641" kind="preferred">
+         <Label xml:lang="en-US">Mobility impaired</Label>
+      </Rubric>
+   </Class>
+   <Class code="CB" kind="concept">
+      <Meta name="internalId" value="15951"/>
+      <SuperClass code="5"/>
+      <Rubric id="d1e184652" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A crib is required to move the person</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e184670" kind="short">
+         <Label xml:lang="en-US">Requires crib</Label>
+      </Rubric>
+      <Rubric id="d1e184670" kind="preferred">
+         <Label xml:lang="en-US">Requires crib</Label>
+      </Rubric>
+   </Class>
+   <Class code="CR" kind="concept">
+      <Meta name="internalId" value="15947"/>
+      <SuperClass code="5"/>
+      <Rubric id="d1e184681" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Person requires crutches to ambulate</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e184699" kind="short">
+         <Label xml:lang="en-US">Requires crutches</Label>
+      </Rubric>
+      <Rubric id="d1e184699" kind="preferred">
+         <Label xml:lang="en-US">Requires crutches</Label>
+      </Rubric>
+   </Class>
+   <Class code="G" kind="concept">
+      <Meta name="internalId" value="15950"/>
+      <SuperClass code="5"/>
+      <Rubric id="d1e184711" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A gurney is required to move the person</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e184729" kind="short">
+         <Label xml:lang="en-US">Requires gurney</Label>
+      </Rubric>
+      <Rubric id="d1e184729" kind="preferred">
+         <Label xml:lang="en-US">Requires gurney</Label>
+      </Rubric>
+   </Class>
+   <Class code="WC" kind="concept">
+      <Meta name="internalId" value="15949"/>
+      <SuperClass code="5"/>
+      <Rubric id="d1e184740" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Person requires a wheelchair to be ambulatory</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e184758" kind="short">
+         <Label xml:lang="en-US">Requires wheelchair</Label>
+      </Rubric>
+      <Rubric id="d1e184758" kind="preferred">
+         <Label xml:lang="en-US">Requires wheelchair</Label>
+      </Rubric>
+   </Class>
+   <Class code="WK" kind="concept">
+      <Meta name="internalId" value="15948"/>
+      <SuperClass code="5"/>
+      <Rubric id="d1e184769" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Person requires a walker to ambulate</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e184787" kind="short">
+         <Label xml:lang="en-US">Requires walker</Label>
+      </Rubric>
+      <Rubric id="d1e184787" kind="preferred">
+         <Label xml:lang="en-US">Requires walker</Label>
+      </Rubric>
+   </Class>
+</ClaML>

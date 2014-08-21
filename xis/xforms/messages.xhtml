@@ -1,0 +1,1493 @@
+<!--
+    Copyright (C) 2011-2014 ART-DECOR expert group art-decor.org
+    
+    Author: Gerrit Boers, Alexander Henket, Maarten Ligtvoet
+
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:atp="urn:nictiz.atp" xmlns:hl7="urn:hl7-org:v3" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xis="http://art-decor.org/ns/xis" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:widget="http://orbeon.org/oxf/xml/widget" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/1999/xhtml ../../orbeon_schemas/xhtml1-transitional-orbeon.xsd">
+    <xhtml:head>
+        <xhtml:title>
+            <xforms:output ref="$resources/xis"/>
+            <xforms:output ref="$resources/messages"/>
+        </xhtml:title>
+        <xhtml:style type="text/css">
+            .dot {
+                border: 1px solid grey; margin-right: 5px; padding: 2px 2px 2px 2px; -moz-user-select: none; -khtml-user-select: none;-moz-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;
+            }
+            .red {
+                background-color:red; font-weight: bold; color:white; 
+            }
+            .yellow {
+                background-color:#FFFF99; font-weight: bold; color:white; 
+            }
+        </xhtml:style>
+        <xforms:model id="xis" xxforms:forward-submission-headers="Orbeon-Client Authorization SM_USER">
+
+         <!-- Variable with path to art-exist for use by form -->
+            <xxforms:variable name="art-exist" select="xxforms:property('art.exist.url')"/>
+         <!-- Variable with path to decor-eXist used to pass to client as link for services (Diagrams in new window) -->
+            <xxforms:variable name="decor-exist" select="xxforms:property('decor.exist.url')"/>
+         <!-- Variable with path to xis-eXist for content -->
+            <xxforms:variable name="xis-exist" select="xxforms:property('xis.exist.url')"/>
+         <!-- Variable with path to xis-external-exist used to pass to client as link for images -->
+            <xxforms:variable name="xis-external-exist" select="xxforms:property('xis.external.exist.url')"/>
+         <!-- resources for internationalization -->
+            <xforms:instance id="resources-instance">
+                <dummy/>
+            </xforms:instance>
+         <!-- submission for loading resources -->
+            <xforms:submission id="get-resources-submission" serialization="none" method="get" resource="{$xis-exist}/resources/form-resources.xml" replace="instance" instance="resources-instance"/>
+         <!-- language -->
+            <xforms:instance id="language">
+                <language/>
+            </xforms:instance>
+         <!-- instance for edit status -->
+            <xforms:instance id="data-safe">
+                <data-safe>true</data-safe>
+            </xforms:instance>
+
+         <!-- instance for selected messages patient -->
+            <xforms:instance id="selected-patient">
+                <id/>
+            </xforms:instance>
+            <xforms:submission id="get-patient-list-submission" serialization="none" method="get" resource="{$xis-exist}/modules/get-patient-list.xquery" replace="instance" instance="patient-list-instance"/>
+
+         <!-- instance for selected receiver -->
+            <xforms:instance id="selected-receiver" xxforms:exclude-result-prefixes="#all">
+                <receiver id="" url=""/>
+            </xforms:instance>
+         <!-- instance for selected receiver -->
+            <xforms:instance id="application-list" xxforms:exclude-result-prefixes="#all">
+                <applications/>
+            </xforms:instance>
+            <xforms:submission id="get-application-list" serialization="none" method="get" resource="{$xis-exist}/modules/get-application-list.xquery?account={instance('selected-account')}" replace="instance" instance="application-list">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+
+         <!-- **** SENDING MESSAGES **** -->
+
+         <!-- instance for selected send message-template -->
+            <xforms:instance id="selected-message-template">
+                <interactionId/>
+            </xforms:instance>
+         <!-- instance for selected send message-payload -->
+            <xforms:instance id="selected-message-payload">
+                <fullPath/>
+            </xforms:instance>
+         <!-- instance for selected query patient -->
+            <xforms:instance id="message-template-list">
+                <id/>
+            </xforms:instance>
+            <xforms:submission id="get-send-message-template-list" serialization="none" method="get" resource="{$xis-exist}/modules/get-send-message-template-list.xquery?account={instance('selected-account')}" replace="instance" instance="message-template-list">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- instance for message info -->
+            <xforms:instance id="message-info" xxforms:exclude-result-prefixes="#all">
+                <message id="" interactionId="" soapAction="" account="" payloadFile="" endpoint="" endpoints="">
+                    <patientId/>
+                    <receiver applicationId="" url="" organizationRegisterId=""/>
+                </message>
+            </xforms:instance>
+         <!-- message submission -->
+            <xforms:submission id="send-message" method="post" resource="{$xis-exist}/modules/xis-send-message.xquery" replace="instance" xxforms:instance="message-response" ref="instance('message-info')" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- messahe response -->
+            <xforms:instance id="message-response" xxforms:exclude-result-prefixes="#all">
+                <empty/>
+            </xforms:instance>
+
+         <!-- **** SENDING QUERIES **** -->
+
+         <!-- instance for query patients -->
+            <xforms:instance id="query-patient-list-instance">
+                <dummy/>
+            </xforms:instance>
+         <!-- instance for selected query patient -->
+            <xforms:instance id="query-selected-patient">
+                <id/>
+            </xforms:instance>
+            <xforms:submission id="get-query-patient-list-submission" serialization="none" method="get" resource="{$xis-exist}/modules/retrieve-patients.xquery" replace="instance" instance="query-patient-list-instance"/>
+         <!-- query templates instance -->
+            <xforms:instance id="query-parameters">
+                <queries>
+                    <query id="QURX_IN990101NL">
+                        <name language="nl-NL">Voorschriftlijst</name>
+                        <patientId>789123459</patientId>
+                        <messageId/>
+                        <parameters>
+                            <hl7:administrationRequestEffectiveTimeInterval>
+                                <hl7:value>
+                                    <hl7:low value="2011-11-01"/>
+                                </hl7:value>
+                            </hl7:administrationRequestEffectiveTimeInterval>
+                        </parameters>
+                    </query>
+                    <query id="QURX_IN990111NL">
+                        <name language="nl-NL">Verstrekkingslijst</name>
+                        <patientId>789123459</patientId>
+                        <messageId/>
+                        <parameters>
+                            <hl7:dispenseEventEffectiveTimeInterval>
+                                <hl7:value>
+                                    <hl7:low value="2011-11-01"/>
+                                </hl7:value>
+                            </hl7:dispenseEventEffectiveTimeInterval>
+                        </parameters>
+                    </query>
+                    <query id="REPC_IN000023NL">
+                        <name language="nl-NL">ICA</name>
+                        <patientId>789123459</patientId>
+                        <messageId/>
+                        <parameters>
+                            <hl7:effectiveTimeInterval>
+                                <hl7:value>
+                                    <hl7:low value="2011-11-01"/>
+                                </hl7:value>
+                            </hl7:effectiveTimeInterval>
+                        </parameters>
+                    </query>
+                    <query id="REPC_IN002170NL">
+                        <name language="nl-NL">OpvragenVaccinatiestatus</name>
+                        <patientId>789123459</patientId>
+                        <messageId/>
+                    </query>
+                    <query id="POLB_IN354000NL">
+                        <name language="nl-NL">Labuitslagen</name>
+                        <patientId>789123459</patientId>
+                        <messageId/>
+                        <parameters>
+                            <hl7:observationEffectiveTime>
+                                <hl7:value value="20100101"/>
+                            </hl7:observationEffectiveTime>
+                        </parameters>
+                    </query>
+                    <query id="QUPC_IN990001NL">
+                        <name language="nl-NL">Professionele Samenvatting</name>
+                        <patientId>789123459</patientId>
+                        <messageId/>
+                        <parameters/>
+                    </query>
+                </queries>
+            </xforms:instance>
+         <!-- instance for selected query message-template -->
+            <xforms:instance id="selected-query-template">
+                <interactionId/>
+            </xforms:instance>
+         <!-- instance for query info -->
+            <xforms:instance id="query-info" xxforms:exclude-result-prefixes="#all">
+                <message id="" interactionId="" soapAction="" account="" payloadFile="" endpoint="" endpoints="">
+                    <patientId/>
+                    <receiver applicationId="" url="" organizationRegisterId=""/>
+                </message>
+            </xforms:instance>
+         <!-- query submission -->
+            <xforms:submission id="send-query" method="post" resource="{$xis-exist}/modules/xis-send-message.xquery" replace="instance" xxforms:instance="query-response" ref="instance('query-info')" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- query response -->
+            <xforms:instance id="query-response" xxforms:exclude-result-prefixes="#all">
+                <empty/>
+            </xforms:instance>
+
+         <!-- UZI info -->
+            <xforms:instance xxforms:exclude-result-prefixes="#all" id="uzi-info">
+                <uziInfo>
+                    <issuer>CN=TEST UZI-register Zorgverlener CA G21, O=agentschap Centraal Informatiepunt Beroepen Gezondheidszorg, C=NL</issuer>
+                    <issuerName>TEST UZI-register Zorgverlener CA G21</issuerName>
+                    <decimalSerialNumber>268402373983222641038909939159818137043</decimalSerialNumber>
+                    <subject>C=NL, O=Gezondheidscentrum Amby, CN=Peter van Pulver, SERIALNUMBER=900009451, T=huisarts</subject>
+                    <subjectName>Peter van Pulver</subjectName>
+                    <subjectTitle>huisarts</subjectTitle>
+                    <subjectOrganisation>Gezondheidscentrum Amby</subjectOrganisation>
+                    <notAfter>2014-12-21T10:13:46+01:00</notAfter>
+                    <notBefore>2011-12-22T10:13:46+01:00</notBefore>
+                    <uziNumber>900009451</uziNumber>
+                    <uziType>Z</uziType>
+                    <uraNumber>00004298</uraNumber>
+                    <roleCode>01.015</roleCode>
+                </uziInfo>
+            </xforms:instance>
+
+         <!-- instance for upload -->
+            <xforms:instance id="upload">
+                <content xsi:type="xs:base64Binary" mediatype="" filename="" size=""/>
+            </xforms:instance>
+            <xforms:instance id="uploadXML">
+                <dummy/>
+            </xforms:instance>
+            <xforms:submission id="upload2exist-submission" method="post" ref="instance('upload')" action="{$xis-exist}/modules/save-file-upload.xquery?account={instance('selected-account')}&amp;file={instance('upload')/@filename}" replace="instance" xxforms:instance="uploadXML" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+
+         <!-- instance for selected test account @name (= collection name)-->
+            <xforms:instance id="selected-account">
+                <account/>
+            </xforms:instance>
+
+            <!-- instance for clearing results result -->
+            <xforms:instance id="clear-result" xxforms:exclude-result-prefixes="#all">
+                <result/>
+            </xforms:instance>
+            <!-- submission for clearing results -->
+            <xforms:submission id="clear-results" serialization="none" method="get" resource="{$xis-exist}/modules/clear-test-validation-results-for-account.xquery?account={instance('selected-account')}" replace="instance" instance="clear-result" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+                <xforms:action ev:event="xforms-submit-done">
+                    <xforms:action if="instance('clear-result')='OK'">
+                        <xforms:action xxforms:iterate="instance('messages-instance')/message/@validationStatus">
+                            <xforms:setvalue ref="context()" value="'empty'"/>
+                        </xforms:action>
+                    </xforms:action>
+                    <xforms:action if="not(instance('clear-result')='OK')">
+                        <xforms:message>
+                            <xforms:output value="instance('clear-result')"/>
+                        </xforms:message>
+                    </xforms:action>
+                </xforms:action>
+            </xforms:submission>
+            
+            <!-- test accounts for current user -->
+            <xforms:instance id="user-accounts">
+                <dummy/>
+            </xforms:instance>
+         <!-- get user accounts -->
+            <xforms:submission id="get-user-accounts" serialization="none" method="get" resource="{$xis-exist}/modules/get-xis-accounts-for-user.xquery" replace="instance" instance="user-accounts" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+
+
+         <!-- instance for selected message -->
+            <xforms:instance id="selected-message" xxforms:exclude-result-prefixes="#all">
+                <messages>
+                    <message extension="" root="" file="" xpath=""/>
+                </messages>
+            </xforms:instance>
+         <!-- main messages instance -->
+            <xforms:instance id="messages-instance">
+                <dummy/>
+            </xforms:instance>
+         <!-- get messages submission -->
+            <xforms:submission id="get-messages-submission" serialization="none" method="get" resource="{$xis-exist}/modules/get-message-list.xq?account={instance('selected-account')}" replace="instance" instance="messages-instance" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+            <xforms:bind nodeset="instance('messages-instance')/message/@created" type="xforms:dateTime"/>
+            <xforms:submission id="delete-message-file" serialization="none" method="get" resource="{$xis-exist}/modules/delete-message-file.xquery?account={instance('selected-account')}&amp;file={instance('selected-message')/message/@file}" replace="none" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- message xml instance -->
+            <xforms:instance id="message-xml" xxforms:exclude-result-prefixes="#all">
+                <message/>
+            </xforms:instance>
+         <!-- get message xml -->
+            <xforms:submission id="get-message-xml" serialization="none" method="get" resource="{$xis-exist}/RetrieveMessage?account={instance('selected-account')}&amp;file={instance('selected-message')/message/@file}&amp;xpath={instance('selected-message')/message/@xpath}" replace="instance" instance="message-xml" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:action ev:event="xforms-submit-error">
+                    <xforms:action xxforms:iterate="instance('message-xml')/node()">
+                        <xforms:delete nodeset="context()"/>
+                    </xforms:action>
+                    <xforms:message> 
+                        A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                    </xforms:message>
+                </xforms:action>
+            </xforms:submission>
+
+         <!-- **** FILES **** -->
+
+         <!-- instance for selected file -->
+            <xforms:instance id="selected-file" xxforms:exclude-result-prefixes="#all">
+                <fileName/>
+            </xforms:instance>
+         <!-- file list -->
+            <xforms:instance id="file-list" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+         <!-- get file list -->
+            <xforms:submission id="get-file-list" serialization="none" method="get" resource="{$xis-exist}/modules/get-file-list.xquery?account={instance('selected-account')}" replace="instance" instance="file-list" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- delete file -->
+            <xforms:submission id="delete-file" serialization="none" method="get" resource="{$xis-exist}/modules/delete-message-file.xquery?account={instance('selected-account')}&amp;file={instance('selected-file')}" replace="none" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- URL to send to -->
+            <xforms:instance id="send-url" xxforms:exclude-result-prefixes="#all">
+                <url soapAction="urn:hl7-org:v3/Ping_TickTock"/>
+            </xforms:instance>
+         <!-- Send file -->
+            <xforms:submission id="send-file" serialization="none" method="get" resource="{$xis-exist}/modules/xis-send-file.xquery?account={instance('selected-account')}&amp;file={instance('selected-file')}&amp;url={instance('send-url')}&amp;soapAction={instance('send-url')/@soapAction}" replace="instance" instance="file-response" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">
+                    A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- response -->
+            <xforms:instance id="file-response" xxforms:exclude-result-prefixes="#all">
+                <empty/>
+            </xforms:instance>
+
+         <!-- **** VALIDATION **** -->
+
+         <!-- validation report instance -->
+            <xforms:instance id="validate-message-instance" xxforms:exclude-result-prefixes="#all">
+                <dummy/>
+            </xforms:instance>
+            <xforms:submission id="validate-message-submission" serialization="none" method="get" separator="&amp;" resource="{$xis-exist}/modules/validate-message.xq?account={instance('selected-account')}&amp;file={instance('selected-message')/message/@file}&amp;xpath={instance('selected-message')/message/@xpath}" replace="instance" instance="validate-message-instance" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:action ev:event="xforms-submit-error">
+                    <xforms:action xxforms:iterate="instance('validate-message-instance')/node()">
+                        <xforms:delete nodeset="context()"/>
+                    </xforms:action>
+                    <xforms:message> 
+                        A submission error occurred: <xforms:output value="event('error-type')"/>; Status: <xforms:output value="event('response-status-code')"/>; Reason: <xforms:output value="event('response-reason-phrase')"/>; URI: <xforms:output value="event('resource-uri')"/>; Headers: <xforms:output value="event('response-headers')"/>; Body: <xforms:output value="event('response-body')"/>
+                    </xforms:message>
+                </xforms:action>
+                <xforms:action ev:event="xforms-submit-done">
+                    <xforms:action if="instance('validate-message-instance')//error">
+                        <xforms:setvalue ref="instance('messages-instance')/message[@file=instance('selected-message')/message/@file][@xpath=instance('selected-message')/message/@xpath]/@validationStatus" value="'invalid'"/>
+                    </xforms:action>
+                    <xforms:action if="instance('validate-message-instance')[not(.//error)][.//warning]">
+                        <xforms:setvalue ref="instance('messages-instance')/message[@file=instance('selected-message')/message/@file][@xpath=instance('selected-message')/message/@xpath]/@validationStatus" value="'warning-only'"/>
+                    </xforms:action>
+                    <xforms:action if="instance('validate-message-instance')[not(.//(error|warning))]">
+                        <xforms:setvalue ref="instance('messages-instance')/message[@file=instance('selected-message')/message/@file][@xpath=instance('selected-message')/message/@xpath]/@validationStatus" value="'valid'"/>
+                    </xforms:action>
+                </xforms:action>
+            </xforms:submission>
+
+         <!-- Startup actions -->
+            <xforms:action ev:event="xforms-model-construct-done">
+                <xxforms:variable name="session-language" select="xxforms:get-session-attribute('language')"/>
+                <xforms:setvalue ref="instance('language')" value="if (string-length($session-language)&gt;0)       then $session-language/string() else ('nl-NL')"/>
+                <xforms:insert context="." origin="xxforms:set-session-attribute('language', instance('language'))"/>
+                <xforms:send submission="get-resources-submission"/>
+                <xforms:send submission="get-user-accounts"/>
+                <!-- Select the first account; it here is only one, it won't be set, and Orbeon won't trigger a setvalue in a dropdown with only one item -->
+                <xforms:setvalue ref="instance('selected-account')" value="instance('user-accounts')/xis:testAccount[1]/@name"/>
+                <xforms:setvalue ref="instance('selected-account')" value="instance('user-accounts')/xis:testAccount[xis:members/xis:user[@id=xxforms:get-session-attribute('username')][@lastSelected='true']]/@name"/>
+                <xforms:send submission="get-query-patient-list-submission"/>
+                <xforms:send submission="get-send-message-template-list"/>
+                <xforms:send submission="get-application-list"/>
+                <xforms:setvalue ref="instance('message-info')/receiver/@applicationId" value="instance('application-list')/application[1]/@id"/>
+                <xforms:setvalue ref="instance('message-info')/receiver/@url" value="instance('application-list')/application[1]/@url"/>
+                <xforms:setvalue ref="instance('message-info')/receiver/@organizationRegisterId" value="instance('application-list')/application[1]/@organizationRegisterId"/>
+                <xforms:setvalue ref="instance('selected-message-template')" value="instance('message-template-list')/messageTemplate[1]/@interactionId"/>
+                <xforms:setvalue ref="instance('message-info')/@endpoint" value="instance('message-template-list')/messageTemplate[@interactionId=instance('selected-message-template')]/operation[1]/@endpoint"/>
+                <xforms:setvalue ref="instance('message-info')/@endpoints" value="instance('message-template-list')/messageTemplate[@interactionId=instance('selected-message-template')]/operation[1]/@endpoints"/>
+                <xforms:setvalue ref="instance('selected-message-payload')" value="instance('message-template-list')/messageTemplate[@interactionId=instance('selected-message-template')]/payload[1]/@fullPath"/>
+                <xforms:setvalue ref="instance('query-info')/receiver/@applicationId" value="instance('application-list')/application[1]/@id"/>
+                <xforms:setvalue ref="instance('query-info')/receiver/@url" value="instance('application-list')/application[1]/@url"/>
+                <xforms:setvalue ref="instance('query-info')/receiver/@organizationRegisterId" value="instance('application-list')/application[1]/@organizationRegisterId"/>
+                <xforms:setvalue ref="instance('selected-query-template')" value="instance('message-template-list')/messageTemplate[@interactionId=instance('query-parameters')/query/@id][1]/@interactionId"/>
+                <xforms:setvalue ref="instance('query-info')/@endpoint" value="instance('message-template-list')/messageTemplate[@interactionId=instance('selected-query-template')]/operation[1]/@endpoint"/>
+                <xforms:setvalue ref="instance('query-info')/@endpoints" value="instance('message-template-list')/messageTemplate[@interactionId=instance('selected-query-template')]/operation[1]/@endpoints"/>
+                <xforms:setvalue ref="instance('send-url')" value="concat($xis-external-exist,'/Ping')"/>
+                <xforms:send submission="get-messages-submission"/>
+                <xforms:send submission="get-file-list"/>
+            </xforms:action>
+            <xforms:action ev:event="xforms-ready">
+                <xforms:setvalue ref="instance('query-info')/patientId" value="instance('query-patient-list-instance')/hl7:Patient[1]/hl7:id[@root='2.16.840.1.113883.2.4.6.3']/@extension"/>
+            </xforms:action>
+            <xxforms:variable name="resources" select="instance('resources-instance')//resources[@xml:lang=instance('language')]"/>
+            <xxforms:variable name="editor" select="contains(xxforms:get-session-attribute('groups'),'xis')"/>
+        </xforms:model>
+    </xhtml:head>
+    <xhtml:body>
+        <xhtml:div class="detail">
+         <!--test account select and upload control -->
+            <xhtml:table width="100%" style="margin-bottom:2em;border:solid 1px #CCC;">
+                <xhtml:tr>
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/account"/>
+                    </xhtml:td>
+                    <xhtml:td style="vertical-align:middle;">
+                        <xforms:select1 ref="instance('selected-account')" appearance="minimal" class="auto-width" id="account-select">
+                            <xforms:itemset nodeset="instance('user-accounts')/xis:testAccount">
+                                <xforms:label ref="@displayName"/>
+                                <xforms:value ref="@name"/>
+                            </xforms:itemset>
+                            <xforms:action ev:event="xforms-value-changed">
+                                <xforms:action xxforms:iterate="instance('message-xml')/node()">
+                                    <xforms:delete nodeset="context()"/>
+                                </xforms:action>
+                                <xforms:action xxforms:iterate="instance('validate-message-instance')/node()">
+                                    <xforms:delete nodeset="context()"/>
+                                </xforms:action>
+                                <xforms:setvalue ref="instance('selected-message')/message/@extension" value="''"/>
+                                <xforms:setvalue ref="instance('selected-message')/message/@root" value="''"/>
+                                <xforms:setvalue ref="instance('selected-message')/message/@file" value="''"/>
+                                <xforms:setvalue ref="instance('selected-message')/message/@xpath" value="''"/>
+                                <xforms:send submission="get-messages-submission"/>
+                                <xforms:send submission="get-file-list"/>
+                                <xforms:send submission="get-send-message-template-list"/>
+                                <xforms:send submission="get-application-list"/>
+                                <xforms:setvalue ref="instance('message-info')/receiver/@applicationId" value="instance('application-list')/application[1]/@id"/>
+                                <xforms:setvalue ref="instance('message-info')/receiver/@url" value="instance('application-list')/application[1]/@url"/>
+                                <xforms:setvalue ref="instance('message-info')/receiver/@organizationRegisterId" value="instance('application-list')/application[1]/@organizationRegisterId"/>
+                                <xforms:setvalue ref="instance('selected-message-template')" value="instance('message-template-list')/messageTemplate[1]/@interactionId"/>
+                                <xforms:setvalue ref="instance('message-info')/@endpoint" value="instance('message-template-list')/messageTemplate[@interactionId=instance('selected-message-template')]/operation[1]/@endpoint"/>
+                                <xforms:setvalue ref="instance('message-info')/@endpoints" value="instance('message-template-list')/messageTemplate[@interactionId=instance('selected-message-template')]/operation[1]/@endpoints"/>
+                                <xforms:setvalue ref="instance('selected-message-payload')" value="instance('message-template-list')/messageTemplate[@interactionId=instance('selected-message-template')]/payload[1]/@fullPath"/>
+                                <xforms:setvalue ref="instance('query-info')/receiver/@applicationId" value="instance('application-list')/application[1]/@id"/>
+                                <xforms:setvalue ref="instance('query-info')/receiver/@url" value="instance('application-list')/application[1]/@url"/>
+                                <xforms:setvalue ref="instance('query-info')/receiver/@organizationRegisterId" value="instance('application-list')/application[1]/@organizationRegisterId"/>
+                                <xforms:setvalue ref="instance('selected-query-template')" value="instance('message-template-list')/messageTemplate[@interactionId=instance('query-parameters')/query/@id][1]/@interactionId"/>
+                                <xforms:setvalue ref="instance('query-info')/@endpoint" value="instance('message-template-list')/messageTemplate[@interactionId=instance('selected-query-template')]/operation[1]/@endpoint"/>
+                                <xforms:setvalue ref="instance('query-info')/@endpoints" value="instance('message-template-list')/messageTemplate[@interactionId=instance('selected-query-template')]/operation[1]/@endpoints"/>
+                            </xforms:action>
+                        </xforms:select1>
+                    </xhtml:td>
+                    <xhtml:td class="item-label">
+                        <xforms:output ref="$resources/hl7-resources"/>
+                    </xhtml:td>
+                    <xhtml:td>
+                        <xhtml:b>
+                            <xforms:output ref="instance('user-accounts')//xis:testAccount[@name=instance('selected-account')]/xis:xis/tokenize(xis:xmlResourcesPath,'/')[last()]"/>
+                        </xhtml:b>
+                    </xhtml:td>
+                    <xforms:group ref=".[$editor]">
+                        <xhtml:td class="item-label">
+                            <xforms:output ref="$resources/upload-message"/>
+                        </xhtml:td>
+                        <xhtml:td>
+                            <xforms:upload ref="instance('upload')">
+                                <xforms:filename ref="@filename"/>
+                                <xforms:mediatype ref="@mediatype"/>
+                                <xxforms:size ref="@size"/>
+                                <xforms:action ev:event="xxforms-upload-done">
+                                    <xforms:send submission="upload2exist-submission"/>
+                                    <xforms:send submission="get-messages-submission"/>
+                                    <xforms:send submission="get-file-list"/>
+                                </xforms:action>
+                            </xforms:upload>
+                        </xhtml:td>
+                        <xhtml:td>
+                            <xhtml:div class="buttons">
+                                <fr:button>
+                                    <xforms:label>
+                                        <xhtml:img src="/img/trash.png" alt="" align="right"/>
+                                    </xforms:label>
+                                    <xforms:hint ref="$resources/clear-results"/>
+                                    <xforms:send ev:event="DOMActivate" submission="clear-results"/>
+                                </fr:button>
+                                <fr:button>
+                                    <xforms:label>
+                                        <xhtml:img src="/img/arrow_refresh.png" alt="" align="right"/>
+                                    </xforms:label>
+                                    <xforms:hint ref="$resources/refresh-message-list"/>
+                                    <xforms:send ev:event="DOMActivate" submission="get-messages-submission"/>
+                                </fr:button>
+                            </xhtml:div>
+                        </xhtml:td>
+                    </xforms:group>
+                </xhtml:tr>
+            </xhtml:table>
+         <!-- tabview -->
+            <fr:tabview>
+            <!-- Validation tab -->
+                <fr:tab>
+                    <fr:label ref="concat($resources/validation,' (',count(instance('messages-instance')//message),')')"/>
+                    <fr:datatable width="99%" scrollable="vertical" height="200px">
+                        <xhtml:thead>
+                            <xhtml:tr>
+                                <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                    <xforms:output ref="$resources/name"/>
+                                </xhtml:th>
+                                <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                    <xforms:output ref="$resources/file"/>
+                                </xhtml:th>
+                                <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                    <xforms:output ref="$resources/root-name"/>
+                                </xhtml:th>
+                                <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                    <xforms:output ref="$resources/date"/>
+                                </xhtml:th>
+                                <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                    <xforms:output ref="$resources/from"/>
+                                </xhtml:th>
+                                <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                    <xforms:output ref="$resources/to"/>
+                                </xhtml:th>
+                            </xhtml:tr>
+                        </xhtml:thead>
+                        <xhtml:tbody>
+                            <xhtml:tr repeat-nodeset="instance('messages-instance')//message" id="message-table">
+                                <xhtml:td>
+                                    <xforms:group ref=".[@validationStatus='empty']">
+                                        <xhtml:img src="/img/node-snew.png" alt="empty" style="vertical-align:middle;"/>
+                                    </xforms:group>
+                                    <xforms:group ref=".[@validationStatus='valid']">
+                                        <xhtml:img src="/img/node-sfinal.png" alt="valid" style="vertical-align:middle;"/>
+                                    </xforms:group>
+                                    <xforms:group ref=".[@validationStatus='invalid']">
+                                        <xhtml:img src="/img/node-sopen.png" alt="invalid" style="vertical-align:middle;"/>
+                                    </xforms:group>
+                                    <xforms:group ref=".[@validationStatus='warning-only']">
+                                        <xhtml:img src="/img/node-sdraft.png" alt="warning-only" style="vertical-align:middle;"/>
+                                    </xforms:group>
+                                    <xforms:output ref="@messageName"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:output ref="@file"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:output ref="@rootName"/>
+                                </xhtml:td>
+                                <xhtml:td class="date">
+                                    <xforms:output ref="@fileCreation" xxforms:format="if (. castable as xs:dateTime) then replace(format-dateTime(.,'[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]', (), (), ()),' 00:00:00','') else (.)"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:group ref="sender[string-length(@name)&gt;0]">
+                                        <xforms:output ref="@name"/>
+                                    </xforms:group>
+                                    <xforms:group ref="sender[not(string-length(@name)&gt;0)]">
+                                        <xhtml:i>
+                                            <xforms:output ref="@id"/>
+                                        </xhtml:i>
+                                    </xforms:group>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:group ref="receiver[@name]">
+                                        <xforms:output ref="@name"/>
+                                    </xforms:group>
+                                    <xforms:group ref="receiver[not(@name)]">
+                                        <xhtml:i>
+                                            <xforms:output ref="@id"/>
+                                        </xhtml:i>
+                                    </xforms:group>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xhtml:tbody>
+                        <xforms:action ev:event="fr-selection-changed">
+                            <xforms:setvalue ref="instance('selected-message')/message/@extension" value="event('selected')/hl7:id/@extension"/>
+                            <xforms:setvalue ref="instance('selected-message')/message/@root" value="event('selected')/hl7:id/@root"/>
+                            <xforms:setvalue ref="instance('selected-message')/message/@file" value="event('selected')/@file"/>
+                            <xforms:setvalue ref="instance('selected-message')/message/@xpath" value="event('selected')/@xpath"/>
+                            <xforms:action if="event('selected')[string-length(@file)&gt;0][string-length(@xpath)&gt;0]">
+                                <xforms:send submission="get-message-xml"/>
+                                <xforms:send submission="validate-message-submission"/>
+                            </xforms:action>
+                        </xforms:action>
+                    </fr:datatable>
+                    <xhtml:p/>
+                    <xhtml:div class="detail">
+                        <xhtml:div class="h2">
+                            <xforms:output ref="$resources/details"/>
+                        </xhtml:div>
+                        <xforms:group ref="instance('messages-instance')//message[hl7:id/@extension=instance('selected-message')/message/@extension][hl7:id/@root=instance('selected-message')/message/@root]">
+                            <xhtml:table width="100%">
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/message-id"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="concat(hl7:id/@root,' - ',hl7:id/@extension)"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                                <xforms:group ref="patient[string-length(@id)&gt;0]">
+                                    <xhtml:tr>
+                                        <xhtml:td class="item-label">
+                                            <xforms:output ref="$resources/patient"/>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:output ref="@id"/>, <xforms:output ref="@name"/>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                </xforms:group>
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/filename"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="@file"/>
+                                        <xforms:group ref=".[$editor]">
+                                            <xhtml:div class="buttons">
+                                                <fr:button>
+                                                    <xforms:label>
+                                                        <xhtml:img src="/img/remove.gif" alt="" align="right"/>
+                                                    </xforms:label>
+                                                    <xforms:hint ref="$resources/delete"/>
+                                                    <xforms:action ev:event="DOMActivate">
+                                                        <xforms:send submission="delete-message-file"/>
+                                                        <xforms:send submission="get-messages-submission"/>
+                                                        <xforms:send submission="get-file-list"/>
+                                                    </xforms:action>
+                                                </fr:button>
+                                            </xhtml:div>
+                                        </xforms:group>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xhtml:table>
+                            <xforms:group ref="xis:acknowledgement[hl7:acknowledgement]">
+                                <xhtml:div class="h2">
+                                    <xforms:output ref="$resources/acknowledgement"/>
+                                </xhtml:div>
+                                <xhtml:table width="100%">
+                                    <xhtml:tr>
+                                        <xhtml:td class="item-label">
+                                            <xforms:output ref="$resources/application"/>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                 <!--                              <xforms:output ref="concat(xis:sender/@id,' - ',xis:sender/@name)"/>-->
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                    <xhtml:tr>
+                                        <xhtml:td class="item-label">
+                                            <xforms:output ref="$resources/code"/>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:output ref="hl7:acknowledgement/@typeCode"/>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                </xhtml:table>
+                            </xforms:group>
+                        </xforms:group>
+                    </xhtml:div>
+                    <xhtml:p/>
+                    <fr:button>
+                        <xforms:label ref="$resources/html-display"/>
+                        <xforms:action ev:event="DOMActivate">
+                     <!--                     <xforms:send submission="get-message-html"/>-->
+                            <xforms:load resource="{$xis-external-exist}/RenderMessage?account={instance('selected-account')}&amp;file={instance('selected-message')/message/@file}&amp;root={instance('selected-message')/message/@root}&amp;extension={instance('selected-message')/message/@extension}" show="new" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}"/>
+                        </xforms:action>
+                    </fr:button>
+                    <xhtml:p/>
+               <!-- schema errors -->
+                    <xhtml:div class="detail">
+                        <xhtml:div class="h2">
+                            <xforms:output ref="$resources/schema-errors"/>: <xforms:output value="count(instance('validate-message-instance')//issue[@type='schema'])"/>
+                        </xhtml:div>
+                        <xforms:group ref="instance('validate-message-instance')//error[@type='schema']">
+                            <fr:datatable width="100%">
+                                <xhtml:thead>
+                                    <xhtml:tr>
+                                        <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                            <xforms:output ref="$resources/description"/>
+                                        </xhtml:th>
+                                        <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                            <xforms:output ref="$resources/line"/>
+                                        </xhtml:th>
+                                        <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                            <xforms:output ref="$resources/quantity"/>
+                                        </xhtml:th>
+                                    </xhtml:tr>
+                                </xhtml:thead>
+                                <xhtml:tbody>
+                                    <xhtml:tr repeat-nodeset="issue" class="not-selectable">
+                                        <xhtml:td>
+                                            <xhtml:span class="dot red">&#160;&#160;</xhtml:span>
+                                            <xforms:output ref="description"/>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:group ref=".[@embed]">
+                                                <xhtml:p>
+                                                    <xhtml:b>
+                                                        <xforms:output ref="$resources/from"/>:</xhtml:b>
+                                                    <xforms:output ref="@embed"/>
+                                                </xhtml:p>
+                                            </xforms:group>
+                                            <xforms:output ref="location/@line"/>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:output ref="@count"/>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                </xhtml:tbody>
+                            </fr:datatable>
+                        </xforms:group>
+                    </xhtml:div>
+               <!-- schematron errors -->
+                    <xhtml:div class="detail">
+                        <xhtml:div class="h2">
+                            <xforms:output ref="$resources/schematron-errors"/>: <xforms:output value="count(instance('validate-message-instance')//error[@type='schematron']/issue[@type='schematron'])"/>
+                        </xhtml:div>
+                        <xforms:group ref="instance('validate-message-instance')//error[@type='schematron']">
+                            <fr:datatable width="100%">
+                                <xhtml:thead>
+                                    <xhtml:tr>
+                                        <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                            <xforms:output ref="$resources/description"/>
+                                        </xhtml:th>
+                                        <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                            <xforms:output ref="$resources/path"/>
+                                        </xhtml:th>
+                                        <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                            <xforms:output ref="$resources/quantity"/>
+                                        </xhtml:th>
+                                    </xhtml:tr>
+                                </xhtml:thead>
+                                <xhtml:tbody>
+                                    <xhtml:tr repeat-nodeset="issue" class="not-selectable">
+                                        <xhtml:td>
+                                            <xforms:group ref=".[string-length(@see)=0]">
+                                                <xhtml:span class="dot red">&#160;&#160;</xhtml:span>
+                                            </xforms:group>
+                                            <xforms:group ref=".[string-length(@see)&gt;0]">
+                                                <xhtml:a href="{@see}" class="dot red">?</xhtml:a>
+                                            </xforms:group>
+                                            <xforms:output ref="description"/>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:group ref=".[@embed]">
+                                                <xhtml:p>
+                                                    <xhtml:b>
+                                                        <xforms:output ref="$resources/from"/>:</xhtml:b>
+                                                    <xforms:output ref="@embed"/>
+                                                </xhtml:p>
+                                            </xforms:group>
+                                            <xforms:output ref="location/@path"/>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:output ref="@count"/>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                </xhtml:tbody>
+                            </fr:datatable>
+                        </xforms:group>
+                    </xhtml:div>
+               <!-- schematron warnings -->
+                    <xhtml:div class="detail">
+                        <xforms:group ref="instance('validate-message-instance')//warning[@type='schematron']">
+                            <xhtml:div class="h2">
+                                <xforms:output ref="$resources/schematron-warnings"/>: <xforms:output value="count(issue[@type='schematron'])"/>
+                            </xhtml:div>
+                            <fr:datatable width="100%">
+                                <xhtml:thead>
+                                    <xhtml:tr>
+                                        <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                            <xforms:output ref="$resources/description"/>
+                                        </xhtml:th>
+                                        <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                            <xforms:output ref="$resources/path"/>
+                                        </xhtml:th>
+                                        <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                            <xforms:output ref="$resources/quantity"/>
+                                        </xhtml:th>
+                                    </xhtml:tr>
+                                </xhtml:thead>
+                                <xhtml:tbody>
+                                    <xhtml:tr repeat-nodeset="issue" class="not-selectable">
+                                        <xhtml:td>
+                                            <xforms:group ref=".[string-length(@see)=0]">
+                                                <xhtml:span class="dot yellow">&#160;&#160;</xhtml:span>
+                                            </xforms:group>
+                                            <xforms:group ref=".[string-length(@see)&gt;0]">
+                                                <xhtml:a href="{@see}" class="dot yellow">?</xhtml:a>
+                                            </xforms:group>
+                                            <xforms:output ref="description"/>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:group ref=".[@embed]">
+                                                <xhtml:p>
+                                                    <xhtml:b>
+                                                        <xforms:output ref="$resources/from"/>:</xhtml:b>
+                                                    <xforms:output ref="@embed"/>
+                                                </xhtml:p>
+                                            </xforms:group>
+                                            <xforms:output ref="location/@path"/>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:output ref="@count"/>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                </xhtml:tbody>
+                            </fr:datatable>
+                        </xforms:group>
+                    </xhtml:div>
+               <!-- response -->
+                    <fr:accordion class="fr-accordion-lnf">
+                  <!-- assigned issues high priority -->
+                        <fr:case selected="true" id="message-acc">
+                            <fr:label ref="$resources/message"/>
+                            <xhtml:table class="detail" width="100%">
+                                <xhtml:tr>
+                                    <xhtml:td class="heading">
+                                        <xhtml:div class="heading">
+                                            <xforms:output ref="$resources/message"/>
+                                        </xhtml:div>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                                <xhtml:tr>
+                                    <xhtml:td>
+                                        <xforms:output mediatype="text/html" value="xxforms:serialize(xxforms:call-xpl('oxf:/ops/utils/formatting/format.xpl', 'data', instance('message-xml'), 'data')/*, 'html')"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xhtml:table>
+                        </fr:case>
+                    </fr:accordion>
+                </fr:tab>
+            <!-- files tab -->
+                <fr:tab>
+                    <fr:label ref="concat($resources/files,' (',count(instance('messages-instance')//message[not(@file=preceding-sibling::message/@file)]),')')"/>
+                    <fr:datatable width="100%" scrollable="vertical" height="200px">
+                        <xhtml:thead>
+                            <xhtml:tr>
+                                <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                    <xforms:output ref="$resources/name"/>
+                                </xhtml:th>
+                                <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                    <xforms:output ref="$resources/file"/>
+                                </xhtml:th>
+                                <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                    <xforms:output ref="$resources/root-name"/>
+                                </xhtml:th>
+                                <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                    <xforms:output ref="$resources/date"/>
+                                </xhtml:th>
+                        <!--xhtml:th fr:sortable="true" fr:resizeable="true">
+                                    <xforms:output ref="$resources/from"/>
+                                </xhtml:th>
+                                <xhtml:th fr:sortable="true" fr:resizeable="true">
+                                    <xforms:output ref="$resources/to"/>
+                                </xhtml:th-->
+                            </xhtml:tr>
+                        </xhtml:thead>
+                        <xhtml:tbody>
+                            <xhtml:tr repeat-nodeset="instance('messages-instance')//message[not(@file=preceding-sibling::message/@file)]" id="file-table">
+                                <xhtml:td>
+                                    <xforms:output ref="@messageName"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:output ref="@file"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:output ref="@rootName"/>
+                                </xhtml:td>
+                                <xhtml:td class="file-date">
+                                    <xforms:output ref="@fileCreation" xxforms:format="if (. castable as xs:dateTime) then replace(format-dateTime(.,'[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]', (), (), ()),' 00:00:00','') else (.)"/>
+                                </xhtml:td>
+                        <!--xhtml:td>
+                                    <xforms:group ref="sender[string-length(@name)>0]">
+                                        <xforms:output ref="@name"/>
+                                    </xforms:group>
+                                    <xforms:group ref="sender[not(string-length(@name)>0)]">
+                                        <xhtml:i>
+                                            <xforms:output ref="@id"/>
+                                        </xhtml:i>
+                                    </xforms:group>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:group ref="receiver[@name]">
+                                        <xforms:output ref="@name"/>
+                                    </xforms:group>
+                                    <xforms:group ref="receiver[not(@name)]">
+                                        <xhtml:i>
+                                            <xforms:output ref="@id"/>
+                                        </xhtml:i>
+                                    </xforms:group>
+                                </xhtml:td-->
+                            </xhtml:tr>
+                        </xhtml:tbody>
+                        <xforms:action ev:event="fr-selection-changed">
+                            <xforms:setvalue ref="instance('selected-file')" value="event('selected')/@file"/>
+                            <xforms:action if="event('selected')/@file[string-length()&gt;0]">
+                                <xforms:send submission="validate-message-submission"/>
+                            </xforms:action>
+                        </xforms:action>
+                    </fr:datatable>
+                    <xhtml:p/>
+                    <xhtml:table width="100%">
+                        <xhtml:tr>
+                            <xhtml:td class="item-label">
+                                <xforms:output ref="$resources/file"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:output ref="instance('selected-file')"/>
+                                <xhtml:div class="buttons">
+                                    <fr:button>
+                                        <xforms:label>
+                                            <xhtml:img src="/img/remove.gif" alt="" align="right"/>
+                                        </xforms:label>
+                                        <xforms:hint ref="$resources/delete"/>
+                                        <xforms:action ev:event="DOMActivate">
+                                            <xforms:send submission="delete-file"/>
+                                            <xforms:send submission="get-messages-submission"/>
+                                            <xforms:send submission="get-file-list"/>
+                                        </xforms:action>
+                                    </fr:button>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xhtml:tr>
+                            <xhtml:td class="item-label">
+                                <xforms:output ref="$resources/redeiver-url"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:input ref="instance('send-url')"/>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xhtml:tr>
+                            <xhtml:td class="item-label">
+                                <xforms:output ref="$resources/soap-action"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:input ref="instance('send-url')/@soapAction"/>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xhtml:tr>
+                            <xhtml:td class="item-label" colspan="2">
+                                <xforms:group ref=".[$editor]">
+                                    <fr:button>
+                                        <xforms:label ref="$resources/send-file"/>
+                                        <xforms:hint ref="$resources/send-file"/>
+                                        <xforms:action ev:event="DOMActivate">
+                                            <xforms:send submission="send-file"/>
+                                            <xforms:send submission="get-messages-submission"/>
+                                            <xforms:send submission="get-file-list"/>
+                                        </xforms:action>
+                                    </fr:button>
+                                </xforms:group>
+                            </xhtml:td>
+                        </xhtml:tr>
+                    </xhtml:table>
+                    <xhtml:p/>
+                    <xhtml:table class="detail" width="100%">
+                        <xhtml:tr>
+                            <xhtml:td class="heading">
+                                <xhtml:div class="heading">
+                                    <xforms:output ref="$resources/response"/>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xhtml:tr>
+                            <xhtml:td>
+                                <xforms:output mediatype="text/html" value="xxforms:serialize(xxforms:call-xpl('oxf:/ops/utils/formatting/format.xpl', 'data', instance('file-response'), 'data')/*, 'html')"/>
+                            </xhtml:td>
+                        </xhtml:tr>
+                    </xhtml:table>
+                </fr:tab>
+            <!-- query tab -->
+                <fr:tab>
+                    <fr:label ref="$resources/send-query"/>
+                    <xhtml:table width="100%" class="detail">
+                  <!-- query select -->
+                        <xhtml:tr>
+                            <xhtml:td class="item-label">
+                                <xforms:output ref="$resources/query"/>
+                            </xhtml:td>
+                            <xhtml:td style="vertical-align:middle;" colspan="3">
+                                <xforms:select1 ref="instance('selected-query-template')" appearance="minimal" class="auto-width" id="query-select">
+                                    <xforms:itemset nodeset="instance('message-template-list')/messageTemplate[@interactionId=instance('query-parameters')/query/@id]">
+                                        <xforms:label ref="concat(@interactionId,' - ',@name)"/>
+                                        <xforms:value ref="@interactionId"/>
+                                    </xforms:itemset>
+                                    <xforms:action ev:event="xforms-value-changed">
+                                        <xforms:setvalue ref="instance('query-info')/@endpoint" value="instance('message-template-list')/messageTemplate[@interactionId=instance('selected-query-template')]/operation[1]/@endpoint"/>
+                                        <xforms:setvalue ref="instance('query-info')/@endpoints" value="instance('message-template-list')/messageTemplate[@interactionId=instance('selected-query-template')]/operation[1]/@endpoints"/>
+                                    </xforms:action>
+                                </xforms:select1>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xhtml:tr>
+                            <xhtml:td/>
+                        </xhtml:tr>
+                  <!-- patient select and BSN -->
+                        <xhtml:tr>
+                     <!-- patient select -->
+                            <xhtml:td class="item-label">
+                                <xforms:output ref="$resources/patient"/>
+                            </xhtml:td>
+                            <xhtml:td style="vertical-align:middle;" width="25%">
+                                <xforms:select1 ref="instance('query-info')/patientId" class="auto-width" appearance="minimal">
+                                    <xforms:itemset nodeset="instance('query-patient-list-instance')/hl7:Patient">
+                                        <xforms:label ref="hl7:Person/hl7:name"/>
+                                        <xforms:value ref="hl7:id[@root='2.16.840.1.113883.2.4.6.3']/@extension"/>
+                                    </xforms:itemset>
+                                    <xforms:action ev:event="xforms-value-changed"/>
+                                </xforms:select1>
+                            </xhtml:td>
+                     <!-- patient BSN -->
+                            <xhtml:td class="item-label">
+                                <xforms:output ref="$resources/bsn"/>
+                            </xhtml:td>
+                            <xhtml:td>
+                                <xforms:input ref="instance('query-info')/patientId" incremental="true" class="bsn-number">
+                                    <xforms:alert>Geen geldige BSN</xforms:alert>
+                                </xforms:input>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xhtml:tr>
+                            <xhtml:td/>
+                        </xhtml:tr>
+                  <!-- additional query parameters -->
+                        <xforms:group ref="instance('query-parameters')/query[@id=instance('selected-query-template')]">
+                            <xforms:group ref=".[@id='QURX_IN990101NL']">
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/prescriptions-starting-from"/>
+                                    </xhtml:td>
+                                    <xhtml:td colspan="3">
+                                        <xforms:input ref="parameters/hl7:administrationRequestEffectiveTimeInterval/hl7:value/hl7:low/@value"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xforms:group>
+                            <xforms:group ref=".[@id='QURX_IN990111NL']">
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/dispense-events-starting-from"/>
+                                    </xhtml:td>
+                                    <xhtml:td colspan="3">
+                                        <xforms:input ref="parameters/hl7:dispenseEventEffectiveTimeInterval/hl7:value/hl7:low/@value"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xforms:group>
+                            <xforms:group ref=".[@id='REPC_IN000023NL']">
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/starting-from"/>
+                                    </xhtml:td>
+                                    <xhtml:td colspan="3">
+                                        <xforms:input ref="parameters/hl7:effectiveTimeInterval/hl7:value/hl7:low/@value"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xforms:group>
+                        </xforms:group>
+                  <!-- query author -->
+                        <xhtml:tr>
+                            <xhtml:td class="item-label">
+                                <xforms:output ref="$resources/query-author"/>
+                            </xhtml:td>
+                            <xhtml:td colspan="3">
+                                <xhtml:table width="100%">
+                            <!-- query author info for an authorOrPerformer/*/AssignedPerson -->
+                                    <xforms:group ref=".[instance('message-template-list')/messageTemplate[@interactionId=instance('selected-query-template')][@authortype='person']]">
+                                        <xforms:group ref="instance('uzi-info')">
+                                            <xhtml:tr>
+                                                <xhtml:td class="item-label">
+                                                    <xforms:output ref="$resources/name"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:input ref="subjectName"/>
+                                                </xhtml:td>
+                                                <xhtml:td class="item-label">
+                                                    <xforms:output ref="$resources/id"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:input ref="uziNumber"/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                            <xhtml:tr>
+                                                <xhtml:td class="item-label">
+                                                    <xforms:output ref="$resources/role"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:input ref="subjectTitle"/>
+                                                </xhtml:td>
+                                                <xhtml:td class="item-label">
+                                                    <xforms:output ref="$resources/code"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:input ref="roleCode"/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                            <xhtml:tr>
+                                                <xhtml:td class="item-label">
+                                                    <xforms:output ref="$resources/organization"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:input ref="subjectOrganisation"/>
+                                                </xhtml:td>
+                                                <xhtml:td class="item-label">
+                                                    <xforms:output ref="$resources/id"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:input ref="uraNumber"/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:group>
+                                    </xforms:group>
+                            <!-- query author info for an authorOrPerformer/*/AssignedDevice -->
+                                    <xforms:group ref=".[instance('message-template-list')/messageTemplate[@interactionId=instance('selected-query-template')][@authortype='device']]">
+                                        <xforms:group ref="instance('uzi-info')">
+                                            <xhtml:tr>
+                                                <xhtml:td class="item-label">
+                                                    <xforms:output ref="$resources/system-id"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:input ref="uziNumber"/>
+                                                </xhtml:td>
+                                                <xhtml:td/>
+                                                <xhtml:td/>
+                                            </xhtml:tr>
+                                            <xhtml:tr>
+                                                <xhtml:td class="item-label">
+                                                    <xforms:output ref="$resources/organization"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:input ref="subjectOrganisation"/>
+                                                </xhtml:td>
+                                                <xhtml:td class="item-label">
+                                                    <xforms:output ref="$resources/id"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:input ref="uraNumber"/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:group>
+                                    </xforms:group>
+                                </xhtml:table>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xhtml:tr>
+                            <xhtml:td/>
+                        </xhtml:tr>
+                  <!-- receiver -->
+                        <xhtml:tr>
+                            <xhtml:td class="item-label">
+                                <xforms:output ref="$resources/receiver"/>
+                            </xhtml:td>
+                            <xhtml:td colspan="4" style="vertical-align:middle;">
+                                <xhtml:table width="100%">
+                                    <xhtml:tr>
+                                        <xhtml:td class="item-label">
+                                            <xforms:select1 ref="instance('query-info')/receiver/@applicationId" appearance="minimal" class="auto-width">
+                                                <xforms:itemset nodeset="instance('application-list')/application">
+                                                    <xforms:label ref="@name"/>
+                                                    <xforms:value ref="@id"/>
+                                                </xforms:itemset>
+                                                <xforms:action ev:event="xforms-value-changed">
+                                                    <xforms:setvalue ref="instance('query-info')/receiver/@url" value="instance('application-list')/application[@id=instance('query-info')/receiver/@applicationId]/@url"/>
+                                                    <xforms:setvalue ref="instance('query-info')/receiver/@organizationRegisterId" value="instance('application-list')/application[@id=instance('query-info')/receiver/@applicationId]/@organizationRegisterId"/>
+                                                </xforms:action>
+                                            </xforms:select1>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:input ref="instance('query-info')/receiver/@url"/>
+                                            <xforms:input ref="instance('query-info')/@endpoint"/>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                    <xhtml:tr>
+                                        <xhtml:td class="item-label">
+                                            <xforms:output ref="$resources/application-id"/>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:output ref="instance('query-info')/receiver/@applicationId"/>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                    <xhtml:tr>
+                                        <xhtml:td class="item-label">
+                                            <xforms:output ref="$resources/organization-register-id"/>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:output ref="instance('query-info')/receiver/@organizationRegisterId"/>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                </xhtml:table>
+                            </xhtml:td>
+                        </xhtml:tr>
+                  <!-- send query button -->
+                        <xhtml:tr>
+                            <xhtml:td colspan="4" class="item-label">
+                                <xhtml:div>
+                                    <xforms:group ref=".[$editor]">
+                                        <fr:button>
+                                            <xforms:label ref="$resources/send-query"/>
+                                            <xforms:action ev:event="DOMActivate">
+                                                <xxforms:variable name="queryTemplate" select="instance('message-template-list')/messageTemplate[@interactionId=instance('selected-query-template')]"/>
+                                                <xforms:setvalue ref="instance('query-info')/@id" value="substring-after(string(random()),'0.')"/>
+                                                <xforms:setvalue ref="instance('query-info')/@interactionId" value="instance('selected-query-template')"/>
+                                                <xforms:setvalue ref="instance('query-info')/@account" value="instance('selected-account')"/>
+                                                <xforms:setvalue ref="instance('query-info')/@soapAction" value="$queryTemplate/operation[1]/@soapAction"/>
+                                                <xforms:delete nodeset="instance('query-info')/uziInfo"/>
+                                                <xforms:delete nodeset="instance('query-info')/parameters"/>
+                                                <xforms:insert context="instance('query-info')" origin="instance('uzi-info')"/>
+                                                <xforms:insert context="instance('query-info')" origin="instance('query-parameters')/query[@id=instance('selected-query-template')]/parameters"/>
+                                                <xforms:send submission="send-query"/>
+                                                <xforms:send submission="get-messages-submission"/>
+                                                <xforms:send submission="get-file-list"/>
+                                            </xforms:action>
+                                        </fr:button>
+                                    </xforms:group>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                    </xhtml:table>
+               <!-- response -->
+                    <xhtml:table class="detail" width="100%">
+                        <xhtml:tr>
+                            <xhtml:td class="heading">
+                                <xhtml:div class="heading">
+                                    <xforms:output ref="$resources/response"/>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xhtml:tr>
+                            <xhtml:td>
+                                <xforms:output mediatype="text/html" value="xxforms:serialize(xxforms:call-xpl('oxf:/ops/utils/formatting/format.xpl', 'data', instance('query-response'), 'data')/*, 'html')"/>
+                            </xhtml:td>
+                        </xhtml:tr>
+                    </xhtml:table>
+                </fr:tab>
+            <!-- send message tab -->
+                <fr:tab>
+                    <fr:label ref="$resources/send-message"/>
+                    <xhtml:table width="100%" class="detail">
+                        <xhtml:tr>
+                            <xhtml:td class="item-label">
+                                <xforms:output ref="$resources/message"/>
+                            </xhtml:td>
+                            <xhtml:td style="vertical-align:middle;">
+                                <xforms:select1 ref="instance('selected-message-template')" appearance="minimal" class="auto-width" id="message-select">
+                                    <xforms:itemset nodeset="instance('message-template-list')/messageTemplate[not(@interactionId=instance('query-parameters')/query/@id)]">
+                                        <xforms:label ref="concat(@interactionId,' - ',@name)"/>
+                                        <xforms:value ref="@interactionId"/>
+                                    </xforms:itemset>
+                                    <xforms:action ev:event="xforms-value-changed">
+                                        <xforms:setvalue ref="instance('selected-message-payload')" value="instance('message-template-list')/messageTemplate[@interactionId=instance('selected-message-template')]/payload[1]/@fullPath"/>
+                                        <xforms:setvalue ref="instance('message-info')/@endpoint" value="instance('message-template-list')/messageTemplate[@interactionId=instance('selected-message-template')]/operation[1]/@endpoint"/>
+                                        <xforms:setvalue ref="instance('message-info')/@endpoints" value="instance('message-template-list')/messageTemplate[@interactionId=instance('selected-message-template')]/operation[1]/@endpoints"/>
+                                    </xforms:action>
+                                </xforms:select1>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xforms:group ref=".[string-length(instance('message-template-list')/messageTemplate[@interactionId=instance('selected-message-template')]/@payload)&gt;0]">
+                            <xhtml:tr>
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/content"/>
+                                </xhtml:td>
+                                <xhtml:td style="vertical-align:middle;">
+                                    <xforms:select1 ref="instance('selected-message-payload')" appearance="minimal" class="auto-width">
+                                        <xforms:itemset nodeset="instance('message-template-list')/messageTemplate[@interactionId=instance('selected-message-template')]/payload">
+                                            <xforms:label ref="@file"/>
+                                            <xforms:value ref="@fullPath"/>
+                                        </xforms:itemset>
+                                        <xforms:action ev:event="xforms-value-changed"/>
+                                    </xforms:select1>
+                                    <xhtml:div class="buttons">
+                                        <fr:button>
+                                            <xforms:label ref="$resources/html-display"/>
+                                            <xforms:action ev:event="DOMActivate">
+                                    <!--                     <xforms:send submission="get-message-html"/>-->
+                                                <xforms:load resource="{$xis-external-exist}/RenderMessage?account={instance('selected-account')}&amp;file={instance('selected-message-payload')}" show="new"/>
+                                            </xforms:action>
+                                        </fr:button>
+                                    </xhtml:div>
+                                </xhtml:td>
+                            </xhtml:tr>
+                            <xhtml:tr>
+                                <xhtml:td> </xhtml:td>
+                            </xhtml:tr>
+                        </xforms:group>
+                  <!-- message author -->
+                        <xhtml:tr>
+                            <xhtml:td class="item-label">
+                                <xforms:output ref="$resources/message-author"/>
+                            </xhtml:td>
+                            <xhtml:td colspan="3">
+                                <xhtml:table width="100%">
+                           <!-- message author info for an authorOrPerformer/*/AssignedPerson -->
+                                    <xforms:group ref=".[instance('message-template-list')/messageTemplate[@interactionId=instance('selected-message-template')][@authortype='person']]">
+                                        <xforms:group ref="instance('uzi-info')">
+                                            <xhtml:tr>
+                                                <xhtml:td class="item-label">
+                                                    <xforms:output ref="$resources/name"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:input ref="subjectName"/>
+                                                </xhtml:td>
+                                                <xhtml:td class="item-label">
+                                                    <xforms:output ref="$resources/id"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:input ref="uziNumber"/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                            <xhtml:tr>
+                                                <xhtml:td class="item-label">
+                                                    <xforms:output ref="$resources/role"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:input ref="subjectTitle"/>
+                                                </xhtml:td>
+                                                <xhtml:td class="item-label">
+                                                    <xforms:output ref="$resources/code"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:input ref="roleCode"/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                            <xhtml:tr>
+                                                <xhtml:td class="item-label">
+                                                    <xforms:output ref="$resources/organization"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:input ref="subjectOrganisation"/>
+                                                </xhtml:td>
+                                                <xhtml:td class="item-label">
+                                                    <xforms:output ref="$resources/id"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:input ref="uraNumber"/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:group>
+                                    </xforms:group>
+                           <!-- message author info for an authorOrPerformer/*/AssignedDevice -->
+                                    <xforms:group ref=".[instance('message-template-list')/messageTemplate[@interactionId=instance('selected-message-template')][@authortype='device']]">
+                                        <xforms:group ref="instance('uzi-info')">
+                                            <xhtml:tr>
+                                                <xhtml:td class="item-label">
+                                                    <xforms:output ref="$resources/system-id"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:input ref="uziNumber"/>
+                                                </xhtml:td>
+                                                <xhtml:td/>
+                                                <xhtml:td/>
+                                            </xhtml:tr>
+                                            <xhtml:tr>
+                                                <xhtml:td class="item-label">
+                                                    <xforms:output ref="$resources/organization"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:input ref="subjectOrganisation"/>
+                                                </xhtml:td>
+                                                <xhtml:td class="item-label">
+                                                    <xforms:output ref="$resources/id"/>
+                                                </xhtml:td>
+                                                <xhtml:td>
+                                                    <xforms:input ref="uraNumber"/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                        </xforms:group>
+                                    </xforms:group>
+                                </xhtml:table>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xhtml:tr>
+                            <xhtml:td/>
+                        </xhtml:tr>
+                  <!-- receiver -->
+                        <xhtml:tr>
+                            <xhtml:td class="item-label">
+                                <xforms:output ref="$resources/receiver"/>
+                            </xhtml:td>
+                            <xhtml:td colspan="4" style="vertical-align:middle;">
+                                <xhtml:table width="100%">
+                                    <xhtml:tr>
+                                        <xhtml:td class="item-label">
+                                            <xforms:select1 ref="instance('message-info')/receiver/@applicationId" appearance="minimal" class="auto-width">
+                                                <xforms:itemset nodeset="instance('application-list')/application">
+                                                    <xforms:label ref="@name"/>
+                                                    <xforms:value ref="@id"/>
+                                                </xforms:itemset>
+                                                <xforms:action ev:event="xforms-value-changed">
+                                                    <xforms:setvalue ref="instance('message-info')/receiver/@url" value="instance('application-list')/application[@id=instance('message-info')/receiver/@applicationId]/@url"/>
+                                                    <xforms:setvalue ref="instance('message-info')/receiver/@organizationRegisterId" value="instance('application-list')/application[@id=instance('message-info')/receiver/@applicationId]/@organizationRegisterId"/>
+                                                </xforms:action>
+                                            </xforms:select1>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:input ref="instance('message-info')/receiver/@url">
+                                                <xforms:action ev:event="xforms-value-changed">
+                                                    <xforms:setvalue ref="instance('message-info')/receiver/@url" value="."/>
+                                                </xforms:action>
+                                            </xforms:input>
+                                            <xforms:input ref="instance('message-info')/@endpoint"/>
+                                            <!--<xforms:select1 ref="instance('message-info')/@endpoint" appearance="minimal" class="auto-width">
+                                    <xforms:itemset nodeset="instance('message-info')/tokenize(@endpoints,' ')">
+                                        <xforms:label ref="."/>
+                                        <xforms:value ref="."/>
+                                    </xforms:itemset>
+                                </xforms:select1>-->
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                    <xhtml:tr>
+                                        <xhtml:td class="item-label">
+                                            <xforms:output ref="$resources/application-id"/>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:output ref="instance('message-info')/receiver/@applicationId"/>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                    <xhtml:tr>
+                                        <xhtml:td class="item-label">
+                                            <xforms:output ref="$resources/organization-register-id"/>
+                                        </xhtml:td>
+                                        <xhtml:td>
+                                            <xforms:output ref="instance('message-info')/receiver/@organizationRegisterId"/>
+                                        </xhtml:td>
+                                    </xhtml:tr>
+                                </xhtml:table>
+                            </xhtml:td>
+                        </xhtml:tr>
+                  <!-- send message button -->
+                        <xhtml:tr>
+                            <xhtml:td colspan="4" class="item-label">
+                                <xhtml:div>
+                                    <xforms:group ref=".[$editor]">
+                                        <fr:button>
+                                            <xforms:label ref="$resources/send-message"/>
+                                            <xforms:action ev:event="DOMActivate">
+                                                <xxforms:variable name="messageTemplate" select="instance('message-template-list')/messageTemplate[@interactionId=instance('selected-message-template')]"/>
+                                                <xforms:setvalue ref="instance('message-info')/@id" value="substring-after(string(random()),'0.')"/>
+                                                <xforms:setvalue ref="instance('message-info')/@interactionId" value="instance('selected-message-template')"/>
+                                                <xforms:setvalue ref="instance('message-info')/@account" value="instance('selected-account')"/>
+                                                <xforms:setvalue ref="instance('message-info')/@soapAction" value="$messageTemplate/operation[1]/@soapAction"/>
+                                                <xforms:setvalue ref="instance('message-info')/@payloadFile" value="instance('selected-message-payload')"/>
+                                                <xforms:delete nodeset="instance('message-info')/uziInfo"/>
+                                                <xforms:insert context="instance('message-info')" origin="instance('uzi-info')"/>
+                                                <xforms:send submission="send-message"/>
+                                                <xforms:send submission="get-messages-submission"/>
+                                                <xforms:send submission="get-file-list"/>
+                                    <!--                                 <xforms:delete nodeset="instance('query-parameters')//query/uziInfo"/>-->
+                                    <!--                                 <xforms:action xxforms:iterate="instance('query-parameters')//query">
+                                    <xforms:setvalue ref="patientId" value="instance('query-selected-patient')"/>
+                                    <xforms:setvalue ref="messageId" value="substring-after(string(random()),'0.')"/>
+                                    <xforms:insert context="context()" nodeset="./*" origin="instance('uzi-info')"/>
+                                 </xforms:action>-->
+                                            </xforms:action>
+                                        </fr:button>
+                                    </xforms:group>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                    </xhtml:table>
+                    <xhtml:p/>
+                    <xhtml:table class="detail" width="100%">
+                        <xhtml:tr>
+                            <xhtml:td class="heading">
+                                <xhtml:div class="heading">
+                                    <xforms:output ref="$resources/response"/>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                        <xhtml:tr>
+                            <xhtml:td>
+                                <xforms:output mediatype="text/html" value="xxforms:serialize(xxforms:call-xpl('oxf:/ops/utils/formatting/format.xpl', 'data', instance('message-response'), 'data')/*, 'html')"/>
+                            </xhtml:td>
+                        </xhtml:tr>
+                    </xhtml:table>
+                </fr:tab>
+            </fr:tabview>
+        </xhtml:div>
+      <!--<fr:xforms-inspector/>-->
+    </xhtml:body>
+</xhtml:html>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument classCode="DOCCLIN" moodCode="EVN" xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../../schemas/CDA.xsd">
+			<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+			<id extension="8A23EBB3-31CC-475C-874F-93BEEBFA2DB5"/>
+			<code code="18719-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.17">
+				<translation displayName="Биохимические исследования"/>
+			</code>
+			<effectiveTime/>
+			<confidentialityCode/>
+			<setId extension="8A23EBB3-31CC-475C-874F-93BEEBFA2DB5"/>
+			<versionNumber value="1"/>
+			<recordTarget typeCode="RCT" contextControlCode="OP">
+				<patientRole>
+					<id root="1.2.643.2.27.3.1234567890123.21" extension="21" assigningAuthorityName=" Городская больница №21" displayable="true"/>
+					<addr>121456 г.Проспект N, д.NN, кв.NNN</addr>
+					<telecom value="tel:+8(903)777-7777" use="MC"/>
+					<patient>
+						<name>Пациентка N</name>
+						<administrativeGenderCode code="Ж" codeSystem="2.16.840.1.113883.5.1">
+							<translation displayName="Жен"/>
+						</administrativeGenderCode>
+						<birthTime value="1918"/>
+					</patient>
+					<providerOrganization>
+						<id root="1.2.643.2.27.1234567890123" extension="77"/>
+						<name>Поликлиника</name>
+						<telecom value="tel:(495)555-5555" use="WP"/>
+						<telecom value="mailto:sv@mail.ru" use="WP"/>
+					</providerOrganization>
+				</patientRole>
+			</recordTarget>
+			<author typeCode="AUT" contextControlCode="OP">
+				<time/>
+				<assignedAuthor classCode="ASSIGNED">
+					<id root="1.2.643.2.27.1234567890123" extension="152"/>
+					<code code="15" codeSystem="2.16.840.1.113883.6.239.0.327" displayName="Врач"/>
+					<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+						<name>Иванов Михаил Игоревич</name>
+					</assignedPerson>
+					<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+						<id root="1.2.643.2.27.1234567890123" extension="1533"/>
+						<name>Общее хирургическое отд.</name>
+						<telecom value="tel:(495)555-5001" use="WP"/>
+						<asOrganizationPartOf>
+							<wholeOrganization>
+								<id root="1.2.643.2.27.1234567890123" extension="77"/>
+								<name>Больница</name>
+								<telecom value="tel:(495)555-5555" use="WP"/>
+								<telecom value="mailto:cch@mail.ru" use="WP"/>
+							</wholeOrganization>
+						</asOrganizationPartOf>
+					</representedOrganization>
+				</assignedAuthor>
+			</author>
+			<custodian typeCode="CST">
+				<assignedCustodian classCode="ASSIGNED">
+					<representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+						<id root="1.2.643.2.27.1234567890123" extension="77"/>
+						<name>Больница</name>
+						<telecom value="mailto:cch@mail.ru" use="WP"/>
+					</representedCustodianOrganization>
+				</assignedCustodian>
+			</custodian>
+			<informationRecipient typeCode="PRCP">
+				<intendedRecipient classCode="ASSIGNED">
+					<receivedOrganization>
+						<id root="1.2.643.2.27.1234567890123" extension="215"/>
+						<name>Биохимическая лаборатория</name>
+						<telecom value="tel:(495)555-6666" use="WP"/>
+						<telecom value="mailto:cch_biolab@mail.ru" use="WP"/>
+						<asOrganizationPartOf>
+							<wholeOrganization>
+								<id root="1.2.643.2.27.1234567890123" extension="77"/>
+								<name>Больница</name>
+								<telecom value="tel:(495)555-6666" use="WP"/>
+								<telecom value="mailto:cch@mail.ru" use="WP"/>
+							</wholeOrganization>
+						</asOrganizationPartOf>
+					</receivedOrganization>
+				</intendedRecipient>
+			</informationRecipient>
+			<componentOf>
+				<encompassingEncounter moodCode="EVN">
+					<id root="1.2.643.2.27.1234567890123" extension="21554-2"/>
+					<code displayName="Госпитализация"/>
+					<effectiveTime>
+						<low value="20060505"/>
+						<high nullFlavor="NA"/>
+					</effectiveTime>
+					<responsibleParty>
+						<assignedEntity>
+							<id root="1.2.643.2.27.1234567890123" extension="1533"/>
+							<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+								<id root="1.2.643.2.27.1234567890123" extension="1533"/>
+								<name>Общее хирургическое отд.</name>
+								<telecom value="tel:(495)555-5001" use="WP"/>
+								<asOrganizationPartOf>
+									<wholeOrganization>
+										<id root="1.2.643.2.27.1234567890123" extension="77"/>
+										<name>Больница</name>
+										<telecom value="tel:(495)555-3312" use="WP"/>
+										<telecom value="mailto:cch@mail.ru" use="WP"/>
+									</wholeOrganization>
+								</asOrganizationPartOf>
+							</representedOrganization>
+						</assignedEntity>
+					</responsibleParty>
+					<location>
+						<healthCareFacility>
+							<location>
+								<addr>палата 377</addr>
+							</location>
+						</healthCareFacility>
+					</location>
+				</encompassingEncounter>
+			</componentOf>
+			<component typeCode="COMP" contextConductionInd="true">
+				<structuredBody classCode="DOCBODY" moodCode="EVN">
+					<component typeCode="COMP">
+						<typeId root="2.16.840.1.113883.1.3" extension="1" />
+						<section classCode="DOCSECT" moodCode="EVN">
+							<id root="1.2.643.2.27.1234567890123.1.2"/>
+							<code code="256" codeSystem="1.2.643.2.27.1234567890123.1.2.3"/>
+							<title representation="TXT" mediaType="text/plain"/>
+							<text ID="ID000001" mediaType="text/x-hl7-text+xml">
+								Биохимическое исследование № от 2006-07-14
+								Цель исследования и предварительный диагноз :
+								Пациентка N  и/б 100 П-Поликлиника 1 пол Жен г/р 1912						
+							</text>
+							<languageCode code="ru"/>
+						</section>
+					</component>
+				</structuredBody>
+			</component>
+		</ClinicalDocument>
+		

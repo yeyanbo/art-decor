@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="255"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1095"/>
+   <Title name="styleType" date="2012-08-02" version="1.000">&lt;ns1:p&gt;The style code is used within the CDA/SPL narrative block to give the instance author some control over various aspects of style&lt;/ns1:p&gt;</Title>
+   <Class code="rootClass">
+      <SubClass subCount="4" code="_FontStyle" kind="abstract">
+         <Rubric id="d1e233307" kind="preferred">
+            <Label xml:lang="en-US">Font Style</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="2" code="_ListStyle" kind="abstract">
+         <Rubric id="d1e233332" kind="preferred">
+            <Label xml:lang="en-US">List Style</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="4" code="_TableRuleStyle" kind="abstract">
+         <Rubric id="d1e233356" kind="preferred">
+            <Label xml:lang="en-US">Table Rule Style</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">styleType</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">&lt;ns1:p&gt;The style code is used within the CDA/SPL narrative block to give the instance author some control over various aspects of style&lt;/ns1:p&gt;</Label>
+      </Rubric>
+   </Class>
+   <Class code="_FontStyle" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21334"/>
+      <SubClass code="bold" subCount="0">
+         <Rubric id="d1e233385" kind="preferred">
+            <Label xml:lang="en-US">Bold Font</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="emphasis" subCount="0">
+         <Rubric id="d1e233414" kind="preferred">
+            <Label xml:lang="en-US">Emphasised Font</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="italics" subCount="0">
+         <Rubric id="d1e233443" kind="preferred">
+            <Label xml:lang="en-US">Italics Font</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="underline" subCount="0">
+         <Rubric id="d1e233472" kind="preferred">
+            <Label xml:lang="en-US">Underline Font</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e233294" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Defines font rendering characteristics</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e233307" kind="short">
+         <Label xml:lang="en-US">Font Style</Label>
+      </Rubric>
+      <Rubric id="d1e233307" kind="preferred">
+         <Label xml:lang="en-US">Font Style</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ListStyle" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21344"/>
+      <SubClass code="_OrderedListStyle" subCount="5">
+         <Rubric id="d1e233502" kind="preferred">
+            <Label xml:lang="en-US">Ordered List Style</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="_UnorderedListStyle" subCount="3">
+         <Rubric id="d1e233531" kind="preferred">
+            <Label xml:lang="en-US">Unordered List Style</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e233319" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Defines list rendering characteristics</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e233332" kind="short">
+         <Label xml:lang="en-US">List Style</Label>
+      </Rubric>
+      <Rubric id="d1e233332" kind="preferred">
+         <Label xml:lang="en-US">List Style</Label>
+      </Rubric>
+   </Class>
+   <Class code="_TableRuleStyle" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21339"/>
+      <SubClass code="Botrule" subCount="0">
+         <Rubric id="d1e233718" kind="preferred">
+            <Label xml:lang="en-US">Bottom Rule</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="Lrule" subCount="0">
+         <Rubric id="d1e233747" kind="preferred">
+            <Label xml:lang="en-US">Left-sided rule</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="Rrule" subCount="0">
+         <Rubric id="d1e233776" kind="preferred">
+            <Label xml:lang="en-US">Right-sided rule</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="Toprule" subCount="0">
+         <Rubric id="d1e233805" kind="preferred">
+            <Label xml:lang="en-US">Top Rule</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e233343" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Defines table cell rendering characteristics</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e233356" kind="short">
+         <Label xml:lang="en-US">Table Rule Style</Label>
+      </Rubric>
+      <Rubric id="d1e233356" kind="preferred">
+         <Label xml:lang="en-US">Table Rule Style</Label>
+      </Rubric>
+   </Class>
+   <Class code="bold" kind="concept">
+      <Meta name="internalId" value="21335"/>
+      <SuperClass code="_FontStyle">
+         <Rubric id="d1e233307" kind="preferred">
+            <Label xml:lang="en-US">Font Style</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e233367" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Render with a bold font</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e233385" kind="short">
+         <Label xml:lang="en-US">Bold Font</Label>
+      </Rubric>
+      <Rubric id="d1e233385" kind="preferred">
+         <Label xml:lang="en-US">Bold Font</Label>
+      </Rubric>
+   </Class>
+   <Class code="emphasis" kind="concept">
+      <Meta name="internalId" value="21338"/>
+      <SuperClass code="_FontStyle">
+         <Rubric id="d1e233307" kind="preferred">
+            <Label xml:lang="en-US">Font Style</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e233396" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Render with with some type of emphasis</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e233414" kind="short">
+         <Label xml:lang="en-US">Emphasised Font</Label>
+      </Rubric>
+      <Rubric id="d1e233414" kind="preferred">
+         <Label xml:lang="en-US">Emphasised Font</Label>
+      </Rubric>
+   </Class>
+   <Class code="italics" kind="concept">
+      <Meta name="internalId" value="21337"/>
+      <SuperClass code="_FontStyle">
+         <Rubric id="d1e233307" kind="preferred">
+            <Label xml:lang="en-US">Font Style</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e233425" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Render italicized</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e233443" kind="short">
+         <Label xml:lang="en-US">Italics Font</Label>
+      </Rubric>
+      <Rubric id="d1e233443" kind="preferred">
+         <Label xml:lang="en-US">Italics Font</Label>
+      </Rubric>
+   </Class>
+   <Class code="underline" kind="concept">
+      <Meta name="internalId" value="21336"/>
+      <SuperClass code="_FontStyle">
+         <Rubric id="d1e233307" kind="preferred">
+            <Label xml:lang="en-US">Font Style</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e233454" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Render with an underline font</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e233472" kind="short">
+         <Label xml:lang="en-US">Underline Font</Label>
+      </Rubric>
+      <Rubric id="d1e233472" kind="preferred">
+         <Label xml:lang="en-US">Underline Font</Label>
+      </Rubric>
+   </Class>
+   <Class code="_OrderedListStyle" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21345"/>
+      <SuperClass code="_ListStyle">
+         <Rubric id="d1e233332" kind="preferred">
+            <Label xml:lang="en-US">List Style</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="Arabic" subCount="0">
+         <Rubric id="d1e233560" kind="preferred">
+            <Label xml:lang="en-US">Arabic</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="BigAlpha" subCount="0">
+         <Rubric id="d1e233589" kind="preferred">
+            <Label xml:lang="en-US">Big Alpha</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="BigRoman" subCount="0">
+         <Rubric id="d1e233621" kind="preferred">
+            <Label xml:lang="en-US">Big Roman</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LittleAlpha" subCount="0">
+         <Rubric id="d1e233653" kind="preferred">
+            <Label xml:lang="en-US">Little Alpha</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LittleRoman" subCount="0">
+         <Rubric id="d1e233686" kind="preferred">
+            <Label xml:lang="en-US">Little Roman</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e233484" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Defines rendering characteristics for ordered lists</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e233502" kind="short">
+         <Label xml:lang="en-US">Ordered List Style</Label>
+      </Rubric>
+      <Rubric id="d1e233502" kind="preferred">
+         <Label xml:lang="en-US">Ordered List Style</Label>
+      </Rubric>
+   </Class>
+   <Class code="_UnorderedListStyle" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21351"/>
+      <SuperClass code="_ListStyle">
+         <Rubric id="d1e233332" kind="preferred">
+            <Label xml:lang="en-US">List Style</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="Circle" subCount="0">
+         <Rubric id="d1e233837" kind="preferred">
+            <Label xml:lang="en-US">Circle</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="Disc" subCount="0">
+         <Rubric id="d1e233867" kind="preferred">
+            <Label xml:lang="en-US">Disc</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="Square" subCount="0">
+         <Rubric id="d1e233896" kind="preferred">
+            <Label xml:lang="en-US">Square</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e233513" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Defines rendering characteristics for unordered lists</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e233531" kind="short">
+         <Label xml:lang="en-US">Unordered List Style</Label>
+      </Rubric>
+      <Rubric id="d1e233531" kind="preferred">
+         <Label xml:lang="en-US">Unordered List Style</Label>
+      </Rubric>
+   </Class>
+   <Class code="Arabic" kind="concept">
+      <Meta name="internalId" value="21346"/>
+      <SuperClass code="_OrderedListStyle">
+         <Rubric id="d1e233502" kind="preferred">
+            <Label xml:lang="en-US">Ordered List Style</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e233542" kind="definition">
+         <Label xml:lang="en-US">
+            <p>List is ordered using Arabic numerals: 1, 2, 3</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e233560" kind="short">
+         <Label xml:lang="en-US">Arabic</Label>
+      </Rubric>
+      <Rubric id="d1e233560" kind="preferred">
+         <Label xml:lang="en-US">Arabic</Label>
+      </Rubric>
+   </Class>
+   <Class code="BigAlpha" kind="concept">
+      <Meta name="internalId" value="21350"/>
+      <Meta name="code-retired" value="BIG.ALPHA"/>
+      <SuperClass code="_OrderedListStyle">
+         <Rubric id="d1e233502" kind="preferred">
+            <Label xml:lang="en-US">Ordered List Style</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e233571" kind="definition">
+         <Label xml:lang="en-US">
+            <p>List is ordered using big alpha characters: A, B, C</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e233589" kind="short">
+         <Label xml:lang="en-US">Big Alpha</Label>
+      </Rubric>
+      <Rubric id="d1e233589" kind="preferred">
+         <Label xml:lang="en-US">Big Alpha</Label>
+      </Rubric>
+   </Class>
+   <Class code="BigRoman" kind="concept">
+      <Meta name="internalId" value="21348"/>
+      <Meta name="code-retired" value="BIG.ROMAN"/>
+      <SuperClass code="_OrderedListStyle">
+         <Rubric id="d1e233502" kind="preferred">
+            <Label xml:lang="en-US">Ordered List Style</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e233603" kind="definition">
+         <Label xml:lang="en-US">
+            <p>List is ordered using big Roman numerals: I, II, III</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e233621" kind="short">
+         <Label xml:lang="en-US">Big Roman</Label>
+      </Rubric>
+      <Rubric id="d1e233621" kind="preferred">
+         <Label xml:lang="en-US">Big Roman</Label>
+      </Rubric>
+   </Class>
+   <Class code="LittleAlpha" kind="concept">
+      <Meta name="internalId" value="21349"/>
+      <Meta name="code-retired" value="LITTLE.ALPHA"/>
+      <SuperClass code="_OrderedListStyle">
+         <Rubric id="d1e233502" kind="preferred">
+            <Label xml:lang="en-US">Ordered List Style</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e233635" kind="definition">
+         <Label xml:lang="en-US">
+            <p>List is order using little alpha characters: a, b, c</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e233653" kind="short">
+         <Label xml:lang="en-US">Little Alpha</Label>
+      </Rubric>
+      <Rubric id="d1e233653" kind="preferred">
+         <Label xml:lang="en-US">Little Alpha</Label>
+      </Rubric>
+   </Class>
+   <Class code="LittleRoman" kind="concept">
+      <Meta name="internalId" value="21347"/>
+      <Meta name="code-retired" value="LITTLE.ROMAN"/>
+      <SuperClass code="_OrderedListStyle">
+         <Rubric id="d1e233502" kind="preferred">
+            <Label xml:lang="en-US">Ordered List Style</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e233668" kind="definition">
+         <Label xml:lang="en-US">
+            <p>List is ordered using little Roman numerals: i, ii, iii</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e233686" kind="short">
+         <Label xml:lang="en-US">Little Roman</Label>
+      </Rubric>
+      <Rubric id="d1e233686" kind="preferred">
+         <Label xml:lang="en-US">Little Roman</Label>
+      </Rubric>
+   </Class>
+   <Class code="Botrule" kind="concept">
+      <Meta name="internalId" value="21343"/>
+      <SuperClass code="_TableRuleStyle">
+         <Rubric id="d1e233356" kind="preferred">
+            <Label xml:lang="en-US">Table Rule Style</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e233700" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Render cell with rule on bottom</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e233718" kind="short">
+         <Label xml:lang="en-US">Bottom Rule</Label>
+      </Rubric>
+      <Rubric id="d1e233718" kind="preferred">
+         <Label xml:lang="en-US">Bottom Rule</Label>
+      </Rubric>
+   </Class>
+   <Class code="Lrule" kind="concept">
+      <Meta name="internalId" value="21340"/>
+      <SuperClass code="_TableRuleStyle">
+         <Rubric id="d1e233356" kind="preferred">
+            <Label xml:lang="en-US">Table Rule Style</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e233729" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Render cell with left-sided rule</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e233747" kind="short">
+         <Label xml:lang="en-US">Left-sided rule</Label>
+      </Rubric>
+      <Rubric id="d1e233747" kind="preferred">
+         <Label xml:lang="en-US">Left-sided rule</Label>
+      </Rubric>
+   </Class>
+   <Class code="Rrule" kind="concept">
+      <Meta name="internalId" value="21341"/>
+      <SuperClass code="_TableRuleStyle">
+         <Rubric id="d1e233356" kind="preferred">
+            <Label xml:lang="en-US">Table Rule Style</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e233758" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Render cell with right-sided rule</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e233776" kind="short">
+         <Label xml:lang="en-US">Right-sided rule</Label>
+      </Rubric>
+      <Rubric id="d1e233776" kind="preferred">
+         <Label xml:lang="en-US">Right-sided rule</Label>
+      </Rubric>
+   </Class>
+   <Class code="Toprule" kind="concept">
+      <Meta name="internalId" value="21342"/>
+      <Meta name="code-retired" value="TORULE"/>
+      <SuperClass code="_TableRuleStyle">
+         <Rubric id="d1e233356" kind="preferred">
+            <Label xml:lang="en-US">Table Rule Style</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e233787" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Render cell with rule on top</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e233805" kind="short">
+         <Label xml:lang="en-US">Top Rule</Label>
+      </Rubric>
+      <Rubric id="d1e233805" kind="preferred">
+         <Label xml:lang="en-US">Top Rule</Label>
+      </Rubric>
+   </Class>
+   <Class code="Circle" kind="concept">
+      <Meta name="internalId" value="21353"/>
+      <SuperClass code="_UnorderedListStyle">
+         <Rubric id="d1e233531" kind="preferred">
+            <Label xml:lang="en-US">Unordered List Style</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e233819" kind="definition">
+         <Label xml:lang="en-US">
+            <p>List bullets are hollow discs</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e233837" kind="short">
+         <Label xml:lang="en-US">Circle</Label>
+      </Rubric>
+      <Rubric id="d1e233837" kind="preferred">
+         <Label xml:lang="en-US">Circle</Label>
+      </Rubric>
+   </Class>
+   <Class code="Disc" kind="concept">
+      <Meta name="internalId" value="21352"/>
+      <SuperClass code="_UnorderedListStyle">
+         <Rubric id="d1e233531" kind="preferred">
+            <Label xml:lang="en-US">Unordered List Style</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e233849" kind="definition">
+         <Label xml:lang="en-US">
+            <p>List bullets are simple solid discs</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e233867" kind="short">
+         <Label xml:lang="en-US">Disc</Label>
+      </Rubric>
+      <Rubric id="d1e233867" kind="preferred">
+         <Label xml:lang="en-US">Disc</Label>
+      </Rubric>
+   </Class>
+   <Class code="Square" kind="concept">
+      <Meta name="internalId" value="21354"/>
+      <SuperClass code="_UnorderedListStyle">
+         <Rubric id="d1e233531" kind="preferred">
+            <Label xml:lang="en-US">Unordered List Style</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e233878" kind="definition">
+         <Label xml:lang="en-US">
+            <p>List bullets are solid squares</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e233896" kind="short">
+         <Label xml:lang="en-US">Square</Label>
+      </Rubric>
+      <Rubric id="d1e233896" kind="preferred">
+         <Label xml:lang="en-US">Square</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

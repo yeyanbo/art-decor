@@ -1,0 +1,800 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="134"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1022"/>
+   <Title name="GTSAbbreviation" date="2012-08-02" version="1.000"/>
+   <Class code="rootClass">
+      <SubClass subCount="0" code="AM" kind="concept">
+         <Rubric id="d1e119790" kind="preferred">
+            <Label xml:lang="en-US">AM</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="BID" kind="concept">
+         <Rubric id="d1e119816" kind="preferred">
+            <Label xml:lang="en-US">BID</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="JB" kind="concept">
+         <Rubric id="d1e119842" kind="preferred">
+            <Label xml:lang="en-US">JB</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="JE" kind="concept">
+         <Rubric id="d1e119868" kind="preferred">
+            <Label xml:lang="en-US">JE</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="3" code="JH" kind="concept">
+         <Rubric id="d1e119892" kind="preferred">
+            <Label xml:lang="en-US">GTSAbbreviationHolidays</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="PM" kind="concept">
+         <Rubric id="d1e119918" kind="preferred">
+            <Label xml:lang="en-US">PM</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="QID" kind="concept">
+         <Rubric id="d1e119945" kind="preferred">
+            <Label xml:lang="en-US">QID</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="TID" kind="concept">
+         <Rubric id="d1e119971" kind="preferred">
+            <Label xml:lang="en-US">TID</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">GTSAbbreviation</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl"/>
+      </Rubric>
+   </Class>
+   <Class code="AM" kind="concept">
+      <Meta name="internalId" value="10721"/>
+      <Meta name="appliesTo" value="H0600-1200 IST"/>
+      <Rubric id="d1e119775" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Every morning at institution specified times.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e119790" kind="short">
+         <Label xml:lang="en-US">AM</Label>
+      </Rubric>
+      <Rubric id="d1e119790" kind="preferred">
+         <Label xml:lang="en-US">AM</Label>
+      </Rubric>
+   </Class>
+   <Class code="BID" kind="concept">
+      <Meta name="internalId" value="10703"/>
+      <Meta name="appliesTo" value="/(12 h) IST"/>
+      <Rubric id="d1e119801" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Two times a day at institution specified time</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e119816" kind="short">
+         <Label xml:lang="en-US">BID</Label>
+      </Rubric>
+      <Rubric id="d1e119816" kind="preferred">
+         <Label xml:lang="en-US">BID</Label>
+      </Rubric>
+   </Class>
+   <Class code="JB" kind="concept">
+      <Meta name="internalId" value="10723"/>
+      <Meta name="appliesTo" value="J1-5 \JH"/>
+      <Rubric id="d1e119827" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Regular business days (Monday to Friday excluding holidays)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e119842" kind="short">
+         <Label xml:lang="en-US">JB</Label>
+      </Rubric>
+      <Rubric id="d1e119842" kind="preferred">
+         <Label xml:lang="en-US">JB</Label>
+      </Rubric>
+   </Class>
+   <Class code="JE" kind="concept">
+      <Meta name="internalId" value="10724"/>
+      <Meta name="appliesTo" value="J6-7 \JH"/>
+      <Rubric id="d1e119853" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Regular weekends (Saturday and Sunday excluding holidays)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e119868" kind="short">
+         <Label xml:lang="en-US">JE</Label>
+      </Rubric>
+      <Rubric id="d1e119868" kind="preferred">
+         <Label xml:lang="en-US">JE</Label>
+      </Rubric>
+   </Class>
+   <Class code="JH" kind="concept">
+      <Meta name="internalId" value="10725"/>
+      <SubClass code="_GTSAbbreviationHolidaysChristianRoman" subCount="6">
+         <Rubric id="d1e120184" kind="preferred">
+            <Label xml:lang="en-US">GTSAbbreviationHolidaysChristianRoman</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="JHNNL" subCount="3">
+         <Rubric id="d1e120216" kind="preferred">
+            <Label xml:lang="en-US">The Netherlands National Holidays</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="JHNUS" subCount="13">
+         <Rubric id="d1e120245" kind="preferred">
+            <Label xml:lang="en-US">GTSAbbreviationHolidaysUSNational</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e119879" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Holidays</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e119892" kind="short">
+         <Label xml:lang="en-US">GTSAbbreviationHolidays</Label>
+      </Rubric>
+      <Rubric id="d1e119892" kind="preferred">
+         <Label xml:lang="en-US">GTSAbbreviationHolidays</Label>
+      </Rubric>
+   </Class>
+   <Class code="PM" kind="concept">
+      <Meta name="internalId" value="10722"/>
+      <Meta name="appliesTo" value="H1200-1800 IST"/>
+      <Rubric id="d1e119903" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Every afternoon at institution specified times.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e119918" kind="short">
+         <Label xml:lang="en-US">PM</Label>
+      </Rubric>
+      <Rubric id="d1e119918" kind="preferred">
+         <Label xml:lang="en-US">PM</Label>
+      </Rubric>
+   </Class>
+   <Class code="QID" kind="concept">
+      <Meta name="internalId" value="10705"/>
+      <Meta name="appliesTo" value="/(6 h) IST"/>
+      <Rubric id="d1e119930" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Four times a day at institution specified time</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e119945" kind="short">
+         <Label xml:lang="en-US">QID</Label>
+      </Rubric>
+      <Rubric id="d1e119945" kind="preferred">
+         <Label xml:lang="en-US">QID</Label>
+      </Rubric>
+   </Class>
+   <Class code="TID" kind="concept">
+      <Meta name="internalId" value="10704"/>
+      <Meta name="appliesTo" value="/(8 h) IST"/>
+      <Rubric id="d1e119956" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Three times a day at institution specified time</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e119971" kind="short">
+         <Label xml:lang="en-US">TID</Label>
+      </Rubric>
+      <Rubric id="d1e119971" kind="preferred">
+         <Label xml:lang="en-US">TID</Label>
+      </Rubric>
+   </Class>
+   <Class code="JHCHREAS" kind="concept">
+      <Meta name="internalId" value="10730"/>
+      <SuperClass code="_GTSAbbreviationHolidaysChristianRoman">
+         <Rubric id="d1e120184" kind="preferred">
+            <Label xml:lang="en-US">GTSAbbreviationHolidaysChristianRoman</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e119982" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Easter Sunday. The Easter date is a rather complex calculation based on Astronomical tables describing full moon dates. Details can be found at [http://www.assa.org.au/edm.html, and http://aa.usno.navy.mil/AA/faq/docs/easter.html]. Note that the Christian Orthodox Holidays are based on the Julian calendar.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e120000" kind="short">
+         <Label xml:lang="en-US">JHCHREAS</Label>
+      </Rubric>
+      <Rubric id="d1e120000" kind="preferred">
+         <Label xml:lang="en-US">JHCHREAS</Label>
+      </Rubric>
+   </Class>
+   <Class code="JHCHRGFR" kind="concept">
+      <Meta name="internalId" value="10731"/>
+      <SuperClass code="_GTSAbbreviationHolidaysChristianRoman">
+         <Rubric id="d1e120184" kind="preferred">
+            <Label xml:lang="en-US">GTSAbbreviationHolidaysChristianRoman</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e120011" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Good Friday, is the Friday right before Easter Sunday.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e120029" kind="short">
+         <Label xml:lang="en-US">JHCHRGFR</Label>
+      </Rubric>
+      <Rubric id="d1e120029" kind="preferred">
+         <Label xml:lang="en-US">JHCHRGFR</Label>
+      </Rubric>
+   </Class>
+   <Class code="JHCHRNEW" kind="concept">
+      <Meta name="internalId" value="10729"/>
+      <Meta name="appliesTo" value="M0101"/>
+      <SuperClass code="_GTSAbbreviationHolidaysChristianRoman">
+         <Rubric id="d1e120184" kind="preferred">
+            <Label xml:lang="en-US">GTSAbbreviationHolidaysChristianRoman</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e120040" kind="definition">
+         <Label xml:lang="en-US">
+            <p>New Year's Day (January 1)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e120060" kind="short">
+         <Label xml:lang="en-US">JHCHRNEW</Label>
+      </Rubric>
+      <Rubric id="d1e120060" kind="preferred">
+         <Label xml:lang="en-US">JHCHRNEW</Label>
+      </Rubric>
+   </Class>
+   <Class code="JHCHRPEN" kind="concept">
+      <Meta name="internalId" value="10732"/>
+      <SuperClass code="_GTSAbbreviationHolidaysChristianRoman">
+         <Rubric id="d1e120184" kind="preferred">
+            <Label xml:lang="en-US">GTSAbbreviationHolidaysChristianRoman</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e120072" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Pentecost Sunday, is seven weeks after Easter (the 50th day of Easter).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e120090" kind="short">
+         <Label xml:lang="en-US">JHCHRPEN</Label>
+      </Rubric>
+      <Rubric id="d1e120090" kind="preferred">
+         <Label xml:lang="en-US">JHCHRPEN</Label>
+      </Rubric>
+   </Class>
+   <Class code="JHCHRXME" kind="concept">
+      <Meta name="internalId" value="10727"/>
+      <Meta name="appliesTo" value="M1224"/>
+      <SuperClass code="_GTSAbbreviationHolidaysChristianRoman">
+         <Rubric id="d1e120184" kind="preferred">
+            <Label xml:lang="en-US">GTSAbbreviationHolidaysChristianRoman</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e120102" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Christmas Eve (December 24)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e120122" kind="short">
+         <Label xml:lang="en-US">JHCHRXME</Label>
+      </Rubric>
+      <Rubric id="d1e120122" kind="preferred">
+         <Label xml:lang="en-US">JHCHRXME</Label>
+      </Rubric>
+   </Class>
+   <Class code="JHCHRXMS" kind="concept">
+      <Meta name="internalId" value="10728"/>
+      <Meta name="appliesTo" value="M1225"/>
+      <SuperClass code="_GTSAbbreviationHolidaysChristianRoman">
+         <Rubric id="d1e120184" kind="preferred">
+            <Label xml:lang="en-US">GTSAbbreviationHolidaysChristianRoman</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e120134" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Christmas Day (December 25)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e120154" kind="short">
+         <Label xml:lang="en-US">JHCHRXMS</Label>
+      </Rubric>
+      <Rubric id="d1e120154" kind="preferred">
+         <Label xml:lang="en-US">JHCHRXMS</Label>
+      </Rubric>
+   </Class>
+   <Class code="_GTSAbbreviationHolidaysChristianRoman" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21080"/>
+      <SuperClass code="JH">
+         <Rubric id="d1e119892" kind="preferred">
+            <Label xml:lang="en-US">GTSAbbreviationHolidays</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="JHCHREAS" subCount="0">
+         <Rubric id="d1e120000" kind="preferred">
+            <Label xml:lang="en-US">JHCHREAS</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="JHCHRGFR" subCount="0">
+         <Rubric id="d1e120029" kind="preferred">
+            <Label xml:lang="en-US">JHCHRGFR</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="JHCHRNEW" subCount="0">
+         <Rubric id="d1e120060" kind="preferred">
+            <Label xml:lang="en-US">JHCHRNEW</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="JHCHRPEN" subCount="0">
+         <Rubric id="d1e120090" kind="preferred">
+            <Label xml:lang="en-US">JHCHRPEN</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="JHCHRXME" subCount="0">
+         <Rubric id="d1e120122" kind="preferred">
+            <Label xml:lang="en-US">JHCHRXME</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="JHCHRXMS" subCount="0">
+         <Rubric id="d1e120154" kind="preferred">
+            <Label xml:lang="en-US">JHCHRXMS</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e120166" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Christian Holidays (Roman/Gregorian [Western] Tradition.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e120184" kind="short">
+         <Label xml:lang="en-US">GTSAbbreviationHolidaysChristianRoman</Label>
+      </Rubric>
+      <Rubric id="d1e120184" kind="preferred">
+         <Label xml:lang="en-US">GTSAbbreviationHolidaysChristianRoman</Label>
+      </Rubric>
+   </Class>
+   <Class code="JHNNL" kind="concept">
+      <Meta name="internalId" value="22658"/>
+      <SuperClass code="JH">
+         <Rubric id="d1e119892" kind="preferred">
+            <Label xml:lang="en-US">GTSAbbreviationHolidays</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="JHNNLLD" subCount="0">
+         <Rubric id="d1e120277" kind="preferred">
+            <Label xml:lang="en-US">Liberation day (May 5 every five years)</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="JHNNLQD" subCount="0">
+         <Rubric id="d1e120310" kind="preferred">
+            <Label xml:lang="en-US">Queen's day (April 30)</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="JHNNLSK" subCount="0">
+         <Rubric id="d1e120342" kind="preferred">
+            <Label xml:lang="en-US">Sinterklaas (December 5)</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e120195" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The Netherlands National Holidays.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e120216" kind="short">
+         <Label xml:lang="en-US">The Netherlands National Holidays</Label>
+      </Rubric>
+      <Rubric id="d1e120216" kind="preferred">
+         <Label xml:lang="en-US">The Netherlands National Holidays</Label>
+      </Rubric>
+   </Class>
+   <Class code="JHNUS" kind="concept">
+      <Meta name="internalId" value="10733"/>
+      <SuperClass code="JH">
+         <Rubric id="d1e119892" kind="preferred">
+            <Label xml:lang="en-US">GTSAbbreviationHolidays</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="JHNUSCLM" subCount="0">
+         <Rubric id="d1e120373" kind="preferred">
+            <Label xml:lang="en-US">JHNUSCLM</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="JHNUSIND" subCount="0">
+         <Rubric id="d1e120405" kind="preferred">
+            <Label xml:lang="en-US">JHNUSIND</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="JHNUSIND1" subCount="0">
+         <Rubric id="d1e120437" kind="preferred">
+            <Label xml:lang="en-US">JHNUSIND1</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="JHNUSIND5" subCount="0">
+         <Rubric id="d1e120469" kind="preferred">
+            <Label xml:lang="en-US">JHNUSIND5</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="JHNUSLBR" subCount="0">
+         <Rubric id="d1e120502" kind="preferred">
+            <Label xml:lang="en-US">JHNUSLBR</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="JHNUSMEM" subCount="0">
+         <Rubric id="d1e120534" kind="preferred">
+            <Label xml:lang="en-US">JHNUSMEM</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="JHNUSMEM5" subCount="0">
+         <Rubric id="d1e120566" kind="preferred">
+            <Label xml:lang="en-US">JHNUSMEM5</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="JHNUSMEM6" subCount="0">
+         <Rubric id="d1e120598" kind="preferred">
+            <Label xml:lang="en-US">JHNUSMEM6</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="JHNUSMLK" subCount="0">
+         <Rubric id="d1e120630" kind="preferred">
+            <Label xml:lang="en-US">JHNUSMLK</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="JHNUSPRE" subCount="0">
+         <Rubric id="d1e120662" kind="preferred">
+            <Label xml:lang="en-US">JHNUSPRE</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="JHNUSTKS" subCount="0">
+         <Rubric id="d1e120695" kind="preferred">
+            <Label xml:lang="en-US">JHNUSTKS</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="JHNUSTKS5" subCount="0">
+         <Rubric id="d1e120727" kind="preferred">
+            <Label xml:lang="en-US">JHNUSTKS5</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="JHNUSVET" subCount="0">
+         <Rubric id="d1e120759" kind="preferred">
+            <Label xml:lang="en-US">JHNUSVET</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e120227" kind="definition">
+         <Label xml:lang="en-US">
+            <p>United States National Holidays (public holidays for federal employees established by U.S. Federal law 5 U.S.C. 6103).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e120245" kind="short">
+         <Label xml:lang="en-US">GTSAbbreviationHolidaysUSNational</Label>
+      </Rubric>
+      <Rubric id="d1e120245" kind="preferred">
+         <Label xml:lang="en-US">GTSAbbreviationHolidaysUSNational</Label>
+      </Rubric>
+   </Class>
+   <Class code="JHNNLLD" kind="concept">
+      <Meta name="internalId" value="22660"/>
+      <SuperClass code="JHNNL">
+         <Rubric id="d1e120216" kind="preferred">
+            <Label xml:lang="en-US">The Netherlands National Holidays</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e120256" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Liberation day (May 5 every five years)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e120277" kind="short">
+         <Label xml:lang="en-US">Liberation day (May 5 every five years)</Label>
+      </Rubric>
+      <Rubric id="d1e120277" kind="preferred">
+         <Label xml:lang="en-US">Liberation day (May 5 every five years)</Label>
+      </Rubric>
+   </Class>
+   <Class code="JHNNLQD" kind="concept">
+      <Meta name="internalId" value="22659"/>
+      <SuperClass code="JHNNL">
+         <Rubric id="d1e120216" kind="preferred">
+            <Label xml:lang="en-US">The Netherlands National Holidays</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e120289" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Queen's day (April 30)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e120310" kind="short">
+         <Label xml:lang="en-US">Queen's day (April 30)</Label>
+      </Rubric>
+      <Rubric id="d1e120310" kind="preferred">
+         <Label xml:lang="en-US">Queen's day (April 30)</Label>
+      </Rubric>
+   </Class>
+   <Class code="JHNNLSK" kind="concept">
+      <Meta name="internalId" value="22661"/>
+      <SuperClass code="JHNNL">
+         <Rubric id="d1e120216" kind="preferred">
+            <Label xml:lang="en-US">The Netherlands National Holidays</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e120321" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Sinterklaas (December 5)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e120342" kind="short">
+         <Label xml:lang="en-US">Sinterklaas (December 5)</Label>
+      </Rubric>
+      <Rubric id="d1e120342" kind="preferred">
+         <Label xml:lang="en-US">Sinterklaas (December 5)</Label>
+      </Rubric>
+   </Class>
+   <Class code="JHNUSCLM" kind="concept">
+      <Meta name="internalId" value="10743"/>
+      <Meta name="appliesTo" value="M1008-14 J1"/>
+      <SuperClass code="JHNUS">
+         <Rubric id="d1e120245" kind="preferred">
+            <Label xml:lang="en-US">GTSAbbreviationHolidaysUSNational</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e120353" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Columbus Day, the second Monday in October.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e120373" kind="short">
+         <Label xml:lang="en-US">JHNUSCLM</Label>
+      </Rubric>
+      <Rubric id="d1e120373" kind="preferred">
+         <Label xml:lang="en-US">JHNUSCLM</Label>
+      </Rubric>
+   </Class>
+   <Class code="JHNUSIND" kind="concept">
+      <Meta name="internalId" value="10739"/>
+      <Meta name="appliesTo" value="M0704"/>
+      <SuperClass code="JHNUS">
+         <Rubric id="d1e120245" kind="preferred">
+            <Label xml:lang="en-US">GTSAbbreviationHolidaysUSNational</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e120385" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Independence Day (4th of July)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e120405" kind="short">
+         <Label xml:lang="en-US">JHNUSIND</Label>
+      </Rubric>
+      <Rubric id="d1e120405" kind="preferred">
+         <Label xml:lang="en-US">JHNUSIND</Label>
+      </Rubric>
+   </Class>
+   <Class code="JHNUSIND1" kind="concept">
+      <Meta name="internalId" value="10741"/>
+      <Meta name="appliesTo" value="M0705 J1"/>
+      <SuperClass code="JHNUS">
+         <Rubric id="d1e120245" kind="preferred">
+            <Label xml:lang="en-US">GTSAbbreviationHolidaysUSNational</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e120417" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Alternative Monday after 4th of July Weekend [5 U.S.C. 6103(b)].</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e120437" kind="short">
+         <Label xml:lang="en-US">JHNUSIND1</Label>
+      </Rubric>
+      <Rubric id="d1e120437" kind="preferred">
+         <Label xml:lang="en-US">JHNUSIND1</Label>
+      </Rubric>
+   </Class>
+   <Class code="JHNUSIND5" kind="concept">
+      <Meta name="internalId" value="10740"/>
+      <Meta name="appliesTo" value="M0703 J5"/>
+      <SuperClass code="JHNUS">
+         <Rubric id="d1e120245" kind="preferred">
+            <Label xml:lang="en-US">GTSAbbreviationHolidaysUSNational</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e120449" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Alternative Friday before 4th of July Weekend [5 U.S.C. 6103(b)].</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e120469" kind="short">
+         <Label xml:lang="en-US">JHNUSIND5</Label>
+      </Rubric>
+      <Rubric id="d1e120469" kind="preferred">
+         <Label xml:lang="en-US">JHNUSIND5</Label>
+      </Rubric>
+   </Class>
+   <Class code="JHNUSLBR" kind="concept">
+      <Meta name="internalId" value="10742"/>
+      <Meta name="appliesTo" value="M0901-07 J1"/>
+      <SuperClass code="JHNUS">
+         <Rubric id="d1e120245" kind="preferred">
+            <Label xml:lang="en-US">GTSAbbreviationHolidaysUSNational</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e120482" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Labor Day, the first Monday in September.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e120502" kind="short">
+         <Label xml:lang="en-US">JHNUSLBR</Label>
+      </Rubric>
+      <Rubric id="d1e120502" kind="preferred">
+         <Label xml:lang="en-US">JHNUSLBR</Label>
+      </Rubric>
+   </Class>
+   <Class code="JHNUSMEM" kind="concept">
+      <Meta name="internalId" value="10736"/>
+      <Meta name="appliesTo" value="M0525-31 J1"/>
+      <SuperClass code="JHNUS">
+         <Rubric id="d1e120245" kind="preferred">
+            <Label xml:lang="en-US">GTSAbbreviationHolidaysUSNational</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e120514" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Memorial Day, the last Monday in May.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e120534" kind="short">
+         <Label xml:lang="en-US">JHNUSMEM</Label>
+      </Rubric>
+      <Rubric id="d1e120534" kind="preferred">
+         <Label xml:lang="en-US">JHNUSMEM</Label>
+      </Rubric>
+   </Class>
+   <Class code="JHNUSMEM5" kind="concept">
+      <Meta name="internalId" value="10737"/>
+      <Meta name="appliesTo" value="M0522-28 J5"/>
+      <SuperClass code="JHNUS">
+         <Rubric id="d1e120245" kind="preferred">
+            <Label xml:lang="en-US">GTSAbbreviationHolidaysUSNational</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e120546" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Friday before Memorial Day Weekend</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e120566" kind="short">
+         <Label xml:lang="en-US">JHNUSMEM5</Label>
+      </Rubric>
+      <Rubric id="d1e120566" kind="preferred">
+         <Label xml:lang="en-US">JHNUSMEM5</Label>
+      </Rubric>
+   </Class>
+   <Class code="JHNUSMEM6" kind="concept">
+      <Meta name="internalId" value="10738"/>
+      <Meta name="appliesTo" value="M0523-29 J6"/>
+      <SuperClass code="JHNUS">
+         <Rubric id="d1e120245" kind="preferred">
+            <Label xml:lang="en-US">GTSAbbreviationHolidaysUSNational</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e120578" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Saturday of Memorial Day Weekend</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e120598" kind="short">
+         <Label xml:lang="en-US">JHNUSMEM6</Label>
+      </Rubric>
+      <Rubric id="d1e120598" kind="preferred">
+         <Label xml:lang="en-US">JHNUSMEM6</Label>
+      </Rubric>
+   </Class>
+   <Class code="JHNUSMLK" kind="concept">
+      <Meta name="internalId" value="10734"/>
+      <Meta name="appliesTo" value="M0115-21 J1"/>
+      <SuperClass code="JHNUS">
+         <Rubric id="d1e120245" kind="preferred">
+            <Label xml:lang="en-US">GTSAbbreviationHolidaysUSNational</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e120610" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Dr. Martin Luther King, Jr. Day, the third Monday in January.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e120630" kind="short">
+         <Label xml:lang="en-US">JHNUSMLK</Label>
+      </Rubric>
+      <Rubric id="d1e120630" kind="preferred">
+         <Label xml:lang="en-US">JHNUSMLK</Label>
+      </Rubric>
+   </Class>
+   <Class code="JHNUSPRE" kind="concept">
+      <Meta name="internalId" value="10735"/>
+      <Meta name="appliesTo" value="M0215-21 J1"/>
+      <SuperClass code="JHNUS">
+         <Rubric id="d1e120245" kind="preferred">
+            <Label xml:lang="en-US">GTSAbbreviationHolidaysUSNational</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e120642" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Washington's Birthday (Presidential Day) the third Monday in February.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e120662" kind="short">
+         <Label xml:lang="en-US">JHNUSPRE</Label>
+      </Rubric>
+      <Rubric id="d1e120662" kind="preferred">
+         <Label xml:lang="en-US">JHNUSPRE</Label>
+      </Rubric>
+   </Class>
+   <Class code="JHNUSTKS" kind="concept">
+      <Meta name="internalId" value="10745"/>
+      <Meta name="appliesTo" value="M1122-28 J4"/>
+      <SuperClass code="JHNUS">
+         <Rubric id="d1e120245" kind="preferred">
+            <Label xml:lang="en-US">GTSAbbreviationHolidaysUSNational</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e120675" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Thanksgiving Day, the fourth Thursday in November.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e120695" kind="short">
+         <Label xml:lang="en-US">JHNUSTKS</Label>
+      </Rubric>
+      <Rubric id="d1e120695" kind="preferred">
+         <Label xml:lang="en-US">JHNUSTKS</Label>
+      </Rubric>
+   </Class>
+   <Class code="JHNUSTKS5" kind="concept">
+      <Meta name="internalId" value="10746"/>
+      <Meta name="appliesTo" value="M1123-29 J5"/>
+      <SuperClass code="JHNUS">
+         <Rubric id="d1e120245" kind="preferred">
+            <Label xml:lang="en-US">GTSAbbreviationHolidaysUSNational</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e120707" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Friday after Thanksgiving.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e120727" kind="short">
+         <Label xml:lang="en-US">JHNUSTKS5</Label>
+      </Rubric>
+      <Rubric id="d1e120727" kind="preferred">
+         <Label xml:lang="en-US">JHNUSTKS5</Label>
+      </Rubric>
+   </Class>
+   <Class code="JHNUSVET" kind="concept">
+      <Meta name="internalId" value="10744"/>
+      <Meta name="appliesTo" value="M1111"/>
+      <SuperClass code="JHNUS">
+         <Rubric id="d1e120245" kind="preferred">
+            <Label xml:lang="en-US">GTSAbbreviationHolidaysUSNational</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e120739" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Veteran's Day, November 11.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e120759" kind="short">
+         <Label xml:lang="en-US">JHNUSVET</Label>
+      </Rubric>
+      <Rubric id="d1e120759" kind="preferred">
+         <Label xml:lang="en-US">JHNUSVET</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

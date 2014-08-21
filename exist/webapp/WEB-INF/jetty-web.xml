@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configure class="org.eclipse.jetty.webapp.WebAppContext">
+   <Get name="sessionHandler">
+      <Set name="sessionManager">
+         <New class="org.eclipse.jetty.server.session.HashSessionManager">
+            <Set name="sessionCookie">XSESSIONID</Set>
+            <Set name="sessionIdPathParameterName">xsessionid</Set>
+         </New>
+      </Set>
+   </Get>
+</Configure>

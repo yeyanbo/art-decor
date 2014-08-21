@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="134"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1009"/>
+   <Title name="CompressionAlgorithm" date="2012-08-02" version="1.000"/>
+   <Class code="rootClass">
+      <SubClass subCount="0" code="DF" kind="concept">
+         <Rubric id="d1e91281" kind="preferred">
+            <Label xml:lang="en-US">deflate</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="GZ" kind="concept">
+         <Rubric id="d1e91307" kind="preferred">
+            <Label xml:lang="en-US">gzip</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="Z" kind="concept">
+         <Rubric id="d1e91333" kind="preferred">
+            <Label xml:lang="en-US">compress</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="ZL" kind="concept">
+         <Rubric id="d1e91359" kind="preferred">
+            <Label xml:lang="en-US">zlib</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">CompressionAlgorithm</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl"/>
+      </Rubric>
+   </Class>
+   <Class code="DF" kind="concept">
+      <Meta name="internalId" value="10621"/>
+      <Meta name="howApplies" value="mandatory"/>
+      <Rubric id="d1e91266" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The deflate compressed data format as specified in RFC 1951 [http://www.ietf.org/rfc/rfc1951.txt].</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e91281" kind="short">
+         <Label xml:lang="en-US">deflate</Label>
+      </Rubric>
+      <Rubric id="d1e91281" kind="preferred">
+         <Label xml:lang="en-US">deflate</Label>
+      </Rubric>
+   </Class>
+   <Class code="GZ" kind="concept">
+      <Meta name="internalId" value="10622"/>
+      <Meta name="howApplies" value="other"/>
+      <Rubric id="d1e91292" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A compressed data format that is compatible with the widely used GZIP utility as specified in RFC 1952 [http://www.ietf.org/rfc/rfc1952.txt] (uses the deflate algorithm).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e91307" kind="short">
+         <Label xml:lang="en-US">gzip</Label>
+      </Rubric>
+      <Rubric id="d1e91307" kind="preferred">
+         <Label xml:lang="en-US">gzip</Label>
+      </Rubric>
+   </Class>
+   <Class code="Z" kind="concept">
+      <Meta name="internalId" value="10624"/>
+      <Meta name="howApplies" value="deprecated"/>
+      <Rubric id="d1e91318" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Original UNIX compress algorithm and file format using the LZC algorithm (a variant of LZW). Patent encumbered and less efficient than deflate.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e91333" kind="short">
+         <Label xml:lang="en-US">compress</Label>
+      </Rubric>
+      <Rubric id="d1e91333" kind="preferred">
+         <Label xml:lang="en-US">compress</Label>
+      </Rubric>
+   </Class>
+   <Class code="ZL" kind="concept">
+      <Meta name="internalId" value="10623"/>
+      <Meta name="howApplies" value="other"/>
+      <Rubric id="d1e91344" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A compressed data format that also uses the deflate algorithm. Specified as RFC 1950 [http://www.ietf.org/rfc/rfc1952.txt]</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e91359" kind="short">
+         <Label xml:lang="en-US">zlib</Label>
+      </Rubric>
+      <Rubric id="d1e91359" kind="preferred">
+         <Label xml:lang="en-US">zlib</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

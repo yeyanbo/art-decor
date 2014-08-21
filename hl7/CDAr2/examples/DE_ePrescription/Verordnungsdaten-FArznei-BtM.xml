@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../schemas/CDA.xsd">
+	<!-- OID für HL7 registrierte Modelle und Identifikator der CDA Release 2 Hierarchical Description -->
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<!-- Versionsnummer des Datensatzes der KBV-GKVen -->
+	<templateId root="1.2.3.4.5.6.7.8.9.0" extension="eVOD"/>
+	<!-- Dokumenten-ID -->
+	<id extension="1234567890" root="1.2.3.4.5.6.7.8.9.0"/>
+	<!-- Rezepttyp -->
+	<code code="02" codeSystem="1.2.276.0.76.5.100" displayName="BtM-Rezept"/>
+	<!-- Erstellungsdatum des Dokuments -->
+	<effectiveTime value="200605091801"/>
+	<!-- Grad der Offenlegung der Informationen -->
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+	<!-- Versicherter -->
+	<recordTarget>
+		<patientRole>
+			<!-- Versicherten ID -->
+			<id extension="1234567890" root="1.2.276.0.76.4.8"/>
+			<addr>
+				<!-- Straße -->
+				<streetName>Lindenstraße</streetName>
+				<!-- Hausnummer -->
+				<houseNumber>35</houseNumber>
+				<!-- Anschriftenzusatz -->
+				<additionalLocator>2.Etage, Hinterhaus</additionalLocator>
+				<!-- PLZ -->
+				<postalCode>10967</postalCode>
+				<!-- Stadt -->
+				<city>Berlin</city>
+				<!-- Wohnsitzländercode -->
+				<country>DE</country>
+			</addr>
+			<!-- Telefon -->
+			<telecom value="tel:+49(30)33099-112"/>
+			<!-- Fax -->
+			<telecom value="tel:+49(30)33099-27-112"/>
+			<!-- Mail -->
+			<telecom value="mailto:info@tevege.de"/>
+			<patient>
+				<name>
+					<!-- Titel -->
+					<prefix qualifier="AC">Prof. Dr. </prefix>
+					<!-- Vorname -->
+					<given qualifier="BR">Mia-Sophie</given>
+					<!-- Namenszusatz -->
+					<prefix qualifier="NB">Baronin </prefix>
+					<!-- Vorsatzwort -->
+					<prefix qualifier="VV">von </prefix>
+					<!-- Nachname -->
+					<family>Tanner</family>
+				</name>
+				<!-- Geschlecht -->
+				<administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1" displayName="Female"/>
+				<!-- Geburtsdatum -->
+				<birthTime value="19551124"/>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<!-- Verordner -->
+	<author>
+		<!-- Berufsbezeichnung des Verordners -->
+		<functionCode  code="01" codeSystem="1.2.3.4.5.6.7.8.9.0" displayName="Arzt"/>
+		<!-- Ausstellungsdatum der Verordnung -->
+		<time value="20060301"/>
+		<assignedAuthor>
+			<!-- ID des Verordners -->
+			<id extension="2580446" root="1.2.3.4.5.6.7.8.9.0" assigningAuthorityName="KBV"/>
+			<!-- BtM-Nummer -->
+			<id extension="9957112" root="1.2.3.4.5.6.7.8.9.0" assigningAuthorityName="BfArM"/>
+			<assignedPerson>
+				<!-- Name des Verordners -->
+				<name>
+					<!-- Titel -->
+					<prefix qualifier="AC">Dr. med. </prefix>
+					<!-- Vorname -->
+				    <given qualifier="BR">Hans</given>
+				    <!-- Nachname -->
+				    <family>Brunner</family>
+				</name>
+			</assignedPerson>
+			<!-- Institution, in der die Verordnung erstellt wird -->
+			<representedOrganization>
+				<!-- Betriebsstättennummer -->
+				<id extension="123456789" root="1.2.276.0.76.4.5"/>
+				<!-- Telefon -->
+				<telecom value="tel:+49(221)25576-01"/>
+				<!-- Fax -->
+				<telecom value="tel:+49(221)25576-02"/>
+				<!-- Mail -->
+				<telecom value="mailto:info@praxis-dr-brunner.de"/>
+				<addr>
+					<!-- Straße -->
+					<streetName>Jülicher Str.</streetName>
+					<!-- Hausnummer -->
+					<houseNumber>17 b</houseNumber>
+					<!--PLZ -->
+					<postalCode>50674</postalCode>
+					<!-- Stadt -->
+					<city>Köln</city>
+					<!-- Wohnsitzländercode -->
+					<country>DE</country>
+				</addr>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<!-- 'Aufseher' -->
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<!-- Betriebsstättennummer -->
+				<id extension="123456789" root="1.2.276.0.76.4.5"/>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<component>
+		<structuredBody>
+			<component>
+				<section>
+					<code code="29305-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<text>
+						<table>
+							<thead>
+								<!-- Überschriften -->
+								<tr>
+									<th>Art der Verordnung</th>
+									<th>Handels- oder Wirkstoffname mit Wirkstoffkonzentrationsmenge und -einheit</th>
+									<th>Anzahl der verordneten Packungen</th>
+									<th>Darreichungsform</th>
+									<th>Packungsgröße</th>
+									<th>aut idem</th>
+									<th>Einnahme- und Dosierungshinweise</th>
+									<th>Einlösefrist der Verordnung</th>
+									<th>noctu</th>
+									<th>BtM-Rezeptnummer</th>
+									<th>Prüfzahl</th>
+									<th>BtM-Merkmal</th>
+									<th>Ausgabedatum der BtM-Rezeptnummer</th>
+									<th>Unfallkennzeichen</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- Inhalt -->
+								<tr>
+									<td>Fertigarzneimittel</td>
+									<td>Relpax 40 mg</td>
+									<td>2</td>
+									<td>Filmtabletten</td>
+									<td>10 Stück</td>
+									<td>nein</td>
+									<td>bei Bedarf eine Tablette</td>
+									<td>03.06.2006</td>
+									<td>von Kostenträger zu zahlen</td>
+									<td>226506809</td>
+									<td>717</td>
+									<td>A</td>
+									<td>26005</td>
+									<td>kein Unfall</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<substanceAdministration classCode="SBADM" moodCode="RQO">
+							<!-- Art der Verordnung: Fertigarzneimittel -->
+							<code code="X-PHARM" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+							<!-- Einlösefrist der Verordnung -->
+							<effectiveTime value="20060603"/>
+							<!-- Darreichungsform -->
+							<administrationUnitCode code="FTA" codeSystem="1.2.276.0.76.5.118" displayName="Filmtabletten"/>
+							<consumable>
+								<manufacturedProduct>
+									<manufacturedLabeledDrug>
+										<!-- Handels- oder Wirkstoffname mit Wirkstoffkonzentrationsmenge und -einheit -->
+										<name>Methylphenidat</name>
+									</manufacturedLabeledDrug>
+								</manufacturedProduct>
+							</consumable>
+							<entryRelationship typeCode="COMP">
+								<supply classCode="SPLY" moodCode="RQO">
+									<!-- aut idem -->
+									<code code="N" codeSystem="2.16.840.1.113883.11.13953" displayName="none"/>
+									<!-- Anzahl der verordneten Packungen -->
+									<repeatNumber value="2"/>
+									<!-- Packungsgröße -->
+									<quantity value="10" unit="St">
+										<!--Übersetzung der Angabe in Codesystem -->
+										<translation value="10" code="100" codeSystem="2.16.840.1.113883.2.4.4.1.361" displayName="Tablette"/>
+									</quantity>
+								</supply>
+							</entryRelationship>
+							<!-- noctu -->
+							<entryRelationship typeCode="REFR">
+								<act moodCode="EVN" classCode="INFRM">
+									<code code="1" codeSystem="1.2.3.4.5.6.7.8.9.0" displayName="true"/>
+								</act>
+							</entryRelationship>
+							<!-- BtM -->
+							<entryRelationship typeCode="REFR">
+								<act moodCode="EVN" classCode="CONS">
+									<!-- BtM-Rezeptnummer -->
+									<id extension="226506809" root="1.2.3.4.5.6.7.8.9.0"/>
+									<!-- Prüfzahl -->
+									<id extension="717" root="1.2.3.4.5.6.7.8.9.0"/>
+									<!-- BtM-Merkmal -->
+									<code code="A" codeSystem="1.2.276.0.76.5.245" displayName="Ausnahme"/>
+									<!-- Ausgabedatum der BtM-Rezeptnummer -->
+									<effectiveTime>
+										<low value="26005"/>
+									</effectiveTime>
+								</act>
+							</entryRelationship>
+							<!-- Unfall -->
+							<entryRelationship typeCode="REFR">
+								<act moodCode="EVN" classCode="INFRM">
+									<!-- Unfallkennzeichen -->
+									<code code="00" codeSystem="1.2.3.4.5.6.7.8.9.0" displayName="kein Unfall"/>
+								</act>
+							</entryRelationship>
+						</substanceAdministration>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

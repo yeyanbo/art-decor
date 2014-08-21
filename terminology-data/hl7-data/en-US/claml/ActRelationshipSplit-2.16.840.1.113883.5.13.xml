@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="134"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.13"/>
+   <Title name="ActRelationshipSplit" date="2012-08-02" version="1.000"/>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="E1" kind="concept">
+      <Meta name="internalId" value="10356"/>
+      <Rubric id="d1e70489" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The pre-condition associated with the branch is evaluated once and if true the branch may be entered. All other exclusive branches compete with each other and only one will be selected. This implements a COND, IF and CASE conditionals, or "XOR-split." The order in which the branches are considered may be specified in the priorityNumber attribute.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70502" kind="short">
+         <Label xml:lang="en-US">exclusive try once</Label>
+      </Rubric>
+      <Rubric id="d1e70502" kind="preferred">
+         <Label xml:lang="en-US">exclusive try once</Label>
+      </Rubric>
+   </Class>
+   <Class code="EW" kind="concept">
+      <Meta name="internalId" value="10357"/>
+      <Rubric id="d1e70514" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A branch is selected as soon as the pre-condition associated with the branch evaluates to true. If the condition is false, the branch may be entered later, when the condition turns true. All other exclusive branches compete with each other and only one will be selected. Each waiting branch executes in parallel with the default join code wait (see below). The order in which the branches are considered may be specified in the Service_relationship.priority_nmb.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70527" kind="short">
+         <Label xml:lang="en-US">exclusive wait</Label>
+      </Rubric>
+      <Rubric id="d1e70527" kind="preferred">
+         <Label xml:lang="en-US">exclusive wait</Label>
+      </Rubric>
+   </Class>
+   <Class code="I1" kind="concept">
+      <Meta name="internalId" value="10358"/>
+      <Rubric id="d1e70538" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A branch is executed if its associated preconditions permit. If associated preconditions do not permit, the branch is dropped. Inclusive branches are not suppressed and do not suppress other branches.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70551" kind="short">
+         <Label xml:lang="en-US">inclusive try once</Label>
+      </Rubric>
+      <Rubric id="d1e70551" kind="preferred">
+         <Label xml:lang="en-US">inclusive try once</Label>
+      </Rubric>
+   </Class>
+   <Class code="IW" kind="concept">
+      <Meta name="internalId" value="10359"/>
+      <Rubric id="d1e70562" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A branch is executed as soon as its associated conditions permit. If the condition is false, the branch may be entered later, when the condition turns true. Inclusive branches are not suppressed and do not suppress other branches. Each waiting branch executes in parallel with the default join code wait (see below).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e70575" kind="short">
+         <Label xml:lang="en-US">inclusive wait</Label>
+      </Rubric>
+      <Rubric id="d1e70575" kind="preferred">
+         <Label xml:lang="en-US">inclusive wait</Label>
+      </Rubric>
+   </Class>
+</ClaML>

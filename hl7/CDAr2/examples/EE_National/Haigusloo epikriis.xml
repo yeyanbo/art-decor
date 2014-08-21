@@ -1,0 +1,2453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:mif="urn:hl7-org:v3/mif" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3
+http://pub.e-tervis.ee/dl_meddoc/XSD/1.0/CDA.xsd">
+	<!-- dokumendi tüüp -->
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<!-- dokumendi identifikaator-->
+	<id root="eHLdok" extension="9132748973219"/>
+	<!-- dokumendi kood LOINC järgi: statstinaarne epikriis  -->
+	<code code="34105-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="DISCHARGE SUMMARIZATION NOTE, HOSPITAL DISCHARGE SUMMARY NOTE"/>
+	<!-- dokumendi nimetus -->
+	<title>Haigusloo epikriis</title>
+	<!-- CDA dokumendi koostamise aeg-->
+	<effectiveTime value="20060526114723"/>
+	<!-- konfidentsiaalsuse tunnus -->
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality"/>
+	<!-- dokumendi keel -->
+	<!-- <languageCode code="EST" codeSystem="OIDnr" codeSystemName="Keele klassifikaator"/> -->
+	<languageCode code="EST"/>
+	<!-- komplekti identifikaator, Digiloo keskse haigusloo nr-->
+	<setId root="DLhaiguslugu" extension="BB35 - 23898 123"/>
+	<!-- -dokumendi versiooni number -->
+	<versionNumber value="1"/>
+	<!-- PATSIENDI ANDMED ALGUS-->
+	<recordTarget typeCode="RCT">
+		<!-- dokumendiga seotud patsiendi roll -->
+		<!-- <realmCode code="PAT" codeSystem="2.16.840.1.113883.5.110" codeSystemName="RoleClass"/> -->
+		<realmCode code="PAT"/>
+		<patientRole classCode="PAT">
+			<!-- patsiendi identifikaatorid-->
+			<id root="ESTik" extension="47302200234"/>
+			<id root="eHLpats" extension="1000002345"/>
+			<!-- patsiendi tegelik elukoht algus-->
+			<addr use="PHYS">
+				<!-- code="" codeSystem="OIDnr" codeSystemName="ISO-3166" -->
+				<country>EE</country>
+				<!-- code="" codeSystem="OIDnr" codeSystemName="EHAK" -->
+				<county>Tartumaa</county>
+				<!-- code="" codeSystem="OIDnr" codeSystemName="EHAK" -->
+				<city>Tartu</city>
+				<!-- code="" codeSystem="OIDnr" codeSystemName="EHAK" -->
+				<streetAddressLine>Kaunase pst 1 </streetAddressLine>
+				<!-- code="" codeSystem="OIDnr" codeSystemName="EHAK" -->
+				<streetName>Kaunase pst</streetName>
+				<!-- code="" codeSystem="OIDnr" codeSystemName="EHAK" -->
+				<houseNumber>1</houseNumber>
+				<additionalLocator>11</additionalLocator>
+				<!-- code="" codeSystem="OIDnr" codeSystemName="EHAK" -->
+				<unitID>78795</unitID>
+				<postalCode>50706</postalCode>
+			</addr>
+			<!-- patsiendi tegelik elukoht lõpp-->
+			<!-- patsiendi kontaktadnmed: telefon-->
+			<telecom use="MC" value="tel:+372 50 123 456"/>
+			<!-- patsiendi konatkandmed: epost-->
+			<telecom use="PUB" value="eposti@aadress.ee"/>
+			<patient classCode="PSN" determinerCode="INSTANCE">
+				<!-- haridus -->
+				<templateId root="Haridus" extension="BA" assigningAuthorityName="Kõrgharidus"/>
+				<!-- kodakondsus -->
+				<templateId root="Kodakondsus" extension="EST" assigningAuthorityName="Eesti"/> 			
+				<!-- patsiendi nimi algus -->
+				<name>
+					<!-- eesnimi -->
+					<given>Mari-Liis</given>
+					<!-- perenimi -->
+					<family>Männik</family>
+				</name>
+				<!-- patsiendi nimi lõpp-->
+				<!-- sugu-->
+				<administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" displayName="naine"/>
+				<!-- sünniaeg-->
+				<birthTime value="19730220" xsi:type="IVL_TS">
+					<!-- code="" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM" aasta- a |kuu - mo|päev - d.-->
+					<width value="33" unit="a"/>
+				</birthTime>
+				<!-- -perekonnaseis -->
+				<maritalStatusCode code="M" codeSystem="2.16.840.1.113883.12.2" codeSystemName="Marital Status" displayName="abielus"/>
+				<!-- rahvus -->
+				<ethnicGroupCode code="EST" codeSystem="OIDnr" codeSystemName="Rahvus" displayName="eestlane"/>
+				<!-- kontakisikud algus-->
+				<guardian classCode="GUARD">
+					<!-- isikukood-->
+					<id root="ESTik" extension="43302200234"/>
+					<!-- kontaktisiku seos patsiendiga -->
+					<code code="MOTHER" codeSystem="OIDnr" codeSystemName="Kontaktisiku seos" displayName="ema"/>
+					<!-- kontakttelefon -->
+					<telecom use="MC" value="tel:+372 50 123 456"/>
+					<guardianPerson>
+						<name>
+							<!-- perenimi -->
+							<family>Männik</family>
+							<!-- eesnimi -->
+							<given>Maarja-Liis</given>
+						</name>
+					</guardianPerson>
+				</guardian>
+				<!-- kontakisikud lõpp-->
+				<!-- sünnikoht algus-->
+				<birthplace classCode="BIRTHPL">
+					<place>
+						<addr use="PHYS">
+							<country>EE</country>
+							<county>Tartumaa</county>
+							<city>Tartu</city>
+							<unitID>68905</unitID>
+						</addr>
+					</place>
+				</birthplace>
+				<!--  sünnikoht lõpp-->
+			</patient>
+			<!-- töökoha andmed algus-->
+			<providerOrganization classCode="ORG" determinerCode="INSTANCE">
+				<!-- amet -->
+				<templateId root="ISCO-88" extension="712" assigningAuthorityName="üldehitustöölised"/>
+				<!-- töökoha  nimetus -->
+				<name>OÜ Minu Tööandja</name>
+				<!-- tavategevusala-->
+				<standardIndustryClassCode code="1" codeSystem="OIDnr" codeSystemName="tavategevusala" displayName="töötav"/>
+			</providerOrganization>
+			<!-- töökoha andmed lõpp-->
+		</patientRole>
+	</recordTarget>
+	<!-- PATSIENDI ANDMED LÕPP-->
+	<!-- DOKUMENDI KOOSTAJA ANDMED ALGUS-->
+	<author typeCode="AUT">
+		<time/>
+		<assignedAuthor classCode="ASSIGNED">
+			<!-- dokumendi koostaja erialakood-->
+			<templateId root="ErialadeKlassifikaator" extension="E17" assigningAuthorityName="üldarstiabi"/>
+			<templateId root="ErialadeKlassifikaator" extension="E03" assigningAuthorityName="endokrinoloogia"/>
+			<!-- dokumendi koostaja identifikaator-->
+			<id root="ESTHCB" extension="D01910"/>
+			<id root="ESTik" extension="33914090629"/>
+			<code code="DOCTOR" codeSystem="OIDnr" codeSystemName="Tervishoiutöötajate tüüp" displayName="arst"/>
+			<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+				<name>
+					<given>Raivo</given>
+					<family>Ani</family>
+				</name>
+			</assignedPerson>
+			<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<!--asutuse identifikaatorid -->
+				<id root="eHLasut" extension="1000002345"/>
+				<id root="ESTregnr" extension="1234567"/>
+				<!-- asutuse nimetus-->
+				<name>SA Tartu Ülikooli Kliinikum</name>
+				<!-- asutuse kontaktandmed algus -->
+				<telecom value="tel:+372 7 123 456"/>
+				<telecom value="fax:+372 7 123 457"/>
+				<telecom value="mailto:epost@asutus.ee"/>
+				<!-- asutuse kontaktandmed lõpp -->
+				<!-- asutuse aadress algus -->
+				<addr use="PHYS">
+					<country>EE</country>
+					<county>Tartumaa</county>
+					<city>Tartu</city>
+					<streetAddressLine>Puusepa 1A </streetAddressLine>
+					<streetName>Puusepa</streetName>
+					<houseNumber>1A</houseNumber>
+					<additionalLocator>Kabinet 4019</additionalLocator>
+					<unitID>49576</unitID>
+					<postalCode>50700</postalCode>
+				</addr>
+				<!-- asutuse aadress lõpp-->
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<!-- DOKUMENDI KOOSTAJA ANDMED LÕPP-->
+	<!-- vastutaja algus-->
+	<custodian typeCode="CST">
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<!-- registrikood-->
+				<id root="ESTregnr" extension="1234567"/>
+				<!-- eestkostja -->
+				<name>SA Tartu Ülikooli Kliinikum</name>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<!-- vastutaja lõpp-->
+	<!-- seotud dokumendid algus-->
+	<relatedDocument typeCode="APND">
+		<!-- viide dokumendi "vanemale" algus-->
+		<parentDocument>
+			<id root="eHLdok" extension="a123"/>
+			<setId root="DLhaiguslugu" extension="BB35"/>
+			<versionNumber value="1"/>
+		</parentDocument>
+		<!-- viide dokumendi "vanemale" lõpp-->
+	</relatedDocument>
+	<!-- seotud dokumendid lõpp -->
+	<!-- sündmuse esilekutsuja andmed algus-->
+	<componentOf typeCode="COMP">
+		<encompassingEncounter>
+			<!-- identifikaator-->
+			<id root="eHLhl" extension="1000235632"/>
+			<id root="caseNr" extension="2006 06 1234-EQ"/>
+			<!-- sõnumi koostamise põhjustanud sündmuse kood -->
+			<code code="STAT" codeSystem="OIDnr" codeSystemName="Põhjustaja kood" displayName="Statsionaarne haigusjuht"/>
+			<!-- toimumise aeg algus-->
+			<effectiveTime>
+				<!-- tervishoiiasutusse saabumise kuupäev, haigusloo alguse kuupäev-->
+				<low value="20060401081300"/>
+				<!-- lahkumise kuupäev  haigusloo lõpu kuupäev-->
+				<high value="20060411232212"/>
+			</effectiveTime>
+			<!-- toimumise aeg lõpp-->
+			<!-- lõpe-->
+			<dischargeDispositionCode code="01" codeSystem="2.16.840.1.113883.12.112" codeSystemName="Discharge disposition" displayName="Home"/>
+			<!-- koht algus-->
+			<location typeCode="LOC">
+				<healthCareFacility classCode="SDLOC">
+					<serviceProviderOrganization classCode="ORG" determinerCode="INSTANCE">
+						<!-- registrikood -->
+						<id root="ESTregnr" extension="1234567"/>
+						<!-- nimi -->
+						<name>SA Tartu Ülikooli Kliinikum</name>
+					</serviceProviderOrganization>
+				</healthCareFacility>
+			</location>
+			<!-- koht lõpp-->
+		</encompassingEncounter>
+	</componentOf>
+	<!-- sündmuse esilekutsuja andmed lõpp-->
+	<!-- SISUOSA ALGUS-->
+	<component typeCode="COMP">
+		<structuredBody classCode="DOCBODY" moodCode="EVN">
+			<!--PEREARSTI ALGUS-->
+			<component typeCode="COMP">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!-- Sektsiooni üldandmed?-->
+					<!-- mis tüüpi sektsiooniga on tegu, perearstiks olemine -->
+					<code code="FAM" codeSystem="OIDnr" codeSystemName="Sektsiooni kodeering" displayName="Patsiendi perearst"/>
+					<!-- sektsiooni pealkiri -->
+					<title>Patsiendi perearst</title>
+					<!-- tekstilise kirjelduse algus -->
+					<text>
+						<paragraph>
+							<content>
+Nimi Tatjana Katjuk	Registreerimiskood D02910
+Erialad
+Kood	Eriala
+E17	
+Praksis Nõlvaku perearstikeskus
+Registreerimiskood 1234568							
+							</content>
+						</paragraph>
+					</text>
+					<!-- tekstilise kirjelduse lõpp -->
+					<entry typeCode="COMP">
+						<act classCode="ACT" moodCode="EVN">
+							<code code="FAM" codeSystem="OIDnr" codeSystemName="Sündmused" displayName="Perearsti nimistusse arvamine"/>
+							<!-- nimistus alates-->
+							<effectiveTime>
+								<low value="199906"/>
+							</effectiveTime>
+							<!-- PEREARSTI INFO ALGUS-->
+							<performer typeCode="PRF">
+								<!-- roll -->
+								<modeCode code="FAM" codeSystem="OIDnr" codeSystemName="Tervishoiutöötaja roll" displayName="perearst"/>
+								<assignedEntity>
+									<!-- perearsti erialakood-->
+									<templateId root="ErialadeKlassifikaator" extension="E17" assigningAuthorityName="üldarstiabi"/>
+									<!-- perearsti identifikaator-->
+									<id root="ESTHCB" extension="D02910"/>
+									<id root="ESTik" extension="44712092729"/>
+									<code code="DOCTOR" codeSystem="OIDnr" codeSystemName="Tervishoiutöötajate tüüp" displayName="arst"/>
+									<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+										<name>
+											<given>Tatjana</given>
+											<family>Katjuk</family>
+										</name>
+									</assignedPerson>
+									<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+										<!--asutuse identifikaatorid -->
+										<id root="eHLasut" extension="1000002345"/>
+										<id root="ESTregnr" extension="1234568"/>
+										<!-- asutuse nimetus-->
+										<name>Nõlvaku perearstikeskus</name>
+										<!-- asutuse kontaktandmed algus -->
+										<telecom value="tel:+372 7 123 456"/>
+										<telecom value="fax:+372 7 123 457"/>
+										<telecom value="mailto:epost@asutus.ee"/>
+										<!-- asutuse kontaktandmed lõpp -->
+										<!-- asutuse aadress -->
+										<addr use="PHYS">
+											<country>EE</country>
+											<county>Tartumaa</county>
+											<city>Tartu</city>
+											<streetAddressLine>Nõlvaku 13 </streetAddressLine>
+											<unitID>49576</unitID>
+										</addr>
+										<!-- asutuse tüüp -->
+										<standardIndustryClassCode code="PRA" codeSystem="OIDnr" codeSystemName="Organisatsiooni tüüp" displayName="Praksis"/>
+									</representedOrganization>
+								</assignedEntity>
+							</performer>
+							<!-- PEREARSTI INFO LÕPP-->
+						</act>
+					</entry>
+				</section>
+			</component>
+			<!-- PEREARSTI LÕPP-->
+			<!-- SUUNAJA ALGUS-->
+			<component typeCode="COMP">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!-- Sektsiooni üldandmed?-->
+					<!-- mis tüüpi sektsiooniga on tegu -->
+					<code code="REF" codeSystem="OIDnr" codeSystemName="Sektsiooni kodeering" displayName="Suunaja andmed"/>
+					<!-- sektsiooni pealkiri -->
+					<title>Suunaja andmed</title>
+					<!-- tekstilise kirjelduse algus -->
+					<text>
+						<paragraph>
+							<content>
+Nimi Raivo Ani	Registreerimiskood D01910
+Erialad
+Kood	Eriala
+E17	
+E42	
+Tervishoiuasutus AS Tamme Erakliinik
+Registreerimiskood 1234567						
+							</content>
+						</paragraph>
+					</text>
+					<!-- tekstilise kirjelduse lõpp -->
+					<entry typeCode="COMP">
+						<act classCode="ACT" moodCode="EVN">
+							<code code="REF" codeSystem="OIDnr" codeSystemName="Sündmused" displayName="Suunamine"/>
+							<!-- SUUNAJA INFO ALGUS-->
+							<performer typeCode="PRF">
+								<!-- roll -->
+								<modeCode code="REF" codeSystem="OIDnr" codeSystemName="Tervishoiutöötaja roll" displayName="suunav arst"/>
+								<assignedEntity>
+									<!-- suunaja erialakood-->
+									<templateId root="ErialadeKlassifikaator" extension="E17" assigningAuthorityName="üldarstiabi"/>
+									<templateId root="ErialadeKlassifikaator" extension="E42" assigningAuthorityName="otorinolarüngoloogia"/>
+									<!-- suunaja identifikaator-->
+									<id root="ESTHCB" extension="D01910"/>
+									<id root="ESTik" extension="45712092729"/>
+									<code code="DOCTOR" codeSystem="OIDnr" codeSystemName="Tervishoiutöötajate tüüp" displayName="arst"/>
+									<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+										<name>
+											<given>Raivo</given>
+											<family>Ani</family>
+										</name>
+									</assignedPerson>
+									<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+										<!--asutuse identifikaatorid -->
+										<id root="eHLasut" extension="1000002345"/>
+										<id root="ESTregnr" extension="1234567"/>
+										<!-- asutuse nimetus-->
+										<name>AS Tamme Erakliinik</name>
+										<!-- asutuse kontaktandmed algus -->
+										<telecom value="tel:+372 7 123 456"/>
+										<telecom value="fax:+372 7 123 457"/>
+										<telecom value="mailto:epost@asutus.ee"/>
+										<!-- asutuse kontaktandmed lõpp -->
+										<!-- asutuse aadress -->
+										<addr use="PHYS">
+											<country>EE</country>
+											<county>Tartumaa</county>
+											<city>Tartu</city>
+											<streetAddressLine>Tame pst  11 </streetAddressLine>
+											<unitID>49575</unitID>
+										</addr>
+										<!-- Asutuse tüüp -->
+										<standardIndustryClassCode code="HEA" codeSystem="OIDnr" codeSystemName="Organisatsiooni tüüp" displayName="Tervishoiuasutus"/>
+									</representedOrganization>
+								</assignedEntity>
+							</performer>
+							<!-- SUUNAJA INFO LÕPP-->
+						</act>
+					</entry>
+				</section>
+			</component>
+			<!-- SUUNAJA LÕPP-->
+			<!-- HAIGLAS VIIBIMINE ALGUS-->
+			<component typeCode="COMP">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!-- Sektsiooni üldandmed?-->
+					<!-- mis tüüpi sektsiooniga on tegu -->
+					<code code="HOSP" codeSystem="OIDnr" codeSystemName="Sektsiooni kodeering" displayName="Haiglas viibimine"/>
+					<!-- sektsiooni pealkiri -->
+					<title>Haiglas viibimine</title>
+					<!-- tekstilise kirjelduse algus-->
+					<text>
+						<paragraph>
+							<content>
+Külastuse tüüp plaaniline	Algus 01.04.2006 08:13:00	Lõpp 11.04.2006 23:22:12
+Osakondades viibimine
+Kliinik	Osakond	Saabus	Lahkus	Voodipäevi
+Kopsukliinik	Pulmonoloogia osakond	01.04.2006	03.04.2006	2
+Kopsukliinik	Intensiivravi osakond	03.04.2006	11.04.2006	8
+Voodipäevi kokku 10
+Suunati SA Tartu Ülikooli Kliinikum
+Registreerimiskood 1234567
+Surm	Teatise number 93276473
+Surma aeg 11.04.2006 23:22:12	Vormistamise kuupäev 12.04.2006
+					</content>
+						</paragraph>
+					</text>
+					<!-- tekstilise kirjelduse lõpp -->
+					<entry typeCode="COMP">
+						<!-- -HAIGLAS VIIBIMISE INFO ALGUS -->
+						<encounter classCode="ENC" moodCode="EVN">
+							<!-- haiglasviibimise identifikator-->
+							<id root="eHLhl" extension="1234567"/>
+							<id root="caseNr" extension="2006 06 1234-EQ"/>
+							<!-- Haiglas viibimise tunnus -->
+							<code code="CUR" codeSystem="OIDnr" codeSystemName="Haiglas viibimine" displayName="käesolev haigusjuht"/>
+							<!-- aja info algus-->
+							<effectiveTime>
+								<!-- tervishoiiasutusse saabumise kuupäev, haigusloo alguse kuupäev-->
+								<low value="20060401081300"/>
+								<!-- lahkumise kuupäev  haigusloo lõpu kuupäev-->
+								<high value="20060411232212"/>
+							</effectiveTime>
+							<!-- aja info lõpp-->
+							<!-- saabumise erakorralisus-->
+							<priorityCode code="R" codeSystem="2.16.840.1.113883.5.7" codeSystemName="ActPriority" displayName="plaaniline"/>
+							<!-- asutuse/arsti info algus -->
+							<!-- edastame ainult asutuse info -->
+							<performer typeCode="PRF">
+								<!-- roll -->
+								<modeCode code="TRE" codeSystem="OIDnr" codeSystemName="Tervishoiutöötaja roll" displayName="ravi teostav asutus/allüksus"/>
+								<!-- kohustuslik väli -->
+								<assignedEntity>
+									<id/>
+									<!-- asutuse andmed algus -->
+									<representedOrganization>
+										<!-- asutuse registrikood-->
+										<id root="ESTregnr" extension="1234567"/>
+										<!-- asutuse nimetus -->
+										<name>SA Tartu Ülikooli Kliinikum</name>
+									</representedOrganization>
+									<!-- asutuse andme lõpp-->
+								</assignedEntity>
+							</performer>
+							<!-- asutuse arsti info lõpp-->
+							<!-- külastus 1 algus-->
+							<entryRelationship typeCode="REFR">
+								<encounter classCode="ENC" moodCode="EVN">
+									<!-- külastuse identifikator-->
+									<id root="eHLvisiit" extension="1234567"/>
+									<id root="visitNr" extension="EA-2187912"/>
+									<!-- külastuse tunnus -->
+									<code code="CUR" codeSystem="OIDnr" codeSystemName="Haiglas viibimine" displayName="käesolev haigusjuht"/>
+									<!-- aja info algus-->
+									<effectiveTime>
+										<!-- saabumise kuupäev-->
+										<low value="20060401081400"/>
+										<!-- lahkumise kuupäev-->
+										<high value="20060403123328"/>
+									</effectiveTime>
+									<!-- aja info lõpp-->
+									<!-- saabumisviis-->
+									<priorityCode code="R" codeSystem="2.16.840.1.113883.5.7" codeSystemName="ActPriority" displayName="plaaniline"/>
+									<!-- asutuse/arsti info algus -->
+									<!-- edastame ainult asutuse ja osakonna info -->
+									<performer typeCode="PRF">
+										<!-- roll -->
+										<modeCode code="TRE" codeSystem="OIDnr" codeSystemName="Tervishoiutöötaja roll" displayName="ravi teostav asutus/allüksus"/>
+										<!-- kohustuslik väli-->
+										<assignedEntity>
+											<id/>
+											<representedOrganization>
+												<!-- asutuse registrikood-->
+												<id root="ESTregnr" extension="1234567"/>
+												<!-- asutuse nimetus-->
+												<name>SA Tartu Ülikooli Kliinikum</name>
+												<!-- struktuuriüksuste info algus-->
+												<asOrganizationPartOf classCode="PART">
+													<!-- Kliiniku kood ja nimetus-->
+													<code code="60" codeSystem="OIDnr" codeSystemName="TYK" displayName="Kopsukliinik"/>
+													<wholeOrganization classCode="ORG" determinerCode="INSTANCE">
+														<asOrganizationPartOf classCode="PART">
+															<!-- Osakonna kood ja nimetus-->
+															<code code="6020" codeSystem="OIDnr" codeSystemName="TYK" displayName="Pulmonoloogia osakond"/>
+															<wholeOrganization classCode="ORG" determinerCode="INSTANCE">
+																<asOrganizationPartOf classCode="PART">
+																	<!-- allüksuse eriala-->
+																	<templateId root="StruktuuryksusteErialad" extension="V02" assigningAuthorityName="sisehaigused"/>
+																	<!-- allüksuse kood ja nimetus -->
+																	<code code="602010" codeSystem="OIDnr" codeSystemName="TYK" displayName="Pulmonoloogia statsionaar"/>
+																</asOrganizationPartOf>
+															</wholeOrganization>
+														</asOrganizationPartOf>
+													</wholeOrganization>
+												</asOrganizationPartOf>
+												<!-- struktuuriüksuste info lõpp-->
+											</representedOrganization>
+										</assignedEntity>
+									</performer>
+									<!-- asutuse/arsti info lõpp -->
+									<!-- Voodipäevade arv algus-->
+									<precondition typeCode="PRCN">
+										<criterion classCode="OBS" moodCode="EVN.CRT">
+											<!-- kriteerium-->
+											<code code="DAYS" codeSystem="OIDnr" codeSystemName="Kriteeriumi liik" displayName="Voodipäevade arv"/>
+											<!-- voodipäevade arv päevadest -->
+											<value value="2" xsi:type="INT"/>
+										</criterion>
+									</precondition>
+									<!-- Voodipäevade arv lõpp -->
+								</encounter>
+							</entryRelationship>
+							<!-- külastus 1 lõpp-->
+							<!-- külastus 2 algus-->
+							<entryRelationship typeCode="REFR">
+								<encounter classCode="ENC" moodCode="EVN">
+									<!-- külastuse identifikator-->
+									<id root="eHLvisiit" extension="1234567"/>
+									<id root="visitNr" extension="EA-2187912"/>
+									<!-- külastuse tunnus -->
+									<code code="CUR" codeSystem="OIDnr" codeSystemName="Haiglas viibimine" displayName="käesolev haigusjuht"/>
+									<!-- aja info algus-->
+									<effectiveTime>
+										<!-- saabumise kuupäev-->
+										<low value="20060403123328"/>
+										<!-- lahkumise kuupäev-->
+										<high value="20060411232212"/>
+									</effectiveTime>
+									<!-- aja info lõpp-->
+									<!-- saabumisviis-->
+									<priorityCode code="R" codeSystem="2.16.840.1.113883.5.7" codeSystemName="ActPriority" displayName="plaaniline"/>
+									<!-- asutuse/arsti info algus -->
+									<!-- edastame ainult asutuse ja osakonna info -->
+									<performer typeCode="PRF">
+										<!-- roll -->
+										<modeCode code="TRE" codeSystem="OIDnr" codeSystemName="Tervishoiutöötaja roll" displayName="ravi teostav asutus/allüksus"/>
+										<assignedEntity>
+											<id/>
+											<representedOrganization>
+												<!-- asutuse registrikood-->
+												<id root="ESTregnr" extension="1234567"/>
+												<!-- asutuse nimetus-->
+												<name>SA Tartu Ülikooli Kliinikum</name>
+												<!-- struktuuriüksuste info algus-->
+												<asOrganizationPartOf classCode="PART">
+													<!-- Kliiniku kood ja nimetus-->
+													<code code="60" codeSystem="OIDnr" codeSystemName="TYK" displayName="Kopsukliinik"/>
+													<wholeOrganization classCode="ORG" determinerCode="INSTANCE">
+														<asOrganizationPartOf classCode="PART">
+															<!-- Osakonna kood ja nimetus-->
+															<code code="6030" codeSystem="OIDnr" codeSystemName="TYK" displayName="Intensiivravi osakond"/>
+															<wholeOrganization classCode="ORG" determinerCode="INSTANCE">
+																<asOrganizationPartOf classCode="PART">
+																	<!-- allüksuse eriala-->
+																	<templateId root="StruktuuryksusteErialad" extension="V02" assigningAuthorityName="sisehaigused"/>
+																	<!-- allüksuse kood ja nimetus -->
+																	<code code="603010" codeSystem="OIDnr" codeSystemName="TYK" displayName="Pulmonoloogia intesiivi statsionaar"/>
+																</asOrganizationPartOf>
+															</wholeOrganization>
+														</asOrganizationPartOf>
+													</wholeOrganization>
+												</asOrganizationPartOf>
+												<!-- struktuuriüksuste info lõpp-->
+											</representedOrganization>
+										</assignedEntity>
+									</performer>
+									<!-- suunati asutusse algus-->
+									<entryRelationship typeCode="REFR">
+										<encounter classCode="ENC" moodCode="EVN">
+											<!-- külastuse tunnus -->
+											<code code="NXT" codeSystem="OIDnr" codeSystemName="Haiglas viibimine" displayName="järgnev, suunatud asutus"/>
+											<!-- viimase, haigusjuhtu lõpetava suunamise tunnus: "completed"-->
+											<!-- <statusCode code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/> -->
+											<statusCode code="completed"/>
+											<performer typeCode="PRF">
+												<!-- roll -->
+												<modeCode code="REF" codeSystem="OIDnr" codeSystemName="Tervishoiutöötaja roll" displayName="suunatud asutus"/>
+												<assignedEntity>
+													<id/>
+													<representedOrganization>
+														<!-- asutuse registrikood -->
+														<id root="ESTregnr" extension="1234567"/>
+														<!-- asutuse nimetus -->
+														<name>SA Tartu Ülikooli Kliinikum</name>
+													</representedOrganization>
+												</assignedEntity>
+											</performer>
+											<!-- Haigusjuhu tüüp algus-->
+											<precondition typeCode="PRCN">
+												<criterion classCode="OBS" moodCode="EVN.CRT">
+													<!-- kriteerium-->
+													<code code="SCASE" codeSystem="OIDnr" codeSystemName="Kriteeriumi liik" displayName="Haigusjuhu tüüp"/>
+													<!-- Haigusjuhu tüüp: ambulatoorne|statsionaarne|päevastatsionaar-->
+													<value code="STAT" codeSystem="OIDnr" codeSystemName="Haigusjuhu tüüp" displayName="statsionaarne" xsi:type="CD"/>
+												</criterion>
+											</precondition>
+											<!-- haigusjuhu tüüp lõpp -->
+										</encounter>
+									</entryRelationship>
+									<!-- suunati asutusse lõpp-->
+									<!-- Voodipäevade arv algus-->
+									<precondition typeCode="PRCN">
+										<criterion classCode="OBS" moodCode="EVN.CRT">
+											<!-- kriteerium-->
+											<code code="DAYS" codeSystem="OIDnr" codeSystemName="Kriteeriumi liik" displayName="Voodipäevade arv"/>
+											<!-- voodipäevade arv päevadest -->
+											<value value="8" xsi:type="INT"/>
+										</criterion>
+									</precondition>
+									<!-- Voodipäevade arv lõpp -->
+									<!-- asutuse/arsti info lõpp -->
+								</encounter>
+							</entryRelationship>
+							<!-- külastus 2 lõpp-->
+							<!-- surma info algus-->
+							<entryRelationship typeCode="REFR">
+								<act classCode="ACT" moodCode="EVN">
+									<!-- sündmuse kood -->
+									<code code="DEATH" codeSystem="OIDnr" codeSystemName="Sündmused" displayName="Surm"/>
+									<!-- surma aeg -->
+									<effectiveTime value="20060411232212"/>
+									<reference typeCode="REFR">
+										<!-- seotud dokumendi andmed algus-->
+										<externalDocument classCode="DOC" moodCode="EVN">
+											<!-- surmateatise number -->
+											<id root="SurmatoendiNr" extension="93276473"/>
+											<code code="DEATHCERT" codeSystem="OIDnr" codeSystemName="Dokumendi tüüp" displayName="Surmatõend"/>
+										</externalDocument>
+										<!-- seotud dokumendi andmed lõpp -->
+									</reference>
+									<!-- Surmatõendi väljastamise aeg algus-->
+									<precondition typeCode="PRCN">
+										<criterion classCode="OBS" moodCode="EVN.CRT">
+											<!-- kriteerium-->
+											<code code="DOCCRT" codeSystem="OIDnr" codeSystemName="Kriteeriumi liik" displayName="Dokumendi koostamise aeg"/>
+											<!-- aeg -->
+											<value value="20060412232212" xsi:type="TS"/>
+										</criterion>
+									</precondition>
+									<!-- Surmatõendi väljasstamise  lõpp-->
+								</act>
+							</entryRelationship>
+							<!-- surma info lõpp-->
+							<!-- Haigusjuhu tüüp algus-->
+							<precondition typeCode="PRCN">
+								<criterion classCode="OBS" moodCode="EVN.CRT">
+									<!-- kriteerium-->
+									<code code="SCASE" codeSystem="OIDnr" codeSystemName="Kriteeriumi liik" displayName="Haigusjuhu tüüp"/>
+									<!-- Haigusjuhu tüüp -->
+									<value code="STAT" codeSystem="OIDnr" codeSystemName="Haigusjuhu tüüp" displayName="statsionaarne" xsi:type="CD"/>
+								</criterion>
+							</precondition>
+							<!-- haigusjuhu tüüp lõpp -->
+							<!-- Voodipäevade arv algus-->
+							<precondition typeCode="PRCN">
+								<criterion classCode="OBS" moodCode="EVN.CRT">
+									<!-- kriteerium-->
+									<code code="DAYS" codeSystem="OIDnr" codeSystemName="Kriteeriumi liik" displayName="Voodipäevade arv"/>
+									<!-- voodipäevade arv päevadest -->
+									<value value="10" xsi:type="INT"/>
+								</criterion>
+							</precondition>
+							<!-- Voodipäevade arv lõpp -->
+							<!-- Saabumise viis (kiirabi, poltsei, tuli ise, tagasi kutsutud) algus-->
+							<precondition typeCode="PRCN">
+								<criterion classCode="OBS" moodCode="EVN.CRT">
+									<!-- kriteerium-->
+									<code code="ADM" codeSystem="OIDnr" codeSystemName="Kriteeriumi liik" displayName="Saabumise viis"/>
+									<!-- Saabumise viis -->
+									<value code="T0004" codeSystem="OIDnr" codeSystemName="Saabumise viis" displayName="politsei" xsi:type="CD"/>
+								</criterion>
+							</precondition>
+							<!-- Saabumise viis lõpp-->
+						</encounter>
+						<!-- HAIGLAS VIIBIMISE INFO LÕPP -->
+					</entry>
+				</section>
+			</component>
+			<!-- HAIGLAS VIIBIMINE LÕPP-->
+			<!-- DIAGNOOSID ALGUS-->
+			<component typeCode="COMP">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!-- Sektsiooni üldandmed?-->
+					<!-- mis tüüpi sektsiooniga on tegu -->
+					<code code="DGN" codeSystem="OIDnr" codeSystemName="Sektsiooni kodeering" displayName="Lõplik kliiniline diagnoos"/>
+					<!-- sektsiooni pealkiri -->
+					<title>Lõplik kliiniline diagnoos</title>
+					<!-- tekstilise kirjelduse algus-->
+					<text>
+						<paragraph>
+							<content>
+Diagnoos	Täpsustus	Korduvus
+M48.4 - LÜLIKEHA KOMPRESSIOONMURD	Kompressioonmurd lülikehal.	esmajuht elus
+Põhihaiguse tüsistused
+Diagnoos	Täpsustus	Korduvus
+T81.5 - Kogemata operatsioonipiirkonda jäetud võõrkeha	Käärid kõhukoopas	esmajuht elus
+Kaasuvad haigused
+Diagnoos	Täpsustus	Korduvus
+I15.9 - TÄPSUSTAMATA SEKUNDAARNE HÜPERTENSIOON	Sekundaarne hüpertensioon	kordusjuht elus
+E78.2 - SEGAHÜPERLIPIDEEMIA		esmajuht elus
+Välispõhjused
+Diagnoos	Täpsustus	Korduvus
+X79 - Tahtlik enesekahjustus tömbi esemega	Tahtlik vigastamine nuiaga	määramata
+Pahaloomulise kasvaja levik
+Diagnoos	Täpsustus	Staadium
+y-T0-N1-M1-G1-R1 - TNM väärtus	TNM täpsustamine	IIa
+					</content>
+						</paragraph>
+					</text>
+					<!-- tekstilise kirjelduse lõpp -->
+					<!-- põhihiagus algus-->
+					<entry typeCode="COMP">
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- eristab mis liiki Observation kirjega on tegemist-->
+							<code code="DGN" codeSystem="OIDnr" codeSystemName="Observation liik" displayName="Diagnoos"/>
+							<!-- staatus: lõplik-->
+							<!-- <statusCode code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/> -->
+							<statusCode code="completed"/>
+							<!-- diagnoosi kood ja sellele standardi järgi vastav väärtus -->
+							<value code="M48.4" codeSystem="2.16.840.1.113883.6.3" codeSystemName="ICD-10" displayName="LÜLIKEHA KOMPRESSIOONMURD" xsi:type="CD">
+								<!-- arsti poolt sisestatud vabatekst -->
+								<originalText>Kompressioonmurd lülikehal.</originalText>
+								<!-- diagnoosi täpsustus (korduvus)-->
+								<qualifier>
+									<value code="+" codeSystem="OIDnr" codeSystemName="Diagnoosi korduvus" displayName="esmajuht elus"/>
+								</qualifier>
+							</value>
+							<!-- täpsustab millist liiki Observation kirje on -->
+							<interpretationCode code="MAIN" codeSystem="OIDnr" codeSystemName="Diagnoosi tüübid" displayName="Põhihaigus"/>
+							<!-- diagnoosi määraja algus-->
+							<performer typeCode="PRF">
+								<!-- roll -->
+								<modeCode code="DGN" codeSystem="OIDnr" codeSystemName="Tervishoiutöötaja roll" displayName="diagnoosi määraja"/>
+								<assignedEntity>
+									<!-- diagnoosi määraja identifikaator-->
+									<id root="ESTHCB" extension="D01910"/>
+									<id root="ESTik" extension="34712092729"/>
+									<code code="DOCTOR" codeSystem="OIDnr" codeSystemName="Tervishoiutöötajate tüüp" displayName="arst"/>
+									<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+										<name>
+											<given>Raivo</given>
+											<family>Ani</family>
+										</name>
+									</assignedPerson>
+								</assignedEntity>
+							</performer>
+							<!-- diagnoosi määraja lõpp-->
+						</observation>
+					</entry>
+					<!-- põhihaigus lõpp -->
+					<!-- põhihaiguse tüsistus algus-->
+					<entry typeCode="COMP">
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- eristab mis liiki Observation kirjega on tegemist-->
+							<code code="DGN" codeSystem="OIDnr" codeSystemName="Observation liik" displayName="Diagnoos"/>
+							<!-- staatus: lõplik-->
+							<!-- <statusCode code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/> -->
+							<statusCode code="completed"/>
+							<!-- diagnoosi kood ja sellele standardi järgi vastav väärtus -->
+							<value code="T81.5" codeSystem="2.16.840.1.113883.6.3" codeSystemName="ICD-10" displayName="Kogemata operatsioonipiirkonda jäetud võõrkeha" xsi:type="CD">
+								<!-- arsti poolt sisestatud vabatekst -->
+								<originalText>Käärid kõhukoopas</originalText>
+								<!-- diagnoosi täpsustus (korduvus)-->
+								<qualifier>
+									<value code="+" codeSystem="OIDnr" codeSystemName="Diagnoosi korduvus" displayName="esmajuht elus"/>
+								</qualifier>
+							</value>
+							<!-- täpsustab millist liiki Observation kirje on -->
+							<interpretationCode code="MAIN_COMPL" codeSystem="OIDnr" codeSystemName="Diagnoosi tüübid" displayName="Põhihaiguse tüsistus"/>
+							<!-- diagnoosi määraja algus-->
+							<performer typeCode="PRF">
+								<!-- roll -->
+								<modeCode code="DGN" codeSystem="OIDnr" codeSystemName="Tervishoiutöötaja roll" displayName="diagnoosi määraja"/>
+								<assignedEntity>
+									<!-- dokumendi koostaja identifikaator-->
+									<id root="ESTHCB" extension="D02910"/>
+									<id root="ESTik" extension="44712092729"/>
+									<code code="DOCTOR" codeSystem="OIDnr" codeSystemName="Tervishoiutöötajate tüüp" displayName="arst"/>
+									<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+										<name>
+											<given>Tatjana</given>
+											<family>Katjuk</family>
+										</name>
+									</assignedPerson>
+								</assignedEntity>
+							</performer>
+							<!-- diagnoosi määraja lõpp-->
+						</observation>
+					</entry>
+					<!-- põhihaiguse tüsistus lõpp-->
+					<!-- kaasuv haigus 1 algus -->
+					<entry typeCode="COMP">
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- eristab mis liiki Observation kirjega on tegemist-->
+							<code code="DGN" codeSystem="OIDnr" codeSystemName="Observation liik" displayName="Diagnoos"/>
+							<!-- staatus: lõplik-->
+							<!-- <statusCode code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/> -->
+							<statusCode code="completed"/>
+							<!-- diagnoosi kood ja sellele standardi järgi vastav väärtus -->
+							<value code="I15.9" codeSystem="2.16.840.1.113883.6.3" codeSystemName="ICD-10" displayName="TÄPSUSTAMATA SEKUNDAARNE HÜPERTENSIOON" xsi:type="CD">
+								<!-- arsti poolt sisestatud vabatekst -->
+								<originalText>Sekundaarne hüpertensioon</originalText>
+								<!-- diagnoosi täpsustus (korduvus)-->
+								<qualifier>
+									<value code="-" codeSystem="OIDnr" codeSystemName="Diagnoosi korduvus" displayName="kordusjuht elus"/>
+								</qualifier>
+							</value>
+							<!-- täpsustab millist liiki Observation kirje on -->
+							<interpretationCode code="BY_ILLNESS" codeSystem="OIDnr" codeSystemName="Diagnoosi tüübid" displayName="Kaasuv haigus"/>
+							<!-- diagnoosi määraja algus-->
+							<performer typeCode="PRF">
+								<!-- roll -->
+								<modeCode code="DGN" codeSystem="OIDnr" codeSystemName="Tervishoiutöötaja roll" displayName="diagnoosi määraja"/>
+								<assignedEntity>
+									<!-- dokumendi koostaja identifikaator-->
+									<id root="ESTHCB" extension="D02910"/>
+									<id root="ESTik" extension="44712092729"/>
+									<code code="DOCTOR" codeSystem="OIDnr" codeSystemName="Tervishoiutöötajate tüüp" displayName="arst"/>
+									<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+										<name>
+											<given>Tatjana</given>
+											<family>Katjuk</family>
+										</name>
+									</assignedPerson>
+								</assignedEntity>
+							</performer>
+							<!-- diagnoosi määraja lõpp-->
+						</observation>
+					</entry>
+					<!-- kaasuv haigus 1 lõpp -->
+					<!-- kaasuv haigus 2 algus -->
+					<entry typeCode="COMP">
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- eristab mis liiki Observation kirjega on tegemist-->
+							<code code="DGN" codeSystem="OIDnr" codeSystemName="Observation liik" displayName="Diagnoos"/>
+							<!-- staatus: lõplik-->
+							<!-- <statusCode code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/> -->
+							<statusCode code="completed"/>
+							<!-- diagnoosi kood ja sellele standardi järgi vastav väärtus -->
+							<value code="E78.2" codeSystem="2.16.840.1.113883.6.3" codeSystemName="ICD-10" displayName="SEGAHÜPERLIPIDEEMIA" xsi:type="CD">
+								<!-- arsti poolt sisestatud vabatekst -->
+								<originalText/>
+								<!-- diagnoosi täpsustus (korduvus)-->
+								<qualifier>
+									<value code="+" codeSystem="OIDnr" codeSystemName="Diagnoosi korduvus" displayName="esmajuht elus"/>
+								</qualifier>
+							</value>
+							<!-- täpsustab millist liiki Observation kirje on -->
+							<interpretationCode code="BY_ILLNESS" codeSystem="OIDnr" codeSystemName="Diagnoosi tüübid" displayName="Kaasuv haigus"/>
+							<!-- diagnoosi määraja algus-->
+							<performer typeCode="PRF">
+								<!-- roll -->
+								<modeCode code="DGN" codeSystem="OIDnr" codeSystemName="Tervishoiutöötaja roll" displayName="diagnoosi määraja"/>
+								<assignedEntity>
+									<!-- dokumendi koostaja identifikaator-->
+									<id root="ESTHCB" extension="D02910"/>
+									<id root="ESTik" extension="44712092729"/>
+									<code code="DOCTOR" codeSystem="OIDnr" codeSystemName="Tervishoiutöötajate tüüp" displayName="arst"/>
+									<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+										<name>
+											<given>Tatjana</given>
+											<family>Katjuk</family>
+										</name>
+									</assignedPerson>
+								</assignedEntity>
+							</performer>
+							<!-- diagnoosi määraja lõpp-->
+						</observation>
+					</entry>
+					<!-- kaasuv haigus 2 lõpp -->
+					<!-- välispõhjus algus -->
+					<entry typeCode="COMP">
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- eristab mis liiki Observation kirjega on tegemist-->
+							<code code="DGN" codeSystem="OIDnr" codeSystemName="Observation liik" displayName="Diagnoos"/>
+							<!-- staatus: lõplik-->
+							<!-- <statusCode code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/> -->
+							<statusCode code="completed"/>
+							<!-- diagnoosi kood ja sellele standardi järgi vastav väärtus ICD-10 kodeeringus-->
+							<value code="X79" codeSystem="2.16.840.1.113883.6.3" codeSystemName="ICD-10" displayName="Tahtlik enesekahjustus tömbi esemega" xsi:type="CD">
+								<!-- arsti poolt sisestatud vabatekst -->
+								<originalText>Tahtlik vigastamine nuiaga</originalText>
+								<!-- diagnoosi täpsustus (korduvus)-->
+								<qualifier>
+									<value code="+" codeSystem="OIDnr" codeSystemName="Diagnoosi korduvus" displayName="määramata"/>
+								</qualifier>
+							</value>
+							<!-- diagnoosi kood ja sellele standardi järgi vastav väärtus IDB kodeeringus-->
+							<value code="123" codeSystem="OIDnr" codeSystemName="IDB" displayName="Kukkumine" xsi:type="CD">
+								<!-- arsti poolt sisestatud vabatekst -->
+								<originalText>Kukkus trepist alla</originalText>
+								<!-- diagnoosi täpsustus (korduvus)-->
+								<qualifier>
+									<value code="+" codeSystem="OIDnr" codeSystemName="Diagnoosi korduvus" displayName="esmajuht elus"/>
+								</qualifier>
+							</value>
+							<!-- täpsustab millist liiki Observation kirje on -->
+							<interpretationCode code="OUTER" codeSystem="OIDnr" codeSystemName="Diagnoosi tüübid" displayName="Välispõhjus"/>
+							<!-- diagnoosi määraja algus-->
+							<performer typeCode="PRF">
+								<!-- roll -->
+								<modeCode code="DGN" codeSystem="OIDnr" codeSystemName="Tervishoiutöötaja roll" displayName="diagnoosi määraja"/>
+								<assignedEntity>
+									<!-- dokumendi koostaja identifikaator-->
+									<id root="ESTHCB" extension="D02910"/>
+									<id root="ESTik" extension="44712092729"/>
+									<code code="DOCTOR" codeSystem="OIDnr" codeSystemName="Tervishoiutöötajate tüüp" displayName="arst"/>
+									<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+										<name>
+											<given>Tatjana</given>
+											<family>Katjuk</family>
+										</name>
+									</assignedPerson>
+								</assignedEntity>
+							</performer>
+							<!-- diagnoosi määraja lõpp-->
+						</observation>
+					</entry>
+					<!-- välispõhjus lõpp -->
+					<!-- pahaloomulise kasvaja levik algus -->
+					<entry typeCode="COMP">
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- eristab mis liiki Observation kirjega on tegemist-->
+							<code code="DGN" codeSystem="OIDnr" codeSystemName="Observation liik" displayName="Diagnoos"/>
+							<!-- staatus: lõplik-->
+							<!-- <statusCode code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/> -->
+							<statusCode code="completed"/>
+							<!-- TNM klassifikaatori kood ja sellele standardi järgi vastav väärtus -->
+							<!-- -->
+							<value code="y-T0-N1-M1-G1-R1" codeSystem="OIDnr" codeSystemName="TNM" displayName="TNM väärtus" xsi:type="CD">
+								<!-- arsti poolt sisestatud vabatekst ??? -->
+								<originalText>TNM täpsustamine</originalText>
+								<!-- TNM staadium-->
+								<qualifier>
+									<value code="IIa" codeSystem="OIDnr" codeSystemName="TNM staadium" displayName="IIa"/>
+								</qualifier>
+							</value>
+							<!-- täpsustab millist liiki Observation kirje on -->
+							<interpretationCode code="TNM" codeSystem="OIDnr" codeSystemName="Diagnoosi tüübid" displayName="Pahaloomulise kasvaja levik"/>
+							<!-- diagnoosi määraja algus-->
+							<performer typeCode="PRF">
+								<!-- roll -->
+								<modeCode code="DGN" codeSystem="OIDnr" codeSystemName="Tervishoiutöötaja roll" displayName="diagnoosi määraja"/>
+								<assignedEntity>
+									<!-- diagnoosi määraja identifikaator-->
+									<id root="ESTHCB" extension="D02910"/>
+									<id root="ESTik" extension="44712092729"/>
+									<code code="DOCTOR" codeSystem="OIDnr" codeSystemName="Tervishoiutöötajate tüüp" displayName="arst"/>
+									<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+										<name>
+											<given>Tatjana</given>
+											<family>Katjuk</family>
+										</name>
+									</assignedPerson>
+								</assignedEntity>
+							</performer>
+							<!-- diagnoosi määraja lõpp-->
+						</observation>
+					</entry>
+					<!-- pahaloomulise kasvaja levik lõpp -->
+				</section>
+			</component>
+			<!-- DIAGNOOSID LÕPP-->
+			<!-- ANAMNEES, KULG ALGUS-->
+			<component typeCode="COMP">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!-- Sektsiooni üldandmed?-->
+					<!-- mis tüüpi sektsiooniga on tegu -->
+					<code code="ANAM" codeSystem="OIDnr" codeSystemName="Sektsiooni kodeering" displayName="Anamnees, diagnoosi põhjendus ja haiguse kulg"/>
+					<!-- sektsiooni pealkiri -->
+					<title>Anamnees, diagnoosi põhjendus ja haiguse kulg</title>
+					<!-- tekstiline kirjeldus algus-->
+					<text>
+						<paragraph ID="ANAMSUM">
+							<!-- kirjeldus -->
+							<content>Hospitaliseeritud plaaniliseltt kaebustega pidevale tuimale
+seljavalule parema alaselps ja tuharas 6 kuu jooksul, selg ei paindu. Maks ja porn vaga suurel
+maaraT suurenenud.</content>
+						</paragraph>
+						<!-- anamneesi, dgn ja haiguse kulg sisu, kui võimalik struktureeritud-->
+						<list ID="ANMALIST">
+							<item ID="ANA">
+								<caption>Anamnees</caption>
+								<content>Anamneesis seljavalu alates kaesoleva aasta juunist. Jaanuaris 2005.a. oli ITKH I
+Siseosakonnas uuringutel vdimaliku tumoroosse protsessi suhtes,ambulatoorselt leitud
+valjendunud duslipideemia (Chol 18 mmolll), kiire ESR, hepatosplenomegaalia, vereanaluusides
+absoluutne lumfotsutoos uksikute plasmarakkude ja muelotsuutidega, proteinuuria 5 gll; tekkis
+ka-. ANA, ANCA ja AMA olid neg. (Immuunglobuliinide vaartuste ja proteinogrammi
+kohta andmeid ei ole.)  
+</content>
+							</item>
+							<item ID="DGN">
+								<caption>Diagnoosi põhjendus</caption>
+								<content>Proteiin C oli 200% ja vaba proteiin S 164%. Luuudi aspiraadi uuring oli f mittediagnostiline. EhhoKG minimaalsete fusioloogiliste regurgitatsioonidega klappidelt.
+Diagnoositi biopsia alusel maksa amuloidoosi. Maksabiopsia vastus jaanuaris 2005: Maksa ribas
+sailunud maksa kude praktiliselt puudub, aartpidi tukki sattunud 1 suurem portaalvali, milles
+I naha uksik kitsas sapijuhakene, risti riba Iabivad uksikud vaadid ilmselt vailunud portaalvaljast,
+hepatotsuudid sailunud uksikute hajusate rakkudena, suuremas osas kogu tukki haarab
+1 homogeniseerunud mass, milles nahavad hepatotsuutide tuumad. Põletiku infiltraat praktiliselt
+puudub, uksikud leukotsuudid. Teostatud lisavarvingud PAS-rohke sinine granulaarne
+varvumine hepatotsuutides, sailunud maksastruktuur, hepatotsuudid hajusalt, nende vahele on
+ladestunud massiivne PAS(-) mass. VG-fibroosi ei ole. Perls- rauasisaldus puudub. Kongu
+punane korduvalt varvitud eri tasapinnal Ibikudes, hepatotsijutide vahele ladestunud mass
+annab polarisatsioonil amuloidile iseloomuliku helenduse. Histoloogiliselt sobib leid
+amuloidoosile. Diagnoositi maksa amuloidoos ja kahtlustati hemoblastoosi, suunati
+ambulatoorselt hematoloogi konsultatsioonile, kes pt sdnul hematoloogilist patoloogiat eitas.
+Olevat teostatud ka luuudi uuring. Kirjalikke vastuseid meie kasutuses ei ole.</content>
+							</item>
+							<item ID="CASE">
+								<caption>Haiguse kulg</caption>
+								<content>Siseosakonnas
+teostatud ka KT angiograafia kopsuarteritest, KATE-le viitavat ei leitud. KT-I maksa mddtmed
+olid kraniokaudaalselt 27 cm paremas sagaras, 19 cm vasemas. Pdrna mddtmed olid 11 x 5 x
+14 cm; leiti ka 2 cm Iabimddduga lisapdrn. Maksaveenid kontrasteerusid halvasti (trombid?).
+Hiljem polikliinikus olnud valjendunud huperkolesteroleemia 14,4 mmolll, LDL ja TG suure
+tdusuga. Juunis tehtud ka skeleti stsintigraafia: lntensiivne markaine ladestumine kilpnaarmes,
+maksas, pdrnas ning mdlema neerus vdib viidata amuloidoosile. Degeneratiivsedlpdletikulised
+muutused dlaliigestes? Kolonoskoopial aprillis 2004 normileid. PSA oli nov 2004 0,21, TSH ja
+vabad hormoonid olid okt-s 2004 normis. Vaatasin Iabi kdik meie haiglas tehtud analuusid
+alates 2004: lipiide maaratud ligi 10 korral, alati valjendunud huperkolesteroleemia kuni 18,l
+mmolll, samuti korduvalt maaratud ALP, GGT, mis kogu aeg oluliselt kdrgenenud, kuid bilirubin
+olnud korduvalt normis.</content>
+							</item>
+						</list>
+					</text>
+					<!-- tekstiline kirjeldus lõpp-->
+				</section>
+			</component>
+			<!-- ANAMNEES, KULG LÕPP-->
+			<!-- ALLERGIA ALGUS-->
+			<component typeCode="COMP">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!-- Sektsiooni üldandmed?-->
+					<!-- mis tüüpi sektsiooniga on tegu -->
+					<code code="ALL" codeSystem="OIDnr" codeSystemName="Sektsiooni kodeering" displayName="Allergia"/>
+					<!-- sektsiooni pealkiri -->
+					<title>Allergia</title>
+					<!-- tekstilise kirjelduse algus-->
+					<text>
+						<paragraph>
+							<content>
+Kuupäev	Materjal / Ravim	Diagnoos	Täpsustus	Korduvus
+19.05.2006	Aspirin A12.3 - Sügelemine	Naha sügelemine	kordusjuht elus
+19.05.2006	atsetüül­salitsüülhape	A12.3 - Sügelemine	Naha sügelemine	kordusjuht elus
+					</content>
+						</paragraph>
+					</text>
+					<!-- tekstilise kirjelduse lõpp -->
+					<!-- allergia 1 algus-->
+					<entry typeCode="COMP">
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- eristab mis liiki Observation kirjega on tegemist-->
+							<code code="DGN" codeSystem="OIDnr" codeSystemName="Observation liik" displayName="Diagnoos"/>
+							<!-- staatus: lõplik-->
+							<!-- <statusCode code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/> -->
+							<statusCode code="completed"/>
+							<!-- allergia diagnoosimise aeg-->
+							<effectiveTime value="20060519"/>
+							<!-- diagnoosi kood ja sellele standardi järgi vastav väärtus -->
+							<value code="A12.3" codeSystem="2.16.840.1.113883.6.3" codeSystemName="ICD-10" displayName="Sügelemine" xsi:type="CD">
+								<!-- arsti poolt sisestatud vabatekst -->
+								<originalText>Naha sügelemine</originalText>
+								<!-- diagnoosi täpsustus (korduvus)-->
+								<qualifier>
+									<value code="-" codeSystem="OIDnr" codeSystemName="Diagnoosi korduvus" displayName="kordusjuht elus"/>
+								</qualifier>
+							</value>
+							<!-- täpsustab millist liiki Observation kirje on -->
+							<interpretationCode code="ALLERGY" codeSystem="OIDnr" codeSystemName="Diagnoosi tüübid" displayName="Allergia"/>
+							<!-- diagnoosi määraja algus-->
+							<performer typeCode="PRF">
+								<!-- roll -->
+								<modeCode code="DGN" codeSystem="OIDnr" codeSystemName="Tervishoiutöötaja roll" displayName="diagnoosi määraja"/>
+								<assignedEntity>
+									<!-- dokumendi koostaja identifikaator-->
+									<id root="ESTHCB" extension="D02910"/>
+									<id root="ESTik" extension="44712092729"/>
+									<code code="DOCTOR" codeSystem="OIDnr" codeSystemName="Tervishoiutöötajate tüüp" displayName="arst"/>
+									<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+										<name>
+											<given>Tatjana</given>
+											<family>Katjuk</family>
+										</name>
+									</assignedPerson>
+								</assignedEntity>
+							</performer>
+							<!-- diagnoosi määraja lõpp-->
+							<!-- allergia põhjustaja algus-->
+							<entryRelationship typeCode="CAUS">
+								<substanceAdministration classCode="SBADM" moodCode="EVN">
+									<!-- ravimi andmete tüüp -->
+									<code code="DRG" codeSystem="OIDnr" codeSystemName="Ravimi andmete tüüp" displayName="Ravimi andmed"/>
+									<consumable typeCode="CSM">
+										<manufacturedProduct classCode="MANU">
+											<manufacturedLabeledDrug classCode="MMAT" determinerCode="KIND">
+												<!-- Ravimi nimetus-->
+												<name>Aspirin</name>
+											</manufacturedLabeledDrug>
+										</manufacturedProduct>
+									</consumable>
+								</substanceAdministration>
+							</entryRelationship>
+							<!-- allergia põhjustaja lõpp-->
+						</observation>
+					</entry>
+					<!-- allergia 1 lõpp -->
+					<!-- allergia 2 algus -->
+					<entry typeCode="COMP">
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- eristab mis liiki Observation kirjega on tegemist-->
+							<code code="DGN" codeSystem="OIDnr" codeSystemName="Observation liik" displayName="Diagnoos"/>
+							<!-- staatus: lõplik-->
+							<!-- <statusCode code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/> -->
+							<statusCode code="completed"/>
+							<!-- allergia diagnoosimise aeg-->
+							<effectiveTime value="20060519"/>
+							<!-- diagnoosi kood ja sellele standardi järgi vastav väärtus -->
+							<value code="A12.3" codeSystem="2.16.840.1.113883.6.3" codeSystemName="ICD-10" displayName="Sügelemine" xsi:type="CD">
+								<!-- arsti poolt sisestatud vabatekst -->
+								<originalText>Naha sügelemine</originalText>
+								<!-- diagnoosi täpsustus (korduvus)-->
+								<qualifier>
+									<value code="-" codeSystem="OIDnr" codeSystemName="Diagnoosi korduvus" displayName="kordusjuht elus"/>
+								</qualifier>
+							</value>
+							<!-- täpsustab millist liiki Observation kirje on -->
+							<interpretationCode code="ALLERGY" codeSystem="OIDnr" codeSystemName="Diagnoosi tüübid" displayName="Allergia"/>
+							<!-- diagnoosi määraja algus-->
+							<performer typeCode="PRF">
+								<!-- roll -->
+								<modeCode code="DGN" codeSystem="OIDnr" codeSystemName="Tervishoiutöötaja roll" displayName="diagnoosi määraja"/>
+								<assignedEntity>
+									<!-- dokumendi koostaja identifikaator-->
+									<id root="ESTHCB" extension="D02910"/>
+									<id root="ESTik" extension="44712092729"/>
+									<code code="DOCTOR" codeSystem="OIDnr" codeSystemName="Tervishoiutöötajate tüüp" displayName="arst"/>
+									<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+										<name>
+											<given>Tatjana</given>
+											<family>Katjuk</family>
+										</name>
+									</assignedPerson>
+								</assignedEntity>
+							</performer>
+							<!-- diagnoosi määraja lõpp-->
+							<!-- allergia põhjustaja algus-->
+							<entryRelationship typeCode="CAUS">
+								<substanceAdministration classCode="SBADM" moodCode="EVN">
+									<!-- ravimi andmete tüüp -->
+									<code code="MAT" codeSystem="OIDnr" codeSystemName="Ravimi andmete tüüp" displayName="Toimeaine andmed"/>
+									<consumable typeCode="CSM">
+										<manufacturedProduct classCode="MANU">
+											<manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+												<!-- aine/materjali nimetus-->
+												<name>atsetüül­salitsüülhape</name>
+											</manufacturedMaterial>
+										</manufacturedProduct>
+									</consumable>
+								</substanceAdministration>
+							</entryRelationship>
+							<!-- allergia põhjustaja lõpp-->
+						</observation>
+					</entry>
+					<!-- allergia lõpp-->
+				</section>
+			</component>
+			<!-- ALLERGIA LÕPP-->
+			<!-- UURINGUD JA PROTSEDUURID ALGUS-->
+			<component typeCode="COMP">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!-- Sektsiooni üldandmed?-->
+					<!-- mis tüüpi sektsiooniga on tegu -->
+					<code code="PROC" codeSystem="OIDnr" codeSystemName="Sektsiooni kodeering" displayName="Uuringud ja protseduurid"/>
+					<!-- sektsiooni pealkiri -->
+					<title>Uuringud ja protseduurid</title>
+					<!-- tekstilise kirjelduse algus-->
+					<text>
+						<paragraph>
+							<content>
+					Kuupäev	Teenus	NCSP	Hinnakirja kood
+29.05.2006	SNOMED CT 10650998 - Röntgenuuring	1065 - Röntgenuuring
+1066 - Röntgenuuring
+	6065 - Röntgenuuring labakäest
+Rinnakufoos on normaalne, rinnalulide tagaservad on uhel joonel. L1 on kdrguse langus. Teised lulid on olulise kdrguse languseta. SI liigesepilud on normaalse laiusega, liigesepinnad on kontuursed, defekte ei ole. L1 osteoporootiline murd.
+17.05.2006	LOINC L1065 - Röntgenuuring		6065 - Röntgenuuring
+Vasemal keskväljas lateraalselt visualiseerub ümar, teravalt piirdunud lisavari D ca 0.5 cm (granuloom?). Muus osas koldemuutusteta.
+					</content>
+						</paragraph>
+					</text>
+					<!-- tekstilise kirjelduse lõpp -->
+					<!-- uuringud ja protseduurid algus-->
+					<!-- protseduur 1algus-->
+					<entry typeCode="COMP">
+						<procedure classCode="PROC" moodCode="EVN">
+							<!-- konkreetse protseduuri/uuringu identifikaator vastavas süsteemis, viidaregistri jaoks? -->
+							<id root="eHLprots" extension="1000003733"/>
+							<!-- protseduuri tüüp, määrab kas tegu on uuringu/operatsiooni/analüüsiga-->
+							<code code="PROC" codeSystem="OIDnr" codeSystemName="Protseduuri tüüp" displayName="Uuringud ja protseduurid"/>
+							<!-- uuringu kirjeldus -->
+							<text>Rinnakufoos on normaalne, rinnalulide
+tagaservad on uhel joonel. L1 on kdrguse langus. Teised lulid on olulise kdrguse languseta. SI
+liigesepilud on normaalse laiusega, liigesepinnad on kontuursed, defekte ei ole. L1
+osteoporootiline murd.</text>
+							<!-- tekstilise kirjelduse lõpp -->
+							<!-- protseduuri toimumise aeg-->
+							<effectiveTime value="20060529123459"/>
+							<!-- uuringu kood ja nimetus 1. HK loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="6065" codeSystem="OIDnr" codeSystemName="HK hinnakiri" displayName="Röntgenuuring labakäest"/>
+								</externalProcedure>
+							</reference>
+							<!-- uuringu kood ja nimetus 2. SNOMED CT loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="10650998" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Röntgenuuring"/>
+								</externalProcedure>
+							</reference>
+							<!-- uuringu kood ja nimetus 3. NCSP loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="1065" codeSystem="OIDnr" codeSystemName="NCSP" displayName="Röntgenuuring"/>
+								</externalProcedure>
+							</reference>
+							<!-- uuringu kood ja nimetus 3. NCSP loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="1066" codeSystem="OIDnr" codeSystemName="NCSP" displayName="Röntgenuuring"/>
+								</externalProcedure>
+							</reference>
+						</procedure>
+					</entry>
+					<!-- protseduur 1 lõpp-->
+					<!-- protseduur 2 algus -->
+					<entry typeCode="COMP">
+						<procedure classCode="PROC" moodCode="EVN">
+							<!-- konkreetse protseduuri/uuringu identifikaator vastavas süsteemis, viidaregistri jaoks? -->
+							<id root="eHLprots" extension="1000003733"/>
+							<!-- protseduuri tüüp, määrab kas tegu on uuringu/operatsiooni/analüüsiga-->
+							<code code="PROC" codeSystem="OIDnr" codeSystemName="Protseduuri tüüp" displayName="Uuringud ja protseduurid"/>
+							<!-- uuringu kirjeldus-->
+							<text>Vasemal keskväljas lateraalselt visualiseerub ümar, teravalt piirdunud lisavari D ca 0.5 cm (granuloom?). Muus osas koldemuutusteta.
+</text>
+							<!-- protseduuri toimumise aeg-->
+							<effectiveTime value="20060517123459"/>
+							<!-- uuringu kood ja nimetus 1. HK loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="6065" codeSystem="OIDnr" codeSystemName="HK hinnakiri" displayName="Röntgenuuring"/>
+								</externalProcedure>
+							</reference>
+							<!-- uuringu kood ja nimetus 2. LOINC loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="L1065" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Röntgenuuring"/>
+								</externalProcedure>
+							</reference>
+						</procedure>
+					</entry>
+					<!-- protseduur 2 lõpp-->
+					<!-- uuringud ja protseduurid lõpp-->
+				</section>
+			</component>
+			<!-- UURINGUD JA PROTSEDUURID LÕPP-->
+			<!-- OPERATSIOONID ALGUS-->
+			<component typeCode="COMP">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!-- mis tüüpi sektsiooniga on tegu -->
+					<code code="SUR" codeSystem="OIDnr" codeSystemName="Sektsiooni kodeering" displayName="Operatsioonid"/>
+					<!-- sektsiooni pealkiri -->
+					<title>Operatsioonid</title>
+					<!-- tekstilise kirjelduse algus-->
+					<text>
+						<paragraph>
+							<content>
+Kuupäev	Operatsiooni koodid	NCSP 	Hinnakirja kood	Anesteesia liik 	lisavahendid
+29.05.2006	SNOMED CT 10650998 - Proteesimine puusaliigesel	1065 - Proteesimine puusaliigesel
+1066 - Proteesimine puusaliigesel
+	2232 - Proteesimine puusaliigesel	spinaal	2950L - puusaliigese endoprotees
+2950L - puusaliigese endoprotees
+Narkoosis tehtud ülemine ja keskmine laparotoomia. Revisioonil selgub, et mao antrumi eeseinas on seroosast läbi kasvanud, praktiliselt tsirkulaarne kartsinoom. Suures rasvikus, vahetult tuumori all on diam 2 cm metastaatiline sõlm. Esinevad suure, laatuvad, kuid pehmed sõlmed mööda a hepatica communist ning ümber truncus coeliacuse. Põrnaväratis on vahetult vastu põrna 2 metastaasikahtlast sõlme ning pankrease sabaosas antud piirkonnas tihend. Maks on düstroofilise ilmega ning esineb vähene astsiit. Võetud kiiruuring-kasvajarakke ei ole. Arvestades seda, et protsess läbib seroosat, on sõrmusrakuline ning rasvikus esinevad metastaasid, otsustatud teha totaalne gastrektoomia, laiendatud lümfadenektoomiaga ning splenektoomia koos pankrease sabaosa resektsiooniga. Suur rasvik vabastatud ligeeritud ja läbitud a et v hepaticoduodenalise haru ning a gastrica dex. Maksaväratist alustatud lümfisõlmede eemaldamist ning eemaldatud kõik sõlmed mööda a hepatica communist ning truncust ümbritsevad sõlmed. Puhastatud a et v lienalis. Ligeeritud a et v lienalis 4 cm kauguselt sabaotsast proksimaalsemalt ning stapleriga läbitud pankrease saba. Ligeeritud a et v gastrica sin alguskohast. Duodeenum läbitud lineaarstapleriga. Preparaat ülesse tõstetud ja puhastatud söögitoru. Läbitud n vaguse harud. Pandud sögitorule hoideniidid ja preparaat eemaldatud. Tsirkulaarstapleri 25 mm pea viidud söögitorru ja servad õmmeldud nr 3 monokrüüliga. Peensooleling 20 cm kauguselt lig Treizist läbitud ning rajatud äraviivast otsast 60 cm kaugusele anastomoos ots-küljega. Tsirkulaarstapler viidud soolde ning rajatud söögitoru ja peensoole vahel, retrokooliliselt, ots-otsaga anastomoos. Fikseeritud üksikute hoidenitidega. Äraviiva sooleosa külgharu suletud lineaarstaperiga. Hemostaas. Vasakusse külgkanalisse jäetud üks ja paremalt toodu söögitoruanastomoosi alla teine dreen püsiaspiratsiooniks. Kõhuõõs suletud kihiti.					
+					</content>
+						</paragraph>
+					</text>
+					<!-- tekstilise kirjelduse lõpp -->
+					<!-- operatsioon 1 algus-->
+					<entry typeCode="COMP">
+						<procedure classCode="PROC" moodCode="EVN">
+							<!-- konkreetse operatsiooni identifikaator vastavas süsteemis, viidaregistri jaoks? -->
+							<id root="eHLop" extension="1000003723"/>
+							<!-- määrab kas tegu on uuringu/operatsiooni/analüüsiga-->
+							<code code="SUR" codeSystem="OIDnr" codeSystemName="Protseduuri tüüp" displayName="Operatsioonid"/>
+							<!-- operatsiooni kirjeldus-->
+							<text>Narkoosis tehtud ülemine ja keskmine laparotoomia. Revisioonil selgub, et mao antrumi eeseinas on seroosast läbi kasvanud, 
+							praktiliselt tsirkulaarne kartsinoom. Suures rasvikus, vahetult tuumori all on diam 2 cm metastaatiline sõlm. Esinevad suure, laatuvad, 
+							kuid pehmed sõlmed mööda a hepatica communist ning ümber truncus coeliacuse. Põrnaväratis on vahetult vastu põrna 2 
+							metastaasikahtlast sõlme ning pankrease sabaosas antud piirkonnas tihend. Maks on düstroofilise ilmega ning esineb vähene astsiit. 
+							Võetud kiiruuring-kasvajarakke ei ole. Arvestades seda, et protsess läbib seroosat, on sõrmusrakuline ning rasvikus esinevad 
+							metastaasid, otsustatud teha totaalne gastrektoomia, laiendatud lümfadenektoomiaga ning splenektoomia koos pankrease sabaosa 
+							resektsiooniga. Suur rasvik vabastatud ligeeritud ja läbitud a et v hepaticoduodenalise haru ning a gastrica dex. Maksaväratist 
+							alustatud lümfisõlmede eemaldamist ning eemaldatud kõik sõlmed mööda a hepatica communist ning truncust ümbritsevad sõlmed. 
+							Puhastatud a et v lienalis. Ligeeritud a et v lienalis 4 cm kauguselt sabaotsast proksimaalsemalt ning stapleriga läbitud pankrease saba. 
+							Ligeeritud a et v gastrica sin alguskohast. Duodeenum läbitud lineaarstapleriga. Preparaat ülesse tõstetud ja puhastatud söögitoru. 
+							Läbitud n vaguse harud. Pandud sögitorule hoideniidid ja preparaat eemaldatud. Tsirkulaarstapleri 25 mm pea viidud söögitorru ja servad 
+							õmmeldud nr 3 monokrüüliga. Peensooleling 20 cm kauguselt lig Treizist läbitud ning rajatud äraviivast otsast 60 cm kaugusele anastomoos 
+							ots-küljega. Tsirkulaarstapler viidud soolde ning rajatud söögitoru ja peensoole vahel, retrokooliliselt, ots-otsaga anastomoos. Fikseeritud 
+							üksikute hoidenitidega. Äraviiva sooleosa külgharu suletud lineaarstaperiga. Hemostaas. Vasakusse külgkanalisse jäetud üks ja paremalt 
+							toodu söögitoruanastomoosi alla teine dreen püsiaspiratsiooniks. Kõhuõõs suletud kihiti.</text>
+							<!-- operatsiooni toimumise aeg-->
+							<effectiveTime value="20060529123459"/>
+							<!-- Operatsiooni liik: plaaniline/erakorraline -->
+							<priorityCode code="R" codeSystem="2.16.840.1.113883.5.7" codeSystemName="ActPriority" displayName="plaaniline"/>
+							<!-- Anesteesia liik -->
+							<methodCode code="SPIN" codeSystem="2.16.840.1.113883.12.19" codeSystemName="Anesthesia code" displayName="spinaal"/>
+							<!-- operatsiooni lisavahendi nimetus 1 algus-->
+							<entryRelationship typeCode="REFR">
+								<supply classCode="SPLY" moodCode="EVN">
+									<!-- lisavahendi nimetus ja kood-->
+									<code code="2950L" codeSystem="OIDnr" codeSystemName="HK lisavahendid" displayName="puusaliigese endoprotees"/>
+								</supply>
+							</entryRelationship>
+							<!-- operatsiooni lisavahendi nimetus 1 lõpp-->
+							<!-- operatsiooni lisavahendi nimetus 2 algus-->
+							<entryRelationship typeCode="REFR">
+								<supply classCode="SPLY" moodCode="EVN">
+									<!-- lisavahendi nimetus ja kood-->
+									<code code="2950L" codeSystem="OIDnr" codeSystemName="HK lisavahendid" displayName="puusaliigese endoprotees"/>
+								</supply>
+							</entryRelationship>
+							<!-- operatsiooni lisavahendi nimetus 2 lõpp-->
+							<!-- operatsiooni kood ja nimetus 1. HK loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="2232" codeSystem="OIDnr" codeSystemName="HK hinnakiri" displayName="Proteesimine puusaliigesel"/>
+								</externalProcedure>
+							</reference>
+							<!-- operatsiooni kood ja nimetus 2. NCSP loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="1065" codeSystem="OIDnr" codeSystemName="NCSP" displayName="Proteesimine puusaliigesel"/>
+								</externalProcedure>
+							</reference>
+							<!-- operatsiooni kood ja nimetus 3. NCSP loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="1066" codeSystem="OIDnr" codeSystemName="NCSP" displayName="Proteesimine puusaliigesel"/>
+								</externalProcedure>
+							</reference>
+							<!-- operatsiooni kood ja nimetus 4. SNOMED CT loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="10650998" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Proteesimine puusaliigesel"/>
+								</externalProcedure>
+							</reference>
+						</procedure>
+					</entry>
+					<!-- operatsioon 1 lõpp-->
+				</section>
+			</component>
+			<!-- OPERATSIOONID LÕPP -->
+			<!-- ANALÜÜSID ALGUS-->
+			<component typeCode="COMP">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!-- mis tüüpi sektsiooniga on tegu -->
+					<code code="ANA" codeSystem="OIDnr" codeSystemName="Sektsiooni kodeering" displayName="Analüüsid"/>
+					<!-- sektsiooni pealkiri -->
+					<title>Analüüsid</title>
+					<!-- analüüside esitamine risttabeli kuju algus -->
+					<text styleCode="formatted">
+						<table>
+							<thead>
+								<tr>
+									<th>Analüüsi nimetus </th>
+									<th>Parameeter</th>
+									<th>Referentsväärtus</th>
+									<th>01.05.06</th>
+									<th>12.05.06</th>
+									<th>30.05.06</th>
+									<th>ühik</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td rowspan="3">Vere hapniku staatus </td>
+									<td>FIO2</td>
+									<td>20 % </td>
+									<td>
+										<list>
+											<item>12:31 - 21.0</item>
+											<item/>
+										</list>
+									</td>
+									<td>18.0</td>
+									<td>22.0</td>
+									<td>%</td>
+								</tr>
+								<tr>
+									<td>tO2</td>
+									<td>10 Vol % </td>
+									<td>
+										<list>
+											<item>12:31 - 9.1</item>
+											<item>13:41 - 9.2</item>
+										</list>
+									</td>
+									<td/>
+									<td/>
+									<td>Vol % </td>
+								</tr>
+								<tr>
+									<td>p50(act)</td>
+									<td>22 mmHg</td>
+									<td>
+										<list>
+											<item>12:31 - 23.25</item>
+											<item>13:41 - 23.25</item>
+										</list>
+									</td>
+									<td>24.33</td>
+									<td>24.38</td>
+									<td>mmHg</td>
+								</tr>
+								<tr>
+									<td>Albumiin</td>
+									<td>Albumiin</td>
+									<td>34-50 g/l </td>
+									<td/>
+									<td>12</td>
+									<td>13</td>
+									<td>g/l</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<!-- analüüside esitamine risttabeli kuju lõpp -->
+					<!-- analüüs 6 algus-->
+					<entry typeCode="COMP">
+						<procedure classCode="PROC" moodCode="EVN">
+							<!-- konkreetse analüüsi identifikaator vastavas süsteemis, viidaregistri jaoks? -->
+							<id root="eHLana" extension="10000033729"/>
+							<!-- määrab kas tegu on uuringu/operatsiooni/analüüsiga-->
+							<code code="ANA" codeSystem="OIDnr" codeSystemName="Protseduuri tüüp" displayName="Analüüsid"/>
+							<!-- analüüsi toimumise aeg-->
+							<effectiveTime value="20060530215958"/>
+							<!-- analüüsi rida 1 algus-->
+							<entryRelationship typeCode="REFR">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- eristab mis liiki Observation kirjega on tegemist-->
+									<code code="ANA" codeSystem="OIDnr" codeSystemName="Observation liik" displayName="Analüüsi tulemused"/>
+									<!-- staatus: lõplik-->
+									<!-- <statusCode code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/> -->
+									<statusCode code="completed"/>
+									<!-- analüüsi vastuse rea aeg-->
+									<effectiveTime value="20060530215958"/>
+									<!-- analüüsi tulemus -->
+									<value xsi:type="ED">
+										13
+									</value>
+									<specimen typeCode="SPC">
+										<specimenRole classCode="SPEC">
+											<specimenPlayingEntity classCode="ENT" determinerCode="INSTANCE">
+												<!-- analüüsi parameeter-->
+												<code code="ALB" codeSystem="OIDnr" codeSystemName="Analüüside parameetrid" displayName="Albumiin"/>
+												<!-- ühik -->
+												<!-- code="" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM", kui võimalik-->
+												<desc>g/l</desc>
+											</specimenPlayingEntity>
+										</specimenRole>
+									</specimen>
+									<referenceRange typeCode="REFV">
+										<observationRange classCode="OBS" moodCode="EVN.CRT">
+											<!-- referentsväärtus-->
+											<text>34-50 g/l</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</entryRelationship>
+							<!-- analüüsi rida 1 lõpp-->
+							<!-- analüüsi kood ja nimetus 1. HK loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="2231" codeSystem="OIDnr" codeSystemName="HK hinnakiri" displayName="Albumiin"/>
+								</externalProcedure>
+							</reference>
+							<!-- analüüsi kood ja nimetus 2. NCSP loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="1066" codeSystem="OIDnr" codeSystemName="NCSP" displayName="Albumiin"/>
+								</externalProcedure>
+							</reference>
+							<!-- analüüsi kood ja nimetus 3. LOINC loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="L1065" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Albumiin"/>
+								</externalProcedure>
+							</reference>
+						</procedure>
+					</entry>
+					<!-- analüüs 6 lõpp-->
+					<!-- analüüs 5 algus-->
+					<entry typeCode="COMP">
+						<procedure classCode="PROC" moodCode="EVN">
+							<!-- konkreetse analüüsi identifikaator vastavas süsteemis, viidaregistri jaoks? -->
+							<id root="eHLana" extension="10000033728"/>
+							<!-- määrab kas tegu on uuringu/operatsiooni/analüüsiga-->
+							<code code="ANA" codeSystem="OIDnr" codeSystemName="Protseduuri tüüp" displayName="Analüüsid"/>
+							<!-- analüüsi toimumise aeg-->
+							<effectiveTime value="20060512215958"/>
+							<!-- analüüsi rida 1 algus-->
+							<entryRelationship typeCode="REFR">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- eristab mis liiki Observation kirjega on tegemist-->
+									<code code="ANA" codeSystem="OIDnr" codeSystemName="Observation liik" displayName="Analüüsi tulemused"/>
+									<!-- staatus: lõplik-->
+									<!-- <statusCode code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/> -->
+									<statusCode code="completed"/>
+									<!-- analüüsi vastuse rea aeg-->
+									<effectiveTime value="20060512215958"/>
+									<!-- analüüsi tulemus -->
+									<value xsi:type="ED">
+										12
+									</value>
+									<specimen typeCode="SPC">
+										<specimenRole classCode="SPEC">
+											<specimenPlayingEntity classCode="ENT" determinerCode="INSTANCE">
+												<!-- analüüsi parameeter-->
+												<code code="ALB" codeSystem="OIDnr" codeSystemName="Analüüside parameetrid" displayName="Albumiin"/>
+												<!-- ühik -->
+												<!-- code="" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM", kui võimalik-->
+												<desc>g/l</desc>
+											</specimenPlayingEntity>
+										</specimenRole>
+									</specimen>
+									<referenceRange typeCode="REFV">
+										<observationRange classCode="OBS" moodCode="EVN.CRT">
+											<!-- referentsväärtus-->
+											<text>34-50 g/l</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</entryRelationship>
+							<!-- analüüsi rida 1 lõpp-->
+							<!-- analüüsi kood ja nimetus 1. HK loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="2231" codeSystem="OIDnr" codeSystemName="HK hinnakiri" displayName="Albumiin"/>
+								</externalProcedure>
+							</reference>
+							<!-- analüüsi kood ja nimetus 2. NCSP loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="1066" codeSystem="OIDnr" codeSystemName="NCSP" displayName="Albumiin"/>
+								</externalProcedure>
+							</reference>
+							<!-- analüüsi kood ja nimetus 3. LOINC loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="L1065" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Albumiin"/>
+								</externalProcedure>
+							</reference>
+						</procedure>
+					</entry>
+					<!-- analüüs 5 lõpp-->
+					<!-- analüüs 4 algus-->
+					<entry typeCode="COMP">
+						<procedure classCode="PROC" moodCode="EVN">
+							<!-- konkreetse analüüsi identifikaator vastavas süsteemis, viidaregistri jaoks? -->
+							<id root="eHLana" extension="10000033726"/>
+							<!-- määrab kas tegu on uuringu/operatsiooni/analüüsiga-->
+							<code code="ANA" codeSystem="OIDnr" codeSystemName="Protseduuri tüüp" displayName="Analüüsid"/>
+							<!-- analüüsi toimumise aeg-->
+							<effectiveTime value="20060530235958"/>
+							<!-- analüüsi rida 1 algus-->
+							<entryRelationship typeCode="REFR">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- eristab mis liiki Observation kirjega on tegemist-->
+									<code code="ANA" codeSystem="OIDnr" codeSystemName="Observation liik" displayName="Analüüsi tulemused"/>
+									<!-- staatus: lõplik-->
+									<!-- <statusCode code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/> -->
+									<statusCode code="completed"/>
+									<!-- analüüsi vastuse rea aeg-->
+									<effectiveTime value="20060530235958"/>
+									<!-- analüüsi tulemus -->
+									<value xsi:type="ED">
+										22.0
+									</value>
+									<specimen typeCode="SPC">
+										<specimenRole classCode="SPEC">
+											<specimenPlayingEntity classCode="ENT" determinerCode="INSTANCE">
+												<!-- analüüsi parameeter-->
+												<code code="FIO2" codeSystem="OIDnr" codeSystemName="Analüüside parameetrid" displayName="FIO2"/>
+												<!-- ühik -->
+												<!-- code="" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM", kui võimalik-->
+												<desc>%</desc>
+											</specimenPlayingEntity>
+										</specimenRole>
+									</specimen>
+									<referenceRange typeCode="REFV">
+										<observationRange classCode="OBS" moodCode="EVN.CRT">
+											<!-- referentsväärtus-->
+											<text>20 %</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</entryRelationship>
+							<!-- analüüsi rida 1 lõpp-->
+							<!-- analüüsi rida 2 algus-->
+							<entryRelationship typeCode="REFR">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- eristab mis liiki Observation kirjega on tegemist-->
+									<code code="ANA" codeSystem="OIDnr" codeSystemName="Observation liik" displayName="Analüüsi tulemused"/>
+									<!-- staatus: lõplik-->
+									<!-- <statusCode code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/> -->
+									<statusCode code="completed"/>
+									<!-- analüüsi vastuse rea aeg-->
+									<effectiveTime value="20060530235958"/>
+									<!-- analüüsi tulemus -->
+									<value xsi:type="ED">
+										24.38
+									</value>
+									<specimen typeCode="SPC">
+										<specimenRole classCode="SPEC">
+											<specimenPlayingEntity classCode="ENT" determinerCode="INSTANCE">
+												<!-- analüüsi parameeter-->
+												<code code="p50" codeSystem="OIDnr" codeSystemName="Analüüside parameetrid" displayName="p50(act)"/>
+												<!-- ühik -->
+												<!-- code="" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM", kui võimalik-->
+												<desc>mmHg</desc>
+											</specimenPlayingEntity>
+										</specimenRole>
+									</specimen>
+									<referenceRange typeCode="REFV">
+										<observationRange classCode="OBS" moodCode="EVN.CRT">
+											<!-- referentsväärtus-->
+											<text>22 mmHg</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</entryRelationship>
+							<!-- analüüsi rida 2 lõpp-->
+							<!-- analüüsi kood ja nimetus 1. HK loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="2232" codeSystem="OIDnr" codeSystemName="HK hinnakiri" displayName="Vere hapniku staatus"/>
+								</externalProcedure>
+							</reference>
+							<!-- analüüsi kood ja nimetus 2. NCSP loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="1065" codeSystem="OIDnr" codeSystemName="NCSP" displayName="Vere hapniku staatus"/>
+								</externalProcedure>
+							</reference>
+							<!-- analüüsi kood ja nimetus 3. LOINC loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="L1065" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Vere hapniku staatus"/>
+								</externalProcedure>
+							</reference>
+						</procedure>
+					</entry>
+					<!-- analüüs 4 lõpp-->
+					<!-- analüüs 3 algus-->
+					<entry typeCode="COMP">
+						<procedure classCode="PROC" moodCode="EVN">
+							<!-- konkreetse analüüsi identifikaator vastavas süsteemis, viidaregistri jaoks? -->
+							<id root="eHLana" extension="10000033725"/>
+							<!-- määrab kas tegu on uuringu/operatsiooni/analüüsiga-->
+							<code code="ANA" codeSystem="OIDnr" codeSystemName="Protseduuri tüüp" displayName="Analüüsid"/>
+							<!-- analüüsi toimumise aeg-->
+							<effectiveTime value="20060512235958"/>
+							<!-- analüüsi rida 1 algus-->
+							<entryRelationship typeCode="REFR">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- eristab mis liiki Observation kirjega on tegemist-->
+									<code code="ANA" codeSystem="OIDnr" codeSystemName="Observation liik" displayName="Analüüsi tulemused"/>
+									<!-- staatus: lõplik-->
+									<!-- <statusCode code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/> -->
+									<statusCode code="completed"/>
+									<!-- analüüsi vastuse rea aeg-->
+									<effectiveTime value="20060512235958"/>
+									<!-- analüüsi tulemus -->
+									<value xsi:type="ED">
+										18.0
+									</value>
+									<specimen typeCode="SPC">
+										<specimenRole classCode="SPEC">
+											<specimenPlayingEntity classCode="ENT" determinerCode="INSTANCE">
+												<!-- analüüsi parameeter-->
+												<code code="FIO2" codeSystem="OIDnr" codeSystemName="Analüüside parameetrid" displayName="FIO2"/>
+												<!-- ühik -->
+												<!-- code="" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM", kui võimalik-->
+												<desc>%</desc>
+											</specimenPlayingEntity>
+										</specimenRole>
+									</specimen>
+									<referenceRange typeCode="REFV">
+										<observationRange classCode="OBS" moodCode="EVN.CRT">
+											<!-- referentsväärtus-->
+											<text>20 %</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</entryRelationship>
+							<!-- analüüsi rida 1 lõpp-->
+							<!-- analüüsi rida 2 algus-->
+							<entryRelationship typeCode="REFR">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- eristab mis liiki Observation kirjega on tegemist-->
+									<code code="ANA" codeSystem="OIDnr" codeSystemName="Observation liik" displayName="Analüüsi tulemused"/>
+									<!-- staatus: lõplik-->
+									<!-- <statusCode code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/> -->
+									<statusCode code="completed"/>
+									<!-- analüüsi vastuse rea aeg-->
+									<effectiveTime value="20060512235958"/>
+									<!-- analüüsi tulemus -->
+									<value xsi:type="ED">
+										24.33
+									</value>
+									<specimen typeCode="SPC">
+										<specimenRole classCode="SPEC">
+											<specimenPlayingEntity classCode="ENT" determinerCode="INSTANCE">
+												<!-- analüüsi parameeter-->
+												<code code="p50" codeSystem="OIDnr" codeSystemName="Analüüside parameetrid" displayName="p50(act)"/>
+												<!-- ühik -->
+												<!-- code="" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM", kui võimalik-->
+												<desc>mmHg</desc>
+											</specimenPlayingEntity>
+										</specimenRole>
+									</specimen>
+									<referenceRange typeCode="REFV">
+										<observationRange classCode="OBS" moodCode="EVN.CRT">
+											<!-- referentsväärtus-->
+											<text>22 mmHg</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</entryRelationship>
+							<!-- analüüsi rida 2 lõpp-->
+							<!-- analüüsi kood ja nimetus 1. HK loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="2232" codeSystem="OIDnr" codeSystemName="HK hinnakiri" displayName="Vere hapniku staatus"/>
+								</externalProcedure>
+							</reference>
+							<!-- analüüsi kood ja nimetus 2. NCSP loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="1065" codeSystem="OIDnr" codeSystemName="NCSP" displayName="Vere hapniku staatus"/>
+								</externalProcedure>
+							</reference>
+							<!-- analüüsi kood ja nimetus 3. LOINC loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="L1065" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Vere hapniku staatus"/>
+								</externalProcedure>
+							</reference>
+						</procedure>
+					</entry>
+					<!-- analüüs 3 lõpp-->
+					<!-- analüüs 2 algus-->
+					<entry typeCode="COMP">
+						<procedure classCode="PROC" moodCode="EVN">
+							<!-- konkreetse analüüsi identifikaator vastavas süsteemis, viidaregistri jaoks? -->
+							<id root="eHLana" extension="10000033724"/>
+							<!-- määrab kas tegu on uuringu/operatsiooni/analüüsiga-->
+							<code code="ANA" codeSystem="OIDnr" codeSystemName="Protseduuri tüüp" displayName="Analüüsid"/>
+							<!-- analüüsi toimumise aeg-->
+							<effectiveTime value="20060501134159"/>
+							<!-- analüüsi rida 1 algus-->
+							<entryRelationship typeCode="REFR">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- eristab mis liiki Observation kirjega on tegemist-->
+									<code code="ANA" codeSystem="OIDnr" codeSystemName="Observation liik" displayName="Analüüsi tulemused"/>
+									<!-- staatus: lõplik-->
+									<!-- <statusCode code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/> -->
+									<statusCode code="completed"/>
+									<!-- analüüsi vastuse rea aeg-->
+									<effectiveTime value="20060501134139"/>
+									<!-- analüüsi tulemus -->
+									<value xsi:type="ED">
+										9.2
+									</value>
+									<specimen typeCode="SPC">
+										<specimenRole classCode="SPEC">
+											<specimenPlayingEntity classCode="ENT" determinerCode="INSTANCE">
+												<!-- analüüsi parameeter-->
+												<code code="tO2" codeSystem="OIDnr" codeSystemName="Analüüside parameetrid" displayName="tO2"/>
+												<!-- ühik -->
+												<!-- code="" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM", kui võimalik-->
+												<desc>Vol %</desc>
+											</specimenPlayingEntity>
+										</specimenRole>
+									</specimen>
+									<referenceRange typeCode="REFV">
+										<observationRange classCode="OBS" moodCode="EVN.CRT">
+											<!-- referentsväärtus-->
+											<text>10 Vol %</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</entryRelationship>
+							<!-- analüüsi rida 1 lõpp-->
+							<!-- analüüsi rida 2 algus-->
+							<entryRelationship typeCode="REFR">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- eristab mis liiki Observation kirjega on tegemist-->
+									<code code="ANA" codeSystem="OIDnr" codeSystemName="Observation liik" displayName="Analüüsi tulemused"/>
+									<!-- staatus: lõplik-->
+									<!-- <statusCode code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/> -->
+									<statusCode code="completed"/>
+									<!-- analüüsi vastuse rea aeg-->
+									<effectiveTime value="20060501134139"/>
+									<!-- analüüsi tulemus -->
+									<value xsi:type="ED">
+										23.25
+									</value>
+									<specimen typeCode="SPC">
+										<specimenRole classCode="SPEC">
+											<specimenPlayingEntity classCode="ENT" determinerCode="INSTANCE">
+												<!-- analüüsi parameeter-->
+												<code code="p50" codeSystem="OIDnr" codeSystemName="Analüüside parameetrid" displayName="p50(act)"/>
+												<!-- ühik -->
+												<!-- code="" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM", kui võimalik-->
+												<desc>mmHg</desc>
+											</specimenPlayingEntity>
+										</specimenRole>
+									</specimen>
+									<referenceRange typeCode="REFV">
+										<observationRange classCode="OBS" moodCode="EVN.CRT">
+											<!-- referentsväärtus-->
+											<text>22 mmHg</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</entryRelationship>
+							<!-- analüüsi rida 2 lõpp-->
+							<!-- analüüsi kood ja nimetus 1. HK loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="2232" codeSystem="OIDnr" codeSystemName="HK hinnakiri" displayName="Vere hapniku staatus"/>
+								</externalProcedure>
+							</reference>
+							<!-- analüüsi kood ja nimetus 2. NCSP loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="1065" codeSystem="OIDnr" codeSystemName="NCSP" displayName="Vere hapniku staatus"/>
+								</externalProcedure>
+							</reference>
+							<!-- analüüsi kood ja nimetus 3. LOINC loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="L1065" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Vere hapniku staatus"/>
+								</externalProcedure>
+							</reference>
+						</procedure>
+					</entry>
+					<!-- analüüs 2 lõpp-->
+					<!-- analüüs 1 algus-->
+					<entry typeCode="COMP">
+						<procedure classCode="PROC" moodCode="EVN">
+							<!-- konkreetse analüüsi identifikaator vastavas süsteemis, viidaregistri jaoks? -->
+							<id root="eHLana" extension="10000033723"/>
+							<!-- määrab kas tegu on uuringu/operatsiooni/analüüsiga-->
+							<code code="ANA" codeSystem="OIDnr" codeSystemName="Protseduuri tüüp" displayName="Analüüsid"/>
+							<!-- analüüsi toimumise aeg-->
+							<effectiveTime value="20060501123159"/>
+							<!-- analüüsi rida 1 algus-->
+							<entryRelationship typeCode="REFR">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- eristab mis liiki Observation kirjega on tegemist-->
+									<code code="ANA" codeSystem="OIDnr" codeSystemName="Observation liik" displayName="Analüüsi tulemused"/>
+									<!-- staatus: lõplik-->
+									<!-- <statusCode code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/> -->
+									<statusCode code="completed"/>
+									<!-- analüüsi vastuse rea aeg-->
+									<effectiveTime value="20060501123139"/>
+									<!-- analüüsi tulemus -->
+									<value xsi:type="ED">
+										21.0
+									</value>
+									<specimen typeCode="SPC">
+										<specimenRole classCode="SPEC">
+											<specimenPlayingEntity classCode="ENT" determinerCode="INSTANCE">
+												<!-- analüüsi parameeter-->
+												<code code="FIO2" codeSystem="OIDnr" codeSystemName="Analüüside parameetrid" displayName="FIO2"/>
+												<!-- ühik -->
+												<!-- code="" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM", kui võimalik-->
+												<desc>%</desc>
+											</specimenPlayingEntity>
+										</specimenRole>
+									</specimen>
+									<referenceRange typeCode="REFV">
+										<observationRange classCode="OBS" moodCode="EVN.CRT">
+											<!-- referentsväärtus-->
+											<text>20 %</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</entryRelationship>
+							<!-- analüüsi rida 1 lõpp-->
+							<!-- analüüsi rida 2 algus-->
+							<entryRelationship typeCode="REFR">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- eristab mis liiki Observation kirjega on tegemist-->
+									<code code="ANA" codeSystem="OIDnr" codeSystemName="Observation liik" displayName="Analüüsi tulemused"/>
+									<!-- staatus: lõplik-->
+									<!-- <statusCode code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/> -->
+									<statusCode code="completed"/>
+									<!-- analüüsi vastuse rea aeg-->
+									<effectiveTime value="20060501123139"/>
+									<!-- analüüsi tulemus -->
+									<value xsi:type="ED">
+										9.1
+									</value>
+									<specimen typeCode="SPC">
+										<specimenRole classCode="SPEC">
+											<specimenPlayingEntity classCode="ENT" determinerCode="INSTANCE">
+												<!-- analüüsi parameeter-->
+												<code code="tO2" codeSystem="OIDnr" codeSystemName="Analüüside parameetrid" displayName="tO2"/>
+												<!-- ühik -->
+												<!-- code="" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM", kui võimalik-->
+												<desc>Vol %</desc>
+											</specimenPlayingEntity>
+										</specimenRole>
+									</specimen>
+									<referenceRange typeCode="REFV">
+										<observationRange classCode="OBS" moodCode="EVN.CRT">
+											<!-- referentsväärtus-->
+											<text>10 Vol %</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</entryRelationship>
+							<!-- analüüsi rida 2 lõpp-->
+							<!-- analüüsi rida 3 algus-->
+							<entryRelationship typeCode="REFR">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- eristab mis liiki Observation kirjega on tegemist-->
+									<code code="ANA" codeSystem="OIDnr" codeSystemName="Observation liik" displayName="Analüüsi tulemused"/>
+									<!-- staatus: lõplik-->
+									<!-- <statusCode code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/> -->
+									<statusCode code="completed"/>
+									<!-- analüüsi vastuse rea aeg-->
+									<effectiveTime value="20060501123139"/>
+									<!-- analüüsi tulemus -->
+									<value xsi:type="ED">
+										23.25
+									</value>
+									<specimen typeCode="SPC">
+										<specimenRole classCode="SPEC">
+											<specimenPlayingEntity classCode="ENT" determinerCode="INSTANCE">
+												<!-- analüüsi parameeter-->
+												<code code="p50" codeSystem="OIDnr" codeSystemName="Analüüside parameetrid" displayName="p50(act)"/>
+												<!-- ühik -->
+												<!-- code="" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM", kui võimalik-->
+												<desc>mmHg</desc>
+											</specimenPlayingEntity>
+										</specimenRole>
+									</specimen>
+									<referenceRange typeCode="REFV">
+										<observationRange classCode="OBS" moodCode="EVN.CRT">
+											<!-- referentsväärtus-->
+											<text>22 mmHg</text>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</entryRelationship>
+							<!-- analüüsi rida 3 lõpp-->
+							<!-- analüüsi kood ja nimetus 1. HK loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="2232" codeSystem="OIDnr" codeSystemName="HK hinnakiri" displayName="Vere hapniku staatus"/>
+								</externalProcedure>
+							</reference>
+							<!-- analüüsi kood ja nimetus 2. NCSP loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="1065" codeSystem="OIDnr" codeSystemName="NCSP" displayName="Vere hapniku staatus"/>
+								</externalProcedure>
+							</reference>
+							<!-- analüüsi kood ja nimetus 3. LOINC loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="L1065" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Vere hapniku staatus"/>
+								</externalProcedure>
+							</reference>
+						</procedure>
+					</entry>
+					<!-- analüüs 1 lõpp-->
+				</section>
+			</component>
+			<!-- ANALÜÜSID LÕPP-->
+			<!-- KOKKUVÕTE RAVIST ALGUS-->
+			<component typeCode="COMP">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!-- Sektsiooni üldandmed?-->
+					<!-- mis tüüpi sektsiooniga on tegu -->
+					<code code="SUM" codeSystem="OIDnr" codeSystemName="Sektsiooni kodeering" displayName="Kokkuvõte patsiendi ravist"/>
+					<!-- sektsiooni pealkiri -->
+					<title>Kokkuvõte patsiendi ravist</title>
+					<!-- tekstiline kirjeldus algus -->
+					<text>
+						<paragraph ID="SUMSUM">
+							<!-- sisu -->
+							<content>Arvestades hepatosplenomegaaliat ja massiivset proteinuuriat ning maksabiopsia
+amuloidileidu on tdenaoliselt tegu susteemse amuliodoosiga, mis kujunenud varasema
+(nailiselt?) hea tervise taustal. Vahemasti ei ole kaesoleva ajani selget viidet aluseksoleva
+vdimaliku pdhihaiguse kohta. Hemoblastoosi, hepatiidi ning kdhukoopa elundite maliigse
+haiguse diagnoosiks ei ole senistel andmetel alust. Reumatoloogiaosakonda suunatud
+sponduliidikahtlusel seljavalude tdttu. Sekundaarne amuloidoos on tdesti reaalne spondulartriidi
+tusistus, kuid pt-l ei ole spondulartriiti. Puudub pdletikulise seljavalu anamnees, SI-liigesed on
+radiograafiliselt pdletikutunnuseteta, HLA 827 on negatiivne, kuid patsiendil on L1 lulikeha
+kompressioonifraktuur, mis valukaebuste pdhjal tekkinud u 6 kuu eest (mais-juunis?).
+Tõenaoliselt ei ole see tingitud susteemsest osteoporoosist, sest DEXA densitomeetria naitab
+normileidu, vaid vdibolla hoopis amuloidiladestusest Iulikehasse. Sama lulikeha on KT uuringul
+jaanuaris 2005 siiski isearalike muutusteta (radioloogil palutud seda tagantjarele veelkord
+hinnata); vdimal~kk a, et amuloid ei ole radiograafiliselt eristatav. Pidevat valuravi pt ei soovi,
+vajadusel sobiks tramadool; valu on taandumistendentsiga. Esineb valjendunud kolestaas, mis
+vdib ehk olla tingitud intrahepaatilisest biliaarsest obstruktsioonist amuloidiladestuse tdttu.
+Muidugi tuleks valistada maksa ja sapiteede primaarne haigus, milleks vajalik gastroenteroloogi
+konsultatsioon. Maksabiopsial pdletikulist infiltraati ega markimisvaarset fibroosi ei sedastatud.
+Arteriaalne hijpertensioon vdib olla sekundaarne, arvestades vdimalikke amuloidseid
+neerumuutusi, kuid muidugi vdib olla tekkinud ka hupertooniatdbi; kindlasti vajab see ravi.
+Esmalt oleks vajalik maarata immuunglobuliinid ja proteinogramm, mdeldes
+immuunglobuliinidega seotud amuloidoosile. Perekonnaanamneesist analoogset haigestumist ei
+dnnestunud leida. Diagnoosi tapsustamiseks vdib edaspidi olla vajalik amuloidi molekulaarne
+subtupiseerimine elektronmikroskoopia1. Praegu jaab mulje primaarsest susteemsest
+amijloidoosist ja sekundaarsetest hulgielundkahjustustest. Vdimalik, et haigus on
+patogeneetiliselt seotud huperlipideemiaga, vdi on ka see sekundaarne.</content>
+						</paragraph>
+						<list ID="SUMLIST">
+							<!-- kokkuvõtte sisu, kui võimalik, struktureeritud-->
+							<item ID="DRUG">
+								<caption>Manustatud ravimid</caption>
+								<content>Lisasks manustatud aspiriini ja paratsetamooli</content>
+							</item>
+							<item ID="PRC">
+								<caption>Protseduurid</caption>
+								<content>Teostatud gastroskoopia.</content>
+							</item>
+						</list>
+					</text>
+					<!-- tekstiline kirjeldus lõpp-->
+				</section>
+			</component>
+			<!-- KOKKUVÕTE RAVIST LÕPP-->
+			<!-- SEISUND VÄLJAKIRJUTAMISEL ALGUS-->
+			<component typeCode="COMP">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!-- Sektsiooni üldandmed?-->
+					<!-- mis tüüpi sektsiooniga on tegu -->
+					<code code="STATE" codeSystem="OIDnr" codeSystemName="Sektsiooni kodeering" displayName="Seisund väljakirjutamisel"/>
+					<!-- sektsiooni pealkiri -->
+					<title>Seisund väljakirjutamisel</title>
+					<!-- tekstiline kirjeldus algus -->
+					<text>
+						<paragraph ID="STATESUM">
+							<!-- sisu -->
+							<content>Patsient täielikult paranenud, edasist ravi ei vaja.</content>
+						</paragraph>
+					</text>
+					<!-- tekstilise kirjelduse lõpp -->
+					<!-- väljakirjutamise  algus-->
+					<entry typeCode="COMP">
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- eristab mis liiki observation kirjega on tegemist -->
+							<code code="DEC" codeSystem="OIDnr" codeSystemName="Observation liik" displayName="otsus"/>
+							<!-- staatus väljakirjutamisel-->
+							<value code="IMPROVEMENT" codeSystem="OIDnr" codeSystemName="Seisund väljakirjutamisel" displayName="paranemine" xsi:type="CD"/>
+							<interpretationCode code="DEC" codeSystem="OIDnr" codeSystemName="Otsuse tüübid" displayName="Staatus väljakirjutamisel"/>
+						</observation>
+					</entry>
+					<!-- väljakirjutamise  lõpp -->
+				</section>
+			</component>
+			<!-- SEISUND VÄLJAKIRJUTAMISEL LÕPP-->
+			<!-- REŽIIMI- JA RAVIALASED SOOVITUSED ALGUS-->
+			<component typeCode="COMP">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!-- Sektsiooni üldandmed?-->
+					<!-- mis tüüpi sektsiooniga on tegu -->
+					<code code="REGIME" codeSystem="OIDnr" codeSystemName="Sektsiooni kodeering" displayName="Režiimi ja ravialased soovitused"/>
+					<!-- sektsiooni pealkiri -->
+					<title>Režiimi ja ravialased soovitused, sh taastusraviks</title>
+					<!-- tekstiline kirjeldus algus -->
+					<text>
+						<paragraph ID="REGSUM">
+							<!-- sisu -->
+							<content>Amlodipin 5 mg x 1; Tramadol 50 nlg x 1...3 vajadusel, seljavalu korral. Töökorralduse ja töökeskkonna muutmine vajalik 20.05.2006 - 15.06.2006</content>
+						</paragraph>
+					</text>
+					<!-- tekstilise kirjelduse lõpp -->
+					<!-- töökorraldus algus-->
+					<entry typeCode="COMP">
+						<observation classCode="OBS" moodCode="EVN">
+							<code code="DEC" codeSystem="OIDnr" codeSystemName="Observation liik" displayName="Otsus"/>
+							<!-- töökorralduse muutmise kestus algus-->
+							<effectiveTime xsi:type="IVL_TS">
+								<low value="20060520"/>
+								<high value="20060615"/>
+							</effectiveTime>
+							<!-- töökorralduse muutmise kestus lõpp -->
+							<!-- töökorralduse muutmise vajadus: alaline|ajutine -->
+							<value code="TEMP" codeSystem="OIDnr" codeSystemName="Töökorralduse muutmise vajadus" displayName="ajutine" xsi:type="CD"/>
+							<!-- töökorralduse muutmise põhjus -->
+							<value code="SICK" codeSystem="OIDnr" codeSystemName="Töökorralduse muutmise põhjus" displayName="haigestumine" xsi:type="CD"/>
+							<!-- määrab otsuse tüübi -->
+							<interpretationCode code="WORK" codeSystem="OIDnr" codeSystemName="Otsuse tüübid" displayName="Töökorralduse muutmise vajadus"/>
+						</observation>
+					</entry>
+					<!-- töökorraldus lõpp-->
+					<!-- töökeskkkond algus-->
+					<entry typeCode="COMP">
+						<observation classCode="OBS" moodCode="EVN">
+							<code code="DEC" codeSystem="OIDnr" codeSystemName="Observation liik" displayName="Otsus"/>
+							<!-- töökeskkonna muutmise kestus algus-->
+							<effectiveTime xsi:type="IVL_TS">
+								<low value="20060520"/>
+								<high value="20060615"/>
+							</effectiveTime>
+							<!-- töökeskkonna muutmise kestus lõpp-->
+							<!-- töökeskkonna  muutmise vajadus: alaline|ajutine -->
+							<value code="TEMP" codeSystem="OIDnr" codeSystemName="Töökeskkonna muutmise vajadus" displayName="ajutine" xsi:type="CD"/>
+							<!-- töökeskkonna muutmise põhjus -->
+							<value code="SICK" codeSystem="OIDnr" codeSystemName="Töökeskkonna muutmise põhjus" displayName="haigestumine" xsi:type="CD"/>
+							<!-- määrab otsuse tüübi -->
+							<interpretationCode code="WORKENV" codeSystem="OIDnr" codeSystemName="Otsuse tüübid" displayName="Töökeskkonna muutmise vajadus"/>
+						</observation>
+					</entry>
+					<!-- töökeskkond lõpp-->
+				</section>
+			</component>
+			<!-- REŽIIMI- JA RAVIALASED SOOVITUSED LÕPP-->
+			<!-- VÄLJASTATUD RAVIMID ALGUS-->
+			<component typeCode="COMP">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!-- Sektsiooni üldandmed?-->
+					<!-- mis tüüpi sektsiooniga on tegu -->
+					<code code="DRUG" codeSystem="OIDnr" codeSystemName="Sektsiooni kodeering" displayName="Väljastatud ravimid"/>
+					<!-- sektsiooni pealkiri -->
+					<title>Väljastatud ravimid</title>
+					<!-- tekstilise kirjelduse algus-->
+					<text>
+						<paragraph>
+							<content>
+Retsepti nr.	Toimeaine	Ravimvorm	Ühekordne annus	Manustamiskordi	kordusi
+1234569	amoksitsiliin	kapslid	100 mg	3 x päevas	10
+1233569	penitsiliin	kapslid	400 mg	5 x päevas	10</content>
+						</paragraph>
+					</text>
+					<!-- tekstilise kirjelduse lõpp -->
+					<!-- ravimi andmed 1 algus-->
+					<entry typeCode="COMP">
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<!-- retsepti identifikaator-->
+							<id root="ESTDRG" extension="1234569"/>
+							<id root="eHLravim" extension="1000000387978"/>
+							<!-- ravimi andmete tüüp -->
+							<code code="PRE" codeSystem="OIDnr" codeSystemName="Ravimi andmete tüüp" displayName="Retsepti andmed"/>
+							<!-- retsepti kuupäev -->
+							<effectiveTime value="20060601"/>
+							<!-- mitu korda ajaühikut korrata -->
+							<repeatNumber value="10"/>
+							<!-- ühekordne annus-->
+							<doseQuantity value="100" unit="mg"/>
+							<!-- manustamiskordade arv ajaühikus: 3 korda päevas-->
+							<rateQuantity value="3" unit="d"/>
+							<!-- ravim algus -->
+							<consumable typeCode="CSM">
+								<manufacturedProduct classCode="MANU">
+									<manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+										<!-- toimeaine ATC kood ja nimetus-->
+										<code code="123" codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC" displayName="amoksitsiliin"/>
+										<!-- nimetus vabatekstina-->
+										<name>amoksitsiliin</name>
+									</manufacturedMaterial>
+								</manufacturedProduct>
+							</consumable>
+							<!-- ravimvorm algus -->
+							<precondition typeCode="PRCN">
+								<criterion classCode="OBS" moodCode="EVN.CRT">
+									<!-- kriteerium-->
+									<code code="DRGTYPE" codeSystem="OIDnr" codeSystemName="Kriteeriumi liik" displayName="Ravimvorm"/>
+									<!-- ravimvorm -->
+									<value code="CAPS" codeSystem="OIDnr" codeSystemName="Ravimvorm" displayName="kapslid" xsi:type="CD"/>
+								</criterion>
+							</precondition>
+							<!-- ravimvorm lõpp-->
+							<!-- ravim lõpp-->
+						</substanceAdministration>
+					</entry>
+					<!-- ravimi andmed 1 lõpp-->
+					<!-- ravimi andmed 2 algus-->
+					<entry typeCode="COMP">
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<!-- retsepti identifikaator-->
+							<id root="ESTDRG" extension="1233569"/>
+							<id root="eHLravim" extension="1000000381978"/>
+							<!-- ravimi andmete tüüp -->
+							<code code="PRE" codeSystem="OIDnr" codeSystemName="Ravimi andmete tüüp" displayName="Retsepti andmed"/>
+							<!-- retsepti kuupäev -->
+							<effectiveTime value="20060601"/>
+							<!-- mitu korda ajaühikut korrata -->
+							<repeatNumber value="10"/>
+							<!-- ühekordne annus-->
+							<doseQuantity value="400" unit="mg"/>
+							<!-- manustamiskordade arv-->
+							<rateQuantity value="5" unit="d"/>
+							<!-- ravim algus -->
+							<consumable typeCode="CSM">
+								<manufacturedProduct classCode="MANU">
+									<manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+										<!-- toimeaine ATC kood ja nimetus-->
+										<code code="223" codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC" displayName="penitsiliin"/>
+										<!-- nimetus vabatekstina-->
+										<name>penitsiliin</name>
+									</manufacturedMaterial>
+								</manufacturedProduct>
+							</consumable>
+							<!-- ravimvorm algus -->
+							<precondition typeCode="PRCN">
+								<criterion classCode="OBS" moodCode="EVN.CRT">
+									<!-- kriteerium-->
+									<code code="DRGTYPE" codeSystem="OIDnr" codeSystemName="Kriteeriumi liik" displayName="Ravimvorm"/>
+									<!-- ravimvorm -->
+									<value code="CAPS" codeSystem="OIDnr" codeSystemName="Ravimvorm" displayName="kapslid" xsi:type="CD"/>
+								</criterion>
+							</precondition>
+							<!-- ravimvorm lõpp-->
+							<!-- ravim lõpp-->
+						</substanceAdministration>
+					</entry>
+					<!-- ravimi andmed 2 lõpp-->
+				</section>
+			</component>
+			<!-- VÄLJASTATUD RAVIMID LÕPP-->
+			<!-- VÄLJASTATUD DOKUMENDID ALGUS-->
+			<component typeCode="COMP">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!-- Sektsiooni üldandmed?-->
+					<!-- mis tüüpi sektsiooniga on tegu -->
+					<code code="DOC" codeSystem="OIDnr" codeSystemName="Sektsiooni kodeering" displayName="Väljastatud dokumendid"/>
+					<!-- sektsiooni pealkiri -->
+					<title>Väljastatud dokumendid</title>
+					<!-- tekstilise kirjelduse algus-->
+					<text>
+						<paragraph>
+							<content>
+Töövõimetuslehed
+TVL Liik	Number	Algus	lõpp
+hooldusleht	12322313	20.05.2006	15.06.2006
+20.05.2006	15.06.2006
+Teatised
+Kuupäev	Nimetus	Väljastatud
+30.06.2006	Teade liklusõnnetusest	Liikluskindlutusefond
+Terviseseisundi kirjeldused
+Kuupäev	Dokumendi number
+30.06.2006	12322313</content>
+						</paragraph>
+					</text>
+					<!-- tekstilise kirjelduse lõpp -->
+					<!-- töövõimetusleht algus-->
+					<entry typeCode="COMP">
+						<act classCode="ACT" moodCode="EVN">
+							<!-- sündmuse liiik-->
+							<code code="CIW" codeSystem="OIDnr" codeSystemName="Sündmused" displayName="TVL väljastamine"/>
+							<!-- TVL väljastamise kuupäev-->
+							<effectiveTime value="20060630"/>
+							<!-- viide dokumendile algus-->
+							<reference typeCode="REFR">
+								<externalDocument classCode="DOC" moodCode="EVN">
+									<!-- TVL identifikaator-->
+									<id root="TVLnr" extension="12322313"/>
+									<id root="eHLtvl" extension="1000003213218"/>
+									<!-- dokumendi tüüp-->
+									<code code="CIW" codeSystem="OIDnr" codeSystemName="Dokumendi tüüp" displayName="Töövõimetuseht"/>
+								</externalDocument>
+							</reference>
+							<!-- viide dokumendile lõpp-->
+							<!-- seotud koodid algus-->
+							<!-- TVL liik algus-->
+							<precondition typeCode="PRCN">
+								<criterion classCode="OBS" moodCode="EVN.CRT">
+									<!-- kriteerium-->
+									<code code="CIWTYPE" codeSystem="OIDnr" codeSystemName="Kriteeriumi liik" displayName="TVL liik"/>
+									<!-- TVL liigi tunnus: hooldusleht, haigusleht, sünnitusleht-->
+									<value code="CARE" codeSystem="OIDnr" codeSystemName="TVL liik" displayName="hooldusleht" xsi:type="CD"/>
+								</criterion>
+							</precondition>
+							<!-- TVl liik lõpp-->
+							<!-- TVL vabastamise periood 1 algus-->
+							<precondition typeCode="PRCN">
+								<criterion classCode="OBS" moodCode="EVN.CRT">
+									<!-- kriteerium-->
+									<code code="CIWPER" codeSystem="OIDnr" codeSystemName="Kriteeriumi liik" displayName="TVL Periood"/>
+									<!-- periood -->
+									<value xsi:type="IVL_TS">
+										<low value="20060520"/>
+										<high value="20060615"/>
+									</value>
+								</criterion>
+							</precondition>
+							<!-- TVL vabastamise periood 1 lõpp-->
+							<!-- TVL vabastamise periood 2 algus-->
+							<precondition typeCode="PRCN">
+								<criterion classCode="OBS" moodCode="EVN.CRT">
+									<!-- kriteerium -->
+									<code code="CIWPER" codeSystem="OIDnr" codeSystemName="Kriteeriumi liik" displayName="TVL Periood"/>
+									<!-- periood -->
+									<value xsi:type="IVL_TS">
+										<low value="20060520"/>
+										<high value="20060615"/>
+									</value>
+								</criterion>
+							</precondition>
+							<!-- TVL vabastamise periood 2 lõpp-->
+							<!-- seotud koodid lõpp-->
+						</act>
+					</entry>
+					<!-- töövõimetusleht lõpp -->
+					<!-- teatis algus -->
+					<entry typeCode="COMP">
+						<act classCode="ACT" moodCode="EVN">
+							<!-- sündmuse liiik-->
+							<code code="INFO" codeSystem="OIDnr" codeSystemName="Sündmused" displayName="Teatise väljastamine"/>
+							<!-- teatise väljastamise kuupäev-->
+							<effectiveTime value="20060630"/>
+							<!-- asutus, kellele dokument on väljastatud algus-->
+							<participant typeCode="TRC">
+								<participantRole classCode="ROL">
+									<!-- asutuse registrikood, kui on teada-->
+									<id root="ESTregnr" extension="1234567"/>
+									<!-- osaleja kirje tüüp -->
+									<code code="RECORG" codeSystem="OIDnr" codeSystemName="Osalemine" displayName="Dokumendi adressaat"/>
+									<!-- asutuse nimetus-->
+									<playingEntity classCode="ENT" determinerCode="INSTANCE">
+										<name>Liikluskindlutusefond</name>
+									</playingEntity>
+								</participantRole>
+							</participant>
+							<!-- asutus, kellele dokument on väljastatud lõpp-->
+							<!-- viide dokumendile algus-->
+							<reference typeCode="REFR">
+								<externalDocument classCode="DOC" moodCode="EVN">
+									<!-- teatise identifikaator-->
+									<id root="INFOnr" extension="12322313"/>
+									<id root="eHLteatis" extension="1000003213218"/>
+									<!-- dokumendi tüüp-->
+									<code code="INFO" codeSystem="OIDnr" codeSystemName="Dokumendi tüüp" displayName="Teatis"/>
+								</externalDocument>
+							</reference>
+							<!-- viide dokumendile lõpp-->
+							<!-- seotud koodid algus-->
+							<!-- teatise liik algus-->
+							<precondition typeCode="PRCN">
+								<criterion classCode="OBS" moodCode="EVN.CRT">
+									<!-- kriteerium-->
+									<code code="INFOTYPE" codeSystem="OIDnr" codeSystemName="Kriteeriumi liik" displayName="Teatise liik"/>
+									<!-- Teatise liik: koolile, lasteaiale, liiklusõnnetusest, tööõnnetusest, nakkushaigusest -->
+									<value code="TRAFFIC" codeSystem="OIDnr" codeSystemName="Teatise liik" displayName="Teade liklusõnnetusest" xsi:type="CD"/>
+								</criterion>
+							</precondition>
+							<!-- teatise liik lõpp-->
+							<!-- seotud koodid lõpp-->
+						</act>
+					</entry>
+					<!-- teatis lõpp -->
+					<!-- terviseseisundi kirjeldus algus -->
+					<entry typeCode="COMP">
+						<act classCode="ACT" moodCode="EVN">
+							<!-- sündmuse liiik-->
+							<code code="HEALTH" codeSystem="OIDnr" codeSystemName="Sündmused" displayName="Terviseseisundi kirjelduse väljastamine"/>
+							<!-- kirjelduse väljastamise kuupäev-->
+							<effectiveTime value="20060630"/>
+							<!-- viide dokumendile algus-->
+							<reference typeCode="REFR">
+								<externalDocument classCode="DOC" moodCode="EVN">
+									<!-- teatise identifikaator-->
+									<id root="HEALTHnr" extension="12322313"/>
+									<id root="eHLteatis" extension="1000003213218"/>
+									<!-- dokumendi tüüp-->
+									<code code="HEALTH" codeSystem="OIDnr" codeSystemName="Dokumendi tüüp" displayName="Terviseseisundi kirjeldus"/>
+								</externalDocument>
+							</reference>
+							<!-- viide dokumendile lõpp-->
+						</act>
+					</entry>
+					<!-- terviseseisundi kirjeldus lõpp -->
+				</section>
+			</component>
+			<!-- VÄLJASTATUD DOKUMENDID LÕPP-->
+			<!-- VASTUVÕTULE PÖÖRDUMINE (SUUNAMINE) ALGUS-->
+			<component typeCode="COMP">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!-- Sektsiooni üldandmed?-->
+					<!-- mis tüüpi sektsiooniga on tegu -->
+					<code code="DIR" codeSystem="OIDnr" codeSystemName="Sektsiooni kodeering" displayName="Vastuvõtule pöördumine"/>
+					<!-- sektsiooni pealkiri -->
+					<title>Vastuvõtule pöördumine</title>
+					<!-- vabatekstiline suunamise info-->
+					<text>
+						<paragraph ID="REC">
+							<!-- sisu -->
+							<content>Pöörduda vastuvõtule Tartu Ülikooli Kliinikumi 31.07.2006</content>
+						</paragraph>
+					</text>
+					<!-- tekstilise kirjelduse lõpp -->
+					<entry typeCode="COMP">
+						<encounter classCode="ENC" moodCode="EVN">
+							<!-- külastuse tunnus -->
+							<code code="NXT" codeSystem="OIDnr" codeSystemName="Haiglas viibimine" displayName="järgnev, suunatud asutus"/>
+							<!-- lõpliku suunamise tunnus -->
+							<!-- <statusCode code="completed" codeSystem="2.16.840.1.113883.5.14" codeSystemName="ActStatus"/> -->
+							<statusCode code="completed"/>
+							<!-- vastuvõtule pöördumise aeg-->
+							<effectiveTime value="20060731142000"/>
+							<performer typeCode="PRF">
+								<!-- roll -->
+								<modeCode code="TRE" codeSystem="OIDnr" codeSystemName="Tervishoiutöötaja roll" displayName="ravi teostav asutus/allüksus"/>
+								<assignedEntity>
+									<id/>
+									<representedOrganization>
+										<!-- asutuse registrikood -->
+										<id root="ESTregnr" extension="1234567"/>
+										<!-- asutuse nimetus -->
+										<name>SA Tartu Ülikooli Kliinikum</name>
+										<addr use="PHYS">
+											<country>EE</country>
+											<county>Tartumaa</county>
+											<city>Tartu</city>
+											<streetAddressLine>Puusepa 1A </streetAddressLine>
+											<streetName>Puusepa</streetName>
+											<houseNumber>1A</houseNumber>
+											<additionalLocator>Kabinet 4019</additionalLocator>
+											<unitID>49576</unitID>
+											<postalCode>50700</postalCode>
+										</addr>
+									</representedOrganization>
+								</assignedEntity>
+							</performer>
+							<precondition typeCode="PRCN">
+								<criterion classCode="OBS" moodCode="EVN.CRT">
+									<!-- kriteerium-->
+									<code code="SCASE" codeSystem="OIDnr" codeSystemName="Kriteeriumi liik" displayName="Haigusjuhu tüüp"/>
+									<!-- haigusjuhu tüüp -->
+									<value code="AMB" codeSystem="OIDnr" codeSystemName="Haigusjuhu tüüp" displayName="ambulatoorne" xsi:type="CD"/>
+								</criterion>
+							</precondition>
+						</encounter>
+					</entry>
+				</section>
+			</component>
+			<!-- VASTUVÕTULE PÖÖRDUMINE (SUUNAMINE) LÕPP-->
+		</structuredBody>
+	</component>
+	<!-- SISUOSA LÕPP-->
+</ClinicalDocument>

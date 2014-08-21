@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="134"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.42"/>
+   <Title name="EntityHandling" date="2012-08-02" version="1.000"/>
+   <Class code="rootClass">
+      <SubClass subCount="0" code="AMB" kind="concept">
+         <Rubric id="d1e113440" kind="preferred">
+            <Label xml:lang="en-US">Ambient Temperature</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="C37" kind="concept">
+         <Rubric id="d1e113465" kind="preferred">
+            <Label xml:lang="en-US">Body Temperature</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="CAMB" kind="concept">
+         <Rubric id="d1e113489" kind="preferred">
+            <Label xml:lang="en-US">Critical Ambient temperature</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="CATM" kind="concept">
+         <Rubric id="d1e113513" kind="preferred">
+            <Label xml:lang="en-US">Protect from Air</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="CFRZ" kind="concept">
+         <Rubric id="d1e113537" kind="preferred">
+            <Label xml:lang="en-US">Critical frozen</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="CREF" kind="concept">
+         <Rubric id="d1e113561" kind="preferred">
+            <Label xml:lang="en-US">Critical refrigerated temperature</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="DFRZ" kind="concept">
+         <Rubric id="d1e113585" kind="preferred">
+            <Label xml:lang="en-US">Deep Frozen</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="DRY" kind="concept">
+         <Rubric id="d1e113610" kind="preferred">
+            <Label xml:lang="en-US">dry</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="FRZ" kind="concept">
+         <Rubric id="d1e113634" kind="preferred">
+            <Label xml:lang="en-US">frozen</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="MTLF" kind="concept">
+         <Rubric id="d1e113658" kind="preferred">
+            <Label xml:lang="en-US">Metal Free</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="NTR" kind="concept">
+         <Rubric id="d1e113682" kind="preferred">
+            <Label xml:lang="en-US">nitrogen</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="PRTL" kind="concept">
+         <Rubric id="d1e113706" kind="preferred">
+            <Label xml:lang="en-US">Protect from Light</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="PSA" kind="concept">
+         <Rubric id="d1e113730" kind="preferred">
+            <Label xml:lang="en-US">do not shake</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="PSO" kind="concept">
+         <Rubric id="d1e113755" kind="preferred">
+            <Label xml:lang="en-US">no shock</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="REF" kind="concept">
+         <Rubric id="d1e113779" kind="preferred">
+            <Label xml:lang="en-US">Refrigerated temperature</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="SBU" kind="concept">
+         <Rubric id="d1e113803" kind="preferred">
+            <Label xml:lang="en-US">Shake before use</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="UFRZ" kind="concept">
+         <Rubric id="d1e113827" kind="preferred">
+            <Label xml:lang="en-US">Ultra frozen</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="UPR" kind="concept">
+         <Rubric id="d1e113851" kind="preferred">
+            <Label xml:lang="en-US">upright</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">EntityHandling</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl"/>
+      </Rubric>
+   </Class>
+   <Class code="AMB" kind="concept">
+      <Meta name="internalId" value="10394"/>
+      <Rubric id="d1e113427" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Keep at ambient temperature, 22 +/- 2C</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113440" kind="short">
+         <Label xml:lang="en-US">Ambient Temperature</Label>
+      </Rubric>
+      <Rubric id="d1e113440" kind="preferred">
+         <Label xml:lang="en-US">Ambient Temperature</Label>
+      </Rubric>
+   </Class>
+   <Class code="C37" kind="concept">
+      <Meta name="internalId" value="10395"/>
+      <Rubric id="d1e113452" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Critical to keep at body temperature 36-38C</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113465" kind="short">
+         <Label xml:lang="en-US">Body Temperature</Label>
+      </Rubric>
+      <Rubric id="d1e113465" kind="preferred">
+         <Label xml:lang="en-US">Body Temperature</Label>
+      </Rubric>
+   </Class>
+   <Class code="CAMB" kind="concept">
+      <Meta name="internalId" value="14405"/>
+      <Rubric id="d1e113476" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Critical ambient - must not be refrigerated or frozen.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113489" kind="short">
+         <Label xml:lang="en-US">Critical Ambient temperature</Label>
+      </Rubric>
+      <Rubric id="d1e113489" kind="preferred">
+         <Label xml:lang="en-US">Critical Ambient temperature</Label>
+      </Rubric>
+   </Class>
+   <Class code="CATM" kind="concept">
+      <Meta name="internalId" value="14409"/>
+      <Rubric id="d1e113500" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Critical. Do not expose to atmosphere. Do not uncap.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113513" kind="short">
+         <Label xml:lang="en-US">Protect from Air</Label>
+      </Rubric>
+      <Rubric id="d1e113513" kind="preferred">
+         <Label xml:lang="en-US">Protect from Air</Label>
+      </Rubric>
+   </Class>
+   <Class code="CFRZ" kind="concept">
+      <Meta name="internalId" value="14407"/>
+      <Rubric id="d1e113524" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Critical frozen. Specimen must not be allowed to thaw until immediately prior to testing.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113537" kind="short">
+         <Label xml:lang="en-US">Critical frozen</Label>
+      </Rubric>
+      <Rubric id="d1e113537" kind="preferred">
+         <Label xml:lang="en-US">Critical frozen</Label>
+      </Rubric>
+   </Class>
+   <Class code="CREF" kind="concept">
+      <Meta name="internalId" value="14406"/>
+      <Rubric id="d1e113548" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Critical refrigerated - must not be allowed to freeze or warm until imediately prior to testing.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113561" kind="short">
+         <Label xml:lang="en-US">Critical refrigerated temperature</Label>
+      </Rubric>
+      <Rubric id="d1e113561" kind="preferred">
+         <Label xml:lang="en-US">Critical refrigerated temperature</Label>
+      </Rubric>
+   </Class>
+   <Class code="DFRZ" kind="concept">
+      <Meta name="internalId" value="10398"/>
+      <Rubric id="d1e113572" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Deep Frozen -16 to -20C.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113585" kind="short">
+         <Label xml:lang="en-US">Deep Frozen</Label>
+      </Rubric>
+      <Rubric id="d1e113585" kind="preferred">
+         <Label xml:lang="en-US">Deep Frozen</Label>
+      </Rubric>
+   </Class>
+   <Class code="DRY" kind="concept">
+      <Meta name="internalId" value="10400"/>
+      <Rubric id="d1e113597" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Keep in a dry environment</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113610" kind="short">
+         <Label xml:lang="en-US">dry</Label>
+      </Rubric>
+      <Rubric id="d1e113610" kind="preferred">
+         <Label xml:lang="en-US">dry</Label>
+      </Rubric>
+   </Class>
+   <Class code="FRZ" kind="concept">
+      <Meta name="internalId" value="10397"/>
+      <Rubric id="d1e113621" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Keep frozen below 0 ?C</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113634" kind="short">
+         <Label xml:lang="en-US">frozen</Label>
+      </Rubric>
+      <Rubric id="d1e113634" kind="preferred">
+         <Label xml:lang="en-US">frozen</Label>
+      </Rubric>
+   </Class>
+   <Class code="MTLF" kind="concept">
+      <Meta name="internalId" value="14410"/>
+      <Rubric id="d1e113645" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Container is free of heavy metals, including lead.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113658" kind="short">
+         <Label xml:lang="en-US">Metal Free</Label>
+      </Rubric>
+      <Rubric id="d1e113658" kind="preferred">
+         <Label xml:lang="en-US">Metal Free</Label>
+      </Rubric>
+   </Class>
+   <Class code="NTR" kind="concept">
+      <Meta name="internalId" value="10399"/>
+      <Rubric id="d1e113669" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Keep in liquid nitrogen</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113682" kind="short">
+         <Label xml:lang="en-US">nitrogen</Label>
+      </Rubric>
+      <Rubric id="d1e113682" kind="preferred">
+         <Label xml:lang="en-US">nitrogen</Label>
+      </Rubric>
+   </Class>
+   <Class code="PRTL" kind="concept">
+      <Meta name="internalId" value="10401"/>
+      <Rubric id="d1e113693" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Protect from light (eg. Wrap in aluminum foil).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113706" kind="short">
+         <Label xml:lang="en-US">Protect from Light</Label>
+      </Rubric>
+      <Rubric id="d1e113706" kind="preferred">
+         <Label xml:lang="en-US">Protect from Light</Label>
+      </Rubric>
+   </Class>
+   <Class code="PSA" kind="concept">
+      <Meta name="internalId" value="10404"/>
+      <Rubric id="d1e113717" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Do not shake</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113730" kind="short">
+         <Label xml:lang="en-US">do not shake</Label>
+      </Rubric>
+      <Rubric id="d1e113730" kind="preferred">
+         <Label xml:lang="en-US">do not shake</Label>
+      </Rubric>
+   </Class>
+   <Class code="PSO" kind="concept">
+      <Meta name="internalId" value="10402"/>
+      <Rubric id="d1e113742" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Protect against shock</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113755" kind="short">
+         <Label xml:lang="en-US">no shock</Label>
+      </Rubric>
+      <Rubric id="d1e113755" kind="preferred">
+         <Label xml:lang="en-US">no shock</Label>
+      </Rubric>
+   </Class>
+   <Class code="REF" kind="concept">
+      <Meta name="internalId" value="10396"/>
+      <Rubric id="d1e113766" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Keep at refrigerated temperature:4-8C Accidental warming or freezing is of little consequence.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113779" kind="short">
+         <Label xml:lang="en-US">Refrigerated temperature</Label>
+      </Rubric>
+      <Rubric id="d1e113779" kind="preferred">
+         <Label xml:lang="en-US">Refrigerated temperature</Label>
+      </Rubric>
+   </Class>
+   <Class code="SBU" kind="concept">
+      <Meta name="internalId" value="14393"/>
+      <Rubric id="d1e113790" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Shake thoroughly before using</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113803" kind="short">
+         <Label xml:lang="en-US">Shake before use</Label>
+      </Rubric>
+      <Rubric id="d1e113803" kind="preferred">
+         <Label xml:lang="en-US">Shake before use</Label>
+      </Rubric>
+   </Class>
+   <Class code="UFRZ" kind="concept">
+      <Meta name="internalId" value="14408"/>
+      <Rubric id="d1e113814" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Ultra cold frozen -75 to -85C. Ultra cold freezer is typically at temperature of dry ice.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113827" kind="short">
+         <Label xml:lang="en-US">Ultra frozen</Label>
+      </Rubric>
+      <Rubric id="d1e113827" kind="preferred">
+         <Label xml:lang="en-US">Ultra frozen</Label>
+      </Rubric>
+   </Class>
+   <Class code="UPR" kind="concept">
+      <Meta name="internalId" value="10403"/>
+      <Rubric id="d1e113838" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Keep upright, do not turn upside down</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113851" kind="short">
+         <Label xml:lang="en-US">upright</Label>
+      </Rubric>
+      <Rubric id="d1e113851" kind="preferred">
+         <Label xml:lang="en-US">upright</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

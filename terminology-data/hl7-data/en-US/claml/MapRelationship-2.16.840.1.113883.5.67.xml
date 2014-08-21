@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="29"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.67"/>
+   <Title name="MapRelationship" date="2012-08-02" version="1.000">The closeness or quality of the mapping between the HL7 concept (as represented by the HL7 concept identifier) and the source coding system. The values are patterned after the similar relationships used in the UMLS Metathesaurus. Because the HL7 coding sy</Title>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="BT" kind="concept">
+      <Meta name="internalId" value="11054"/>
+      <Rubric id="d1e143435" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The first concept is at a more abstract level than the second concept. For example, Hepatitis is broader than Hepatitis A, and endocrine disease is broader than Diabetes Mellitus. Broader than is the opposite of the narrower than relationship.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e143448" kind="short">
+         <Label xml:lang="en-US">Broader Than</Label>
+      </Rubric>
+      <Rubric id="d1e143448" kind="preferred">
+         <Label xml:lang="en-US">Broader Than</Label>
+      </Rubric>
+   </Class>
+   <Class code="E" kind="concept">
+      <Meta name="internalId" value="11053"/>
+      <Rubric id="d1e143460" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The two concepts have identical meaning.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e143473" kind="short">
+         <Label xml:lang="en-US">Exact</Label>
+      </Rubric>
+      <Rubric id="d1e143473" kind="preferred">
+         <Label xml:lang="en-US">Exact</Label>
+      </Rubric>
+   </Class>
+   <Class code="NT" kind="concept">
+      <Meta name="internalId" value="11055"/>
+      <Rubric id="d1e143484" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The first concept is at a more detailed level than the second concept. For example, Pennicillin G is narrower than Pennicillin, and vellus hair is narrower than hair. Narrower than is the opposite of broader than.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e143497" kind="short">
+         <Label xml:lang="en-US">Narrower Than</Label>
+      </Rubric>
+      <Rubric id="d1e143497" kind="preferred">
+         <Label xml:lang="en-US">Narrower Than</Label>
+      </Rubric>
+   </Class>
+</ClaML>

@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	This example message is provided for illustrative purposes only. It has had no clinical validation. Whilst every effort has been taken to ensure that the examples are consistent with the
+	message specification contained within the MiM, where there are conflicts with the written message specification or schema, the specification or schema shall be considered to take
+	precedence
+-->
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xsi:schemaLocation="urn:hl7-org:v3 ../../schemas/POCD_MT000001UK04.xsd" classCode="DOCCLIN" moodCode="EVN" xmlns:npfitlc="NPFIT:HL7:Localisation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3">
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040" />
+	<npfitlc:messageType root="2.16.840.1.113883.2.1.3.2.4.18.17" extension="POCD_MT020001UK01" />
+	<id root="4962D878-5CE2-4BB4-83D6-EE8C1A835FBE" />
+	<code code="xxx" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" />
+	<title>Urgent Care Summary Report</title>
+	<effectiveTime value="200708012355" />
+	<confidentialityCode code="V" displayName="very restricted" codeSystem="2.16.840.1.113883.5.25" />
+	<setId root="99AF4152-08F0-43E3-A53C-BEAE83230978" />
+	<versionNumber value="1" />
+	<recordTarget typeCode="RCT" contextControlCode="OP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145020UK03#PatientRole" />
+		<patientRole classCode="PAT">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145020UK03#PatientRole" />
+			<id root="2.16.840.1.113883.2.1.4.1" extension="9966648777" />
+		</patientRole>
+	</recordTarget>
+	<author typeCode="AUT" contextControlCode="OP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145001UK03#AssignedAuthorSDS" />
+		<functionCode code="OA" displayName="Originating Author" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.178" />
+		<time value="200708012303" />
+		<assignedAuthor classCode="ASSIGNED">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#AssignedAuthorSDS" />
+			<id root="1.2.826.0.1285.0.2.0.67" extension="200077684351" />
+			<id root="1.2.826.0.1285.0.2.0.65" extension="100033336598" />
+			<code code="R8000" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Clinical Practitioner Access Role" />
+			<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#assignedPerson" />
+				<name>
+					<given>James</given>
+					<family>Brown</family>
+				</name>
+			</assignedPerson>
+			<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#representedOrganization" />
+				<id root="2.16.840.1.113883.2.1.3.2.4.19.2" extension="5N399" />
+				<name>Wakefield Out of Hours Centre</name>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian typeCode="CST">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145018UK03#AssignedCustodian" />
+		<assignedCustodian classCode="ASSIGNED">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145018UK03#AssignedCustodian" />
+			<representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145018UK03#representedCustodianOrganization" />
+				<id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="5N3" />
+				<name>Wakefield District PCT</name>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<informationRecipient typeCode="PRCP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145017UK03#IntendedRecipient" />
+		<intendedRecipient classCode="ASSIGNED">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145017UK03#IntendedRecipient" />
+			<receivedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145017UK03#representedOrganization" />
+				<id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="YEA" />
+				<name>NATIONAL CARE RECORDS SERVICE SPINE</name>
+			</receivedOrganization>
+		</intendedRecipient>
+	</informationRecipient>
+	<informationRecipient typeCode="TRC">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145017UK03#IntendedRecipient" />
+		<intendedRecipient classCode="ASSIGNED">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145017UK03#IntendedRecipient" />
+			<receivedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145017UK03#representedOrganization" />
+				<id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="Z99010" />
+				<name>West Street Surgery, Wakefield</name>
+			</receivedOrganization>
+		</intendedRecipient>
+	</informationRecipient>
+	<componentOf typeCode="COMP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146060UK01#EncompassingEncounter" />
+		<encompassingEncounter classCode="ENC" moodCode="EVN">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146060UK01#EncompassingEncounter" />
+			<id root="063A5AF3-63D6-460E-B338-62F106220B5B" />
+			<code code="xxx" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="xxx" />
+			<effectiveTime>
+				<low value="200708012245" />
+				<high value="200708012303" />
+			</effectiveTime>
+			<dischargeDispositionCode />
+			<responsibleParty typeCode="RESP">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146060UK01#responsibleParty" />
+				<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145022UK02#AssignedEntitySDS" />
+				<assignedEntity classCode="ASSIGNED">
+					<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145022UK02#AssignedEntitySDS" />
+					<id root="1.2.826.0.1285.0.2.0.67" extension="200098741003" />
+					<id root="1.2.826.0.1285.0.2.0.65" extension="100000354864" />
+					<code code="R8000" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Clinical Practitioner Access Role" />
+					<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+						<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145022UK02#assignedPerson" />
+						<name>
+							<given>Peter</given>
+							<family>Lucas</family>
+						</name>
+					</assignedPerson>
+				</assignedEntity>
+			</responsibleParty>
+			<location typeCode="LOC">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146060UK01#location" />
+				<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145024UK01#HealthCareFacility" />
+				<healthCareFacility classCode="SDLOC">
+					<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145024UK01#HealthCareFacility" />
+					<id />
+					<code code="xxx" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="xxx" />
+				</healthCareFacility>
+			</location>
+		</encompassingEncounter>
+	</componentOf>
+	<component typeCode="COMP" contextConductionInd="true">
+		<structuredBody classCode="DOCBODY" moodCode="EVN">
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<id root="E4402886-1E5B-440D-BE19-2B0714A9780E" />
+					<!--Here are the coded entries-->
+					<entry typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146033UK04#SupplyMedication" />
+						<supply classCode="SPLY" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146033UK04#SupplyMedication" />
+							<id root="3FAF2CF5-E673-43AF-80EE-1D763B8DE0DD" />
+							<code code="373784005" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Dispensing medication">
+								<originalText>
+									<reference value="#e2" />
+								</originalText>
+								<qualifier>
+									<name code="263490005" displayName="Status" />
+									<value code="385658003" displayName="Done" />
+								</qualifier>
+							</code>
+							<statusCode code="completed" />
+							<effectiveTime value="200708012242" />
+							<product typeCode="PRD">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146033UK04#product" />
+								<manufacturedProduct classCode="MANU">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146033UK04#manufacturedProduct" />
+									<manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146033UK04#manufacturedMaterial" />
+										<code code="178411000001108" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Lactulose 3.1-3.7g/5ml oral solution (Sandoz Ltd)" />
+									</manufacturedMaterial>
+								</manufacturedProduct>
+							</product>
+							<performer typeCode="PRF">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146033UK04#performer" />
+								<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145022UK02#AssignedEntitySDS" />
+								<time>
+									<center value="200708012355" />
+								</time>
+								<assignedEntity classCode="ASSIGNED">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145022UK02#AssignedEntitySDS" />
+									<id root="1.2.826.0.1285.0.2.0.67" extension="200077684351" />
+									<id root="1.2.826.0.1285.0.2.0.65" extension="100033336598" />
+									<code code="R8000" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Clinical Practitioner Access Role" />
+									<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145022UK02#assignedPerson" />
+										<name>
+											<given>James</given>
+											<family>Brown</family>
+										</name>
+									</assignedPerson>
+								</assignedEntity>
+							</performer>
+							<participant typeCode="RCV" contextControlCode="OP">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146033UK04#receiver" />
+								<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145022UK02#AssignedEntitySDS" />
+								<participantRole classCode="ASSIGNED">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145022UK02#AssignedEntitySDS" />
+									<id root="1.2.826.0.1285.0.2.0.67" extension="200055579965" />
+									<id root="1.2.826.0.1285.0.2.0.65" extension="100099854447" />
+									<code code="R8001" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Nurse Access Role" />
+									<playingEntity classCode="PSN" determinerCode="INSTANCE">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145022UK02#assignedPerson" />
+										<name>
+											<given>Lisa</given>
+											<family>Walton</family>
+										</name>
+									</playingEntity>
+								</participantRole>
+							</participant>
+							<entryRelationship typeCode="COMP" contextConductionInd="true">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146033UK04#entryRelationship" />
+								<seperatableInd value="false" />
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146033UK04#supplyInstructions" />
+									<code code="SI" displayName="Supply Instructions" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.192" />
+									<value xsi:type="ST">treat once.</value>
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="COMP" contextConductionInd="true">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146033UK04#entryRelationship5" />
+								<seperatableInd value="false" />
+								<supply classCode="SPLY" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146033UK04#medicationQuantity" />
+									<code code="246205007" displayName="Quantity" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" />
+									<quantity value="1" unit="packet" />
+								</supply>
+							</entryRelationship>
+						</supply>
+					</entry>
+					<!--Here are the coded entries-->
+					<entry typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146033UK04#SupplyMedication" />
+						<supply classCode="SPLY" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146033UK04#SupplyMedication" />
+							<id root="42EC29AE-3ED0-48DE-B330-DF5ECE5F9283" />
+							<code code="373784005" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Dispensing medication">
+								<originalText>
+									<reference value="#e1" />
+								</originalText>
+								<qualifier>
+									<name code="263490005" displayName="Status" />
+									<value code="385658003" displayName="Done" />
+								</qualifier>
+							</code>
+							<statusCode code="completed" />
+							<effectiveTime value="200708012242" />
+							<product typeCode="PRD">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146033UK04#product" />
+								<manufacturedProduct classCode="MANU">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146033UK04#manufacturedProduct" />
+									<manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146033UK04#manufacturedMaterial" />
+										<code code="3353211000001100" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Relaxit Micro-enema 5ml (Crawford Pharmaceuticals) 4 enema" />
+									</manufacturedMaterial>
+								</manufacturedProduct>
+							</product>
+							<performer typeCode="PRF">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146033UK04#performer" />
+								<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145022UK02#AssignedEntitySDS" />
+								<time>
+									<center value="200708012355" />
+								</time>
+								<assignedEntity classCode="ASSIGNED">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145022UK02#AssignedEntitySDS" />
+									<id root="1.2.826.0.1285.0.2.0.67" extension="200077684351" />
+									<id root="1.2.826.0.1285.0.2.0.65" extension="100033336598" />
+									<code code="R8000" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Clinical Practitioner Access Role" />
+									<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145022UK02#assignedPerson" />
+										<name>
+											<given>James</given>
+											<family>Brown</family>
+										</name>
+									</assignedPerson>
+								</assignedEntity>
+							</performer>
+							<participant typeCode="RCV" contextControlCode="OP">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146033UK04#receiver" />
+								<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145022UK02#AssignedEntitySDS" />
+								<participantRole classCode="ASSIGNED">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145022UK02#AssignedEntitySDS" />
+									<id root="1.2.826.0.1285.0.2.0.67" extension="200055579965" />
+									<id root="1.2.826.0.1285.0.2.0.65" extension="100099854447" />
+									<code code="R8001" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Nurse Access Role" />
+									<playingEntity classCode="PSN" determinerCode="INSTANCE">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145022UK02#assignedPerson" />
+										<name>
+											<given>Lisa</given>
+											<family>Walton</family>
+										</name>
+									</playingEntity>
+								</participantRole>
+							</participant>
+							<entryRelationship typeCode="COMP" contextConductionInd="true">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146033UK04#entryRelationship" />
+								<seperatableInd value="false" />
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146033UK04#supplyInstructions" />
+									<code code="SI" displayName="Supply Instructions" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.192" />
+									<value xsi:type="ST">treat once.</value>
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="COMP" contextConductionInd="true">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146033UK04#entryRelationship5" />
+								<seperatableInd value="false" />
+								<supply classCode="SPLY" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146033UK04#medicationQuantity" />
+									<code code="246205007" displayName="Quantity" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" />
+									<quantity value="1" unit="packet" />
+								</supply>
+							</entryRelationship>
+						</supply>
+					</entry>
+					<!--Here are the coded entries-->
+					<entry typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146005UK04#CareEvent" />
+						<encounter classCode="ENC" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146005UK04#CareEvent" />
+							<id root="9CA0D37F-EBF7-4C93-AA64-FFC93DB83374" />
+							<code code="313184003" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Patient given telephone advice out of hours">
+								<originalText>
+									<reference value="#c1" />
+								</originalText>
+							</code>
+							<statusCode code="completed" />
+							<effectiveTime>
+								<low value="200708012255" />
+								<high value="200708012303" />
+							</effectiveTime>
+							<participant typeCode="LOC" contextControlCode="OP">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146005UK04#location1" />
+								<participantRole classCode="SDLOC">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146005UK04#careSetting" />
+									<code code="xxx" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="xxx" />
+								</participantRole>
+							</participant>
+						</encounter>
+					</entry>
+					<!--Here are the coded entries-->
+					<entry typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146005UK04#CareEvent" />
+						<encounter classCode="ENC" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146005UK04#CareEvent" />
+							<id root="9CA0D37F-EBF7-4C93-AA64-FFC93DB83374" />
+							<code code="313184003" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Patient given telephone advice out of hours">
+								<originalText>
+									<reference value="#b4" />
+								</originalText>
+							</code>
+							<statusCode code="completed" />
+							<effectiveTime>
+								<low value="200708012250" />
+								<high value="200708012255" />
+							</effectiveTime>
+							<author typeCode="AUT" contextControlCode="OP">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146005UK04#author" />
+								<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145001UK03#AssignedAuthorSDS" />
+								<functionCode code="OA" displayName="Originating Author" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.178" />
+								<time value="200708012245" />
+								<assignedAuthor classCode="ASSIGNED">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#AssignedAuthorSDS" />
+									<id root="1.2.826.0.1285.0.2.0.67" extension="200065412444" />
+									<id root="1.2.826.0.1285.0.2.0.65" extension="100088886548" />
+									<code code="R8000" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Clinical Practitioner Access Role" />
+									<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#assignedPerson" />
+										<name>
+											<given>Alex</given>
+											<family>Smith</family>
+										</name>
+									</assignedPerson>
+									<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#representedOrganization" />
+										<id root="2.16.840.1.113883.2.1.3.2.4.19.2" extension="5N399" />
+										<name>Wakefield Out of Hours Centre</name>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<participant typeCode="LOC" contextControlCode="OP">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146005UK04#location1" />
+								<participantRole classCode="SDLOC">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146005UK04#careSetting" />
+									<code code="xxx" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="xxx" />
+								</participantRole>
+							</participant>
+						</encounter>
+					</entry>
+					<!--Here are the coded entries-->
+					<entry typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146011UK04#Diagnosis" />
+						<observation classCode="OBS" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146011UK04#Diagnosis" />
+							<id root="0072DCC0-F9CE-4D40-B46A-96A98802716E" />
+							<code code="197119006" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Acute constipation">
+								<originalText>
+									<reference value="#b3" />
+								</originalText>
+							</code>
+							<statusCode code="completed" />
+							<effectiveTime value="200708012255" />
+							<author typeCode="AUT" contextControlCode="OP">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146011UK04#author" />
+								<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145001UK03#AssignedAuthorSDS" />
+								<functionCode code="OA" displayName="Originating Author" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.178" />
+								<time value="200708012245" />
+								<assignedAuthor classCode="ASSIGNED">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#AssignedAuthorSDS" />
+									<id root="1.2.826.0.1285.0.2.0.67" extension="200065412444" />
+									<id root="1.2.826.0.1285.0.2.0.65" extension="100088886548" />
+									<code code="R8000" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Clinical Practitioner Access Role" />
+									<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#assignedPerson" />
+										<name>
+											<given>Alex</given>
+											<family>Smith</family>
+										</name>
+									</assignedPerson>
+									<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#representedOrganization" />
+										<id root="2.16.840.1.113883.2.1.3.2.4.19.2" extension="5N399" />
+										<name>Wakefield Out of Hours Centre</name>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+						</observation>
+					</entry>
+					<!--Here are the coded entries-->
+					<entry typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146012UK04#Finding" />
+						<observation classCode="OBS" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146012UK04#Finding" />
+							<id root="0072DCC0-F9CE-4D40-B46A-96A98802716E" />
+							<code code="249521002" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Frequency of bowel movement">
+								<originalText>
+									<reference value="#b2" />
+								</originalText>
+							</code>
+							<statusCode code="active" />
+							<effectiveTime>
+								<low value="20070727" />
+							</effectiveTime>
+							<value xsi:type="ST">5 days ago.</value>
+							<author typeCode="AUT" contextControlCode="OP">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146012UK04#author" />
+								<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145001UK03#AssignedAuthorSDS" />
+								<functionCode code="OA" displayName="Originating Author" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.178" />
+								<time value="200708012245" />
+								<assignedAuthor classCode="ASSIGNED">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#AssignedAuthorSDS" />
+									<id root="1.2.826.0.1285.0.2.0.67" extension="200065412444" />
+									<id root="1.2.826.0.1285.0.2.0.65" extension="100088886548" />
+									<code code="R8000" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Clinical Practitioner Access Role" />
+									<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#assignedPerson" />
+										<name>
+											<given>Alex</given>
+											<family>Smith</family>
+										</name>
+									</assignedPerson>
+									<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#representedOrganization" />
+										<id root="2.16.840.1.113883.2.1.3.2.4.19.2" extension="5N399" />
+										<name>Wakefield Out of Hours Centre</name>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<informant typeCode="INF" contextControlCode="OP">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146012UK04#informant" />
+								<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145007UK03#RelatedEntity" />
+								<relatedEntity classCode="PRS">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145007UK03#RelatedEntity" />
+									<code code="20" displayName="Carer" codeSystem="2.16.840.1.113883.2.1.3.2.4.16.45" />
+									<relatedPerson classCode="PSN" determinerCode="INSTANCE">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145007UK03#relationshipHolder" />
+										<name>
+											<given>Jane</given>
+											<family>Williams</family>
+										</name>
+									</relatedPerson>
+								</relatedEntity>
+							</informant>
+						</observation>
+					</entry>
+					<!--Here are the coded entries-->
+					<entry typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146012UK04#Finding" />
+						<observation classCode="OBS" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146012UK04#Finding" />
+							<id root="0072DCC0-F9CE-4D40-B46A-96A98802716E" />
+							<code code="197119006" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Acute constipation">
+								<originalText>
+									<reference value="#b1" />
+								</originalText>
+							</code>
+							<statusCode code="active" />
+							<effectiveTime>
+								<low value="20070727" />
+								<high value="20070801" />
+							</effectiveTime>
+							<author typeCode="AUT" contextControlCode="OP">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146012UK04#author" />
+								<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145001UK03#AssignedAuthorSDS" />
+								<functionCode code="OA" displayName="Originating Author" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.178" />
+								<time value="200708012245" />
+								<assignedAuthor classCode="ASSIGNED">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#AssignedAuthorSDS" />
+									<id root="1.2.826.0.1285.0.2.0.67" extension="200065412444" />
+									<id root="1.2.826.0.1285.0.2.0.65" extension="100088886548" />
+									<code code="R8000" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Clinical Practitioner Access Role" />
+									<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#assignedPerson" />
+										<name>
+											<given>Alex</given>
+											<family>Smith</family>
+										</name>
+									</assignedPerson>
+									<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#representedOrganization" />
+										<id root="2.16.840.1.113883.2.1.3.2.4.19.2" extension="5N399" />
+										<name>Wakefield Out of Hours Centre</name>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<informant typeCode="INF" contextControlCode="OP">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146012UK04#informant" />
+								<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145007UK03#RelatedEntity" />
+								<relatedEntity classCode="PRS">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145007UK03#RelatedEntity" />
+									<code code="20" displayName="Carer" codeSystem="2.16.840.1.113883.2.1.3.2.4.16.45" />
+									<relatedPerson classCode="PSN" determinerCode="INSTANCE">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145007UK03#relationshipHolder" />
+										<name>
+											<given>Jane</given>
+											<family>Williams</family>
+										</name>
+									</relatedPerson>
+								</relatedEntity>
+							</informant>
+						</observation>
+					</entry>
+					<!--Here are the coded entries-->
+					<entry typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146012UK04#Finding" />
+						<observation classCode="OBS" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146012UK04#Finding" />
+							<id root="BBEDBFE5-CC24-4131-89BC-60AAE8332E84" />
+							<code code="14760008" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Constipation">
+								<originalText>
+									<reference value="#a1" />
+								</originalText>
+							</code>
+							<statusCode code="active" />
+							<effectiveTime>
+								<low value="20070727" />
+								<high value="20070801" />
+							</effectiveTime>
+							<author typeCode="AUT" contextControlCode="OP">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146012UK04#author" />
+								<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145001UK03#AssignedAuthorSDS" />
+								<functionCode code="OA" displayName="Originating Author" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.178" />
+								<time value="200708012245" />
+								<assignedAuthor classCode="ASSIGNED">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#AssignedAuthorSDS" />
+									<id root="1.2.826.0.1285.0.2.0.67" extension="200065412444" />
+									<id root="1.2.826.0.1285.0.2.0.65" extension="100088886548" />
+									<code code="R8009" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Receptionist Access Role" />
+									<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#assignedPerson" />
+										<name>
+											<given>Alex</given>
+											<family>Smith</family>
+										</name>
+									</assignedPerson>
+									<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#representedOrganization" />
+										<id root="2.16.840.1.113883.2.1.3.2.4.19.2" extension="5N399" />
+										<name>Wakefield Out of Hours Centre</name>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<informant typeCode="INF" contextControlCode="OP">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146012UK04#informant" />
+								<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145007UK03#RelatedEntity" />
+								<relatedEntity classCode="PRS">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145007UK03#RelatedEntity" />
+									<code code="20" displayName="Carer" codeSystem="2.16.840.1.113883.2.1.3.2.4.16.45" />
+									<relatedPerson classCode="PSN" determinerCode="INSTANCE">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145007UK03#relationshipHolder" />
+										<name>
+											<given>Jane</given>
+											<family>Williams</family>
+										</name>
+									</relatedPerson>
+								</relatedEntity>
+							</informant>
+						</observation>
+					</entry>
+					<component typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146061UK01#Section1" />
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#Section1" />
+							<id root="FCF1BD44-2A6B-42B5-81EF-5110450B11CC" />
+							<title>Presenting Information</title>
+							<text>
+								<paragraph>Call Handler: Alex Smith, Heath Advisor<br />
+									<br />
+												Caller Name: Jane Williams<br />
+												Caller Relationship: Carer</paragraph>
+								<paragraph>The patient is bed bound and dying from terminal lung cancer. <content ID="a1">He has not opened his bowels for the last 5 days </content>and is now suffering with abdominal pain and distension.</paragraph>
+							</text>
+							<author typeCode="AUT" contextControlCode="OP">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#author" />
+								<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145001UK03#AssignedAuthorSDS" />
+								<functionCode code="OA" displayName="Originating Author" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.178" />
+								<time value="200708012245" />
+								<assignedAuthor classCode="ASSIGNED">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#AssignedAuthorSDS" />
+									<id root="1.2.826.0.1285.0.2.0.67" extension="200065412444" />
+									<id root="1.2.826.0.1285.0.2.0.65" extension="100088886548" />
+									<code code="R8009" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Receptionist Access Role" />
+									<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#assignedPerson" />
+										<name>
+											<given>Alex</given>
+											<family>Smith</family>
+										</name>
+									</assignedPerson>
+									<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145001UK03#representedOrganization" />
+										<id root="2.16.840.1.113883.2.1.3.2.4.19.2" extension="5N399" />
+										<name>Wakefield Out of Hours Centre</name>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+						</section>
+					</component>
+					<component typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146061UK01#Section1" />
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#Section1" />
+							<id root="E1BD1C28-033A-4319-9C41-26E454ED8743" />
+							<title>Telephone Advice</title>
+							<text>
+								<paragraph>
+									<content ID="b4">
+									Clinician: Joanna Beadle Nurse Practitioner<br />
+									Consultation Time: 01-Aug-07 22:50 – 22:55</content>
+								</paragraph>
+							</text>
+							<component typeCode="COMP" contextConductionInd="true">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#component1" />
+								<section classCode="DOCSECT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#section2" />
+									<id root="583D139A-5503-4B49-B8DD-AB9621ED391E" />
+									<title>History</title>
+									<text>
+										<paragraph>The patient is bed bound and dying from terminal lung cancer with painful bony secondaries.  He is on high doses of slow release oral opiates but has not been given any laxatives.<content ID="b2">The patient last had his bowels open over 5 days ago </content>and is now in considerable discomfort from <content ID="b1">constipation.</content>
+										</paragraph>
+									</text>
+								</section>
+							</component>
+							<component typeCode="COMP" contextConductionInd="true">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#component1" />
+								<section classCode="DOCSECT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#section2" />
+									<id root="D22F4DCF-89CD-4778-A88C-3F3D72A256B1" />
+									<title>Diagnoses</title>
+									<text>
+										<content ID="b3">Acute Constipation.</content>
+									</text>
+								</section>
+							</component>
+							<component typeCode="COMP" contextConductionInd="true">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#component1" />
+								<section classCode="DOCSECT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#section2" />
+									<id root="6E4C85E5-4943-4340-BF7A-DE15349E2A29" />
+									<title>Management</title>
+									<component typeCode="COMP" contextConductionInd="true">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#component2" />
+										<section classCode="DOCSECT" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#section3" />
+											<id root="9C175BEC-C1AD-4F1A-A050-31081C80D8ED" />
+											<title>Treatment</title>
+											<text>Further advice from Doctor.</text>
+										</section>
+									</component>
+								</section>
+							</component>
+						</section>
+					</component>
+					<component typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146061UK01#Section1" />
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#Section1" />
+							<id root="A37C2BC7-24C1-466B-BFF5-C228BE93C641" />
+							<title>Telephone Consultation</title>
+							<text>
+								<paragraph>
+									<content ID="c1">
+												Clinician: James Brown, General Practitioner<br />
+												Consultation Time: 01-Aug-07 22:55 – 23:03</content>
+								</paragraph>
+							</text>
+							<component typeCode="COMP" contextConductionInd="true">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#component1" />
+								<section classCode="DOCSECT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#section2" />
+									<id root="01B747C6-0725-4B11-87A3-B13D78B4A3AC" />
+									<title>History</title>
+									<text>Confirmed previous history taken.</text>
+								</section>
+							</component>
+							<component typeCode="COMP" contextConductionInd="true">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#component1" />
+								<section classCode="DOCSECT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#section2" />
+									<id root="2588BB45-341A-4E23-AB83-3CB524BBECA7" />
+									<title>Management</title>
+									<component typeCode="COMP" contextConductionInd="true">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#component2" />
+										<section classCode="DOCSECT" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#section3" />
+											<id root="B86F4740-414D-4368-8038-496BE8E52694" />
+											<title>Treatment</title>
+											<text>Oral laxitives.</text>
+										</section>
+									</component>
+									<component typeCode="COMP" contextConductionInd="true">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#component2" />
+										<section classCode="DOCSECT" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#section3" />
+											<id root="09058C41-6A85-463B-A95C-472F3F25F290" />
+											<title>Medication</title>
+											<text>
+												<list listType="unordered">
+													<item>
+														<content ID="e1">Sodium citrate microenema 5ml once, supplied to Lisa Walton (District Nurse)</content>
+													</item>
+													<item>
+														<content ID="e2">Lactulose 15ml Three times daily, supplied to Lisa Walton (District Nurse)</content>
+													</item>
+												</list>
+											</text>
+										</section>
+									</component>
+								</section>
+							</component>
+						</section>
+					</component>
+					<component typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146061UK01#Section1" />
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#Section1" />
+							<id root="C1909C96-5E56-4602-BF68-27F47B3A644C" />
+							<title>Final Outcome</title>
+							<component typeCode="COMP" contextConductionInd="true">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#component1" />
+								<section classCode="DOCSECT" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#section2" />
+									<id root="C3840C6C-6E1D-4D2D-B5AB-2132F20C9775" />
+									<title>Appointments and Serivces</title>
+									<text>Passed to district nursing team to administer enema.</text>
+								</section>
+							</component>
+						</section>
+					</component>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

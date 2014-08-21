@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:sciphox="urn::sciphox-org/sciphox"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../schemas/CDA.xsd">
+  <!--typeId-Element-->
+  <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+  <!--Dokumenten-Id-->
+  <id extension="14006045" root="1.2.276.0.76.3.1.8.2.1.260000007.1351"/>
+  <!--Typisierung des Dokuments-->
+  <code code="34105-7" codeSystem="2.16.840.1.113883.6.1" displayName="Zusammenfassung bei
+    stationärer Entlassung"/>
+  <!--Zusätzliche Dokumenttyp-Bezeichnung-->
+  <title>CDA 2 Arztbrief: strukturierter Entlassbrief</title>
+  <!--Erstellungsdatum des Dokuments-->
+  <effectiveTime value="20060512142033"/>
+  <!--Vertraulichkeit des Dokuments-->
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+  <!--Sprache des Dokuments-->
+  <languageCode code="de-DE"/>
+  <!--_________________________ Patient ___________________________-->
+  <recordTarget>
+    <patientRole>
+      <!--Patienten-Identifikationsnummer VHitG-->
+      <id extension="890098" root="1.2.276.0.76.3.1.13.99"/>
+      <!--Patienten-Identifikationsnummer medico-->
+      <id extension="10702893" root="1.2.276.0.76.3.1.8.2.1.260000007.1000"/>
+      <!--Patienten-Adresse-->
+      <addr>
+        <streetAddressLine>Oberstr. 1</streetAddressLine>
+        <postalCode>52349</postalCode>
+        <city>Düren</city>
+      </addr>
+      <!--Patienten-Telekommunikation-Kontakte-->
+      <telecom value="tel:02421.823.0012"/>
+      <!--___ Patient (Entität) ___-->
+      <patient>
+        <!--Patienten-Name-->
+        <name>
+          <given>Bruno</given>
+          <family>Bockig</family>
+        </name>
+        <!--Geschlecht des Patienten-->
+        <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+        <!--Geburtsdatum des Patienten-->
+        <birthTime value="19300301000000"/>
+        <!--Geburtsort des Patienten-->
+        <birthplace>
+          <place>
+            <addr>
+              <country>D</country>
+              <city>Leverkusen</city>
+            </addr>
+          </place>
+        </birthplace>
+      </patient>
+      <!--___ Heilberufler-Organisation für den Patienten ___-->
+      <providerOrganization>
+        <!--ID der Heilberufler-Organisation IK-Nummer-->
+        <!--ID der Heilberufler-Organisation medico-Nummer-->
+        <id extension="100020" root="1.2.276.0.76.3.1.8.2.1.260000007.8203"/>
+        <!--Name der Heilberufler-Organisation-->
+        <name>Merz</name>
+        <!--Telekommunikation-Kontakte-->
+        <telecom value="tel:02421.35412.0"/>
+        <telecom value="fax:02421.35412.9"/>
+        <!--Adresse der Heilberufler-Organisation-->
+        <addr>
+          <streetAddressLine>Jahnstraße 39</streetAddressLine>
+          <postalCode>52330</postalCode>
+          <city>Düren</city>
+        </addr>
+      </providerOrganization>
+    </patientRole>
+  </recordTarget>
+  <!--Autor-->
+  <author>
+    <!--Funktion des Autors ????-->
+    <functionCode/>
+    <!--Zeitpunkt der Dokumentation (Autorenschaft)-->
+    <time value="20060512142033"/>
+    <assignedAuthor>
+      <!--ID des Autors VHitG-->
+      <id extension="9082364" root="1.2.276.0.76.3.1.13.89"/>
+      <!--ID des Autors medico-->
+      <id extension="ALLES" root="1.2.276.0.76.3.1.8.2.1.260000007.8201"/>
+      <!--Adresse des Autors-->
+      <addr>
+        <streetAddressLine>St. August. Str</streetAddressLine>
+        <postalCode>52330</postalCode>
+        <city>Düren</city>
+      </addr>
+      <!--Telekommunikation-Kontakte des Autors-->
+      <telecom value="tel:0170.1234567"/>
+      <telecom value="mailto:siebert.siegfried@st-august-klinik.de"/>
+      <!--Autor als Person-->
+      <assignedPerson>
+        <!--Name des Autors-->
+        <name>
+          <given>Siegfried</given>
+          <family>Siebert</family>
+        </name>
+      </assignedPerson>
+      <!--Durch den Autor repräsentierte Organisation-->
+      <representedOrganization>
+        <!--ID der Organisation-->
+        <id extension="1" root="1.2.276.0.76.3.1.8.2.1.260000007.8960"/>
+        <!--Name der Organisation-->
+        <name>Kreiskrankenhaus Düren</name>
+        <!--Telekommunikation-Kontakte der Organisation-->
+        <telecom value="tel:02421.30.1000"/>
+        <telecom value="fax:02421.30.9001"/>
+        <!--Adresse der Organisation-->
+        <addr>
+          <streetAddressLine>Roonstraße 30</streetAddressLine>
+          <postalCode>52351</postalCode>
+          <city>Düren</city>
+        </addr>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <!--Verwaltende Organisation-->
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <!--ID der verwaltenden Organisation-->
+        <id extension="1" root="1.2.276.0.76.3.1.8.2.1.260000007.8960"/>
+        <!--Name der verwaltenden Organisation-->
+        <name>Kreiskrankenhaus Düren</name>
+        <!--Telekommunikation-Kontakte der verwaltenden Organisation-->
+        <telecom value="tel:02421.30.1000"/>
+        <!--Adresse der verwaltenden Organisation-->
+        <addr>
+          <streetAddressLine>Roonstraße 30</streetAddressLine>
+          <postalCode>52351</postalCode>
+          <city>Düren</city>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <!--Beabsichtigte Empfänger des Dokuments-->
+  <informationRecipient typeCode="PRCP">
+    <intendedRecipient>
+      <!--ID des primären Empfängers des Dokuments (VHitG-Nummer)-->
+      <id extension="2349820" root="1.2.276.0.76.3.1.13.89"/>
+      <!--Name des primären Empfängers des Dokuments-->
+      <informationRecipient>
+        <name>
+          <given>Gerda</given>
+          <family>Gewitter</family>
+        </name>
+      </informationRecipient>
+      <receivedOrganization>
+        <!--Telekommunikation-Kontakte-->
+        <telecom value="tel:02421.862.360"/>
+        <!--Adresse des primären Empfängers des Dokuments-->
+        <addr>
+          <streetAddressLine>Schenkelstr. 11</streetAddressLine>
+          <postalCode>52349</postalCode>
+          <city>Düren</city>
+        </addr>
+      </receivedOrganization>
+    </intendedRecipient>
+  </informationRecipient>
+  <!--Unterzeichner-->
+  <!--Weitere Beteiligte-->
+  <componentOf>
+    <!--Informationen zum Patientenkontakt (EncompassingEncounter)-->
+    <encompassingEncounter>
+      <!--Klassifikation des Aufenthaltes-->
+      <code code="IMP" codeSystem="2.16.840.1.113883.5.4"/>
+      <!--Zeitraum des Aufenthaltes-->
+      <effectiveTime>
+        <low value="20060125100000"/>
+        <high value="20060217100000" inclusive="true"/>
+      </effectiveTime>
+      <location>
+        <healthCareFacility>
+          <serviceProviderOrganization>
+            <!--Name der Einrichtung des Gesundheitswesens-->
+            <name>Kreiskrankenhaus Düren</name>
+            <!--Adresse der Einrichtung des Gesundheitswesens-->
+            <addr>
+              <streetAddressLine>Roonstraße 30</streetAddressLine>
+              <postalCode>52351</postalCode>
+              <city>Düren</city>
+            </addr>
+          </serviceProviderOrganization>
+        </healthCareFacility>
+      </location>
+    </encompassingEncounter>
+  </componentOf>
+  <!--======================== CDA Body ===========================-->
+  <component>
+    <!--_______________________ CDA R2 Body _________________________-->
+    <structuredBody>
+      <!--___Komponente Anrede___-->
+      <component>
+        <section>
+          <code code="X-SALUT" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <text>Sehr geehrte Damen und Herren, <br/><br/>wir berichten über den Patienten Herrn
+            Prof. Dr. Bruno Bockig, geb. am 01.03.1930, wohnhaft Oberstr. 1, 52349 Düren (KK: AOK
+            301), der sich vom 25.01.2006 bis 17.02.2006 in unserer stationären Behandlung
+            befand.<br/></text>
+        </section>
+      </component>
+      <!--____Komponente Fragestellung____-->
+      <!--____Komponente Anamnese____-->
+      <component>
+        <section>
+          <code code="10164-2" codeSystem="2.16.840.1.113883.6.1"/>
+          <title>Anamnese</title>
+          <text>Laut Aussage des Patienten bei Aufnahme sei er am 19.01.2006 von seinem eigenen
+            Trecker auf Beckhöhe überrollt worden. Herr Krummbein arbeitete zunächst wie gewohnt
+            weiter und stellte sich erst heute wegen persistierender Schmerzen und Schwellung beider
+            Beine bei seinem Hausarzt Herrn Dr. Merz vor. Dieser überwies Herrn Krummbein in die
+            Notfallambulanz des Kreiskrankenhauses Düren. Nach intensivmedizinischer Überwachung in
+            der Nacht wurde der Patient unfallchirurgisch versorgt.<br/></text>
+        </section>
+      </component>
+      <!--____Komponente Befund____-->
+      <!--____Komponente Medikation-->
+      <!--____Komponente Bildbefund mit externen Referenzen-->
+      <!--____Komponente Diagnose mit ICD____-->
+      <component>
+        <section>
+          <code code="27754-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Diagnosen mit ICD 10</title>
+          <text>
+            <table border="1">
+              <thead>
+                <tr>
+                  <th>Diagnose</th>
+                  <th>ICD Code</th>
+                  <th>Lokalisation</th>
+                  <th>Zusatz</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <content ID="diag-5002544">Fraktur: Sonstige und multiple Teile des
+                    Beckens</content>
+                  </td>
+                  <td>S32.89</td>
+                  <td/>
+                  <td/>
+                </tr>
+                <tr>
+                  <td>
+                    <content ID="diag-5002545">Traumatische Symphysensprengung</content>
+                  </td>
+                  <td>S33.4</td>
+                  <td/>
+                  <td/>
+                </tr>
+                <tr>
+                  <td>
+                    <content ID="diag-5002546">Fraktur des Os sacrum</content>
+                  </td>
+                  <td>S32.1</td>
+                  <td/>
+                  <td/>
+                </tr>
+                <tr>
+                  <td>
+                    <content ID="diag-5002547">Nicht näher bezeichnete Niereninsuffizienz</content>
+                  </td>
+                  <td>N19</td>
+                  <td/>
+                  <td/>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" negationInd="false">
+              <!--Diagnosen-Identifikationsnummer-->
+              <id extension="5002544" root="1.2.276.0.76.3.1.8.2.1.260000007.1280"/>
+              <!--Diagnose-Klassifizierung (Diagnosetyp)-->
+              <code code="DISDX" codeSystem="2.16.840.1.113883.3.7.1.16" codeSystemName="LOINC"
+                displayName="Entlassungsdiagnose"/>
+              <!--Statuscode immer completed-->
+              <statusCode code="completed"/>
+              <!--Zeitangabe Diagnose-->
+              <effectiveTime value="20060502172023"/>
+              <!--Diagnose-Code-->
+              <value xsi:type="CD" code="S32.89" codeSystem="1.2.276.0.76.5.311"
+                codeSystemName="icd10gm2006" displayName="Fraktur: Sonstige und multiple Teile des
+                Beckens">
+                <originalText>
+                  <reference value="#diag-5002544"/>
+                </originalText>
+                <!--Sicherheit/Verlässlichkeit der Diagnose-->
+                <qualifier code="" codeSystem="2.16.840.1.113883.3.7.1.8"/>
+                <!--Seitenlokalisation der Diagnose-->
+                <qualifier code="" codeSystem="2.16.840.1.113883.3.7.1.7"/>
+              </value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" negationInd="false">
+              <!--Diagnosen-Identifikationsnummer-->
+              <id extension="5002545" root="1.2.276.0.76.3.1.8.2.1.260000007.1280"/>
+              <!--Diagnose-Klassifizierung (Diagnosetyp)-->
+              <code code="DISDX" codeSystem="2.16.840.1.113883.3.7.1.16" codeSystemName="LOINC"
+                displayName="Entlassungsdiagnose"/>
+              <!--Statuscode immer completed-->
+              <statusCode code="completed"/>
+              <!--Zeitangabe Diagnose-->
+              <effectiveTime value="20060502172032"/>
+              <!--Diagnose-Code-->
+              <value xsi:type="CD" code="S33.4" codeSystem="1.2.276.0.76.5.311"
+                codeSystemName="icd10gm2006" displayName="Traumatische Symphysensprengung">
+                <originalText>
+                  <reference value="#diag-5002545"/>
+                </originalText>
+                <!--Sicherheit/Verlässlichkeit der Diagnose-->
+                <qualifier code="" codeSystem="2.16.840.1.113883.3.7.1.8"/>
+                <!--Seitenlokalisation der Diagnose-->
+                <qualifier code="" codeSystem="2.16.840.1.113883.3.7.1.7"/>
+              </value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" negationInd="false">
+              <!--Diagnosen-Identifikationsnummer-->
+              <id extension="5002546" root="1.2.276.0.76.3.1.8.2.1.260000007.1280"/>
+              <!--Diagnose-Klassifizierung (Diagnosetyp)-->
+              <code code="DISDX" codeSystem="2.16.840.1.113883.3.7.1.16" codeSystemName="LOINC"
+                displayName="Entlassungsdiagnose"/>
+              <!--Statuscode immer completed-->
+              <statusCode code="completed"/>
+              <!--Zeitangabe Diagnose-->
+              <effectiveTime value="20060502172039"/>
+              <!--Diagnose-Code-->
+              <value xsi:type="CD" code="S32.1" codeSystem="1.2.276.0.76.5.311"
+                codeSystemName="icd10gm2006" displayName="Fraktur des Os sacrum">
+                <originalText>
+                  <reference value="#diag-5002546"/>
+                </originalText>
+                <!--Sicherheit/Verlässlichkeit der Diagnose-->
+                <qualifier code="" codeSystem="2.16.840.1.113883.3.7.1.8"/>
+                <!--Seitenlokalisation der Diagnose-->
+                <qualifier code="" codeSystem="2.16.840.1.113883.3.7.1.7"/>
+              </value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" negationInd="false">
+              <!--Diagnosen-Identifikationsnummer-->
+              <id extension="5002547" root="1.2.276.0.76.3.1.8.2.1.260000007.1280"/>
+              <!--Diagnose-Klassifizierung (Diagnosetyp)-->
+              <code code="DISDX" codeSystem="2.16.840.1.113883.3.7.1.16" codeSystemName="LOINC"
+                displayName="Entlassungsdiagnose"/>
+              <!--Statuscode immer completed-->
+              <statusCode code="completed"/>
+              <!--Zeitangabe Diagnose-->
+              <effectiveTime value="20060502172042"/>
+              <!--Diagnose-Code-->
+              <value xsi:type="CD" code="N19" codeSystem="1.2.276.0.76.5.311"
+                codeSystemName="icd10gm2006" displayName="Nicht näher bezeichnete
+                Niereninsuffizienz">
+                <originalText>
+                  <reference value="#diag-5002547"/>
+                </originalText>
+                <!--Sicherheit/Verlässlichkeit der Diagnose-->
+                <qualifier code="" codeSystem="2.16.840.1.113883.3.7.1.8"/>
+                <!--Seitenlokalisation der Diagnose-->
+                <qualifier code="" codeSystem="2.16.840.1.113883.3.7.1.7"/>
+              </value>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <!--____Komponente Therapien____-->
+      <component>
+        <section>
+          <code code="19009-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Maßnahmen / Behandlungen</title>
+          <text>
+            <table border="1">
+              <thead>
+                <tr>
+                  <th>Datum</th>
+                  <th>OPS Code</th>
+                  <th>Maßnahme</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>20060130172200</td>
+                  <td>5-798.4</td>
+                  <td>
+                    <content ID="proc-5002548">Offene Reposition einer Beckenrand- und
+                      Beckenringfraktur: Durch Platte, vorderer Beckenring</content>
+                  </td>
+                </tr>
+                <tr>
+                  <td>20060125172200</td>
+                  <td>3-225</td>
+                  <td>
+                    <content ID="proc-5002549">Computertomographie des Abdomens mit
+                    Kontrastmittel</content>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <procedure classCode="PROC" moodCode="EVN">
+              <!--Prozedur-Identifikationsnummer-->
+              <id extension="5002548" root="1.2.276.0.76.3.1.8.2.1.260000007.1280"/>
+              <!--Prozedur-Klassifizierung (Prozedurtyp)-->
+              <code code="5-798.4" codeSystem="1.2.276.0.76.5.310" codeSystemName="ops2006">
+                <originalText>
+                  <reference value="#proc-5002548"/>
+                </originalText>
+              </code>
+              <!--ergänzende Erläuterungen zur Prozedur-->
+              <text>Offene Reposition einer Beckenrand- und Beckenringfraktur: Durch Platte,
+                vorderer Beckenring</text>
+              <!--Statuscode immer completed-->
+              <statusCode code="completed"/>
+              <!--Zeitangabe Prozedur-->
+              <effectiveTime value="20060502172213"/>
+            </procedure>
+          </entry>
+          <entry typeCode="DRIV">
+            <procedure classCode="PROC" moodCode="EVN">
+              <!--Prozedur-Identifikationsnummer-->
+              <id extension="5002549" root="1.2.276.0.76.3.1.8.2.1.260000007.1280"/>
+              <!--Prozedur-Klassifizierung (Prozedurtyp)-->
+              <code code="3-225" codeSystem="1.2.276.0.76.5.310" codeSystemName="ops2006">
+                <originalText>
+                  <reference value="#proc-5002549"/>
+                </originalText>
+              </code>
+              <!--ergänzende Erläuterungen zur Prozedur-->
+              <text>Computertomographie des Abdomens mit Kontrastmittel</text>
+              <!--Statuscode immer completed-->
+              <statusCode code="completed"/>
+              <!--Zeitangabe Prozedur-->
+              <effectiveTime value="20060502172236"/>
+            </procedure>
+          </entry>
+        </section>
+      </component>
+      <!--____Komponente Course____-->
+      <component>
+        <section>
+          <title>Verlauf im Krankenhaus</title>
+          <text>Bei der Aufnahme fand sich ein ca. 20 x 20 cm großes Hämatom am linken Unterbauch
+            und in der Nähe des Beckenkamms. Es fiel eine deutlich ödematöse Schwellung beider Beine
+            li &gt; re auf. Außerdem konnte ein Beckenkompressionsschmerz bei instabilem Becken
+            ausgelöst werden. Die periphere Durchblutung, Motorik und Sensibilität waren
+            intakt.<br/>Aufgrund steigender Kreatinin-Werte wurde zunächst ein Abdomen CT mit
+            Kontrastmittel veranlasst. Hier zeigte sich eine ausbleibende Anreicherung der linken
+            Niere. Die Kollegen der urologischen Klinik legten daraufhin am 25.01.2006 einen
+            Double-J-Katheter und empfahlen einen Farbduplex der Nierenarterie sowie eine retrograde
+            Darstellung der ableitenden Harnwege im Verlauf des stationären Aufenthaltes.<br/>Am
+            30.01.2006 wurde die offene Reposition der Beckenrand- und Beckenringfraktur mit Platte
+            vorderer Beckenring durchgeführt. Die Drainagen konnten zeitgerecht entfernt werden. Die
+            Wundheilung erfolgte primär. Die FKDS und IVP zeigten eine wieder regelrechte Perfusion
+            und Ausscheidung der linken Niere.<br/>Die Mobilisation erfolgte über das linke Bein,
+            verzögerte sich jedoch aufgrund orthostatischer Dysregulation und mangelnder Compliance
+            des Patienten. Intermittierend berichtete Herr Krummbein über pseudoradikuläre
+            Parästhesien des rechten Beines. Unter Neurotin-Medikation bildeten sich diese jedoch
+            vollständig zurück.<br/>Augrund des wiederholten Bakteriennachweises im Urin wird eine
+            Antibiotikatherapie mit Tavanic 500 veranlasst.<br/>Am 18-02-2006 kann wir Herrn
+            Krummbein bei allgemeinem Wohlbefinden in die stationäre Rehabilitationseinrichtung nach
+            Nümbrecht verlegt werden. Zu diesem Zeitpunkt sind die Wundverhältnisse reizlos und die
+            Entzündungslaborparameter liegen im Normbereich.<br/></text>
+        </section>
+      </component>
+      <!--____Komponente Plan____-->
+      <component>
+        <section>
+          <title>Behandlungsplan</title>
+          <text>Wir bitten um regelmäßige Wund- und Befundkontrollen sowie die Fortführung der
+            Thromboseprophylaxe bis zur Vollbelastung unter entsprechender Laborkontrolle. Des
+            Weiteren empfehlen wir eine Röntgenkontrolle der osteosynthetisch versorgten vorderen
+            Beckenringfraktur zur Stellungs- und Durchbauungskontrolle nach Beendigung der
+            stationären Reha. Zusätzlich sollte antibiotische Therapie für insgesamt 5 Tage
+            fortgeführt werden.<br/><br/>Bei Beschwerdepersistenz sollte die Wiedervorstellung in
+            der Urologie bei liegendem Double-J erfolgen. Der Double-J-Katheter soll auf Anraten der
+            Urologen 3 Wochen nach Entlassung entfernt werden.<br/></text>
+        </section>
+      </component>
+      <!--____Komponente Notizen____-->
+      <component>
+        <section>
+          <title>Notizen</title>
+          <text>Als Notiz ist noch folgendes zu sagen:<br/><br/>Keine Notiz notwendig.<br/></text>
+        </section>
+      </component>
+      <!--____Komponente Schlusstext____-->
+      <component>
+        <section>
+          <title>Schlusstext</title>
+          <text>Weitere Behandlung ist aus dem Behandlungsplan zu entnehmen.<br/></text>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

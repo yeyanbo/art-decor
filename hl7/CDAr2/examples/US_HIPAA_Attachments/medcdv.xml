@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href='CDA.xsl' type='text/xsl' ?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument classCode="DOCCLIN" moodCode="EVN" xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../schemas/CDA.xsd">
+  <!-- document header -->
+  <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+  <id extension="medcdv" root="2.16.840.1.113883.19.2744.1.1"/>
+  
+  <!--     The attachment contains the current and discharge medications for a clinic visit. -->
+  <code code="18617-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MEDICATIONS DISCHARGE"/>
+  <title>Medication Report</title>
+  <effectiveTime value="20061125"/>
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality" displayName="Normal"/>
+
+  <!-- Patient Identification includes name, date of birth and gender. -->
+  <recordTarget contextControlCode="OP" typeCode="RCT">
+    <patientRole classCode="PAT">
+      <!-- The medical record ID of the patient for the sending institution is 6910828.  -->
+      <id extension="6910828" root="2.16.840.1.113883.19.2744.1.2"/>
+      <!--     The patient name is Patient H. Sample.  -->
+      <patient>
+        <name>
+          <given>Sample</given>
+          <given>H</given>
+          <family>Patient</family>
+        </name>
+        <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" displayName="Male"/>
+        <birthTime value="19320924"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+
+  <!-- The author was George F. Carson, MD. -->
+  <author contextControlCode="OP" typeCode="AUT">
+    <time value="20061025"/>
+    <assignedAuthor classCode="ASSIGNED">
+      <id extension="298379" root="2.16.840.1.113883.19.2744.1.3"/>
+      <assignedPerson>
+        <name>
+          <given>George</given>
+          <given>F</given>
+          <family>Carson</family>
+          <suffix>MD</suffix>
+        </name>
+      </assignedPerson>
+    </assignedAuthor>
+  </author>
+
+  <!-- organization maintaining the document -->
+  <custodian typeCode="CST">
+    <assignedCustodian classCode="ASSIGNED">
+      <representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+        <id extension="ghc" root="2.16.840.1.113883.19.2744.1.3.1"/>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+
+  <!-- The claim associated with this CDA document is identified by the value XA728302 in data element TRN02-Attachment Control Number of Loop 2000A-Payer/Provider Control Number. -->
+  <inFulfillmentOf>
+    <order>
+      <id extension="XA728302" root="2.16.840.1.113883.19.2744.1.5"/>
+    </order>
+  </inFulfillmentOf>
+
+  <documentationOf>
+    <serviceEvent>
+
+    </serviceEvent>
+  </documentationOf>
+
+  <!-- Patient encounter identified with provider account number, and date of encounter  -->
+  <componentOf>
+    <encompassingEncounter>
+      <!-- The billing account number within the sending institution that is associated with the claim is 773789090.  This is used as the encounter identifier -->
+      <id extension="773789090" root="2.16.840.1.113883.19.2744.1.4"/>
+      <!-- The encounter took place on July 17, 2006. -->
+      <effectiveTime value="20060617"/>
+      <!-- The provider is George F. Carson, MD. -->
+      <responsibleParty typeCode="RESP">
+        <assignedEntity>
+          <id extension="298379" root="2.16.840.1.113883.19.2744.1.3"/>
+          <assignedPerson>
+            <name>
+              <given>George</given>
+              <given>F</given>
+              <family>Carson</family>
+              <suffix>MD</suffix>
+            </name>
+          </assignedPerson>
+        </assignedEntity>
+      </responsibleParty>
+    </encompassingEncounter>
+  </componentOf>
+
+  <!-- Begin Body, first Section and table heading. -->
+  <component contextConductionInd="true" typeCode="COMP">
+    <structuredBody>
+      <component>
+        <section>
+          <code code="19009-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="CURRENT MEDICATIONS"/>
+          <title>Current Medications</title>
+          <text><paragraph ID='para-1'>unspecified blood pressure medicine, 1 brown tablet per day.</paragraph></text>
+          <entry>
+            <substanceAdministration moodCode="EVN" classCode="SBADM">
+              <code code="19009-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="CURRENT MEDICATIONS"/>
+              <text><reference value='#para-1'/></text>
+              <consumable>
+                <manufacturedProduct>
+                  <manufacturedLabeledDrug nullFlavor="UNK"/>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <!--
+            The current medications were:
+            ·	unspecified blood pressure medicine, 1 brown tablet per day.
+            The discharge medications are:
+            ·	prescription: diazepam 5 mg tablets, 1 tablet per day by mouth as needed up to four times a day for back pain, 15 tablets, no refills
+            ·	over-the-counter: Aleve, 1 tablet by mouth as needed up to twice a day for back pain. 
+          -->
+          <code code="18617-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MEDICATION DISCHARGE"/>
+          <title>Medications on Discharge</title>
+          <text>
+            <paragraph ID="paragraph-1">diazepam 5 mg tablets, 1 tab PO Q6H <content ID="content-1">PRN</content> for <content ID="content-2">back
+              pain</content>, 15 tablets, no refills, <content ID='content-3'>do not substitute</content>.</paragraph>
+            <paragraph ID="paragraph-2">Aleve 1 tab PO Q12H <content ID="content-4">PRN</content> for <content ID='content-5'>back pain</content></paragraph>
+          </text>
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="RQO">
+              <code code="18617-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MEDICATION DISCHARGE"/>
+              <text>
+                <reference value="#paragraph-1"/>
+              </text>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20061025"/>
+              </effectiveTime>
+              <effectiveTime operator="A" xsi:type="PIVL_TS">
+                <period unit="h" value="6"/>
+              </effectiveTime>
+              <routeCode code="PO" codeSystem="2.16.840.1.113883.5.112" codeSystemName="RouteCode" displayName="Oral"/>
+              <doseQuantity unit="mg" value="5"/>
+              <consumable>
+                <manufacturedProduct>
+                  <manufacturedLabeledDrug>
+                    <code code="321197008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="diazepam 5mg tablet"/>
+                    <name>diazepam 5mg tablet</name>
+                  </manufacturedLabeledDrug>
+                </manufacturedProduct>
+              </consumable>
+              <entryRelationship typeCode="RSON">
+                <act classCode="ACT" moodCode="EVN">
+                  <code code="410665000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="indication for"/>
+                  <text><reference value="#content-2"/></text>
+                </act>
+              </entryRelationship>
+              <!-- supply entry only used for prescription medications -->
+              <entryRelationship typeCode="COMP">
+                <supply classCode="SPLY" moodCode="RQO">
+                  <code code="29304-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MEDICATION DISPENSED"/>
+                  <repeatNumber value="1"/>
+                  <quantity value="15"/>
+                  <!-- substitution permission -->
+                  <entryRelationship typeCode="COMP">
+                    <act classCode="ACT" moodCode="RQO">
+                      <code code="N" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActSubstanceAdminSubstitutionCode" displayName="none"/>
+                      <text><reference value="#content-3"/></text>
+                    </act>
+                  </entryRelationship>
+                </supply>
+              </entryRelationship>
+              <!-- to indicate PRN -->
+              <precondition>
+                <criterion>
+                  <code code="225761000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="as required"/>
+                  <text>
+                    <reference value="#content-1"/>
+                  </text>
+                </criterion>
+              </precondition>
+            </substanceAdministration>
+          </entry>
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="RQO">
+              <code code="18617-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MEDICATION DISCHARGE"/>
+              <text>
+                <reference value="#paragraph-2"/>
+              </text>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20061025"/>
+                <high value="20070222"/>
+                <!-- 120 day supply -->
+              </effectiveTime>
+              <effectiveTime operator="A" xsi:type="PIVL_TS">
+                <period unit="d" value="1"/>
+              </effectiveTime>
+              <routeCode code="PO" codeSystem="2.16.840.1.113883.5.112" codeSystemName="RouteCode" displayName="Oral"/>
+              <doseQuantity unit="mg" value="0.1"/>
+              <!-- this example is not quite right.  I have a generic coded value with "no substitution" which makes no sense.  Need to use NDC or RXNorm for this -->
+              <consumable>
+                <manufacturedProduct>
+                  <manufacturedLabeledDrug>
+                    <code code="374296008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
+                      displayName="levothyroxine sodium 100micrograms tablet"/>
+                    <name>levoxyl</name>
+                  </manufacturedLabeledDrug>
+                </manufacturedProduct>
+              </consumable>
+              <entryRelationship typeCode="RSON">
+                <act classCode="ACT" moodCode="EVN">
+                  <code code="410665000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="indication for"/>
+                  <text><reference value="#content-5"/></text>
+                </act>
+              </entryRelationship>
+              <!-- to indicate PRN -->
+              <precondition>
+                <criterion>
+                  <code code="225761000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="as required"/>
+                  <text><reference value="#content-4"/></text>
+                </criterion>
+              </precondition>
+            </substanceAdministration>
+          </entry>
+        </section>
+      </component>
+      <!-- Close body and document -->
+    </structuredBody>
+  </component>
+</ClinicalDocument>

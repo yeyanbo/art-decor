@@ -1,0 +1,475 @@
+<!--
+    Copyright (C) 2011-2014 ART-DECOR expert group art-decor.org
+    
+    Author: Gerrit Boers
+
+    This program is free software; you can redistribute it and/or modify it under the terms of the
+    GNU Lesser General Public License as published by the Free Software Foundation; either version
+    2.1 of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU Lesser General Public License for more details.
+
+    The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+-->
+<xhtml:html xmlns:f="http://orbeon.org/oxf/xml/formatting" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:art="http://art-decor.org/ns/art" xmlns:hl7="urn:hl7-org:v3" xmlns:atp="urn:nictiz.atp" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fr="http://orbeon.org/oxf/xml/form-runner" xmlns:xis="http://art-decor.org/ns/xis" xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:widget="http://orbeon.org/oxf/xml/widget" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="configuration" xsi:schemaLocation="http://www.w3.org/1999/xhtml ../../orbeon_schemas/xhtml1-transitional-orbeon.xsd">
+    <xhtml:head>
+        <xhtml:style type="text/css">
+         .xforms-select-appearance-full span { display: block; clear: both } 
+         .xforms-select1.inherited-width {
+         min-width: 15em;
+         width: inherit;
+         height: inherit;
+         }
+      </xhtml:style>
+        <xhtml:title>
+            <xforms:output ref="$resources/testsuites"/>
+        </xhtml:title>
+        <xforms:model id="configuration">
+         <!-- Variable with path to art-exist for use by form -->
+            <xxforms:variable name="art-exist" select="xxforms:property('art.exist.url')"/>
+         <!-- Variable with path to xis-eXist -->
+            <xxforms:variable name="xis-exist" select="xxforms:property('xis.exist.url')"/>
+         <!-- Variable with path to xis-external-exist used to pass to client as link for images -->
+            <xxforms:variable name="xis-external-exist" select="xxforms:property('xis.external.exist.url')"/>         
+         <!-- resources for internationalization -->
+            <xforms:instance id="resources-instance">
+                <dummy/>
+            </xforms:instance>
+         <!-- submission for loading resources -->
+            <xforms:submission id="get-resources-submission" serialization="none" method="get" resource="{$xis-exist}/resources/form-resources.xml" replace="instance" instance="resources-instance"/>
+         <!-- language -->
+            <xforms:instance id="language">
+                <language/>
+            </xforms:instance>
+         <!-- instance for general edit status -->
+            <xforms:instance id="data-safe">
+                <data-safe>true</data-safe>
+            </xforms:instance>
+         <!-- instance for navigating testsuites -->
+            <xforms:instance id="testsuite-navigation">
+                <id/>
+            </xforms:instance>
+         <!-- instance for testsuites -->
+            <xforms:instance id="testsuites">
+                <dummy/>
+            </xforms:instance>
+         <!-- submission for retrieving testsuites -->
+            <xforms:submission id="get-testsuites" serialization="none" method="get" resource="{$xis-exist}/modules/get-testsuites.xquery" replace="instance" instance="testsuites"/>
+         <!-- event observer for testsuite changes -->
+            <xforms:action ev:observer="testsuites" ev:event="xforms-insert xforms-delete xxforms-value-changed">
+                <xforms:setvalue ref="instance('testsuites-safe')">false</xforms:setvalue>
+                <xforms:setvalue ref="instance('data-safe')">false</xforms:setvalue>
+            </xforms:action>
+         <!-- instance for testsuites edit status -->
+            <xforms:instance id="testsuites-safe">
+                <data-safe>true</data-safe>
+            </xforms:instance>
+         <!-- submission for saving testsuites -->
+            <xforms:submission id="save-testsuites" method="post" ref="instance('testsuites')" resource="{$xis-exist}/modules/save-testsuites.xquery" replace="none" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}">
+                <xforms:message ev:event="xforms-submit-error" level="modal">A submission error occurred:<xforms:output value="event('error-type')"/>
+                </xforms:message>
+            </xforms:submission>
+         <!-- instance for new testsuite -->
+            <xforms:instance id="new-testsuite" xxforms:exclude-result-prefixes="#all">
+                <testsuite id="" effectiveDate="" statusCode="draft">
+                    <name/>
+                    <application-role/>
+                    <xmlResourcesPath/>
+                    <desc/>
+                </testsuite>
+            </xforms:instance>
+         <!-- instance for testsuite select -->
+            <xforms:instance id="selected-tests">
+                <selected/>
+            </xforms:instance>
+         <!-- instance for testsuite select -->
+            <xforms:instance id="test-list">
+                <dummy/>
+            </xforms:instance>
+         <!-- submission for test list for selected xml resources -->
+            <xforms:submission id="get-test-list" serialization="none" method="get" resource="{$xis-exist}/modules/get-test-xslt-list.xquery?resourcesPath={instance('testsuites')//testsuite[@id=instance('testsuite-navigation')]/xmlResourcesPath}" replace="instance" instance="test-list"/>
+
+         <!-- instance for groups -->
+            <xforms:instance id="groups-instance">
+                <auth/>
+            </xforms:instance>
+            <xforms:submission id="get-groups-submission" serialization="none" method="get" resource="{$art-exist}/modules/get-groups.xq" replace="instance" instance="groups-instance" xxforms:username="{xxforms:get-session-attribute('username')}" xxforms:password="{xxforms:get-session-attribute('password')}"/>
+
+         <!-- instance for selected xml (HL7) set -->
+            <xforms:instance id="xml-set-navigation">
+                <uriString/>
+            </xforms:instance>
+         <!-- instance for xml (HL7) set list -->
+            <xforms:instance id="xml-sets-instance">
+                <dummy/>
+            </xforms:instance>
+         <!-- get xml (AORTA) set list -->
+            <xforms:submission id="get-xml-set-submission" serialization="none" method="get" resource="{$xis-exist}/modules/get-hl7-package-list.xquery" replace="instance" instance="xml-sets-instance"/>
+
+         <!-- startup actions -->
+            <xforms:action ev:event="xforms-model-construct-done">
+                <xxforms:variable name="session-language" select="xxforms:get-session-attribute('language')"/>
+                <xforms:setvalue ref="instance('language')" value="if (string-length($session-language)&gt;0)       then $session-language/string() else ('nl-NL')"/>
+                <xforms:insert context="." origin="xxforms:set-session-attribute('language', instance('language'))"/>
+                <xforms:send submission="get-resources-submission"/>
+                <xforms:send submission="get-groups-submission"/>
+                <xforms:send submission="get-users-submission"/>
+                <xforms:send submission="get-xml-set-submission"/>
+                <xforms:send submission="get-testsuites"/>
+                <xforms:send submission="get-accounts"/>
+            </xforms:action>
+            <xforms:action ev:event="xforms-ready">
+                <xforms:setvalue ref="instance('testsuite-navigation')" value="instance('testsuites')//testsuite[1]/@id"/>
+                <xforms:send submission="get-test-list"/>
+                <xforms:setvalue ref="instance('account-navigation')" value="instance('accounts')/xis:testAccount[1]/@id"/>
+                <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                <xforms:setvalue ref="instance('account-safe')">true</xforms:setvalue>
+                <xforms:setvalue ref="instance('testsuites-safe')">true</xforms:setvalue>
+            </xforms:action>
+            <xxforms:script ev:event="xforms-ready">
+            window.onbeforeunload = function() {
+            if (ORBEON.xforms.Document.getValue('data-safe-input') != 'true')
+            return "Deze tekst kunnen we aanpassen.";
+            }
+         </xxforms:script>
+            <xxforms:variable name="resources" select="instance('resources-instance')//resources[@xml:lang=instance('language')]"/>
+            <xxforms:variable name="editor" select="contains(xxforms:get-session-attribute('groups'),'dba')"/>
+            <xforms:setfocus ev:event="xforms-ready" control="text-repeat"/>
+        </xforms:model>
+    </xhtml:head>
+   <!-- Start of XForm body -->
+    <xhtml:body>
+      <!-- special output used to give warning if user leaves page -->
+        <xforms:output ref="instance('data-safe')" id="data-safe-input" style="display: none"/>
+      <!-- dialog for selecting testinstances -->
+        <xxforms:dialog id="test-instances-dialog" appearance="full" level="modal" close="true" draggable="true" visible="false">
+            <xforms:label ref="$resources/select-tests"/>
+            <xhtml:table class="detail" width="450px">
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xforms:select ref="instance('selected-tests')" appearance="full" id="testList">
+                            <xforms:itemset nodeset="instance('test-list')//test">
+                                <xforms:label ref="@name"/>
+                                <xforms:value ref="concat('--',@name,'--')"/>
+                            </xforms:itemset>
+                        </xforms:select>
+                    </xhtml:td>
+                </xhtml:tr>
+                <xhtml:tr>
+                    <xhtml:td>
+                        <xhtml:div class="buttons">
+                            <fr:button>
+                                <xforms:label ref="$resources/cancel"/>
+                                <xforms:action ev:event="DOMActivate">
+                                    <xxforms:hide ev:event="DOMActivate" dialog="test-instances-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                            <fr:button>
+                                <xforms:label ref="$resources/select"/>
+                                <xforms:action ev:event="DOMActivate">
+                           <!-- delete deselected test -->
+                                    <xforms:action xxforms:iterate="instance('testsuites')/testsuite[@id=instance('testsuite-navigation')]/test">
+                                        <xxforms:variable name="currentTest" select="context()/@schematron"/>
+                                        <xforms:delete if="not($currentTest=tokenize(substring(instance('selected-tests'),3,string-length(instance('selected-tests'))-4),'-- --'))" context="instance('testsuites')/testsuite[@id=instance('testsuite-navigation')]" nodeset="test[@schematron=$currentTest]"/>
+                                    </xforms:action>
+                           <!-- add new selected tests -->
+                                    <xforms:action xxforms:iterate="tokenize(substring(instance('selected-tests'),3,string-length(instance('selected-tests'))-4),'-- --')">
+                                        <xxforms:variable name="testId" select="context()"/>
+                                        <xforms:action if="not($testId=instance('testsuites')/testsuite[@id=instance('testsuite-navigation')]/test/@schematron)">
+                                            <xforms:insert context="instance('testsuites')/testsuite[@id=instance('testsuite-navigation')]" nodeset="*" origin="xxforms:element('test',(xxforms:attribute('schematron',$testId),xxforms:element('desc')))"/>
+                                        </xforms:action>
+                                    </xforms:action>
+                                    <xxforms:hide ev:event="DOMActivate" dialog="test-instances-dialog"/>
+                                </xforms:action>
+                            </fr:button>
+                        </xhtml:div>
+                    </xhtml:td>
+                </xhtml:tr>
+            </xhtml:table>
+        </xxforms:dialog>
+      <!-- Testsuites -->
+        <xhtml:table width="100%">
+            <xhtml:tr>
+            <!-- testsuite navigation	-->
+                <xhtml:td width="10%">
+                    <xhtml:table width="100%">
+                  <!-- row with heading  and edit buttons	-->
+                        <xhtml:tr>
+                            <xhtml:td class="heading">
+                                <xhtml:div class="heading">
+                                    <xforms:output ref="$resources/testsuites"/>
+                                </xhtml:div>
+                                <xhtml:div class="buttons">
+                                    <xforms:group ref=".[$editor]">
+                                        <fr:button>
+                                            <xforms:label>
+                                                <xhtml:img src="/img/plus.png" alt=""/>
+                                            </xforms:label>
+                                            <xforms:hint>
+                                                <xforms:output ref="$resources/add-testsuite"/>
+                                            </xforms:hint>
+                                            <xforms:action ev:event="DOMActivate">
+                                                <xforms:action if="instance('testsuites')//testsuite">
+                                                    <xforms:setvalue ref="instance('new-testsuite')/@id" value="max(instance('testsuites')//testsuite/@id)+1"/>
+                                                </xforms:action>
+                                                <xforms:action if="not(instance('testsuites')//testsuite)">
+                                                    <xforms:setvalue ref="instance('new-testsuite')/@id" value="1"/>
+                                                </xforms:action>
+                                                <xforms:setvalue ref="instance('new-testsuite')/@effectiveDate" value="format-dateTime(current-dateTime(), '[Y0001]-[M01]-[D01]T[H01]:[m01]:[s01]')"/>
+                                                <xforms:insert context="instance('testsuites')" nodeset="testsuite" at="last()" position="after" origin="instance('new-testsuite')"/>
+                                                <xforms:setvalue ref="instance('testsuite-navigation')" value="instance('new-testsuite')/@id"/>
+                                                <xforms:send submission="get-test-list"/>
+                                                <xforms:setfocus control="testsuite-name"/>
+                                            </xforms:action>
+                                        </fr:button>
+                                    </xforms:group>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                  <!-- row with testsuite list-->
+                        <xhtml:tr>
+                            <xhtml:td>
+                                <xhtml:div class="navigate">
+                                    <xforms:select1 ref="instance('testsuite-navigation')" appearance="compact" id="testsuiteNavigation">
+                                        <xforms:itemset nodeset="instance('testsuites')//testsuite">
+                                            <xforms:label ref="name[1]"/>
+                                            <xforms:value ref="@id"/>
+                                        </xforms:itemset>
+                                        <xforms:action ev:event="xforms-value-changed">
+                                            <xforms:send submission="get-test-list"/>
+                                        </xforms:action>
+                                    </xforms:select1>
+                                </xhtml:div>
+                            </xhtml:td>
+                        </xhtml:tr>
+                    </xhtml:table>
+                </xhtml:td>
+            <!-- testsuite details	-->
+                <xhtml:td width="90%">
+                    <xforms:group ref="instance('testsuites')/testsuite[@id=instance('testsuite-navigation')]">
+                        <xhtml:table width="100%" class="detail">
+                            <xhtml:tr>
+                                <xhtml:td class="heading" colspan="2">
+                                    <xhtml:div class="heading">
+                                        <xforms:output ref="name[1]"/>
+                                    </xhtml:div>
+                                </xhtml:td>
+                            </xhtml:tr>
+                            <xhtml:tr>
+                                <xhtml:td class="item-label">
+                                    <xforms:output ref="$resources/version"/>
+                                </xhtml:td>
+                                <xhtml:td>
+                                    <xforms:output ref="@effectiveDate" xxforms:format="if (. castable as xs:dateTime) then replace(format-dateTime(.,'[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]', (), (), ()),' 00:00:00','') else (.)"/>
+                                </xhtml:td>
+                            </xhtml:tr>
+                     <!-- EDITOR -->
+                            <xforms:group ref=".[$editor]">
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/name"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:input ref="name[1]" id="testsuite-name"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/application-role"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:input ref="application-role"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                        <!-- HL7 resources -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/hl7-resources"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:select1 ref="xmlResourcesPath" appearance="minimal" class="auto-width">
+                                            <xforms:itemset nodeset="instance('xml-sets-instance')/version">
+                                                <xforms:label ref="@name"/>
+                                                <xforms:value ref="@uriString"/>
+                                            </xforms:itemset>
+                                            <xforms:action ev:event="xforms-value-changed">
+                                                <xforms:delete context="instance('testsuites')/testsuite[@id=instance('testsuite-navigation')]" nodeset="test"/>
+                                                <xforms:send submission="get-test-list"/>
+                                            </xforms:action>
+                                        </xforms:select1>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/description"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:textarea mediatype="text/html" ref="desc[1]"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                        <!-- tests heading -->
+                                <xhtml:tr>
+                                    <xhtml:td class="heading" colspan="2">
+                                        <xhtml:div class="heading">
+                                            <xforms:output ref="$resources/tests"/>
+                                        </xhtml:div>
+                                        <xhtml:div class="buttons">
+                                            <xforms:group ref=".[$editor]">
+                                                <fr:button>
+                                                    <xforms:label>
+                                                        <xhtml:img src="/img/edit.gif" alt=""/>
+                                                    </xforms:label>
+                                                    <xforms:hint>
+                                                        <xforms:output ref="$resources/select"/>
+                                                    </xforms:hint>
+                                                    <xforms:action ev:event="DOMActivate">
+                                                        <xforms:setvalue ref="instance('selected-tests')" value="string-join(instance('testsuites')/testsuite[@id=instance('testsuite-navigation')]//test/@schematron,'-- --')"/>
+                                                        <xxforms:show dialog="test-instances-dialog"/>
+                                                    </xforms:action>
+                                                </fr:button>
+                                            </xforms:group>
+                                        </xhtml:div>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                                <xhtml:tr>
+                                    <xhtml:td colspan="2">
+                                        <xhtml:table width="100%" class="detail">
+                                            <xhtml:tr>
+                                                <xhtml:td width="30%" class="item-label">
+                                                    <xforms:output ref="$resources/name"/>
+                                                </xhtml:td>
+                                                <xhtml:td width="70%" class="item-label">
+                                                    <xforms:output ref="$resources/description"/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                            <xforms:repeat nodeset="test">
+                                                <xhtml:tr class="not-selectable">
+                                                    <xhtml:td width="30%">
+                                                        <xforms:output ref="@schematron"/>
+                                                    </xhtml:td>
+                                                    <xhtml:td width="70%">
+                                                        <xforms:textarea style="width:100%" ref="desc[1]"/>
+                                                    </xhtml:td>
+                                                </xhtml:tr>
+                                            </xforms:repeat>
+                                        </xhtml:table>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xforms:group>
+                     <!-- READONLY -->
+                            <xforms:group ref=".[not($editor)]">
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/name"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="name[1]"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/application-role"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output ref="application-role"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                        <!-- HL7 resources -->
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/hl7-resources"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xxforms:variable name="hl7Path" select="xmlResourcesPath"/>
+                                        <xforms:output ref="instance('xml-sets-instance')/version[@uriString=$hl7Path]/@name"/>
+                                    </xhtml:td>
+                           <!--                           <xhtml:td>
+                              <xforms:select1 ref="xis:xmlResourcesPath" appearance="minimal" class="auto-width">
+                                 <xforms:itemset nodeset="instance('xml-sets-instance')/version">
+                                    <xforms:label ref="@name"/>
+                                    <xforms:value ref="@uriString"/>
+                                 </xforms:itemset>
+                              </xforms:select1>
+                           </xhtml:td>-->
+                                </xhtml:tr>
+                                <xhtml:tr>
+                                    <xhtml:td class="item-label">
+                                        <xforms:output ref="$resources/description"/>
+                                    </xhtml:td>
+                                    <xhtml:td>
+                                        <xforms:output mediatype="text/html" ref="desc[1]"/>
+                                    </xhtml:td>
+                                </xhtml:tr>
+
+                        <!-- tests heading -->
+                                <xhtml:tr>
+                                    <xhtml:td class="heading" colspan="2">
+                                        <xhtml:div class="heading">
+                                            <xforms:output ref="$resources/tests"/>
+                                        </xhtml:div>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                                <xhtml:tr>
+                                    <xhtml:td colspan="2">
+                                        <xhtml:table width="100%" class="detail">
+                                            <xhtml:tr>
+                                                <xhtml:td class="item-label">
+                                                    <xforms:output ref="$resources/name"/>
+                                                </xhtml:td>
+                                                <xhtml:td class="item-label">
+                                                    <xforms:output ref="$resources/description"/>
+                                                </xhtml:td>
+                                            </xhtml:tr>
+                                            <xforms:repeat nodeset="test">
+                                                <xhtml:tr class="not-selectable">
+                                                    <xhtml:td>
+                                                        <xforms:output ref="@schematron"/>
+                                                    </xhtml:td>
+                                                    <xhtml:td>
+                                                        <xforms:output ref="desc[1]"/>
+                                                    </xhtml:td>
+                                                </xhtml:tr>
+                                            </xforms:repeat>
+                                        </xhtml:table>
+                                    </xhtml:td>
+                                </xhtml:tr>
+                            </xforms:group>
+                        </xhtml:table>
+                        <xhtml:table width="100%">
+                            <xhtml:tr>
+                                <xhtml:td>
+                                    <xforms:group ref=".[instance('data-safe')='false']">
+                                        <xhtml:div class="buttons">
+                                            <fr:button>
+                                                <xforms:label ref="$resources/cancel"/>
+                                                <xforms:action ev:event="DOMActivate">
+                                                    <xforms:send submission="get-testsuites"/>
+                                                    <xforms:setvalue ref="instance('testsuites-navigation')" value="1"/>
+                                                    <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                                                </xforms:action>
+                                            </fr:button>
+                                            <fr:button>
+                                                <xforms:label ref="$resources/save"/>
+                                                <xforms:action ev:event="DOMActivate">
+                                                    <xforms:send submission="save-testsuites"/>
+                                                    <xforms:setvalue ref="instance('data-safe')">true</xforms:setvalue>
+                                                </xforms:action>
+                                            </fr:button>
+                                        </xhtml:div>
+                                    </xforms:group>
+                                </xhtml:td>
+                            </xhtml:tr>
+                        </xhtml:table>
+                    </xforms:group>
+                </xhtml:td>
+            </xhtml:tr>
+        </xhtml:table>
+
+      <!-- Test accounts tab -->
+
+
+      <!--      <fr:xforms-inspector/>-->
+    </xhtml:body>
+</xhtml:html>

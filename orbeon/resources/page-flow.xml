@@ -1,0 +1,70 @@
+<!--
+  Copyright (C) 2010 Orbeon, Inc.
+
+  This program is free software; you can redistribute it and/or modify it under the terms of the
+  GNU Lesser General Public License as published by the Free Software Foundation; either version
+  2.1 of the License, or (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  See the GNU Lesser General Public License for more details.
+
+  The full text of the license is available at http://www.gnu.org/copyleft/lesser.html
+  -->
+<config xmlns="http://www.orbeon.com/oxf/controller" xmlns:oxf="http://www.orbeon.com/oxf/processors" xmlns:p="http://www.orbeon.com/oxf/pipeline">
+
+   <!-- Files to serve directly (and exclude files under /[app]/service/) -->
+   <files path-info="(?!/([^/]+)/service/).+\.(gif|css|pdf|json|js|png|jpg|xsd|htc|ico|swf|html|txt)" matcher="oxf:perl5-matcher"/>
+   <!-- Also exclude .xml files handled by Form Runner -->
+   <files path-info="(?!/(fr|([^/]+)/service)/).+\.xml" matcher="oxf:perl5-matcher" mime-type="application/xml"/>
+   <!-- For the following we override the standard mediatype to help browsers -->
+   <files path-info="(?!/([^/]+)/service/).+\.(java|xq)" matcher="oxf:perl5-matcher" mime-type="text/plain"/>
+   <files path-info="(?!/([^/]+)/service/).+\.jar" matcher="oxf:perl5-matcher" mime-type="application/zip"/>
+
+   <!-- Redirect to the Home application -->
+   <page id="root" path-info="/(welcome/?)?" matcher="oxf:perl5-matcher">
+      <action>
+         <result page="home"/>
+      </action>
+   </page>
+   <page path-info="/session/logout">
+      <action action="logout.xpl">
+         <result page="home"/>
+      </action>
+   </page>
+   
+   <!-- Welcome page, change to use a different homepage -->
+      <!-- default ART-DECOR homepage -->
+      <page id="home" path-info="/home" view="http://localhost:8877/art/modules/get-form.xq?form=home"/>
+      <!-- uncomment to use terminology homepage -->
+      <!--   <page id="home" path-info="/home" view="http://localhost:8877/art/modules/get-form.xq?form=terminology-home"/>  -->
+
+   <!-- Dispatch request to a specific application -->
+   <!--	    <page id="apps" path-info="/([^/]+)/.*" matcher="oxf:perl5-matcher" model="apps/${1}/page-flow.xml"/>-->
+
+
+<!-- Art-Decor forms -->
+   <page id="exist" path-info="/([^/]+)" matcher="oxf:perl5-matcher" 
+      view="http://localhost:8877/art/modules/get-form.xq?form=${1}" model="request.xpl"/>
+
+   <!--<page id="instance" path-info="/instance/([^/]*)" matcher="oxf:perl5-matcher"
+      view="http://localhost:8877/art/modules/get-instance-xforms.xquery?id=${1}"/>-->
+   
+   <page id="transaction" path-info="/transaction/([^/]*)" matcher="oxf:perl5-matcher"
+      view="http://localhost:8877/art/modules/get-transaction-xforms.xquery?id=${1}"/>
+   
+   <!--<page id="scenario" path-info="/scenario/([^/]*)" matcher="oxf:perl5-matcher"
+      view="http://localhost:8877/art/modules/get-scenario-xforms.xquery?id=${1}"/>-->
+   
+   <!--<page id="test" path-info="/test/([^/]*)" matcher="oxf:perl5-matcher"
+      view="http://localhost:8877/art/modules/get-instance-xforms.xquery?id=${1}&amp;type=test"/>-->
+   
+   <!--<page id="template" path-info="/template/([^/]*)" matcher="oxf:perl5-matcher"
+      view="http://localhost:8877/art/modules/get-template-xform.xquery?id=${1}"/>-->
+
+   <page id="not-found" path-info="/not-found" view="/config/not-found.xhtml"/>
+
+   <epilogue url="oxf:/config/epilogue.xpl"/>
+   <not-found-handler page="not-found"/>
+
+</config>

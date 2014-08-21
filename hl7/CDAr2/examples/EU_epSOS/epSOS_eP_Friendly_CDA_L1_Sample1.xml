@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:mif="urn:hl7-org:v3/mif" xmlns:sch="http://www.ascc.net/xml/schematron" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ..\..\schema\CDA_extended.xsd">
+	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+	<templateId root="1.3.6.1.4.1.12559.11.10.1.3.1.1.1"/>
+	<id assigningAuthorityName="Regione Lombardia" displayable="true" extension="030305.CNPMMG60B01F205R.03KAAAYKJI.2" root="2.16.840.1.113883.2.9.2.30"/>
+	<code code="57833-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="ePrescription"/>
+	<title>Prescrizione Elettronica</title>
+	<effectiveTime value="20110308"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="HL7 Confidentiality" displayName="normal"/>
+	<languageCode code="it-IT"/>
+	<setId assigningAuthorityName="Regione Lombardia" displayable="true" extension="030305.CNPMMG60B01F205R.03KAAAYKJI" root="2.16.840.1.113883.2.9.2.30"/>
+	<versionNumber value="1"/>
+	<recordTarget>
+		<patientRole classCode="PAT">
+			<id assigningAuthorityName="MEF" displayable="true" extension="NTSDNN80A19D612X" root="2.16.840.1.113883.2.9.4.3.2"/>
+			<addr use="H">
+				<state>MI</state>
+				<city>MILANO</city>
+				<country>IT</country>
+				<postalCode>20100</postalCode>
+				<streetAddressLine>V. C/O LOMBARDIA INFORMATICA VIA, MINZONI 24</streetAddressLine>
+			</addr>
+			<telecom nullFlavor="NI"/>
+			<patient>
+				<name>
+					<family>INTSISS</family>
+					<given>DICIANNOVE</given>
+				</name>
+				<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="HL7 AdministrativeGender" displayName="Maschio"/>
+				<birthTime value="19800119"/>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author>
+		<functionCode code="221" codeSystem="2.16.840.1.113883.2.9.6.2.7" codeSystemName="epSOSHealthcareProfessionalRoles" displayName="Medico di Medicina Generale"/>
+		<time value="20110308"/>
+		<assignedAuthor classCode="ASSIGNED">
+			<id assigningAuthorityName="MEF" displayable="true" extension="CNPMMG60B01F205R" root="2.16.840.1.113883.2.9.4.3.2"/>
+			<telecom nullFlavor="NI"/>
+			<assignedPerson>
+				<name>
+					<family>CNIPAII</family>
+					<given>MMG</given>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id root="2.16.840.1.113883.2.9.4.1.1" extension="030305"/>
+				<name nullFlavor="NI"/>
+				<telecom nullFlavor="NI"/>
+				<addr nullFlavor="NI"/>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id root="2.16.840.1.113883.2.9.4.1.1" extension="030305"/>
+				<name nullFlavor="NI"/>
+				<telecom nullFlavor="NI"/>
+				<addr nullFlavor="NI"/>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<legalAuthenticator>
+		<time value="20110308"/>
+		<signatureCode code="S"/>
+		<assignedEntity>
+			<id assigningAuthorityName="MEF" displayable="false" extension="CNPMMG60B01F205R" root="2.16.840.1.113883.2.9.4.3.2"/>
+			<addr nullFlavor="NI"/>
+			<telecom nullFlavor="NI"/>
+			<assignedPerson>
+				<name>
+					<family>CNIPAII</family>
+					<given>MMG</given>
+				</name>
+			</assignedPerson>
+			<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<id root="2.16.840.1.113883.2.9.4.1.1" extension="030305"/>
+				<name nullFlavor="NI"/>
+				<telecom nullFlavor="NI"/>
+				<addr nullFlavor="NI"/>
+			</representedOrganization>
+		</assignedEntity>
+	</legalAuthenticator>
+	<relatedDocument typeCode="XFRM">
+		<parentDocument>
+			<id root="2.16.840.1.113883.2.9.2.30" extension="030305.CNPMMG60B01F205R.03KAAAYKJI"/>
+		</parentDocument>
+	</relatedDocument>
+	<component contextConductionInd="true" typeCode="COMP">
+		<nonXMLBody>
+			<text mediaType="application/pdf" representation="B64">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ago0IDAgb2JqCjw8L0Jhc2VGb250L0hlbHZldGljYS9UeXBlL0ZvbnQvU3VidHlwZS9UeXBlMS9FbmNvZGluZy9XaW5BbnNpRW5jb2Rpbmc+PgplbmRvYmoKNSAwIG9iago8PC9CYXNlRm9udC9IZWx2ZXRpY2EtQm9sZC9UeXBlL0ZvbnQvU3VidHlwZS9UeXBlMS9FbmNvZGluZy9XaW5BbnNpRW5jb2Rpbmc+PgplbmRvYmoKMiAwIG9iago8PC9UeXBlL1BhZ2VzL0NvdW50IDEvS2lkc1sxIDAgUl0+PgplbmRvYmoKNiAwIG9iago8PC9UeXBlL0NhdGFsb2cvUGFnZXMgMiAwIFI+PgplbmRvYmoKNyAwIG9iago8PC9Qcm9kdWNlcihZYUhQIENvbnZlcnRlciB2MS4yLjIwYSCnMjAwOTEyMTggLSBodHRwOi8vd3d3LmFsbGNvbG9yLm9yZy9ZYUhQQ29udmVydGVyLyAtIEZseWluZyBTYXVjZXIgUmVuZGVyZXIgXChodHRwczovL3hodG1scmVuZGVyZXIuZGV2LmphdmEubmV0L1wpKS9DcmVhdG9yKFlhSFAgQ29udmVydGVyIHYxLjIuMjBhIKcyMDA5MTIxOCkvVGl0bGUoXG4gICAgKS9Nb2REYXRlKEQ6MjAxMTAzMTQxNDM4MjArMDEnMDAnKS9DcmVhdGlvbkRhdGUoRDoyMDExMDMxNDE0MzgyMCswMScwMCcpPj4KZW5kb2JqCnhyZWYKMCA4CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDAxNSAwMDAwMCBuIAowMDAwMDAxOTgzIDAwMDAwIG4gCjAwMDAwMDAxODEgMDAwMDAgbiAKMDAwMDAwMTgwMiAwMDAwMCBuIAowMDAwMDAxODkwIDAwMDAwIG4gCjAwMDAwMDIwMzQgMDAwMDAgbiAKMDAwMDAwMjA3OSAwMDAwMCBuIAp0cmFpbGVyCjw8L1Jvb3QgNiAwIFIvSUQgWzw1OTZiZTk5MDM2OTQ3NmFlY2U5Y2M4MDI1N2RhYWJiYT48M2U4MzRjYzYzZjUwNDU1MjM3ZTI3MmZmMjNiZjE3Mzk+XS9JbmZvIDcgMCBSL1NpemUgOD4+CnN0YXJ0eHJlZgoyMzc3CiUlRU9GCgAA</text>
+		</nonXMLBody>
+	</component>
+</ClinicalDocument>

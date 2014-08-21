@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="77"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1071"/>
+   <Title name="SubstitutionCondition" date="2012-08-02" version="1.000">Identifies what sort of change is permitted or has occurred between the item that was ordered/requested and the one that was/will be provided.</Title>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="_Conditional" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21285"/>
+      <SubClass code="CONFIRM"/>
+      <SubClass code="NOTIFY"/>
+      <Rubric id="d1e234443" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Some conditions may be attached to an allowable substitution. An allowable substitution is based on a match to any other attributes that may be specified.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e234456" kind="short">
+         <Label xml:lang="en-US">Conditional</Label>
+      </Rubric>
+      <Rubric id="d1e234456" kind="preferred">
+         <Label xml:lang="en-US">Conditional</Label>
+      </Rubric>
+   </Class>
+   <Class code="NOSUB" kind="concept">
+      <Meta name="internalId" value="21383"/>
+      <Rubric id="d1e234468" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Substitution is not permitted.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e234481" kind="short">
+         <Label xml:lang="en-US">No substitution</Label>
+      </Rubric>
+      <Rubric id="d1e234481" kind="preferred">
+         <Label xml:lang="en-US">No substitution</Label>
+      </Rubric>
+   </Class>
+   <Class code="UNCOND" kind="concept">
+      <Meta name="internalId" value="17723"/>
+      <Rubric id="d1e234492" kind="definition">
+         <Label xml:lang="en-US">
+            <p>No conditions are required.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e234505" kind="short">
+         <Label xml:lang="en-US">Unconditional</Label>
+      </Rubric>
+      <Rubric id="d1e234505" kind="preferred">
+         <Label xml:lang="en-US">Unconditional</Label>
+      </Rubric>
+   </Class>
+   <Class code="CONFIRM" kind="concept">
+      <Meta name="internalId" value="17721"/>
+      <SuperClass code="_Conditional"/>
+      <Rubric id="d1e234516" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Confirmation with Contact Person prior to making any substitutions has or will occur.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e234534" kind="short">
+         <Label xml:lang="en-US">Confirm first</Label>
+      </Rubric>
+      <Rubric id="d1e234534" kind="preferred">
+         <Label xml:lang="en-US">Confirm first</Label>
+      </Rubric>
+   </Class>
+   <Class code="NOTIFY" kind="concept">
+      <Meta name="internalId" value="17722"/>
+      <SuperClass code="_Conditional"/>
+      <Rubric id="d1e234545" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Notification to the Contact Person, prior to substitution and through normal institutional procedures, has or will be made.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e234563" kind="short">
+         <Label xml:lang="en-US">Notify first</Label>
+      </Rubric>
+      <Rubric id="d1e234563" kind="preferred">
+         <Label xml:lang="en-US">Notify first</Label>
+      </Rubric>
+   </Class>
+</ClaML>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="57"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.33"/>
+   <Title name="DocumentCompletion" date="2012-08-02" version="1.000">Identifies the current completion state of a clinical document.</Title>
+   <Class code="rootClass">
+      <SubClass subCount="0" code="AU" kind="concept">
+         <Rubric id="d1e106404" kind="preferred">
+            <Label xml:lang="en-US">authenticated</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="DI" kind="concept">
+         <Rubric id="d1e106429" kind="preferred">
+            <Label xml:lang="en-US">dictated</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="DO" kind="concept">
+         <Rubric id="d1e106453" kind="preferred">
+            <Label xml:lang="en-US">documented</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="IN" kind="concept">
+         <Rubric id="d1e106477" kind="preferred">
+            <Label xml:lang="en-US">incomplete</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="IP" kind="concept">
+         <Rubric id="d1e106501" kind="preferred">
+            <Label xml:lang="en-US">in progress</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="LA" kind="concept">
+         <Rubric id="d1e106525" kind="preferred">
+            <Label xml:lang="en-US">legally authenticated</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="PA" kind="concept">
+         <Rubric id="d1e106549" kind="preferred">
+            <Label xml:lang="en-US">pre-authenticated</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">DocumentCompletion</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">Identifies the current completion state of a clinical document.</Label>
+      </Rubric>
+   </Class>
+   <Class code="AU" kind="concept">
+      <Meta name="internalId" value="10581"/>
+      <Rubric id="d1e106391" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A completion status in which a document has been signed manually or electronically by one or more individuals who attest to its accuracy. No explicit determination is made that the assigned individual has performed the authentication. While the standard allows multiple instances of authentication, it would be typical to have a single instance of authentication, usually by the assigned individual.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e106404" kind="short">
+         <Label xml:lang="en-US">authenticated</Label>
+      </Rubric>
+      <Rubric id="d1e106404" kind="preferred">
+         <Label xml:lang="en-US">authenticated</Label>
+      </Rubric>
+   </Class>
+   <Class code="DI" kind="concept">
+      <Meta name="internalId" value="10576"/>
+      <Rubric id="d1e106416" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A completion status in which information has been orally recorded but not yet transcribed.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e106429" kind="short">
+         <Label xml:lang="en-US">dictated</Label>
+      </Rubric>
+      <Rubric id="d1e106429" kind="preferred">
+         <Label xml:lang="en-US">dictated</Label>
+      </Rubric>
+   </Class>
+   <Class code="DO" kind="concept">
+      <Meta name="internalId" value="10577"/>
+      <Rubric id="d1e106440" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A completion status in which document content, other than dictation, has been received but has not been translated into the final electronic format. Examples include paper documents, whether hand-written or typewritten, and intermediate electronic forms, such as voice to text.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e106453" kind="short">
+         <Label xml:lang="en-US">documented</Label>
+      </Rubric>
+      <Rubric id="d1e106453" kind="preferred">
+         <Label xml:lang="en-US">documented</Label>
+      </Rubric>
+   </Class>
+   <Class code="IN" kind="concept">
+      <Meta name="internalId" value="10579"/>
+      <Rubric id="d1e106464" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A completion status in which information is known to be missing from a transcribed document.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e106477" kind="short">
+         <Label xml:lang="en-US">incomplete</Label>
+      </Rubric>
+      <Rubric id="d1e106477" kind="preferred">
+         <Label xml:lang="en-US">incomplete</Label>
+      </Rubric>
+   </Class>
+   <Class code="IP" kind="concept">
+      <Meta name="internalId" value="10578"/>
+      <Rubric id="d1e106488" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A workflow status where the material has been assigned to personnel to perform the task of transcription. The document remains in this state until the document is transcribed.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e106501" kind="short">
+         <Label xml:lang="en-US">in progress</Label>
+      </Rubric>
+      <Rubric id="d1e106501" kind="preferred">
+         <Label xml:lang="en-US">in progress</Label>
+      </Rubric>
+   </Class>
+   <Class code="LA" kind="concept">
+      <Meta name="internalId" value="10582"/>
+      <Rubric id="d1e106512" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A completion status in which a document has been signed manually or electronically by the individual who is legally responsible for that document. This is the most mature state in the workflow progression.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e106525" kind="short">
+         <Label xml:lang="en-US">legally authenticated</Label>
+      </Rubric>
+      <Rubric id="d1e106525" kind="preferred">
+         <Label xml:lang="en-US">legally authenticated</Label>
+      </Rubric>
+   </Class>
+   <Class code="PA" kind="concept">
+      <Meta name="internalId" value="10580"/>
+      <Rubric id="d1e106536" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A completion status in which a document is transcribed but not authenticated.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e106549" kind="short">
+         <Label xml:lang="en-US">pre-authenticated</Label>
+      </Rubric>
+      <Rubric id="d1e106549" kind="preferred">
+         <Label xml:lang="en-US">pre-authenticated</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:mif="urn:hl7-org:v3/mif" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3
+http://pub.e-tervis.ee/dl_meddoc/XSD/1.0/CDA.xsd">
+	<!-- dokumendi tüüp -->
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<!-- dokumendi identifikaator-->
+	<id root="eHLdok" extension="9132748973219"/>
+	<!-- dokumendi kood LOINC järgi: statistika koondandmed -->
+	<code code="11505-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PROCEDURE NOTE"/>
+	<!-- dokumendi nimetus -->
+	<title>Statistika koondandmed (uuringud, analüüsid, protseduurid)</title>
+	<!-- CDA dokumendi koostamise aeg-->
+	<effectiveTime value="20060526114723"/>
+	<!-- konfidentsiaalsuse tunnus -->
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality"/>
+	<!-- dokumendi keel -->
+	<!-- <languageCode code="EST" codeSystem="OIDnr" codeSystemName="Keele klassifikaator"/> -->
+	<languageCode code="EST"/>
+	<!-- komplekti identifikaator, Digiloo keskse haigusloo nr-->
+	<setId root="DLhaiguslugu" extension="BB35 - 23898 123"/>
+	<!-- -dokumendi versiooni number -->
+	<versionNumber value="1"/>
+	<!-- PATSIENDI ANDMED ALGUS-->
+	<recordTarget typeCode="RCT">
+		<!-- dokumendiga seotud patsiendi roll -->
+		<!-- <realmCode code="PAT" codeSystem="2.16.840.1.113883.5.110" codeSystemName="RoleClass"/> -->
+		<realmCode code="PAT"/>
+		<patientRole classCode="PAT">
+			<!-- patsiendi identifikaatorid-->
+			<id root="ESTik" extension="47302200234"/>
+			<id root="eHLpats" extension="1000002345"/>
+			<!-- patsiendi tegelik elukoht algus-->
+			<addr use="PHYS">
+				<!-- code="" codeSystem="OIDnr" codeSystemName="ISO-3166" -->
+				<country>EE</country>
+				<!-- code="" codeSystem="OIDnr" codeSystemName="EHAK" -->
+				<county>Tartumaa</county>
+				<!-- code="" codeSystem="OIDnr" codeSystemName="EHAK" -->
+				<city>Tartu</city>
+				<!-- code="" codeSystem="OIDnr" codeSystemName="EHAK" -->
+				<streetAddressLine>Kaunase pst 1 </streetAddressLine>
+				<!-- code="" codeSystem="OIDnr" codeSystemName="EHAK" -->
+				<streetName>Kaunase pst</streetName>
+				<!-- code="" codeSystem="OIDnr" codeSystemName="EHAK" -->
+				<houseNumber>1</houseNumber>
+				<additionalLocator>11</additionalLocator>
+				<!-- code="" codeSystem="OIDnr" codeSystemName="EHAK" -->
+				<unitID>78795</unitID>
+				<postalCode>50706</postalCode>
+			</addr>
+			<!-- patsiendi tegelik elukoht lõpp-->
+			<!-- patsiendi kontaktadnmed: telefon-->
+			<telecom use="MC" value="tel:+372 50 123 456"/>
+			<!-- patsiendi konatkandmed: epost-->
+			<telecom use="PUB" value="eposti@aadress.ee"/>
+			<patient classCode="PSN" determinerCode="INSTANCE">
+				<!-- haridus -->
+				<templateId root="Haridus" extension="BA" assigningAuthorityName="Kõrgharidus"/>
+				<!-- kodakondsus -->
+				<templateId root="Kodakondsus" extension="EST" assigningAuthorityName="Eesti"/> 			
+				<!-- patsiendi nimi algus -->
+				<name>
+					<!-- eesnimi -->
+					<given>Mari-Liis</given>
+					<!-- perenimi -->
+					<family>Männik</family>
+				</name>
+				<!-- patsiendi nimi lõpp-->
+				<!-- sugu-->
+				<administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" displayName="naine"/>
+				<!-- sünniaeg-->
+				<birthTime value="19730220" xsi:type="IVL_TS">
+					<!-- code="" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM" aasta- a |kuu - mo|päev - d.-->
+					<width value="33" unit="a"/>
+				</birthTime>
+				<!-- -perekonnaseis -->
+				<maritalStatusCode code="M" codeSystem="2.16.840.1.113883.12.2" codeSystemName="Marital Status" displayName="abielus"/>
+				<!-- rahvus -->
+				<ethnicGroupCode code="EST" codeSystem="OIDnr" codeSystemName="Rahvus" displayName="eestlane"/>
+				<!-- kontakisikud algus-->
+				<guardian classCode="GUARD">
+					<!-- isikukood-->
+					<id root="ESTik" extension="43302200234"/>
+					<!-- kontaktisiku seos patsiendiga -->
+					<code code="MOTHER" codeSystem="OIDnr" codeSystemName="Kontaktisiku seos" displayName="ema"/>
+					<!-- kontakttelefon -->
+					<telecom use="MC" value="tel:+372 50 123 456"/>
+					<guardianPerson>
+						<name>
+							<!-- perenimi -->
+							<family>Männik</family>
+							<!-- eesnimi -->
+							<given>Maarja-Liis</given>
+						</name>
+					</guardianPerson>
+				</guardian>
+				<!-- kontakisikud lõpp-->
+				<!-- sünnikoht algus-->
+				<birthplace classCode="BIRTHPL">
+					<place>
+						<addr use="PHYS">
+							<country>EE</country>
+							<county>Tartumaa</county>
+							<city>Tartu</city>
+							<unitID>68905</unitID>
+						</addr>
+					</place>
+				</birthplace>
+				<!--  sünnikoht lõpp-->
+			</patient>
+			<!-- töökoha andmed algus-->
+			<providerOrganization classCode="ORG" determinerCode="INSTANCE">
+				<!-- amet -->
+				<templateId root="ISCO-88" extension="712" assigningAuthorityName="üldehitustöölised"/>
+				<!-- töökoha  nimetus -->
+				<name>OÜ Minu Tööandja</name>
+				<!-- tavategevusala-->
+				<standardIndustryClassCode code="1" codeSystem="OIDnr" codeSystemName="tavategevusala" displayName="töötav"/>
+			</providerOrganization>
+			<!-- töökoha andmed lõpp-->
+		</patientRole>
+	</recordTarget>
+	<!-- PATSIENDI ANDMED LÕPP-->
+	<!-- DOKUMENDI KOOSTAJA ANDMED ALGUS-->
+	<author typeCode="AUT">
+		<time/>
+		<assignedAuthor classCode="ASSIGNED">
+			<!-- dokumendi koostaja erialakood-->
+			<!-- dokumendi koostaja erialakood-->
+			<templateId root="ErialadeKlassifikaator" extension="E17" assigningAuthorityName="üldarstiabi"/>
+			<templateId root="ErialadeKlassifikaator" extension="E03" assigningAuthorityName="endokrinoloogia"/>
+			<!-- dokumendi koostaja identifikaator-->
+			<id root="ESTHCB" extension="D01910"/>
+			<id root="ESTik" extension="33914090629"/>
+			<code code="DOCTOR" codeSystem="OIDnr" codeSystemName="Tervishoiutöötajate tüüp" displayName="arst"/>
+			<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+				<name>
+					<given>Raivo</given>
+					<family>Ani</family>
+				</name>
+			</assignedPerson>
+			<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<!--asutuse identifikaatorid -->
+				<id root="eHLasut" extension="1000002345"/>
+				<id root="ESTregnr" extension="1234567"/>
+				<!-- asutuse nimetus-->
+				<name>SA Tartu Ülikooli Kliinikum</name>
+				<!-- asutuse kontaktandmed algus -->
+				<telecom value="tel:+372 7 123 456"/>
+				<telecom value="fax:+372 7 123 457"/>
+				<telecom value="mailto:epost@asutus.ee"/>
+				<!-- asutuse kontaktandmed lõpp -->
+				<!-- asutuse aadress algus -->
+				<addr use="PHYS">
+					<country>EE</country>
+					<county>Tartumaa</county>
+					<city>Tartu</city>
+					<streetAddressLine>Puusepa 1A </streetAddressLine>
+					<streetName>Puusepa</streetName>
+					<houseNumber>1A</houseNumber>
+					<additionalLocator>Kabinet 4019</additionalLocator>
+					<unitID>49576</unitID>
+					<postalCode>50700</postalCode>
+				</addr>
+				<!-- asutuse aadress lõpp-->
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<!-- DOKUMENDI KOOSTAJA ANDMED LÕPP-->
+	<!-- vastutaja algus-->
+	<custodian typeCode="CST">
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<!-- registrikood-->
+				<id root="ESTregnr" extension="1234567"/>
+				<!-- eestkostja -->
+				<name>SA Tartu Ülikooli Kliinikum</name>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<!-- vastutaja lõpp-->
+	<!-- seotud dokumendid algus-->
+	<relatedDocument typeCode="APND">
+		<!-- viide dokumendi "vanemale" algus-->
+		<parentDocument>
+			<id root="eHLdok" extension="a123"/>
+			<setId root="DLhaiguslugu" extension="BB35"/>
+			<versionNumber value="1"/>
+		</parentDocument>
+		<!-- viide dokumendi "vanemale" lõpp-->
+	</relatedDocument>
+	<!-- seotud dokumendid lõpp -->
+	<!-- sündmuse esilekutsuja andmed algus-->
+	<componentOf typeCode="COMP">
+		<encompassingEncounter>
+			<!-- identifikaator-->
+			<id root="eHLhl" extension="1000235632"/>
+			<id root="caseNr" extension="2006 06 1234-EQ"/>
+			<!-- sõnumi koostamise põhjustanud sündmuse kood -->
+			<code code="STAT" codeSystem="OIDnr" codeSystemName="Põhjustaja kood" displayName="Statsionaarne haigusjuht"/>
+			<!-- toimumise aeg algus-->
+			<effectiveTime>
+				<!-- tervishoiiasutusse saabumise kuupäev, haigusloo alguse kuupäev-->
+				<low value="20060401081300"/>
+				<!-- lahkumise kuupäev  haigusloo lõpu kuupäev-->
+				<high value="20060411232212"/>
+			</effectiveTime>
+			<!-- toimumise aeg lõpp-->
+			<!-- lõpe-->
+			<dischargeDispositionCode code="01" codeSystem="2.16.840.1.113883.12.112" codeSystemName="Discharge disposition" displayName="Home"/>
+			<!-- koht algus-->
+			<location typeCode="LOC">
+				<healthCareFacility classCode="SDLOC">
+					<serviceProviderOrganization classCode="ORG" determinerCode="INSTANCE">
+						<!-- registrikood -->
+						<id root="ESTregnr" extension="1234567"/>
+						<!-- nimi -->
+						<name>SA Tartu Ülikooli Kliinikum</name>
+					</serviceProviderOrganization>
+				</healthCareFacility>
+			</location>
+			<!-- koht lõpp-->
+		</encompassingEncounter>
+	</componentOf>
+	<!-- sündmuse esilekutsuja andmed lõpp-->
+	<!-- SISUOSA ALGUS-->
+	<component typeCode="COMP">
+		<structuredBody classCode="DOCBODY" moodCode="EVN">
+			<!-- UURINGUD JA PROTSEDUURID ALGUS-->
+			<component typeCode="COMP">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!-- Sektsiooni üldandmed?-->
+					<!-- mis tüüpi sektsiooniga on tegu -->
+					<code code="STPROC" codeSystem="OIDnr" codeSystemName="Sektsiooni kodeering" displayName="Uuringud ja protseduurid"/>
+					<!-- sektsiooni pealkiri -->
+					<title>Uuringu ja protseduurid</title>
+					<!-- tekstilise kirjelduse algus -->
+					<text>
+						<paragraph>
+							<content>	
+Kuupäev	Teenus	NCSP	Hinnakirja kood
+29.05.2006	SNOMED CT 10650998 - Röntgenuuring	1065 - Röntgenuuring
+1066 - Röntgenuuring
+	6065 - Röntgenuuring labakäest
+27.05.2006	LOINC L1065 - Röntgenuuring		6065 - Röntgenuuring							
+							</content>
+						</paragraph>
+					</text>
+					<!-- tekstilise kirjelduse lõpp -->
+					<!-- uuringud ja protseduurid algus-->
+					<!-- protseduur 1algus-->
+					<entry typeCode="COMP">
+						<procedure classCode="PROC" moodCode="EVN">
+							<!-- konkreetse protseduuri/uuringu identifikaator vastavas süsteemis, viidaregistri jaoks? -->
+							<id root="eHLprots" extension="1000003733"/>
+							<!-- protseduuri tüüp, määrab kas tegu on uuringu/operatsiooni/analüüsiga-->
+							<code code="PROC" codeSystem="OIDnr" codeSystemName="Protseduuri tüüp" displayName="Uuringud ja protseduurid"/>
+							<!-- protseduuri toimumise aeg-->
+							<effectiveTime value="20060529123459"/>
+							<!-- uuringu kood ja nimetus 1. HK loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="6065" codeSystem="OIDnr" codeSystemName="HK hinnakiri" displayName="Röntgenuuring labakäest"/>
+								</externalProcedure>
+							</reference>
+							<!-- uuringu kood ja nimetus 2. SNOMED CT loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="10650998" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Röntgenuuring"/>
+								</externalProcedure>
+							</reference>
+							<!-- uuringu kood ja nimetus 3. NCSP loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="1065" codeSystem="OIDnr" codeSystemName="NCSP" displayName="Röntgenuuring"/>
+								</externalProcedure>
+							</reference>
+							<!-- uuringu kood ja nimetus 3. NCSP loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="1066" codeSystem="OIDnr" codeSystemName="NCSP" displayName="Röntgenuuring"/>
+								</externalProcedure>
+							</reference>
+						</procedure>
+					</entry>
+					<!-- protseduur 1 lõpp-->
+					<!-- protseduur 2 algus -->
+					<entry typeCode="COMP">
+						<procedure classCode="PROC" moodCode="EVN">
+							<!-- konkreetse protseduuri/uuringu identifikaator vastavas süsteemis, viidaregistri jaoks? -->
+							<id root="eHLprots" extension="1000003733"/>
+							<!-- protseduuri tüüp, määrab kas tegu on uuringu/operatsiooni/analüüsiga-->
+							<code code="PROC" codeSystem="OIDnr" codeSystemName="Protseduuri tüüp" displayName="Uuringud ja protseduurid"/>
+							<!-- uuringu kirjeldus-->
+							<text>Uuringu või protseduuri vastus/kirjeldus</text>
+							<!-- protseduuri toimumise aeg-->
+							<effectiveTime value="20060527123459"/>
+							<!-- uuringu kood ja nimetus 1. HK loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="6065" codeSystem="OIDnr" codeSystemName="HK hinnakiri" displayName="Röntgenuuring"/>
+								</externalProcedure>
+							</reference>
+							<!-- uuringu kood ja nimetus 2. LOINC loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="L1065" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Röntgenuuring"/>
+								</externalProcedure>
+							</reference>
+						</procedure>
+					</entry>
+					<!-- protseduur 2 lõpp-->
+					<!-- uuringud ja protseduurid lõpp-->
+				</section>
+			</component>
+			<!-- UURINGUD JA PROTSEDUURID LÕPP-->
+			<!-- OPERATSIOONID ALGUS-->
+			<component typeCode="COMP">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<code code="STSUR" codeSystem="OIDnr" codeSystemName="Sektsiooni kodeering" displayName="Operatsioonid"/>
+					<!-- sektsiooni pealkiri -->
+					<title>Operatsioonid</title>
+					<!-- tekstilise kirjelduse algus -->
+					<text>
+						<paragraph>
+							<content>	
+Kuupäev	Teenus	NCSP	Hinnakirja kood
+29.05.2006	SNOMED CT 10650998 - Proteesimine puusaliigesel	1065 - Proteesimine puusaliigesel
+1066 - Proteesimine puusaliigesel
+	2232 - Proteesimine puusaliigesel							
+							</content>
+						</paragraph>
+					</text>
+					<!-- tekstilise kirjelduse lõpp -->
+					<!-- operatsioon 1 algus-->
+					<entry typeCode="COMP">
+						<procedure classCode="PROC" moodCode="EVN">
+							<!-- konkreetse operatsiooni identifikaator vastavas süsteemis, viidaregistri jaoks? -->
+							<id root="eHLop" extension="1000003723"/>
+							<!-- määrab kas tegu on uuringu/operatsiooni/analüüsiga-->
+							<code code="SUR" codeSystem="OIDnr" codeSystemName="Protseduuri tüüp" displayName="Operatsioonid"/>
+							<!-- operatsiooni toimumise aeg-->
+							<effectiveTime value="20060529123459"/>
+							<!-- operatsiooni kood ja nimetus 1. HK loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="2232" codeSystem="OIDnr" codeSystemName="HK hinnakiri" displayName="Proteesimine puusaliigesel"/>
+								</externalProcedure>
+							</reference>
+							<!-- operatsiooni kood ja nimetus 2. NCSP loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="1065" codeSystem="OIDnr" codeSystemName="NCSP" displayName="Proteesimine puusaliigesel"/>
+								</externalProcedure>
+							</reference>
+							<!-- operatsiooni kood ja nimetus 3. NCSP loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="1066" codeSystem="OIDnr" codeSystemName="NCSP" displayName="Proteesimine puusaliigesel"/>
+								</externalProcedure>
+							</reference>
+							<!-- operatsiooni kood ja nimetus 4. SNOMED CT loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="10650998" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Proteesimine puusaliigesel"/>
+								</externalProcedure>
+							</reference>
+						</procedure>
+					</entry>
+					<!-- operatsioon 1 lõpp-->
+				</section>
+			</component>
+			<!-- OPERATSIOONID LÕPP -->
+			<!-- ANALÜÜSID ALGUS-->
+			<component typeCode="COMP">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!-- mis tüüpi sektsiooniga on tegu -->
+					<code code="STANA" codeSystem="OIDnr" codeSystemName="Sektsiooni kodeering" displayName="Analüüsid"/>
+					<!-- sektsiooni pealkiri -->
+					<title>Analüüsid</title>
+					<!-- tekstilise kirjelduse algus -->
+					<text>
+						<paragraph>
+							<content>	
+Kuupäev	Teenus	NCSP	Hinnakirja kood
+01.06.2006	LOINC L1065 - Vere hapniku staatus	1065 - Vere hapniku staatus 	2232 - Vere hapniku staatus
+30.05.2006	LOINC L1065 - Vere hapniku staatus	1065 - Vere hapniku staatus 	2232 - Vere hapniku staatus
+18.05.2006	LOINC L1065 - Vere hapniku staatus	1065 - Vere hapniku staatus	2232 - Vere hapniku staatus
+17.05.2006	LOINC L1065 - Vere hapniku staatus	1065 - Vere hapniku staatus	2232 - Vere hapniku staatus
+12.05.2006	LOINC L1065 - Albumiin	1066 - Albumiin	2231 - Albumiin
+01.05.2006	LOINC L1065 - Albumiin	1066 - Albumiin	2231 - Albumiin							
+							</content>
+						</paragraph>
+					</text>
+					<!-- tekstilise kirjelduse lõpp -->
+					<!-- analüüs 1 algus-->
+					<entry typeCode="COMP">
+						<procedure classCode="PROC" moodCode="EVN">
+							<!-- konkreetse analüüsi identifikaator vastavas süsteemis, viidaregistri jaoks? -->
+							<id root="eHLana" extension="10000033723"/>
+							<!-- määrab kas tegu on uuringu/operatsiooni/analüüsiga-->
+							<code code="ANA" codeSystem="OIDnr" codeSystemName="Protseduuri tüüp" displayName="Analüüsid"/>
+							<!-- analüüsi toimumise aeg-->
+							<effectiveTime value="20060601123159"/>
+							<!-- analüüsi kood ja nimetus 1. HK loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="2232" codeSystem="OIDnr" codeSystemName="HK hinnakiri" displayName="Vere hapniku staatus"/>
+								</externalProcedure>
+							</reference>
+							<!-- analüüsi kood ja nimetus 2. NCSP loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="1065" codeSystem="OIDnr" codeSystemName="NCSP" displayName="Vere hapniku staatus"/>
+								</externalProcedure>
+							</reference>
+							<!-- analüüsi kood ja nimetus 3. LOINC loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="L1065" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Vere hapniku staatus"/>
+								</externalProcedure>
+							</reference>
+						</procedure>
+					</entry>
+					<!-- analüüs 1 lõpp-->
+					<!-- analüüs 2 algus-->
+					<entry typeCode="COMP">
+						<procedure classCode="PROC" moodCode="EVN">
+							<!-- konkreetse analüüsi identifikaator vastavas süsteemis, viidaregistri jaoks? -->
+							<id root="eHLana" extension="10000033724"/>
+							<!-- määrab kas tegu on uuringu/operatsiooni/analüüsiga-->
+							<code code="ANA" codeSystem="OIDnr" codeSystemName="Protseduuri tüüp" displayName="Analüüsid"/>
+							<!-- analüüsi toimumise aeg-->
+							<effectiveTime value="20060530134159"/>
+							<!-- analüüsi kood ja nimetus 1. HK loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="2232" codeSystem="OIDnr" codeSystemName="HK hinnakiri" displayName="Vere hapniku staatus"/>
+								</externalProcedure>
+							</reference>
+							<!-- analüüsi kood ja nimetus 2. NCSP loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="1065" codeSystem="OIDnr" codeSystemName="NCSP" displayName="Vere hapniku staatus"/>
+								</externalProcedure>
+							</reference>
+							<!-- analüüsi kood ja nimetus 3. LOINC loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="L1065" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Vere hapniku staatus"/>
+								</externalProcedure>
+							</reference>
+						</procedure>
+					</entry>
+					<!-- analüüs 2 lõpp-->
+					<!-- analüüs 3 algus-->
+					<entry typeCode="COMP">
+						<procedure classCode="PROC" moodCode="EVN">
+							<!-- konkreetse analüüsi identifikaator vastavas süsteemis, viidaregistri jaoks? -->
+							<id root="eHLana" extension="10000033725"/>
+							<!-- määrab kas tegu on uuringu/operatsiooni/analüüsiga-->
+							<code code="ANA" codeSystem="OIDnr" codeSystemName="Protseduuri tüüp" displayName="Analüüsid"/>
+							<!-- analüüsi toimumise aeg-->
+							<effectiveTime value="20060518235958"/>
+							<!-- analüüsi kood ja nimetus 1. HK loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="2232" codeSystem="OIDnr" codeSystemName="HK hinnakiri" displayName="Vere hapniku staatus"/>
+								</externalProcedure>
+							</reference>
+							<!-- analüüsi kood ja nimetus 2. NCSP loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="1065" codeSystem="OIDnr" codeSystemName="NCSP" displayName="Vere hapniku staatus"/>
+								</externalProcedure>
+							</reference>
+							<!-- analüüsi kood ja nimetus 3. LOINC loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="L1065" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Vere hapniku staatus"/>
+								</externalProcedure>
+							</reference>
+						</procedure>
+					</entry>
+					<!-- analüüs 3 lõpp-->
+					<!-- analüüs 4 algus-->
+					<entry typeCode="COMP">
+						<procedure classCode="PROC" moodCode="EVN">
+							<!-- konkreetse analüüsi identifikaator vastavas süsteemis, viidaregistri jaoks? -->
+							<id root="eHLana" extension="10000033726"/>
+							<!-- määrab kas tegu on uuringu/operatsiooni/analüüsiga-->
+							<code code="ANA" codeSystem="OIDnr" codeSystemName="Protseduuri tüüp" displayName="Analüüsid"/>
+							<!-- analüüsi toimumise aeg-->
+							<effectiveTime value="20060517235958"/>
+							<!-- analüüsi kood ja nimetus 1. HK loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="2232" codeSystem="OIDnr" codeSystemName="HK hinnakiri" displayName="Vere hapniku staatus"/>
+								</externalProcedure>
+							</reference>
+							<!-- analüüsi kood ja nimetus 2. NCSP loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="1065" codeSystem="OIDnr" codeSystemName="NCSP" displayName="Vere hapniku staatus"/>
+								</externalProcedure>
+							</reference>
+							<!-- analüüsi kood ja nimetus 3. LOINC loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="L1065" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Vere hapniku staatus"/>
+								</externalProcedure>
+							</reference>
+						</procedure>
+					</entry>
+					<!-- analüüs 4 lõpp-->
+					<!-- analüüs 5 algus-->
+					<entry typeCode="COMP">
+						<procedure classCode="PROC" moodCode="EVN">
+							<!-- konkreetse analüüsi identifikaator vastavas süsteemis, viidaregistri jaoks? -->
+							<id root="eHLana" extension="10000033728"/>
+							<!-- määrab kas tegu on uuringu/operatsiooni/analüüsiga-->
+							<code code="ANA" codeSystem="OIDnr" codeSystemName="Protseduuri tüüp" displayName="Analüüsid"/>
+							<!-- analüüsi toimumise aeg-->
+							<effectiveTime value="20060512215958"/>
+							<!-- analüüsi kood ja nimetus 1. HK loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="2231" codeSystem="OIDnr" codeSystemName="HK hinnakiri" displayName="Albumiin"/>
+								</externalProcedure>
+							</reference>
+							<!-- analüüsi kood ja nimetus 2. NCSP loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="1066" codeSystem="OIDnr" codeSystemName="NCSP" displayName="Albumiin"/>
+								</externalProcedure>
+							</reference>
+							<!-- analüüsi kood ja nimetus 3. LOINC loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="L1065" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Albumiin"/>
+								</externalProcedure>
+							</reference>
+						</procedure>
+					</entry>
+					<!-- analüüs 5 lõpp-->
+					<!-- analüüs 6 algus-->
+					<entry typeCode="COMP">
+						<procedure classCode="PROC" moodCode="EVN">
+							<!-- konkreetse analüüsi identifikaator vastavas süsteemis, viidaregistri jaoks? -->
+							<id root="eHLana" extension="10000033729"/>
+							<!-- määrab kas tegu on uuringu/operatsiooni/analüüsiga-->
+							<code code="ANA" codeSystem="OIDnr" codeSystemName="Protseduuri tüüp" displayName="Analüüsid"/>
+							<!-- analüüsi toimumise aeg-->
+							<effectiveTime value="20060501215958"/>
+							<!-- analüüsi kood ja nimetus 1. HK loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="2231" codeSystem="OIDnr" codeSystemName="HK hinnakiri" displayName="Albumiin"/>
+								</externalProcedure>
+							</reference>
+							<!-- analüüsi kood ja nimetus 2. NCSP loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="1066" codeSystem="OIDnr" codeSystemName="NCSP" displayName="Albumiin"/>
+								</externalProcedure>
+							</reference>
+							<!-- analüüsi kood ja nimetus 3. LOINC loendi järgi-->
+							<reference typeCode="REFR">
+								<externalProcedure classCode="PROC" moodCode="EVN">
+									<code code="L1065" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Albumiin"/>
+								</externalProcedure>
+							</reference>
+						</procedure>
+					</entry>
+					<!-- analüüs 6 lõpp-->
+				</section>
+			</component>
+			<!-- ANALÜÜSID LÕPP-->
+		</structuredBody>
+	</component>
+	<!-- SISUOSA LÕPP-->
+</ClinicalDocument>

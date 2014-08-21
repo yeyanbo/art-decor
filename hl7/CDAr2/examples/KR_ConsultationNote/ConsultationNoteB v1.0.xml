@@ -1,0 +1,359 @@
+<?xml version='1.0' encoding='euc-kr'?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns='urn:hl7-org:v3' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/> 
+
+<!--
+***********************************************************************************
+CDA Header 
+***********************************************************************************
+-->
+	<templateId root="2.16.410.1.113883.10.20.2"/>
+	<id root="" extension=""/>
+	<code code="11488-4" displayName="CONSULTATION NOTE" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+	<title>진료의뢰서</title>
+	<effectiveTime value="20080204012005"/>
+	<confidentialityCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality"/>
+	<languageCode code="ko-KR"/> 
+
+<!--
+	***********************
+	 Patient Information 
+	*********************** 
+-->
+	<recordTarget>
+		<patientRole>
+			<id extension="7001011234567" root="2.16.840.1.113883.4.1"/>
+			<id extension="0331234" root="1.2.410.200008.10"/>
+			<addr>
+				<streetAddressLine>대구시 수성구 1-2</streetAddressLine>
+				<city>대구</city>
+				<country>대한민국</country>
+			</addr>
+			<telecom value="tel:(053)123-4567" use="WP"/>
+			<patient>
+				<name>
+					<given>은혜</given>
+					<family>지</family>
+				</name>
+				<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+				<birthTime value="19700101"/>
+			</patient>
+			<guardian>
+				<telecom value="tel:011-456-7890" use="HP"/>
+			</guardian>
+		</patientRole>
+	</recordTarget>
+
+<!--
+	********************* 
+	Author Information 
+	********************* 
+-->
+	<author>
+		<assignedAuthor>
+			<assignedPerson>
+				<time value="2007040714"/>
+				<id extension="KP00017" root="2.16.840.1.113883.4.8"/>
+				<addr>
+					<streetAddressLine>대구시 송현동 1-2</streetAddressLine>
+					<city>대구</city>
+					<country>대한민국</country>
+				</addr>
+				<telecom value="tel:(053)777-7582" use="WP"/>
+				<name>
+					<given>성재</given>
+					<family>김</family>
+					<prefix>MD</prefix>
+				</name>
+			</assignedPerson>
+		</assignedAuthor>
+	</author>
+  
+<!--
+	*********************************** 
+	Information Recipient Information 
+	*********************************** 
+-->
+	<informationRecipient>
+		<intendedRecipient>
+			<id extension="KP00017" root="2.16.840.1.113883.4.8"/>
+			<addr>
+				<streetAddressLine>대구시 송현동 1-2</streetAddressLine>
+				<city>대구</city>
+				<country>대한민국</country>
+			</addr>
+			<telecom value="tel:(053)777-7582" use="WP"/>
+			<assignedPerson>
+				<name>
+					<given>진료</given>
+					<family>최</family>
+					<prefix>MD</prefix>
+				</name>
+			</assignedPerson>
+			<receivedOrganization>
+				<id extension="C0001" root="not yet"/>
+				<name>가야병원</name>
+				<telecom value="031-222-2222"/>
+				<addr>
+					<streetAddressLine>대구시 봉덕동 1-2</streetAddressLine>
+					<city>대구</city>
+					<country>대한민국</country>
+				</addr>
+			</receivedOrganization>
+		</intendedRecipient>
+	</informationRecipient>
+
+<!--  
+	************************ 
+	Custodian Information 
+	************************ 
+-->
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id root="1.2.410.200008.10"/>
+				<name>건강병원</name>
+				<telecom value="tel:(02)777-7582" use="WP"/>
+				<addr>
+					<streetAddressLine>대구시 수성구 황금동 1-2</streetAddressLine>
+					<city>대구</city>
+					<country>대한민국</country>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+
+<!--
+	******************************** 
+	LegalAuthenticator Information 
+	******************************** 
+-->
+	<legalAuthenticator>
+		<assignedEntity>
+			<time value="20080103171504"/>
+			<id extension="1" root="기관 고유 관리체계"/>
+			<addr>중구 동인동 111-11</addr>
+			<telecom value="tel:(053)351-4567" use="WP"/>
+			<assignedPerson>
+				<name>
+					<given>의사</given>
+					<family>최</family>
+				</name>
+			</assignedPerson>
+		</assignedEntity>
+	</legalAuthenticator>
+
+<!--
+***********************************************************************************
+ CDA Body
+***********************************************************************************
+-->
+	<component>
+		<structuredBody>
+		
+			<!-- 의뢰내역 Section content -->
+			<component>
+				<section>
+					<templateId root=""/>
+					<component>
+						<section>
+							<templateId root="2.16.840.1.113883.10.20.4.8"/>
+							<id root=" " extension=" "/>
+							<code code="42349-1" displayName=" REASON FOR REFERRAL" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+							<title>의뢰내역</title>
+							<text>
+								<paragraph>상기 환자의  Multiple nodes at Rt. neck 에 대해 의뢰드립니다.</paragraph>
+							</text>
+						</section>
+					</component>
+				</section>
+			</component>
+			
+			<!-- 과거병력 Section content -->
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.2.9"/>
+					<component>
+						<section>
+							<templateId root="2.16.840.1.113883.10.20.4.9 "/>
+							<code code="11348-0" codeSystem="2.16.840.1.113883.6.1" displayName="HISTORY OF PAST ILLNESS"/>
+							<title>과거병력</title>
+							<text>
+								<list>
+									<item>HTN</item>
+									<item>결핵, 15년전 완치</item>
+								</list>
+							</text>
+						</section>
+					</component>
+				</section>
+			</component>
+			
+			<!-- 상병명 Section content -->
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.4.8"/>
+					<component> 
+				<section> 
+				<templateId root= ""/> 
+				<code code='29548-5' codeSystem='2.16.840.1.113883.6.1 ' displayName='Diagonsis'/> 
+				<title>상병명</title> 
+				<text>
+					<list>
+						<item>상세불명의 급성편도염</item> 
+					</list>
+				</text>
+			  </section> 
+			</component> 
+				</section>
+			</component>
+			
+			<!-- 수술 및 처치 Section content -->
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.12"/>
+					<component>
+						<section>
+							<templateId root="2.16.840.1.113883.10.20.1.12"/>
+							<code codeSystem="2.16.840.1.113883.6.1" code="47519-4" displayName="HISTORY OF PROCEDURES"/>
+							<title>수술 및 처치</title>
+							<text>
+								<table border="1">
+									<thead>
+										<tr>
+											<th>수술 및 처치</th>
+											<th>일시</th>
+											<th>장소</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Laparoscopic Cholecystectomy</td>
+											<td>2002년 9월28일</td>
+											<td>대구병원</td>
+										</tr>
+										<tr>
+											<td>Cesarean Section</td>
+											<td>2003년 3월 2일</td>
+											<td>강남병원</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+						</section>
+					</component>
+				</section>
+			</component>
+			
+			<!-- 투약정보 Section content -->
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.8"/>
+					<component>
+						<section>
+							<templateId root="2.16.840.1.113883.10.20.1.8"/>
+							<id root=" " extension=" "/>
+							<code code="10160-0" displayName="HISTORY OF MEDICATION USE" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+							<text>
+								<list listType="ordered">
+									<item>
+										<content ID="m1">Lisinopril 5 mg</content> 하루 1알 </item>
+									<item>
+										<content ID="m2">Atenolol 25 mg</content> 하루 1알 </item>
+									<item>
+										<content ID="m3">Furosemide 40 mg</content> 매일 4알씩</item>
+									<item>
+										<content ID="m4">Gabapentin 300mg</content>이틀에 1알씩</item>
+									<item>
+										<content ID="m5">Simvastatin (Zocor) 10 mg</content> 매일 취침전 1알씩</item>
+								</list>
+							</text>
+						</section>
+					</component>
+				</section>
+			</component>
+			
+			<!--검사 소견 Section content-->
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.14"/>
+					<component>
+						<section>
+							<templateId root="2.16.840.1.113883.10.20.1.14"/>
+							<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" code="30954-2" displayName="RELEVANT DIAGNOSTIC TESTS AND/OR LABORATORY DATA"/>
+							
+                        <!--검체검사 Section content-->
+							<title>검사결과</title>
+							<text>
+								<table>
+									<tbody>
+										<tr>
+											<td colspan="2">검체검사정보</td>
+										</tr>
+										<tr>
+											<td colspan="2">생화학검사</td>
+										</tr>
+										<tr>
+											<td>Na</td>
+											<td>138</td>
+										</tr>
+										<tr>
+											<td>K</td>
+											<td>36</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							
+						<!--영상검사 Section content-->
+							<title>영상검사결과</title>
+							<text>
+								<table>
+									<tbody>
+										<tr>
+											<th>일자</th>
+											<th>항목명</th>
+											<th>검사결과</th>
+										</tr>
+										<tr>
+											<td>2007-12-10</td>
+											<td>Neck CT (3D, contrast)</td>
+											<td>(가판독)R/O Reactive lymph node in right neck. R/O  
+											Inflammatory lymphadenopathy such as Kikuchi's disease.</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							
+                         <!--진단적검사 Section content-->
+							<title>진단적검사결과</title>
+							<text>
+								<table>
+									<tbody>
+										<tr>
+											<th>일자</th>
+											<th>항목명</th>
+											<th>검사결과</th>
+										</tr>
+										<tr>
+											<td>2007-12-06</td>
+											<td>세포비부인과검사</td>
+											<td>1.채취부위:neck
+											2.임상진단: MICRO (4 Pap, 1 DQ) DIAGNOSIS : Lymph node, right neck, aspiration cytology : Satisfactory for evaluation Benign Mixed population of small and large lymphoid cells and abundant karyorrhectic debris ; favor subacute necrotizing lymphadenitis</td>
+										</tr>
+										<tr>
+											<td>2007-12-06</td>
+											<td>분자병리학적검사</td>
+											<td>Summary: Negative for M. tuberculosis complex</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+						</section>
+					</component>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

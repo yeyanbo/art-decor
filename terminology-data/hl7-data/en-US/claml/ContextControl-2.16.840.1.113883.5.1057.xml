@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="114"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1057"/>
+   <Title name="ContextControl" date="2012-08-02" version="1.000">A code that specifies how an ActRelationship or Participation contributes to the context of an Act, and whether it may be propagated to descendent Acts whose association allows such propagation (see also attributes Participation.contextControlCode, ActRelationship.contextControlCode, ActRelationship.contextConductionInd).</Title>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="_ContextControlAdditive" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21053"/>
+      <SubClass code="AN"/>
+      <SubClass code="AP"/>
+      <Rubric id="d1e93564" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The association adds to the existing context associated with the Act. Both this association and any associations propagated from ancestor Acts are interpreted as being related to this Act.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e93577" kind="short">
+         <Label xml:lang="en-US">ContextControlAdditive</Label>
+      </Rubric>
+      <Rubric id="d1e93577" kind="preferred">
+         <Label xml:lang="en-US">ContextControlAdditive</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ContextControlNonPropagating" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21054"/>
+      <SubClass code="AN"/>
+      <SubClass code="ON"/>
+      <Rubric id="d1e93589" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The association applies only to the current Act and will not propagate to any child Acts that are related via a conducting ActRelationship (refer to contextConductionInd).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e93602" kind="short">
+         <Label xml:lang="en-US">ContextControlNonPropagating</Label>
+      </Rubric>
+      <Rubric id="d1e93602" kind="preferred">
+         <Label xml:lang="en-US">ContextControlNonPropagating</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ContextControlOverriding" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21055"/>
+      <SubClass code="ON"/>
+      <SubClass code="OP"/>
+      <Rubric id="d1e93613" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The association adds to the existing context associated with the Act, but replaces associations propagated from ancestor Acts whose typeCodes are the same or more specific.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e93626" kind="short">
+         <Label xml:lang="en-US">ContextControlOverriding</Label>
+      </Rubric>
+      <Rubric id="d1e93626" kind="preferred">
+         <Label xml:lang="en-US">ContextControlOverriding</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ContextControlPropagating" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21056"/>
+      <SubClass code="AP"/>
+      <SubClass code="OP"/>
+      <Rubric id="d1e93637" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The association propagates to any child Acts that are related via a conducting ActRelationship (refer to contextConductionInd).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e93650" kind="short">
+         <Label xml:lang="en-US">ContextControlPropagating</Label>
+      </Rubric>
+      <Rubric id="d1e93650" kind="preferred">
+         <Label xml:lang="en-US">ContextControlPropagating</Label>
+      </Rubric>
+   </Class>
+   <Class code="AN" kind="concept">
+      <Meta name="internalId" value="18932"/>
+      <SuperClass code="_ContextControlAdditive"/>
+      <SuperClass code="_ContextControlNonPropagating"/>
+      <Rubric id="d1e93661" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The association adds to the existing context associated with the Act, but will not propagate to any descendant Acts reached by conducting ActRelationships (see contextControlCode). Examples: If an 'Author' Participation were marked as "Additive, Non-Propagating" it means that the author will be added to the set of author participations that have propagated from ancestor Acts for the purpose of this Act. However only the previously propagated authors will propagate to any child Acts that allow context to be propagated.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e93684" kind="short">
+         <Label xml:lang="en-US">additive, non-propagating</Label>
+      </Rubric>
+      <Rubric id="d1e93684" kind="preferred">
+         <Label xml:lang="en-US">additive, non-propagating</Label>
+      </Rubric>
+   </Class>
+   <Class code="AP" kind="concept">
+      <Meta name="internalId" value="18930"/>
+      <SuperClass code="_ContextControlAdditive"/>
+      <SuperClass code="_ContextControlPropagating"/>
+      <Rubric id="d1e93696" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The association adds to the existing context associated with the Act, and will propagate to any descendant Acts reached by conducting ActRelationships (see contextControlCode). Examples: If an 'Author' Participation were marked as "Additive, Propagating" it means that the author will be added to the set of author participations that have propagated from ancestor Acts, and will itself propagate with the other authors to any child Acts that allow context to be propagated.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e93719" kind="short">
+         <Label xml:lang="en-US">additive, propagating</Label>
+      </Rubric>
+      <Rubric id="d1e93719" kind="preferred">
+         <Label xml:lang="en-US">additive, propagating</Label>
+      </Rubric>
+   </Class>
+   <Class code="ON" kind="concept">
+      <Meta name="internalId" value="18933"/>
+      <SuperClass code="_ContextControlNonPropagating"/>
+      <SuperClass code="_ContextControlOverriding"/>
+      <Rubric id="d1e93731" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The association is added to the existing context associated with the Act, but overrides an association with the same typeCode. However, this overriding association will not propagate to any descendant Acts reached by conducting ActRelationships (see contextControlCode). Examples: If an 'Author' Participation were marked as "Overriding, Non-Propagating" it means that the author will replace the set of author participations that have propagated from ancestor Acts. Furthermore, no author participations whatsoever will propagate to any child Acts that allow context to be propagated.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e93754" kind="short">
+         <Label xml:lang="en-US">overriding, non-propagating</Label>
+      </Rubric>
+      <Rubric id="d1e93754" kind="preferred">
+         <Label xml:lang="en-US">overriding, non-propagating</Label>
+      </Rubric>
+   </Class>
+   <Class code="OP" kind="concept">
+      <Meta name="internalId" value="18931"/>
+      <SuperClass code="_ContextControlOverriding"/>
+      <SuperClass code="_ContextControlPropagating"/>
+      <Rubric id="d1e93767" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The association is added to the existing context associated with the Act, but overrides an association with the same typeCode. This overriding association will propagate to any descendant Acts reached by conducting ActRelationships (see contextControlCode). Examples: If an 'Author' Participation were marked as "Overriding, Propagating" it means that the author will replace the set of author participations that have propagated from ancestor Acts, and will itself be the only author to propagate to any child Acts that allow context to be propagated.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e93790" kind="short">
+         <Label xml:lang="en-US">overriding, propagating</Label>
+      </Rubric>
+      <Rubric id="d1e93790" kind="preferred">
+         <Label xml:lang="en-US">overriding, propagating</Label>
+      </Rubric>
+   </Class>
+</ClaML>

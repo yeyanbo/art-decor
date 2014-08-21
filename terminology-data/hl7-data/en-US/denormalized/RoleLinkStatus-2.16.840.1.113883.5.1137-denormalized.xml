@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="1070"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1137"/>
+   <Title name="RoleLinkStatus" date="2012-08-02" version="1.000">Description:Codes representing possible states of a RoleLink, as defined by the RoleLink class state machine.</Title>
+   <Class code="rootClass">
+      <SubClass subCount="4" code="NORMAL" kind="concept">
+         <Rubric id="d1e217204" kind="preferred">
+            <Label xml:lang="en-US">normal</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="0" code="NULLIFIED" kind="concept">
+         <Rubric id="d1e217232" kind="preferred">
+            <Label xml:lang="en-US">nullified</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">RoleLinkStatus</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">Description:Codes representing possible states of a RoleLink, as defined by the RoleLink class state machine.</Label>
+      </Rubric>
+   </Class>
+   <Class code="NORMAL" kind="concept">
+      <Meta name="internalId" value="23254"/>
+      <SubClass code="ACTIVE" subCount="0">
+         <Rubric id="d1e217264" kind="preferred">
+            <Label xml:lang="en-US">active</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="CANCELLED" subCount="0">
+         <Rubric id="d1e217296" kind="preferred">
+            <Label xml:lang="en-US">cancelled</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="COMPLETED" subCount="0">
+         <Rubric id="d1e217328" kind="preferred">
+            <Label xml:lang="en-US">completed</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PENDING" subCount="0">
+         <Rubric id="d1e217360" kind="preferred">
+            <Label xml:lang="en-US">pending</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e217188" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The 'typical' state. Excludes "nullified" which represents the termination state of a RoleLink instance that was created in error.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e217204" kind="short">
+         <Label xml:lang="en-US">normal</Label>
+      </Rubric>
+      <Rubric id="d1e217204" kind="preferred">
+         <Label xml:lang="en-US">normal</Label>
+      </Rubric>
+   </Class>
+   <Class code="NULLIFIED" kind="concept">
+      <Meta name="internalId" value="23259"/>
+      <Rubric id="d1e217216" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The state representing the termination of a RoleLink instance that was created in error.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e217232" kind="short">
+         <Label xml:lang="en-US">nullified</Label>
+      </Rubric>
+      <Rubric id="d1e217232" kind="preferred">
+         <Label xml:lang="en-US">nullified</Label>
+      </Rubric>
+   </Class>
+   <Class code="ACTIVE" kind="concept">
+      <Meta name="internalId" value="23255"/>
+      <SuperClass code="NORMAL">
+         <Rubric id="d1e217204" kind="preferred">
+            <Label xml:lang="en-US">normal</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e217243" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The state indicates the RoleLink is in progress.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e217264" kind="short">
+         <Label xml:lang="en-US">active</Label>
+      </Rubric>
+      <Rubric id="d1e217264" kind="preferred">
+         <Label xml:lang="en-US">active</Label>
+      </Rubric>
+   </Class>
+   <Class code="CANCELLED" kind="concept">
+      <Meta name="internalId" value="23256"/>
+      <SuperClass code="NORMAL">
+         <Rubric id="d1e217204" kind="preferred">
+            <Label xml:lang="en-US">normal</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e217275" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The terminal state resulting from abandoning the RoleLink prior to or after activation.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e217296" kind="short">
+         <Label xml:lang="en-US">cancelled</Label>
+      </Rubric>
+      <Rubric id="d1e217296" kind="preferred">
+         <Label xml:lang="en-US">cancelled</Label>
+      </Rubric>
+   </Class>
+   <Class code="COMPLETED" kind="concept">
+      <Meta name="internalId" value="23257"/>
+      <SuperClass code="NORMAL">
+         <Rubric id="d1e217204" kind="preferred">
+            <Label xml:lang="en-US">normal</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e217307" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The terminal state representing the successful completion of the RoleLink.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e217328" kind="short">
+         <Label xml:lang="en-US">completed</Label>
+      </Rubric>
+      <Rubric id="d1e217328" kind="preferred">
+         <Label xml:lang="en-US">completed</Label>
+      </Rubric>
+   </Class>
+   <Class code="PENDING" kind="concept">
+      <Meta name="internalId" value="23258"/>
+      <SuperClass code="NORMAL">
+         <Rubric id="d1e217204" kind="preferred">
+            <Label xml:lang="en-US">normal</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e217339" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The state indicates the RoleLink has not yet become active.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e217360" kind="short">
+         <Label xml:lang="en-US">pending</Label>
+      </Rubric>
+      <Rubric id="d1e217360" kind="preferred">
+         <Label xml:lang="en-US">pending</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

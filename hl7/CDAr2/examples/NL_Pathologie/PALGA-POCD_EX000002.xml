@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  PALGA voorbeeld Histologie (T) – klein
+  POCD_SN970002NL
+-->
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:sciphox="urn::sciphox-org/sciphox"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+  <id extension="T0702474A" root="2.16.840.1.113883.2.4.3.23.3.20"/>
+  <code code="22036-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+  <title>Histologie (T) – klein, patient: Jan van Dale</title>
+  <effectiveTime value="200704051624"/>
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+  <languageCode code="nl-NL"/>
+  <setId extension="T0702474" root="2.16.840.1.113883.2.4.3.23.3.20"/>
+  <versionNumber value="1"/>
+  <recordTarget>
+    <!-- patiënt gegevens -->
+    <patientRole>
+      <id extension="100197245" root="2.16.840.1.113883.2.4.6.3"/>
+      <patient>
+        <name>
+          <given>Jan</given>
+          <prefix qualifier="VV">van</prefix>
+          <family>Dale</family>
+        </name>
+        <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+        <birthTime value="19450911"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <!--- author -->
+    <time value="20070405"/>
+    <assignedAuthor>
+      <id extension="1298546" root="2.16.528.1.1007.3.1"/>
+      <assignedPerson>
+        <name>
+          <given>Theo</given>
+          <family>Driessen</family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <name>Academisch Medisch Centrum, Amsterdam</name>
+        <addr>
+          <streetName>Meibergdreef</streetName>
+          <houseNumber>9</houseNumber>
+          <postalCode>1100 DD</postalCode>
+          <city>Amsterdam</city>
+        </addr>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id extension="20" root="2.16.840.1.113883.2.4.3.23.3"/>
+        <name>Academisch Medisch Centrum, Amsterdam</name>
+        <addr>
+          <streetName>Meibergdreef</streetName>
+          <houseNumber>9</houseNumber>
+          <postalCode>1100 DD</postalCode>
+          <city>Amsterdam</city>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <informationRecipient>
+    <intendedRecipient>
+      <id extension="67684" root="2.16.528.1.1007.3.1"/>
+      <informationRecipient>
+        <name>
+          <given>Karel</given>
+          <family>Oogappel</family>
+        </name>
+      </informationRecipient>
+      <receivedOrganization>
+        <telecom use="WP" value="fax:0251247878"/>
+        <addr>
+          <streetName>Ziekenhuisweg</streetName>
+          <houseNumber>23</houseNumber>
+          <postalCode>6734 WR</postalCode>
+          <city>Assen</city>
+        </addr>
+      </receivedOrganization>
+    </intendedRecipient>
+  </informationRecipient>
+  <legalAuthenticator>
+    <!--- legalAuthenticator -->
+    <time value="20070405"/>
+    <signatureCode code="S"/>
+    <assignedEntity>
+      <id extension="1298546" root="2.16.528.1.1007.3.1"/>
+      <assignedPerson>
+        <name>
+          <given>Theo</given>
+          <family>Driessen</family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id extension="20" root="2.16.840.1.113883.2.4.3.23.3"/>
+        <name>Academisch Medisch Centrum, Amsterdam</name>
+        <addr>
+          <streetName>Meibergdreef</streetName>
+          <houseNumber>9</houseNumber>
+          <postalCode>1100 DD</postalCode>
+          <city>Amsterdam</city>
+        </addr>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+  <documentationOf>
+    <serviceEvent>
+      <code code="H" codeSystem="2.16.840.1.113883.2.4.3.23.5.1" codeSystemName="PALGA service types"/>
+    </serviceEvent>
+  </documentationOf>
+  <componentOf>
+    <encompassingEncounter classCode="ENC" moodCode="EVN">
+      <code code="VR" codeSystem="2.16.840.1.113883.5.4"/>
+      <effectiveTime>
+        <low value="200704051017"/>
+        <high value="200704051624"/>
+      </effectiveTime>
+    </encompassingEncounter>
+  </componentOf>
+  <component>
+    <structuredBody>
+      <component>
+        <!-- Klinische gegevens -->
+        <section>
+          <code code="22636-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Klinische gegevens</title>
+          <text>Gepigmenteerd plekje rechter slaap.
+          </text>
+        </section>
+      </component>
+      <component>
+        <!-- Macroscopie -->
+        <section>
+          <code code="22634-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Macroscopie</title>
+          <text>
+            1 inzending.<br/>
+            Een ellipsvormige huidexcisie met subcutis van 12 x 7 x 3 mm. Op de epidermis een matig 
+            verheven, korrelige, lichtbruine laesie van 5 mm in diameter. T.i.<br/>
+            <br/>
+          </text>
+        </section>
+      </component>
+      <component>
+        <!-- Microscopie -->
+        <section>
+          <code code="22635-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Microscopie</title>
+          <text>
+            Doorsneden door een verruca seborrhoica van het acanthotische type. De laesie werd in toto verwijderd.<br/>
+          </text>
+        </section>
+      </component>
+      <component>
+        <!-- Conclusie -->
+        <section>
+          <code code="22034-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Conclusie</title>
+          <text>Excisie verruca seborrhoica rechter slaap.</text>
+        </section>
+      </component>
+      <component>
+        <!-- Diagnosen -->
+        <section>
+          <code code="22637-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Diagnosen</title>
+          <text>
+            <paragraph>
+              Diagtekst1: huid*gelaat*excisie*verruca seborrhoica<br/>
+              Palga-codes1: <content ID="d1-1">T01000</content>*<content ID="d1-2">TY02000</content>*
+              <content ID="d1-3">P11200</content>*<content ID="d1-4">M27250</content>
+            </paragraph>
+          </text>
+          <entry typeCode="DRIV">
+            <organizer classCode="CLUSTER" moodCode="EVN">
+              <statusCode code="completed"/>
+              <component typeCode="COMP">
+                <sequenceNumber value="1"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20071122"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="T01000" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d1-1"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <sequenceNumber value="2"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20071122"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="TY02000" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d1-2"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <sequenceNumber value="3"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20071122"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="P11200" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d1-3"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <sequenceNumber value="4"/>
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="DX" codeSystem="2.16.840.1.113883.5.4"/>
+                  <statusCode code="completed"/>
+                  <effectiveTime>
+                    <low value="20071122"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="M27250" codeSystem="2.16.840.1.113883.2.4.3.23.5.2" codeSystemName="PALGA codes">
+                    <originalText>
+                      <reference value="#d1-4"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </component>
+            </organizer>
+            </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

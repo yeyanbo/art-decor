@@ -1,0 +1,2299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML version="2.0.0">
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="134"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.110"/>
+   <Title name="RoleClass" date="2012-08-02" version="1.000">Codes for the Role class hierarchy. The values in this hierarchy, represent a Role which is an association or relationship between two entities - the entity that plays the role and the entity that scopes the role. Roles names are derived from the name of the playing entity in that role. The role hierarchy stems from three core concepts, or abstract domains: RoleClassOntological is an abstract domain that collects roles in which the playing entity is defined or specified by the scoping entity. RoleClassPartitive collects roles in which the playing entity is in some sense a "part" of the scoping entity. RoleClassAssociative collects all of the remaining forms of association between the playing entity and the scoping entity. This set of roles is further partitioned between: RoleClassPassive which are roles in which the playing entity is used, known, treated, handled, built, or destroyed, etc. under the auspices of the scoping entity. The playing entity is passive in these roles in that the role exists without an agreement from the playing entity. RoleClassMutualRelationship which are relationships based on mutual behavior of the two entities. The basis of these relationship may be formal agreements or they may be de facto behavior. Thus, this sub-domain is further divided into: RoleClassRelationshipFormal in which the relationship is formally defined, frequently by a contract or agreement. Personal relationship which inks two people in a personal relationship. The hierarchy discussed above is represented In the current vocabulary tables as a set of abstract domains, with the exception of the "Personal relationship" which is a leaf concept. OpenIssue: Description copied from Concept Domain of same name. Must be verified.</Title>
+   <Authors>
+      <Author name="Responsible">Health Level 7</Author>
+      <Author name="Sponsor">Health Level Seven</Author>
+   </Authors>
+   <ClassKinds>
+      <ClassKind name="abstract"/>
+      <ClassKind name="concept"/>
+   </ClassKinds>
+   <RubricKinds>
+      <RubricKinds>
+         <RubricKind name="definition"/>
+         <RubricKind name="description"/>
+         <RubricKind name="header"/>
+         <RubricKind name="preferred"/>
+         <RubricKind name="short"/>
+      </RubricKinds>
+   </RubricKinds>
+   <Class code="ROL" kind="concept">
+      <Meta name="internalId" value="13940"/>
+      <Meta name="Name:Class" value="role"/>
+      <Meta name="Name:Role:player:Entity" value="(playing&amp;)|player"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="A________"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="A________"/>
+      <Meta name="Name:Role:scoper:Entity" value="(scoping&amp;)|scoper"/>
+      <SubClass code="_RoleClassAssociative"/>
+      <SubClass code="_RoleClassOntological"/>
+      <SubClass code="_RoleClassPartitive"/>
+      <Rubric id="d1e202177" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Corresponds to the Role class</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e202201" kind="short">
+         <Label xml:lang="en-US">role</Label>
+      </Rubric>
+      <Rubric id="d1e202201" kind="preferred">
+         <Label xml:lang="en-US">role</Label>
+      </Rubric>
+   </Class>
+   <Class code="_RoleClassMutualRelationship" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21114"/>
+      <Meta name="Name:Class" value="relatedEntity"/>
+      <Meta name="Name:Role:player:Entity" value="related&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAA______"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAA______"/>
+      <Meta name="Name:Role:scoper:Entity" value="scoping&amp;"/>
+      <SuperClass code="_RoleClassAssociative"/>
+      <SubClass code="_RoleClassRelationshipFormal"/>
+      <SubClass code="CAREGIVER"/>
+      <SubClass code="PRS"/>
+      <Rubric id="d1e202309" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A relationship that is based on mutual behavior of the two Entities as being related. The basis of such relationship may be agreements (e.g., spouses, contract parties) or they may be <i>de facto</i>behavior (e.g. friends) or may be an incidental involvement with each other (e.g. parties over a dispute, siblings, children).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e202341" kind="short">
+         <Label xml:lang="en-US">RoleClassMutualRelationship</Label>
+      </Rubric>
+      <Rubric id="d1e202341" kind="preferred">
+         <Label xml:lang="en-US">RoleClassMutualRelationship</Label>
+      </Rubric>
+   </Class>
+   <Class code="_RoleClassPassive" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21117"/>
+      <Meta name="Name:Class" value="passiveRelation"/>
+      <Meta name="Name:Role:player:Entity" value="playing&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAB______"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAB______"/>
+      <Meta name="Name:Role:scoper:Entity" value="scoping&amp;"/>
+      <SuperClass code="_RoleClassAssociative"/>
+      <SubClass code="ACCESS"/>
+      <SubClass code="ADJY"/>
+      <SubClass code="ADMM"/>
+      <SubClass code="BIRTHPL"/>
+      <SubClass code="DEATHPLC"/>
+      <SubClass code="DST"/>
+      <SubClass code="EXLOC"/>
+      <SubClass code="EXPR"/>
+      <SubClass code="HLD"/>
+      <SubClass code="HLTHCHRT"/>
+      <SubClass code="IDENT"/>
+      <SubClass code="MANU"/>
+      <SubClass code="MNT"/>
+      <SubClass code="OWN"/>
+      <SubClass code="RGPR"/>
+      <SubClass code="TERR"/>
+      <SubClass code="USED"/>
+      <SubClass code="WRTE"/>
+      <Rubric id="d1e202352" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An association for a playing Entity that is used, known, treated, handled, built, or destroyed, etc. under the auspices of the scoping Entity. The playing Entity is passive in these roles (even though it may be active in other roles), in the sense that the kinds of things done to it in this role happen without an agreement from the playing Entity.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e202381" kind="short">
+         <Label xml:lang="en-US">RoleClassPassive</Label>
+      </Rubric>
+      <Rubric id="d1e202381" kind="preferred">
+         <Label xml:lang="en-US">RoleClassPassive</Label>
+      </Rubric>
+   </Class>
+   <Class code="_RoleClassRelationshipFormal" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21118"/>
+      <Meta name="Name:Class" value="formalRelation"/>
+      <Meta name="Name:Role:player:Entity" value="related&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAA_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAA_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="related&amp;"/>
+      <SuperClass code="_RoleClassMutualRelationship"/>
+      <SubClass code="AFFL"/>
+      <SubClass code="AGNT"/>
+      <SubClass code="CIT"/>
+      <SubClass code="COVPTY"/>
+      <SubClass code="CRINV"/>
+      <SubClass code="CRSPNSR"/>
+      <SubClass code="EMP"/>
+      <SubClass code="GUAR"/>
+      <SubClass code="INVSBJ"/>
+      <SubClass code="LIC"/>
+      <SubClass code="PAT"/>
+      <SubClass code="PAYEE"/>
+      <SubClass code="PAYOR"/>
+      <SubClass code="POLHOLD"/>
+      <SubClass code="QUAL"/>
+      <SubClass code="SPNSR"/>
+      <SubClass code="STD"/>
+      <SubClass code="UNDWRT"/>
+      <Rubric id="d1e202392" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A relationship between two entities that is formally recognized, frequently by a contract or similar agreement.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e202421" kind="short">
+         <Label xml:lang="en-US">RoleClassRelationshipFormal</Label>
+      </Rubric>
+      <Rubric id="d1e202421" kind="preferred">
+         <Label xml:lang="en-US">RoleClassRelationshipFormal</Label>
+      </Rubric>
+   </Class>
+   <Class code="CAREGIVER" kind="concept">
+      <Meta name="internalId" value="21355"/>
+      <Meta name="Name:Class" value="careGiver"/>
+      <Meta name="Name:Role:player:Entity" value="careGiver&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAC_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAC_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="careGiverScoper"/>
+      <SuperClass code="_RoleClassMutualRelationship"/>
+      <Rubric id="d1e202433" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A person responsible for the primary care of a patient at home.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e202462" kind="short">
+         <Label xml:lang="en-US">caregiver</Label>
+      </Rubric>
+      <Rubric id="d1e202462" kind="preferred">
+         <Label xml:lang="en-US">caregiver</Label>
+      </Rubric>
+   </Class>
+   <Class code="PRS" kind="concept">
+      <Meta name="internalId" value="19167"/>
+      <Meta name="Name:Class" value="personalRelationship"/>
+      <Meta name="Name:Role:player:Entity" value="relationshipHolder"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAB_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAB_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="personalRelationshipWith"/>
+      <SuperClass code="_RoleClassMutualRelationship"/>
+      <Rubric id="d1e202473" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Links two people in a personal relationship. The character of the relationship must be defined by a PersonalRelationshipRoleType code. The player and scoper are determined by PersonalRelationshipRoleType code as well.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e202502" kind="short">
+         <Label xml:lang="en-US">personal relationship</Label>
+      </Rubric>
+      <Rubric id="d1e202502" kind="preferred">
+         <Label xml:lang="en-US">personal relationship</Label>
+      </Rubric>
+   </Class>
+   <Class code="EQUIV" kind="concept">
+      <Meta name="internalId" value="22399"/>
+      <Meta name="Name:Class" value="equivalentEntity"/>
+      <SuperClass code="_RoleClassOntological"/>
+      <SubClass code="SAME"/>
+      <SubClass code="SUBY"/>
+      <Rubric id="d1e202563" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Specifies the player Entity (the equivalent Entity) as an Entity that is considered to be equivalent to a reference Entity (scoper). The equivalence is in principle a symmetric relationship, however, it is expected that the scoper is a reference entity which serves as reference entity for multiple different equivalent entities.</p>
+            <p>
+               <b>Examples:</b>An innovator's medicine formulation is the reference for "generics", i.e., formulations manufactured differently but having been proven to be biologically equivalent to the reference medicine. Another example is a reference ingredient that serves as basis for quantity specifications (basis of strength, e.g., metoprolol succinate specified in terms of metoprolol tartrate.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e202592" kind="short">
+         <Label xml:lang="en-US">equivalent entity</Label>
+      </Rubric>
+      <Rubric id="d1e202592" kind="preferred">
+         <Label xml:lang="en-US">equivalent entity</Label>
+      </Rubric>
+   </Class>
+   <Class code="GEN" kind="concept">
+      <Meta name="internalId" value="10441"/>
+      <Meta name="Name:Class" value="specializedKind"/>
+      <Meta name="Name:Role:player:Entity" value="specialized(&amp;|Kind)"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="ACA______"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="ACA______"/>
+      <Meta name="Name:Role:scoper:Entity" value="generalized(&amp;|Kind)"/>
+      <SuperClass code="_RoleClassOntological"/>
+      <SubClass code="GRIC"/>
+      <Rubric id="d1e202604" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Relates a specialized material concept (player) to its generalization (scoper).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e202633" kind="short">
+         <Label xml:lang="en-US">has generalization</Label>
+      </Rubric>
+      <Rubric id="d1e202633" kind="preferred">
+         <Label xml:lang="en-US">has generalization</Label>
+      </Rubric>
+   </Class>
+   <Class code="INST" kind="concept">
+      <Meta name="internalId" value="10443"/>
+      <Meta name="Name:Class" value="instanceOfKind"/>
+      <Meta name="Name:Role:player:Entity" value="&amp;Instance"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="ACB______"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="ACB______"/>
+      <Meta name="Name:Role:scoper:Entity" value="kindOf&amp;"/>
+      <SuperClass code="_RoleClassOntological"/>
+      <Rubric id="d1e202644" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An individual piece of material (player) instantiating a class of material (scoper).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e202673" kind="short">
+         <Label xml:lang="en-US">instance</Label>
+      </Rubric>
+      <Rubric id="d1e202673" kind="preferred">
+         <Label xml:lang="en-US">instance</Label>
+      </Rubric>
+   </Class>
+   <Class code="CONT" kind="concept">
+      <Meta name="internalId" value="10438"/>
+      <Meta name="Name:Class" value="content"/>
+      <Meta name="Name:Role:player:Entity" value="(contained(&amp;-MAT))|content"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="ABB______"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="ABB______"/>
+      <Meta name="Name:Role:scoper:Entity" value="container&amp;"/>
+      <SuperClass code="_RoleClassPartitive"/>
+      <Rubric id="d1e202732" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Relates a material as the content (player) to a container (scoper). Unlike ingredients, the content and a container remain separate (not mixed) and the content can be removed from the container. A content is not part of an empty container.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e202761" kind="short">
+         <Label xml:lang="en-US">content</Label>
+      </Rubric>
+      <Rubric id="d1e202761" kind="preferred">
+         <Label xml:lang="en-US">content</Label>
+      </Rubric>
+   </Class>
+   <Class code="EXPAGTCAR" kind="concept">
+      <Meta name="internalId" value="22350"/>
+      <Meta name="Name:Class" value="exposureAgentCarrier"/>
+      <SuperClass code="_RoleClassPartitive"/>
+      <SubClass code="EXPVECTOR"/>
+      <SubClass code="FOMITE"/>
+      <Rubric id="d1e202772" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An exposure agent carrier is an entity that is capable of conveying an exposure agent from one entity to another. The scoper of the role must be the exposure agent (e.g., pathogen).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e202792" kind="short">
+         <Label xml:lang="en-US">exposure agent carrier</Label>
+      </Rubric>
+      <Rubric id="d1e202792" kind="preferred">
+         <Label xml:lang="en-US">exposure agent carrier</Label>
+      </Rubric>
+   </Class>
+   <Class code="INGR" kind="concept">
+      <Meta name="internalId" value="10430"/>
+      <Meta name="Name:Class" value="ingredient"/>
+      <Meta name="Name:Role:player:Entity" value="ingredient&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="ABD______"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="ABD______"/>
+      <Meta name="Name:Role:scoper:Entity" value="ingredientOf&amp;"/>
+      <SuperClass code="_RoleClassPartitive"/>
+      <SubClass code="ACTI"/>
+      <SubClass code="ADJV"/>
+      <SubClass code="ADTV"/>
+      <SubClass code="BASE"/>
+      <SubClass code="CNTM"/>
+      <SubClass code="IACT"/>
+      <SubClass code="MECH"/>
+      <Rubric id="d1e202804" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Relates a component (player) to a mixture (scoper). E.g., Glucose and Water are ingredients of D5W, latex may be an ingredient in a tracheal tube.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e202833" kind="short">
+         <Label xml:lang="en-US">ingredient</Label>
+      </Rubric>
+      <Rubric id="d1e202833" kind="preferred">
+         <Label xml:lang="en-US">ingredient</Label>
+      </Rubric>
+   </Class>
+   <Class code="LOCE" kind="concept">
+      <Meta name="internalId" value="16815"/>
+      <Meta name="Name:Class" value="locatedEntity"/>
+      <Meta name="Name:Role:player:Entity" value="located(&amp;|Entity)"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="ABE______"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="ABE______"/>
+      <Meta name="Name:Role:scoper:Entity" value="location(&amp;-PLC)"/>
+      <SuperClass code="_RoleClassPartitive"/>
+      <SubClass code="STOR"/>
+      <Rubric id="d1e202844" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Relates an entity (player) to a location (scoper) at which it is present in some way. This presence may be limited in time.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e202873" kind="short">
+         <Label xml:lang="en-US">located entity</Label>
+      </Rubric>
+      <Rubric id="d1e202873" kind="preferred">
+         <Label xml:lang="en-US">located entity</Label>
+      </Rubric>
+   </Class>
+   <Class code="MBR" kind="concept">
+      <Meta name="internalId" value="12204"/>
+      <Meta name="Name:Class" value="member"/>
+      <Meta name="Name:Role:player:Entity" value="member&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="ABF______"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="ABF______"/>
+      <Meta name="Name:Role:scoper:Entity" value="group&amp;"/>
+      <SuperClass code="_RoleClassPartitive"/>
+      <Rubric id="d1e202884" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A role played by an entity that is a member of a group. The group provides the scope for this role.</p>
+            <p>Among other uses, groups as used in insurance (groups of covered individuals) and in scheduling where resources may be grouped for scheduling and logistical purposes.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e202916" kind="short">
+         <Label xml:lang="en-US">member</Label>
+      </Rubric>
+      <Rubric id="d1e202916" kind="preferred">
+         <Label xml:lang="en-US">member</Label>
+      </Rubric>
+   </Class>
+   <Class code="PART" kind="concept">
+      <Meta name="internalId" value="19102"/>
+      <Meta name="Name:Class" value="partOfWhole"/>
+      <Meta name="Name:Role:player:Entity" value="part&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="ABC______"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="ABC______"/>
+      <Meta name="Name:Role:scoper:Entity" value="whole&amp;"/>
+      <SuperClass code="_RoleClassPartitive"/>
+      <SubClass code="ACTM"/>
+      <Rubric id="d1e202928" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>an association between two Entities where the playing Entity (the part) is a component of the whole (scoper) in the sense of an integral structural component, that is distinct from other parts in the same whole, has a distinct function in the whole, and, as an effect, the full integrity of the whole depends (to some degree) on the presence of this part, even though the part may often be separable from the whole.</p>
+            <p>
+               <b>Discussion:</b>Part is defined in opposition to (a) ingredient (not separable), (b) content (not a functional component), and (c) member (not functionally distinct from other members).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e202966" kind="short">
+         <Label xml:lang="en-US">part</Label>
+      </Rubric>
+      <Rubric id="d1e202966" kind="preferred">
+         <Label xml:lang="en-US">part</Label>
+      </Rubric>
+   </Class>
+   <Class code="SPEC" kind="concept">
+      <Meta name="internalId" value="11591"/>
+      <Meta name="Name:Class" value="specimen"/>
+      <Meta name="Name:Role:player:Entity" value="specimen&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="ABA______"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="ABA______"/>
+      <Meta name="Name:Role:scoper:Entity" value="source&amp;"/>
+      <SuperClass code="_RoleClassPartitive"/>
+      <SubClass code="ALQT"/>
+      <SubClass code="ISLT"/>
+      <Rubric id="d1e202977" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A role played by a material entity that is a specimen for an act. It is scoped by the source of the specimen.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e203006" kind="short">
+         <Label xml:lang="en-US">specimen</Label>
+      </Rubric>
+      <Rubric id="d1e203006" kind="preferred">
+         <Label xml:lang="en-US">specimen</Label>
+      </Rubric>
+   </Class>
+   <Class code="ACCESS" kind="concept">
+      <Meta name="internalId" value="11592"/>
+      <Meta name="Name:Class" value="access"/>
+      <Meta name="Name:Role:player:Entity" value="access&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AABM_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AABM_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="accessed&amp;"/>
+      <SuperClass code="_RoleClassPassive"/>
+      <Rubric id="d1e203017" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A role in which the playing entity (material) provides access to another entity. The principal use case is intravenous (or other bodily) access lines that preexist and need to be referred to for medication routing instructions.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e203046" kind="short">
+         <Label xml:lang="en-US">access</Label>
+      </Rubric>
+      <Rubric id="d1e203046" kind="preferred">
+         <Label xml:lang="en-US">access</Label>
+      </Rubric>
+   </Class>
+   <Class code="ADJY" kind="concept">
+      <Meta name="internalId" value="23095"/>
+      <Meta name="Name:Class" value="adjacency"/>
+      <Meta name="Name:Role:player:Entity" value="distal&amp;"/>
+      <Meta name="Name:Role:scoper:Entity" value="proximal&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAB______"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAB______"/>
+      <SuperClass code="_RoleClassPassive"/>
+      <SubClass code="CONC"/>
+      <Rubric id="d1e203057" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A physical association whereby two Entities are in some (even lose) spatial relationship with each other such that they touch each other in some way.</p>
+            <p>
+               <i>Examples:</i>the colon is connected (and therefore adjacent) to the jejunum; the colon is adjacent to the liver (even if not actually connected.)</p>
+            <p>
+               <i>UsageConstraints:</i>Adjacency is in principle a symmetrical connection, but scoper and player of the role should, where applicable, be assigned to have scoper be the larger, more central Entity and player the smaller, more distant, appendage.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e203098" kind="short">
+         <Label xml:lang="en-US">adjacency</Label>
+      </Rubric>
+      <Rubric id="d1e203098" kind="preferred">
+         <Label xml:lang="en-US">adjacency</Label>
+      </Rubric>
+   </Class>
+   <Class code="ADMM" kind="concept">
+      <Meta name="internalId" value="21435"/>
+      <Meta name="Name:Class" value="administrableMaterial"/>
+      <Meta name="Name:Role:player:Entity" value="administrable(&amp;|Product)"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AABO_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AABO_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="(scoping&amp;)|scoper"/>
+      <SuperClass code="_RoleClassPassive"/>
+      <Rubric id="d1e203109" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A material (player) that can be administered to an Entity (scoper).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e203138" kind="short">
+         <Label xml:lang="en-US">Administerable Material</Label>
+      </Rubric>
+      <Rubric id="d1e203138" kind="preferred">
+         <Label xml:lang="en-US">Administerable Material</Label>
+      </Rubric>
+   </Class>
+   <Class code="BIRTHPL" kind="concept">
+      <Meta name="internalId" value="11589"/>
+      <Meta name="Name:Class" value="birthplace"/>
+      <Meta name="Name:Role:player:Entity" value="birthplace"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AABL_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AABL_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="birthplaceFor&amp;"/>
+      <SuperClass code="_RoleClassPassive"/>
+      <Rubric id="d1e203149" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Relates a place (playing Entity) as the location where a living subject (scoping Entity) was born.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e203178" kind="short">
+         <Label xml:lang="en-US">birthplace</Label>
+      </Rubric>
+      <Rubric id="d1e203178" kind="preferred">
+         <Label xml:lang="en-US">birthplace</Label>
+      </Rubric>
+   </Class>
+   <Class code="DEATHPLC" kind="concept">
+      <Meta name="internalId" value="21640"/>
+      <Meta name="Name:Class" value="placeOfDeath"/>
+      <SuperClass code="_RoleClassPassive"/>
+      <Rubric id="d1e203190" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Definition: Relates a place (playing Entity) as the location where a living subject (scoping Entity) died.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e203210" kind="short">
+         <Label xml:lang="en-US">place of death</Label>
+      </Rubric>
+      <Rubric id="d1e203210" kind="preferred">
+         <Label xml:lang="en-US">place of death</Label>
+      </Rubric>
+   </Class>
+   <Class code="DST" kind="concept">
+      <Meta name="internalId" value="10418"/>
+      <Meta name="Name:Class" value="distributedProduct"/>
+      <Meta name="Name:Role:player:Entity" value="distributed(&amp;|Product)"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AABB_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AABB_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="(distributing&amp;)|distributor"/>
+      <SuperClass code="_RoleClassPassive"/>
+      <SubClass code="RET"/>
+      <Rubric id="d1e203222" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A material (player) distributed by a distributor (scoper) who functions between a manufacturer and a buyer or retailer.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e203251" kind="short">
+         <Label xml:lang="en-US">distributed material</Label>
+      </Rubric>
+      <Rubric id="d1e203251" kind="preferred">
+         <Label xml:lang="en-US">distributed material</Label>
+      </Rubric>
+   </Class>
+   <Class code="EXLOC" kind="concept">
+      <Meta name="internalId" value="23368"/>
+      <Meta name="Name:Class" value="eventLocation"/>
+      <Meta name="Name:Role:player:Entity" value="EventLocation(&amp;-PLC)"/>
+      <Meta name="Name:role:scoper:Entity" value="initiator&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AABI_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AABI_____"/>
+      <SuperClass code="_RoleClassPassive"/>
+      <SubClass code="SDLOC"/>
+      <Rubric id="d1e203262" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A role played by a place at which the location of an event may be recorded.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e203291" kind="short">
+         <Label xml:lang="en-US">event location</Label>
+      </Rubric>
+      <Rubric id="d1e203291" kind="preferred">
+         <Label xml:lang="en-US">event location</Label>
+      </Rubric>
+   </Class>
+   <Class code="EXPR" kind="concept">
+      <Meta name="internalId" value="19131"/>
+      <Meta name="Name:Class" value="exposedEntity"/>
+      <Meta name="Name:Role:player:Entity" value="exposed&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AABN_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AABN_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="exposing&amp;"/>
+      <SuperClass code="_RoleClassPassive"/>
+      <Rubric id="d1e203302" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A role played by an entity that has been exposed to a person or animal suffering a contagious disease, or with a location from which a toxin has been distributed. The player of the role is normally a person or animal, but it is possible that other entity types could become exposed. The role is scoped by the source of the exposure, and it is quite possible for a person playing the role of exposed party to also become the scoper a role played by another person. That is to say, once a person has become infected, it is possible, perhaps likely, for that person to infect others.</p>
+            <p>Management of exposures and tracking exposed parties is a key function within public health, and within most public health contexts - exposed parties are known as "contacts."</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e203334" kind="short">
+         <Label xml:lang="en-US">exposed entity</Label>
+      </Rubric>
+      <Rubric id="d1e203334" kind="preferred">
+         <Label xml:lang="en-US">exposed entity</Label>
+      </Rubric>
+   </Class>
+   <Class code="HLD" kind="concept">
+      <Meta name="internalId" value="10422"/>
+      <Meta name="Name:Class" value="heldEntity"/>
+      <Meta name="Name:Role:player:Entity" value="held(&amp;|Entity)"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AABC_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AABC_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="(holding&amp;)|holder"/>
+      <SuperClass code="_RoleClassPassive"/>
+      <Rubric id="d1e203345" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Entity that is currently in the possession of a holder (scoper), who holds, or uses it, usually based on some agreement with the owner.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e203374" kind="short">
+         <Label xml:lang="en-US">held entity</Label>
+      </Rubric>
+      <Rubric id="d1e203374" kind="preferred">
+         <Label xml:lang="en-US">held entity</Label>
+      </Rubric>
+   </Class>
+   <Class code="HLTHCHRT" kind="concept">
+      <Meta name="internalId" value="11618"/>
+      <Meta name="Name:Class" value="healthChart"/>
+      <Meta name="Name:Role:player:Entity" value="healthChart&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AABI_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AABI_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="subject&amp;"/>
+      <SuperClass code="_RoleClassPassive"/>
+      <Rubric id="d1e203385" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The role of a material (player) that is the physical health chart belonging to an organization (scoper).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e203414" kind="short">
+         <Label xml:lang="en-US">health chart</Label>
+      </Rubric>
+      <Rubric id="d1e203414" kind="preferred">
+         <Label xml:lang="en-US">health chart</Label>
+      </Rubric>
+   </Class>
+   <Class code="IDENT" kind="concept">
+      <Meta name="internalId" value="16721"/>
+      <Meta name="Name:Class" value="identifiedEntity"/>
+      <Meta name="Name:Role:player:Entity" value="identified(&amp;|Entity)"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AABA_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AABA_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="assigning(&amp;|Authority)"/>
+      <SuperClass code="_RoleClassPassive"/>
+      <Rubric id="d1e203426" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A role in which the scoping entity designates an identifier for a playing entity.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e203455" kind="short">
+         <Label xml:lang="en-US">identified entity</Label>
+      </Rubric>
+      <Rubric id="d1e203455" kind="preferred">
+         <Label xml:lang="en-US">identified entity</Label>
+      </Rubric>
+   </Class>
+   <Class code="MANU" kind="concept">
+      <Meta name="internalId" value="11580"/>
+      <Meta name="Name:Class" value="manufacturedProduct"/>
+      <Meta name="Name:Role:player:Entity" value="manufactured(&amp;|Product)"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AABD_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AABD_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="manufacturer&amp;"/>
+      <SuperClass code="_RoleClassPassive"/>
+      <SubClass code="THER"/>
+      <Rubric id="d1e203466" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Scoped by the manufacturer</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e203495" kind="short">
+         <Label xml:lang="en-US">manufactured product</Label>
+      </Rubric>
+      <Rubric id="d1e203495" kind="preferred">
+         <Label xml:lang="en-US">manufactured product</Label>
+      </Rubric>
+   </Class>
+   <Class code="MNT" kind="concept">
+      <Meta name="internalId" value="10427"/>
+      <Meta name="Name:Class" value="maintainedEntity"/>
+      <Meta name="Name:Role:player:Entity" value="maintained(&amp;|Entity)"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AABE_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AABE_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="(maintaining&amp;)|maintainer"/>
+      <SuperClass code="_RoleClassPassive"/>
+      <Rubric id="d1e203506" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An entity (player) that is maintained by another entity (scoper). This is typical role held by durable equipment. The scoper assumes responsibility for proper operation, quality, and safety.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e203535" kind="short">
+         <Label xml:lang="en-US">maintained entity</Label>
+      </Rubric>
+      <Rubric id="d1e203535" kind="preferred">
+         <Label xml:lang="en-US">maintained entity</Label>
+      </Rubric>
+   </Class>
+   <Class code="OWN" kind="concept">
+      <Meta name="internalId" value="10421"/>
+      <Meta name="Name:Class" value="ownedEntity"/>
+      <Meta name="Name:Role:player:Entity" value="owned(&amp;|Entity)"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AABF_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AABF_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="(owning&amp;)|owner"/>
+      <SuperClass code="_RoleClassPassive"/>
+      <Rubric id="d1e203546" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An Entity (player) for which someone (scoper) is granted by law the right to call the material (player) his own. This entitles the scoper to make decisions about the disposition of that material.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e203575" kind="short">
+         <Label xml:lang="en-US">owned entity</Label>
+      </Rubric>
+      <Rubric id="d1e203575" kind="preferred">
+         <Label xml:lang="en-US">owned entity</Label>
+      </Rubric>
+   </Class>
+   <Class code="RGPR" kind="concept">
+      <Meta name="internalId" value="19132"/>
+      <Meta name="Name:Class" value="regulatedProduct"/>
+      <Meta name="Name:Role:player:Entity" value="regulated(&amp;|Product)"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AABH_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AABH_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="regulator&amp;"/>
+      <SuperClass code="_RoleClassPassive"/>
+      <Rubric id="d1e203586" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A product regulated by some governmentatl orgnization. The role is played by Material and scoped by Organization.</p>
+            <p>Rationale: To support an entity clone used to identify the NDC number for a drug product.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e203618" kind="short">
+         <Label xml:lang="en-US">regulated product</Label>
+      </Rubric>
+      <Rubric id="d1e203618" kind="preferred">
+         <Label xml:lang="en-US">regulated product</Label>
+      </Rubric>
+   </Class>
+   <Class code="TERR" kind="concept">
+      <Meta name="internalId" value="11583"/>
+      <Meta name="Name:Class" value="territorialAuthority"/>
+      <Meta name="Name:Role:player:Entity" value="territory(&amp;-PLC)"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AABK_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AABK_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="governing&amp;"/>
+      <SuperClass code="_RoleClassPassive"/>
+      <Rubric id="d1e203629" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Relates a place entity (player) as the region over which the scoper (typically an Organization) has certain authority (jurisdiction). For example, the Calgary Regional Health Authority (scoper) has authority over the territory "Region 4 of Alberta" (player) in matters of health.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e203658" kind="short">
+         <Label xml:lang="en-US">territory of authority</Label>
+      </Rubric>
+      <Rubric id="d1e203658" kind="preferred">
+         <Label xml:lang="en-US">territory of authority</Label>
+      </Rubric>
+   </Class>
+   <Class code="USED" kind="concept">
+      <Meta name="internalId" value="22755"/>
+      <Meta name="Name:Class" value="usedEntity"/>
+      <SuperClass code="_RoleClassPassive"/>
+      <Rubric id="d1e203670" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>An entity (player) that is used by another entity (scoper)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e203693" kind="short">
+         <Label xml:lang="en-US">used entity</Label>
+      </Rubric>
+      <Rubric id="d1e203693" kind="preferred">
+         <Label xml:lang="en-US">used entity</Label>
+      </Rubric>
+   </Class>
+   <Class code="WRTE" kind="concept">
+      <Meta name="internalId" value="16300"/>
+      <Meta name="Name:Class" value="warrantedProduct"/>
+      <Meta name="Name:Role:player:Entity" value="warranted(&amp;|Product)"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AABG_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AABG_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="(warranting&amp;)|warranter"/>
+      <SuperClass code="_RoleClassPassive"/>
+      <Rubric id="d1e203705" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A role a product plays when a guarantee is given to the purchaser by the seller (scoping entity) stating that the product is reliable and free from known defects and that the seller will repair or replace defective parts within a given time limit and under certain conditions.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e203734" kind="short">
+         <Label xml:lang="en-US">warranted product</Label>
+      </Rubric>
+      <Rubric id="d1e203734" kind="preferred">
+         <Label xml:lang="en-US">warranted product</Label>
+      </Rubric>
+   </Class>
+   <Class code="AFFL" kind="concept">
+      <Meta name="internalId" value="21438"/>
+      <Meta name="Name:Class" value="affiliate"/>
+      <Meta name="Name:Role:player:Entity" value="affiliate&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAAR____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAAR____"/>
+      <Meta name="Name:Role:scoper:Entity" value="affiliated&amp;"/>
+      <SuperClass code="_RoleClassRelationshipFormal"/>
+      <Rubric id="d1e203745" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Player of the Affiliate role has a business/professional relationship with scoper. Player and scoper may be persons or organization. The Affiliate relationship does not imply membership in a group, nor does it exist for resource scheduling purposes.</p>
+            <p>
+               <i>Example:</i>A healthcare provider is affiliated with another provider as a business associate.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e203780" kind="short">
+         <Label xml:lang="en-US">affiliate</Label>
+      </Rubric>
+      <Rubric id="d1e203780" kind="preferred">
+         <Label xml:lang="en-US">affiliate</Label>
+      </Rubric>
+   </Class>
+   <Class code="AGNT" kind="concept">
+      <Meta name="internalId" value="14006"/>
+      <Meta name="Name:Class" value="agent"/>
+      <Meta name="Name:Role:player:Entity" value="agent&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAAD____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAAD____"/>
+      <Meta name="Name:Role:scoper:Entity" value="(represented&amp;)|representee"/>
+      <SuperClass code="_RoleClassRelationshipFormal"/>
+      <SubClass code="ASSIGNED"/>
+      <SubClass code="CON"/>
+      <SubClass code="GUARD"/>
+      <Rubric id="d1e203791" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An entity (player) that acts or is authorized to act on behalf of another entity (scoper).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e203820" kind="short">
+         <Label xml:lang="en-US">agent</Label>
+      </Rubric>
+      <Rubric id="d1e203820" kind="preferred">
+         <Label xml:lang="en-US">agent</Label>
+      </Rubric>
+   </Class>
+   <Class code="CIT" kind="concept">
+      <Meta name="internalId" value="11568"/>
+      <Meta name="Name:Class" value="citizen"/>
+      <Meta name="Name:Role:player:Entity" value="citizen&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAAF____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAAF____"/>
+      <Meta name="Name:Role:scoper:Entity" value="political(&amp;|Entity)"/>
+      <SuperClass code="_RoleClassRelationshipFormal"/>
+      <Rubric id="d1e203831" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Citizen of apolitical entity</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e203860" kind="short">
+         <Label xml:lang="en-US">citizen</Label>
+      </Rubric>
+      <Rubric id="d1e203860" kind="preferred">
+         <Label xml:lang="en-US">citizen</Label>
+      </Rubric>
+   </Class>
+   <Class code="COVPTY" kind="concept">
+      <Meta name="internalId" value="14011"/>
+      <Meta name="Name:Class" value="coveredParty"/>
+      <Meta name="Name:Role:player:Entity" value="covered(&amp;|Party)"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAAI____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAAI____"/>
+      <Meta name="Name:Role:scoper:Entity" value="(underwriting&amp;)|underwriter"/>
+      <SuperClass code="_RoleClassRelationshipFormal"/>
+      <SubClass code="CLAIM"/>
+      <SubClass code="NAMED"/>
+      <SubClass code="PROG"/>
+      <Rubric id="d1e203871" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A role class played by a person who receives benefit coverage under the terms of a particular insurance policy. The underwriter of that policy is the scoping entity. The covered party receives coverage because of some contractual or other relationship with the holder of that policy.</p>
+            <p>
+               <i>Discussion:</i>This reason for coverage is captured in 'Role.code' and a relationship link with type code of indirect authority should be included using the policy holder role as the source, and the covered party role as the target.</p>
+            <p>Note that a particular policy may cover several individuals one of whom may be, but need not be, the policy holder. Thus the notion of covered party is a role that is distinct from that of the policy holder.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e203909" kind="short">
+         <Label xml:lang="en-US">covered party</Label>
+      </Rubric>
+      <Rubric id="d1e203909" kind="preferred">
+         <Label xml:lang="en-US">covered party</Label>
+      </Rubric>
+   </Class>
+   <Class code="CRINV" kind="concept">
+      <Meta name="internalId" value="19164"/>
+      <Meta name="Name:Class" value="clinicalResearchInvestigator"/>
+      <Meta name="Name:Role:player:Entity" value="investigator&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAAH____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAAH____"/>
+      <Meta name="Name:Role:scoper:Entity" value="sponsoring&amp;"/>
+      <SuperClass code="_RoleClassRelationshipFormal"/>
+      <Rubric id="d1e203921" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A role played by a provider, always a person, who has agency authority from a Clinical Research Sponsor to direct the conduct of a clinical research trial or study on behalf of the sponsor.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e203950" kind="short">
+         <Label xml:lang="en-US">clinical research investigator</Label>
+      </Rubric>
+      <Rubric id="d1e203950" kind="preferred">
+         <Label xml:lang="en-US">clinical research investigator</Label>
+      </Rubric>
+   </Class>
+   <Class code="CRSPNSR" kind="concept">
+      <Meta name="internalId" value="19165"/>
+      <Meta name="Name:Class" value="clinicalResearchSponsor"/>
+      <Meta name="Name:Role:player:Entity" value="sponsor&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAAG____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAAG____"/>
+      <Meta name="Name:Role:scoper:Entity" value="sponsorshipAuthorizing&amp;"/>
+      <SuperClass code="_RoleClassRelationshipFormal"/>
+      <Rubric id="d1e203961" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A role played by an entity, usually an organization, that is the sponsor of a clinical research trial or study. The sponsor commissions the study, bears the expenses, is responsible for satisfying all legal requirements concerning subject safety and privacy, and is generally responsible for collection, storage and analysis of the data generated during the trial. No scoper is necessary, as a clinical research sponsor undertakes the role on its own authority and declaration. Clinical research sponsors are usually educational or other research organizations, government agencies or biopharmaceutical companies.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e203990" kind="short">
+         <Label xml:lang="en-US">clinical research sponsor</Label>
+      </Rubric>
+      <Rubric id="d1e203990" kind="preferred">
+         <Label xml:lang="en-US">clinical research sponsor</Label>
+      </Rubric>
+   </Class>
+   <Class code="EMP" kind="concept">
+      <Meta name="internalId" value="11569"/>
+      <Meta name="Name:Class" value="employment"/>
+      <Meta name="Name:Role:player:Entity" value="employee&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAAE____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAAE____"/>
+      <Meta name="Name:Role:scoper:Entity" value="employer&amp;"/>
+      <SuperClass code="_RoleClassRelationshipFormal"/>
+      <SubClass code="MIL"/>
+      <Rubric id="d1e204001" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A relationship between a person or organization and a person or organization formed for the purpose of exchanging work for compensation. The purpose of the role is to identify the type of relationship the employee has to the employer, rather than the nature of the work actually performed. (Contrast with AssignedEntity.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e204030" kind="short">
+         <Label xml:lang="en-US">employee</Label>
+      </Rubric>
+      <Rubric id="d1e204030" kind="preferred">
+         <Label xml:lang="en-US">employee</Label>
+      </Rubric>
+   </Class>
+   <Class code="GUAR" kind="concept">
+      <Meta name="internalId" value="13941"/>
+      <Meta name="Name:Class" value="guarantor"/>
+      <Meta name="Name:Role:player:Entity" value="guarantor&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAAJ____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAAJ____"/>
+      <Meta name="Name:Role:scoper:Entity" value="promisor&amp;"/>
+      <SuperClass code="_RoleClassRelationshipFormal"/>
+      <Rubric id="d1e204041" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A person or organization (player) that serves as a financial guarantor for another person or organization (scoper).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e204070" kind="short">
+         <Label xml:lang="en-US">guarantor</Label>
+      </Rubric>
+      <Rubric id="d1e204070" kind="preferred">
+         <Label xml:lang="en-US">guarantor</Label>
+      </Rubric>
+      <Rubric id="d1e204072" kind="short">
+         <Label xml:lang="en-US">GuarantorRole</Label>
+      </Rubric>
+   </Class>
+   <Class code="INVSBJ" kind="concept">
+      <Meta name="internalId" value="21464"/>
+      <Meta name="Name:Class" value="investigativeSubject"/>
+      <Meta name="Name:Role:player:Entity" value="subject&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAAB____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAAB____"/>
+      <Meta name="Name:Role:scoper:Entity" value="investigationSponsor"/>
+      <SuperClass code="_RoleClassRelationshipFormal"/>
+      <SubClass code="CASEBJ"/>
+      <SubClass code="RESBJ"/>
+      <Rubric id="d1e204083" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An entity that is the subject of an investigation. This role is scoped by the party responsible for the investigation.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e204112" kind="short">
+         <Label xml:lang="en-US">Investigation Subject</Label>
+      </Rubric>
+      <Rubric id="d1e204112" kind="preferred">
+         <Label xml:lang="en-US">Investigation Subject</Label>
+      </Rubric>
+   </Class>
+   <Class code="LIC" kind="concept">
+      <Meta name="internalId" value="16773"/>
+      <Meta name="Name:Class" value="licensedEntity"/>
+      <Meta name="Name:Role:player:Entity" value="subject&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAAC____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAAC____"/>
+      <Meta name="Name:Role:scoper:Entity" value="(issuing&amp;)|issuer"/>
+      <SuperClass code="_RoleClassRelationshipFormal"/>
+      <SubClass code="NOT"/>
+      <SubClass code="PROV"/>
+      <Rubric id="d1e204123" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A relationship in which the scoper certifies the player ( e. g. a medical care giver, a medical device or a provider organization) to perform certain activities that fall under the jurisdiction of the scoper (e.g., a health authority licensing healthcare providers, a medical quality authority certifying healthcare professionals).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e204152" kind="short">
+         <Label xml:lang="en-US">licensed entity</Label>
+      </Rubric>
+      <Rubric id="d1e204152" kind="preferred">
+         <Label xml:lang="en-US">licensed entity</Label>
+      </Rubric>
+   </Class>
+   <Class code="PAT" kind="concept">
+      <Meta name="internalId" value="11577"/>
+      <Meta name="Name:Class" value="patient"/>
+      <Meta name="Name:Role:player:Entity" value="patient&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAAA____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAAA____"/>
+      <Meta name="Name:Role:scoper:Entity" value="provider&amp;"/>
+      <SuperClass code="_RoleClassRelationshipFormal"/>
+      <Rubric id="d1e204164" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A Role of a LivingSubject (player) as a recipient of health care services from a healthcare provider (scoper).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e204196" kind="short">
+         <Label xml:lang="en-US">patient</Label>
+      </Rubric>
+      <Rubric id="d1e204196" kind="preferred">
+         <Label xml:lang="en-US">patient</Label>
+      </Rubric>
+   </Class>
+   <Class code="PAYEE" kind="concept">
+      <Meta name="internalId" value="14015"/>
+      <Meta name="Name:Class" value="payee"/>
+      <Meta name="Name:Role:player:Entity" value="payee&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAAK____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAAK____"/>
+      <Meta name="Name:Role:scoper:Entity" value="invoicing&amp;"/>
+      <SuperClass code="_RoleClassRelationshipFormal"/>
+      <Rubric id="d1e204207" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The role of an organization or individual designated to receive payment for a claim against a particular coverage. The scoping entity is the organization that is the submitter of the invoice in question.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e204236" kind="short">
+         <Label xml:lang="en-US">payee</Label>
+      </Rubric>
+      <Rubric id="d1e204236" kind="preferred">
+         <Label xml:lang="en-US">payee</Label>
+      </Rubric>
+   </Class>
+   <Class code="PAYOR" kind="concept">
+      <Meta name="internalId" value="14014"/>
+      <Meta name="Name:Class" value="payor"/>
+      <Meta name="Name:Role:player:Entity" value="invoicePayor&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAAL____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAAL____"/>
+      <Meta name="Name:Role:scoper:Entity" value="(underwriting&amp;)|underwriter"/>
+      <SuperClass code="_RoleClassRelationshipFormal"/>
+      <Rubric id="d1e204247" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The role of an organization that undertakes to accept claims invoices, assess the coverage or payments due for those invoices and pay to the designated payees for those invoices. This role may be either the underwriter or a third-party organization authorized by the underwriter. The scoping entity is the organization that underwrites the claimed coverage.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e204276" kind="short">
+         <Label xml:lang="en-US">invoice payor</Label>
+      </Rubric>
+      <Rubric id="d1e204276" kind="preferred">
+         <Label xml:lang="en-US">invoice payor</Label>
+      </Rubric>
+   </Class>
+   <Class code="POLHOLD" kind="concept">
+      <Meta name="internalId" value="14010"/>
+      <Meta name="Name:Class" value="policyHolder"/>
+      <Meta name="Name:Role:player:Entity" value="policyHolder&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAAM____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAAM____"/>
+      <Meta name="Name:Role:scoper:Entity" value="(underwriting&amp;)|underwriter"/>
+      <SuperClass code="_RoleClassRelationshipFormal"/>
+      <Rubric id="d1e204287" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A role played by a person or organization that holds an insurance policy. The underwriter of that policy is the scoping entity.</p>
+            <p>
+               <i>Discussion:</i>The identifier of the policy is captured in 'Role.id' when the Role is a policy holder.</p>
+            <p>A particular policy may cover several individuals one of whom may be, but need not be, the policy holder. Thus the notion of covered party is a role that is distinct from that of the policy holder.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e204325" kind="short">
+         <Label xml:lang="en-US">policy holder</Label>
+      </Rubric>
+      <Rubric id="d1e204325" kind="preferred">
+         <Label xml:lang="en-US">policy holder</Label>
+      </Rubric>
+   </Class>
+   <Class code="QUAL" kind="concept">
+      <Meta name="internalId" value="11619"/>
+      <Meta name="Name:Class" value="qualifiedEntity"/>
+      <Meta name="Name:Role:player:Entity" value="qualified(&amp;|Entity)"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAAP____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAAP____"/>
+      <Meta name="Name:Role:scoper:Entity" value="qualificationGranting(&amp;|Entity)"/>
+      <SuperClass code="_RoleClassRelationshipFormal"/>
+      <Rubric id="d1e204336" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An entity (player) that has been recognized as having certain training/experience or other characteristics that would make said entity an appropriate performer for a certain activity. The scoper is an organization that educates or qualifies entities.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e204365" kind="short">
+         <Label xml:lang="en-US">qualified entity</Label>
+      </Rubric>
+      <Rubric id="d1e204365" kind="preferred">
+         <Label xml:lang="en-US">qualified entity</Label>
+      </Rubric>
+   </Class>
+   <Class code="SPNSR" kind="concept">
+      <Meta name="internalId" value="14012"/>
+      <Meta name="Name:Class" value="sponsor"/>
+      <Meta name="Name:Role:player:Entity" value="sponsor&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAAN____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAAN____"/>
+      <Meta name="Name:Role:scoper:Entity" value="(underwriting&amp;)|underwriter"/>
+      <SuperClass code="_RoleClassRelationshipFormal"/>
+      <Rubric id="d1e204376" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A role played by an entity, usually an organization that is the sponsor of an insurance plan or a health program. A sponsor is the party that is ultimately accountable for the coverage by employment contract or by law. A sponsor can be an employer, union, government agency, or association. Fully insured sponsors establish the terms of the plan and contract with health insurance plans to assume the risk and to administer the plan. Self-insured sponsors delegate coverage administration, but not risk, to third-party administrators. Program sponsors designate services to be covered in accordance with statute. Program sponsors may administer the coverage themselves, delegate coverage administration, but not risk to third-party administrators, or contract with health insurance plans to assume the risk and administrator a program. Sponsors qualify individuals who may become</p>
+            <ol>
+               <li>
+                  <p>a policy holder of the plan;</p>
+               </li>
+               <li>
+                  <p>where the sponsor is the policy holder, who may become a subscriber or a dependent to a policy under the plan; or</p>
+               </li>
+               <li>
+                  <p>where the sponsor is a government agency, who may become program eligibles under a program.</p>
+               </li>
+            </ol>
+            <p>The sponsor role may be further qualified by the SponsorRole.code. Entities playing the sponsor role may also play the role of a Coverage Administrator.</p>
+            <p>
+               <i>Example:</i>An employer, union, government agency, or association.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e204435" kind="short">
+         <Label xml:lang="en-US">coverage sponsor</Label>
+      </Rubric>
+      <Rubric id="d1e204435" kind="preferred">
+         <Label xml:lang="en-US">coverage sponsor</Label>
+      </Rubric>
+   </Class>
+   <Class code="STD" kind="concept">
+      <Meta name="internalId" value="12248"/>
+      <Meta name="Name:Class" value="student"/>
+      <Meta name="Name:Role:player:Entity" value="student"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAAQ____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAAQ____"/>
+      <Meta name="Name:Role:scoper:Entity" value="school(&amp;|Entity)"/>
+      <SuperClass code="_RoleClassRelationshipFormal"/>
+      <Rubric id="d1e204447" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A role played by an individual who is a student of a school, which is the scoping entity.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e204476" kind="short">
+         <Label xml:lang="en-US">student</Label>
+      </Rubric>
+      <Rubric id="d1e204476" kind="preferred">
+         <Label xml:lang="en-US">student</Label>
+      </Rubric>
+   </Class>
+   <Class code="UNDWRT" kind="concept">
+      <Meta name="internalId" value="14009"/>
+      <Meta name="Name:Class" value="underwriter"/>
+      <Meta name="Name:Role:player:Entity" value="(underwriting&amp;)|underwriter"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAAO____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAAO____"/>
+      <Meta name="Name:Role:scoper:Entity" value="scoper&amp;"/>
+      <SuperClass code="_RoleClassRelationshipFormal"/>
+      <Rubric id="d1e204487" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A role played by a person or an organization. It is the party that</p>
+            <ol>
+               <li>
+                  <p>accepts fiscal responsibility for insurance plans and the policies created under those plans;</p>
+               </li>
+               <li>
+                  <p>administers and accepts fiscal responsibility for a program that provides coverage for services to eligible individuals; and/or</p>
+               </li>
+               <li>
+                  <p>has the responsibility to assess the merits of each risk and decide a suitable premium for accepting all or part of the risk. If played by an organization, this role may be further specified by an appropriate RoleCode.</p>
+               </li>
+            </ol>
+            <p>
+               <i>Example:</i>
+            </p>
+            <ol>
+               <li>
+                  <p>A health insurer;</p>
+               </li>
+               <li>
+                  <p>Medicaid Program;</p>
+               </li>
+               <li>
+                  <p>Lloyd's of London</p>
+               </li>
+            </ol>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e204564" kind="short">
+         <Label xml:lang="en-US">underwriter</Label>
+      </Rubric>
+      <Rubric id="d1e204564" kind="preferred">
+         <Label xml:lang="en-US">underwriter</Label>
+      </Rubric>
+   </Class>
+   <Class code="ACTIB" kind="concept">
+      <Meta name="internalId" value="22396"/>
+      <Meta name="Name:Class" value="activeIngredientBasisOfStrength"/>
+      <SuperClass code="ACTI"/>
+      <Rubric id="d1e204575" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Active ingredient, where the ingredient substance (player) is itself the "basis of strength", i.e., where the Role.quantity specifies exactly the quantity of the player substance in the medicine formulation.</p>
+            <p>
+               <b>Examples:</b>Lopressor 50 mg actually contains 50 mg of metoprolol succinate, even though the active moiety is metoprolol, but also: Tenormin 50 mg contain 50 mg of atenolol, as free base, i.e., where the active ingredient atenolol is also the active moiety.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e204604" kind="short">
+         <Label xml:lang="en-US">active ingredient - basis of strength</Label>
+      </Rubric>
+      <Rubric id="d1e204604" kind="preferred">
+         <Label xml:lang="en-US">active ingredient - basis of strength</Label>
+      </Rubric>
+   </Class>
+   <Class code="ACTIM" kind="concept">
+      <Meta name="internalId" value="22397"/>
+      <Meta name="Name:Class" value="activeIngredientMoietyIsBasisOfStrength"/>
+      <SuperClass code="ACTI"/>
+      <Rubric id="d1e204616" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Active ingredient, where not the ingredient substance (player), but itaTMs active moiety is the "basis of strength", i.e., where the Role.quantity specifies the quantity of the player substance's active moiety in the medicine formulation.</p>
+            <p>
+               <b>Examples:</b>1 mL of Betopic 5mg/mL eye drops contains 5.6 mg betaxolol hydrochloride equivalent to betaxolol base 5 mg.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e204645" kind="short">
+         <Label xml:lang="en-US">active ingredient - moiety is basis of strength</Label>
+      </Rubric>
+      <Rubric id="d1e204645" kind="preferred">
+         <Label xml:lang="en-US">active ingredient - moiety is basis of strength</Label>
+      </Rubric>
+   </Class>
+   <Class code="ACTIR" kind="concept">
+      <Meta name="internalId" value="22398"/>
+      <Meta name="Name:Class" value="activeIngredientReferenceSubstanceIsBasisOfStrength"/>
+      <SuperClass code="ACTI"/>
+      <Rubric id="d1e204657" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Active ingredient, where not the ingredient substance (player) but another reference substance with the same active moiety, is the "basis of strength", i.e., where the Role.quantity specifies the quantity of a reference substance, similar but different from the player substance's in the medicine formulation.</p>
+            <p>
+               <b>Examples:</b>Toprol-XL 50 mg contains 47.5 mg of metoprolol succinate equivalent to 50 mg of metoprolol tartrate.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e204686" kind="short">
+         <Label xml:lang="en-US">active ingredient - reference substance is basis of strength</Label>
+      </Rubric>
+      <Rubric id="d1e204686" kind="preferred">
+         <Label xml:lang="en-US">active ingredient - reference substance is basis of strength</Label>
+      </Rubric>
+   </Class>
+   <Class code="CONC" kind="concept">
+      <Meta name="internalId" value="23096"/>
+      <Meta name="Name:Class" value="connection"/>
+      <Meta name="Name:Role:player:Entity" value="distal&amp;"/>
+      <Meta name="Name:Role:scoper:Entity" value="proximal&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAB______"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAB______"/>
+      <SuperClass code="ADJY"/>
+      <SubClass code="BOND"/>
+      <SubClass code="CONY"/>
+      <Rubric id="d1e204698" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An adjacency of two Entities held together by a bond which attaches to each of the two entities.</p>
+            <p>
+               <i>Examples:</i>biceps brachii muscle connected to the radius bone, port 3 on a network switch connected to port 5 on a patch panel.</p>
+            <p>
+               <i>UsageConstraints:</i>See Adjacency for the assignment of scoper (larger, more central) and player (smaller, more distant).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e204739" kind="short">
+         <Label xml:lang="en-US">connection</Label>
+      </Rubric>
+      <Rubric id="d1e204739" kind="preferred">
+         <Label xml:lang="en-US">connection</Label>
+      </Rubric>
+   </Class>
+   <Class code="ASSIGNED" kind="concept">
+      <Meta name="internalId" value="11595"/>
+      <Meta name="Name:Class" value="assignedEntity"/>
+      <Meta name="Name:Role:player:Entity" value="(assigned&amp;)|assignee"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAADA___"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAADA___"/>
+      <Meta name="Name:Role:scoper:Entity" value="(represented&amp;)|representee"/>
+      <SuperClass code="AGNT"/>
+      <SubClass code="COMPAR"/>
+      <SubClass code="SGNOFF"/>
+      <Rubric id="d1e204751" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An agent role in which the agent is an Entity acting in the employ of an organization. The focus is on functional role on behalf of the organization, unlike the Employee role where the focus is on the 'Human Resources' relationship between the employee and the organization.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e204780" kind="short">
+         <Label xml:lang="en-US">assigned entity</Label>
+      </Rubric>
+      <Rubric id="d1e204780" kind="preferred">
+         <Label xml:lang="en-US">assigned entity</Label>
+      </Rubric>
+   </Class>
+   <Class code="CON" kind="concept">
+      <Meta name="internalId" value="12205"/>
+      <Meta name="Name:Class" value="contactParty"/>
+      <Meta name="Name:Role:player:Entity" value="contact(&amp;|Party)"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAADAA__"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAADAA__"/>
+      <Meta name="Name:Role:scoper:Entity" value="(represented&amp;)|representee"/>
+      <SuperClass code="AGNT"/>
+      <SubClass code="ECON"/>
+      <SubClass code="NOK"/>
+      <Rubric id="d1e204791" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A person or an organization (player) which provides or receives information regarding another entity (scoper). Examples; patient NOK and emergency contacts; guarantor contact; employer contact.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e204820" kind="short">
+         <Label xml:lang="en-US">contact</Label>
+      </Rubric>
+      <Rubric id="d1e204820" kind="preferred">
+         <Label xml:lang="en-US">contact</Label>
+      </Rubric>
+   </Class>
+   <Class code="GUARD" kind="concept">
+      <Meta name="internalId" value="16324"/>
+      <Meta name="Name:Class" value="guardian"/>
+      <Meta name="Name:Role:player:Entity" value="guardian&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAADB___"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAADB___"/>
+      <Meta name="Name:Role:scoper:Entity" value="ward&amp;"/>
+      <SuperClass code="AGNT"/>
+      <Rubric id="d1e204831" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Guardian of a ward</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e204860" kind="short">
+         <Label xml:lang="en-US">guardian</Label>
+      </Rubric>
+      <Rubric id="d1e204860" kind="preferred">
+         <Label xml:lang="en-US">guardian</Label>
+      </Rubric>
+   </Class>
+   <Class code="COMPAR" kind="concept">
+      <Meta name="internalId" value="21303"/>
+      <Meta name="Name:Class" value="commissioningParty"/>
+      <Meta name="Name:Role:player:Entity" value="commissioning&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAADAC__"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAADAC__"/>
+      <Meta name="Name:Role:scoper:Entity" value="commissioningScoper"/>
+      <SuperClass code="ASSIGNED"/>
+      <Rubric id="d1e204871" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An Entity that is authorized to issue or instantiate permissions, privileges, credentials or other formal/legal authorizations.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e204900" kind="short">
+         <Label xml:lang="en-US">commissioning party</Label>
+      </Rubric>
+      <Rubric id="d1e204900" kind="preferred">
+         <Label xml:lang="en-US">commissioning party</Label>
+      </Rubric>
+   </Class>
+   <Class code="SGNOFF" kind="concept">
+      <Meta name="internalId" value="14007"/>
+      <Meta name="Name:Class" value="signatureAuthority"/>
+      <Meta name="Name:Role:player:Entity" value="signing(&amp;|Authority)"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAADAB__"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAADAB__"/>
+      <Meta name="Name:Role:scoper:Entity" value="(represented&amp;)|representee"/>
+      <SuperClass code="ASSIGNED"/>
+      <Rubric id="d1e204911" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The role of a person (player) who is the officer or signature authority for of a scoping entity, usually an organization (scoper).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e204940" kind="short">
+         <Label xml:lang="en-US">signing authority or officer</Label>
+      </Rubric>
+      <Rubric id="d1e204940" kind="preferred">
+         <Label xml:lang="en-US">signing authority or officer</Label>
+      </Rubric>
+   </Class>
+   <Class code="ECON" kind="concept">
+      <Meta name="internalId" value="19140"/>
+      <Meta name="Name:Class" value="emergencyContact"/>
+      <Meta name="Name:Role:player:Entity" value="emergencyContact(&amp;|Party)"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAADAAB_"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAADAAB_"/>
+      <Meta name="Name:Role:scoper:Entity" value="(represented&amp;)|representee"/>
+      <SuperClass code="CON"/>
+      <Rubric id="d1e204951" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An entity to be contacted in the event of an emergency.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e204980" kind="short">
+         <Label xml:lang="en-US">emergency contact</Label>
+      </Rubric>
+      <Rubric id="d1e204980" kind="preferred">
+         <Label xml:lang="en-US">emergency contact</Label>
+      </Rubric>
+   </Class>
+   <Class code="NOK" kind="concept">
+      <Meta name="internalId" value="19141"/>
+      <Meta name="Name:Class" value="nextOfKin"/>
+      <Meta name="Name:Role:player:Entity" value="nextOfKinContact&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAADAAA_"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAADAAA_"/>
+      <Meta name="Name:Role:scoper:Entity" value="(represented&amp;)|representee"/>
+      <SuperClass code="CON"/>
+      <Rubric id="d1e204992" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An individual designated for notification as the next of kin for a given entity.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e205021" kind="short">
+         <Label xml:lang="en-US">next of kin</Label>
+      </Rubric>
+      <Rubric id="d1e205021" kind="preferred">
+         <Label xml:lang="en-US">next of kin</Label>
+      </Rubric>
+   </Class>
+   <Class code="BOND" kind="concept">
+      <Meta name="internalId" value="23098"/>
+      <Meta name="Name:Class" value="bond"/>
+      <Meta name="Name:Role:player:Entity" value="distal&amp;"/>
+      <Meta name="Name:Role:scoper:Entity" value="proximal&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAB______"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAB______"/>
+      <SuperClass code="CONC"/>
+      <Rubric id="d1e205032" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A connection between two atoms of a molecule.</p>
+            <p>
+               <i>Examples:</i>double bond between first and second C in ethane, peptide bond between two amino-acid, disulfide bridge between two proteins, chelate and ion associations, even the much weaker van-der-Waals bonds can be considered molecular bonds.</p>
+            <p>
+               <i>UsageConstraints:</i>See connection and adjacency for the assignment of player and scoper.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e205073" kind="short">
+         <Label xml:lang="en-US">molecular bond</Label>
+      </Rubric>
+      <Rubric id="d1e205073" kind="preferred">
+         <Label xml:lang="en-US">molecular bond</Label>
+      </Rubric>
+   </Class>
+   <Class code="CONY" kind="concept">
+      <Meta name="internalId" value="23097"/>
+      <Meta name="Name:Class" value="continuity"/>
+      <Meta name="Name:Role:player:Entity" value="distal&amp;"/>
+      <Meta name="Name:Role:scoper:Entity" value="proximal&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAB______"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAB______"/>
+      <SuperClass code="CONC"/>
+      <Rubric id="d1e205084" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A connection between two regional parts.</p>
+            <p>
+               <i>Examples:</i>the connection between ascending aorta and the aortic arc, connection between descending colon and sigmoid.</p>
+            <p>
+               <i>UsageConstraints:</i>See connection and adjacency for the assignment of player and scoper.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e205125" kind="short">
+         <Label xml:lang="en-US">continuity</Label>
+      </Rubric>
+      <Rubric id="d1e205125" kind="preferred">
+         <Label xml:lang="en-US">continuity</Label>
+      </Rubric>
+   </Class>
+   <Class code="CLAIM" kind="concept">
+      <Meta name="internalId" value="21955"/>
+      <Meta name="Name:Class" value="claimant"/>
+      <SuperClass code="COVPTY"/>
+      <Rubric id="d1e205136" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A role played by a party making a claim for coverage under a policy or program. A claimant must be either a person or organization, or a group of persons or organizations. A claimant is not a named insured or a program eligible.</p>
+            <p>
+               <b>Discussion:</b>With respect to liability insurance such as property and casualty insurance, a claimant must file a claim requesting indemnification for a loss that the claimant considers covered under the policy of a named insured. The claims adjuster for the policy underwriter will review the claim to determine whether the loss meets the benefit coverage criteria under a policy, and base any indemnification or coverage payment on that review. If a third party is liable in whole or part for the loss, the underwriter may pursue third party liability recovery. A claimant may be involved in civil or criminal legal proceedings involving claims against a defendant party that is indemnified by an insurance policy or to protest the finding of a claims adjustor. With respect to life insurance, a beneficiary designated by a named insured becomes a claimant of the proceeds of coverage, as in the case of a life insurance policy. However, a claimant for coverage under life insurance is not necessarily a designated beneficiary.</p>
+            <p>
+               <b>Note:</b>A claimant is not a named insured. However, a named insured may make a claim under a policy, e.g., an insured driver may make a claim for an injury under his or her comprehensive automobile insurance policy. Similarly, a program eligible may make a claim under program, e.g., an unemployed worker may claim benefits under an unemployment insurance program, but parties playing these covered party role classes are not, for purposes of this vocabulary and in an effort to clearly distinguish role classes, considered claimants.</p>
+            <p>In the case of a named insured making a claim, a role type code INSCLM (insured claimant) subtypes the class to indicate that either a named insured or an individual insured has filed a claim for a loss. In the case of a program eligible, a role type code INJWKR (injured worker) subtypes the class to indicate that the covered party in a workers compensation program is an injured worker, and as such, has filed a "claim" under the program for benefits. Likewise, a covered role type code UNEMP (unemployed worker) subtypes the program eligible class to indicate that the covered party in an unemployment insurance program has filed a claim for unemployment benefits.</p>
+            <p>
+               <b>Example:</b>A claimant under automobile policy that is not the named insured.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e205180" kind="short">
+         <Label xml:lang="en-US">claimant</Label>
+      </Rubric>
+      <Rubric id="d1e205180" kind="preferred">
+         <Label xml:lang="en-US">claimant</Label>
+      </Rubric>
+   </Class>
+   <Class code="NAMED" kind="concept">
+      <Meta name="internalId" value="21957"/>
+      <Meta name="Name:Class" value="namedInsured"/>
+      <SuperClass code="COVPTY"/>
+      <SubClass code="DEPEN"/>
+      <SubClass code="INDIV"/>
+      <SubClass code="SUBSCR"/>
+      <Rubric id="d1e205192" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A role played by a party to an insurance policy to which the insurer agrees to indemnify for losses, provides benefits for, or renders services. A named insured may be either a person, non-person living subject, or an organization, or a group of persons, non-person living subjects, or organizations.</p>
+            <p>
+               <b>Discussion:</b>The coded concept NAMED should not be used where a more specific child concept in this Specializable value set applies. In some cases, the named insured may not be the policy holder, e.g., where a policy holder purchases life insurance policy in which another party is the named insured and the policy holder is the beneficiary of the policy.</p>
+            <p>
+               <b>Note:</b>The party playing the role of a named insured is not a claimant in the sense conveyed by the RoleClassCoveredParty CLAIM (claimant). However, a named insured may make a claim under a policy, e.g., e.g., a party that is the named insured and policy holder under a comprehensive automobile insurance policy may become the claimant for coverage under that policy e.g., if injured in an automobile accident and there is no liable third party. In the case of a named insured making a claim, a role type code INSCLM (insured claimant) subtypes the class to indicate that a named insured has filed a claim for a loss.</p>
+            <p>
+               <b>Example:</b>The named insured under a comprehensive automobile, disability, or property and casualty policy that is the named insured and may or may not be the policy holder.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e205233" kind="short">
+         <Label xml:lang="en-US">named insured</Label>
+      </Rubric>
+      <Rubric id="d1e205233" kind="preferred">
+         <Label xml:lang="en-US">named insured</Label>
+      </Rubric>
+   </Class>
+   <Class code="PROG" kind="concept">
+      <Meta name="internalId" value="21956"/>
+      <Meta name="Name:Class" value="programEligible"/>
+      <SuperClass code="COVPTY"/>
+      <Rubric id="d1e205245" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A role played by a party that meets the eligibility criteria for coverage under a program. A program eligible may be either a person, non-person living subject, or an organization, or a group of persons, non-person living subjects, or organizations.</p>
+            <p>
+               <b>Discussion:</b>A program as typically government administered coverage for parties determined eligible under the terms of the program.</p>
+            <p>
+               <b>Note:</b>The party playing a program eligible is not a claimant in the sense conveyed by the RoleClassCoveredParty CLAIM (claimant). However a program eligible may make a claim under program, e.g., an unemployed worker may claim benefits under an unemployment insurance program, but parties playing these covered party role classes are not, for purposes of this vocabulary and in an effort to clearly distinguish role classes, considered claimants.</p>
+            <p>In the case of a program eligible, a role type code INJWKR (injured worker) subtypes the class to indicate that the covered party in a workers compensation program is an injured worker, and as such, has filed a "claim" under the program for benefits. Likewise, a covered role type code UNEMP (unemployed worker) subtypes the program eligible class to indicate that the covered party in an unemployment insurance program has filed a claim for unemployment benefits.</p>
+            <p>
+               <b>Example:</b>A party meeting eligibility criteria related to health or financial status, e.g., in the U.S., persons meeting health, demographic, or financial criteria established by state and federal law are eligible for Medicaid.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e205289" kind="short">
+         <Label xml:lang="en-US">program eligible</Label>
+      </Rubric>
+      <Rubric id="d1e205289" kind="preferred">
+         <Label xml:lang="en-US">program eligible</Label>
+      </Rubric>
+   </Class>
+   <Class code="RET" kind="concept">
+      <Meta name="internalId" value="10419"/>
+      <Meta name="Name:Class" value="retailedProduct"/>
+      <Meta name="Name:Role:player:Entity" value="retailed(&amp;|Product)"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AABBA____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AABBA____"/>
+      <Meta name="Name:Role:scoper:Entity" value="retailer&amp;"/>
+      <SuperClass code="DST"/>
+      <Rubric id="d1e205302" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Material (player) sold by a retailer (scoper), who also give advice to prospective buyers.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e205331" kind="short">
+         <Label xml:lang="en-US">retailed material</Label>
+      </Rubric>
+      <Rubric id="d1e205331" kind="preferred">
+         <Label xml:lang="en-US">retailed material</Label>
+      </Rubric>
+   </Class>
+   <Class code="MIL" kind="concept">
+      <Meta name="internalId" value="11570"/>
+      <Meta name="Name:Class" value="militaryPerson"/>
+      <Meta name="Name:Role:player:Entity" value="military&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAAEA___"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAAEA___"/>
+      <Meta name="Name:Role:scoper:Entity" value="militaryService(&amp;-ORG)"/>
+      <SuperClass code="EMP"/>
+      <Rubric id="d1e205342" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A role played by a member of a military service. Scoper is the military service (e.g. Army, Navy, Air Force, etc.) or, more specifically, the unit (e.g. Company C, 3rd Battalion, 4th Division, etc.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e205371" kind="short">
+         <Label xml:lang="en-US">military person</Label>
+      </Rubric>
+      <Rubric id="d1e205371" kind="preferred">
+         <Label xml:lang="en-US">military person</Label>
+      </Rubric>
+   </Class>
+   <Class code="SAME" kind="concept">
+      <Meta name="internalId" value="21488"/>
+      <Meta name="Name:Class" value="same"/>
+      <Meta name="Name:Role:player:Entity" value="same&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="ACE______"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="ACE______"/>
+      <Meta name="Name:Role:scoper:Entity" value="same&amp;"/>
+      <SuperClass code="EQUIV"/>
+      <Rubric id="d1e205382" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The "same" role asserts an identity between playing and scoping entities, i.e., that they are in fact two records of the same entity instance, and, in the case of discrepancies (e.g different DOB, gender), that one or both are in error.</p>
+            <p>
+               <i>Usage:</i>
+            </p>
+            <p>playing and scoping entities must have same classCode, but need not have identical attributes or values.</p>
+            <p>
+               <i>Example:</i>
+            </p>
+            <p>a provider registry maintains sets of conflicting demographic data for what is reported to be the same individual.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e205429" kind="short">
+         <Label xml:lang="en-US">same</Label>
+      </Rubric>
+      <Rubric id="d1e205429" kind="preferred">
+         <Label xml:lang="en-US">same</Label>
+      </Rubric>
+   </Class>
+   <Class code="SUBY" kind="concept">
+      <Meta name="internalId" value="20070"/>
+      <Meta name="Name:Class" value="subsumedBy"/>
+      <Meta name="Name:Role:player:Entity" value="subsuming&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="ACD______"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="ACD______"/>
+      <Meta name="Name:Role:scoper:Entity" value="subsumed&amp;"/>
+      <SuperClass code="EQUIV"/>
+      <Rubric id="d1e205440" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Relates a prevailing record of an Entity (scoper) with another record (player) that it subsumes.</p>
+            <p>
+               <i>Examples:</i>Show a correct new Person object (scoper) that subsumes one or more duplicate Person objects that had accidentally been created for the same physical person.</p>
+            <p>
+               <i>Constraints:</i>Both the player and scoper must have the same classCode.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e205481" kind="short">
+         <Label xml:lang="en-US">subsumed by</Label>
+      </Rubric>
+      <Rubric id="d1e205481" kind="preferred">
+         <Label xml:lang="en-US">subsumed by</Label>
+      </Rubric>
+   </Class>
+   <Class code="SDLOC" kind="concept">
+      <Meta name="internalId" value="16927"/>
+      <Meta name="Name:Class" value="serviceDeliveryLocation"/>
+      <Meta name="Name:Role:player:Entity" value="location(&amp;-PLC)"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AABJ_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AABJ_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="serviceProvider&amp;"/>
+      <SuperClass code="EXLOC"/>
+      <SubClass code="DSDLOC"/>
+      <SubClass code="ISDLOC"/>
+      <Rubric id="d1e205492" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A role played by a place at which services may be provided.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e205521" kind="short">
+         <Label xml:lang="en-US">service delivery location</Label>
+      </Rubric>
+      <Rubric id="d1e205521" kind="preferred">
+         <Label xml:lang="en-US">service delivery location</Label>
+      </Rubric>
+   </Class>
+   <Class code="EXPVECTOR" kind="concept">
+      <Meta name="internalId" value="22351"/>
+      <Meta name="Name:Class" value="exposureVector"/>
+      <SuperClass code="EXPAGTCAR"/>
+      <Rubric id="d1e205532" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A vector is a living subject that carries an exposure agent. The vector does not cause the disease itself, but exposes targets to the exposure agent. A mosquito carrying malaria is an example of a vector. The scoper of the role must be the exposure agent (e.g., pathogen).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e205555" kind="short">
+         <Label xml:lang="en-US">exposure vector</Label>
+      </Rubric>
+      <Rubric id="d1e205555" kind="preferred">
+         <Label xml:lang="en-US">exposure vector</Label>
+      </Rubric>
+   </Class>
+   <Class code="FOMITE" kind="concept">
+      <Meta name="internalId" value="22352"/>
+      <Meta name="Name:Class" value="fomite"/>
+      <SuperClass code="EXPAGTCAR"/>
+      <Rubric id="d1e205568" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A fomite is a non-living entity that is capable of conveying exposure agent from one entity to another. A doorknob contaminated with a Norovirus is an example of a fomite. Anyone touching the doorknob would be exposed to the virus. The scoper of the role must be the exposure agent (e.g., pathogen).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e205591" kind="short">
+         <Label xml:lang="en-US">fomite</Label>
+      </Rubric>
+      <Rubric id="d1e205591" kind="preferred">
+         <Label xml:lang="en-US">fomite</Label>
+      </Rubric>
+   </Class>
+   <Class code="GRIC" kind="concept">
+      <Meta name="internalId" value="10442"/>
+      <Meta name="Name:Class" value="entityWithGeneric"/>
+      <Meta name="Name:Role:player:Entity" value="specialized(&amp;|Kind)"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="ACAA_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="ACAA_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="generic(&amp;|Kind)"/>
+      <SuperClass code="GEN"/>
+      <Rubric id="d1e205603" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A special link between pharmaceuticals indicating that the target (scoper) is a generic for the source (player).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e205632" kind="short">
+         <Label xml:lang="en-US">has generic</Label>
+      </Rubric>
+      <Rubric id="d1e205632" kind="preferred">
+         <Label xml:lang="en-US">has generic</Label>
+      </Rubric>
+   </Class>
+   <Class code="COLR" kind="concept">
+      <Meta name="internalId" value="10437"/>
+      <Meta name="Name:Class" value="colorAdditive"/>
+      <Meta name="Name:Role:player:Entity" value="color&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="ABDDC____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="ABDDC____"/>
+      <Meta name="Name:Role:scoper:Entity" value="additiveOf&amp;"/>
+      <SuperClass code="IACT"/>
+      <Rubric id="d1e205643" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A substance (player) influencing the optical aspect of material (scoper).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e205672" kind="short">
+         <Label xml:lang="en-US">color additive</Label>
+      </Rubric>
+      <Rubric id="d1e205672" kind="preferred">
+         <Label xml:lang="en-US">color additive</Label>
+      </Rubric>
+      <Rubric id="d1e205674" kind="short">
+         <Label xml:lang="en-US">color</Label>
+      </Rubric>
+   </Class>
+   <Class code="FLVR" kind="concept">
+      <Meta name="internalId" value="10436"/>
+      <Meta name="Name:Class" value="flavorAdditive"/>
+      <Meta name="Name:Role:player:Entity" value="flavor&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="ABDDD____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="ABDDD____"/>
+      <Meta name="Name:Role:scoper:Entity" value="additiveOf&amp;"/>
+      <SuperClass code="IACT"/>
+      <Rubric id="d1e205685" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A substance (player) added to a mixture (scoper) to make it taste a certain way. In food the use is obvious, in pharmaceuticals flavors can hide disgusting taste of the active ingredient (important in pediatric treatments).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e205714" kind="short">
+         <Label xml:lang="en-US">flavor additive</Label>
+      </Rubric>
+      <Rubric id="d1e205714" kind="preferred">
+         <Label xml:lang="en-US">flavor additive</Label>
+      </Rubric>
+      <Rubric id="d1e205716" kind="short">
+         <Label xml:lang="en-US">flavor</Label>
+      </Rubric>
+   </Class>
+   <Class code="PRSV" kind="concept">
+      <Meta name="internalId" value="10435"/>
+      <Meta name="Name:Class" value="preservative"/>
+      <Meta name="Name:Role:player:Entity" value="preservative&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="ABDDA____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="ABDDA____"/>
+      <Meta name="Name:Role:scoper:Entity" value="preservativeOf&amp;"/>
+      <SuperClass code="IACT"/>
+      <Rubric id="d1e205727" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A substance (player) added to a mixture (scoper) to prevent microorganisms (fungi, bacteria) to spoil the mixture.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e205756" kind="short">
+         <Label xml:lang="en-US">preservative</Label>
+      </Rubric>
+      <Rubric id="d1e205756" kind="preferred">
+         <Label xml:lang="en-US">preservative</Label>
+      </Rubric>
+   </Class>
+   <Class code="STBL" kind="concept">
+      <Meta name="internalId" value="10434"/>
+      <Meta name="Name:Class" value="stabilizer"/>
+      <Meta name="Name:Role:player:Entity" value="stabilizer&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="ABDDB____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="ABDDB____"/>
+      <Meta name="Name:Role:scoper:Entity" value="stabilizerOf&amp;"/>
+      <SuperClass code="IACT"/>
+      <Rubric id="d1e205767" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A stabilizer (player) added to a mixture (scoper) in order to prevent the molecular disintegration of the main substance.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e205796" kind="short">
+         <Label xml:lang="en-US">stabilizer</Label>
+      </Rubric>
+      <Rubric id="d1e205796" kind="preferred">
+         <Label xml:lang="en-US">stabilizer</Label>
+      </Rubric>
+   </Class>
+   <Class code="ACTI" kind="concept">
+      <Meta name="internalId" value="10433"/>
+      <Meta name="Name:Class" value="activeIngredient"/>
+      <Meta name="Name:Role:player:Entity" value="activeIngredient&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="ABDA_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="ABDA_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="ingredientOf&amp;"/>
+      <SuperClass code="INGR"/>
+      <SubClass code="ACTIB"/>
+      <SubClass code="ACTIM"/>
+      <SubClass code="ACTIR"/>
+      <Rubric id="d1e205808" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>a therapeutically active ingredient (player) in a mixture (scoper), where the mixture is typically a manufactured pharmaceutical. It is unknown if the quantity of such an ingredient is expressed precisely in terms of the playing ingredient substance, or, if it is specified in terms of a closely related substance (active moiety or reference substance).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e205840" kind="short">
+         <Label xml:lang="en-US">active ingredient</Label>
+      </Rubric>
+      <Rubric id="d1e205840" kind="preferred">
+         <Label xml:lang="en-US">active ingredient</Label>
+      </Rubric>
+   </Class>
+   <Class code="ADJV" kind="concept">
+      <Meta name="internalId" value="23059"/>
+      <Meta name="Name:Class" value="adjuvant"/>
+      <SuperClass code="INGR"/>
+      <Rubric id="d1e205851" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A component (player) added to enhance the action of an active ingredient (scoper) (in the manner of a catalyst) but which has no active effect in and of itself. Such ingredients are significant in defining equivalence of products in a way that inactive ingredients are not.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e205871" kind="short">
+         <Label xml:lang="en-US">adjuvant</Label>
+      </Rubric>
+      <Rubric id="d1e205871" kind="preferred">
+         <Label xml:lang="en-US">adjuvant</Label>
+      </Rubric>
+   </Class>
+   <Class code="ADTV" kind="concept">
+      <Meta name="internalId" value="10432"/>
+      <Meta name="Name:Class" value="additive"/>
+      <Meta name="Name:Role:player:Entity" value="additive&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="ABDE_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="ABDE_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="additiveOf&amp;"/>
+      <SuperClass code="INGR"/>
+      <Rubric id="d1e205883" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An ingredient (player) that is added to a base (scoper), that amounts to a minor part of the overall mixture.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e205912" kind="short">
+         <Label xml:lang="en-US">additive</Label>
+      </Rubric>
+      <Rubric id="d1e205912" kind="preferred">
+         <Label xml:lang="en-US">additive</Label>
+      </Rubric>
+   </Class>
+   <Class code="BASE" kind="concept">
+      <Meta name="internalId" value="10431"/>
+      <Meta name="Name:Class" value="base"/>
+      <Meta name="Name:Role:player:Entity" value="base&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="ABDC_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="ABDC_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="baseOf&amp;"/>
+      <SuperClass code="INGR"/>
+      <Rubric id="d1e205923" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A base ingredient (player) is what comprises the major part of a mixture (scoper). E.g., Water in most i.v. solutions, or Vaseline in salves. Among all ingredients of a material, there should be only one base. A base substance can, in turn, be a mixture.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e205952" kind="short">
+         <Label xml:lang="en-US">base</Label>
+      </Rubric>
+      <Rubric id="d1e205952" kind="preferred">
+         <Label xml:lang="en-US">base</Label>
+      </Rubric>
+   </Class>
+   <Class code="CNTM" kind="concept">
+      <Meta name="internalId" value="23369"/>
+      <Meta name="Name:Class" value="contaminant"/>
+      <Meta name="Name:Role:player:Entity" value="contaminant&amp;"/>
+      <Meta name="Name:role:scoper:Entity" value="contaminantOf&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="ABDF_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="ABDF_____"/>
+      <SuperClass code="INGR"/>
+      <Rubric id="d1e205963" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An ingredient whose presence is not intended but may not be reasonably avoided given the circumstances of the mixture's nature or origin.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e205992" kind="short">
+         <Label xml:lang="en-US">contaminant ingredient</Label>
+      </Rubric>
+      <Rubric id="d1e205992" kind="preferred">
+         <Label xml:lang="en-US">contaminant ingredient</Label>
+      </Rubric>
+   </Class>
+   <Class code="IACT" kind="concept">
+      <Meta name="internalId" value="19089"/>
+      <Meta name="Name:Class" value="inactiveIngredient"/>
+      <Meta name="Name:Role:player:Entity" value="inactiveIngredient&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="ABDD_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="ABDD_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="ingredientOf&amp;"/>
+      <SuperClass code="INGR"/>
+      <SubClass code="COLR"/>
+      <SubClass code="FLVR"/>
+      <SubClass code="PRSV"/>
+      <SubClass code="STBL"/>
+      <Rubric id="d1e206003" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An ingredient which is not considered therapeutically active, e.g., colors, flavors, stabilizers, or preservatives, fillers, or structural components added to an active ingredient in order to facilitate administration of the active ingredient but without being considered therapeutically active. An inactive ingredient need not be biologically inert, e.g., might be active as an allergen or might have a pleasant taste, but is not an essential constituent delivering the therapeutic effect.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e206032" kind="short">
+         <Label xml:lang="en-US">inactive ingredient</Label>
+      </Rubric>
+      <Rubric id="d1e206032" kind="preferred">
+         <Label xml:lang="en-US">inactive ingredient</Label>
+      </Rubric>
+   </Class>
+   <Class code="MECH" kind="concept">
+      <Meta name="internalId" value="23060"/>
+      <Meta name="Name:Class" value="mechanicalIngredient"/>
+      <SuperClass code="INGR"/>
+      <Rubric id="d1e206044" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An ingredient (player) of a medication (scoper) that is inseparable from the active ingredients, but has no intended chemical or pharmaceutical effect itself, but which may have some systemic effect on the patient.</p>
+            <p>An example is a collagen matrix used as a base for transplanting skin cells. The collagen matrix can be left permanently in the graft site. Because it is of bovine origin, the patient may exhibit allergies or may have cultural objections to its use.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e206067" kind="short">
+         <Label xml:lang="en-US">mechanical ingredient</Label>
+      </Rubric>
+      <Rubric id="d1e206067" kind="preferred">
+         <Label xml:lang="en-US">mechanical ingredient</Label>
+      </Rubric>
+   </Class>
+   <Class code="CASEBJ" kind="concept">
+      <Meta name="internalId" value="21465"/>
+      <Meta name="Name:Class" value="caseSubject"/>
+      <Meta name="Name:Role:player:Entity" value="subject&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAABA___"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAABA___"/>
+      <Meta name="Name:Role:scoper:Entity" value="caseMonitor"/>
+      <SuperClass code="INVSBJ"/>
+      <Rubric id="d1e206079" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A person, non-person living subject, or place that is the subject of an investigation related to a notifiable condition (health circumstance that is reportable within the applicable public health jurisdiction)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e206108" kind="short">
+         <Label xml:lang="en-US">Case Subject</Label>
+      </Rubric>
+      <Rubric id="d1e206108" kind="preferred">
+         <Label xml:lang="en-US">Case Subject</Label>
+      </Rubric>
+   </Class>
+   <Class code="RESBJ" kind="concept">
+      <Meta name="internalId" value="19166"/>
+      <Meta name="Name:Class" value="researchSubject"/>
+      <Meta name="Name:Role:player:Entity" value="subject&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAABB___"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAABB___"/>
+      <Meta name="Name:Role:scoper:Entity" value="researchSponsor"/>
+      <SuperClass code="INVSBJ"/>
+      <Rubric id="d1e206119" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>Specifies the administrative functionality within a formal experimental design for which the ResearchSubject role was established.</p>
+            <p>
+               <b>Examples:</b>Screening - role is used for pre-enrollment evaluation portion of the design; enrolled - role is used for subjects admitted to the experimental portion of the design.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e206157" kind="short">
+         <Label xml:lang="en-US">research subject</Label>
+      </Rubric>
+      <Rubric id="d1e206157" kind="preferred">
+         <Label xml:lang="en-US">research subject</Label>
+      </Rubric>
+   </Class>
+   <Class code="NOT" kind="concept">
+      <Meta name="internalId" value="11576"/>
+      <Meta name="Name:Class" value="notaryPublic"/>
+      <Meta name="Name:Role:player:Entity" value="notaryPublic&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAACB___"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAACB___"/>
+      <Meta name="Name:Role:scoper:Entity" value="political(&amp;|Entity)"/>
+      <SuperClass code="LIC"/>
+      <Rubric id="d1e206182" kind="short">
+         <Label xml:lang="en-US">notary public</Label>
+      </Rubric>
+      <Rubric id="d1e206182" kind="preferred">
+         <Label xml:lang="en-US">notary public</Label>
+      </Rubric>
+   </Class>
+   <Class code="PROV" kind="concept">
+      <Meta name="internalId" value="11599"/>
+      <Meta name="Name:Class" value="healthCareProvider"/>
+      <Meta name="Name:Role:player:Entity" value="healthCare(&amp;|Provider)"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AAAACA___"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AAAACA___"/>
+      <Meta name="Name:Role:scoper:Entity" value="(issuing&amp;)|issuer"/>
+      <SuperClass code="LIC"/>
+      <Rubric id="d1e206193" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An Entity (player) that is authorized to provide health care services by some authorizing agency (scoper).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e206222" kind="short">
+         <Label xml:lang="en-US">healthcare provider</Label>
+      </Rubric>
+      <Rubric id="d1e206222" kind="preferred">
+         <Label xml:lang="en-US">healthcare provider</Label>
+      </Rubric>
+   </Class>
+   <Class code="STOR" kind="concept">
+      <Meta name="internalId" value="16817"/>
+      <Meta name="Name:Class" value="storedEntity"/>
+      <Meta name="Name:Role:player:Entity" value="stored(&amp;|Entity)"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="ABEA_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="ABEA_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="storageLocation(&amp;-PLC)"/>
+      <SuperClass code="LOCE"/>
+      <Rubric id="d1e206233" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Relates an entity (player) (e.g. a device) to a location (scoper) at which it is normally found or stored when not used.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e206262" kind="short">
+         <Label xml:lang="en-US">stored entity</Label>
+      </Rubric>
+      <Rubric id="d1e206262" kind="preferred">
+         <Label xml:lang="en-US">stored entity</Label>
+      </Rubric>
+   </Class>
+   <Class code="THER" kind="concept">
+      <Meta name="internalId" value="11581"/>
+      <Meta name="Name:Class" value="manufacturedProduct"/>
+      <Meta name="Name:Role:player:Entity" value="manufactured(&amp;|Product)"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AABDA____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AABDA____"/>
+      <Meta name="Name:Role:scoper:Entity" value="manufacturer&amp;"/>
+      <SuperClass code="MANU"/>
+      <Rubric id="d1e206274" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A manufactured material (player) that is used for its therapeutic properties. The manufacturer is the scoper.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e206303" kind="short">
+         <Label xml:lang="en-US">therapeutic agent</Label>
+      </Rubric>
+      <Rubric id="d1e206303" kind="preferred">
+         <Label xml:lang="en-US">therapeutic agent</Label>
+      </Rubric>
+   </Class>
+   <Class code="DEPEN" kind="concept">
+      <Meta name="internalId" value="21960"/>
+      <Meta name="Name:Class" value="dependent"/>
+      <SuperClass code="NAMED"/>
+      <Rubric id="d1e206314" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A role played by a person covered under a policy or program based on an association with a subscriber, which is recognized by the policy holder.</p>
+            <p>
+               <b>Note:</b>The party playing the role of a dependent is not a claimant in the sense conveyed by the RoleClassCoveredParty CLAIM (claimant). However, a dependent may make a claim under a policy, e.g., a dependent under a health insurance policy may become the claimant for coverage under that policy for wellness examines or if injured and there is no liable third party. In the case of a dependent making a claim, a role type code INSCLM (insured claimant) subtypes the class to indicate that the dependent has filed a claim for services covered under the health insurance policy.</p>
+            <p>
+               <b>Example:</b>The dependent has an association with the subscriber such as a financial dependency or personal relationship such as that of a spouse, or a natural or adopted child. The policy holder may be required by law to recognize certain associations or may have discretion about the associations. For example, a policy holder may dictate the criteria for the dependent status of adult children who are students, such as requiring full time enrollment, or may recognize domestic partners as dependents. Under certain circumstances, the dependent may be under the indirect authority of a responsible party acting as a surrogate for the subscriber, for example, if the subscriber is differently abled or deceased, a guardian ad Lidem or estate executor may be appointed to assume the subscriberaTMs legal standing in the relationship with the dependent.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e206349" kind="short">
+         <Label xml:lang="en-US">dependent</Label>
+      </Rubric>
+      <Rubric id="d1e206349" kind="preferred">
+         <Label xml:lang="en-US">dependent</Label>
+      </Rubric>
+   </Class>
+   <Class code="INDIV" kind="concept">
+      <Meta name="internalId" value="21958"/>
+      <Meta name="Name:Class" value="individual"/>
+      <SuperClass code="NAMED"/>
+      <Rubric id="d1e206361" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A role played by a party covered under a policy as the policy holder. An individual may be either a person or an organization.</p>
+            <p>
+               <b>Note:</b>The party playing the role of an individual insured is not a claimant in the sense conveyed by the RoleClassCoveredParty CLAIM (claimant). However, a named insured may make a claim under a policy, e.g., a party that is the named insured and policy holder under a comprehensive automobile insurance policy may become the claimant for coverage under that policy if injured in an automobile accident and there is no liable third party. In the case of an individual insured making a claim, a role type code INSCLM (insured claimant) subtypes the class to indicate that an individual insured has filed a claim for a loss.</p>
+            <p>
+               <b>Example:</b>The individual insured under a comprehensive automobile, disability, or property and casualty policy that is the policy holder.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e206396" kind="short">
+         <Label xml:lang="en-US">individual</Label>
+      </Rubric>
+      <Rubric id="d1e206396" kind="preferred">
+         <Label xml:lang="en-US">individual</Label>
+      </Rubric>
+   </Class>
+   <Class code="SUBSCR" kind="concept">
+      <Meta name="internalId" value="21959"/>
+      <Meta name="Name:Class" value="subscriber"/>
+      <SuperClass code="NAMED"/>
+      <Rubric id="d1e206408" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>A role played by a person covered under a policy based on association with a sponsor who is the policy holder, and whose association may provide for the eligibility of dependents for coverage.</p>
+            <p>
+               <b>Discussion:</b>The policy holder holds the contract with the policy or program underwriter. The subscriber holds a certificate of coverage under the contract. In legal proceedings concerning the policy or program, the terms of the contract takes precedence over the terms of the certificate of coverage if there are any inconsistencies.</p>
+            <p>
+               <b>Note:</b>The party playing the role of a subscriber is not a claimant in the sense conveyed by the RoleClassCoveredParty CLAIM (claimant). However, a subscriber may make a claim under a policy, e.g., a subscriber under a health insurance policy may become the claimant for coverage under that policy for wellness examines or if injured and there is no liable third party. In the case of a subscriber making a claim, a role type code INSCLM (insured claimant) subtypes the class to indicate that the subscriber has filed a claim for services covered under the health insurance policy.</p>
+            <p>
+               <b>Example:</b>An employee or a member of an association.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e206449" kind="short">
+         <Label xml:lang="en-US">subscriber</Label>
+      </Rubric>
+      <Rubric id="d1e206449" kind="preferred">
+         <Label xml:lang="en-US">subscriber</Label>
+      </Rubric>
+   </Class>
+   <Class code="ACTM" kind="concept">
+      <Meta name="internalId" value="19088"/>
+      <Meta name="Name:Class" value="activeMoiety"/>
+      <Meta name="Name:Role:player:Entity" value="activeMoiety"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="ABDB_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="ABDB_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="moietyOf&amp;"/>
+      <SuperClass code="PART"/>
+      <Rubric id="d1e206461" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The molecule or ion that is responsible for the intended pharmacological action of the drug substance, excluding those appended or associated parts of the molecule that make the molecule an ester, salt (including a salt with hydrogen or coordination bonds), or other noncovalent derivative (such as a complex, chelate, or clathrate).</p>
+            <p>Examples: heparin-sodium and heparin-potassium have the same active moiety, heparin; the active moiety of morphine-hydrochloride is morphine.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e206493" kind="short">
+         <Label xml:lang="en-US">active moiety</Label>
+      </Rubric>
+      <Rubric id="d1e206493" kind="preferred">
+         <Label xml:lang="en-US">active moiety</Label>
+      </Rubric>
+   </Class>
+   <Class code="_RoleClassAssociative" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21113"/>
+      <Meta name="Name:Class" value="associatedEntity"/>
+      <Meta name="Name:Role:player:Entity" value="associated&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AA_______"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AA_______"/>
+      <Meta name="Name:Role:scoper:Entity" value="scoping&amp;"/>
+      <SuperClass code="ROL"/>
+      <SubClass code="_RoleClassMutualRelationship"/>
+      <SubClass code="_RoleClassPassive"/>
+      <Rubric id="d1e206504" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A general association between two entities that is neither partitive nor ontological.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e206533" kind="short">
+         <Label xml:lang="en-US">RoleClassAssociative</Label>
+      </Rubric>
+      <Rubric id="d1e206533" kind="preferred">
+         <Label xml:lang="en-US">RoleClassAssociative</Label>
+      </Rubric>
+   </Class>
+   <Class code="_RoleClassOntological" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21115"/>
+      <Meta name="Name:Class" value="definedEntity"/>
+      <Meta name="Name:Role:player:Entity" value="defined&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AC_______"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AC_______"/>
+      <Meta name="Name:Role:scoper:Entity" value="defining&amp;"/>
+      <SuperClass code="ROL"/>
+      <SubClass code="EQUIV"/>
+      <SubClass code="GEN"/>
+      <SubClass code="INST"/>
+      <Rubric id="d1e206545" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A relationship in which the scoping Entity defines or specifies what the playing Entity is. Thus, the player's "being" (Greek: ontos) is specified.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e206574" kind="short">
+         <Label xml:lang="en-US">RoleClassOntological</Label>
+      </Rubric>
+      <Rubric id="d1e206574" kind="preferred">
+         <Label xml:lang="en-US">RoleClassOntological</Label>
+      </Rubric>
+   </Class>
+   <Class code="_RoleClassPartitive" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21116"/>
+      <Meta name="Name:Class" value="partOfWhole"/>
+      <Meta name="Name:Role:player:Entity" value="part&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AB_______"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AB_______"/>
+      <Meta name="Name:Role:scoper:Entity" value="whole&amp;"/>
+      <SuperClass code="ROL"/>
+      <SubClass code="CONT"/>
+      <SubClass code="EXPAGTCAR"/>
+      <SubClass code="INGR"/>
+      <SubClass code="LOCE"/>
+      <SubClass code="MBR"/>
+      <SubClass code="PART"/>
+      <SubClass code="SPEC"/>
+      <Rubric id="d1e206585" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An association between two Entities where the playing Entity is considered in some way "part" of the scoping Entity, e.g., as a member, component, ingredient, or content. Being "part" in the broadest sense of the word can mean anything from being an integral structural component to a mere incidental temporary association of a playing Entity with a (generally larger) scoping Entity.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e206614" kind="short">
+         <Label xml:lang="en-US">RoleClassPartitive</Label>
+      </Rubric>
+      <Rubric id="d1e206614" kind="preferred">
+         <Label xml:lang="en-US">RoleClassPartitive</Label>
+      </Rubric>
+   </Class>
+   <Class code="DSDLOC" kind="concept">
+      <Meta name="internalId" value="11600"/>
+      <Meta name="Name:Class" value="dedicatedServiceDeliveryLocation"/>
+      <Meta name="Name:Role:player:Entity" value="location(&amp;-PLC)"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AABJB____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AABJB____"/>
+      <Meta name="Name:Role:scoper:Entity" value="recognizing&amp;"/>
+      <SuperClass code="SDLOC"/>
+      <Rubric id="d1e206625" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A role of a place (player) that is intended to house the provision of services. Scoper is the Entity (typically Organization) that provides these services. This is not synonymous with "ownership."</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e206654" kind="short">
+         <Label xml:lang="en-US">dedicated service delivery location</Label>
+      </Rubric>
+      <Rubric id="d1e206654" kind="preferred">
+         <Label xml:lang="en-US">dedicated service delivery location</Label>
+      </Rubric>
+      <Rubric id="d1e206656" kind="short">
+         <Label xml:lang="en-US">health care facility</Label>
+      </Rubric>
+   </Class>
+   <Class code="ISDLOC" kind="concept">
+      <Meta name="internalId" value="16929"/>
+      <Meta name="Name:Class" value="incidentalServiceDeliveryLocation"/>
+      <Meta name="Name:Role:player:Entity" value="location(&amp;-PLC)"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="AABJA____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="AABJA____"/>
+      <Meta name="Name:Role:scoper:Entity" value="recognizing&amp;"/>
+      <SuperClass code="SDLOC"/>
+      <Rubric id="d1e206667" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A role played by a place at which health care services may be provided without prior designation or authorization.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e206696" kind="short">
+         <Label xml:lang="en-US">incidental service delivery location</Label>
+      </Rubric>
+      <Rubric id="d1e206696" kind="preferred">
+         <Label xml:lang="en-US">incidental service delivery location</Label>
+      </Rubric>
+   </Class>
+   <Class code="ALQT" kind="concept">
+      <Meta name="internalId" value="14026"/>
+      <Meta name="Name:Class" value="aliquot"/>
+      <Meta name="Name:Role:player:Entity" value="aliquot&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="ABAA_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="ABAA_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="source&amp;"/>
+      <SuperClass code="SPEC"/>
+      <Rubric id="d1e206707" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A portion (player) of an original or source specimen (scoper) used for testing or transportation.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e206736" kind="short">
+         <Label xml:lang="en-US">aliquot</Label>
+      </Rubric>
+      <Rubric id="d1e206736" kind="preferred">
+         <Label xml:lang="en-US">aliquot</Label>
+      </Rubric>
+   </Class>
+   <Class code="ISLT" kind="concept">
+      <Meta name="internalId" value="16302"/>
+      <Meta name="Name:Class" value="isolate"/>
+      <Meta name="Name:Role:player:Entity" value="isolate&amp;"/>
+      <Meta name="Sort:Entity:playedRole:Role" value="ABAB_____"/>
+      <Meta name="Sort:Entity:scopedRole:Role" value="ABAB_____"/>
+      <Meta name="Name:Role:scoper:Entity" value="source&amp;"/>
+      <SuperClass code="SPEC"/>
+      <Rubric id="d1e206747" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A microorganism that has been isolated from other microorganisms or a source matrix.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e206776" kind="short">
+         <Label xml:lang="en-US">isolate</Label>
+      </Rubric>
+      <Rubric id="d1e206776" kind="preferred">
+         <Label xml:lang="en-US">isolate</Label>
+      </Rubric>
+   </Class>
+</ClaML>

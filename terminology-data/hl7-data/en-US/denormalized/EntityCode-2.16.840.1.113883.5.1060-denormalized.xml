@@ -1,0 +1,3387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="134"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1060"/>
+   <Title name="EntityCode" date="2012-08-02" version="1.000">OpenIssue: Missing description.</Title>
+   <Class code="rootClass">
+      <SubClass subCount="0" code="_MaterialEntityAdditive" kind="concept">
+         <Rubric id="d1e108950" kind="preferred">
+            <Label xml:lang="en-US">Content ID</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="5" code="_MaterialEntityClassType" kind="abstract">
+         <Rubric id="d1e108979" kind="preferred">
+            <Label xml:lang="en-US">MaterialEntityClassType</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="17" code="_NonDrugAgentEntity" kind="abstract">
+         <Rubric id="d1e109003" kind="preferred">
+            <Label xml:lang="en-US">NonDrugAgentEntity</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="3" code="_OrganizationEntityType" kind="abstract">
+         <Rubric id="d1e109032" kind="preferred">
+            <Label xml:lang="en-US">OrganizationEntityType</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="5" code="_PlaceEntityType" kind="abstract">
+         <Rubric id="d1e109061" kind="preferred">
+            <Label xml:lang="en-US">PlaceEntityType</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass subCount="1" code="_ResourceGroupEntityType" kind="abstract">
+         <Rubric id="d1e109100" kind="preferred">
+            <Label xml:lang="en-US">ResourceGroupEntityType</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">EntityCode</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">OpenIssue: Missing description.</Label>
+      </Rubric>
+   </Class>
+   <Class code="_MaterialEntityAdditive" kind="concept">
+      <Meta name="internalId" value="22603"/>
+      <Rubric id="d1e108925" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>cid: is the most common mechanism used in webservices. A cid: reference points from the SOAP body to other content in the mime package in which the SOAP envelope is wrapped</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108950" kind="short">
+         <Label xml:lang="en-US">Content ID</Label>
+      </Rubric>
+      <Rubric id="d1e108950" kind="preferred">
+         <Label xml:lang="en-US">Content ID</Label>
+      </Rubric>
+   </Class>
+   <Class code="_MaterialEntityClassType" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21066"/>
+      <SubClass code="_ContainerEntityType" subCount="1">
+         <Rubric id="d1e109634" kind="preferred">
+            <Label xml:lang="en-US">ContainerEntityType</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="_MedicalDevice" subCount="2">
+         <Rubric id="d1e109668" kind="preferred">
+            <Label xml:lang="en-US">MedicalDevice</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="_SpecimenAdditiveEntity" subCount="54">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="BLDPRD" subCount="0">
+         <Rubric id="d1e109733" kind="preferred">
+            <Label xml:lang="en-US">Blood Product</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="VCCNE" subCount="0">
+         <Rubric id="d1e109762" kind="preferred">
+            <Label xml:lang="en-US">Vaccine</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e108961" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Types of Material for EntityClass "MAT"</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e108979" kind="short">
+         <Label xml:lang="en-US">MaterialEntityClassType</Label>
+      </Rubric>
+      <Rubric id="d1e108979" kind="preferred">
+         <Label xml:lang="en-US">MaterialEntityClassType</Label>
+      </Rubric>
+   </Class>
+   <Class code="_NonDrugAgentEntity" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22382"/>
+      <SubClass code="NDA01" subCount="0">
+         <Rubric id="d1e110290" kind="preferred">
+            <Label xml:lang="en-US">egg</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NDA02" subCount="0">
+         <Rubric id="d1e110304" kind="preferred">
+            <Label xml:lang="en-US">fish</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NDA03" subCount="0">
+         <Rubric id="d1e110319" kind="preferred">
+            <Label xml:lang="en-US">lactose</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NDA04" subCount="0">
+         <Rubric id="d1e110333" kind="preferred">
+            <Label xml:lang="en-US">peanut</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NDA05" subCount="0">
+         <Rubric id="d1e110347" kind="preferred">
+            <Label xml:lang="en-US">soy</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NDA06" subCount="0">
+         <Rubric id="d1e110361" kind="preferred">
+            <Label xml:lang="en-US">sulfites</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NDA07" subCount="0">
+         <Rubric id="d1e110375" kind="preferred">
+            <Label xml:lang="en-US">wheat or gluten</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NDA08" subCount="0">
+         <Rubric id="d1e110389" kind="preferred">
+            <Label xml:lang="en-US">isocyanates</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NDA09" subCount="0">
+         <Rubric id="d1e110404" kind="preferred">
+            <Label xml:lang="en-US">solvents</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NDA10" subCount="0">
+         <Rubric id="d1e110418" kind="preferred">
+            <Label xml:lang="en-US">oils</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NDA11" subCount="0">
+         <Rubric id="d1e110432" kind="preferred">
+            <Label xml:lang="en-US">venoms</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NDA12" subCount="0">
+         <Rubric id="d1e110446" kind="preferred">
+            <Label xml:lang="en-US">latex</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NDA13" subCount="0">
+         <Rubric id="d1e110460" kind="preferred">
+            <Label xml:lang="en-US">shellfish</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NDA14" subCount="0">
+         <Rubric id="d1e110474" kind="preferred">
+            <Label xml:lang="en-US">strawberries</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NDA15" subCount="0">
+         <Rubric id="d1e110489" kind="preferred">
+            <Label xml:lang="en-US">tomatoes</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NDA16" subCount="0">
+         <Rubric id="d1e110503" kind="preferred">
+            <Label xml:lang="en-US">dust</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NDA17" subCount="0">
+         <Rubric id="d1e110517" kind="preferred">
+            <Label xml:lang="en-US">dust mites</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e108990" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicates types of allergy and intolerance agents which are non-drugs. (E.g. foods, latex, etc.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e109003" kind="short">
+         <Label xml:lang="en-US">NonDrugAgentEntity</Label>
+      </Rubric>
+      <Rubric id="d1e109003" kind="preferred">
+         <Label xml:lang="en-US">NonDrugAgentEntity</Label>
+      </Rubric>
+   </Class>
+   <Class code="_OrganizationEntityType" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21356"/>
+      <SubClass code="HHOLD" subCount="0">
+         <Rubric id="d1e110663" kind="preferred">
+            <Label xml:lang="en-US">household</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NAT" subCount="0">
+         <Rubric id="d1e110698" kind="preferred">
+            <Label xml:lang="en-US">NationEntityType</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RELIG" subCount="0">
+         <Rubric id="d1e110727" kind="preferred">
+            <Label xml:lang="en-US">religious institution</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e109014" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Further classifies entities of classCode ORG.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e109032" kind="short">
+         <Label xml:lang="en-US">OrganizationEntityType</Label>
+      </Rubric>
+      <Rubric id="d1e109032" kind="preferred">
+         <Label xml:lang="en-US">OrganizationEntityType</Label>
+      </Rubric>
+   </Class>
+   <Class code="_PlaceEntityType" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21070"/>
+      <SubClass code="BED" subCount="0">
+         <Rubric id="d1e110791" kind="preferred">
+            <Label xml:lang="en-US">Bed Location</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="BLDG" subCount="0">
+         <Rubric id="d1e110821" kind="preferred">
+            <Label xml:lang="en-US">Building Location</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="FLOOR" subCount="0">
+         <Rubric id="d1e110850" kind="preferred">
+            <Label xml:lang="en-US">Floor Location</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="ROOM" subCount="0">
+         <Rubric id="d1e110879" kind="preferred">
+            <Label xml:lang="en-US">Room Location</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="WING" subCount="0">
+         <Rubric id="d1e110908" kind="preferred">
+            <Label xml:lang="en-US">Wing Location</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e109043" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Types of places for EntityClass "PLC"</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e109061" kind="short">
+         <Label xml:lang="en-US">PlaceEntityType</Label>
+      </Rubric>
+      <Rubric id="d1e109061" kind="preferred">
+         <Label xml:lang="en-US">PlaceEntityType</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ResourceGroupEntityType" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22383"/>
+      <SubClass code="PRAC" subCount="0">
+         <Rubric id="d1e110922" kind="preferred">
+            <Label xml:lang="en-US">PractitionerGroup</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e109073" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Codes to characterize a Resource Group using categories that typify its membership and/or function</p>
+            <p>.</p>
+            <p>
+               <i>Example:</i>PractitionerGroup</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e109100" kind="short">
+         <Label xml:lang="en-US">ResourceGroupEntityType</Label>
+      </Rubric>
+      <Rubric id="d1e109100" kind="preferred">
+         <Label xml:lang="en-US">ResourceGroupEntityType</Label>
+      </Rubric>
+   </Class>
+   <Class code="LINE" kind="concept">
+      <Meta name="internalId" value="16201"/>
+      <SuperClass code="_AccessMedicalDevice">
+         <Rubric id="d1e109926" kind="preferred">
+            <Label xml:lang="en-US">AccessMedicalDevice</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="IALINE" subCount="0">
+         <Rubric id="d1e113034" kind="preferred">
+            <Label xml:lang="en-US">Intra-arterial Line</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="IVLINE" subCount="0">
+         <Rubric id="d1e113063" kind="preferred">
+            <Label xml:lang="en-US">Intraveneous Line</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e109140" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A hollow tube used to administer a substance into a vein, artery or body cavity</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e109158" kind="short">
+         <Label xml:lang="en-US">Line</Label>
+      </Rubric>
+      <Rubric id="d1e109158" kind="preferred">
+         <Label xml:lang="en-US">Line</Label>
+      </Rubric>
+   </Class>
+   <Class code="_InjectionMedicalDevice" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21063"/>
+      <SuperClass code="_AdministrationMedicalDevice">
+         <Rubric id="d1e109955" kind="preferred">
+            <Label xml:lang="en-US">AdministrationMedicalDevice</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="AINJ" subCount="0">
+         <Rubric id="d1e109546" kind="preferred">
+            <Label xml:lang="en-US">AutoInjector</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PEN" subCount="0">
+         <Rubric id="d1e109575" kind="preferred">
+            <Label xml:lang="en-US">Pen</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SYR" subCount="0">
+         <Rubric id="d1e109604" kind="preferred">
+            <Label xml:lang="en-US">Syringe</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e109169" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A device intended to administer liquid into a subject via a</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e109187" kind="short">
+         <Label xml:lang="en-US">InjectionMedicalDevice</Label>
+      </Rubric>
+      <Rubric id="d1e109187" kind="preferred">
+         <Label xml:lang="en-US">InjectionMedicalDevice</Label>
+      </Rubric>
+   </Class>
+   <Class code="APLCTR" kind="concept">
+      <Meta name="internalId" value="16190"/>
+      <SuperClass code="_AdministrationMedicalDevice">
+         <Rubric id="d1e109955" kind="preferred">
+            <Label xml:lang="en-US">AdministrationMedicalDevice</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e109198" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A device used to apply a liquid or powder to a surface.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e109216" kind="short">
+         <Label xml:lang="en-US">Applicator</Label>
+      </Rubric>
+      <Rubric id="d1e109216" kind="preferred">
+         <Label xml:lang="en-US">Applicator</Label>
+      </Rubric>
+   </Class>
+   <Class code="INH" kind="concept">
+      <Meta name="internalId" value="16196"/>
+      <SuperClass code="_AdministrationMedicalDevice">
+         <Rubric id="d1e109955" kind="preferred">
+            <Label xml:lang="en-US">AdministrationMedicalDevice</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="DSKS" subCount="0">
+         <Rubric id="d1e112918" kind="preferred">
+            <Label xml:lang="en-US">Diskus</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="DSKUNH" subCount="0">
+         <Rubric id="d1e112947" kind="preferred">
+            <Label xml:lang="en-US">Diskhaler</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="TRBINH" subCount="0">
+         <Rubric id="d1e112976" kind="preferred">
+            <Label xml:lang="en-US">Turbuhaler</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e109227" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A small device used for inhaling medicine in the form of a vapour or gas in order to ease a respiratory condition such as asthma or to relieve nasal congestion.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e109245" kind="short">
+         <Label xml:lang="en-US">Inhaler</Label>
+      </Rubric>
+      <Rubric id="d1e109245" kind="preferred">
+         <Label xml:lang="en-US">Inhaler</Label>
+      </Rubric>
+   </Class>
+   <Class code="PMP" kind="concept">
+      <Meta name="internalId" value="16195"/>
+      <SuperClass code="_AdministrationMedicalDevice">
+         <Rubric id="d1e109955" kind="preferred">
+            <Label xml:lang="en-US">AdministrationMedicalDevice</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e109257" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A device that is used to raise, compress, or transfer liquids or gases and is operated by a piston or similar mechanism.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e109275" kind="short">
+         <Label xml:lang="en-US">Pump</Label>
+      </Rubric>
+      <Rubric id="d1e109275" kind="preferred">
+         <Label xml:lang="en-US">Pump</Label>
+      </Rubric>
+   </Class>
+   <Class code="PKG" kind="concept">
+      <Meta name="internalId" value="16144"/>
+      <SuperClass code="_ContainerEntityType">
+         <Rubric id="d1e109634" kind="preferred">
+            <Label xml:lang="en-US">ContainerEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="_NonRigidContainerEntityType" subCount="4">
+         <Rubric id="d1e113098" kind="preferred">
+            <Label xml:lang="en-US">NonRigidContainerEntityType</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="_RigidContainerEntityType" subCount="3">
+         <Rubric id="d1e113133" kind="preferred">
+            <Label xml:lang="en-US">RigidContainerEntityType</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="COMPPKG" subCount="5">
+         <Rubric id="d1e113163" kind="preferred">
+            <Label xml:lang="en-US">Compliance Package</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="KIT" subCount="1">
+         <Rubric id="d1e113192" kind="preferred">
+            <Label xml:lang="en-US">Kit</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e109350" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A material intended to hold other materials for purposes of storage or transportation</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e109368" kind="short">
+         <Label xml:lang="en-US">Package</Label>
+      </Rubric>
+      <Rubric id="d1e109368" kind="preferred">
+         <Label xml:lang="en-US">Package</Label>
+      </Rubric>
+   </Class>
+   <Class code="AMP" kind="concept">
+      <Meta name="internalId" value="16177"/>
+      <SuperClass code="_IndividualPackageEntityType">
+         <Rubric id="d1e110951" kind="preferred">
+            <Label xml:lang="en-US">IndividualPackageEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e109411" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A small sealed glass container that holds a measured amount of a medicinal substance.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e109429" kind="short">
+         <Label xml:lang="en-US">Ampule</Label>
+      </Rubric>
+      <Rubric id="d1e109429" kind="preferred">
+         <Label xml:lang="en-US">Ampule</Label>
+      </Rubric>
+   </Class>
+   <Class code="MINIM" kind="concept">
+      <Meta name="internalId" value="16178"/>
+      <SuperClass code="_IndividualPackageEntityType">
+         <Rubric id="d1e110951" kind="preferred">
+            <Label xml:lang="en-US">IndividualPackageEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e109441" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Individually dosed ophthalmic solution. One time eye dropper dispenser.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e109459" kind="short">
+         <Label xml:lang="en-US">Minim</Label>
+      </Rubric>
+      <Rubric id="d1e109459" kind="preferred">
+         <Label xml:lang="en-US">Minim</Label>
+      </Rubric>
+   </Class>
+   <Class code="NEBAMP" kind="concept">
+      <Meta name="internalId" value="16179"/>
+      <SuperClass code="_IndividualPackageEntityType">
+         <Rubric id="d1e110951" kind="preferred">
+            <Label xml:lang="en-US">IndividualPackageEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e109470" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Individually dosed inhalation solution.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e109488" kind="short">
+         <Label xml:lang="en-US">Nebuamp</Label>
+      </Rubric>
+      <Rubric id="d1e109488" kind="preferred">
+         <Label xml:lang="en-US">Nebuamp</Label>
+      </Rubric>
+   </Class>
+   <Class code="OVUL" kind="concept">
+      <Meta name="internalId" value="16180"/>
+      <SuperClass code="_IndividualPackageEntityType">
+         <Rubric id="d1e110951" kind="preferred">
+            <Label xml:lang="en-US">IndividualPackageEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e109499" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A container either glass or plastic and a narrow neck, for storing liquid.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e109517" kind="short">
+         <Label xml:lang="en-US">Ovule</Label>
+      </Rubric>
+      <Rubric id="d1e109517" kind="preferred">
+         <Label xml:lang="en-US">Ovule</Label>
+      </Rubric>
+   </Class>
+   <Class code="AINJ" kind="concept">
+      <Meta name="internalId" value="16192"/>
+      <SuperClass code="_InjectionMedicalDevice">
+         <Rubric id="d1e109187" kind="preferred">
+            <Label xml:lang="en-US">InjectionMedicalDevice</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e109528" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Automatically injects medication.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e109546" kind="short">
+         <Label xml:lang="en-US">AutoInjector</Label>
+      </Rubric>
+      <Rubric id="d1e109546" kind="preferred">
+         <Label xml:lang="en-US">AutoInjector</Label>
+      </Rubric>
+   </Class>
+   <Class code="PEN" kind="concept">
+      <Meta name="internalId" value="16194"/>
+      <SuperClass code="_InjectionMedicalDevice">
+         <Rubric id="d1e109187" kind="preferred">
+            <Label xml:lang="en-US">InjectionMedicalDevice</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e109557" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A device which can contain a cartridge for injection purposes. Eg. Insulin pen.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e109575" kind="short">
+         <Label xml:lang="en-US">Pen</Label>
+      </Rubric>
+      <Rubric id="d1e109575" kind="preferred">
+         <Label xml:lang="en-US">Pen</Label>
+      </Rubric>
+   </Class>
+   <Class code="SYR" kind="concept">
+      <Meta name="internalId" value="16193"/>
+      <SuperClass code="_InjectionMedicalDevice">
+         <Rubric id="d1e109187" kind="preferred">
+            <Label xml:lang="en-US">InjectionMedicalDevice</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e109586" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A barrel with a plunger.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e109604" kind="short">
+         <Label xml:lang="en-US">Syringe</Label>
+      </Rubric>
+      <Rubric id="d1e109604" kind="preferred">
+         <Label xml:lang="en-US">Syringe</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ContainerEntityType" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21060"/>
+      <SuperClass code="_MaterialEntityClassType">
+         <Rubric id="d1e108979" kind="preferred">
+            <Label xml:lang="en-US">MaterialEntityClassType</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="PKG" subCount="4">
+         <Rubric id="d1e109368" kind="preferred">
+            <Label xml:lang="en-US">Package</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e109616" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Material intended to hold another material for purpose of storage or transport.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e109634" kind="short">
+         <Label xml:lang="en-US">ContainerEntityType</Label>
+      </Rubric>
+      <Rubric id="d1e109634" kind="preferred">
+         <Label xml:lang="en-US">ContainerEntityType</Label>
+      </Rubric>
+   </Class>
+   <Class code="_MedicalDevice" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21067"/>
+      <SuperClass code="_MaterialEntityClassType">
+         <Rubric id="d1e108979" kind="preferred">
+            <Label xml:lang="en-US">MaterialEntityClassType</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="_AccessMedicalDevice" subCount="1">
+         <Rubric id="d1e109926" kind="preferred">
+            <Label xml:lang="en-US">AccessMedicalDevice</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="_AdministrationMedicalDevice" subCount="4">
+         <Rubric id="d1e109955" kind="preferred">
+            <Label xml:lang="en-US">AdministrationMedicalDevice</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e109645" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A device with direct or indirect therapeutic purpose. Values for EntityCode when EntityClass = "DEV"</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e109668" kind="short">
+         <Label xml:lang="en-US">MedicalDevice</Label>
+      </Rubric>
+      <Rubric id="d1e109668" kind="preferred">
+         <Label xml:lang="en-US">MedicalDevice</Label>
+      </Rubric>
+   </Class>
+   <Class code="_SpecimenAdditiveEntity" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21065"/>
+      <SuperClass code="_MaterialEntityClassType">
+         <Rubric id="d1e108979" kind="preferred">
+            <Label xml:lang="en-US">MaterialEntityClassType</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="ACDA" subCount="0">
+         <Rubric id="d1e111051" kind="preferred">
+            <Label xml:lang="en-US">ACD Solution A</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="ACDB" subCount="0">
+         <Rubric id="d1e111080" kind="preferred">
+            <Label xml:lang="en-US">ACD Solution B</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="ACET" subCount="0">
+         <Rubric id="d1e111109" kind="preferred">
+            <Label xml:lang="en-US">Acetic Acid</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="AMIES" subCount="0">
+         <Rubric id="d1e111138" kind="preferred">
+            <Label xml:lang="en-US">Amies transport medium</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="BACTM" subCount="0">
+         <Rubric id="d1e111168" kind="preferred">
+            <Label xml:lang="en-US">Bacterial Transport medium</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="BF10" subCount="0">
+         <Rubric id="d1e111197" kind="preferred">
+            <Label xml:lang="en-US">Buffered 10% formalin</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="BOR" subCount="0">
+         <Rubric id="d1e111226" kind="preferred">
+            <Label xml:lang="en-US">Boric Acid</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="BOUIN" subCount="0">
+         <Rubric id="d1e111255" kind="preferred">
+            <Label xml:lang="en-US">Bouin's solution</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="BSKM" subCount="0">
+         <Rubric id="d1e111284" kind="preferred">
+            <Label xml:lang="en-US">Buffered skim milk</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="C32" subCount="0">
+         <Rubric id="d1e111313" kind="preferred">
+            <Label xml:lang="en-US">3.2% Citrate</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="C38" subCount="0">
+         <Rubric id="d1e111343" kind="preferred">
+            <Label xml:lang="en-US">3.8% Citrate</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="CARS" subCount="0">
+         <Rubric id="d1e111372" kind="preferred">
+            <Label xml:lang="en-US">Carson's Modified 10% formalin</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="CARY" subCount="0">
+         <Rubric id="d1e111401" kind="preferred">
+            <Label xml:lang="en-US">Cary Blair Medium</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="CHLTM" subCount="0">
+         <Rubric id="d1e111430" kind="preferred">
+            <Label xml:lang="en-US">Chlamydia transport medium</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="CTAD" subCount="0">
+         <Rubric id="d1e111459" kind="preferred">
+            <Label xml:lang="en-US">CTAD</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="EDTK15" subCount="0">
+         <Rubric id="d1e111488" kind="preferred">
+            <Label xml:lang="en-US">Potassium/K EDTA 15%</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="EDTK75" subCount="0">
+         <Rubric id="d1e111518" kind="preferred">
+            <Label xml:lang="en-US">Potassium/K EDTA 7.5%</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="EDTN" subCount="0">
+         <Rubric id="d1e111547" kind="preferred">
+            <Label xml:lang="en-US">Sodium/Na EDTA</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="ENT" subCount="0">
+         <Rubric id="d1e111576" kind="preferred">
+            <Label xml:lang="en-US">Enteric bacteria transport medium</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="F10" subCount="0">
+         <Rubric id="d1e111605" kind="preferred">
+            <Label xml:lang="en-US">10% Formalin</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="FDP" subCount="0">
+         <Rubric id="d1e111634" kind="preferred">
+            <Label xml:lang="en-US">Thrombin NIH; soybean trypsin inhibitor</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="FL10" subCount="0">
+         <Rubric id="d1e111663" kind="preferred">
+            <Label xml:lang="en-US">Sodium Fluoride, 10mg</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="FL100" subCount="0">
+         <Rubric id="d1e111693" kind="preferred">
+            <Label xml:lang="en-US">Sodium Fluoride, 100mg</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="HCL6" subCount="0">
+         <Rubric id="d1e111722" kind="preferred">
+            <Label xml:lang="en-US">6N HCL</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="HEPA" subCount="0">
+         <Rubric id="d1e111751" kind="preferred">
+            <Label xml:lang="en-US">Ammonium heparin</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="HEPL" subCount="0">
+         <Rubric id="d1e111780" kind="preferred">
+            <Label xml:lang="en-US">Lithium/Li Heparin</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="HEPN" subCount="0">
+         <Rubric id="d1e111809" kind="preferred">
+            <Label xml:lang="en-US">Sodium/Na Heparin</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="HNO3" subCount="0">
+         <Rubric id="d1e111838" kind="preferred">
+            <Label xml:lang="en-US">Nitric Acid</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="JKM" subCount="0">
+         <Rubric id="d1e111868" kind="preferred">
+            <Label xml:lang="en-US">Jones Kendrick Medium</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="KARN" subCount="0">
+         <Rubric id="d1e111897" kind="preferred">
+            <Label xml:lang="en-US">Karnovsky's fixative</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="KOX" subCount="0">
+         <Rubric id="d1e111926" kind="preferred">
+            <Label xml:lang="en-US">Potassium Oxalate</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LIA" subCount="0">
+         <Rubric id="d1e111955" kind="preferred">
+            <Label xml:lang="en-US">Lithium iodoacetate</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="M4" subCount="0">
+         <Rubric id="d1e111984" kind="preferred">
+            <Label xml:lang="en-US">M4</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="M4RT" subCount="0">
+         <Rubric id="d1e112013" kind="preferred">
+            <Label xml:lang="en-US">M4-RT</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="M5" subCount="0">
+         <Rubric id="d1e112043" kind="preferred">
+            <Label xml:lang="en-US">M5</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="MICHTM" subCount="0">
+         <Rubric id="d1e112072" kind="preferred">
+            <Label xml:lang="en-US">Michel's transport medium</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="MMDTM" subCount="0">
+         <Rubric id="d1e112101" kind="preferred">
+            <Label xml:lang="en-US">MMD transport medium</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NAF" subCount="0">
+         <Rubric id="d1e112130" kind="preferred">
+            <Label xml:lang="en-US">Sodium Fluoride</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NONE" subCount="0">
+         <Rubric id="d1e112159" kind="preferred">
+            <Label xml:lang="en-US">None</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PAGE" subCount="0">
+         <Rubric id="d1e112188" kind="preferred">
+            <Label xml:lang="en-US">Page's Saline</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PHENOL" subCount="0">
+         <Rubric id="d1e112218" kind="preferred">
+            <Label xml:lang="en-US">Phenol</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PVA" subCount="0">
+         <Rubric id="d1e112247" kind="preferred">
+            <Label xml:lang="en-US">Polyvinylalcohol</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RLM" subCount="0">
+         <Rubric id="d1e112276" kind="preferred">
+            <Label xml:lang="en-US">Reagan Lowe Medium</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SILICA" subCount="0">
+         <Rubric id="d1e112305" kind="preferred">
+            <Label xml:lang="en-US">Siliceous earth</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SPS" subCount="0">
+         <Rubric id="d1e112334" kind="preferred">
+            <Label xml:lang="en-US">Sodium polyanethol sulfonate 0.35% in 0.85% sodium chloride</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SST" subCount="0">
+         <Rubric id="d1e112363" kind="preferred">
+            <Label xml:lang="en-US">Serum Separator Tube</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="STUTM" subCount="0">
+         <Rubric id="d1e112393" kind="preferred">
+            <Label xml:lang="en-US">Stuart transport medium</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="THROM" subCount="0">
+         <Rubric id="d1e112422" kind="preferred">
+            <Label xml:lang="en-US">Thrombin</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="THYMOL" subCount="0">
+         <Rubric id="d1e112451" kind="preferred">
+            <Label xml:lang="en-US">Thymol</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="THYO" subCount="0">
+         <Rubric id="d1e112480" kind="preferred">
+            <Label xml:lang="en-US">Thyoglycolate broth</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="TOLU" subCount="0">
+         <Rubric id="d1e112509" kind="preferred">
+            <Label xml:lang="en-US">Toluene</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="URETM" subCount="0">
+         <Rubric id="d1e112538" kind="preferred">
+            <Label xml:lang="en-US">Ureaplasma transport medium</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="VIRTM" subCount="0">
+         <Rubric id="d1e112568" kind="preferred">
+            <Label xml:lang="en-US">Viral Transport medium</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="WEST" subCount="0">
+         <Rubric id="d1e112597" kind="preferred">
+            <Label xml:lang="en-US">Buffered Citrate</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e109680" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Set of codes related to specimen additives</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e109703" kind="short">
+         <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+      </Rubric>
+      <Rubric id="d1e109703" kind="preferred">
+         <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+      </Rubric>
+   </Class>
+   <Class code="BLDPRD" kind="concept">
+      <Meta name="internalId" value="21459"/>
+      <SuperClass code="_MaterialEntityClassType">
+         <Rubric id="d1e108979" kind="preferred">
+            <Label xml:lang="en-US">MaterialEntityClassType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e109715" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A manufactured product that is produced from the raw blood oi a donor with the intention of using it in a recipient transfusion.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e109733" kind="short">
+         <Label xml:lang="en-US">Blood Product</Label>
+      </Rubric>
+      <Rubric id="d1e109733" kind="preferred">
+         <Label xml:lang="en-US">Blood Product</Label>
+      </Rubric>
+   </Class>
+   <Class code="VCCNE" kind="concept">
+      <Meta name="internalId" value="21458"/>
+      <SuperClass code="_MaterialEntityClassType">
+         <Rubric id="d1e108979" kind="preferred">
+            <Label xml:lang="en-US">MaterialEntityClassType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e109744" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A Type of medicine that creates an immune protection without the recipient experiencing the disease.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e109762" kind="short">
+         <Label xml:lang="en-US">Vaccine</Label>
+      </Rubric>
+      <Rubric id="d1e109762" kind="preferred">
+         <Label xml:lang="en-US">Vaccine</Label>
+      </Rubric>
+   </Class>
+   <Class code="_AccessMedicalDevice" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21057"/>
+      <SuperClass code="_MedicalDevice">
+         <Rubric id="d1e109668" kind="preferred">
+            <Label xml:lang="en-US">MedicalDevice</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="LINE" subCount="2">
+         <Rubric id="d1e109158" kind="preferred">
+            <Label xml:lang="en-US">Line</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e109908" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A device used to allow access to a part of a body</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e109926" kind="short">
+         <Label xml:lang="en-US">AccessMedicalDevice</Label>
+      </Rubric>
+      <Rubric id="d1e109926" kind="preferred">
+         <Label xml:lang="en-US">AccessMedicalDevice</Label>
+      </Rubric>
+   </Class>
+   <Class code="_AdministrationMedicalDevice" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21058"/>
+      <SuperClass code="_MedicalDevice">
+         <Rubric id="d1e109668" kind="preferred">
+            <Label xml:lang="en-US">MedicalDevice</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="_InjectionMedicalDevice" subCount="3">
+         <Rubric id="d1e109187" kind="preferred">
+            <Label xml:lang="en-US">InjectionMedicalDevice</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="APLCTR" subCount="0">
+         <Rubric id="d1e109216" kind="preferred">
+            <Label xml:lang="en-US">Applicator</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="INH" subCount="3">
+         <Rubric id="d1e109245" kind="preferred">
+            <Label xml:lang="en-US">Inhaler</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PMP" subCount="0">
+         <Rubric id="d1e109275" kind="preferred">
+            <Label xml:lang="en-US">Pump</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e109937" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A device intended to administer a substance to a subject</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e109955" kind="short">
+         <Label xml:lang="en-US">AdministrationMedicalDevice</Label>
+      </Rubric>
+      <Rubric id="d1e109955" kind="preferred">
+         <Label xml:lang="en-US">AdministrationMedicalDevice</Label>
+      </Rubric>
+   </Class>
+   <Class code="BOT" kind="concept">
+      <Meta name="internalId" value="16155"/>
+      <SuperClass code="_MultiUseContainerEntityType">
+         <Rubric id="d1e110986" kind="preferred">
+            <Label xml:lang="en-US">MultiUseContainerEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="BOTA" subCount="0">
+         <Rubric id="d1e112655" kind="preferred">
+            <Label xml:lang="en-US">Amber Bottle</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="BOTD" subCount="0">
+         <Rubric id="d1e112684" kind="preferred">
+            <Label xml:lang="en-US">Dropper Bottle</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="BOTG" subCount="0">
+         <Rubric id="d1e112713" kind="preferred">
+            <Label xml:lang="en-US">Glass Bottle</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="BOTP" subCount="1">
+         <Rubric id="d1e112743" kind="preferred">
+            <Label xml:lang="en-US">Plastic Bottle</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e109966" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A container, typically rounded, either glass or plastic with a narrow neck and capable of storing liquid.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e109984" kind="short">
+         <Label xml:lang="en-US">Bottle</Label>
+      </Rubric>
+      <Rubric id="d1e109984" kind="preferred">
+         <Label xml:lang="en-US">Bottle</Label>
+      </Rubric>
+   </Class>
+   <Class code="BOX" kind="concept">
+      <Meta name="internalId" value="16154"/>
+      <SuperClass code="_MultiUseContainerEntityType">
+         <Rubric id="d1e110986" kind="preferred">
+            <Label xml:lang="en-US">MultiUseContainerEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e109996" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A 6-sided container commonly made from paper or cardboard used for solid forms.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e110014" kind="short">
+         <Label xml:lang="en-US">Box</Label>
+      </Rubric>
+      <Rubric id="d1e110014" kind="preferred">
+         <Label xml:lang="en-US">Box</Label>
+      </Rubric>
+   </Class>
+   <Class code="CAN" kind="concept">
+      <Meta name="internalId" value="16161"/>
+      <SuperClass code="_MultiUseContainerEntityType">
+         <Rubric id="d1e110986" kind="preferred">
+            <Label xml:lang="en-US">MultiUseContainerEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110025" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A metal container in which a material is hermetically sealed to enable storage over long periods.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e110043" kind="short">
+         <Label xml:lang="en-US">Can</Label>
+      </Rubric>
+      <Rubric id="d1e110043" kind="preferred">
+         <Label xml:lang="en-US">Can</Label>
+      </Rubric>
+   </Class>
+   <Class code="CART" kind="concept">
+      <Meta name="internalId" value="16163"/>
+      <SuperClass code="_MultiUseContainerEntityType">
+         <Rubric id="d1e110986" kind="preferred">
+            <Label xml:lang="en-US">MultiUseContainerEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110054" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A sealed container of liquid or powder intended to be loaded into a device.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e110072" kind="short">
+         <Label xml:lang="en-US">Cartridge</Label>
+      </Rubric>
+      <Rubric id="d1e110072" kind="preferred">
+         <Label xml:lang="en-US">Cartridge</Label>
+      </Rubric>
+   </Class>
+   <Class code="CNSTR" kind="concept">
+      <Meta name="internalId" value="16162"/>
+      <SuperClass code="_MultiUseContainerEntityType">
+         <Rubric id="d1e110986" kind="preferred">
+            <Label xml:lang="en-US">MultiUseContainerEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110083" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A pressurized metal container holding a substance released as a spray or aerosol.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e110101" kind="short">
+         <Label xml:lang="en-US">Canister</Label>
+      </Rubric>
+      <Rubric id="d1e110101" kind="preferred">
+         <Label xml:lang="en-US">Canister</Label>
+      </Rubric>
+   </Class>
+   <Class code="JAR" kind="concept">
+      <Meta name="internalId" value="16164"/>
+      <SuperClass code="_MultiUseContainerEntityType">
+         <Rubric id="d1e110986" kind="preferred">
+            <Label xml:lang="en-US">MultiUseContainerEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110112" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A container of glass, earthenware, plastic, etc. Top of the container has a diameter of similar size to the diameter of the container as a whole</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e110130" kind="short">
+         <Label xml:lang="en-US">Jar</Label>
+      </Rubric>
+      <Rubric id="d1e110130" kind="preferred">
+         <Label xml:lang="en-US">Jar</Label>
+      </Rubric>
+   </Class>
+   <Class code="JUG" kind="concept">
+      <Meta name="internalId" value="16165"/>
+      <SuperClass code="_MultiUseContainerEntityType">
+         <Rubric id="d1e110986" kind="preferred">
+            <Label xml:lang="en-US">MultiUseContainerEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110141" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A deep vessel for holding liquids, with a handle and often with a spout or lip shape for pouring.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e110159" kind="short">
+         <Label xml:lang="en-US">Jug</Label>
+      </Rubric>
+      <Rubric id="d1e110159" kind="preferred">
+         <Label xml:lang="en-US">Jug</Label>
+      </Rubric>
+   </Class>
+   <Class code="TIN" kind="concept">
+      <Meta name="internalId" value="16166"/>
+      <SuperClass code="_MultiUseContainerEntityType">
+         <Rubric id="d1e110986" kind="preferred">
+            <Label xml:lang="en-US">MultiUseContainerEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110171" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A lidded container made of thin sheet metal.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e110189" kind="short">
+         <Label xml:lang="en-US">Tin</Label>
+      </Rubric>
+      <Rubric id="d1e110189" kind="preferred">
+         <Label xml:lang="en-US">Tin</Label>
+      </Rubric>
+   </Class>
+   <Class code="TUB" kind="concept">
+      <Meta name="internalId" value="16167"/>
+      <SuperClass code="_MultiUseContainerEntityType">
+         <Rubric id="d1e110986" kind="preferred">
+            <Label xml:lang="en-US">MultiUseContainerEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110200" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An open flat bottomed round container.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e110218" kind="short">
+         <Label xml:lang="en-US">Tub</Label>
+      </Rubric>
+      <Rubric id="d1e110218" kind="preferred">
+         <Label xml:lang="en-US">Tub</Label>
+      </Rubric>
+   </Class>
+   <Class code="TUBE" kind="concept">
+      <Meta name="internalId" value="16168"/>
+      <SuperClass code="_MultiUseContainerEntityType">
+         <Rubric id="d1e110986" kind="preferred">
+            <Label xml:lang="en-US">MultiUseContainerEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110229" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A long hollow rigid or flexible cylinder. Material is extruded by squeezing the container.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e110247" kind="short">
+         <Label xml:lang="en-US">Tube</Label>
+      </Rubric>
+      <Rubric id="d1e110247" kind="preferred">
+         <Label xml:lang="en-US">Tube</Label>
+      </Rubric>
+   </Class>
+   <Class code="VIAL" kind="concept">
+      <Meta name="internalId" value="16169"/>
+      <SuperClass code="_MultiUseContainerEntityType">
+         <Rubric id="d1e110986" kind="preferred">
+            <Label xml:lang="en-US">MultiUseContainerEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110258" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A small cylindrical glass for holding liquid medicines.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e110276" kind="short">
+         <Label xml:lang="en-US">Vial</Label>
+      </Rubric>
+      <Rubric id="d1e110276" kind="preferred">
+         <Label xml:lang="en-US">Vial</Label>
+      </Rubric>
+   </Class>
+   <Class code="NDA01" kind="concept">
+      <Meta name="internalId" value="21586"/>
+      <SuperClass code="_NonDrugAgentEntity">
+         <Rubric id="d1e109003" kind="preferred">
+            <Label xml:lang="en-US">NonDrugAgentEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110290" kind="short">
+         <Label xml:lang="en-US">egg</Label>
+      </Rubric>
+      <Rubric id="d1e110290" kind="preferred">
+         <Label xml:lang="en-US">egg</Label>
+      </Rubric>
+   </Class>
+   <Class code="NDA02" kind="concept">
+      <Meta name="internalId" value="21587"/>
+      <SuperClass code="_NonDrugAgentEntity">
+         <Rubric id="d1e109003" kind="preferred">
+            <Label xml:lang="en-US">NonDrugAgentEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110304" kind="short">
+         <Label xml:lang="en-US">fish</Label>
+      </Rubric>
+      <Rubric id="d1e110304" kind="preferred">
+         <Label xml:lang="en-US">fish</Label>
+      </Rubric>
+   </Class>
+   <Class code="NDA03" kind="concept">
+      <Meta name="internalId" value="21588"/>
+      <SuperClass code="_NonDrugAgentEntity">
+         <Rubric id="d1e109003" kind="preferred">
+            <Label xml:lang="en-US">NonDrugAgentEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110319" kind="short">
+         <Label xml:lang="en-US">lactose</Label>
+      </Rubric>
+      <Rubric id="d1e110319" kind="preferred">
+         <Label xml:lang="en-US">lactose</Label>
+      </Rubric>
+   </Class>
+   <Class code="NDA04" kind="concept">
+      <Meta name="internalId" value="21589"/>
+      <SuperClass code="_NonDrugAgentEntity">
+         <Rubric id="d1e109003" kind="preferred">
+            <Label xml:lang="en-US">NonDrugAgentEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110333" kind="short">
+         <Label xml:lang="en-US">peanut</Label>
+      </Rubric>
+      <Rubric id="d1e110333" kind="preferred">
+         <Label xml:lang="en-US">peanut</Label>
+      </Rubric>
+   </Class>
+   <Class code="NDA05" kind="concept">
+      <Meta name="internalId" value="21590"/>
+      <SuperClass code="_NonDrugAgentEntity">
+         <Rubric id="d1e109003" kind="preferred">
+            <Label xml:lang="en-US">NonDrugAgentEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110347" kind="short">
+         <Label xml:lang="en-US">soy</Label>
+      </Rubric>
+      <Rubric id="d1e110347" kind="preferred">
+         <Label xml:lang="en-US">soy</Label>
+      </Rubric>
+   </Class>
+   <Class code="NDA06" kind="concept">
+      <Meta name="internalId" value="21591"/>
+      <SuperClass code="_NonDrugAgentEntity">
+         <Rubric id="d1e109003" kind="preferred">
+            <Label xml:lang="en-US">NonDrugAgentEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110361" kind="short">
+         <Label xml:lang="en-US">sulfites</Label>
+      </Rubric>
+      <Rubric id="d1e110361" kind="preferred">
+         <Label xml:lang="en-US">sulfites</Label>
+      </Rubric>
+   </Class>
+   <Class code="NDA07" kind="concept">
+      <Meta name="internalId" value="21592"/>
+      <SuperClass code="_NonDrugAgentEntity">
+         <Rubric id="d1e109003" kind="preferred">
+            <Label xml:lang="en-US">NonDrugAgentEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110375" kind="short">
+         <Label xml:lang="en-US">wheat or gluten</Label>
+      </Rubric>
+      <Rubric id="d1e110375" kind="preferred">
+         <Label xml:lang="en-US">wheat or gluten</Label>
+      </Rubric>
+   </Class>
+   <Class code="NDA08" kind="concept">
+      <Meta name="internalId" value="21593"/>
+      <SuperClass code="_NonDrugAgentEntity">
+         <Rubric id="d1e109003" kind="preferred">
+            <Label xml:lang="en-US">NonDrugAgentEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110389" kind="short">
+         <Label xml:lang="en-US">isocyanates</Label>
+      </Rubric>
+      <Rubric id="d1e110389" kind="preferred">
+         <Label xml:lang="en-US">isocyanates</Label>
+      </Rubric>
+   </Class>
+   <Class code="NDA09" kind="concept">
+      <Meta name="internalId" value="21594"/>
+      <SuperClass code="_NonDrugAgentEntity">
+         <Rubric id="d1e109003" kind="preferred">
+            <Label xml:lang="en-US">NonDrugAgentEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110404" kind="short">
+         <Label xml:lang="en-US">solvents</Label>
+      </Rubric>
+      <Rubric id="d1e110404" kind="preferred">
+         <Label xml:lang="en-US">solvents</Label>
+      </Rubric>
+   </Class>
+   <Class code="NDA10" kind="concept">
+      <Meta name="internalId" value="21595"/>
+      <SuperClass code="_NonDrugAgentEntity">
+         <Rubric id="d1e109003" kind="preferred">
+            <Label xml:lang="en-US">NonDrugAgentEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110418" kind="short">
+         <Label xml:lang="en-US">oils</Label>
+      </Rubric>
+      <Rubric id="d1e110418" kind="preferred">
+         <Label xml:lang="en-US">oils</Label>
+      </Rubric>
+   </Class>
+   <Class code="NDA11" kind="concept">
+      <Meta name="internalId" value="21596"/>
+      <SuperClass code="_NonDrugAgentEntity">
+         <Rubric id="d1e109003" kind="preferred">
+            <Label xml:lang="en-US">NonDrugAgentEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110432" kind="short">
+         <Label xml:lang="en-US">venoms</Label>
+      </Rubric>
+      <Rubric id="d1e110432" kind="preferred">
+         <Label xml:lang="en-US">venoms</Label>
+      </Rubric>
+   </Class>
+   <Class code="NDA12" kind="concept">
+      <Meta name="internalId" value="21597"/>
+      <SuperClass code="_NonDrugAgentEntity">
+         <Rubric id="d1e109003" kind="preferred">
+            <Label xml:lang="en-US">NonDrugAgentEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110446" kind="short">
+         <Label xml:lang="en-US">latex</Label>
+      </Rubric>
+      <Rubric id="d1e110446" kind="preferred">
+         <Label xml:lang="en-US">latex</Label>
+      </Rubric>
+   </Class>
+   <Class code="NDA13" kind="concept">
+      <Meta name="internalId" value="21598"/>
+      <SuperClass code="_NonDrugAgentEntity">
+         <Rubric id="d1e109003" kind="preferred">
+            <Label xml:lang="en-US">NonDrugAgentEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110460" kind="short">
+         <Label xml:lang="en-US">shellfish</Label>
+      </Rubric>
+      <Rubric id="d1e110460" kind="preferred">
+         <Label xml:lang="en-US">shellfish</Label>
+      </Rubric>
+   </Class>
+   <Class code="NDA14" kind="concept">
+      <Meta name="internalId" value="21599"/>
+      <SuperClass code="_NonDrugAgentEntity">
+         <Rubric id="d1e109003" kind="preferred">
+            <Label xml:lang="en-US">NonDrugAgentEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110474" kind="short">
+         <Label xml:lang="en-US">strawberries</Label>
+      </Rubric>
+      <Rubric id="d1e110474" kind="preferred">
+         <Label xml:lang="en-US">strawberries</Label>
+      </Rubric>
+   </Class>
+   <Class code="NDA15" kind="concept">
+      <Meta name="internalId" value="21600"/>
+      <SuperClass code="_NonDrugAgentEntity">
+         <Rubric id="d1e109003" kind="preferred">
+            <Label xml:lang="en-US">NonDrugAgentEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110489" kind="short">
+         <Label xml:lang="en-US">tomatoes</Label>
+      </Rubric>
+      <Rubric id="d1e110489" kind="preferred">
+         <Label xml:lang="en-US">tomatoes</Label>
+      </Rubric>
+   </Class>
+   <Class code="NDA16" kind="concept">
+      <Meta name="internalId" value="21601"/>
+      <SuperClass code="_NonDrugAgentEntity">
+         <Rubric id="d1e109003" kind="preferred">
+            <Label xml:lang="en-US">NonDrugAgentEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110503" kind="short">
+         <Label xml:lang="en-US">dust</Label>
+      </Rubric>
+      <Rubric id="d1e110503" kind="preferred">
+         <Label xml:lang="en-US">dust</Label>
+      </Rubric>
+   </Class>
+   <Class code="NDA17" kind="concept">
+      <Meta name="internalId" value="21602"/>
+      <SuperClass code="_NonDrugAgentEntity">
+         <Rubric id="d1e109003" kind="preferred">
+            <Label xml:lang="en-US">NonDrugAgentEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110517" kind="short">
+         <Label xml:lang="en-US">dust mites</Label>
+      </Rubric>
+      <Rubric id="d1e110517" kind="preferred">
+         <Label xml:lang="en-US">dust mites</Label>
+      </Rubric>
+   </Class>
+   <Class code="BAG" kind="concept">
+      <Meta name="internalId" value="16148"/>
+      <SuperClass code="_NonRigidContainerEntityType">
+         <Rubric id="d1e113098" kind="preferred">
+            <Label xml:lang="en-US">NonRigidContainerEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110528" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A pouched or pendulous container.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e110546" kind="short">
+         <Label xml:lang="en-US">Bag</Label>
+      </Rubric>
+      <Rubric id="d1e110546" kind="preferred">
+         <Label xml:lang="en-US">Bag</Label>
+      </Rubric>
+   </Class>
+   <Class code="PACKT" kind="concept">
+      <Meta name="internalId" value="16149"/>
+      <SuperClass code="_NonRigidContainerEntityType">
+         <Rubric id="d1e113098" kind="preferred">
+            <Label xml:lang="en-US">NonRigidContainerEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110557" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A paper</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e110575" kind="short">
+         <Label xml:lang="en-US">Packet</Label>
+      </Rubric>
+      <Rubric id="d1e110575" kind="preferred">
+         <Label xml:lang="en-US">Packet</Label>
+      </Rubric>
+   </Class>
+   <Class code="PCH" kind="concept">
+      <Meta name="internalId" value="16151"/>
+      <SuperClass code="_NonRigidContainerEntityType">
+         <Rubric id="d1e113098" kind="preferred">
+            <Label xml:lang="en-US">NonRigidContainerEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110586" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A small bag or container made of a soft material.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e110604" kind="short">
+         <Label xml:lang="en-US">Pouch</Label>
+      </Rubric>
+      <Rubric id="d1e110604" kind="preferred">
+         <Label xml:lang="en-US">Pouch</Label>
+      </Rubric>
+   </Class>
+   <Class code="SACH" kind="concept">
+      <Meta name="internalId" value="16150"/>
+      <SuperClass code="_NonRigidContainerEntityType">
+         <Rubric id="d1e113098" kind="preferred">
+            <Label xml:lang="en-US">NonRigidContainerEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110616" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A small bag or packet containing a small portion of a substance.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e110634" kind="short">
+         <Label xml:lang="en-US">Sachet</Label>
+      </Rubric>
+      <Rubric id="d1e110634" kind="preferred">
+         <Label xml:lang="en-US">Sachet</Label>
+      </Rubric>
+   </Class>
+   <Class code="HHOLD" kind="concept">
+      <Meta name="internalId" value="23072"/>
+      <SuperClass code="_OrganizationEntityType">
+         <Rubric id="d1e109032" kind="preferred">
+            <Label xml:lang="en-US">OrganizationEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110645" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The group of persons who occupy a single housing unit.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e110663" kind="short">
+         <Label xml:lang="en-US">household</Label>
+      </Rubric>
+      <Rubric id="d1e110663" kind="preferred">
+         <Label xml:lang="en-US">household</Label>
+      </Rubric>
+   </Class>
+   <Class code="NAT" kind="concept">
+      <Meta name="internalId" value="21584"/>
+      <SuperClass code="_OrganizationEntityType">
+         <Rubric id="d1e109032" kind="preferred">
+            <Label xml:lang="en-US">OrganizationEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110674" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Codes identifying nation states. Allows for finer grained specification of Entity with classcode &lt;= NAT</p>
+            <p>
+               <i>Example:</i>ISO3166 country codes.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e110698" kind="short">
+         <Label xml:lang="en-US">NationEntityType</Label>
+      </Rubric>
+      <Rubric id="d1e110698" kind="preferred">
+         <Label xml:lang="en-US">NationEntityType</Label>
+      </Rubric>
+   </Class>
+   <Class code="RELIG" kind="concept">
+      <Meta name="internalId" value="21357"/>
+      <SuperClass code="_OrganizationEntityType">
+         <Rubric id="d1e109032" kind="preferred">
+            <Label xml:lang="en-US">OrganizationEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110709" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An organization that provides religious rites of worship.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e110727" kind="short">
+         <Label xml:lang="en-US">religious institution</Label>
+      </Rubric>
+      <Rubric id="d1e110727" kind="preferred">
+         <Label xml:lang="en-US">religious institution</Label>
+      </Rubric>
+   </Class>
+   <Class code="BED" kind="concept">
+      <Meta name="internalId" value="16101"/>
+      <SuperClass code="_PlaceEntityType">
+         <Rubric id="d1e109061" kind="preferred">
+            <Label xml:lang="en-US">PlaceEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110773" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The location of a bed</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e110791" kind="short">
+         <Label xml:lang="en-US">Bed Location</Label>
+      </Rubric>
+      <Rubric id="d1e110791" kind="preferred">
+         <Label xml:lang="en-US">Bed Location</Label>
+      </Rubric>
+   </Class>
+   <Class code="BLDG" kind="concept">
+      <Meta name="internalId" value="16104"/>
+      <SuperClass code="_PlaceEntityType">
+         <Rubric id="d1e109061" kind="preferred">
+            <Label xml:lang="en-US">PlaceEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110803" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The location of a building</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e110821" kind="short">
+         <Label xml:lang="en-US">Building Location</Label>
+      </Rubric>
+      <Rubric id="d1e110821" kind="preferred">
+         <Label xml:lang="en-US">Building Location</Label>
+      </Rubric>
+   </Class>
+   <Class code="FLOOR" kind="concept">
+      <Meta name="internalId" value="16103"/>
+      <SuperClass code="_PlaceEntityType">
+         <Rubric id="d1e109061" kind="preferred">
+            <Label xml:lang="en-US">PlaceEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110832" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The location of a floor of a building</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e110850" kind="short">
+         <Label xml:lang="en-US">Floor Location</Label>
+      </Rubric>
+      <Rubric id="d1e110850" kind="preferred">
+         <Label xml:lang="en-US">Floor Location</Label>
+      </Rubric>
+   </Class>
+   <Class code="ROOM" kind="concept">
+      <Meta name="internalId" value="16102"/>
+      <SuperClass code="_PlaceEntityType">
+         <Rubric id="d1e109061" kind="preferred">
+            <Label xml:lang="en-US">PlaceEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110861" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The location of a room</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e110879" kind="short">
+         <Label xml:lang="en-US">Room Location</Label>
+      </Rubric>
+      <Rubric id="d1e110879" kind="preferred">
+         <Label xml:lang="en-US">Room Location</Label>
+      </Rubric>
+   </Class>
+   <Class code="WING" kind="concept">
+      <Meta name="internalId" value="17703"/>
+      <SuperClass code="_PlaceEntityType">
+         <Rubric id="d1e109061" kind="preferred">
+            <Label xml:lang="en-US">PlaceEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110890" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The location of a wing of a building (e.g. East Wing). The same room number for the same floor number can be distinguished by wing number in some situations</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e110908" kind="short">
+         <Label xml:lang="en-US">Wing Location</Label>
+      </Rubric>
+      <Rubric id="d1e110908" kind="preferred">
+         <Label xml:lang="en-US">Wing Location</Label>
+      </Rubric>
+   </Class>
+   <Class code="PRAC" kind="concept">
+      <Meta name="internalId" value="21439"/>
+      <SuperClass code="_ResourceGroupEntityType">
+         <Rubric id="d1e109100" kind="preferred">
+            <Label xml:lang="en-US">ResourceGroupEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e110922" kind="short">
+         <Label xml:lang="en-US">PractitionerGroup</Label>
+      </Rubric>
+      <Rubric id="d1e110922" kind="preferred">
+         <Label xml:lang="en-US">PractitionerGroup</Label>
+      </Rubric>
+   </Class>
+   <Class code="_IndividualPackageEntityType" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21062"/>
+      <SuperClass code="_RigidContainerEntityType">
+         <Rubric id="d1e113133" kind="preferred">
+            <Label xml:lang="en-US">RigidContainerEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="AMP" subCount="0">
+         <Rubric id="d1e109429" kind="preferred">
+            <Label xml:lang="en-US">Ampule</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="MINIM" subCount="0">
+         <Rubric id="d1e109459" kind="preferred">
+            <Label xml:lang="en-US">Minim</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="NEBAMP" subCount="0">
+         <Rubric id="d1e109488" kind="preferred">
+            <Label xml:lang="en-US">Nebuamp</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="OVUL" subCount="0">
+         <Rubric id="d1e109517" kind="preferred">
+            <Label xml:lang="en-US">Ovule</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e110933" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Container intended to contain sufficient material for only one use.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e110951" kind="short">
+         <Label xml:lang="en-US">IndividualPackageEntityType</Label>
+      </Rubric>
+      <Rubric id="d1e110951" kind="preferred">
+         <Label xml:lang="en-US">IndividualPackageEntityType</Label>
+      </Rubric>
+   </Class>
+   <Class code="_MultiUseContainerEntityType" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21068"/>
+      <SuperClass code="_RigidContainerEntityType">
+         <Rubric id="d1e113133" kind="preferred">
+            <Label xml:lang="en-US">RigidContainerEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="BOT" subCount="4">
+         <Rubric id="d1e109984" kind="preferred">
+            <Label xml:lang="en-US">Bottle</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="BOX" subCount="0">
+         <Rubric id="d1e110014" kind="preferred">
+            <Label xml:lang="en-US">Box</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="CAN" subCount="0">
+         <Rubric id="d1e110043" kind="preferred">
+            <Label xml:lang="en-US">Can</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="CART" subCount="0">
+         <Rubric id="d1e110072" kind="preferred">
+            <Label xml:lang="en-US">Cartridge</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="CNSTR" subCount="0">
+         <Rubric id="d1e110101" kind="preferred">
+            <Label xml:lang="en-US">Canister</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="JAR" subCount="0">
+         <Rubric id="d1e110130" kind="preferred">
+            <Label xml:lang="en-US">Jar</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="JUG" subCount="0">
+         <Rubric id="d1e110159" kind="preferred">
+            <Label xml:lang="en-US">Jug</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="TIN" subCount="0">
+         <Rubric id="d1e110189" kind="preferred">
+            <Label xml:lang="en-US">Tin</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="TUB" subCount="0">
+         <Rubric id="d1e110218" kind="preferred">
+            <Label xml:lang="en-US">Tub</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="TUBE" subCount="0">
+         <Rubric id="d1e110247" kind="preferred">
+            <Label xml:lang="en-US">Tube</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="VIAL" subCount="0">
+         <Rubric id="d1e110276" kind="preferred">
+            <Label xml:lang="en-US">Vial</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e110963" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A container intended to contain sufficient material for more than one use. (I.e. Material is intended to be removed from the container at more than one discrete time period.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e110986" kind="short">
+         <Label xml:lang="en-US">MultiUseContainerEntityType</Label>
+      </Rubric>
+      <Rubric id="d1e110986" kind="preferred">
+         <Label xml:lang="en-US">MultiUseContainerEntityType</Label>
+      </Rubric>
+   </Class>
+   <Class code="BLSTRPK" kind="concept">
+      <Meta name="internalId" value="16171"/>
+      <SuperClass code="_RigidContainerEntityType">
+         <Rubric id="d1e113133" kind="preferred">
+            <Label xml:lang="en-US">RigidContainerEntityType</Label>
+         </Rubric>
+      </SuperClass>
+      <SuperClass code="COMPPKG">
+         <Rubric id="d1e113163" kind="preferred">
+            <Label xml:lang="en-US">Compliance Package</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="CARD" subCount="0">
+         <Rubric id="d1e112626" kind="preferred">
+            <Label xml:lang="en-US">Card</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e110998" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A bubblepack. Medications sealed individually, separated into doses.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111021" kind="short">
+         <Label xml:lang="en-US">Blister Pack</Label>
+      </Rubric>
+      <Rubric id="d1e111021" kind="preferred">
+         <Label xml:lang="en-US">Blister Pack</Label>
+      </Rubric>
+   </Class>
+   <Class code="ACDA" kind="concept">
+      <Meta name="internalId" value="16047"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111033" kind="definition">
+         <Label xml:lang="en-US">
+            <p>ACD Solution A of trisodium citrate, 22.0g/L; citric acid, 8.0 g/L; and dextrose 24.5 g/L. Used in Blood banking and histocompatibilty testing</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111051" kind="short">
+         <Label xml:lang="en-US">ACD Solution A</Label>
+      </Rubric>
+      <Rubric id="d1e111051" kind="preferred">
+         <Label xml:lang="en-US">ACD Solution A</Label>
+      </Rubric>
+   </Class>
+   <Class code="ACDB" kind="concept">
+      <Meta name="internalId" value="16048"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111062" kind="definition">
+         <Label xml:lang="en-US">
+            <p>ACD Solution B of trisodium citrate, 13.2g/L; citric acid, 4.8 g/L; and dextrose 14.7 g/L. Used in Blood banking and histocompatibilty testing.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111080" kind="short">
+         <Label xml:lang="en-US">ACD Solution B</Label>
+      </Rubric>
+      <Rubric id="d1e111080" kind="preferred">
+         <Label xml:lang="en-US">ACD Solution B</Label>
+      </Rubric>
+   </Class>
+   <Class code="ACET" kind="concept">
+      <Meta name="internalId" value="16049"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111091" kind="definition">
+         <Label xml:lang="en-US">
+            <p>50% V/V acetic acid in water. Used as a urine preservative</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111109" kind="short">
+         <Label xml:lang="en-US">Acetic Acid</Label>
+      </Rubric>
+      <Rubric id="d1e111109" kind="preferred">
+         <Label xml:lang="en-US">Acetic Acid</Label>
+      </Rubric>
+   </Class>
+   <Class code="AMIES" kind="concept">
+      <Meta name="internalId" value="16050"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111120" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Sodium Chloride 3.0g, Potassium Chloride 0.2g, Calcium Chloride 0.1g, Magnesium Chloride 0.1g, Monopotassium Phosphate 0.2g, Disodium Phosphate 1.15g, Sodium Thiogly collate 1.0g, Distilled Water 1 liter</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111138" kind="short">
+         <Label xml:lang="en-US">Amies transport medium</Label>
+      </Rubric>
+      <Rubric id="d1e111138" kind="preferred">
+         <Label xml:lang="en-US">Amies transport medium</Label>
+      </Rubric>
+   </Class>
+   <Class code="BACTM" kind="concept">
+      <Meta name="internalId" value="16052"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111150" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Any medium used to maintain bacterial viability (e.g. Stuart's, Cary-Blair, Amies)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111168" kind="short">
+         <Label xml:lang="en-US">Bacterial Transport medium</Label>
+      </Rubric>
+      <Rubric id="d1e111168" kind="preferred">
+         <Label xml:lang="en-US">Bacterial Transport medium</Label>
+      </Rubric>
+   </Class>
+   <Class code="BF10" kind="concept">
+      <Meta name="internalId" value="16055"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111179" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Formaldehyde 4% w/v; methyl alcohol 1% w/v; phosphate buffering salts. Tissue preservative</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111197" kind="short">
+         <Label xml:lang="en-US">Buffered 10% formalin</Label>
+      </Rubric>
+      <Rubric id="d1e111197" kind="preferred">
+         <Label xml:lang="en-US">Buffered 10% formalin</Label>
+      </Rubric>
+   </Class>
+   <Class code="BOR" kind="concept">
+      <Meta name="internalId" value="16053"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111208" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Powdered boric acid (usually 10 g) added to 24-hour urine collections as a preservative.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111226" kind="short">
+         <Label xml:lang="en-US">Boric Acid</Label>
+      </Rubric>
+      <Rubric id="d1e111226" kind="preferred">
+         <Label xml:lang="en-US">Boric Acid</Label>
+      </Rubric>
+   </Class>
+   <Class code="BOUIN" kind="concept">
+      <Meta name="internalId" value="16054"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111237" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Picric acid, saturated aqueous solution (750.0 ml), 37-40% formalin (250.0 ml), glacial acetic acid (50.0 ml). Tissue preservative.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111255" kind="short">
+         <Label xml:lang="en-US">Bouin's solution</Label>
+      </Rubric>
+      <Rubric id="d1e111255" kind="preferred">
+         <Label xml:lang="en-US">Bouin's solution</Label>
+      </Rubric>
+   </Class>
+   <Class code="BSKM" kind="concept">
+      <Meta name="internalId" value="16057"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111266" kind="definition">
+         <Label xml:lang="en-US">
+            <p>50% skim milk in 0.01 M phosphate-buffered saline. Maintain virus viability</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111284" kind="short">
+         <Label xml:lang="en-US">Buffered skim milk</Label>
+      </Rubric>
+      <Rubric id="d1e111284" kind="preferred">
+         <Label xml:lang="en-US">Buffered skim milk</Label>
+      </Rubric>
+   </Class>
+   <Class code="C32" kind="concept">
+      <Meta name="internalId" value="16044"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111295" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A 3.2% solution of Sodium Citrate in water. Used as a blood preservative</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111313" kind="short">
+         <Label xml:lang="en-US">3.2% Citrate</Label>
+      </Rubric>
+      <Rubric id="d1e111313" kind="preferred">
+         <Label xml:lang="en-US">3.2% Citrate</Label>
+      </Rubric>
+   </Class>
+   <Class code="C38" kind="concept">
+      <Meta name="internalId" value="16045"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111325" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A 3.8% solution of Sodium Citrate in water. Used as a blood preservative</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111343" kind="short">
+         <Label xml:lang="en-US">3.8% Citrate</Label>
+      </Rubric>
+      <Rubric id="d1e111343" kind="preferred">
+         <Label xml:lang="en-US">3.8% Citrate</Label>
+      </Rubric>
+   </Class>
+   <Class code="CARS" kind="concept">
+      <Meta name="internalId" value="16058"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111354" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A modification of buffered 10% formalin used as a general tissue preservative.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111372" kind="short">
+         <Label xml:lang="en-US">Carson's Modified 10% formalin</Label>
+      </Rubric>
+      <Rubric id="d1e111372" kind="preferred">
+         <Label xml:lang="en-US">Carson's Modified 10% formalin</Label>
+      </Rubric>
+   </Class>
+   <Class code="CARY" kind="concept">
+      <Meta name="internalId" value="16059"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111383" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Sodium Thioglycollate 1.5 g, Disodium Hydrogen Phosphate 1.1 g, Sodium Chloride 5.0 g, Calcium Chloride 0.09 g, Agar 5.0 g, per Liter of Water</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111401" kind="short">
+         <Label xml:lang="en-US">Cary Blair Medium</Label>
+      </Rubric>
+      <Rubric id="d1e111401" kind="preferred">
+         <Label xml:lang="en-US">Cary Blair Medium</Label>
+      </Rubric>
+   </Class>
+   <Class code="CHLTM" kind="concept">
+      <Meta name="internalId" value="16060"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111412" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Any of a number of non-nutritive buffered media used to maintain Chlamydia viability during transportation to the laboratory</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111430" kind="short">
+         <Label xml:lang="en-US">Chlamydia transport medium</Label>
+      </Rubric>
+      <Rubric id="d1e111430" kind="preferred">
+         <Label xml:lang="en-US">Chlamydia transport medium</Label>
+      </Rubric>
+   </Class>
+   <Class code="CTAD" kind="concept">
+      <Meta name="internalId" value="16061"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111441" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Buffered tri-sodium citrate solution with theophylline, adenosine and dipyridamole</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111459" kind="short">
+         <Label xml:lang="en-US">CTAD</Label>
+      </Rubric>
+      <Rubric id="d1e111459" kind="preferred">
+         <Label xml:lang="en-US">CTAD</Label>
+      </Rubric>
+   </Class>
+   <Class code="EDTK15" kind="concept">
+      <Meta name="internalId" value="16077"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111470" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Potassium EDTA 15% solution in water</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111488" kind="short">
+         <Label xml:lang="en-US">Potassium/K EDTA 15%</Label>
+      </Rubric>
+      <Rubric id="d1e111488" kind="preferred">
+         <Label xml:lang="en-US">Potassium/K EDTA 15%</Label>
+      </Rubric>
+   </Class>
+   <Class code="EDTK75" kind="concept">
+      <Meta name="internalId" value="16078"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111500" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Potassium EDTA 7.5% solution in water</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111518" kind="short">
+         <Label xml:lang="en-US">Potassium/K EDTA 7.5%</Label>
+      </Rubric>
+      <Rubric id="d1e111518" kind="preferred">
+         <Label xml:lang="en-US">Potassium/K EDTA 7.5%</Label>
+      </Rubric>
+   </Class>
+   <Class code="EDTN" kind="concept">
+      <Meta name="internalId" value="16087"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111529" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Sodium fluoride and Disodium EDTA</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111547" kind="short">
+         <Label xml:lang="en-US">Sodium/Na EDTA</Label>
+      </Rubric>
+      <Rubric id="d1e111547" kind="preferred">
+         <Label xml:lang="en-US">Sodium/Na EDTA</Label>
+      </Rubric>
+   </Class>
+   <Class code="ENT" kind="concept">
+      <Meta name="internalId" value="16062"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111558" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Any of a number of non-nutritive buffered media used to maintain enteric bacterial viability during transportation to the laboratory</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111576" kind="short">
+         <Label xml:lang="en-US">Enteric bacteria transport medium</Label>
+      </Rubric>
+      <Rubric id="d1e111576" kind="preferred">
+         <Label xml:lang="en-US">Enteric bacteria transport medium</Label>
+      </Rubric>
+   </Class>
+   <Class code="F10" kind="concept">
+      <Meta name="internalId" value="16043"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111587" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A 10% v/v solution in water of formalin( a 37% solution of formaldehyde and water). Used for tissue preservation.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111605" kind="short">
+         <Label xml:lang="en-US">10% Formalin</Label>
+      </Rubric>
+      <Rubric id="d1e111605" kind="preferred">
+         <Label xml:lang="en-US">10% Formalin</Label>
+      </Rubric>
+   </Class>
+   <Class code="FDP" kind="concept">
+      <Meta name="internalId" value="16091"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111616" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Thrombin plus soybean trypsin inhibitor. For use in identifying fibrn degredation products.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111634" kind="short">
+         <Label xml:lang="en-US">Thrombin NIH; soybean trypsin inhibitor</Label>
+      </Rubric>
+      <Rubric id="d1e111634" kind="preferred">
+         <Label xml:lang="en-US">Thrombin NIH; soybean trypsin inhibitor</Label>
+      </Rubric>
+   </Class>
+   <Class code="FL10" kind="concept">
+      <Meta name="internalId" value="16085"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111645" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Sodium fluoride, 10mg added as a urine preservative.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111663" kind="short">
+         <Label xml:lang="en-US">Sodium Fluoride, 10mg</Label>
+      </Rubric>
+      <Rubric id="d1e111663" kind="preferred">
+         <Label xml:lang="en-US">Sodium Fluoride, 10mg</Label>
+      </Rubric>
+   </Class>
+   <Class code="FL100" kind="concept">
+      <Meta name="internalId" value="16084"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111675" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Sodium fluoride, 100mg added as a urine preservative.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111693" kind="short">
+         <Label xml:lang="en-US">Sodium Fluoride, 100mg</Label>
+      </Rubric>
+      <Rubric id="d1e111693" kind="preferred">
+         <Label xml:lang="en-US">Sodium Fluoride, 100mg</Label>
+      </Rubric>
+   </Class>
+   <Class code="HCL6" kind="concept">
+      <Meta name="internalId" value="16046"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111704" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A solution of HCl containing 6moles of hydrogen ion/L. Used as a Urine Preservative.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111722" kind="short">
+         <Label xml:lang="en-US">6N HCL</Label>
+      </Rubric>
+      <Rubric id="d1e111722" kind="preferred">
+         <Label xml:lang="en-US">6N HCL</Label>
+      </Rubric>
+   </Class>
+   <Class code="HEPA" kind="concept">
+      <Meta name="internalId" value="16051"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111733" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Ammonium heparin</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111751" kind="short">
+         <Label xml:lang="en-US">Ammonium heparin</Label>
+      </Rubric>
+      <Rubric id="d1e111751" kind="preferred">
+         <Label xml:lang="en-US">Ammonium heparin</Label>
+      </Rubric>
+   </Class>
+   <Class code="HEPL" kind="concept">
+      <Meta name="internalId" value="16066"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111762" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Lithium heparin salt</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111780" kind="short">
+         <Label xml:lang="en-US">Lithium/Li Heparin</Label>
+      </Rubric>
+      <Rubric id="d1e111780" kind="preferred">
+         <Label xml:lang="en-US">Lithium/Li Heparin</Label>
+      </Rubric>
+   </Class>
+   <Class code="HEPN" kind="concept">
+      <Meta name="internalId" value="16086"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111791" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Sodium heparin salt</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111809" kind="short">
+         <Label xml:lang="en-US">Sodium/Na Heparin</Label>
+      </Rubric>
+      <Rubric id="d1e111809" kind="preferred">
+         <Label xml:lang="en-US">Sodium/Na Heparin</Label>
+      </Rubric>
+   </Class>
+   <Class code="HNO3" kind="concept">
+      <Meta name="internalId" value="16072"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111820" kind="definition">
+         <Label xml:lang="en-US">
+            <p>6N Nitric acid used to preserve urine for heavy metal analysis.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111838" kind="short">
+         <Label xml:lang="en-US">Nitric Acid</Label>
+      </Rubric>
+      <Rubric id="d1e111838" kind="preferred">
+         <Label xml:lang="en-US">Nitric Acid</Label>
+      </Rubric>
+   </Class>
+   <Class code="JKM" kind="concept">
+      <Meta name="internalId" value="16063"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111850" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A transport medium formulated to maintain Bordetella pertussis viability.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111868" kind="short">
+         <Label xml:lang="en-US">Jones Kendrick Medium</Label>
+      </Rubric>
+      <Rubric id="d1e111868" kind="preferred">
+         <Label xml:lang="en-US">Jones Kendrick Medium</Label>
+      </Rubric>
+   </Class>
+   <Class code="KARN" kind="concept">
+      <Meta name="internalId" value="16064"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111879" kind="definition">
+         <Label xml:lang="en-US">
+            <p>5% Glutaraldehyde, 4% Formaldehyde in 0.08M buffer. Tissue preservation</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111897" kind="short">
+         <Label xml:lang="en-US">Karnovsky's fixative</Label>
+      </Rubric>
+      <Rubric id="d1e111897" kind="preferred">
+         <Label xml:lang="en-US">Karnovsky's fixative</Label>
+      </Rubric>
+   </Class>
+   <Class code="KOX" kind="concept">
+      <Meta name="internalId" value="16076"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111908" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Potassium oxalate and sodium fluoride in a 1.25:1 ratio</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111926" kind="short">
+         <Label xml:lang="en-US">Potassium Oxalate</Label>
+      </Rubric>
+      <Rubric id="d1e111926" kind="preferred">
+         <Label xml:lang="en-US">Potassium Oxalate</Label>
+      </Rubric>
+   </Class>
+   <Class code="LIA" kind="concept">
+      <Meta name="internalId" value="16065"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111937" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Iodoacetate lithium salt</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111955" kind="short">
+         <Label xml:lang="en-US">Lithium iodoacetate</Label>
+      </Rubric>
+      <Rubric id="d1e111955" kind="preferred">
+         <Label xml:lang="en-US">Lithium iodoacetate</Label>
+      </Rubric>
+   </Class>
+   <Class code="M4" kind="concept">
+      <Meta name="internalId" value="16067"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111966" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Modified Hank's balanced salt solution supplemented with bovine serum albumin, gelatin, sucrose and glutamic acid. It is buffered to pH 7.3+ or - 0.2 with HEPES buffer. Phenol red is used to indicate pH. Vancomycin, Amphotericin B and Colistin are used to</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e111984" kind="short">
+         <Label xml:lang="en-US">M4</Label>
+      </Rubric>
+      <Rubric id="d1e111984" kind="preferred">
+         <Label xml:lang="en-US">M4</Label>
+      </Rubric>
+   </Class>
+   <Class code="M4RT" kind="concept">
+      <Meta name="internalId" value="16068"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e111995" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Modified Hank's balanced salt solution supplemented with bovine serum albumin, gelatin, sucrose and glutamic acid. It is buffered to pH 7.3+ or - 0.2 with Hepes buffer. Phenol red is used to indicate pH. Gentamicin and amphotericin B are used to inhibit c</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112013" kind="short">
+         <Label xml:lang="en-US">M4-RT</Label>
+      </Rubric>
+      <Rubric id="d1e112013" kind="preferred">
+         <Label xml:lang="en-US">M4-RT</Label>
+      </Rubric>
+   </Class>
+   <Class code="M5" kind="concept">
+      <Meta name="internalId" value="16069"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112025" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Modified Hank's balanced salt solution supplemented with protein stabilizers, sucrose and glutamic acid. It is buffered to pH 7.3+ or - 0.2 with Hepes buffer. Phenol red is used to indicate pH. Vancomycin, Amphotericin B and Colistin are used to inhibit c</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112043" kind="short">
+         <Label xml:lang="en-US">M5</Label>
+      </Rubric>
+      <Rubric id="d1e112043" kind="preferred">
+         <Label xml:lang="en-US">M5</Label>
+      </Rubric>
+   </Class>
+   <Class code="MICHTM" kind="concept">
+      <Meta name="internalId" value="16070"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112054" kind="definition">
+         <Label xml:lang="en-US">
+            <p>1M potassium citrate, pH 7.0 2.5 ml, 0.1M magnesium sulfate 5.0 ml, 0.1M N-ethyl malemide 5.0 ml, dH2O 87.5 ml, ammonium sulfate 55gm. Preserve antigens for Immunofluorescence procedures</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112072" kind="short">
+         <Label xml:lang="en-US">Michel's transport medium</Label>
+      </Rubric>
+      <Rubric id="d1e112072" kind="preferred">
+         <Label xml:lang="en-US">Michel's transport medium</Label>
+      </Rubric>
+   </Class>
+   <Class code="MMDTM" kind="concept">
+      <Meta name="internalId" value="16071"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112083" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A buffered medium with ammonium sulfate added to preserve antigens for Immunofluorescence procedures</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112101" kind="short">
+         <Label xml:lang="en-US">MMD transport medium</Label>
+      </Rubric>
+      <Rubric id="d1e112101" kind="preferred">
+         <Label xml:lang="en-US">MMD transport medium</Label>
+      </Rubric>
+   </Class>
+   <Class code="NAF" kind="concept">
+      <Meta name="internalId" value="16083"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112112" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Sodium fluoride</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112130" kind="short">
+         <Label xml:lang="en-US">Sodium Fluoride</Label>
+      </Rubric>
+      <Rubric id="d1e112130" kind="preferred">
+         <Label xml:lang="en-US">Sodium Fluoride</Label>
+      </Rubric>
+   </Class>
+   <Class code="NONE" kind="concept">
+      <Meta name="internalId" value="16073"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112141" kind="definition">
+         <Label xml:lang="en-US">
+            <p>No additive. Specifically identifes the specimen as having no additives.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112159" kind="short">
+         <Label xml:lang="en-US">None</Label>
+      </Rubric>
+      <Rubric id="d1e112159" kind="preferred">
+         <Label xml:lang="en-US">None</Label>
+      </Rubric>
+   </Class>
+   <Class code="PAGE" kind="concept">
+      <Meta name="internalId" value="16074"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112170" kind="definition">
+         <Label xml:lang="en-US">
+            <p>0.12 g NaCl, 0.004 g MgSO, 0.004 g, CaCl, 0.142 g Na2HPO4 and 0.136 g KH2PO4 per liter of distilled water. Maintain Acanthaoemba viability.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112188" kind="short">
+         <Label xml:lang="en-US">Page's Saline</Label>
+      </Rubric>
+      <Rubric id="d1e112188" kind="preferred">
+         <Label xml:lang="en-US">Page's Saline</Label>
+      </Rubric>
+   </Class>
+   <Class code="PHENOL" kind="concept">
+      <Meta name="internalId" value="16075"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112200" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Phenol. Urine preservative</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112218" kind="short">
+         <Label xml:lang="en-US">Phenol</Label>
+      </Rubric>
+      <Rubric id="d1e112218" kind="preferred">
+         <Label xml:lang="en-US">Phenol</Label>
+      </Rubric>
+   </Class>
+   <Class code="PVA" kind="concept">
+      <Meta name="internalId" value="16079"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112229" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Polyvinyl alcohol</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112247" kind="short">
+         <Label xml:lang="en-US">Polyvinylalcohol</Label>
+      </Rubric>
+      <Rubric id="d1e112247" kind="preferred">
+         <Label xml:lang="en-US">Polyvinylalcohol</Label>
+      </Rubric>
+   </Class>
+   <Class code="RLM" kind="concept">
+      <Meta name="internalId" value="16080"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112258" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A transport medium formulated to maintain Bordetella pertussis viability.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112276" kind="short">
+         <Label xml:lang="en-US">Reagan Lowe Medium</Label>
+      </Rubric>
+      <Rubric id="d1e112276" kind="preferred">
+         <Label xml:lang="en-US">Reagan Lowe Medium</Label>
+      </Rubric>
+   </Class>
+   <Class code="SILICA" kind="concept">
+      <Meta name="internalId" value="16082"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112287" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Diatomaceous earth. For glucose determination blood samples</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112305" kind="short">
+         <Label xml:lang="en-US">Siliceous earth</Label>
+      </Rubric>
+      <Rubric id="d1e112305" kind="preferred">
+         <Label xml:lang="en-US">Siliceous earth</Label>
+      </Rubric>
+   </Class>
+   <Class code="SPS" kind="concept">
+      <Meta name="internalId" value="16088"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112316" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Sodium polyanethol sulfonate in saline. Anticomplementary and antiphagocytic properties. Used in blood culture collection.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112334" kind="short">
+         <Label xml:lang="en-US">Sodium polyanethol sulfonate 0.35% in 0.85% sodium chloride</Label>
+      </Rubric>
+      <Rubric id="d1e112334" kind="preferred">
+         <Label xml:lang="en-US">Sodium polyanethol sulfonate 0.35% in 0.85% sodium chloride</Label>
+      </Rubric>
+   </Class>
+   <Class code="SST" kind="concept">
+      <Meta name="internalId" value="16081"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112345" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Polymer separator gel with clot activator</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112363" kind="short">
+         <Label xml:lang="en-US">Serum Separator Tube</Label>
+      </Rubric>
+      <Rubric id="d1e112363" kind="preferred">
+         <Label xml:lang="en-US">Serum Separator Tube</Label>
+      </Rubric>
+   </Class>
+   <Class code="STUTM" kind="concept">
+      <Meta name="internalId" value="16089"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112375" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Sodium Glycerophosphate 10.0g, Calcium Chloride 0.1g, Mercaptoacetic Acid 1.0ml, Distilled Water 1 liter</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112393" kind="short">
+         <Label xml:lang="en-US">Stuart transport medium</Label>
+      </Rubric>
+      <Rubric id="d1e112393" kind="preferred">
+         <Label xml:lang="en-US">Stuart transport medium</Label>
+      </Rubric>
+   </Class>
+   <Class code="THROM" kind="concept">
+      <Meta name="internalId" value="16090"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112404" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Thrombin. Accelerates clotting.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112422" kind="short">
+         <Label xml:lang="en-US">Thrombin</Label>
+      </Rubric>
+      <Rubric id="d1e112422" kind="preferred">
+         <Label xml:lang="en-US">Thrombin</Label>
+      </Rubric>
+   </Class>
+   <Class code="THYMOL" kind="concept">
+      <Meta name="internalId" value="16092"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112433" kind="definition">
+         <Label xml:lang="en-US">
+            <p>2-Isopropyl-5-methyl phenol. A preservative for 24 Hr Urine samples</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112451" kind="short">
+         <Label xml:lang="en-US">Thymol</Label>
+      </Rubric>
+      <Rubric id="d1e112451" kind="preferred">
+         <Label xml:lang="en-US">Thymol</Label>
+      </Rubric>
+   </Class>
+   <Class code="THYO" kind="concept">
+      <Meta name="internalId" value="16093"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112462" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A nutritive medium with a reducing agent (sodium thioglycolate) which, due to a chemical reaction, removes oxygen from the broth.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112480" kind="short">
+         <Label xml:lang="en-US">Thyoglycolate broth</Label>
+      </Rubric>
+      <Rubric id="d1e112480" kind="preferred">
+         <Label xml:lang="en-US">Thyoglycolate broth</Label>
+      </Rubric>
+   </Class>
+   <Class code="TOLU" kind="concept">
+      <Meta name="internalId" value="16094"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112491" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Also known as Methylbenzene; Toluol; Phenylmethane. A preservative for 24 Hr Urine samples</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112509" kind="short">
+         <Label xml:lang="en-US">Toluene</Label>
+      </Rubric>
+      <Rubric id="d1e112509" kind="preferred">
+         <Label xml:lang="en-US">Toluene</Label>
+      </Rubric>
+   </Class>
+   <Class code="URETM" kind="concept">
+      <Meta name="internalId" value="16095"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112520" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A buffered salt solution with antifungal agents added for the collection and transport of Ureaplasma specimens.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112538" kind="short">
+         <Label xml:lang="en-US">Ureaplasma transport medium</Label>
+      </Rubric>
+      <Rubric id="d1e112538" kind="preferred">
+         <Label xml:lang="en-US">Ureaplasma transport medium</Label>
+      </Rubric>
+   </Class>
+   <Class code="VIRTM" kind="concept">
+      <Meta name="internalId" value="16096"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112550" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Sucrose 74.6g, Potassium hydrogenphosphate 0.52g, L-glutamic acid 0.72g, Bovine serum albumin 5.0g, Gentamicin 50mg, Potassium dihydrogenphosphate 1.25g, L-15 medium 9.9L, Water to 10L. Maintain Virus viability.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112568" kind="short">
+         <Label xml:lang="en-US">Viral Transport medium</Label>
+      </Rubric>
+      <Rubric id="d1e112568" kind="preferred">
+         <Label xml:lang="en-US">Viral Transport medium</Label>
+      </Rubric>
+   </Class>
+   <Class code="WEST" kind="concept">
+      <Meta name="internalId" value="16056"/>
+      <SuperClass code="_SpecimenAdditiveEntity">
+         <Rubric id="d1e109703" kind="preferred">
+            <Label xml:lang="en-US">SpecimenAdditiveEntity</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112579" kind="definition">
+         <Label xml:lang="en-US">
+            <p>3.8% Citrate buffered to a pH of 5.5 for Westergren Sedimentation Rate</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112597" kind="short">
+         <Label xml:lang="en-US">Buffered Citrate</Label>
+      </Rubric>
+      <Rubric id="d1e112597" kind="preferred">
+         <Label xml:lang="en-US">Buffered Citrate</Label>
+      </Rubric>
+   </Class>
+   <Class code="CARD" kind="concept">
+      <Meta name="internalId" value="16172"/>
+      <SuperClass code="BLSTRPK">
+         <Rubric id="d1e111021" kind="preferred">
+            <Label xml:lang="en-US">Blister Pack</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112608" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A bubble pack card. Multiple individual/separated doses.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112626" kind="short">
+         <Label xml:lang="en-US">Card</Label>
+      </Rubric>
+      <Rubric id="d1e112626" kind="preferred">
+         <Label xml:lang="en-US">Card</Label>
+      </Rubric>
+   </Class>
+   <Class code="BOTA" kind="concept">
+      <Meta name="internalId" value="16156"/>
+      <SuperClass code="BOT">
+         <Rubric id="d1e109984" kind="preferred">
+            <Label xml:lang="en-US">Bottle</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112637" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A bottle of yellow to brown color. Used to store light-sensitive materials</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112655" kind="short">
+         <Label xml:lang="en-US">Amber Bottle</Label>
+      </Rubric>
+      <Rubric id="d1e112655" kind="preferred">
+         <Label xml:lang="en-US">Amber Bottle</Label>
+      </Rubric>
+   </Class>
+   <Class code="BOTD" kind="concept">
+      <Meta name="internalId" value="16157"/>
+      <SuperClass code="BOT">
+         <Rubric id="d1e109984" kind="preferred">
+            <Label xml:lang="en-US">Bottle</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112666" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A bottle with a cap designed to release the contained liquid in droplets of a specific size.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112684" kind="short">
+         <Label xml:lang="en-US">Dropper Bottle</Label>
+      </Rubric>
+      <Rubric id="d1e112684" kind="preferred">
+         <Label xml:lang="en-US">Dropper Bottle</Label>
+      </Rubric>
+   </Class>
+   <Class code="BOTG" kind="concept">
+      <Meta name="internalId" value="16158"/>
+      <SuperClass code="BOT">
+         <Rubric id="d1e109984" kind="preferred">
+            <Label xml:lang="en-US">Bottle</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112695" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A bottle made of glass</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112713" kind="short">
+         <Label xml:lang="en-US">Glass Bottle</Label>
+      </Rubric>
+      <Rubric id="d1e112713" kind="preferred">
+         <Label xml:lang="en-US">Glass Bottle</Label>
+      </Rubric>
+   </Class>
+   <Class code="BOTP" kind="concept">
+      <Meta name="internalId" value="16159"/>
+      <SuperClass code="BOT">
+         <Rubric id="d1e109984" kind="preferred">
+            <Label xml:lang="en-US">Bottle</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="BOTPLY" subCount="0">
+         <Rubric id="d1e112772" kind="preferred">
+            <Label xml:lang="en-US">Polyethylene Bottle</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e112725" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A bottle made of plastic</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112743" kind="short">
+         <Label xml:lang="en-US">Plastic Bottle</Label>
+      </Rubric>
+      <Rubric id="d1e112743" kind="preferred">
+         <Label xml:lang="en-US">Plastic Bottle</Label>
+      </Rubric>
+   </Class>
+   <Class code="BOTPLY" kind="concept">
+      <Meta name="internalId" value="16160"/>
+      <SuperClass code="BOTP">
+         <Rubric id="d1e112743" kind="preferred">
+            <Label xml:lang="en-US">Plastic Bottle</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112754" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A bottle made of polyethylene</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112772" kind="short">
+         <Label xml:lang="en-US">Polyethylene Bottle</Label>
+      </Rubric>
+      <Rubric id="d1e112772" kind="preferred">
+         <Label xml:lang="en-US">Polyethylene Bottle</Label>
+      </Rubric>
+   </Class>
+   <Class code="DIALPK" kind="concept">
+      <Meta name="internalId" value="16173"/>
+      <SuperClass code="COMPPKG">
+         <Rubric id="d1e113163" kind="preferred">
+            <Label xml:lang="en-US">Compliance Package</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112783" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Rotatable dispenser. Eg. Birth control package.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112801" kind="short">
+         <Label xml:lang="en-US">Dial Pack</Label>
+      </Rubric>
+      <Rubric id="d1e112801" kind="preferred">
+         <Label xml:lang="en-US">Dial Pack</Label>
+      </Rubric>
+   </Class>
+   <Class code="DISK" kind="concept">
+      <Meta name="internalId" value="16174"/>
+      <SuperClass code="COMPPKG">
+         <Rubric id="d1e113163" kind="preferred">
+            <Label xml:lang="en-US">Compliance Package</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112812" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Object that is thin, flat, and circular. Doses of medication often contained in bubbles on the disk.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112830" kind="short">
+         <Label xml:lang="en-US">Disk</Label>
+      </Rubric>
+      <Rubric id="d1e112830" kind="preferred">
+         <Label xml:lang="en-US">Disk</Label>
+      </Rubric>
+   </Class>
+   <Class code="DOSET" kind="concept">
+      <Meta name="internalId" value="16175"/>
+      <SuperClass code="COMPPKG">
+         <Rubric id="d1e113163" kind="preferred">
+            <Label xml:lang="en-US">Compliance Package</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112841" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Special packaging that will help patients take their medications on a regular basis.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112859" kind="short">
+         <Label xml:lang="en-US">Dosette</Label>
+      </Rubric>
+      <Rubric id="d1e112859" kind="preferred">
+         <Label xml:lang="en-US">Dosette</Label>
+      </Rubric>
+   </Class>
+   <Class code="STRIP" kind="concept">
+      <Meta name="internalId" value="17849"/>
+      <SuperClass code="COMPPKG">
+         <Rubric id="d1e113163" kind="preferred">
+            <Label xml:lang="en-US">Compliance Package</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112870" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A continuous strip of plastic sectioned into individual pouches, each one containing the quantity of 1 or more medications intended to be administered at a specific time</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112888" kind="short">
+         <Label xml:lang="en-US">Strip</Label>
+      </Rubric>
+      <Rubric id="d1e112888" kind="preferred">
+         <Label xml:lang="en-US">Strip</Label>
+      </Rubric>
+   </Class>
+   <Class code="DSKS" kind="concept">
+      <Meta name="internalId" value="16199"/>
+      <SuperClass code="INH">
+         <Rubric id="d1e109245" kind="preferred">
+            <Label xml:lang="en-US">Inhaler</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112900" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The device used to inhale the doses of medication contained in the disk form.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112918" kind="short">
+         <Label xml:lang="en-US">Diskus</Label>
+      </Rubric>
+      <Rubric id="d1e112918" kind="preferred">
+         <Label xml:lang="en-US">Diskus</Label>
+      </Rubric>
+   </Class>
+   <Class code="DSKUNH" kind="concept">
+      <Meta name="internalId" value="16198"/>
+      <SuperClass code="INH">
+         <Rubric id="d1e109245" kind="preferred">
+            <Label xml:lang="en-US">Inhaler</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112929" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The device used to inhale the doses of medication contained in the disk form.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112947" kind="short">
+         <Label xml:lang="en-US">Diskhaler</Label>
+      </Rubric>
+      <Rubric id="d1e112947" kind="preferred">
+         <Label xml:lang="en-US">Diskhaler</Label>
+      </Rubric>
+   </Class>
+   <Class code="TRBINH" kind="concept">
+      <Meta name="internalId" value="16197"/>
+      <SuperClass code="INH">
+         <Rubric id="d1e109245" kind="preferred">
+            <Label xml:lang="en-US">Inhaler</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112958" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Asthma medication delivery device.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e112976" kind="short">
+         <Label xml:lang="en-US">Turbuhaler</Label>
+      </Rubric>
+      <Rubric id="d1e112976" kind="preferred">
+         <Label xml:lang="en-US">Turbuhaler</Label>
+      </Rubric>
+   </Class>
+   <Class code="SYSTM" kind="concept">
+      <Meta name="internalId" value="16146"/>
+      <SuperClass code="KIT">
+         <Rubric id="d1e113192" kind="preferred">
+            <Label xml:lang="en-US">Kit</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e112987" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A kit in which the components are interconnected.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113005" kind="short">
+         <Label xml:lang="en-US">System</Label>
+      </Rubric>
+      <Rubric id="d1e113005" kind="preferred">
+         <Label xml:lang="en-US">System</Label>
+      </Rubric>
+   </Class>
+   <Class code="IALINE" kind="concept">
+      <Meta name="internalId" value="16203"/>
+      <SuperClass code="LINE">
+         <Rubric id="d1e109158" kind="preferred">
+            <Label xml:lang="en-US">Line</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e113016" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A line used to administer a substance into an artery</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113034" kind="short">
+         <Label xml:lang="en-US">Intra-arterial Line</Label>
+      </Rubric>
+      <Rubric id="d1e113034" kind="preferred">
+         <Label xml:lang="en-US">Intra-arterial Line</Label>
+      </Rubric>
+   </Class>
+   <Class code="IVLINE" kind="concept">
+      <Meta name="internalId" value="16202"/>
+      <SuperClass code="LINE">
+         <Rubric id="d1e109158" kind="preferred">
+            <Label xml:lang="en-US">Line</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e113045" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A line used to administer a substance into a vein</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113063" kind="short">
+         <Label xml:lang="en-US">Intraveneous Line</Label>
+      </Rubric>
+      <Rubric id="d1e113063" kind="preferred">
+         <Label xml:lang="en-US">Intraveneous Line</Label>
+      </Rubric>
+   </Class>
+   <Class code="_NonRigidContainerEntityType" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21069"/>
+      <SuperClass code="PKG">
+         <Rubric id="d1e109368" kind="preferred">
+            <Label xml:lang="en-US">Package</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="BAG" subCount="0">
+         <Rubric id="d1e110546" kind="preferred">
+            <Label xml:lang="en-US">Bag</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PACKT" subCount="0">
+         <Rubric id="d1e110575" kind="preferred">
+            <Label xml:lang="en-US">Packet</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PCH" subCount="0">
+         <Rubric id="d1e110604" kind="preferred">
+            <Label xml:lang="en-US">Pouch</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SACH" subCount="0">
+         <Rubric id="d1e110634" kind="preferred">
+            <Label xml:lang="en-US">Sachet</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e113075" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A container having dimensions that adjust somewhat based on the amount and shape of the material placed within it.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113098" kind="short">
+         <Label xml:lang="en-US">NonRigidContainerEntityType</Label>
+      </Rubric>
+      <Rubric id="d1e113098" kind="preferred">
+         <Label xml:lang="en-US">NonRigidContainerEntityType</Label>
+      </Rubric>
+   </Class>
+   <Class code="_RigidContainerEntityType" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21071"/>
+      <SuperClass code="PKG">
+         <Rubric id="d1e109368" kind="preferred">
+            <Label xml:lang="en-US">Package</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="_IndividualPackageEntityType" subCount="4">
+         <Rubric id="d1e110951" kind="preferred">
+            <Label xml:lang="en-US">IndividualPackageEntityType</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="_MultiUseContainerEntityType" subCount="11">
+         <Rubric id="d1e110986" kind="preferred">
+            <Label xml:lang="en-US">MultiUseContainerEntityType</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="BLSTRPK" subCount="1">
+         <Rubric id="d1e111021" kind="preferred">
+            <Label xml:lang="en-US">Blister Pack</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e113110" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A container having a fixed and inflexible dimensions and volume</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113133" kind="short">
+         <Label xml:lang="en-US">RigidContainerEntityType</Label>
+      </Rubric>
+      <Rubric id="d1e113133" kind="preferred">
+         <Label xml:lang="en-US">RigidContainerEntityType</Label>
+      </Rubric>
+   </Class>
+   <Class code="COMPPKG" kind="concept">
+      <Meta name="internalId" value="16170"/>
+      <SuperClass code="PKG">
+         <Rubric id="d1e109368" kind="preferred">
+            <Label xml:lang="en-US">Package</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="BLSTRPK" subCount="1">
+         <Rubric id="d1e111021" kind="preferred">
+            <Label xml:lang="en-US">Blister Pack</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="DIALPK" subCount="0">
+         <Rubric id="d1e112801" kind="preferred">
+            <Label xml:lang="en-US">Dial Pack</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="DISK" subCount="0">
+         <Rubric id="d1e112830" kind="preferred">
+            <Label xml:lang="en-US">Disk</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="DOSET" subCount="0">
+         <Rubric id="d1e112859" kind="preferred">
+            <Label xml:lang="en-US">Dosette</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="STRIP" subCount="0">
+         <Rubric id="d1e112888" kind="preferred">
+            <Label xml:lang="en-US">Strip</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e113145" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A container intended to contain sufficient material for more than one use, but grouped or organized to provide individual access to sufficient material for a single use. Often used to ensure that the proper type and amount of material is consumed/expended for each use.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113163" kind="short">
+         <Label xml:lang="en-US">Compliance Package</Label>
+      </Rubric>
+      <Rubric id="d1e113163" kind="preferred">
+         <Label xml:lang="en-US">Compliance Package</Label>
+      </Rubric>
+   </Class>
+   <Class code="KIT" kind="concept">
+      <Meta name="internalId" value="16145"/>
+      <SuperClass code="PKG">
+         <Rubric id="d1e109368" kind="preferred">
+            <Label xml:lang="en-US">Package</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="SYSTM" subCount="0">
+         <Rubric id="d1e113005" kind="preferred">
+            <Label xml:lang="en-US">System</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e113174" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A container for a diverse collection of products intended to be used together for some purpose (e.g. Medicinal kits often contain a syringe, a needle and the injectable medication).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e113192" kind="short">
+         <Label xml:lang="en-US">Kit</Label>
+      </Rubric>
+      <Rubric id="d1e113192" kind="preferred">
+         <Label xml:lang="en-US">Kit</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

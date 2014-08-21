@@ -1,0 +1,1735 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="134"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.90"/>
+   <Title name="ParticipationType" date="2012-08-02" version="1.000"/>
+   <Class code="rootClass">
+      <SubClass subCount="10" code="PART" kind="concept">
+         <Rubric id="d1e181569" kind="preferred">
+            <Label xml:lang="en-US">Participation</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">ParticipationType</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl"/>
+      </Rubric>
+   </Class>
+   <Class code="PART" kind="concept">
+      <Meta name="internalId" value="21573"/>
+      <SubClass code="_ParticipationAncillary" subCount="7">
+         <Rubric id="d1e183313" kind="preferred">
+            <Label xml:lang="en-US">ParticipationAncillary</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="_ParticipationInformationGenerator" subCount="4">
+         <Rubric id="d1e183355" kind="preferred">
+            <Label xml:lang="en-US">ParticipationInformationGenerator</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="CST" subCount="0">
+         <Rubric id="d1e183397" kind="preferred">
+            <Label xml:lang="en-US">custodian</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="DIR" subCount="10">
+         <Rubric id="d1e183437" kind="preferred">
+            <Label xml:lang="en-US">direct target</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="IND" subCount="7">
+         <Rubric id="d1e183478" kind="preferred">
+            <Label xml:lang="en-US">indirect target</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="IRCP" subCount="5">
+         <Rubric id="d1e183520" kind="preferred">
+            <Label xml:lang="en-US">information recipient</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LOC" subCount="5">
+         <Rubric id="d1e183560" kind="preferred">
+            <Label xml:lang="en-US">location</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PRF" subCount="3">
+         <Rubric id="d1e183615" kind="preferred">
+            <Label xml:lang="en-US">performer</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RESP" subCount="0">
+         <Rubric id="d1e183663" kind="preferred">
+            <Label xml:lang="en-US">responsible party</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="VRF" subCount="2">
+         <Rubric id="d1e183705" kind="preferred">
+            <Label xml:lang="en-US">verifier</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e181556" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Indicates that the target of the participation is involved in some manner in the act, but does not qualify how.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e181569" kind="short">
+         <Label xml:lang="en-US">Participation</Label>
+      </Rubric>
+      <Rubric id="d1e181569" kind="preferred">
+         <Label xml:lang="en-US">Participation</Label>
+      </Rubric>
+   </Class>
+   <Class code="ADM" kind="concept">
+      <Meta name="internalId" value="16845"/>
+      <Meta name="Name:Act:participation:Participation" value="admitter"/>
+      <Meta name="Sort:Act:participation:Participation" value="FA_______"/>
+      <Meta name="Name:Role:participation:Participation" value="admission"/>
+      <Meta name="Sort:Role:participation:Participation" value="FA_______"/>
+      <SuperClass code="_ParticipationAncillary">
+         <Rubric id="d1e183313" kind="preferred">
+            <Label xml:lang="en-US">ParticipationAncillary</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e181580" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The practitioner who is responsible for admitting a patient to a patient encounter.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e181607" kind="short">
+         <Label xml:lang="en-US">admitter</Label>
+      </Rubric>
+      <Rubric id="d1e181607" kind="preferred">
+         <Label xml:lang="en-US">admitter</Label>
+      </Rubric>
+   </Class>
+   <Class code="ATND" kind="concept">
+      <Meta name="internalId" value="16843"/>
+      <Meta name="Name:Act:participation:Participation" value="attender"/>
+      <Meta name="Sort:Act:participation:Participation" value="FB_______"/>
+      <Meta name="Name:Role:participation:Participation" value="attenderOf"/>
+      <Meta name="Sort:Role:participation:Participation" value="FB_______"/>
+      <SuperClass code="_ParticipationAncillary">
+         <Rubric id="d1e183313" kind="preferred">
+            <Label xml:lang="en-US">ParticipationAncillary</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e181618" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The practitioner that has responsibility for overseeing a patient's care during a patient encounter.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e181645" kind="short">
+         <Label xml:lang="en-US">attender</Label>
+      </Rubric>
+      <Rubric id="d1e181645" kind="preferred">
+         <Label xml:lang="en-US">attender</Label>
+      </Rubric>
+   </Class>
+   <Class code="CALLBCK" kind="concept">
+      <Meta name="internalId" value="21385"/>
+      <Meta name="Name:Act:participation:Participation" value="callBackContact"/>
+      <Meta name="Sort:Act:participation:Participation" value="FF_______"/>
+      <Meta name="Name:Role:participation:Participation" value="callBackAvailability"/>
+      <Meta name="Sort:Role:participation:Participation" value="FF_______"/>
+      <SuperClass code="_ParticipationAncillary">
+         <Rubric id="d1e183313" kind="preferred">
+            <Label xml:lang="en-US">ParticipationAncillary</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e181656" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A person or organization who should be contacted for follow-up questions about the act in place of the author.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e181683" kind="short">
+         <Label xml:lang="en-US">callback contact</Label>
+      </Rubric>
+      <Rubric id="d1e181683" kind="preferred">
+         <Label xml:lang="en-US">callback contact</Label>
+      </Rubric>
+   </Class>
+   <Class code="CON" kind="concept">
+      <Meta name="internalId" value="10256"/>
+      <Meta name="Name:Act:participation:Participation" value="consultant"/>
+      <Meta name="Sort:Act:participation:Participation" value="FE_______"/>
+      <Meta name="Name:Role:participation:Participation" value="consultation"/>
+      <Meta name="Sort:Role:participation:Participation" value="FE_______"/>
+      <SuperClass code="_ParticipationAncillary">
+         <Rubric id="d1e183313" kind="preferred">
+            <Label xml:lang="en-US">ParticipationAncillary</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e181694" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An advisor participating in the service by performing evaluations and making recommendations.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e181730" kind="short">
+         <Label xml:lang="en-US">consultant</Label>
+      </Rubric>
+      <Rubric id="d1e181730" kind="preferred">
+         <Label xml:lang="en-US">consultant</Label>
+      </Rubric>
+   </Class>
+   <Class code="DIS" kind="concept">
+      <Meta name="internalId" value="16844"/>
+      <Meta name="Name:Act:participation:Participation" value="discharger"/>
+      <Meta name="Sort:Act:participation:Participation" value="FC_______"/>
+      <Meta name="Name:Role:participation:Participation" value="discharge"/>
+      <Meta name="Sort:Role:participation:Participation" value="FC_______"/>
+      <SuperClass code="_ParticipationAncillary">
+         <Rubric id="d1e183313" kind="preferred">
+            <Label xml:lang="en-US">ParticipationAncillary</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e181741" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The practitioner who is responsible for the discharge of a patient from a patient encounter.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e181768" kind="short">
+         <Label xml:lang="en-US">discharger</Label>
+      </Rubric>
+      <Rubric id="d1e181768" kind="preferred">
+         <Label xml:lang="en-US">discharger</Label>
+      </Rubric>
+   </Class>
+   <Class code="ESC" kind="concept">
+      <Meta name="internalId" value="10250"/>
+      <Meta name="Name:Act:participation:Participation" value="escort"/>
+      <Meta name="Sort:Act:participation:Participation" value="FG_______"/>
+      <Meta name="Name:Role:participation:Participation" value="escort"/>
+      <Meta name="Sort:Role:participation:Participation" value="FG_______"/>
+      <SuperClass code="_ParticipationAncillary">
+         <Rubric id="d1e183313" kind="preferred">
+            <Label xml:lang="en-US">ParticipationAncillary</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e181780" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Only with Transportation services. A person who escorts the patient.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e181816" kind="short">
+         <Label xml:lang="en-US">escort</Label>
+      </Rubric>
+      <Rubric id="d1e181816" kind="preferred">
+         <Label xml:lang="en-US">escort</Label>
+      </Rubric>
+   </Class>
+   <Class code="REF" kind="concept">
+      <Meta name="internalId" value="10264"/>
+      <Meta name="Name:Act:participation:Participation" value="referrer"/>
+      <Meta name="Sort:Act:participation:Participation" value="FD_______"/>
+      <Meta name="Name:Role:participation:Participation" value="referral"/>
+      <Meta name="Sort:Role:participation:Participation" value="FD_______"/>
+      <SuperClass code="_ParticipationAncillary">
+         <Rubric id="d1e183313" kind="preferred">
+            <Label xml:lang="en-US">ParticipationAncillary</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e181827" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A person having referred the subject of the service to the performer (referring physician). Typically, a referring physician will receive a report.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e181854" kind="short">
+         <Label xml:lang="en-US">referrer</Label>
+      </Rubric>
+      <Rubric id="d1e181854" kind="preferred">
+         <Label xml:lang="en-US">referrer</Label>
+      </Rubric>
+   </Class>
+   <Class code="AUT" kind="concept">
+      <Meta name="internalId" value="10252"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:participation:Participation" value="author"/>
+      <Meta name="Sort:Act:participation:Participation" value="EA_______"/>
+      <Meta name="Name:Role:participation:Participation" value="origination"/>
+      <Meta name="Sort:Role:participation:Participation" value="EA_______"/>
+      <SuperClass code="_ParticipationInformationGenerator">
+         <Rubric id="d1e183355" kind="preferred">
+            <Label xml:lang="en-US">ParticipationInformationGenerator</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e181865" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>A party that originates the Act and therefore has responsibility for the information given in the Act and ownership of this Act.</p>
+            <p>
+               <b>Example:</b>the report writer, the person writing the act definition, the guideline author, the placer of an order, the EKG cart (device) creating a report etc. Every Act should have an author. Authorship is regardless of mood always actual authorship.</p>
+            <p>Examples of such policies might include:</p>
+            <ul>
+               <li>
+                  <p>The author and anyone they explicitly delegate may update the report;</p>
+               </li>
+               <li>
+                  <p>All administrators within the same clinic may cancel and reschedule appointments created by other administrators within that clinic;</p>
+               </li>
+            </ul>
+            <p>A party that is neither an author nor a party who is extended authorship maintenance rights by policy, may only amend, reverse, override, replace, or follow up in other ways on this Act, whereby the Act remains intact and is linked to another Act authored by that other party.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e181924" kind="short">
+         <Label xml:lang="en-US">author (originator)</Label>
+      </Rubric>
+      <Rubric id="d1e181924" kind="preferred">
+         <Label xml:lang="en-US">author (originator)</Label>
+      </Rubric>
+   </Class>
+   <Class code="INF" kind="concept">
+      <Meta name="internalId" value="10254"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:participation:Participation" value="informant"/>
+      <Meta name="Sort:Act:participation:Participation" value="EC_______"/>
+      <Meta name="Name:Role:participation:Participation" value="informationGiven"/>
+      <Meta name="Sort:Role:participation:Participation" value="EC_______"/>
+      <SuperClass code="_ParticipationInformationGenerator">
+         <Rubric id="d1e183355" kind="preferred">
+            <Label xml:lang="en-US">ParticipationInformationGenerator</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e181935" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A source of reported information (e.g., a next of kin who answers questions about the patient's history). For history questions, the patient is logically an informant, yet the informant of history questions is implicitly the subject.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e181964" kind="short">
+         <Label xml:lang="en-US">informant</Label>
+      </Rubric>
+      <Rubric id="d1e181964" kind="preferred">
+         <Label xml:lang="en-US">informant</Label>
+      </Rubric>
+   </Class>
+   <Class code="TRANS" kind="concept">
+      <Meta name="internalId" value="21463"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:participation:Participation" value="transcriber"/>
+      <Meta name="Sort:Act:participation:Participation" value="EB_______"/>
+      <Meta name="Name:Role:participation:Participation" value="transcription"/>
+      <Meta name="Sort:Role:participation:Participation" value="EB_______"/>
+      <SuperClass code="_ParticipationInformationGenerator">
+         <Rubric id="d1e183355" kind="preferred">
+            <Label xml:lang="en-US">ParticipationInformationGenerator</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="ENT" subCount="0">
+         <Rubric id="d1e183898" kind="preferred">
+            <Label xml:lang="en-US">data entry person</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e181975" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An entity entering the data into the originating system. The data entry entity is collected optionally for internal quality control purposes. This includes the transcriptionist for dictated text transcribed into electronic form.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e182004" kind="short">
+         <Label xml:lang="en-US">Transcriber</Label>
+      </Rubric>
+      <Rubric id="d1e182004" kind="preferred">
+         <Label xml:lang="en-US">Transcriber</Label>
+      </Rubric>
+   </Class>
+   <Class code="WIT" kind="concept">
+      <Meta name="internalId" value="10260"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:participation:Participation" value="witness"/>
+      <Meta name="Sort:Act:participation:Participation" value="ED_______"/>
+      <Meta name="Name:Role:participation:Participation" value="witness"/>
+      <Meta name="Sort:Role:participation:Participation" value="ED_______"/>
+      <SuperClass code="_ParticipationInformationGenerator">
+         <Rubric id="d1e183355" kind="preferred">
+            <Label xml:lang="en-US">ParticipationInformationGenerator</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e182015" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Only with service events. A person witnessing the action happening without doing anything. A witness is not necessarily aware, much less approves of anything stated in the service event. Example for a witness is students watching an operation or an advanced directive witness.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e182044" kind="short">
+         <Label xml:lang="en-US">witness</Label>
+      </Rubric>
+      <Rubric id="d1e182044" kind="preferred">
+         <Label xml:lang="en-US">witness</Label>
+      </Rubric>
+   </Class>
+   <Class code="NRD" kind="concept">
+      <Meta name="internalId" value="10299"/>
+      <Meta name="Name:Act:participation:Participation" value="nonReusableDevice"/>
+      <Meta name="Sort:Act:participation:Participation" value="ADB______"/>
+      <Meta name="Name:Role:participation:Participation" value="nonReusableDeviceOf"/>
+      <Meta name="Sort:Role:participation:Participation" value="ADB______"/>
+      <SuperClass code="DEV">
+         <Rubric id="d1e182362" kind="preferred">
+            <Label xml:lang="en-US">device</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e182088" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A device that changes ownership due to the service, e.g., a pacemaker, a prosthesis, an insulin injection equipment (pen), etc. Such material may need to be restocked after he service.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e182115" kind="short">
+         <Label xml:lang="en-US">non-reuseable device</Label>
+      </Rubric>
+      <Rubric id="d1e182115" kind="preferred">
+         <Label xml:lang="en-US">non-reuseable device</Label>
+      </Rubric>
+   </Class>
+   <Class code="RDV" kind="concept">
+      <Meta name="internalId" value="10300"/>
+      <Meta name="Name:Act:participation:Participation" value="reusableDevice"/>
+      <Meta name="Sort:Act:participation:Participation" value="ADA______"/>
+      <Meta name="Name:Role:participation:Participation" value="reusableDeviceOf"/>
+      <Meta name="Sort:Role:participation:Participation" value="ADA______"/>
+      <SuperClass code="DEV">
+         <Rubric id="d1e182362" kind="preferred">
+            <Label xml:lang="en-US">device</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e182126" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A device that does not change ownership due to the service, i.e., a surgical instrument or tool or an endoscope. The distinction between reuseable and non-reuseable must be made in order to know whether material must be re-stocked.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e182153" kind="short">
+         <Label xml:lang="en-US">reusable device</Label>
+      </Rubric>
+      <Rubric id="d1e182153" kind="preferred">
+         <Label xml:lang="en-US">reusable device</Label>
+      </Rubric>
+   </Class>
+   <Class code="ALY" kind="concept">
+      <Meta name="internalId" value="23093"/>
+      <Meta name="Name:Act:participation:Participation" value="analyte"/>
+      <Meta name="Name:Role:participation:Participation" value="analyzedBy"/>
+      <Meta name="Sort:Act:participation:Participation" value="AAB______"/>
+      <Meta name="Sort:Role:participation:Participation" value="AAB______"/>
+      <SuperClass code="DIR">
+         <Rubric id="d1e183437" kind="preferred">
+            <Label xml:lang="en-US">direct target</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e182164" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The target of an Observation action. Links an observation to a Role whose player is the substance or most specific component entity (material, micro-organism, etc.) being measured within the subject.</p>
+            <p>
+               <i>Examples:</i>A "plasma porcelain substance concentration" has analyte a Role with player substance Entity "porcelain".</p>
+            <p>
+               <i>UsageNotes:</i>The Role that this participation connects to may be any Role whose player is that substance measured. Very often, the scoper may indicate the system in which the component is being measured. E.g., for "plasma porcelain" the scoper could be "Plasma".</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e182203" kind="short">
+         <Label xml:lang="en-US">analyte</Label>
+      </Rubric>
+      <Rubric id="d1e182203" kind="preferred">
+         <Label xml:lang="en-US">analyte</Label>
+      </Rubric>
+   </Class>
+   <Class code="BBY" kind="concept">
+      <Meta name="internalId" value="10293"/>
+      <Meta name="Name:Act:participation:Participation" value="baby"/>
+      <Meta name="Sort:Act:participation:Participation" value="AB_______"/>
+      <Meta name="Name:Role:participation:Participation" value="babyOf"/>
+      <Meta name="Sort:Role:participation:Participation" value="AB_______"/>
+      <SuperClass code="DIR">
+         <Rubric id="d1e183437" kind="preferred">
+            <Label xml:lang="en-US">direct target</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e182214" kind="definition">
+         <Label xml:lang="en-US">
+            <p>In an obstetric service, the baby.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e182241" kind="short">
+         <Label xml:lang="en-US">baby</Label>
+      </Rubric>
+      <Rubric id="d1e182241" kind="preferred">
+         <Label xml:lang="en-US">baby</Label>
+      </Rubric>
+   </Class>
+   <Class code="CAT" kind="concept">
+      <Meta name="internalId" value="23094"/>
+      <Meta name="Name:Act:participation:Participation" value="catalyst"/>
+      <Meta name="Name:Role:participation:Participation" value="catalystOf"/>
+      <Meta name="Sort:Act:participation:Participation" value="AA_______"/>
+      <Meta name="Sort:Role:participation:Participation" value="AA_______"/>
+      <SuperClass code="DIR">
+         <Rubric id="d1e183437" kind="preferred">
+            <Label xml:lang="en-US">direct target</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e182252" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The catalyst of a chemical reaction, such as an enzyme or a platinum surface. In biochemical reactions, connects the enzyme with the molecular interaction</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e182279" kind="short">
+         <Label xml:lang="en-US">catalyst</Label>
+      </Rubric>
+      <Rubric id="d1e182279" kind="preferred">
+         <Label xml:lang="en-US">catalyst</Label>
+      </Rubric>
+   </Class>
+   <Class code="CSM" kind="concept">
+      <Meta name="internalId" value="10296"/>
+      <Meta name="Name:Act:participation:Participation" value="consumable"/>
+      <Meta name="Sort:Act:participation:Participation" value="AE_______"/>
+      <Meta name="Name:Role:participation:Participation" value="consumedIn"/>
+      <Meta name="Sort:Role:participation:Participation" value="AE_______"/>
+      <SuperClass code="DIR">
+         <Rubric id="d1e183437" kind="preferred">
+            <Label xml:lang="en-US">direct target</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e182291" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Participant material that is taken up, diminished, altered, or disappears in the act.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e182318" kind="short">
+         <Label xml:lang="en-US">consumable</Label>
+      </Rubric>
+      <Rubric id="d1e182318" kind="preferred">
+         <Label xml:lang="en-US">consumable</Label>
+      </Rubric>
+   </Class>
+   <Class code="DEV" kind="concept">
+      <Meta name="internalId" value="10298"/>
+      <Meta name="Name:Act:participation:Participation" value="device"/>
+      <Meta name="Sort:Act:participation:Participation" value="AD_______"/>
+      <Meta name="Name:Role:participation:Participation" value="deviceOf"/>
+      <Meta name="Sort:Role:participation:Participation" value="AD_______"/>
+      <SuperClass code="DIR">
+         <Rubric id="d1e183437" kind="preferred">
+            <Label xml:lang="en-US">direct target</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="NRD" subCount="0">
+         <Rubric id="d1e182115" kind="preferred">
+            <Label xml:lang="en-US">non-reuseable device</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RDV" subCount="0">
+         <Rubric id="d1e182153" kind="preferred">
+            <Label xml:lang="en-US">reusable device</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e182329" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Participant used in performing the act without being substantially affected by the act (i.e. durable or inert with respect to that particular service).</p>
+            <p>
+               <i>Examples:</i>monitoring equipment, tools, but also access/drainage lines, prostheses, pace maker, etc.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e182362" kind="short">
+         <Label xml:lang="en-US">device</Label>
+      </Rubric>
+      <Rubric id="d1e182362" kind="preferred">
+         <Label xml:lang="en-US">device</Label>
+      </Rubric>
+   </Class>
+   <Class code="DON" kind="concept">
+      <Meta name="internalId" value="10291"/>
+      <Meta name="Name:Act:participation:Participation" value="organDonor"/>
+      <Meta name="Sort:Act:participation:Participation" value="AC_______"/>
+      <Meta name="Name:Role:participation:Participation" value="organDonation"/>
+      <Meta name="Sort:Role:participation:Participation" value="AC_______"/>
+      <SuperClass code="DIR">
+         <Rubric id="d1e183437" kind="preferred">
+            <Label xml:lang="en-US">direct target</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e182373" kind="definition">
+         <Label xml:lang="en-US">
+            <p>In some organ transplantation services and rarely in transfusion services a donor will be a target participant in the service. However, in most cases transplantation is decomposed in three services: explantation, transport, and implantation. The identity of the donor (recipient) is often irrelevant for the explantation (implantation) service.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e182400" kind="short">
+         <Label xml:lang="en-US">donor</Label>
+      </Rubric>
+      <Rubric id="d1e182400" kind="preferred">
+         <Label xml:lang="en-US">donor</Label>
+      </Rubric>
+   </Class>
+   <Class code="EXPAGNT" kind="concept">
+      <Meta name="internalId" value="22347"/>
+      <SuperClass code="DIR">
+         <Rubric id="d1e183437" kind="preferred">
+            <Label xml:lang="en-US">direct target</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e182411" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The entity playing the associated role is the physical (including energy), chemical or biological substance that is participating in the exposure. For example in communicable diseases, the associated playing entity is the disease causing pathogen.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e182432" kind="short">
+         <Label xml:lang="en-US">ExposureAgent</Label>
+      </Rubric>
+      <Rubric id="d1e182432" kind="preferred">
+         <Label xml:lang="en-US">ExposureAgent</Label>
+      </Rubric>
+   </Class>
+   <Class code="EXPART" kind="concept">
+      <Meta name="internalId" value="21978"/>
+      <SuperClass code="DIR">
+         <Rubric id="d1e183437" kind="preferred">
+            <Label xml:lang="en-US">direct target</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="EXPTRGT" subCount="0">
+         <Rubric id="d1e182585" kind="preferred">
+            <Label xml:lang="en-US">ExposureTarget</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="EXSRC" subCount="0">
+         <Rubric id="d1e182617" kind="preferred">
+            <Label xml:lang="en-US">ExposureSource</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e182443" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Direct participation in an exposure act where it is unknown that the participant is the source or subject of the exposure. If the participant is known to be the contact of an exposure then the SBJ participation type should be used. If the participant is known to be the source then the EXSRC participation type should be used.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e182464" kind="short">
+         <Label xml:lang="en-US">ExposureParticipation</Label>
+      </Rubric>
+      <Rubric id="d1e182464" kind="preferred">
+         <Label xml:lang="en-US">ExposureParticipation</Label>
+      </Rubric>
+   </Class>
+   <Class code="PRD" kind="concept">
+      <Meta name="internalId" value="10295"/>
+      <Meta name="Name:Act:participation:Participation" value="product"/>
+      <Meta name="Sort:Act:participation:Participation" value="AF_______"/>
+      <Meta name="Name:Role:participation:Participation" value="productOf"/>
+      <Meta name="Sort:Role:participation:Participation" value="AF_______"/>
+      <SuperClass code="DIR">
+         <Rubric id="d1e183437" kind="preferred">
+            <Label xml:lang="en-US">direct target</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e182475" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Participant material that is brought forth (produced) in the act (e.g., specimen in a specimen collection, access or drainage in a placement service, medication package in a dispense service). It does not matter whether the material produced had existence prior to the service, or whether it is created in the service (e.g., in supply services the product is taken from a stock).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e182502" kind="short">
+         <Label xml:lang="en-US">product</Label>
+      </Rubric>
+      <Rubric id="d1e182502" kind="preferred">
+         <Label xml:lang="en-US">product</Label>
+      </Rubric>
+   </Class>
+   <Class code="SBJ" kind="concept">
+      <Meta name="internalId" value="10287"/>
+      <Meta name="Name:Act:participation:Participation" value="subject"/>
+      <Meta name="Sort:Act:participation:Participation" value="AA_______"/>
+      <Meta name="Name:Role:participation:Participation" value="subjectOf"/>
+      <Meta name="Sort:Role:participation:Participation" value="AA_______"/>
+      <SuperClass code="DIR">
+         <Rubric id="d1e183437" kind="preferred">
+            <Label xml:lang="en-US">direct target</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="SPC" subCount="0">
+         <Rubric id="d1e183858" kind="preferred">
+            <Label xml:lang="en-US">specimen</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e182514" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The principle target on which the action happens.</p>
+            <p>
+               <i>Examples:</i>The patient in physical examination, a specimen in a lab observation. May also be a patient's family member (teaching) or a device or room (cleaning, disinfecting, housekeeping).</p>
+            <p>
+               <i>UsageNotes:</i>Not all direct targets are subjects. Consumables and devices used as tools for an act are not subjects. However, a device may be a subject of a maintenance action.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e182553" kind="short">
+         <Label xml:lang="en-US">subject</Label>
+      </Rubric>
+      <Rubric id="d1e182553" kind="preferred">
+         <Label xml:lang="en-US">subject</Label>
+      </Rubric>
+   </Class>
+   <Class code="EXPTRGT" kind="concept">
+      <Meta name="internalId" value="22346"/>
+      <SuperClass code="EXPART">
+         <Rubric id="d1e182464" kind="preferred">
+            <Label xml:lang="en-US">ExposureParticipation</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e182564" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The entity playing the associated role is the target (contact) of exposure.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e182585" kind="short">
+         <Label xml:lang="en-US">ExposureTarget</Label>
+      </Rubric>
+      <Rubric id="d1e182585" kind="preferred">
+         <Label xml:lang="en-US">ExposureTarget</Label>
+      </Rubric>
+   </Class>
+   <Class code="EXSRC" kind="concept">
+      <Meta name="internalId" value="21979"/>
+      <SuperClass code="EXPART">
+         <Rubric id="d1e182464" kind="preferred">
+            <Label xml:lang="en-US">ExposureParticipation</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e182596" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>The entity playing the associated role is the source of exposure.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e182617" kind="short">
+         <Label xml:lang="en-US">ExposureSource</Label>
+      </Rubric>
+      <Rubric id="d1e182617" kind="preferred">
+         <Label xml:lang="en-US">ExposureSource</Label>
+      </Rubric>
+   </Class>
+   <Class code="BEN" kind="concept">
+      <Meta name="internalId" value="10288"/>
+      <Meta name="Name:Act:participation:Participation" value="beneficiary"/>
+      <Meta name="Sort:Act:participation:Participation" value="BC_______"/>
+      <Meta name="Name:Role:participation:Participation" value="beneficiaryOf"/>
+      <Meta name="Sort:Role:participation:Participation" value="BC_______"/>
+      <SuperClass code="IND">
+         <Rubric id="d1e183478" kind="preferred">
+            <Label xml:lang="en-US">indirect target</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e182628" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Target on behalf of whom the service happens, but that is not necessarily present in the service. Can occur together with direct target to indicate that a target is both, as in the case where the patient is the indirect beneficiary of a service rendered to a family member, e.g. counseling or given home care instructions. This concept includes a participant, such as a covered party, who derives benefits from a service act covered by a coverage act.</p>
+            <p>Note that the semantic role of the intended recipient who benefits from the happening denoted by the verb in the clause. Thus, a patient who has no coverage under a policy or program may be a beneficiary of a health service while not being the beneficiary of coverage for that service.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e182658" kind="short">
+         <Label xml:lang="en-US">beneficiary</Label>
+      </Rubric>
+      <Rubric id="d1e182658" kind="preferred">
+         <Label xml:lang="en-US">beneficiary</Label>
+      </Rubric>
+   </Class>
+   <Class code="CAGNT" kind="concept">
+      <Meta name="internalId" value="21639"/>
+      <SuperClass code="IND">
+         <Rubric id="d1e183478" kind="preferred">
+            <Label xml:lang="en-US">indirect target</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e182669" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Definition: A factor, such as a microorganism, chemical substance, or form of radiation, whose presence, excessive presence, or (in deficiency diseases) relative absence is essential, in whole or in part, for the occurrence of a condition.</p>
+            <p>Constraint: The use of this participation is limited to observations.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e182690" kind="short">
+         <Label xml:lang="en-US">causative agent</Label>
+      </Rubric>
+      <Rubric id="d1e182690" kind="preferred">
+         <Label xml:lang="en-US">causative agent</Label>
+      </Rubric>
+   </Class>
+   <Class code="COV" kind="concept">
+      <Meta name="internalId" value="14017"/>
+      <Meta name="Name:Act:participation:Participation" value="coveredParty"/>
+      <Meta name="Sort:Act:participation:Participation" value="BB_______"/>
+      <Meta name="Name:Role:participation:Participation" value="coveredPartyOf"/>
+      <Meta name="Sort:Role:participation:Participation" value="BB_______"/>
+      <SuperClass code="IND">
+         <Rubric id="d1e183478" kind="preferred">
+            <Label xml:lang="en-US">indirect target</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e182701" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The target participation for an individual in a health care coverage act in which the target role is either the policy holder of the coverage, or a covered party under the coverage.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e182728" kind="short">
+         <Label xml:lang="en-US">coverage target</Label>
+      </Rubric>
+      <Rubric id="d1e182728" kind="preferred">
+         <Label xml:lang="en-US">coverage target</Label>
+      </Rubric>
+   </Class>
+   <Class code="GUAR" kind="concept">
+      <Meta name="internalId" value="21570"/>
+      <SuperClass code="IND">
+         <Rubric id="d1e183478" kind="preferred">
+            <Label xml:lang="en-US">indirect target</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e182740" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The target person or organization contractually recognized by the issuer as a participant who has assumed fiscal responsibility for another personaTMs financial obligations by guaranteeing to pay for amounts owed to a particular account</p>
+            <p>
+               <i>Example:</i>The subscriber of the patientaTMs health insurance policy signs a contract with the provider to be fiscally responsible for the patient billing account balance amount owed.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e182764" kind="short">
+         <Label xml:lang="en-US">guarantor party</Label>
+      </Rubric>
+      <Rubric id="d1e182764" kind="preferred">
+         <Label xml:lang="en-US">guarantor party</Label>
+      </Rubric>
+   </Class>
+   <Class code="HLD" kind="concept">
+      <Meta name="internalId" value="16751"/>
+      <Meta name="Name:Act:participation:Participation" value="holder"/>
+      <Meta name="Sort:Act:participation:Participation" value="BE_______"/>
+      <Meta name="Name:Role:participation:Participation" value="contractHeld"/>
+      <Meta name="Sort:Role:participation:Participation" value="BE_______"/>
+      <SuperClass code="IND">
+         <Rubric id="d1e183478" kind="preferred">
+            <Label xml:lang="en-US">indirect target</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e182775" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Participant who posses an instrument such as a financial contract (insurance policy) usually based on some agreement with the author.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e182802" kind="short">
+         <Label xml:lang="en-US">holder</Label>
+      </Rubric>
+      <Rubric id="d1e182802" kind="preferred">
+         <Label xml:lang="en-US">holder</Label>
+      </Rubric>
+   </Class>
+   <Class code="RCT" kind="concept">
+      <Meta name="internalId" value="10289"/>
+      <Meta name="Name:Act:participation:Participation" value="recordTarget"/>
+      <Meta name="Sort:Act:participation:Participation" value="BA_______"/>
+      <Meta name="Name:Role:participation:Participation" value="recordTargetOf"/>
+      <Meta name="Sort:Role:participation:Participation" value="BA_______"/>
+      <SuperClass code="IND">
+         <Rubric id="d1e183478" kind="preferred">
+            <Label xml:lang="en-US">indirect target</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e182813" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The record target indicates whose medical record holds the documentation of this act. This is especially important when the subject of a service is not the patient himself.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e182840" kind="short">
+         <Label xml:lang="en-US">record target</Label>
+      </Rubric>
+      <Rubric id="d1e182840" kind="preferred">
+         <Label xml:lang="en-US">record target</Label>
+      </Rubric>
+   </Class>
+   <Class code="RCV" kind="concept">
+      <Meta name="internalId" value="13974"/>
+      <Meta name="Name:Act:participation:Participation" value="receiver"/>
+      <Meta name="Sort:Act:participation:Participation" value="BD_______"/>
+      <Meta name="Name:Role:participation:Participation" value="receiverOf"/>
+      <Meta name="Sort:Role:participation:Participation" value="BD_______"/>
+      <SuperClass code="IND">
+         <Rubric id="d1e183478" kind="preferred">
+            <Label xml:lang="en-US">indirect target</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e182851" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The person (or organization) who receives the product of an Act.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e182878" kind="short">
+         <Label xml:lang="en-US">receiver</Label>
+      </Rubric>
+      <Rubric id="d1e182878" kind="preferred">
+         <Label xml:lang="en-US">receiver</Label>
+      </Rubric>
+   </Class>
+   <Class code="NOT" kind="concept">
+      <Meta name="internalId" value="19057"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:participation:Participation" value="notificationContact"/>
+      <Meta name="Sort:Act:participation:Participation" value="HE_______"/>
+      <Meta name="Name:Role:participation:Participation" value="contactFor"/>
+      <Meta name="Sort:Role:participation:Participation" value="HE_______"/>
+      <SuperClass code="IRCP">
+         <Rubric id="d1e183520" kind="preferred">
+            <Label xml:lang="en-US">information recipient</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e182889" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An information recipient to notify for urgent matters about this Act. (e.g., in a laboratory order, critical results are being called by phone right away, this is the contact to call; or for an inpatient encounter, a next of kin to notify when the patient becomes critically ill).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e182918" kind="short">
+         <Label xml:lang="en-US">ugent notification contact</Label>
+      </Rubric>
+      <Rubric id="d1e182918" kind="preferred">
+         <Label xml:lang="en-US">ugent notification contact</Label>
+      </Rubric>
+   </Class>
+   <Class code="PRCP" kind="concept">
+      <Meta name="internalId" value="19055"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:participation:Participation" value="primaryInformationRecipient"/>
+      <Meta name="Sort:Act:participation:Participation" value="HA_______"/>
+      <Meta name="Name:Role:participation:Participation" value="informationReceived"/>
+      <Meta name="Sort:Role:participation:Participation" value="HA_______"/>
+      <SuperClass code="IRCP">
+         <Rubric id="d1e183520" kind="preferred">
+            <Label xml:lang="en-US">information recipient</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e182929" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Information recipient to whom an act statement is primarily directed. E.g., a primary care provider receiving a discharge letter from a hospitalist, a health department receiving information on a suspected case of infectious disease. Multiple of these participations may exist on the same act without requiring that recipients be ranked as primary vs. secondary.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e182958" kind="short">
+         <Label xml:lang="en-US">primary information recipient</Label>
+      </Rubric>
+      <Rubric id="d1e182958" kind="preferred">
+         <Label xml:lang="en-US">primary information recipient</Label>
+      </Rubric>
+   </Class>
+   <Class code="REFB" kind="concept">
+      <Meta name="internalId" value="20842"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:participation:Participation" value="subjectReferrer"/>
+      <Meta name="Sort:Act:participation:Participation" value="HC_______"/>
+      <Meta name="Name:Role:participation:Participation" value="subjectReferral"/>
+      <Meta name="Sort:Role:participation:Participation" value="HC_______"/>
+      <SuperClass code="IRCP">
+         <Rubric id="d1e183520" kind="preferred">
+            <Label xml:lang="en-US">information recipient</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e182970" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A participant (e.g. provider) who has referred the subject of an act (e.g. patient).</p>
+            <p>Typically, a referred by participant will provide a report (e.g. referral).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e183002" kind="short">
+         <Label xml:lang="en-US">Referred By</Label>
+      </Rubric>
+      <Rubric id="d1e183002" kind="preferred">
+         <Label xml:lang="en-US">Referred By</Label>
+      </Rubric>
+   </Class>
+   <Class code="REFT" kind="concept">
+      <Meta name="internalId" value="18116"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:participation:Participation" value="subjectReferredTo"/>
+      <Meta name="Sort:Act:participation:Participation" value="HD_______"/>
+      <Meta name="Name:Role:participation:Participation" value="referral"/>
+      <Meta name="Sort:Role:participation:Participation" value="HD_______"/>
+      <SuperClass code="IRCP">
+         <Rubric id="d1e183520" kind="preferred">
+            <Label xml:lang="en-US">information recipient</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e183013" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The person who receives the patient</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e183042" kind="short">
+         <Label xml:lang="en-US">Referred to</Label>
+      </Rubric>
+      <Rubric id="d1e183042" kind="preferred">
+         <Label xml:lang="en-US">Referred to</Label>
+      </Rubric>
+   </Class>
+   <Class code="TRC" kind="concept">
+      <Meta name="internalId" value="10265"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:participation:Participation" value="tracker"/>
+      <Meta name="Sort:Act:participation:Participation" value="HB_______"/>
+      <Meta name="Name:Role:participation:Participation" value="tracking"/>
+      <Meta name="Sort:Role:participation:Participation" value="HB_______"/>
+      <SuperClass code="IRCP">
+         <Rubric id="d1e183520" kind="preferred">
+            <Label xml:lang="en-US">information recipient</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e183053" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A secondary information recipient, who receives copies (e.g., a primary care provider receiving copies of results as ordered by specialist).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e183082" kind="short">
+         <Label xml:lang="en-US">tracker</Label>
+      </Rubric>
+      <Rubric id="d1e183082" kind="preferred">
+         <Label xml:lang="en-US">tracker</Label>
+      </Rubric>
+   </Class>
+   <Class code="DST" kind="concept">
+      <Meta name="internalId" value="10304"/>
+      <Meta name="Name:Act:participation:Participation" value="destination"/>
+      <Meta name="Sort:Act:participation:Participation" value="JC_______"/>
+      <Meta name="Name:Role:participation:Participation" value="destinationOf"/>
+      <Meta name="Sort:Role:participation:Participation" value="JC_______"/>
+      <SuperClass code="LOC">
+         <Rubric id="d1e183560" kind="preferred">
+            <Label xml:lang="en-US">location</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e183093" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The destination for services. May be a static building (or room therein) or a movable facility (e.g., ship).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e183120" kind="short">
+         <Label xml:lang="en-US">destination</Label>
+      </Rubric>
+      <Rubric id="d1e183120" kind="preferred">
+         <Label xml:lang="en-US">destination</Label>
+      </Rubric>
+   </Class>
+   <Class code="ELOC" kind="concept">
+      <Meta name="internalId" value="13973"/>
+      <Meta name="Name:Act:participation:Participation" value="dataEntryLocation"/>
+      <Meta name="Sort:Act:participation:Participation" value="JD_______"/>
+      <Meta name="Name:Role:participation:Participation" value="dataEntryLocationOf"/>
+      <Meta name="Sort:Role:participation:Participation" value="JD_______"/>
+      <SuperClass code="LOC">
+         <Rubric id="d1e183560" kind="preferred">
+            <Label xml:lang="en-US">location</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e183131" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A location where data about an Act was entered.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e183158" kind="short">
+         <Label xml:lang="en-US">entry location</Label>
+      </Rubric>
+      <Rubric id="d1e183158" kind="preferred">
+         <Label xml:lang="en-US">entry location</Label>
+      </Rubric>
+   </Class>
+   <Class code="ORG" kind="concept">
+      <Meta name="internalId" value="10303"/>
+      <Meta name="Name:Act:participation:Participation" value="origin"/>
+      <Meta name="Sort:Act:participation:Participation" value="JA_______"/>
+      <Meta name="Name:Role:participation:Participation" value="originOf"/>
+      <Meta name="Sort:Role:participation:Participation" value="JA_______"/>
+      <SuperClass code="LOC">
+         <Rubric id="d1e183560" kind="preferred">
+            <Label xml:lang="en-US">location</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e183169" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The location of origin for services. May be a static building (or room therein) or a movable facility (e.g., ship).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e183196" kind="short">
+         <Label xml:lang="en-US">origin</Label>
+      </Rubric>
+      <Rubric id="d1e183196" kind="preferred">
+         <Label xml:lang="en-US">origin</Label>
+      </Rubric>
+   </Class>
+   <Class code="RML" kind="concept">
+      <Meta name="internalId" value="10306"/>
+      <Meta name="Name:Act:participation:Participation" value="remoteLocation"/>
+      <Meta name="Sort:Act:participation:Participation" value="JE_______"/>
+      <Meta name="Name:Role:participation:Participation" value="remoteLocationOf"/>
+      <Meta name="Sort:Role:participation:Participation" value="JE_______"/>
+      <SuperClass code="LOC">
+         <Rubric id="d1e183560" kind="preferred">
+            <Label xml:lang="en-US">location</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e183208" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Some services take place at multiple concurrent locations (e.g., telemedicine, telephone consultation). The location where the principal performing actor is located is taken as the primary location (LOC) while the other location(s) are considered "remote."</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e183235" kind="short">
+         <Label xml:lang="en-US">remote</Label>
+      </Rubric>
+      <Rubric id="d1e183235" kind="preferred">
+         <Label xml:lang="en-US">remote</Label>
+      </Rubric>
+   </Class>
+   <Class code="VIA" kind="concept">
+      <Meta name="internalId" value="10305"/>
+      <Meta name="Name:Act:participation:Participation" value="via"/>
+      <Meta name="Sort:Act:participation:Participation" value="JB_______"/>
+      <Meta name="Name:Role:participation:Participation" value="viaOf"/>
+      <Meta name="Sort:Role:participation:Participation" value="JB_______"/>
+      <SuperClass code="LOC">
+         <Rubric id="d1e183560" kind="preferred">
+            <Label xml:lang="en-US">location</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e183246" kind="definition">
+         <Label xml:lang="en-US">
+            <p>For services, an intermediate location that specifies a path between origin an destination.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e183273" kind="short">
+         <Label xml:lang="en-US">via</Label>
+      </Rubric>
+      <Rubric id="d1e183273" kind="preferred">
+         <Label xml:lang="en-US">via</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ParticipationAncillary" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21110"/>
+      <Meta name="conductible" value="false"/>
+      <Meta name="Name:Act:participation:Participation" value="ancillaryRole"/>
+      <Meta name="Sort:Act:participation:Participation" value="F________"/>
+      <Meta name="Name:Role:participation:Participation" value="participation"/>
+      <Meta name="Sort:Role:participation:Participation" value="F________"/>
+      <SuperClass code="PART">
+         <Rubric id="d1e181569" kind="preferred">
+            <Label xml:lang="en-US">Participation</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="ADM" subCount="0">
+         <Rubric id="d1e181607" kind="preferred">
+            <Label xml:lang="en-US">admitter</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="ATND" subCount="0">
+         <Rubric id="d1e181645" kind="preferred">
+            <Label xml:lang="en-US">attender</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="CALLBCK" subCount="0">
+         <Rubric id="d1e181683" kind="preferred">
+            <Label xml:lang="en-US">callback contact</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="CON" subCount="0">
+         <Rubric id="d1e181730" kind="preferred">
+            <Label xml:lang="en-US">consultant</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="DIS" subCount="0">
+         <Rubric id="d1e181768" kind="preferred">
+            <Label xml:lang="en-US">discharger</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="ESC" subCount="0">
+         <Rubric id="d1e181816" kind="preferred">
+            <Label xml:lang="en-US">escort</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="REF" subCount="0">
+         <Rubric id="d1e181854" kind="preferred">
+            <Label xml:lang="en-US">referrer</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e183284" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Participations related, but not primary to an act. The Referring, Admitting, and Discharging practitioners must be the same person as those authoring the ControlAct event for their respective trigger events.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e183313" kind="short">
+         <Label xml:lang="en-US">ParticipationAncillary</Label>
+      </Rubric>
+      <Rubric id="d1e183313" kind="preferred">
+         <Label xml:lang="en-US">ParticipationAncillary</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ParticipationInformationGenerator" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="21111"/>
+      <Meta name="conductible" value="true"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:participation:Participation" value="informationOriginator"/>
+      <Meta name="Sort:Act:participation:Participation" value="E________"/>
+      <Meta name="Name:Role:participation:Participation" value="origination"/>
+      <Meta name="Sort:Role:participation:Participation" value="E________"/>
+      <SuperClass code="PART">
+         <Rubric id="d1e181569" kind="preferred">
+            <Label xml:lang="en-US">Participation</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="AUT" subCount="0">
+         <Rubric id="d1e181924" kind="preferred">
+            <Label xml:lang="en-US">author (originator)</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="INF" subCount="0">
+         <Rubric id="d1e181964" kind="preferred">
+            <Label xml:lang="en-US">informant</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="TRANS" subCount="1">
+         <Rubric id="d1e182004" kind="preferred">
+            <Label xml:lang="en-US">Transcriber</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="WIT" subCount="0">
+         <Rubric id="d1e182044" kind="preferred">
+            <Label xml:lang="en-US">witness</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e183324" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Parties that may or should contribute or have contributed information to the Act. Such information includes information leading to the decision to perform the Act and how to perform the Act (e.g., consultant), information that the Act itself seeks to reveal (e.g., informant of clinical history), or information about what Act was performed (e.g., informant witness).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e183355" kind="short">
+         <Label xml:lang="en-US">ParticipationInformationGenerator</Label>
+      </Rubric>
+      <Rubric id="d1e183355" kind="preferred">
+         <Label xml:lang="en-US">ParticipationInformationGenerator</Label>
+      </Rubric>
+   </Class>
+   <Class code="CST" kind="concept">
+      <Meta name="internalId" value="10266"/>
+      <Meta name="conductible" value="true"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:participation:Participation" value="custodian"/>
+      <Meta name="Sort:Act:participation:Participation" value="G________"/>
+      <Meta name="Name:Role:participation:Participation" value="custodianship"/>
+      <Meta name="Sort:Role:participation:Participation" value="G________"/>
+      <SuperClass code="PART">
+         <Rubric id="d1e181569" kind="preferred">
+            <Label xml:lang="en-US">Participation</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e183366" kind="definition">
+         <Label xml:lang="en-US">
+            <p>An entity (person, organization or device) that is in charge of maintaining the information of this act (e.g., who maintains the report or the master service catalog item, etc.).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e183397" kind="short">
+         <Label xml:lang="en-US">custodian</Label>
+      </Rubric>
+      <Rubric id="d1e183397" kind="preferred">
+         <Label xml:lang="en-US">custodian</Label>
+      </Rubric>
+   </Class>
+   <Class code="DIR" kind="concept">
+      <Meta name="internalId" value="10286"/>
+      <Meta name="conductible" value="true"/>
+      <Meta name="Name:Act:participation:Participation" value="directTarget"/>
+      <Meta name="Sort:Act:participation:Participation" value="A________"/>
+      <Meta name="Name:Role:participation:Participation" value="directTargetOf"/>
+      <Meta name="Sort:Role:participation:Participation" value="A________"/>
+      <SuperClass code="PART">
+         <Rubric id="d1e181569" kind="preferred">
+            <Label xml:lang="en-US">Participation</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="ALY" subCount="0">
+         <Rubric id="d1e182203" kind="preferred">
+            <Label xml:lang="en-US">analyte</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="BBY" subCount="0">
+         <Rubric id="d1e182241" kind="preferred">
+            <Label xml:lang="en-US">baby</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="CAT" subCount="0">
+         <Rubric id="d1e182279" kind="preferred">
+            <Label xml:lang="en-US">catalyst</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="CSM" subCount="0">
+         <Rubric id="d1e182318" kind="preferred">
+            <Label xml:lang="en-US">consumable</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="DEV" subCount="2">
+         <Rubric id="d1e182362" kind="preferred">
+            <Label xml:lang="en-US">device</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="DON" subCount="0">
+         <Rubric id="d1e182400" kind="preferred">
+            <Label xml:lang="en-US">donor</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="EXPAGNT" subCount="0">
+         <Rubric id="d1e182432" kind="preferred">
+            <Label xml:lang="en-US">ExposureAgent</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="EXPART" subCount="2">
+         <Rubric id="d1e182464" kind="preferred">
+            <Label xml:lang="en-US">ExposureParticipation</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PRD" subCount="0">
+         <Rubric id="d1e182502" kind="preferred">
+            <Label xml:lang="en-US">product</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SBJ" subCount="1">
+         <Rubric id="d1e182553" kind="preferred">
+            <Label xml:lang="en-US">subject</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e183408" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Target participant that is substantially present in the act and which is directly involved in the action (includes consumed material, devices, etc.).</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e183437" kind="short">
+         <Label xml:lang="en-US">direct target</Label>
+      </Rubric>
+      <Rubric id="d1e183437" kind="preferred">
+         <Label xml:lang="en-US">direct target</Label>
+      </Rubric>
+   </Class>
+   <Class code="IND" kind="concept">
+      <Meta name="internalId" value="19032"/>
+      <Meta name="conductible" value="true"/>
+      <Meta name="Name:Act:participation:Participation" value="indirectTarget"/>
+      <Meta name="Sort:Act:participation:Participation" value="B________"/>
+      <Meta name="Name:Role:participation:Participation" value="indirectTargetOf"/>
+      <Meta name="Sort:Role:participation:Participation" value="B________"/>
+      <SuperClass code="PART">
+         <Rubric id="d1e181569" kind="preferred">
+            <Label xml:lang="en-US">Participation</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="BEN" subCount="0">
+         <Rubric id="d1e182658" kind="preferred">
+            <Label xml:lang="en-US">beneficiary</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="CAGNT" subCount="0">
+         <Rubric id="d1e182690" kind="preferred">
+            <Label xml:lang="en-US">causative agent</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="COV" subCount="0">
+         <Rubric id="d1e182728" kind="preferred">
+            <Label xml:lang="en-US">coverage target</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="GUAR" subCount="0">
+         <Rubric id="d1e182764" kind="preferred">
+            <Label xml:lang="en-US">guarantor party</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="HLD" subCount="0">
+         <Rubric id="d1e182802" kind="preferred">
+            <Label xml:lang="en-US">holder</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RCT" subCount="0">
+         <Rubric id="d1e182840" kind="preferred">
+            <Label xml:lang="en-US">record target</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RCV" subCount="0">
+         <Rubric id="d1e182878" kind="preferred">
+            <Label xml:lang="en-US">receiver</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e183449" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Target that is not substantially present in the act and which is not directly affected by the act, but which will be a focus of the record or documentation of the act.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e183478" kind="short">
+         <Label xml:lang="en-US">indirect target</Label>
+      </Rubric>
+      <Rubric id="d1e183478" kind="preferred">
+         <Label xml:lang="en-US">indirect target</Label>
+      </Rubric>
+   </Class>
+   <Class code="IRCP" kind="concept">
+      <Meta name="internalId" value="10263"/>
+      <Meta name="conductible" value="true"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:participation:Participation" value="informationRecipient"/>
+      <Meta name="Sort:Act:participation:Participation" value="H________"/>
+      <Meta name="Name:Role:participation:Participation" value="informationReceived"/>
+      <Meta name="Sort:Role:participation:Participation" value="H________"/>
+      <SuperClass code="PART">
+         <Rubric id="d1e181569" kind="preferred">
+            <Label xml:lang="en-US">Participation</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="NOT" subCount="0">
+         <Rubric id="d1e182918" kind="preferred">
+            <Label xml:lang="en-US">ugent notification contact</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PRCP" subCount="0">
+         <Rubric id="d1e182958" kind="preferred">
+            <Label xml:lang="en-US">primary information recipient</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="REFB" subCount="0">
+         <Rubric id="d1e183002" kind="preferred">
+            <Label xml:lang="en-US">Referred By</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="REFT" subCount="0">
+         <Rubric id="d1e183042" kind="preferred">
+            <Label xml:lang="en-US">Referred to</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="TRC" subCount="0">
+         <Rubric id="d1e183082" kind="preferred">
+            <Label xml:lang="en-US">tracker</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e183489" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A party, who may or should receive or who has recieved the Act or subsequent or derivative information of that Act. Information recipient is inert, i.e., independent of mood." Rationale: this is a generalization of a too diverse family that the definition can't be any more specific, and the concept is abstract so one of the specializations should be used.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e183520" kind="short">
+         <Label xml:lang="en-US">information recipient</Label>
+      </Rubric>
+      <Rubric id="d1e183520" kind="preferred">
+         <Label xml:lang="en-US">information recipient</Label>
+      </Rubric>
+   </Class>
+   <Class code="LOC" kind="concept">
+      <Meta name="internalId" value="10302"/>
+      <Meta name="conductible" value="true"/>
+      <Meta name="Name:Act:participation:Participation" value="location"/>
+      <Meta name="Sort:Act:participation:Participation" value="J________"/>
+      <Meta name="Name:Role:participation:Participation" value="locationOf"/>
+      <Meta name="Sort:Role:participation:Participation" value="J________"/>
+      <SuperClass code="PART">
+         <Rubric id="d1e181569" kind="preferred">
+            <Label xml:lang="en-US">Participation</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="DST" subCount="0">
+         <Rubric id="d1e183120" kind="preferred">
+            <Label xml:lang="en-US">destination</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="ELOC" subCount="0">
+         <Rubric id="d1e183158" kind="preferred">
+            <Label xml:lang="en-US">entry location</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="ORG" subCount="0">
+         <Rubric id="d1e183196" kind="preferred">
+            <Label xml:lang="en-US">origin</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="RML" subCount="0">
+         <Rubric id="d1e183235" kind="preferred">
+            <Label xml:lang="en-US">remote</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="VIA" subCount="0">
+         <Rubric id="d1e183273" kind="preferred">
+            <Label xml:lang="en-US">via</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e183531" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The facility where the service is done. May be a static building (or room therein) or a moving location (e.g., ambulance, helicopter, aircraft, train, truck, ship, etc.)</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e183560" kind="short">
+         <Label xml:lang="en-US">location</Label>
+      </Rubric>
+      <Rubric id="d1e183560" kind="preferred">
+         <Label xml:lang="en-US">location</Label>
+      </Rubric>
+   </Class>
+   <Class code="PRF" kind="concept">
+      <Meta name="internalId" value="10248"/>
+      <Meta name="conductible" value="true"/>
+      <Meta name="Name:Act:participation:Participation" value="performer"/>
+      <Meta name="Sort:Act:participation:Participation" value="D________"/>
+      <Meta name="Name:Role:participation:Participation" value="performance"/>
+      <Meta name="Sort:Role:participation:Participation" value="D________"/>
+      <SuperClass code="PART">
+         <Rubric id="d1e181569" kind="preferred">
+            <Label xml:lang="en-US">Participation</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="DIST" subCount="0">
+         <Rubric id="d1e183744" kind="preferred">
+            <Label xml:lang="en-US">distributor</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="PPRF" subCount="0">
+         <Rubric id="d1e183782" kind="preferred">
+            <Label xml:lang="en-US">primary performer</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="SPRF" subCount="0">
+         <Rubric id="d1e183820" kind="preferred">
+            <Label xml:lang="en-US">secondary performer</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e183571" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Definition:</b>A person, non-person living subject, organization or device that who actually and principally carries out the action. Device should only be assigned as a performer in circumstances where the device is performing independent of human intervention. Need not be the principal responsible actor.</p>
+            <p>
+               <b>Exampe:</b>A surgery resident operating under supervision of attending surgeon, a search and rescue dog locating survivors, an electronic laboratory analyzer or the laboratory discipline requested to perform a laboratory test. The performer may also be the patient in self-care, e.g. fingerstick blood sugar. The traditional order filler is a performer. This information should accompany every service event.</p>
+            <p>
+               <b>Note:</b>that existing HL7 designs assign an organization as the playing entity of the Role that is the performer. These designs should be revised in subsequent releases to make this the scooping entity for the role involved.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e183615" kind="short">
+         <Label xml:lang="en-US">performer</Label>
+      </Rubric>
+      <Rubric id="d1e183615" kind="preferred">
+         <Label xml:lang="en-US">performer</Label>
+      </Rubric>
+   </Class>
+   <Class code="RESP" kind="concept">
+      <Meta name="internalId" value="17931"/>
+      <Meta name="conductible" value="true"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:participation:Participation" value="responsibleParty"/>
+      <Meta name="Sort:Act:participation:Participation" value="C________"/>
+      <Meta name="Name:Role:participation:Participation" value="responsibleFor"/>
+      <Meta name="Sort:Role:participation:Participation" value="C________"/>
+      <SuperClass code="PART">
+         <Rubric id="d1e181569" kind="preferred">
+            <Label xml:lang="en-US">Participation</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e183626" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The person or organization that has primary responsibility for the act. The responsible party is not necessarily present in an action, but is accountable for the action through the power to delegate, and the duty to review actions with the performing actor after the fact. This responsibility may be ethical, legal, contractual, fiscal, or fiduciary in nature.</p>
+            <p>
+               <i>Example:</i>A person who is the head of a biochemical laboratory; a sponsor for a policy or government program.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e183663" kind="short">
+         <Label xml:lang="en-US">responsible party</Label>
+      </Rubric>
+      <Rubric id="d1e183663" kind="preferred">
+         <Label xml:lang="en-US">responsible party</Label>
+      </Rubric>
+   </Class>
+   <Class code="VRF" kind="concept">
+      <Meta name="internalId" value="10259"/>
+      <Meta name="conductible" value="true"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:participation:Participation" value="verifier"/>
+      <Meta name="Sort:Act:participation:Participation" value="I________"/>
+      <Meta name="Name:Role:participation:Participation" value="verification"/>
+      <Meta name="Sort:Role:participation:Participation" value="I________"/>
+      <SuperClass code="PART">
+         <Rubric id="d1e181569" kind="preferred">
+            <Label xml:lang="en-US">Participation</Label>
+         </Rubric>
+      </SuperClass>
+      <SubClass code="AUTHEN" subCount="0">
+         <Rubric id="d1e183938" kind="preferred">
+            <Label xml:lang="en-US">authenticator</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="LA" subCount="0">
+         <Rubric id="d1e183979" kind="preferred">
+            <Label xml:lang="en-US">legal authenticator</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e183674" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A person who verifies the correctness and appropriateness of the service (plan, order, event, etc.) and hence takes on accountability.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e183705" kind="short">
+         <Label xml:lang="en-US">verifier</Label>
+      </Rubric>
+      <Rubric id="d1e183705" kind="preferred">
+         <Label xml:lang="en-US">verifier</Label>
+      </Rubric>
+   </Class>
+   <Class code="DIST" kind="concept">
+      <Meta name="internalId" value="19063"/>
+      <Meta name="Name:Act:participation:Participation" value="distributer"/>
+      <Meta name="Sort:Act:participation:Participation" value="DC_______"/>
+      <Meta name="Name:Role:participation:Participation" value="distributed"/>
+      <Meta name="Sort:Role:participation:Participation" value="DC_______"/>
+      <SuperClass code="PRF">
+         <Rubric id="d1e183615" kind="preferred">
+            <Label xml:lang="en-US">performer</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e183717" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Distributes material used in or generated during the act.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e183744" kind="short">
+         <Label xml:lang="en-US">distributor</Label>
+      </Rubric>
+      <Rubric id="d1e183744" kind="preferred">
+         <Label xml:lang="en-US">distributor</Label>
+      </Rubric>
+   </Class>
+   <Class code="PPRF" kind="concept">
+      <Meta name="internalId" value="19064"/>
+      <Meta name="Name:Act:participation:Participation" value="primaryPerformer"/>
+      <Meta name="Sort:Act:participation:Participation" value="DA_______"/>
+      <Meta name="Name:Role:participation:Participation" value="performance"/>
+      <Meta name="Sort:Role:participation:Participation" value="DA_______"/>
+      <SuperClass code="PRF">
+         <Rubric id="d1e183615" kind="preferred">
+            <Label xml:lang="en-US">performer</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e183755" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The principal or primary performer of the act.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e183782" kind="short">
+         <Label xml:lang="en-US">primary performer</Label>
+      </Rubric>
+      <Rubric id="d1e183782" kind="preferred">
+         <Label xml:lang="en-US">primary performer</Label>
+      </Rubric>
+   </Class>
+   <Class code="SPRF" kind="concept">
+      <Meta name="internalId" value="19065"/>
+      <Meta name="Name:Act:participation:Participation" value="secondaryPerformer"/>
+      <Meta name="Sort:Act:participation:Participation" value="DB_______"/>
+      <Meta name="Name:Role:participation:Participation" value="performance"/>
+      <Meta name="Sort:Role:participation:Participation" value="DB_______"/>
+      <SuperClass code="PRF">
+         <Rubric id="d1e183615" kind="preferred">
+            <Label xml:lang="en-US">performer</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e183793" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A person assisting in an act through his substantial presence and involvement This includes: assistants, technicians, associates, or whatever the job titles may be.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e183820" kind="short">
+         <Label xml:lang="en-US">secondary performer</Label>
+      </Rubric>
+      <Rubric id="d1e183820" kind="preferred">
+         <Label xml:lang="en-US">secondary performer</Label>
+      </Rubric>
+   </Class>
+   <Class code="SPC" kind="concept">
+      <Meta name="internalId" value="10294"/>
+      <Meta name="Name:Act:participation:Participation" value="specimen"/>
+      <Meta name="Sort:Act:participation:Participation" value="AAA______"/>
+      <Meta name="Name:Role:participation:Participation" value="specimenOf"/>
+      <Meta name="Sort:Role:participation:Participation" value="AAA______"/>
+      <SuperClass code="SBJ">
+         <Rubric id="d1e182553" kind="preferred">
+            <Label xml:lang="en-US">subject</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e183831" kind="definition">
+         <Label xml:lang="en-US">
+            <p>The subject of non-clinical (e.g. laboratory) observation services is a specimen.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e183858" kind="short">
+         <Label xml:lang="en-US">specimen</Label>
+      </Rubric>
+      <Rubric id="d1e183858" kind="preferred">
+         <Label xml:lang="en-US">specimen</Label>
+      </Rubric>
+   </Class>
+   <Class code="ENT" kind="concept">
+      <Meta name="internalId" value="10253"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:participation:Participation" value="dataEnterer"/>
+      <Meta name="Sort:Act:participation:Participation" value="EBB______"/>
+      <Meta name="Name:Role:participation:Participation" value="dataEntry"/>
+      <Meta name="Sort:Role:participation:Participation" value="EBB______"/>
+      <SuperClass code="TRANS">
+         <Rubric id="d1e182004" kind="preferred">
+            <Label xml:lang="en-US">Transcriber</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e183869" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A person entering the data into the originating system. The data entry person is collected optionally for internal quality control purposes. This includes the transcriptionist for dictated text.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e183898" kind="short">
+         <Label xml:lang="en-US">data entry person</Label>
+      </Rubric>
+      <Rubric id="d1e183898" kind="preferred">
+         <Label xml:lang="en-US">data entry person</Label>
+      </Rubric>
+   </Class>
+   <Class code="AUTHEN" kind="concept">
+      <Meta name="internalId" value="19072"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:participation:Participation" value="authenticator"/>
+      <Meta name="Sort:Act:participation:Participation" value="IB_______"/>
+      <Meta name="Name:Role:participation:Participation" value="authenticated"/>
+      <Meta name="Sort:Role:participation:Participation" value="IB_______"/>
+      <SuperClass code="VRF">
+         <Rubric id="d1e183705" kind="preferred">
+            <Label xml:lang="en-US">verifier</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e183909" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A verifier who attests to the accuracy of an act, but who does not have privileges to legally authenticate the act. An example would be a resident physician who sees a patient and dictates a note, then later signs it. Their signature constitutes an authentication.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e183938" kind="short">
+         <Label xml:lang="en-US">authenticator</Label>
+      </Rubric>
+      <Rubric id="d1e183938" kind="preferred">
+         <Label xml:lang="en-US">authenticator</Label>
+      </Rubric>
+   </Class>
+   <Class code="LA" kind="concept">
+      <Meta name="internalId" value="19073"/>
+      <Meta name="isDocumentCharacteristic" value="true"/>
+      <Meta name="Name:Act:participation:Participation" value="legalAuthenticator"/>
+      <Meta name="Sort:Act:participation:Participation" value="IA_______"/>
+      <Meta name="Name:Role:participation:Participation" value="legallyAuthenticated"/>
+      <Meta name="Sort:Role:participation:Participation" value="IA_______"/>
+      <SuperClass code="VRF">
+         <Rubric id="d1e183705" kind="preferred">
+            <Label xml:lang="en-US">verifier</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e183950" kind="definition">
+         <Label xml:lang="en-US">
+            <p>A verifier who legally authenticates the accuracy of an act. An example would be a staff physician who sees a patient and dictates a note, then later signs it. Their signature constitutes a legal authentication.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e183979" kind="short">
+         <Label xml:lang="en-US">legal authenticator</Label>
+      </Rubric>
+      <Rubric id="d1e183979" kind="preferred">
+         <Label xml:lang="en-US">legal authenticator</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

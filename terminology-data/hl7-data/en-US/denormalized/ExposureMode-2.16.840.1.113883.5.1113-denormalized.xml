@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClaML-denormalized>
+   <Meta name="statusCode" value="active"/>
+   <Meta name="hl7CoreMifPackage" value="DEFN=UV=VO=1175-20120802"/>
+   <Meta name="releaseDate" value="2012-08-02"/>
+   <Meta name="publisherVersionId" value="487"/>
+   <Meta name="hl7MaintainedIndicator" value="true"/>
+   <Meta name="completeCodesIndicator" value="true"/>
+   <Meta name="hl7ApprovedIndicator" value="true"/>
+   <Identifier authority="hl7.org" uid="2.16.840.1.113883.5.1113"/>
+   <Title name="ExposureMode" date="2012-08-02" version="1.000">Code for the mechanism by which the exposure agent was exchanged or potentially exchanged by the participants involved in the exposure.</Title>
+   <Class code="rootClass">
+      <SubClass subCount="4" code="_ExposureMode" kind="abstract">
+         <Rubric id="d1e119184" kind="preferred">
+            <Label xml:lang="en-US">ExposureMode</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric kind="preferred">
+         <Label xml:lang="nl">ExposureMode</Label>
+      </Rubric>
+      <Rubric kind="description">
+         <Label xml:lang="nl">Code for the mechanism by which the exposure agent was exchanged or potentially exchanged by the participants involved in the exposure.</Label>
+      </Rubric>
+   </Class>
+   <Class code="_ExposureMode" kind="abstract">
+      <Meta name="isSelectable" value="false"/>
+      <Meta name="internalId" value="22377"/>
+      <SubClass code="AIRBORNE" subCount="0">
+         <Rubric id="d1e119217" kind="preferred">
+            <Label xml:lang="en-US">airborne</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="CONTACT" subCount="0">
+         <Rubric id="d1e119249" kind="preferred">
+            <Label xml:lang="en-US">contact</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="FOODBORNE" subCount="0">
+         <Rubric id="d1e119281" kind="preferred">
+            <Label xml:lang="en-US">foodborne</Label>
+         </Rubric>
+      </SubClass>
+      <SubClass code="WATERBORNE" subCount="0">
+         <Rubric id="d1e119313" kind="preferred">
+            <Label xml:lang="en-US">waterborne</Label>
+         </Rubric>
+      </SubClass>
+      <Rubric id="d1e119171" kind="definition">
+         <Label xml:lang="en-US">
+            <p>Code for the mechanism by which the exposure agent was exchanged or potentially exchanged by the participants involved in the exposure.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e119184" kind="short">
+         <Label xml:lang="en-US">ExposureMode</Label>
+      </Rubric>
+      <Rubric id="d1e119184" kind="preferred">
+         <Label xml:lang="en-US">ExposureMode</Label>
+      </Rubric>
+   </Class>
+   <Class code="AIRBORNE" kind="concept">
+      <Meta name="internalId" value="22379"/>
+      <SuperClass code="_ExposureMode">
+         <Rubric id="d1e119184" kind="preferred">
+            <Label xml:lang="en-US">ExposureMode</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e119196" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Communication of an agent from a living subject or environmental source to a living subject through indirect contact via oral or nasal inhalation.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e119217" kind="short">
+         <Label xml:lang="en-US">airborne</Label>
+      </Rubric>
+      <Rubric id="d1e119217" kind="preferred">
+         <Label xml:lang="en-US">airborne</Label>
+      </Rubric>
+   </Class>
+   <Class code="CONTACT" kind="concept">
+      <Meta name="internalId" value="22381"/>
+      <SuperClass code="_ExposureMode">
+         <Rubric id="d1e119184" kind="preferred">
+            <Label xml:lang="en-US">ExposureMode</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e119228" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Communication of an agent from a living subject or environmental source to a living subject through direct physical contact.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e119249" kind="short">
+         <Label xml:lang="en-US">contact</Label>
+      </Rubric>
+      <Rubric id="d1e119249" kind="preferred">
+         <Label xml:lang="en-US">contact</Label>
+      </Rubric>
+   </Class>
+   <Class code="FOODBORNE" kind="concept">
+      <Meta name="internalId" value="22380"/>
+      <SuperClass code="_ExposureMode">
+         <Rubric id="d1e119184" kind="preferred">
+            <Label xml:lang="en-US">ExposureMode</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e119260" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Communication of an agent from a food source to a living subject via oral consumption.</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e119281" kind="short">
+         <Label xml:lang="en-US">foodborne</Label>
+      </Rubric>
+      <Rubric id="d1e119281" kind="preferred">
+         <Label xml:lang="en-US">foodborne</Label>
+      </Rubric>
+   </Class>
+   <Class code="WATERBORNE" kind="concept">
+      <Meta name="internalId" value="22378"/>
+      <SuperClass code="_ExposureMode">
+         <Rubric id="d1e119184" kind="preferred">
+            <Label xml:lang="en-US">ExposureMode</Label>
+         </Rubric>
+      </SuperClass>
+      <Rubric id="d1e119292" kind="definition">
+         <Label xml:lang="en-US">
+            <p>
+               <b>Description:</b>Communication of an agent to a living subject by contact and/or consumption via an aqueous medium</p>
+         </Label>
+      </Rubric>
+      <Rubric id="d1e119313" kind="short">
+         <Label xml:lang="en-US">waterborne</Label>
+      </Rubric>
+      <Rubric id="d1e119313" kind="preferred">
+         <Label xml:lang="en-US">waterborne</Label>
+      </Rubric>
+   </Class>
+</ClaML-denormalized>

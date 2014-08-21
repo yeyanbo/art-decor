@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/cda-singleton.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ..\infrastructure/CDA.xsd">
+	<realmCode code="IT"/>
+	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+	<templateId root="2.16.840.1.113883.2.9.10.2.1" extension="ITPRF _PRESC_SPEC-001"/>
+	<id root="2.16.840.1.113883.2.9.2.150106" extension="150106.1001.000000005.2007032118.DW009" assigningAuthorityName="ASL Napoli 1"/>
+	<code code="3400-2" codeSystem="2.16.840.1.113883.2.9.4.4" codeSystemName="ITCDADOC_TYPECODE" displayName="PRESCRIZIONE SPECIALISTICA" codeSystemVersion="1"/>
+	<title>Servizio Sanitario Nazionale - Regione Campania</title>
+	<effectiveTime value="20070321183920"/>
+	<confidentialityCode code="R" codeSystem="2.16.840.1.113883.5.25" displayName="Confidenziale" codeSystemName="xx" codeSystemVersion="1"/>
+	<languageCode code="ita-ITA"/>
+	<setId root="2.16.840.1.113883.2.9.2.150106" extension="150106.1001.000000005.2007032118.DW009" assigningAuthorityName="ASL Napoli 1"/>
+	<versionNumber value="1"/>
+	<recordTarget>
+		<patientRole>
+			<id root="2.16.840.1.113883.2.9.4.2.2.150.4.3" assigningAuthorityName="Regione Campania" extension="1234567890"/>
+			<id root="2.16.840.1.113883.2.9.4.3.2" assigningAuthorityName=" MEF" extension="CRLLNZ73M22F839T"/>
+			<patient nullFlavor="MSK">
+				<name>
+					<given> ...</given>
+					<family>...</family>
+					<suffix>...</suffix>
+				</name>
+				<birthplace>
+					<place>
+				<addr use="H">
+							<streetAddressLine>via</streetAddressLine>
+							<streetAddressLine>Palestro</streetAddressLine>
+							<streetAddressLine>64</streetAddressLine>
+							<postalCode>00187</postalCode>
+							<city> ROMA</city>
+						    <county>RM</county>
+						   <country>ITALIA</country>
+							<state>IT</state>
+						</addr>
+					</place>
+				</birthplace>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author>
+		<time value="20070321183920"/>
+		<assignedAuthor>
+			<id root="2.16.840.1.113883.2.9.4.3.2" assigningAuthorityName="MEF" extension="PLRSS99M34T"/>
+			<id root="2.16.840.1.113883.2.9.4.2.2.150.4.3" assigningAuthorityName="Regione Campania" extension="1234567890"/>
+			<addr/>
+			<assignedPerson>
+				<name>
+					<given> PAOLO</given>
+					<family>ROSSI</family>
+					<suffix>DR.</suffix>
+				</name>
+			</assignedPerson>
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id root="2.16.840.1.113883.2.9.2.150106" extension="00010001" assigningAuthorityName="ASL Napoli 1"/>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<legalAuthenticator>
+		<time value="20070321183920"/>
+		<signatureCode code="S"/>
+		<assignedEntity classCode="ASSIGNED">
+			<id root="2.16.840.1.113883.2.9.4.3.2" assigningAuthorityName="MEF" extension="PLRSS99M34T"/>
+			<id root="2.16.840.1.113883.2.9.4.2.2.150.4.3" assigningAuthorityName="Regione Campania" extension="1234567890"/>
+			<assignedPerson>
+				<name>
+					<given> PAOLO</given>
+					<family>ROSSI</family>
+					<suffix>DR.</suffix>
+				</name>
+			</assignedPerson>
+		</assignedEntity>
+	</legalAuthenticator>
+	<component>
+		<structuredBody classCode="DOCBODY" moodCode="EVN">
+			<component typeCode="COMP">
+				<section ID="ESENZIONI">
+					<code code="ESENZIONI-001" codeSystem="2.16.840.1.113883.2.9.10.2.1.1" codeSystemName="ITDOCCDA_SECTIONCODE" displayName="Esenzioni"/>
+					<title mediaType="text/plain">Esenzioni paziente</title>
+					<text>Esente per:<content ID="a0">B02.211 - Patologia</content>
+					</text>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<code code="B02.211" codeSystemName="Codifica Esenzioni" codeSystem="2.16.840.1.113883.2.9.6.1.22" codeSystemVersion="2001">
+								<originalText>
+									<reference value="a0"/>
+								</originalText>
+							</code>
+						</act>
+					</entry>
+				</section>
+			</component>
+			<component typeCode="COMP">
+				<section ID="PRESCRIZIONI">
+					<code code="18776-5" codeSystem="2.16.840.1.113883.11.10871" codeSystemName="LOINC" displayName="Plan Section"/>
+					<title>PRESCRIZIONE SPECIALISTICA</title>
+					<text>
+						<list ID="RQO">
+							<caption>Prestazioni Richieste</caption>
+							<item>
+								<content ID="a1">RX TORACE</content>
+							</item>
+						</list>
+						<list ID="DIAG">
+							<caption>Problemi</caption>
+							<item>
+								<content ID="a2">Sospetta Broncopolmonite</content>
+							</item>
+						</list>
+					</text>
+					<entry>
+						<observation classCode="OBS" moodCode="RQO">
+							<code code="87.44" codeSystem="2.16.840.1.113883.2.9.6.1.11" codeSystemName="Catalogo Prestazioni Italia">
+								<translation code="44.87" codeSystem="2.16.840.1.113883.2.9.2.150.6.1.11" codeSystemName="Catalogo Prestazioni Regione Campania" codeSystemVersion="1"/>
+							</code>
+							<entryRelationship typeCode="RSON">
+								<observation classCode="OBS" moodCode="EVN">
+									<code code="485" codeSystem="2.16.840.1.113883.6.2" codeSystemName="ICD9-CM" codeSystemVersion="2002">
+										<originalText>
+											<reference value="a2"/>
+										</originalText>
+									</code>
+								</observation>
+							</entryRelationship>
+						</observation>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>
